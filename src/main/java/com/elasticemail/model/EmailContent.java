@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -35,7 +35,7 @@ import java.util.Map;
  * Proper e-mail content
  */
 @ApiModel(description = "Proper e-mail content")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-11T10:43:12.235422Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
 public class EmailContent {
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -56,6 +56,10 @@ public class EmailContent {
   public static final String SERIALIZED_NAME_POSTBACK = "Postback";
   @SerializedName(SERIALIZED_NAME_POSTBACK)
   private String postback;
+
+  public static final String SERIALIZED_NAME_ENVELOPE_FROM = "EnvelopeFrom";
+  @SerializedName(SERIALIZED_NAME_ENVELOPE_FROM)
+  private String envelopeFrom;
 
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -229,6 +233,29 @@ public class EmailContent {
   }
 
 
+  public EmailContent envelopeFrom(String envelopeFrom) {
+    
+    this.envelopeFrom = envelopeFrom;
+    return this;
+  }
+
+   /**
+   * E-mail with an optional name to be used as the envelope from address (e.g.: John Doe &lt;email@domain.com&gt;)
+   * @return envelopeFrom
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "John Doe <email@domain.com>", value = "E-mail with an optional name to be used as the envelope from address (e.g.: John Doe <email@domain.com>)")
+
+  public String getEnvelopeFrom() {
+    return envelopeFrom;
+  }
+
+
+  public void setEnvelopeFrom(String envelopeFrom) {
+    this.envelopeFrom = envelopeFrom;
+  }
+
+
   public EmailContent from(String from) {
     
     this.from = from;
@@ -389,6 +416,7 @@ public class EmailContent {
         Objects.equals(this.attachments, emailContent.attachments) &&
         Objects.equals(this.headers, emailContent.headers) &&
         Objects.equals(this.postback, emailContent.postback) &&
+        Objects.equals(this.envelopeFrom, emailContent.envelopeFrom) &&
         Objects.equals(this.from, emailContent.from) &&
         Objects.equals(this.replyTo, emailContent.replyTo) &&
         Objects.equals(this.subject, emailContent.subject) &&
@@ -399,7 +427,7 @@ public class EmailContent {
 
   @Override
   public int hashCode() {
-    return Objects.hash(body, merge, attachments, headers, postback, from, replyTo, subject, templateName, attachFiles, utm);
+    return Objects.hash(body, merge, attachments, headers, postback, envelopeFrom, from, replyTo, subject, templateName, attachFiles, utm);
   }
 
   @Override
@@ -411,6 +439,7 @@ public class EmailContent {
     sb.append("    attachments: ").append(toIndentedString(attachments)).append("\n");
     sb.append("    headers: ").append(toIndentedString(headers)).append("\n");
     sb.append("    postback: ").append(toIndentedString(postback)).append("\n");
+    sb.append("    envelopeFrom: ").append(toIndentedString(envelopeFrom)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    replyTo: ").append(toIndentedString(replyTo)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");

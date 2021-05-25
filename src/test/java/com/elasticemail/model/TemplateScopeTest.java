@@ -11,20 +11,25 @@
  */
 
 
-package com.elasticemail.client.auth;
+package com.elasticemail.model;
 
-import com.elasticemail.client.Pair;
+import io.swagger.annotations.ApiModel;
+import com.google.gson.annotations.SerializedName;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.Map;
-import java.util.List;
 
-public interface Authentication {
+/**
+ * Model tests for TemplateScope
+ */
+public class TemplateScopeTest {
     /**
-     * Apply authentication settings to header and query params.
-     *
-     * @param queryParams List of query parameters
-     * @param headerParams Map of header parameters
-     * @param cookieParams Map of cookie parameters
+     * Model tests for TemplateScope
      */
-    void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams);
+    @Test
+    public void testTemplateScope() {
+        // TODO: test TemplateScope
+    }
+
 }

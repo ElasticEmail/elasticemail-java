@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,7 +16,7 @@ package com.elasticemail.model;
 import java.util.Objects;
 import java.util.Arrays;
 import com.elasticemail.model.BodyPart;
-import com.elasticemail.model.TemplateScopeType;
+import com.elasticemail.model.TemplateScope;
 import com.elasticemail.model.TemplateType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * Template info
  */
 @ApiModel(description = "Template info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-11T10:43:12.235422Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
 public class Template {
   public static final String SERIALIZED_NAME_TEMPLATE_TYPE = "TemplateType";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_TYPE)
@@ -58,7 +58,7 @@ public class Template {
 
   public static final String SERIALIZED_NAME_TEMPLATE_SCOPE = "TemplateScope";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_SCOPE)
-  private TemplateScopeType templateScope = null;
+  private TemplateScope templateScope = null;
 
 
   public Template templateType(TemplateType templateType) {
@@ -184,7 +184,7 @@ public class Template {
   }
 
 
-  public Template templateScope(TemplateScopeType templateScope) {
+  public Template templateScope(TemplateScope templateScope) {
     
     this.templateScope = templateScope;
     return this;
@@ -197,12 +197,12 @@ public class Template {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Visibility of a template")
 
-  public TemplateScopeType getTemplateScope() {
+  public TemplateScope getTemplateScope() {
     return templateScope;
   }
 
 
-  public void setTemplateScope(TemplateScopeType templateScope) {
+  public void setTemplateScope(TemplateScope templateScope) {
     this.templateScope = templateScope;
   }
 

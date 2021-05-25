@@ -15,6 +15,7 @@ package com.elasticemail.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+import io.swagger.annotations.ApiModel;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
@@ -24,24 +25,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * Gets or Sets VerificationStatus
+ * Visibility of a template
  */
-@JsonAdapter(VerificationStatus.Adapter.class)
-public enum VerificationStatus {
+@JsonAdapter(TemplateScope.Adapter.class)
+public enum TemplateScope {
   
-  PROCESSING("Processing"),
+  PERSONAL("Personal"),
   
-  READY("Ready"),
-  
-  EXPIRED("Expired"),
-  
-  VERIFIED("Verified"),
-  
-  ERROR("Error");
+  GLOBAL("Global");
 
   private String value;
 
-  VerificationStatus(String value) {
+  TemplateScope(String value) {
     this.value = value;
   }
 
@@ -54,8 +49,8 @@ public enum VerificationStatus {
     return String.valueOf(value);
   }
 
-  public static VerificationStatus fromValue(String value) {
-    for (VerificationStatus b : VerificationStatus.values()) {
+  public static TemplateScope fromValue(String value) {
+    for (TemplateScope b : TemplateScope.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -63,16 +58,16 @@ public enum VerificationStatus {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<VerificationStatus> {
+  public static class Adapter extends TypeAdapter<TemplateScope> {
     @Override
-    public void write(final JsonWriter jsonWriter, final VerificationStatus enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final TemplateScope enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public VerificationStatus read(final JsonReader jsonReader) throws IOException {
+    public TemplateScope read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return VerificationStatus.fromValue(value);
+      return TemplateScope.fromValue(value);
     }
   }
 }

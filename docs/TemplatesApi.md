@@ -249,7 +249,7 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     TemplatesApi apiInstance = new TemplatesApi(defaultClient);
-    List<TemplateScopeType> scopeType = Arrays.asList(Personal); // List<TemplateScopeType> | Return templates with specified scope only
+    List<TemplateScope> scopeType = Arrays.asList(Personal); // List<TemplateScope> | Return templates with specified scope only
     List<TemplateType> templateTypes = Arrays.asList(RawHTML); // List<TemplateType> | Return templates with specified type only
     Integer limit = 100; // Integer | Maximum number of returned items.
     Integer offset = 20; // Integer | How many items should be returned ahead.
@@ -271,7 +271,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scopeType** | [**List&lt;TemplateScopeType&gt;**](TemplateScopeType.md)| Return templates with specified scope only |
+ **scopeType** | [**List&lt;TemplateScope&gt;**](TemplateScope.md)| Return templates with specified scope only |
  **templateTypes** | [**List&lt;TemplateType&gt;**](TemplateType.md)| Return templates with specified type only | [optional]
  **limit** | **Integer**| Maximum number of returned items. | [optional]
  **offset** | **Integer**| How many items should be returned ahead. | [optional]
