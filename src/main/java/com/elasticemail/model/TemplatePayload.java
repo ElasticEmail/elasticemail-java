@@ -32,7 +32,7 @@ import java.util.List;
  * New template object
  */
 @ApiModel(description = "New template object")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
 public class TemplatePayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)

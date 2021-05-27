@@ -28,7 +28,7 @@ import java.io.IOException;
  * Summary of log status
  */
 @ApiModel(description = "Summary of log status")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
 public class LogStatusSummary {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)

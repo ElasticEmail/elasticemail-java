@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Simple verification file result info
  */
 @ApiModel(description = "Simple verification file result info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
 public class VerificationFileResult {
   public static final String SERIALIZED_NAME_VERIFICATION_I_D = "VerificationID";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_I_D)

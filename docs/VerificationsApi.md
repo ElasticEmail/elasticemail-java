@@ -10,8 +10,9 @@ Method | HTTP request | Description
 [**verificationsFilesByIdDelete**](VerificationsApi.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
 [**verificationsFilesByIdResultDownloadGet**](VerificationsApi.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
 [**verificationsFilesByIdResultGet**](VerificationsApi.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-[**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Verify From File
-[**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Simple Files Verification Results
+[**verificationsFilesByIdVerificationPost**](VerificationsApi.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification
+[**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
+[**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 [**verificationsGet**](VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
 
 
@@ -431,13 +432,81 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
+<a name="verificationsFilesByIdVerificationPost"></a>
+# **verificationsFilesByIdVerificationPost**
+> verificationsFilesByIdVerificationPost(id)
+
+Start verification
+
+Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+
+### Example
+```java
+// Import classes:
+import com.elasticemail.client.ApiClient;
+import com.elasticemail.client.ApiException;
+import com.elasticemail.client.Configuration;
+import com.elasticemail.client.auth.*;
+import com.elasticemail.client.models.*;
+import com.elasticemail.api.VerificationsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.elasticemail.com/v4");
+    
+    // Configure API key authorization: apikey
+    ApiKeyAuth apikey = (ApiKeyAuth) defaultClient.getAuthentication("apikey");
+    apikey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apikey.setApiKeyPrefix("Token");
+
+    VerificationsApi apiInstance = new VerificationsApi(defaultClient);
+    String id = "id_example"; // String | File ID to start verification
+    try {
+      apiInstance.verificationsFilesByIdVerificationPost(id);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling VerificationsApi#verificationsFilesByIdVerificationPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| File ID to start verification |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+
 <a name="verificationsFilesPost"></a>
 # **verificationsFilesPost**
 > VerificationFileResult verificationsFilesPost(file)
 
-Verify From File
+Upload File with Emails
 
-Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
 
 ### Example
 ```java
@@ -504,7 +573,7 @@ Name | Type | Description  | Notes
 # **verificationsFilesResultGet**
 > List&lt;VerificationFileResult&gt; verificationsFilesResultGet()
 
-Get Simple Files Verification Results
+Get Files Verification Results
 
 Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
 

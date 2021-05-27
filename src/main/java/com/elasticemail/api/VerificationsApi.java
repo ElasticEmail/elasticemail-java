@@ -738,6 +738,114 @@ public class VerificationsApi {
         return localVarCall;
     }
     /**
+     * Build call for verificationsFilesByIdVerificationPost
+     * @param id File ID to start verification (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call verificationsFilesByIdVerificationPostCall(String id, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/verifications/files/{id}/verification"
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "apikey" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call verificationsFilesByIdVerificationPostValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling verificationsFilesByIdVerificationPost(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = verificationsFilesByIdVerificationPostCall(id, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Start verification
+     * Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+     * @param id File ID to start verification (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public void verificationsFilesByIdVerificationPost(String id) throws ApiException {
+        verificationsFilesByIdVerificationPostWithHttpInfo(id);
+    }
+
+    /**
+     * Start verification
+     * Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+     * @param id File ID to start verification (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> verificationsFilesByIdVerificationPostWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = verificationsFilesByIdVerificationPostValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Start verification (asynchronously)
+     * Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+     * @param id File ID to start verification (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call verificationsFilesByIdVerificationPostAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = verificationsFilesByIdVerificationPostValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for verificationsFilesPost
      * @param file  (optional)
      * @param _callback Callback for upload/download progress
@@ -793,8 +901,8 @@ public class VerificationsApi {
     }
 
     /**
-     * Verify From File
-     * Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+     * Upload File with Emails
+     * Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
      * @param file  (optional)
      * @return VerificationFileResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -810,8 +918,8 @@ public class VerificationsApi {
     }
 
     /**
-     * Verify From File
-     * Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+     * Upload File with Emails
+     * Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
      * @param file  (optional)
      * @return ApiResponse&lt;VerificationFileResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -828,8 +936,8 @@ public class VerificationsApi {
     }
 
     /**
-     * Verify From File (asynchronously)
-     * Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+     * Upload File with Emails (asynchronously)
+     * Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
      * @param file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -898,7 +1006,7 @@ public class VerificationsApi {
     }
 
     /**
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
      * @return List&lt;VerificationFileResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -914,7 +1022,7 @@ public class VerificationsApi {
     }
 
     /**
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
      * @return ApiResponse&lt;List&lt;VerificationFileResult&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -931,7 +1039,7 @@ public class VerificationsApi {
     }
 
     /**
-     * Get Simple Files Verification Results (asynchronously)
+     * Get Files Verification Results (asynchronously)
      * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

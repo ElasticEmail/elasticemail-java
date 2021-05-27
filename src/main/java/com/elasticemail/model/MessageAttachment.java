@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MessageAttachment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
 public class MessageAttachment {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
@@ -49,11 +49,11 @@ public class MessageAttachment {
   }
 
    /**
-   * Get binaryContent
+   * File&#39;s content as byte array (or a Base64 string)
    * @return binaryContent
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "File's content as byte array (or a Base64 string)")
 
   public byte[] getBinaryContent() {
     return binaryContent;
@@ -72,11 +72,11 @@ public class MessageAttachment {
   }
 
    /**
-   * Filename
+   * Display name of the file
    * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "attachment.txt", value = "Filename")
+  @ApiModelProperty(value = "Display name of the file")
 
   public String getName() {
     return name;
@@ -95,11 +95,11 @@ public class MessageAttachment {
   }
 
    /**
-   * Get contentType
+   * MIME content type
    * @return contentType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "MIME content type")
 
   public String getContentType() {
     return contentType;

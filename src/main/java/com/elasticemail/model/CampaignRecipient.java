@@ -30,7 +30,7 @@ import java.util.List;
  * A set of lists and segments names to read recipients from
  */
 @ApiModel(description = "A set of lists and segments names to read recipients from")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-25T13:02:35.289764Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
 public class CampaignRecipient {
   public static final String SERIALIZED_NAME_LIST_NAMES = "ListNames";
   @SerializedName(SERIALIZED_NAME_LIST_NAMES)

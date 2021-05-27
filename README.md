@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2021-05-25T13:02:35.289764Z[Etc/UTC]
+  - Build date: 2021-05-27T12:28:45.459634Z[Etc/UTC]
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
 
@@ -48,7 +48,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>org.openapitools</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.0.11</version>
+  <version>4.0.12</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:elasticemail:4.0.11"
+compile "org.openapitools:elasticemail:4.0.12"
 ```
 
 ### Others
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.0.11.jar`
+* `target/elasticemail-4.0.12.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -214,8 +214,9 @@ Class | Method | HTTP request | Description
 *VerificationsApi* | [**verificationsFilesByIdDelete**](docs/VerificationsApi.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
 *VerificationsApi* | [**verificationsFilesByIdResultDownloadGet**](docs/VerificationsApi.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
 *VerificationsApi* | [**verificationsFilesByIdResultGet**](docs/VerificationsApi.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-*VerificationsApi* | [**verificationsFilesPost**](docs/VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Verify From File
-*VerificationsApi* | [**verificationsFilesResultGet**](docs/VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Simple Files Verification Results
+*VerificationsApi* | [**verificationsFilesByIdVerificationPost**](docs/VerificationsApi.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification
+*VerificationsApi* | [**verificationsFilesPost**](docs/VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
+*VerificationsApi* | [**verificationsFilesResultGet**](docs/VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 *VerificationsApi* | [**verificationsGet**](docs/VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
 
 
