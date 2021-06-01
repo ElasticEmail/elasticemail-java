@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InboundPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class InboundPayload {
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -66,8 +66,7 @@ public class InboundPayload {
    * Filter of the inbound data
    * @return filter
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Filter of the inbound data")
+  @ApiModelProperty(required = true, value = "Filter of the inbound data")
 
   public String getFilter() {
     return filter;
@@ -89,8 +88,7 @@ public class InboundPayload {
    * Name of this route
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of this route")
+  @ApiModelProperty(required = true, value = "Name of this route")
 
   public String getName() {
     return name;
@@ -112,8 +110,7 @@ public class InboundPayload {
    * Type of the filter
    * @return filterType
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type of the filter")
+  @ApiModelProperty(required = true, value = "Type of the filter")
 
   public InboundRouteFilterType getFilterType() {
     return filterType;
@@ -135,8 +132,7 @@ public class InboundPayload {
    * Type of action to take
    * @return actionType
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type of action to take")
+  @ApiModelProperty(required = true, value = "Type of action to take")
 
   public InboundRouteActionType getActionType() {
     return actionType;

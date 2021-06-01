@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * FilePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class FilePayload {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
@@ -52,8 +52,7 @@ public class FilePayload {
    * Content of the file sent as binary data
    * @return binaryContent
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Content of the file sent as binary data")
+  @ApiModelProperty(required = true, value = "Content of the file sent as binary data")
 
   public byte[] getBinaryContent() {
     return binaryContent;

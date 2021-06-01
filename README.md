@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2021-05-27T12:28:45.459634Z[Etc/UTC]
+  - Build date: 2021-06-01T07:02:59.691443Z[GMT]
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
 
@@ -46,9 +46,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-  <groupId>org.openapitools</groupId>
+  <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.0.12</version>
+  <version>4.0.13</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "org.openapitools:elasticemail:4.0.12"
+compile "com.elasticemail:elasticemail:4.0.13"
 ```
 
 ### Others
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.0.12.jar`
+* `target/elasticemail-4.0.13.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

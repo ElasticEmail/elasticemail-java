@@ -28,7 +28,7 @@ import java.io.IOException;
  * Settings related to sending emails
  */
 @ApiModel(description = "Settings related to sending emails")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class SubaccountEmailSettingsPayload {
   public static final String SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS = "RequiresEmailCredits";
   @SerializedName(SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS)

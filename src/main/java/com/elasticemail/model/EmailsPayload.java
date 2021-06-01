@@ -30,7 +30,7 @@ import java.util.List;
  * Provide either rule or a list of emails, not both.
  */
 @ApiModel(description = "Provide either rule or a list of emails, not both.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class EmailsPayload {
   public static final String SERIALIZED_NAME_RULE = "Rule";
   @SerializedName(SERIALIZED_NAME_RULE)
@@ -48,11 +48,11 @@ public class EmailsPayload {
   }
 
    /**
-   * SQL-like rule. Sending &#39;All&#39; as a value loads all resources of the given type.
+   * SQL-like rule. Sending &#39;All&#39; as a value loads all resources of the given type. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules
    * @return rule
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "SQL-like rule. Sending 'All' as a value loads all resources of the given type.")
+  @ApiModelProperty(value = "SQL-like rule. Sending 'All' as a value loads all resources of the given type. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules")
 
   public String getRule() {
     return rule;

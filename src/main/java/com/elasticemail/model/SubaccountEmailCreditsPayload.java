@@ -28,7 +28,7 @@ import java.io.IOException;
  * A change to SubAccount email credits pool, with an additional note.
  */
 @ApiModel(description = "A change to SubAccount email credits pool, with an additional note.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class SubaccountEmailCreditsPayload {
   public static final String SERIALIZED_NAME_CREDITS = "Credits";
   @SerializedName(SERIALIZED_NAME_CREDITS)
@@ -49,8 +49,7 @@ public class SubaccountEmailCreditsPayload {
    * Positive or negative value; this will be added or subtracted from Subaccount&#39;s current email Credits pool.
    * @return credits
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Positive or negative value; this will be added or subtracted from Subaccount's current email Credits pool.")
+  @ApiModelProperty(required = true, value = "Positive or negative value; this will be added or subtracted from Subaccount's current email Credits pool.")
 
   public Integer getCredits() {
     return credits;

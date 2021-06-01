@@ -30,11 +30,11 @@ import java.util.List;
  * List of transactional recipients
  */
 @ApiModel(description = "List of transactional recipients")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class TransactionalRecipient {
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)
-  private List<String> to = null;
+  private List<String> to = new ArrayList<String>();
 
   public static final String SERIALIZED_NAME_C_C = "CC";
   @SerializedName(SERIALIZED_NAME_C_C)
@@ -52,9 +52,6 @@ public class TransactionalRecipient {
   }
 
   public TransactionalRecipient addToItem(String toItem) {
-    if (this.to == null) {
-      this.to = new ArrayList<String>();
-    }
     this.to.add(toItem);
     return this;
   }
@@ -63,8 +60,7 @@ public class TransactionalRecipient {
    * List of recipients (visible to others)
    * @return to
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "List of recipients (visible to others)")
+  @ApiModelProperty(required = true, value = "List of recipients (visible to others)")
 
   public List<String> getTo() {
     return to;

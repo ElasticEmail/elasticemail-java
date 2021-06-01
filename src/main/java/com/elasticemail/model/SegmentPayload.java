@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SegmentPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class SegmentPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -48,8 +48,7 @@ public class SegmentPayload {
    * Segment name
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Segment name")
+  @ApiModelProperty(required = true, value = "Segment name")
 
   public String getName() {
     return name;
@@ -71,8 +70,7 @@ public class SegmentPayload {
    * SQL-like rule to determine which Contacts belong to this Segment. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules
    * @return rule
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "SQL-like rule to determine which Contacts belong to this Segment. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules")
+  @ApiModelProperty(required = true, value = "SQL-like rule to determine which Contacts belong to this Segment. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules")
 
   public String getRule() {
     return rule;

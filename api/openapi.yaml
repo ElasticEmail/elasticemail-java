@@ -3518,6 +3518,9 @@ components:
           description: Email of the subaccount for which this ApiKey should be created
           format: string
           type: string
+      required:
+      - AccessLevel
+      - Name
       type: object
     BodyContentType:
       default: HTML
@@ -3549,6 +3552,8 @@ components:
             utf-8, us-ascii, windows-1250 and more…'
           format: string
           type: string
+      required:
+      - ContentType
       type: object
     Campaign:
       example:
@@ -3598,6 +3603,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/CampaignOptions'
           description: Campaign sending options
+      required:
+      - Name
+      - Recipients
       type: object
     CampaignOptions:
       description: Different send options for a Campaign
@@ -4067,6 +4075,8 @@ components:
           type: object
         Consent:
           $ref: '#/components/schemas/ConsentData'
+      required:
+      - Email
       type: object
     ContactSource:
       default: DeliveryApi
@@ -4260,6 +4270,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/Options'
           description: E-mail configuration
+      required:
+      - Recipients
       type: object
     EmailRecipient:
       description: List of recipients (visible to others)
@@ -4283,6 +4295,8 @@ components:
             city: New York
             age: "34"
           type: object
+      required:
+      - Email
       type: object
     EmailSend:
       example:
@@ -4309,8 +4323,9 @@ components:
         - Emails
       properties:
         Rule:
-          description: SQL-like rule. Sending 'All' as a value loads all resources
-            of the given type.
+          description: 'SQL-like rule. Sending ''All'' as a value loads all resources
+            of the given type. Help for building a segment rule can be found here:
+            https://help.elasticemail.com/en/articles/5162182-segment-rules'
           format: string
           type: string
         Emails:
@@ -4394,6 +4409,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/Options'
           description: E-mail configuration
+      required:
+      - Recipients
       type: object
     EmailValidationResult:
       example:
@@ -4585,6 +4602,8 @@ components:
           description: Type of file's content (e.g. image/jpeg)
           format: string
           type: string
+      required:
+      - BinaryContent
       type: object
     FileUploadResult:
       properties:
@@ -4630,6 +4649,11 @@ components:
           description: Address to notify about the inbound
           format: string
           type: string
+      required:
+      - ActionType
+      - Filter
+      - FilterType
+      - Name
       type: object
     InboundRoute:
       example:
@@ -4732,11 +4756,13 @@ components:
           type: boolean
         Emails:
           description: Comma delimited list of existing contact emails that should
-            be added to this list
+            be added to this list. Leave empty for all contacts
           items:
             format: string
             type: string
           type: array
+      required:
+      - ListName
       type: object
     ListUpdatePayload:
       example:
@@ -4869,6 +4895,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/Options'
           description: E-mail configuration
+      required:
+      - MergeFile
       type: object
     MessageAttachment:
       properties:
@@ -4884,6 +4912,8 @@ components:
           description: MIME content type
           format: string
           type: string
+      required:
+      - BinaryContent
       type: object
     MessageCategory:
       default: Unknown
@@ -5147,6 +5177,9 @@ components:
             Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules'
           format: string
           type: string
+      required:
+      - Name
+      - Rule
       type: object
     SmtpCredentials:
       description: SMTP Credentials info
@@ -5220,6 +5253,8 @@ components:
             be created
           format: string
           type: string
+      required:
+      - Name
       type: object
     SortOrderItem:
       description: Change the ordering of this inbound route for when matching the
@@ -5229,12 +5264,16 @@ components:
         SortOrder: 0
       properties:
         PublicInboundId:
+          description: ID of the route to change the order of
           format: guid
           type: string
         SortOrder:
           description: 1 - route will be used first
           format: int32
           type: integer
+      required:
+      - PublicInboundId
+      - SortOrder
       type: object
     SplitOptimizationType:
       default: Opens
@@ -5271,6 +5310,8 @@ components:
           description: Note to append to this credits change, for history.
           format: string
           type: string
+      required:
+      - Credits
       type: object
     SubaccountEmailSettings:
       description: Settings related to sending emails
@@ -5435,6 +5476,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/SubaccountSettingsInfoPayload'
           description: SubAccount settings
+      required:
+      - Email
+      - Password
       type: object
     SubaccountSettingsInfo:
       description: SubAccount settings
@@ -5556,6 +5600,8 @@ components:
           allOf:
           - $ref: '#/components/schemas/TemplateScope'
           description: Visibility of a template
+      required:
+      - Name
       type: object
     TemplateScope:
       default: Personal
@@ -5592,6 +5638,8 @@ components:
             format: string
             type: string
           type: array
+      required:
+      - To
       type: object
     Utm:
       description: Utm marketing data to be attached to every link in this e-mail.

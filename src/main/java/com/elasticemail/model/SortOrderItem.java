@@ -28,7 +28,7 @@ import java.io.IOException;
  * Change the ordering of this inbound route for when matching the inbound
  */
 @ApiModel(description = "Change the ordering of this inbound route for when matching the inbound")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class SortOrderItem {
   public static final String SERIALIZED_NAME_PUBLIC_INBOUND_ID = "PublicInboundId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_INBOUND_ID)
@@ -46,11 +46,10 @@ public class SortOrderItem {
   }
 
    /**
-   * Get publicInboundId
+   * ID of the route to change the order of
    * @return publicInboundId
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "ID of the route to change the order of")
 
   public String getPublicInboundId() {
     return publicInboundId;
@@ -72,8 +71,7 @@ public class SortOrderItem {
    * 1 - route will be used first
    * @return sortOrder
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "1 - route will be used first")
+  @ApiModelProperty(required = true, value = "1 - route will be used first")
 
   public Integer getSortOrder() {
     return sortOrder;

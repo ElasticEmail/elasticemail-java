@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * Template info
  */
 @ApiModel(description = "Template info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class Template {
   public static final String SERIALIZED_NAME_TEMPLATE_TYPE = "TemplateType";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_TYPE)

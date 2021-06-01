@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Create a new ApiKey
  */
 @ApiModel(description = "Create a new ApiKey")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-27T12:28:45.459634Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
 public class ApiKeyPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -40,7 +40,7 @@ public class ApiKeyPayload {
 
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
-  private List<AccessLevel> accessLevel = null;
+  private List<AccessLevel> accessLevel = new ArrayList<AccessLevel>();
 
   public static final String SERIALIZED_NAME_EXPIRES = "Expires";
   @SerializedName(SERIALIZED_NAME_EXPIRES)
@@ -65,8 +65,7 @@ public class ApiKeyPayload {
    * Name of the ApiKey for ease of reference.
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of the ApiKey for ease of reference.")
+  @ApiModelProperty(required = true, value = "Name of the ApiKey for ease of reference.")
 
   public String getName() {
     return name;
@@ -85,9 +84,6 @@ public class ApiKeyPayload {
   }
 
   public ApiKeyPayload addAccessLevelItem(AccessLevel accessLevelItem) {
-    if (this.accessLevel == null) {
-      this.accessLevel = new ArrayList<AccessLevel>();
-    }
     this.accessLevel.add(accessLevelItem);
     return this;
   }
@@ -96,8 +92,7 @@ public class ApiKeyPayload {
    * Access level or permission to be assigned to this ApiKey.
    * @return accessLevel
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Access level or permission to be assigned to this ApiKey.")
+  @ApiModelProperty(required = true, value = "Access level or permission to be assigned to this ApiKey.")
 
   public List<AccessLevel> getAccessLevel() {
     return accessLevel;
