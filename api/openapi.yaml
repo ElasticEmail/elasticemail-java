@@ -5,8 +5,9 @@ info:
   description: "This API is based on the REST API architecture, allowing the user\
     \ to easily manage their data with this resource-based approach.\r\n\r\nEvery\
     \ API call is established on which specific request type (GET, POST, PUT, DELETE)\
-    \ will be used.\r\n\r\nTo start using this API, you will need your Access Token\
-    \ (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\"\
+    \ will be used.\r\n\r\nThe API has a limit of 20 concurrent connections and a\
+    \ hard timeout of 600 seconds per request.\r\n\r\nTo start using this API, you\
+    \ will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\"\
     >here</a>). Remember to keep it safe. Required access levels are listed in the\
     \ given request’s description.\r\n\r\nThis is the documentation for REST API.\
     \ If you’d like to read our legacy documentation regarding Web API v2 click <a\
@@ -482,6 +483,7 @@ paths:
         required: false
         schema:
           description: array
+          example: mail@contact.com,mail1@contact.com,mail2@contact.com
           items:
             format: string
             type: string
@@ -3427,6 +3429,7 @@ components:
       - ViewEmailVerifications
       - ViewMarketing
       - ViewEmailApi
+      - ViewInbound
       type: string
     AccountStatusEnum:
       default: Disabled
@@ -3565,18 +3568,14 @@ components:
           Poolname: My Custom Pool
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles:
-          - AttachFiles
-          - AttachFiles
+          AttachFiles: '[ "preuploaded.jpg" ]'
           Subject: Hello!
           Utm: ""
         - ReplyTo: John Doe <email@domain.com>
           Poolname: My Custom Pool
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles:
-          - AttachFiles
-          - AttachFiles
+          AttachFiles: '[ "preuploaded.jpg" ]'
           Subject: Hello!
           Utm: ""
         Name: Name
@@ -3675,9 +3674,7 @@ components:
         Poolname: My Custom Pool
         TemplateName: Template01
         From: John Doe <email@domain.com>
-        AttachFiles:
-        - AttachFiles
-        - AttachFiles
+        AttachFiles: '[ "preuploaded.jpg" ]'
         Subject: Hello!
         Utm: ""
       properties:
@@ -3710,6 +3707,7 @@ components:
         AttachFiles:
           description: Names of previously uploaded files that should be sent as downloadable
             attachments
+          example: '[ "preuploaded.jpg" ]'
           items:
             format: string
             type: string
@@ -4203,6 +4201,7 @@ components:
         AttachFiles:
           description: Names of previously uploaded files that should be sent as downloadable
             attachments
+          example: '[ "preuploaded.jpg" ]'
           items:
             format: string
             type: string
@@ -4318,9 +4317,7 @@ components:
       description: Provide either rule or a list of emails, not both.
       example:
         Rule: Rule
-        Emails:
-        - Emails
-        - Emails
+        Emails: '[ "john.doe@sample.com" ]'
       properties:
         Rule:
           description: 'SQL-like rule. Sending ''All'' as a value loads all resources
@@ -4330,6 +4327,7 @@ components:
           type: string
         Emails:
           description: Comma delimited list of contact emails
+          example: '[ "john.doe@sample.com" ]'
           items:
             format: string
             type: string

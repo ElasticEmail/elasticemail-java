@@ -3,6 +3,7 @@
 # TransactionalRecipient
 
 List of transactional recipients
+
 ## Properties
 
 Name | Type | Description | Notes

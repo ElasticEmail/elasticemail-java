@@ -3,6 +3,7 @@
 # EmailContent
 
 Proper e-mail content
+
 ## Properties
 
 Name | Type | Description | Notes

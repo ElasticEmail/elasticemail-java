@@ -3,6 +3,7 @@
 # SubaccountEmailCreditsPayload
 
 A change to SubAccount email credits pool, with an additional note.
+
 ## Properties
 
 Name | Type | Description | Notes

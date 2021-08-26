@@ -3,6 +3,7 @@
 # LogStatusSummary
 
 Summary of log status
+
 ## Properties
 
 Name | Type | Description | Notes

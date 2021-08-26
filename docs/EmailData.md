@@ -2,6 +2,7 @@
 
 # EmailData
 
+
 ## Properties
 
 Name | Type | Description | Notes

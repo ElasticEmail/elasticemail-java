@@ -3,6 +3,7 @@
 # EmailView
 
 Email details formatted in json
+
 ## Properties
 
 Name | Type | Description | Notes

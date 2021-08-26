@@ -3,6 +3,7 @@
 # SubAccountInfo
 
 Detailed information about SubAccount.
+
 ## Properties
 
 Name | Type | Description | Notes

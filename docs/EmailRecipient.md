@@ -3,6 +3,7 @@
 # EmailRecipient
 
 List of recipients (visible to others)
+
 ## Properties
 
 Name | Type | Description | Notes

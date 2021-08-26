@@ -3,6 +3,7 @@
 # ApiKeyPayload
 
 Create a new ApiKey
+
 ## Properties
 
 Name | Type | Description | Notes

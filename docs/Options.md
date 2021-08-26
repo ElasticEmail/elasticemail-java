@@ -3,6 +3,7 @@
 # Options
 
 E-mail configuration
+
 ## Properties
 
 Name | Type | Description | Notes

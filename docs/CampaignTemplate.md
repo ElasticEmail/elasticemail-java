@@ -3,6 +3,7 @@
 # CampaignTemplate
 
 Content of a Campaign
+
 ## Properties
 
 Name | Type | Description | Notes

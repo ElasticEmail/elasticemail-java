@@ -3,6 +3,7 @@
 # EmailTransactionalMessageData
 
 Email data
+
 ## Properties
 
 Name | Type | Description | Notes

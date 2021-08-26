@@ -2,6 +2,7 @@
 
 # EmailValidationResult
 
+
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -29,7 +29,7 @@ import java.io.IOException;
  * New SubAccount payload
  */
 @ApiModel(description = "New SubAccount payload")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-06-01T07:02:59.691443Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
 public class SubaccountPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -45,7 +45,7 @@ public class SubaccountPayload {
 
   public static final String SERIALIZED_NAME_SETTINGS = "Settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
-  private SubaccountSettingsInfoPayload settings = null;
+  private SubaccountSettingsInfoPayload settings;
 
 
   public SubaccountPayload email(String email) {
@@ -58,6 +58,7 @@ public class SubaccountPayload {
    * Proper email address.
    * @return email
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mail@example.com", required = true, value = "Proper email address.")
 
   public String getEmail() {
@@ -80,6 +81,7 @@ public class SubaccountPayload {
    * Current password.
    * @return password
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "********", required = true, value = "Current password.")
 
   public String getPassword() {

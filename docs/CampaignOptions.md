@@ -3,6 +3,7 @@
 # CampaignOptions
 
 Different send options for a Campaign
+
 ## Properties
 
 Name | Type | Description | Notes

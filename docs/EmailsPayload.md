@@ -3,6 +3,7 @@
 # EmailsPayload
 
 Provide either rule or a list of emails, not both.
+
 ## Properties
 
 Name | Type | Description | Notes

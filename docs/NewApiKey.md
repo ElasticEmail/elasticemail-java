@@ -3,6 +3,7 @@
 # NewApiKey
 
 Newly generated ApiKey with Token
+
 ## Properties
 
 Name | Type | Description | Notes

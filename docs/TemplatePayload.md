@@ -3,6 +3,7 @@
 # TemplatePayload
 
 New template object
+
 ## Properties
 
 Name | Type | Description | Notes

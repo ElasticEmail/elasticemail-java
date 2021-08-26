@@ -3,6 +3,7 @@
 # EmailStatus
 
 Status information of the specified email
+
 ## Properties
 
 Name | Type | Description | Notes

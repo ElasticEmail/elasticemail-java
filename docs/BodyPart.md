@@ -3,6 +3,7 @@
 # BodyPart
 
 Email body part with user-provided MIME type (text/html, text/plain, etc)
+
 ## Properties
 
 Name | Type | Description | Notes

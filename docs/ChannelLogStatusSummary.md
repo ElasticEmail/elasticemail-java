@@ -3,6 +3,7 @@
 # ChannelLogStatusSummary
 
 Summary of channel log status
+
 ## Properties
 
 Name | Type | Description | Notes

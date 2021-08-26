@@ -3,6 +3,7 @@
 # VerificationFileResult
 
 Simple verification file result info
+
 ## Properties
 
 Name | Type | Description | Notes

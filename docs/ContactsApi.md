@@ -487,10 +487,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to null]
+ **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional]
  **rule** | **String**| Query used for filtering. | [optional]
  **emails** | [**List&lt;String&gt;**](String.md)| Comma delimited list of contact emails | [optional]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to null]
+ **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional]
  **fileName** | **String**| Name of your file including extension. | [optional]
 
 ### Return type

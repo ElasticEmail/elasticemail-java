@@ -3,6 +3,7 @@
 # SmtpCredentialsPayload
 
 Create new SMTP Credentials
+
 ## Properties
 
 Name | Type | Description | Notes

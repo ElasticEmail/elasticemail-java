@@ -3,6 +3,7 @@
 # SplitOptions
 
 Optional A/X split campaign options
+
 ## Properties
 
 Name | Type | Description | Notes
