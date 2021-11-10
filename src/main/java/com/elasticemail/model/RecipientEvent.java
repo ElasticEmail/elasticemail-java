@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed information about message recipient
  */
 @ApiModel(description = "Detailed information about message recipient")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class RecipientEvent {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -56,7 +56,7 @@ public class RecipientEvent {
 
   public static final String SERIALIZED_NAME_EVENT_TYPE = "EventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
-  private EventType eventType;
+  private EventType eventType = EventType.SUBMISSION;
 
   public static final String SERIALIZED_NAME_EVENT_DATE = "EventDate";
   @SerializedName(SERIALIZED_NAME_EVENT_DATE)
@@ -68,7 +68,7 @@ public class RecipientEvent {
 
   public static final String SERIALIZED_NAME_MESSAGE_CATEGORY = "MessageCategory";
   @SerializedName(SERIALIZED_NAME_MESSAGE_CATEGORY)
-  private MessageCategory messageCategory;
+  private MessageCategory messageCategory = MessageCategory.UNKNOWN;
 
   public static final String SERIALIZED_NAME_NEXT_TRY_ON = "NextTryOn";
   @SerializedName(SERIALIZED_NAME_NEXT_TRY_ON)
@@ -209,11 +209,11 @@ public class RecipientEvent {
   }
 
    /**
-   * Type of an Event
+   * Get eventType
    * @return eventType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type of an Event")
+  @ApiModelProperty(value = "")
 
   public EventType getEventType() {
     return eventType;
@@ -278,11 +278,11 @@ public class RecipientEvent {
   }
 
    /**
-   * Message category
+   * Get messageCategory
    * @return messageCategory
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Message category")
+  @ApiModelProperty(value = "")
 
   public MessageCategory getMessageCategory() {
     return messageCategory;
@@ -411,7 +411,7 @@ public class RecipientEvent {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -423,9 +423,7 @@ public class RecipientEvent {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

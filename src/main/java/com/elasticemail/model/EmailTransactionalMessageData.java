@@ -31,7 +31,7 @@ import java.io.IOException;
  * Email data
  */
 @ApiModel(description = "Email data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class EmailTransactionalMessageData {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -53,11 +53,11 @@ public class EmailTransactionalMessageData {
   }
 
    /**
-   * List of transactional recipients
+   * Get recipients
    * @return recipients
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "List of transactional recipients")
+  @ApiModelProperty(required = true, value = "")
 
   public TransactionalRecipient getRecipients() {
     return recipients;
@@ -76,11 +76,11 @@ public class EmailTransactionalMessageData {
   }
 
    /**
-   * Proper e-mail content
+   * Get content
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Proper e-mail content")
+  @ApiModelProperty(value = "")
 
   public EmailContent getContent() {
     return content;
@@ -99,11 +99,11 @@ public class EmailTransactionalMessageData {
   }
 
    /**
-   * E-mail configuration
+   * Get options
    * @return options
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "E-mail configuration")
+  @ApiModelProperty(value = "")
 
   public Options getOptions() {
     return options;

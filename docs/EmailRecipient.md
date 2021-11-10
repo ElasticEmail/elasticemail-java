@@ -2,7 +2,7 @@
 
 # EmailRecipient
 
-List of recipients (visible to others)
+List of recipients
 
 ## Properties
 

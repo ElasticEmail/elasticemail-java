@@ -29,11 +29,11 @@ import java.io.IOException;
  * Email body part with user-provided MIME type (text/html, text/plain, etc)
  */
 @ApiModel(description = "Email body part with user-provided MIME type (text/html, text/plain, etc)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class BodyPart {
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "ContentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
-  private BodyContentType contentType;
+  private BodyContentType contentType = BodyContentType.HTML;
 
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -51,11 +51,11 @@ public class BodyPart {
   }
 
    /**
-   * Type of the body part
+   * Get contentType
    * @return contentType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Type of the body part")
+  @ApiModelProperty(required = true, value = "")
 
   public BodyContentType getContentType() {
     return contentType;

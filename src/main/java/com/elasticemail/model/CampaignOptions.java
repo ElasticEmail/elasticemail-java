@@ -32,11 +32,11 @@ import org.threeten.bp.OffsetDateTime;
  * Different send options for a Campaign
  */
 @ApiModel(description = "Different send options for a Campaign")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)
-  private DeliveryOptimizationType deliveryOptimization;
+  private DeliveryOptimizationType deliveryOptimization = DeliveryOptimizationType.NONE;
 
   public static final String SERIALIZED_NAME_TRACK_OPENS = "TrackOpens";
   @SerializedName(SERIALIZED_NAME_TRACK_OPENS)
@@ -62,11 +62,11 @@ public class CampaignOptions {
   }
 
    /**
-   * How to order email delivery - by recipients&#39; engagement score or by the time they open the most of the emails that were sent to them
+   * Get deliveryOptimization
    * @return deliveryOptimization
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "How to order email delivery - by recipients' engagement score or by the time they open the most of the emails that were sent to them")
+  @ApiModelProperty(value = "")
 
   public DeliveryOptimizationType getDeliveryOptimization() {
     return deliveryOptimization;
@@ -154,11 +154,11 @@ public class CampaignOptions {
   }
 
    /**
-   * Optional options for A/X split campaigns. Will be ignored if only one template content was provided
+   * Get splitOptions
    * @return splitOptions
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Optional options for A/X split campaigns. Will be ignored if only one template content was provided")
+  @ApiModelProperty(value = "")
 
   public SplitOptions getSplitOptions() {
     return splitOptions;
@@ -187,7 +187,7 @@ public class CampaignOptions {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -199,9 +199,7 @@ public class CampaignOptions {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

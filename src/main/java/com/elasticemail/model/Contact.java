@@ -37,7 +37,7 @@ import org.threeten.bp.OffsetDateTime;
  * Contact
  */
 @ApiModel(description = "Contact")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class Contact {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -45,7 +45,7 @@ public class Contact {
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private ContactStatus status;
+  private ContactStatus status = ContactStatus.TRANSACTIONAL;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "FirstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -65,7 +65,7 @@ public class Contact {
 
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  private ContactSource source;
+  private ContactSource source = ContactSource.DELIVERYAPI;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
@@ -114,11 +114,11 @@ public class Contact {
   }
 
    /**
-   * Status of the given resource
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status of the given resource")
+  @ApiModelProperty(value = "")
 
   public ContactStatus getStatus() {
     return status;
@@ -237,11 +237,11 @@ public class Contact {
   }
 
    /**
-   * From where was this contact added
+   * Get source
    * @return source
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "From where was this contact added")
+  @ApiModelProperty(value = "")
 
   public ContactSource getSource() {
     return source;
@@ -329,11 +329,11 @@ public class Contact {
   }
 
    /**
-   * Contact&#39;s email statistics and activity
+   * Get activity
    * @return activity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Contact's email statistics and activity")
+  @ApiModelProperty(value = "")
 
   public ContactActivity getActivity() {
     return activity;
@@ -368,7 +368,7 @@ public class Contact {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -380,9 +380,7 @@ public class Contact {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

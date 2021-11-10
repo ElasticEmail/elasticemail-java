@@ -66,7 +66,7 @@ public class EventsApi {
      * @param transactionid ID number of transaction (required)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback Callback for upload/download progress
@@ -149,7 +149,7 @@ public class EventsApi {
      * @param transactionid ID number of transaction (required)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;RecipientEvent&gt;
@@ -171,7 +171,7 @@ public class EventsApi {
      * @param transactionid ID number of transaction (required)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;RecipientEvent&gt;&gt;
@@ -194,7 +194,7 @@ public class EventsApi {
      * @param transactionid ID number of transaction (required)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -219,8 +219,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -307,8 +307,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ExportLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -330,8 +330,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ApiResponse&lt;ExportLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -354,8 +354,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -379,7 +379,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback Callback for upload/download progress
@@ -467,7 +467,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;RecipientEvent&gt;
@@ -490,7 +490,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;RecipientEvent&gt;&gt;
@@ -514,7 +514,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -762,8 +762,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -843,8 +843,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ExportLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -865,8 +865,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ApiResponse&lt;ExportLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -888,8 +888,8 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param fileFormat Format of the exported file (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -912,7 +912,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback Callback for upload/download progress
@@ -993,7 +993,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;RecipientEvent&gt;
@@ -1015,7 +1015,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;RecipientEvent&gt;&gt;
@@ -1038,7 +1038,7 @@ public class EventsApi {
      * @param eventTypes Types of Events to return (optional)
      * @param from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
      * @param to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-     * @param orderBy  (optional)
+     * @param orderBy  (optional, default to DateDescending)
      * @param limit How many items to load. Maximum for this request is 1000 items (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes

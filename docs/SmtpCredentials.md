@@ -8,7 +8,7 @@ SMTP Credentials info
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessLevel** | [**AccessLevel**](AccessLevel.md) | Access level of this Smtp Credential. |  [optional]
+**accessLevel** | **AccessLevel** |  |  [optional]
 **name** | **String** | Name of the key. |  [optional]
 **dateCreated** | **OffsetDateTime** | Date this SmtpCredential was created. |  [optional]
 **lastUse** | **OffsetDateTime** | Date this SmtpCredential was last used. |  [optional]

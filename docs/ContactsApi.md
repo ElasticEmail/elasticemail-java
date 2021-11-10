@@ -464,10 +464,10 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     ContactsApi apiInstance = new ContactsApi(defaultClient);
-    ExportFileFormats fileFormat = new ExportFileFormats(); // ExportFileFormats | Format of the exported file
+    ExportFileFormats fileFormat = ExportFileFormats.fromValue("Csv"); // ExportFileFormats | Format of the exported file
     String rule = "Status%20=%20Engaged"; // String | Query used for filtering.
     List<String> emails = Arrays.asList(); // List<String> | Comma delimited list of contact emails
-    CompressionFormat compressionFormat = new CompressionFormat(); // CompressionFormat | FileResponse compression format. None or Zip.
+    CompressionFormat compressionFormat = CompressionFormat.fromValue("None"); // CompressionFormat | FileResponse compression format. None or Zip.
     String fileName = "filename.txt"; // String | Name of your file including extension.
     try {
       ExportLink result = apiInstance.contactsExportPost(fileFormat, rule, emails, compressionFormat, fileName);
@@ -487,10 +487,10 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional]
+ **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
  **rule** | **String**| Query used for filtering. | [optional]
  **emails** | [**List&lt;String&gt;**](String.md)| Comma delimited list of contact emails | [optional]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional]
+ **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
  **fileName** | **String**| Name of your file including extension. | [optional]
 
 ### Return type

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **subject** | **String** | Default subject of email. |  [optional]
 **templateName** | **String** | Name of template. |  [optional]
 **attachFiles** | **List&lt;String&gt;** | Names of previously uploaded files that should be sent as downloadable attachments |  [optional]
-**utm** | [**Utm**](Utm.md) | Utm marketing data to be attached to every link in this e-mail. |  [optional]
+**utm** | [**Utm**](Utm.md) |  |  [optional]
 
 
 

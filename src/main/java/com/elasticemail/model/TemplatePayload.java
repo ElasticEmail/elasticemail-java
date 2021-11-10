@@ -32,7 +32,7 @@ import java.util.List;
  * New template object
  */
 @ApiModel(description = "New template object")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class TemplatePayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -48,7 +48,7 @@ public class TemplatePayload {
 
   public static final String SERIALIZED_NAME_TEMPLATE_SCOPE = "TemplateScope";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_SCOPE)
-  private TemplateScope templateScope;
+  private TemplateScope templateScope = TemplateScope.PERSONAL;
 
 
   public TemplatePayload name(String name) {
@@ -135,11 +135,11 @@ public class TemplatePayload {
   }
 
    /**
-   * Visibility of a template
+   * Get templateScope
    * @return templateScope
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Visibility of a template")
+  @ApiModelProperty(value = "")
 
   public TemplateScope getTemplateScope() {
     return templateScope;

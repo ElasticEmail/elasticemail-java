@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Simple verification file result info
  */
 @ApiModel(description = "Simple verification file result info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class VerificationFileResult {
   public static final String SERIALIZED_NAME_VERIFICATION_I_D = "VerificationID";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_I_D)
@@ -43,7 +43,7 @@ public class VerificationFileResult {
 
   public static final String SERIALIZED_NAME_VERIFICATION_STATUS = "VerificationStatus";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_STATUS)
-  private VerificationStatus verificationStatus;
+  private VerificationStatus verificationStatus = VerificationStatus.PROCESSING;
 
   public static final String SERIALIZED_NAME_FILE_UPLOAD_RESULT = "FileUploadResult";
   @SerializedName(SERIALIZED_NAME_FILE_UPLOAD_RESULT)
@@ -111,11 +111,11 @@ public class VerificationFileResult {
   }
 
    /**
-   * In what state does this verification result currently is
+   * Get verificationStatus
    * @return verificationStatus
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "In what state does this verification result currently is")
+  @ApiModelProperty(value = "")
 
   public VerificationStatus getVerificationStatus() {
     return verificationStatus;
@@ -134,11 +134,11 @@ public class VerificationFileResult {
   }
 
    /**
-   * How many emails were detected in the file for verification
+   * Get fileUploadResult
    * @return fileUploadResult
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "How many emails were detected in the file for verification")
+  @ApiModelProperty(value = "")
 
   public FileUploadResult getFileUploadResult() {
     return fileUploadResult;

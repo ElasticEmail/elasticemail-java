@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Newly generated SMTP Credentials with Token
  */
 @ApiModel(description = "Newly generated SMTP Credentials with Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class NewSmtpCredentials {
   public static final String SERIALIZED_NAME_TOKEN = "Token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
@@ -41,7 +41,7 @@ public class NewSmtpCredentials {
 
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
-  private AccessLevel accessLevel;
+  private AccessLevel accessLevel = AccessLevel.NONE;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -94,11 +94,11 @@ public class NewSmtpCredentials {
   }
 
    /**
-   * Access level of this Smtp Credential.
+   * Get accessLevel
    * @return accessLevel
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Access level of this Smtp Credential.")
+  @ApiModelProperty(value = "")
 
   public AccessLevel getAccessLevel() {
     return accessLevel;
@@ -252,7 +252,7 @@ public class NewSmtpCredentials {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -264,9 +264,7 @@ public class NewSmtpCredentials {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

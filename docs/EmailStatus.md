@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **from** | **String** | Email address this email was sent from. |  [optional]
 **to** | **String** | Email address this email was sent to. |  [optional]
 **date** | **OffsetDateTime** | Date the email was submitted. |  [optional]
-**status** | [**LogJobStatus**](LogJobStatus.md) | Value of email&#39;s status |  [optional]
+**status** | **LogJobStatus** |  |  [optional]
 **statusName** | **String** | Name of email&#39;s status |  [optional]
 **statusChangeDate** | **OffsetDateTime** | Date of last status change. |  [optional]
 **dateSent** | **OffsetDateTime** | Date when the email was sent |  [optional]

@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * ContactPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class ContactPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -40,7 +40,7 @@ public class ContactPayload {
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private ContactStatus status;
+  private ContactStatus status = ContactStatus.TRANSACTIONAL;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "FirstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -89,11 +89,11 @@ public class ContactPayload {
   }
 
    /**
-   * Status of the given resource
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status of the given resource")
+  @ApiModelProperty(value = "")
 
   public ContactStatus getStatus() {
     return status;

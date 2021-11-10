@@ -29,11 +29,11 @@ import java.io.IOException;
  * Optional A/X split campaign options
  */
 @ApiModel(description = "Optional A/X split campaign options")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class SplitOptions {
   public static final String SERIALIZED_NAME_OPTIMIZE_FOR = "OptimizeFor";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_FOR)
-  private SplitOptimizationType optimizeFor;
+  private SplitOptimizationType optimizeFor = SplitOptimizationType.OPENS;
 
   public static final String SERIALIZED_NAME_OPTIMIZE_PERIOD_MINUTES = "OptimizePeriodMinutes";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_PERIOD_MINUTES)
@@ -47,11 +47,11 @@ public class SplitOptions {
   }
 
    /**
-   * Type of results by which to determine the winner template (content)
+   * Get optimizeFor
    * @return optimizeFor
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type of results by which to determine the winner template (content)")
+  @ApiModelProperty(value = "")
 
   public SplitOptimizationType getOptimizeFor() {
     return optimizeFor;

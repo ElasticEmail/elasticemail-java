@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InboundPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class InboundPayload {
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -41,11 +41,11 @@ public class InboundPayload {
 
   public static final String SERIALIZED_NAME_FILTER_TYPE = "FilterType";
   @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-  private InboundRouteFilterType filterType;
+  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAILADDRESS;
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "ActionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  private InboundRouteActionType actionType;
+  private InboundRouteActionType actionType = InboundRouteActionType.FORWARDTOEMAIL;
 
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "EmailAddress";
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)
@@ -109,11 +109,11 @@ public class InboundPayload {
   }
 
    /**
-   * Type of the filter
+   * Get filterType
    * @return filterType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Type of the filter")
+  @ApiModelProperty(required = true, value = "")
 
   public InboundRouteFilterType getFilterType() {
     return filterType;
@@ -132,11 +132,11 @@ public class InboundPayload {
   }
 
    /**
-   * Type of action to take
+   * Get actionType
    * @return actionType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Type of action to take")
+  @ApiModelProperty(required = true, value = "")
 
   public InboundRouteActionType getActionType() {
     return actionType;

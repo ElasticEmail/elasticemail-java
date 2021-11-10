@@ -753,10 +753,10 @@ public class ContactsApi {
     }
     /**
      * Build call for contactsExportPost
-     * @param fileFormat Format of the exported file (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
      * @param rule Query used for filtering. (optional)
      * @param emails Comma delimited list of contact emails (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -829,10 +829,10 @@ public class ContactsApi {
     /**
      * Export Contacts
      * Request an Export of specified Contacts. Required Access Level: Export
-     * @param fileFormat Format of the exported file (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
      * @param rule Query used for filtering. (optional)
      * @param emails Comma delimited list of contact emails (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ExportLink
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -850,10 +850,10 @@ public class ContactsApi {
     /**
      * Export Contacts
      * Request an Export of specified Contacts. Required Access Level: Export
-     * @param fileFormat Format of the exported file (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
      * @param rule Query used for filtering. (optional)
      * @param emails Comma delimited list of contact emails (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @return ApiResponse&lt;ExportLink&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -872,10 +872,10 @@ public class ContactsApi {
     /**
      * Export Contacts (asynchronously)
      * Request an Export of specified Contacts. Required Access Level: Export
-     * @param fileFormat Format of the exported file (optional)
+     * @param fileFormat Format of the exported file (optional, default to Csv)
      * @param rule Query used for filtering. (optional)
      * @param emails Comma delimited list of contact emails (optional)
-     * @param compressionFormat FileResponse compression format. None or Zip. (optional)
+     * @param compressionFormat FileResponse compression format. None or Zip. (optional, default to None)
      * @param fileName Name of your file including extension. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

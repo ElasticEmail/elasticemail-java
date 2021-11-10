@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class Campaign {
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -45,7 +45,7 @@ public class Campaign {
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private CampaignStatus status;
+  private CampaignStatus status = CampaignStatus.DELETED;
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -117,11 +117,11 @@ public class Campaign {
   }
 
    /**
-   * Campaign status
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Campaign status")
+  @ApiModelProperty(value = "")
 
   public CampaignStatus getStatus() {
     return status;
@@ -140,11 +140,11 @@ public class Campaign {
   }
 
    /**
-   * Recipients this campaign should be sent to
+   * Get recipients
    * @return recipients
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Recipients this campaign should be sent to")
+  @ApiModelProperty(required = true, value = "")
 
   public CampaignRecipient getRecipients() {
     return recipients;
@@ -163,11 +163,11 @@ public class Campaign {
   }
 
    /**
-   * Campaign sending options
+   * Get options
    * @return options
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Campaign sending options")
+  @ApiModelProperty(value = "")
 
   public CampaignOptions getOptions() {
     return options;

@@ -34,11 +34,11 @@ import org.threeten.bp.OffsetDateTime;
  * Template info
  */
 @ApiModel(description = "Template info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class Template {
   public static final String SERIALIZED_NAME_TEMPLATE_TYPE = "TemplateType";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_TYPE)
-  private TemplateType templateType;
+  private TemplateType templateType = TemplateType.RAWHTML;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -58,7 +58,7 @@ public class Template {
 
   public static final String SERIALIZED_NAME_TEMPLATE_SCOPE = "TemplateScope";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_SCOPE)
-  private TemplateScope templateScope;
+  private TemplateScope templateScope = TemplateScope.PERSONAL;
 
 
   public Template templateType(TemplateType templateType) {
@@ -68,11 +68,11 @@ public class Template {
   }
 
    /**
-   * How the template should be edited
+   * Get templateType
    * @return templateType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "How the template should be edited")
+  @ApiModelProperty(value = "")
 
   public TemplateType getTemplateType() {
     return templateType;
@@ -191,11 +191,11 @@ public class Template {
   }
 
    /**
-   * Visibility of a template
+   * Get templateScope
    * @return templateScope
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Visibility of a template")
+  @ApiModelProperty(value = "")
 
   public TemplateScope getTemplateScope() {
     return templateScope;

@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * EmailData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class EmailData {
   public static final String SERIALIZED_NAME_PREVIEW = "Preview";
   @SerializedName(SERIALIZED_NAME_PREVIEW)
@@ -54,11 +54,11 @@ public class EmailData {
   }
 
    /**
-   * Email details
+   * Get preview
    * @return preview
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Email details")
+  @ApiModelProperty(value = "")
 
   public EmailView getPreview() {
     return preview;
@@ -108,11 +108,11 @@ public class EmailData {
   }
 
    /**
-   * Status of the given resource
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status of the given resource")
+  @ApiModelProperty(value = "")
 
   public EmailStatus getStatus() {
     return status;

@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * MergeEmailPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class MergeEmailPayload {
   public static final String SERIALIZED_NAME_MERGE_FILE = "MergeFile";
   @SerializedName(SERIALIZED_NAME_MERGE_FILE)
@@ -52,11 +52,11 @@ public class MergeEmailPayload {
   }
 
    /**
-   * CSV file containing recipients with optional merge fields
+   * Get mergeFile
    * @return mergeFile
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "CSV file containing recipients with optional merge fields")
+  @ApiModelProperty(required = true, value = "")
 
   public MessageAttachment getMergeFile() {
     return mergeFile;
@@ -75,11 +75,11 @@ public class MergeEmailPayload {
   }
 
    /**
-   * Proper e-mail content
+   * Get content
    * @return content
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Proper e-mail content")
+  @ApiModelProperty(value = "")
 
   public EmailContent getContent() {
     return content;
@@ -98,11 +98,11 @@ public class MergeEmailPayload {
   }
 
    /**
-   * E-mail configuration
+   * Get options
    * @return options
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "E-mail configuration")
+  @ApiModelProperty(value = "")
 
   public Options getOptions() {
     return options;

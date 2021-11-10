@@ -28,10 +28,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * List of recipients (visible to others)
+ * List of recipients
  */
-@ApiModel(description = "List of recipients (visible to others)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@ApiModel(description = "List of recipients")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class EmailRecipient {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)

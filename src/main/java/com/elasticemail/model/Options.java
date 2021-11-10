@@ -30,7 +30,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * E-mail configuration
  */
 @ApiModel(description = "E-mail configuration")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class Options {
   public static final String SERIALIZED_NAME_TIME_OFFSET = "TimeOffset";
   @SerializedName(SERIALIZED_NAME_TIME_OFFSET)
@@ -46,7 +46,7 @@ public class Options {
 
   public static final String SERIALIZED_NAME_ENCODING = "Encoding";
   @SerializedName(SERIALIZED_NAME_ENCODING)
-  private EncodingType encoding;
+  private EncodingType encoding = EncodingType.USERPROVIDED;
 
   public static final String SERIALIZED_NAME_TRACK_OPENS = "TrackOpens";
   @SerializedName(SERIALIZED_NAME_TRACK_OPENS)
@@ -133,11 +133,11 @@ public class Options {
   }
 
    /**
-   * 0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue note that you can also provide the text version such as \&quot;Raw7Bit\&quot; for value 1. NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.
+   * Get encoding
    * @return encoding
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue note that you can also provide the text version such as \"Raw7Bit\" for value 1. NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.")
+  @ApiModelProperty(value = "")
 
   public EncodingType getEncoding() {
     return encoding;
@@ -213,7 +213,7 @@ public class Options {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -225,9 +225,7 @@ public class Options {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

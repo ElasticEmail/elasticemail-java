@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed information about SubAccount.
  */
 @ApiModel(description = "Detailed information about SubAccount.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class SubAccountInfo {
   public static final String SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D = "PublicAccountID";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D)
@@ -63,7 +63,7 @@ public class SubAccountInfo {
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private AccountStatusEnum status;
+  private AccountStatusEnum status = AccountStatusEnum.DISABLED;
 
   public static final String SERIALIZED_NAME_CONTACTS_COUNT = "ContactsCount";
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
@@ -123,11 +123,11 @@ public class SubAccountInfo {
   }
 
    /**
-   * SubAccount settings
+   * Get settings
    * @return settings
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "SubAccount settings")
+  @ApiModelProperty(value = "")
 
   public SubaccountSettingsInfo getSettings() {
     return settings;
@@ -238,11 +238,11 @@ public class SubAccountInfo {
   }
 
    /**
-   * Account&#39;s current status.
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Account's current status.")
+  @ApiModelProperty(value = "")
 
   public AccountStatusEnum getStatus() {
     return status;

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * FilePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class FilePayload {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)

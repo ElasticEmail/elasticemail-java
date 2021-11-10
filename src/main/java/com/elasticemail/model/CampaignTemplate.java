@@ -31,7 +31,7 @@ import java.util.List;
  * Content of a Campaign
  */
 @ApiModel(description = "Content of a Campaign")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class CampaignTemplate {
   public static final String SERIALIZED_NAME_POOLNAME = "Poolname";
   @SerializedName(SERIALIZED_NAME_POOLNAME)
@@ -215,11 +215,11 @@ public class CampaignTemplate {
   }
 
    /**
-   * Utm marketing data to be attached to every link in this e-mail.
+   * Get utm
    * @return utm
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Utm marketing data to be attached to every link in this e-mail.")
+  @ApiModelProperty(value = "")
 
   public Utm getUtm() {
     return utm;

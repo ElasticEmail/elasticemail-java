@@ -46,7 +46,7 @@ public class Example {
     String transactionid = "TransactionID"; // String | ID number of transaction
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
     OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
-    EventsOrderBy orderBy = new EventsOrderBy(); // EventsOrderBy | 
+    EventsOrderBy orderBy = EventsOrderBy.fromValue("DateDescending"); // EventsOrderBy | 
     Integer limit = 100; // Integer | Maximum number of returned items.
     Integer offset = 20; // Integer | How many items should be returned ahead.
     try {
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
  **transactionid** | **String**| ID number of transaction |
  **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional]
+ **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
  **limit** | **Integer**| Maximum number of returned items. | [optional]
  **offset** | **Integer**| How many items should be returned ahead. | [optional]
 
@@ -126,8 +126,8 @@ public class Example {
     List<EventType> eventTypes = Arrays.asList(Submission); // List<EventType> | Types of Events to return
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
     OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
-    ExportFileFormats fileFormat = new ExportFileFormats(); // ExportFileFormats | Format of the exported file
-    CompressionFormat compressionFormat = new CompressionFormat(); // CompressionFormat | FileResponse compression format. None or Zip.
+    ExportFileFormats fileFormat = ExportFileFormats.fromValue("Csv"); // ExportFileFormats | Format of the exported file
+    CompressionFormat compressionFormat = CompressionFormat.fromValue("None"); // CompressionFormat | FileResponse compression format. None or Zip.
     String fileName = "filename.txt"; // String | Name of your file including extension.
     try {
       ExportLink result = apiInstance.eventsChannelsByNameExportPost(name, eventTypes, from, to, fileFormat, compressionFormat, fileName);
@@ -151,8 +151,8 @@ Name | Type | Description  | Notes
  **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
  **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional]
+ **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
+ **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
  **fileName** | **String**| Name of your file including extension. | [optional]
 
 ### Return type
@@ -207,7 +207,7 @@ public class Example {
     List<EventType> eventTypes = Arrays.asList(Submission); // List<EventType> | Types of Events to return
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
     OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
-    EventsOrderBy orderBy = new EventsOrderBy(); // EventsOrderBy | 
+    EventsOrderBy orderBy = EventsOrderBy.fromValue("DateDescending"); // EventsOrderBy | 
     Integer limit = 56; // Integer | How many items to load. Maximum for this request is 1000 items
     Integer offset = 20; // Integer | How many items should be returned ahead.
     try {
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
  **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
  **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional]
+ **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
  **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional]
  **offset** | **Integer**| How many items should be returned ahead. | [optional]
 
@@ -425,8 +425,8 @@ public class Example {
     List<EventType> eventTypes = Arrays.asList(Submission); // List<EventType> | Types of Events to return
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
     OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
-    ExportFileFormats fileFormat = new ExportFileFormats(); // ExportFileFormats | Format of the exported file
-    CompressionFormat compressionFormat = new CompressionFormat(); // CompressionFormat | FileResponse compression format. None or Zip.
+    ExportFileFormats fileFormat = ExportFileFormats.fromValue("Csv"); // ExportFileFormats | Format of the exported file
+    CompressionFormat compressionFormat = CompressionFormat.fromValue("None"); // CompressionFormat | FileResponse compression format. None or Zip.
     String fileName = "filename.txt"; // String | Name of your file including extension.
     try {
       ExportLink result = apiInstance.eventsExportPost(eventTypes, from, to, fileFormat, compressionFormat, fileName);
@@ -449,8 +449,8 @@ Name | Type | Description  | Notes
  **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
  **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional]
+ **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
+ **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
  **fileName** | **String**| Name of your file including extension. | [optional]
 
 ### Return type
@@ -504,7 +504,7 @@ public class Example {
     List<EventType> eventTypes = Arrays.asList(Submission); // List<EventType> | Types of Events to return
     OffsetDateTime from = OffsetDateTime.now(); // OffsetDateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
     OffsetDateTime to = OffsetDateTime.now(); // OffsetDateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
-    EventsOrderBy orderBy = new EventsOrderBy(); // EventsOrderBy | 
+    EventsOrderBy orderBy = EventsOrderBy.fromValue("DateDescending"); // EventsOrderBy | 
     Integer limit = 56; // Integer | How many items to load. Maximum for this request is 1000 items
     Integer offset = 20; // Integer | How many items should be returned ahead.
     try {
@@ -528,7 +528,7 @@ Name | Type | Description  | Notes
  **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
  **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
  **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional]
+ **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
  **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional]
  **offset** | **Integer**| How many items should be returned ahead. | [optional]
 

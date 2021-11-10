@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ConsentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class ConsentData {
   public static final String SERIALIZED_NAME_CONSENT_I_P = "ConsentIP";
   @SerializedName(SERIALIZED_NAME_CONSENT_I_P)
@@ -42,7 +42,7 @@ public class ConsentData {
 
   public static final String SERIALIZED_NAME_CONSENT_TRACKING = "ConsentTracking";
   @SerializedName(SERIALIZED_NAME_CONSENT_TRACKING)
-  private ConsentTracking consentTracking;
+  private ConsentTracking consentTracking = ConsentTracking.UNKNOWN;
 
 
   public ConsentData consentIP(String consentIP) {
@@ -98,11 +98,11 @@ public class ConsentData {
   }
 
    /**
-   * Does the contant consent to have their tracking data stored.
+   * Get consentTracking
    * @return consentTracking
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Does the contant consent to have their tracking data stored.")
+  @ApiModelProperty(value = "")
 
   public ConsentTracking getConsentTracking() {
     return consentTracking;
@@ -129,7 +129,7 @@ public class ConsentData {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -141,9 +141,7 @@ public class ConsentData {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

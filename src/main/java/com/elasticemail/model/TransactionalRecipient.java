@@ -30,7 +30,7 @@ import java.util.List;
  * List of transactional recipients
  */
 @ApiModel(description = "List of transactional recipients")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class TransactionalRecipient {
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)

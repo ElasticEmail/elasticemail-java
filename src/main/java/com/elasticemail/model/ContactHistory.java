@@ -29,11 +29,11 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ContactHistory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class ContactHistory {
   public static final String SERIALIZED_NAME_EVENT_TYPE = "EventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
-  private ContactHistEventType eventType;
+  private ContactHistEventType eventType = ContactHistEventType.OPENED;
 
   public static final String SERIALIZED_NAME_EVENT_DATE = "EventDate";
   @SerializedName(SERIALIZED_NAME_EVENT_DATE)
@@ -67,11 +67,11 @@ public class ContactHistory {
   }
 
    /**
-   * Type of event occured on this Contact.
+   * Get eventType
    * @return eventType
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Type of event occured on this Contact.")
+  @ApiModelProperty(value = "")
 
   public ContactHistEventType getEventType() {
     return eventType;

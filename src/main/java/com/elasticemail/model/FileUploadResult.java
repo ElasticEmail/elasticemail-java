@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * FileUploadResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class FileUploadResult {
   public static final String SERIALIZED_NAME_EMAILS_COUNT = "EmailsCount";
   @SerializedName(SERIALIZED_NAME_EMAILS_COUNT)

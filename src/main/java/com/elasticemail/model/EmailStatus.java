@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Status information of the specified email
  */
 @ApiModel(description = "Status information of the specified email")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-26T16:27:07.739303Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
 public class EmailStatus {
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -47,7 +47,7 @@ public class EmailStatus {
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  private LogJobStatus status;
+  private LogJobStatus status = LogJobStatus.ALL;
 
   public static final String SERIALIZED_NAME_STATUS_NAME = "StatusName";
   @SerializedName(SERIALIZED_NAME_STATUS_NAME)
@@ -158,11 +158,11 @@ public class EmailStatus {
   }
 
    /**
-   * Value of email&#39;s status
+   * Get status
    * @return status
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Value of email's status")
+  @ApiModelProperty(value = "")
 
   public LogJobStatus getStatus() {
     return status;
@@ -382,7 +382,7 @@ public class EmailStatus {
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && a.get().getClass().isArray() ? Arrays.equals((T[])a.get(), (T[])b.get()) : Objects.equals(a.get(), b.get()));
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
@@ -394,9 +394,7 @@ public class EmailStatus {
     if (a == null) {
       return 1;
     }
-    return a.isPresent()
-      ? (a.get().getClass().isArray() ? Arrays.hashCode((T[])a.get()) : Objects.hashCode(a.get()))
-      : 31;
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
