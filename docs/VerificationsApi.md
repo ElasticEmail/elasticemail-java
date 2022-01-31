@@ -502,7 +502,7 @@ null (empty response body)
 
 <a name="verificationsFilesPost"></a>
 # **verificationsFilesPost**
-> VerificationFileResult verificationsFilesPost(file)
+> VerificationFileResult verificationsFilesPost(_file)
 
 Upload File with Emails
 
@@ -530,9 +530,9 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     VerificationsApi apiInstance = new VerificationsApi(defaultClient);
-    File file = new File("/path/to/file"); // File | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      VerificationFileResult result = apiInstance.verificationsFilesPost(file);
+      VerificationFileResult result = apiInstance.verificationsFilesPost(_file);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling VerificationsApi#verificationsFilesPost");
@@ -549,7 +549,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**|  | [optional]
+ **_file** | **File**|  | [optional]
 
 ### Return type
 

@@ -32,7 +32,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed information about message recipient
  */
 @ApiModel(description = "Detailed information about message recipient")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class RecipientEvent {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -86,6 +86,8 @@ public class RecipientEvent {
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
   private String poolName;
 
+  public RecipientEvent() { 
+  }
 
   public RecipientEvent transactionID(String transactionID) {
     

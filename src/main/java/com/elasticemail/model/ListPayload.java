@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ListPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ListPayload {
   public static final String SERIALIZED_NAME_LIST_NAME = "ListName";
   @SerializedName(SERIALIZED_NAME_LIST_NAME)
@@ -43,6 +43,8 @@ public class ListPayload {
   @SerializedName(SERIALIZED_NAME_EMAILS)
   private List<String> emails = null;
 
+  public ListPayload() { 
+  }
 
   public ListPayload listName(String listName) {
     

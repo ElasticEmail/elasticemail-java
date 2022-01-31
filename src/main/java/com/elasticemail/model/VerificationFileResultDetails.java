@@ -34,7 +34,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed verification file result info
  */
 @ApiModel(description = "Detailed verification file result info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class VerificationFileResultDetails {
   public static final String SERIALIZED_NAME_VERIFICATION_RESULT = "VerificationResult";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_RESULT)
@@ -64,6 +64,8 @@ public class VerificationFileResultDetails {
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
 
+  public VerificationFileResultDetails() { 
+  }
 
   public VerificationFileResultDetails verificationResult(List<EmailValidationResult> verificationResult) {
     

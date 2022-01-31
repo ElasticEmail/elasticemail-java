@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 <a name="contactsImportPost"></a>
 # **contactsImportPost**
-> contactsImportPost(listName, encodingName, file)
+> contactsImportPost(listName, encodingName, _file)
 
 Upload Contacts
 
@@ -614,9 +614,9 @@ public class Example {
     ContactsApi apiInstance = new ContactsApi(defaultClient);
     String listName = "listName_example"; // String | Name of an existing list to add these contacts to
     String encodingName = "encodingName_example"; // String | In what encoding the file is uploaded
-    File file = new File("/path/to/file"); // File | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.contactsImportPost(listName, encodingName, file);
+      apiInstance.contactsImportPost(listName, encodingName, _file);
     } catch (ApiException e) {
       System.err.println("Exception when calling ContactsApi#contactsImportPost");
       System.err.println("Status code: " + e.getCode());
@@ -634,7 +634,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listName** | **String**| Name of an existing list to add these contacts to | [optional]
  **encodingName** | **String**| In what encoding the file is uploaded | [optional]
- **file** | **File**|  | [optional]
+ **_file** | **File**|  | [optional]
 
 ### Return type
 

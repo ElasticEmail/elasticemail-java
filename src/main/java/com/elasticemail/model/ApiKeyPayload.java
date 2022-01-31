@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Create a new ApiKey
  */
 @ApiModel(description = "Create a new ApiKey")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ApiKeyPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -55,6 +55,8 @@ public class ApiKeyPayload {
   @SerializedName(SERIALIZED_NAME_SUBACCOUNT)
   private String subaccount;
 
+  public ApiKeyPayload() { 
+  }
 
   public ApiKeyPayload name(String name) {
     

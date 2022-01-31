@@ -29,12 +29,14 @@ import java.io.IOException;
  * SubAccount settings
  */
 @ApiModel(description = "SubAccount settings")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class SubaccountSettingsInfo {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
   private SubaccountEmailSettings email;
 
+  public SubaccountSettingsInfo() { 
+  }
 
   public SubaccountSettingsInfo email(SubaccountEmailSettings email) {
     

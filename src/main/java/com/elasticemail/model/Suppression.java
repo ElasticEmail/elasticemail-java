@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * Suppression - Email returning Hard Bounces
  */
 @ApiModel(description = "Suppression - Email returning Hard Bounces")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class Suppression {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -48,6 +48,8 @@ public class Suppression {
   @SerializedName(SERIALIZED_NAME_DATE_UPDATED)
   private OffsetDateTime dateUpdated;
 
+  public Suppression() { 
+  }
 
   public Suppression email(String email) {
     

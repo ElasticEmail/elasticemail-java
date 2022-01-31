@@ -29,7 +29,7 @@ import java.io.IOException;
  * Optional A/X split campaign options
  */
 @ApiModel(description = "Optional A/X split campaign options")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class SplitOptions {
   public static final String SERIALIZED_NAME_OPTIMIZE_FOR = "OptimizeFor";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_FOR)
@@ -39,6 +39,8 @@ public class SplitOptions {
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_PERIOD_MINUTES)
   private Integer optimizePeriodMinutes;
 
+  public SplitOptions() { 
+  }
 
   public SplitOptions optimizeFor(SplitOptimizationType optimizeFor) {
     

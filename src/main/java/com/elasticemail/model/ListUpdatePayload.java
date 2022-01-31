@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListUpdatePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ListUpdatePayload {
   public static final String SERIALIZED_NAME_NEW_LIST_NAME = "NewListName";
   @SerializedName(SERIALIZED_NAME_NEW_LIST_NAME)
@@ -37,6 +37,8 @@ public class ListUpdatePayload {
   @SerializedName(SERIALIZED_NAME_ALLOW_UNSUBSCRIBE)
   private Boolean allowUnsubscribe;
 
+  public ListUpdatePayload() { 
+  }
 
   public ListUpdatePayload newListName(String newListName) {
     

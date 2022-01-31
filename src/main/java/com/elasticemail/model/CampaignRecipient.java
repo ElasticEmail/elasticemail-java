@@ -30,7 +30,7 @@ import java.util.List;
  * A set of lists and segments names to read recipients from
  */
 @ApiModel(description = "A set of lists and segments names to read recipients from")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class CampaignRecipient {
   public static final String SERIALIZED_NAME_LIST_NAMES = "ListNames";
   @SerializedName(SERIALIZED_NAME_LIST_NAMES)
@@ -40,6 +40,8 @@ public class CampaignRecipient {
   @SerializedName(SERIALIZED_NAME_SEGMENT_NAMES)
   private List<String> segmentNames = null;
 
+  public CampaignRecipient() { 
+  }
 
   public CampaignRecipient listNames(List<String> listNames) {
     

@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="suppressionsBouncesImportPost"></a>
 # **suppressionsBouncesImportPost**
-> suppressionsBouncesImportPost(file)
+> suppressionsBouncesImportPost(_file)
 
 Add Bounces Async
 
@@ -121,9 +121,9 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     SuppressionsApi apiInstance = new SuppressionsApi(defaultClient);
-    File file = new File("/path/to/file"); // File | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.suppressionsBouncesImportPost(file);
+      apiInstance.suppressionsBouncesImportPost(_file);
     } catch (ApiException e) {
       System.err.println("Exception when calling SuppressionsApi#suppressionsBouncesImportPost");
       System.err.println("Status code: " + e.getCode());
@@ -139,7 +139,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**|  | [optional]
+ **_file** | **File**|  | [optional]
 
 ### Return type
 
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 
 <a name="suppressionsComplaintsImportPost"></a>
 # **suppressionsComplaintsImportPost**
-> suppressionsComplaintsImportPost(file)
+> suppressionsComplaintsImportPost(_file)
 
 Add Complaints Async
 
@@ -468,9 +468,9 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     SuppressionsApi apiInstance = new SuppressionsApi(defaultClient);
-    File file = new File("/path/to/file"); // File | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.suppressionsComplaintsImportPost(file);
+      apiInstance.suppressionsComplaintsImportPost(_file);
     } catch (ApiException e) {
       System.err.println("Exception when calling SuppressionsApi#suppressionsComplaintsImportPost");
       System.err.println("Status code: " + e.getCode());
@@ -486,7 +486,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**|  | [optional]
+ **_file** | **File**|  | [optional]
 
 ### Return type
 
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 
 <a name="suppressionsUnsubscribesImportPost"></a>
 # **suppressionsUnsubscribesImportPost**
-> suppressionsUnsubscribesImportPost(file)
+> suppressionsUnsubscribesImportPost(_file)
 
 Add Unsubscribes Async
 
@@ -749,9 +749,9 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     SuppressionsApi apiInstance = new SuppressionsApi(defaultClient);
-    File file = new File("/path/to/file"); // File | 
+    File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.suppressionsUnsubscribesImportPost(file);
+      apiInstance.suppressionsUnsubscribesImportPost(_file);
     } catch (ApiException e) {
       System.err.println("Exception when calling SuppressionsApi#suppressionsUnsubscribesImportPost");
       System.err.println("Status code: " + e.getCode());
@@ -767,7 +767,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **File**|  | [optional]
+ **_file** | **File**|  | [optional]
 
 ### Return type
 

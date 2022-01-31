@@ -38,6 +38,8 @@ import java.util.Map;
 
 public class SuppressionsApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public SuppressionsApi() {
         this(Configuration.getDefaultApiClient());
@@ -55,6 +57,22 @@ public class SuppressionsApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for suppressionsBouncesGet
      * @param search Text fragment used for searching. (optional)
@@ -70,6 +88,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsBouncesGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -105,10 +137,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -183,7 +217,7 @@ public class SuppressionsApi {
     }
     /**
      * Build call for suppressionsBouncesImportPost
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -193,7 +227,21 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsBouncesImportPostCall(File file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call suppressionsBouncesImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -205,8 +253,8 @@ public class SuppressionsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (file != null) {
-            localVarFormParams.put("file", file);
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
         }
 
         final String[] localVarAccepts = {
@@ -221,17 +269,19 @@ public class SuppressionsApi {
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call suppressionsBouncesImportPostValidateBeforeCall(File file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call suppressionsBouncesImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = suppressionsBouncesImportPostCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsBouncesImportPostCall(_file, _callback);
         return localVarCall;
 
     }
@@ -239,7 +289,7 @@ public class SuppressionsApi {
     /**
      * Add Bounces Async
      * Add Bounced. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -247,14 +297,14 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public void suppressionsBouncesImportPost(File file) throws ApiException {
-        suppressionsBouncesImportPostWithHttpInfo(file);
+    public void suppressionsBouncesImportPost(File _file) throws ApiException {
+        suppressionsBouncesImportPostWithHttpInfo(_file);
     }
 
     /**
      * Add Bounces Async
      * Add Bounced. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -263,15 +313,15 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> suppressionsBouncesImportPostWithHttpInfo(File file) throws ApiException {
-        okhttp3.Call localVarCall = suppressionsBouncesImportPostValidateBeforeCall(file, null);
+    public ApiResponse<Void> suppressionsBouncesImportPostWithHttpInfo(File _file) throws ApiException {
+        okhttp3.Call localVarCall = suppressionsBouncesImportPostValidateBeforeCall(_file, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Add Bounces Async (asynchronously)
      * Add Bounced. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -281,9 +331,9 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsBouncesImportPostAsync(File file, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call suppressionsBouncesImportPostAsync(File _file, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = suppressionsBouncesImportPostValidateBeforeCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsBouncesImportPostValidateBeforeCall(_file, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -300,6 +350,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsBouncesPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = requestBody;
 
         // create path and map variables
@@ -323,10 +387,12 @@ public class SuppressionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -411,6 +477,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsByEmailDeleteCall(String email, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -435,10 +515,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -519,6 +601,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsByEmailGetCall(String email, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -543,10 +639,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -633,6 +731,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsComplaintsGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -668,10 +780,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -746,7 +860,7 @@ public class SuppressionsApi {
     }
     /**
      * Build call for suppressionsComplaintsImportPost
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -756,7 +870,21 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsComplaintsImportPostCall(File file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call suppressionsComplaintsImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -768,8 +896,8 @@ public class SuppressionsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (file != null) {
-            localVarFormParams.put("file", file);
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
         }
 
         final String[] localVarAccepts = {
@@ -784,17 +912,19 @@ public class SuppressionsApi {
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call suppressionsComplaintsImportPostValidateBeforeCall(File file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call suppressionsComplaintsImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = suppressionsComplaintsImportPostCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsComplaintsImportPostCall(_file, _callback);
         return localVarCall;
 
     }
@@ -802,7 +932,7 @@ public class SuppressionsApi {
     /**
      * Add Complaints Async
      * Add Complaints. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -810,14 +940,14 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public void suppressionsComplaintsImportPost(File file) throws ApiException {
-        suppressionsComplaintsImportPostWithHttpInfo(file);
+    public void suppressionsComplaintsImportPost(File _file) throws ApiException {
+        suppressionsComplaintsImportPostWithHttpInfo(_file);
     }
 
     /**
      * Add Complaints Async
      * Add Complaints. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -826,15 +956,15 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> suppressionsComplaintsImportPostWithHttpInfo(File file) throws ApiException {
-        okhttp3.Call localVarCall = suppressionsComplaintsImportPostValidateBeforeCall(file, null);
+    public ApiResponse<Void> suppressionsComplaintsImportPostWithHttpInfo(File _file) throws ApiException {
+        okhttp3.Call localVarCall = suppressionsComplaintsImportPostValidateBeforeCall(_file, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Add Complaints Async (asynchronously)
      * Add Complaints. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -844,9 +974,9 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsComplaintsImportPostAsync(File file, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call suppressionsComplaintsImportPostAsync(File _file, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = suppressionsComplaintsImportPostValidateBeforeCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsComplaintsImportPostValidateBeforeCall(_file, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -863,6 +993,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsComplaintsPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = requestBody;
 
         // create path and map variables
@@ -886,10 +1030,12 @@ public class SuppressionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -975,6 +1121,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1006,10 +1166,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1094,6 +1256,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsUnsubscribesGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1129,10 +1305,12 @@ public class SuppressionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1207,7 +1385,7 @@ public class SuppressionsApi {
     }
     /**
      * Build call for suppressionsUnsubscribesImportPost
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1217,7 +1395,21 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsUnsubscribesImportPostCall(File file, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call suppressionsUnsubscribesImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1229,8 +1421,8 @@ public class SuppressionsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (file != null) {
-            localVarFormParams.put("file", file);
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
         }
 
         final String[] localVarAccepts = {
@@ -1245,17 +1437,19 @@ public class SuppressionsApi {
             "multipart/form-data"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call suppressionsUnsubscribesImportPostValidateBeforeCall(File file, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call suppressionsUnsubscribesImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostCall(_file, _callback);
         return localVarCall;
 
     }
@@ -1263,7 +1457,7 @@ public class SuppressionsApi {
     /**
      * Add Unsubscribes Async
      * Add Unsubscribes. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1271,14 +1465,14 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public void suppressionsUnsubscribesImportPost(File file) throws ApiException {
-        suppressionsUnsubscribesImportPostWithHttpInfo(file);
+    public void suppressionsUnsubscribesImportPost(File _file) throws ApiException {
+        suppressionsUnsubscribesImportPostWithHttpInfo(_file);
     }
 
     /**
      * Add Unsubscribes Async
      * Add Unsubscribes. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1287,15 +1481,15 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> suppressionsUnsubscribesImportPostWithHttpInfo(File file) throws ApiException {
-        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostValidateBeforeCall(file, null);
+    public ApiResponse<Void> suppressionsUnsubscribesImportPostWithHttpInfo(File _file) throws ApiException {
+        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostValidateBeforeCall(_file, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Add Unsubscribes Async (asynchronously)
      * Add Unsubscribes. Required Access Level: ModifyContacts
-     * @param file  (optional)
+     * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1305,9 +1499,9 @@ public class SuppressionsApi {
         <tr><td> 202 </td><td> Accepted </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call suppressionsUnsubscribesImportPostAsync(File file, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call suppressionsUnsubscribesImportPostAsync(File _file, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostValidateBeforeCall(file, _callback);
+        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostValidateBeforeCall(_file, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -1324,6 +1518,20 @@ public class SuppressionsApi {
      </table>
      */
     public okhttp3.Call suppressionsUnsubscribesPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = requestBody;
 
         // create path and map variables
@@ -1347,10 +1555,12 @@ public class SuppressionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "apikey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")

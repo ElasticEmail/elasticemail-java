@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class Campaign {
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -55,6 +55,8 @@ public class Campaign {
   @SerializedName(SERIALIZED_NAME_OPTIONS)
   private CampaignOptions options;
 
+  public Campaign() { 
+  }
 
   public Campaign content(List<CampaignTemplate> content) {
     

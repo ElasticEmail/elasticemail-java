@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * MergeEmailPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class MergeEmailPayload {
   public static final String SERIALIZED_NAME_MERGE_FILE = "MergeFile";
   @SerializedName(SERIALIZED_NAME_MERGE_FILE)
@@ -44,6 +44,8 @@ public class MergeEmailPayload {
   @SerializedName(SERIALIZED_NAME_OPTIONS)
   private Options options;
 
+  public MergeEmailPayload() { 
+  }
 
   public MergeEmailPayload mergeFile(MessageAttachment mergeFile) {
     

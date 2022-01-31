@@ -30,7 +30,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
  * E-mail configuration
  */
 @ApiModel(description = "E-mail configuration")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class Options {
   public static final String SERIALIZED_NAME_TIME_OFFSET = "TimeOffset";
   @SerializedName(SERIALIZED_NAME_TIME_OFFSET)
@@ -56,6 +56,8 @@ public class Options {
   @SerializedName(SERIALIZED_NAME_TRACK_CLICKS)
   private Boolean trackClicks;
 
+  public Options() { 
+  }
 
   public Options timeOffset(Integer timeOffset) {
     

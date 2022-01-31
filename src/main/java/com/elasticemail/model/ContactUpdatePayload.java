@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * ContactUpdatePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ContactUpdatePayload {
   public static final String SERIALIZED_NAME_FIRST_NAME = "FirstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
@@ -44,6 +44,8 @@ public class ContactUpdatePayload {
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
   private Map<String, String> customFields = null;
 
+  public ContactUpdatePayload() { 
+  }
 
   public ContactUpdatePayload firstName(String firstName) {
     

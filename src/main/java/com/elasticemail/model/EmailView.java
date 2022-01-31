@@ -28,7 +28,7 @@ import java.io.IOException;
  * Email details formatted in json
  */
 @ApiModel(description = "Email details formatted in json")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class EmailView {
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -42,6 +42,8 @@ public class EmailView {
   @SerializedName(SERIALIZED_NAME_FROM)
   private String from;
 
+  public EmailView() { 
+  }
 
   public EmailView body(String body) {
     

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Utm marketing data to be attached to every link in this e-mail.
  */
 @ApiModel(description = "Utm marketing data to be attached to every link in this e-mail.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class Utm {
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -46,6 +46,8 @@ public class Utm {
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
+  public Utm() { 
+  }
 
   public Utm source(String source) {
     

@@ -23,12 +23,13 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 /**
  * Settings related to sending emails
  */
 @ApiModel(description = "Settings related to sending emails")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class SubaccountEmailSettingsPayload {
   public static final String SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS = "RequiresEmailCredits";
   @SerializedName(SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS)
@@ -54,6 +55,12 @@ public class SubaccountEmailSettingsPayload {
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
   private String poolName;
 
+  public static final String SERIALIZED_NAME_VALID_SENDER_DOMAIN_ONLY = "ValidSenderDomainOnly";
+  @SerializedName(SERIALIZED_NAME_VALID_SENDER_DOMAIN_ONLY)
+  private Boolean validSenderDomainOnly;
+
+  public SubaccountEmailSettingsPayload() { 
+  }
 
   public SubaccountEmailSettingsPayload requiresEmailCredits(Boolean requiresEmailCredits) {
     
@@ -193,6 +200,29 @@ public class SubaccountEmailSettingsPayload {
   }
 
 
+  public SubaccountEmailSettingsPayload validSenderDomainOnly(Boolean validSenderDomainOnly) {
+    
+    this.validSenderDomainOnly = validSenderDomainOnly;
+    return this;
+  }
+
+   /**
+   * Get validSenderDomainOnly
+   * @return validSenderDomainOnly
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getValidSenderDomainOnly() {
+    return validSenderDomainOnly;
+  }
+
+
+  public void setValidSenderDomainOnly(Boolean validSenderDomainOnly) {
+    this.validSenderDomainOnly = validSenderDomainOnly;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -207,12 +237,24 @@ public class SubaccountEmailSettingsPayload {
         Objects.equals(this.dailySendLimit, subaccountEmailSettingsPayload.dailySendLimit) &&
         Objects.equals(this.maxContacts, subaccountEmailSettingsPayload.maxContacts) &&
         Objects.equals(this.enablePrivateIPPurchase, subaccountEmailSettingsPayload.enablePrivateIPPurchase) &&
-        Objects.equals(this.poolName, subaccountEmailSettingsPayload.poolName);
+        Objects.equals(this.poolName, subaccountEmailSettingsPayload.poolName) &&
+        Objects.equals(this.validSenderDomainOnly, subaccountEmailSettingsPayload.validSenderDomainOnly);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requiresEmailCredits, emailSizeLimit, dailySendLimit, maxContacts, enablePrivateIPPurchase, poolName);
+    return Objects.hash(requiresEmailCredits, emailSizeLimit, dailySendLimit, maxContacts, enablePrivateIPPurchase, poolName, validSenderDomainOnly);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -225,6 +267,7 @@ public class SubaccountEmailSettingsPayload {
     sb.append("    maxContacts: ").append(toIndentedString(maxContacts)).append("\n");
     sb.append("    enablePrivateIPPurchase: ").append(toIndentedString(enablePrivateIPPurchase)).append("\n");
     sb.append("    poolName: ").append(toIndentedString(poolName)).append("\n");
+    sb.append("    validSenderDomainOnly: ").append(toIndentedString(validSenderDomainOnly)).append("\n");
     sb.append("}");
     return sb.toString();
   }

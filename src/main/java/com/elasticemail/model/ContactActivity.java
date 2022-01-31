@@ -29,7 +29,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ContactActivity
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ContactActivity {
   public static final String SERIALIZED_NAME_TOTAL_SENT = "TotalSent";
   @SerializedName(SERIALIZED_NAME_TOTAL_SENT)
@@ -75,6 +75,8 @@ public class ContactActivity {
   @SerializedName(SERIALIZED_NAME_FRIENDLY_ERROR_MESSAGE)
   private String friendlyErrorMessage;
 
+  public ContactActivity() { 
+  }
 
   public ContactActivity totalSent(Integer totalSent) {
     

@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Status information of the specified email
  */
 @ApiModel(description = "Status information of the specified email")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class EmailStatus {
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -81,6 +81,8 @@ public class EmailStatus {
   @SerializedName(SERIALIZED_NAME_ENVELOPE_FROM)
   private String envelopeFrom;
 
+  public EmailStatus() { 
+  }
 
   public EmailStatus from(String from) {
     

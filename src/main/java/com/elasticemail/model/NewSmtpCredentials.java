@@ -33,7 +33,7 @@ import org.threeten.bp.OffsetDateTime;
  * Newly generated SMTP Credentials with Token
  */
 @ApiModel(description = "Newly generated SMTP Credentials with Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class NewSmtpCredentials {
   public static final String SERIALIZED_NAME_TOKEN = "Token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
@@ -63,6 +63,8 @@ public class NewSmtpCredentials {
   @SerializedName(SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE)
   private List<String> restrictAccessToIPRange = null;
 
+  public NewSmtpCredentials() { 
+  }
 
   public NewSmtpCredentials token(String token) {
     

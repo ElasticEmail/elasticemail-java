@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
  * File information
  */
 @ApiModel(description = "File information")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class FileInfo {
   public static final String SERIALIZED_NAME_FILE_NAME = "FileName";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
@@ -52,6 +52,8 @@ public class FileInfo {
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
   private String contentType;
 
+  public FileInfo() { 
+  }
 
   public FileInfo fileName(String fileName) {
     

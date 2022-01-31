@@ -37,7 +37,7 @@ import org.threeten.bp.OffsetDateTime;
  * Contact
  */
 @ApiModel(description = "Contact")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class Contact {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -83,6 +83,8 @@ public class Contact {
   @SerializedName(SERIALIZED_NAME_ACTIVITY)
   private ContactActivity activity;
 
+  public Contact() { 
+  }
 
   public Contact email(String email) {
     

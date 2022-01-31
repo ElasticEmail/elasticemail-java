@@ -35,7 +35,7 @@ import java.util.Map;
  * Proper e-mail content
  */
 @ApiModel(description = "Proper e-mail content")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class EmailContent {
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -85,6 +85,8 @@ public class EmailContent {
   @SerializedName(SERIALIZED_NAME_UTM)
   private Utm utm;
 
+  public EmailContent() { 
+  }
 
   public EmailContent body(List<BodyPart> body) {
     

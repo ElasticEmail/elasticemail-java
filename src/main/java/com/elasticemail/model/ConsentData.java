@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * ConsentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ConsentData {
   public static final String SERIALIZED_NAME_CONSENT_I_P = "ConsentIP";
   @SerializedName(SERIALIZED_NAME_CONSENT_I_P)
@@ -44,6 +44,8 @@ public class ConsentData {
   @SerializedName(SERIALIZED_NAME_CONSENT_TRACKING)
   private ConsentTracking consentTracking = ConsentTracking.UNKNOWN;
 
+  public ConsentData() { 
+  }
 
   public ConsentData consentIP(String consentIP) {
     

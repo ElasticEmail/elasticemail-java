@@ -32,7 +32,7 @@ import java.util.Map;
 /**
  * ContactPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class ContactPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -58,6 +58,8 @@ public class ContactPayload {
   @SerializedName(SERIALIZED_NAME_CONSENT)
   private ConsentData consent;
 
+  public ContactPayload() { 
+  }
 
   public ContactPayload email(String email) {
     

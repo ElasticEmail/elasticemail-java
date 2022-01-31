@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
  * Detailed information about SubAccount.
  */
 @ApiModel(description = "Detailed information about SubAccount.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class SubAccountInfo {
   public static final String SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D = "PublicAccountID";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D)
@@ -69,6 +69,8 @@ public class SubAccountInfo {
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
   private Integer contactsCount;
 
+  public SubAccountInfo() { 
+  }
 
   public SubAccountInfo publicAccountID(String publicAccountID) {
     

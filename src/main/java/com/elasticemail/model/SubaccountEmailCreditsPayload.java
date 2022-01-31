@@ -28,7 +28,7 @@ import java.io.IOException;
  * A change to SubAccount email credits pool, with an additional note.
  */
 @ApiModel(description = "A change to SubAccount email credits pool, with an additional note.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-11-10T10:01:55.764174Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
 public class SubaccountEmailCreditsPayload {
   public static final String SERIALIZED_NAME_CREDITS = "Credits";
   @SerializedName(SERIALIZED_NAME_CREDITS)
@@ -38,6 +38,8 @@ public class SubaccountEmailCreditsPayload {
   @SerializedName(SERIALIZED_NAME_NOTES)
   private String notes;
 
+  public SubaccountEmailCreditsPayload() { 
+  }
 
   public SubaccountEmailCreditsPayload credits(Integer credits) {
     
