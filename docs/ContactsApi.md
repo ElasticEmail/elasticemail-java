@@ -2,21 +2,20 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**contactsByEmailDelete**](ContactsApi.md#contactsByEmailDelete) | **DELETE** /contacts/{email} | Delete Contact
-[**contactsByEmailGet**](ContactsApi.md#contactsByEmailGet) | **GET** /contacts/{email} | Load Contact
-[**contactsByEmailHistoryGet**](ContactsApi.md#contactsByEmailHistoryGet) | **GET** /contacts/{email}/history | Load History
-[**contactsByEmailPut**](ContactsApi.md#contactsByEmailPut) | **PUT** /contacts/{email} | Update Contact
-[**contactsDeletePost**](ContactsApi.md#contactsDeletePost) | **POST** /contacts/delete | Delete Contacts Bulk
-[**contactsExportByIdStatusGet**](ContactsApi.md#contactsExportByIdStatusGet) | **GET** /contacts/export/{id}/status | Check Export Status
-[**contactsExportPost**](ContactsApi.md#contactsExportPost) | **POST** /contacts/export | Export Contacts
-[**contactsGet**](ContactsApi.md#contactsGet) | **GET** /contacts | Load Contacts
-[**contactsImportPost**](ContactsApi.md#contactsImportPost) | **POST** /contacts/import | Upload Contacts
-[**contactsPost**](ContactsApi.md#contactsPost) | **POST** /contacts | Add Contact
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**contactsByEmailDelete**](ContactsApi.md#contactsByEmailDelete) | **DELETE** /contacts/{email} | Delete Contact |
+| [**contactsByEmailGet**](ContactsApi.md#contactsByEmailGet) | **GET** /contacts/{email} | Load Contact |
+| [**contactsByEmailPut**](ContactsApi.md#contactsByEmailPut) | **PUT** /contacts/{email} | Update Contact |
+| [**contactsDeletePost**](ContactsApi.md#contactsDeletePost) | **POST** /contacts/delete | Delete Contacts Bulk |
+| [**contactsExportByIdStatusGet**](ContactsApi.md#contactsExportByIdStatusGet) | **GET** /contacts/export/{id}/status | Check Export Status |
+| [**contactsExportPost**](ContactsApi.md#contactsExportPost) | **POST** /contacts/export | Export Contacts |
+| [**contactsGet**](ContactsApi.md#contactsGet) | **GET** /contacts | Load Contacts |
+| [**contactsImportPost**](ContactsApi.md#contactsImportPost) | **POST** /contacts/import | Upload Contacts |
+| [**contactsPost**](ContactsApi.md#contactsPost) | **POST** /contacts | Add Contact |
 
 
-<a name="contactsByEmailDelete"></a>
+<a id="contactsByEmailDelete"></a>
 # **contactsByEmailDelete**
 > contactsByEmailDelete(email)
 
@@ -62,9 +61,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Proper email address. | |
 
 ### Return type
 
@@ -82,9 +81,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsByEmailGet"></a>
+<a id="contactsByEmailGet"></a>
 # **contactsByEmailGet**
 > Contact contactsByEmailGet(email)
 
@@ -131,9 +130,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Proper email address. | |
 
 ### Return type
 
@@ -151,82 +150,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsByEmailHistoryGet"></a>
-# **contactsByEmailHistoryGet**
-> List&lt;ContactHistory&gt; contactsByEmailHistoryGet(email, limit, offset)
-
-Load History
-
-Returns detailed history of specified Contact. Required Access Level: ViewContacts
-
-### Example
-```java
-// Import classes:
-import com.elasticemail.client.ApiClient;
-import com.elasticemail.client.ApiException;
-import com.elasticemail.client.Configuration;
-import com.elasticemail.client.auth.*;
-import com.elasticemail.client.models.*;
-import com.elasticemail.api.ContactsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.elasticemail.com/v4");
-    
-    // Configure API key authorization: apikey
-    ApiKeyAuth apikey = (ApiKeyAuth) defaultClient.getAuthentication("apikey");
-    apikey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //apikey.setApiKeyPrefix("Token");
-
-    ContactsApi apiInstance = new ContactsApi(defaultClient);
-    String email = "mail@example.com"; // String | Proper email address.
-    Integer limit = 100; // Integer | Maximum number of returned items.
-    Integer offset = 20; // Integer | How many items should be returned ahead.
-    try {
-      List<ContactHistory> result = apiInstance.contactsByEmailHistoryGet(email, limit, offset);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling ContactsApi#contactsByEmailHistoryGet");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
-
-### Return type
-
-[**List&lt;ContactHistory&gt;**](ContactHistory.md)
-
-### Authorization
-
-[apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-
-<a name="contactsByEmailPut"></a>
+<a id="contactsByEmailPut"></a>
 # **contactsByEmailPut**
 > Contact contactsByEmailPut(email, contactUpdatePayload)
 
@@ -274,10 +200,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
- **contactUpdatePayload** | [**ContactUpdatePayload**](ContactUpdatePayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Proper email address. | |
+| **contactUpdatePayload** | [**ContactUpdatePayload**](ContactUpdatePayload.md)|  | |
 
 ### Return type
 
@@ -295,9 +221,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsDeletePost"></a>
+<a id="contactsDeletePost"></a>
 # **contactsDeletePost**
 > contactsDeletePost(emailsPayload)
 
@@ -343,9 +269,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **emailsPayload** | [**EmailsPayload**](EmailsPayload.md)| Provide either rule or a list of emails, not both. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **emailsPayload** | [**EmailsPayload**](EmailsPayload.md)| Provide either rule or a list of emails, not both. | |
 
 ### Return type
 
@@ -363,9 +289,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsExportByIdStatusGet"></a>
+<a id="contactsExportByIdStatusGet"></a>
 # **contactsExportByIdStatusGet**
 > ExportStatus contactsExportByIdStatusGet(id)
 
@@ -412,9 +338,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the exported file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID of the exported file | |
 
 ### Return type
 
@@ -432,9 +358,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsExportPost"></a>
+<a id="contactsExportPost"></a>
 # **contactsExportPost**
 > ExportLink contactsExportPost(fileFormat, rule, emails, compressionFormat, fileName)
 
@@ -485,13 +411,13 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
- **rule** | **String**| Query used for filtering. | [optional]
- **emails** | [**List&lt;String&gt;**](String.md)| Comma delimited list of contact emails | [optional]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
- **fileName** | **String**| Name of your file including extension. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json] |
+| **rule** | **String**| Query used for filtering. | [optional] |
+| **emails** | [**List&lt;String&gt;**](String.md)| Comma delimited list of contact emails | [optional] |
+| **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip] |
+| **fileName** | **String**| Name of your file including extension. | [optional] |
 
 ### Return type
 
@@ -509,9 +435,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="contactsGet"></a>
+<a id="contactsGet"></a>
 # **contactsGet**
 > List&lt;Contact&gt; contactsGet(limit, offset)
 
@@ -559,10 +485,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -580,11 +506,11 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="contactsImportPost"></a>
+<a id="contactsImportPost"></a>
 # **contactsImportPost**
-> contactsImportPost(listName, encodingName, _file)
+> contactsImportPost(listName, encodingName, fileUrl, _file)
 
 Upload Contacts
 
@@ -614,9 +540,10 @@ public class Example {
     ContactsApi apiInstance = new ContactsApi(defaultClient);
     String listName = "listName_example"; // String | Name of an existing list to add these contacts to
     String encodingName = "encodingName_example"; // String | In what encoding the file is uploaded
+    String fileUrl = "fileUrl_example"; // String | Optional url of csv to import
     File _file = new File("/path/to/file"); // File | 
     try {
-      apiInstance.contactsImportPost(listName, encodingName, _file);
+      apiInstance.contactsImportPost(listName, encodingName, fileUrl, _file);
     } catch (ApiException e) {
       System.err.println("Exception when calling ContactsApi#contactsImportPost");
       System.err.println("Status code: " + e.getCode());
@@ -630,11 +557,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **listName** | **String**| Name of an existing list to add these contacts to | [optional]
- **encodingName** | **String**| In what encoding the file is uploaded | [optional]
- **_file** | **File**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **listName** | **String**| Name of an existing list to add these contacts to | [optional] |
+| **encodingName** | **String**| In what encoding the file is uploaded | [optional] |
+| **fileUrl** | **String**| Optional url of csv to import | [optional] |
+| **_file** | **File**|  | [optional] |
 
 ### Return type
 
@@ -652,9 +580,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="contactsPost"></a>
+<a id="contactsPost"></a>
 # **contactsPost**
 > List&lt;Contact&gt; contactsPost(contactPayload, listnames)
 
@@ -702,10 +630,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contactPayload** | [**List&lt;ContactPayload&gt;**](ContactPayload.md)|  |
- **listnames** | [**List&lt;String&gt;**](String.md)| Names of lists to which the uploaded contacts should be added to | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **contactPayload** | [**List&lt;ContactPayload&gt;**](ContactPayload.md)|  | |
+| **listnames** | [**List&lt;String&gt;**](String.md)| Names of lists to which the uploaded contacts should be added to | [optional] |
 
 ### Return type
 
@@ -723,5 +651,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

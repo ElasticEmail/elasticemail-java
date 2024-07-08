@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,22 +14,43 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Settings related to sending emails
  */
-@ApiModel(description = "Settings related to sending emails")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SubaccountEmailSettings {
   public static final String SERIALIZED_NAME_MONTHLY_REFILL_CREDITS = "MonthlyRefillCredits";
   @SerializedName(SERIALIZED_NAME_MONTHLY_REFILL_CREDITS)
@@ -63,26 +84,22 @@ public class SubaccountEmailSettings {
   @SerializedName(SERIALIZED_NAME_VALID_SENDER_DOMAIN_ONLY)
   private Boolean validSenderDomainOnly;
 
-  public SubaccountEmailSettings() { 
+  public SubaccountEmailSettings() {
   }
 
   public SubaccountEmailSettings monthlyRefillCredits(Integer monthlyRefillCredits) {
-    
     this.monthlyRefillCredits = monthlyRefillCredits;
     return this;
   }
 
-   /**
+  /**
    * Amount of credits added to Account automatically
    * @return monthlyRefillCredits
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Amount of credits added to Account automatically")
-
   public Integer getMonthlyRefillCredits() {
     return monthlyRefillCredits;
   }
-
 
   public void setMonthlyRefillCredits(Integer monthlyRefillCredits) {
     this.monthlyRefillCredits = monthlyRefillCredits;
@@ -90,22 +107,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings requiresEmailCredits(Boolean requiresEmailCredits) {
-    
     this.requiresEmailCredits = requiresEmailCredits;
     return this;
   }
 
-   /**
+  /**
    * True, if Account needs credits to send emails. Otherwise, false
    * @return requiresEmailCredits
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "True, if Account needs credits to send emails. Otherwise, false")
-
   public Boolean getRequiresEmailCredits() {
     return requiresEmailCredits;
   }
-
 
   public void setRequiresEmailCredits(Boolean requiresEmailCredits) {
     this.requiresEmailCredits = requiresEmailCredits;
@@ -113,22 +126,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings emailSizeLimit(Integer emailSizeLimit) {
-    
     this.emailSizeLimit = emailSizeLimit;
     return this;
   }
 
-   /**
+  /**
    * Maximum size of email including attachments in MB&#39;s
    * @return emailSizeLimit
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "10", value = "Maximum size of email including attachments in MB's")
-
   public Integer getEmailSizeLimit() {
     return emailSizeLimit;
   }
-
 
   public void setEmailSizeLimit(Integer emailSizeLimit) {
     this.emailSizeLimit = emailSizeLimit;
@@ -136,22 +145,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings dailySendLimit(Integer dailySendLimit) {
-    
     this.dailySendLimit = dailySendLimit;
     return this;
   }
 
-   /**
+  /**
    * Amount of emails Account can send daily
    * @return dailySendLimit
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "100000", value = "Amount of emails Account can send daily")
-
   public Integer getDailySendLimit() {
     return dailySendLimit;
   }
-
 
   public void setDailySendLimit(Integer dailySendLimit) {
     this.dailySendLimit = dailySendLimit;
@@ -159,22 +164,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings maxContacts(Integer maxContacts) {
-    
     this.maxContacts = maxContacts;
     return this;
   }
 
-   /**
+  /**
    * Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used.
    * @return maxContacts
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Maximum number of contacts the Account can have. 0 means that parent account's limit is used.")
-
   public Integer getMaxContacts() {
     return maxContacts;
   }
-
 
   public void setMaxContacts(Integer maxContacts) {
     this.maxContacts = maxContacts;
@@ -182,22 +183,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings enablePrivateIPPurchase(Boolean enablePrivateIPPurchase) {
-    
     this.enablePrivateIPPurchase = enablePrivateIPPurchase;
     return this;
   }
 
-   /**
+  /**
    * Can the SubAccount purchase Private IP for themselves
    * @return enablePrivateIPPurchase
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Can the SubAccount purchase Private IP for themselves")
-
   public Boolean getEnablePrivateIPPurchase() {
     return enablePrivateIPPurchase;
   }
-
 
   public void setEnablePrivateIPPurchase(Boolean enablePrivateIPPurchase) {
     this.enablePrivateIPPurchase = enablePrivateIPPurchase;
@@ -205,22 +202,18 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings poolName(String poolName) {
-    
     this.poolName = poolName;
     return this;
   }
 
-   /**
+  /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My Custom Pool", value = "Name of your custom IP Pool to be used in the sending process")
-
   public String getPoolName() {
     return poolName;
   }
-
 
   public void setPoolName(String poolName) {
     this.poolName = poolName;
@@ -228,26 +221,23 @@ public class SubaccountEmailSettings {
 
 
   public SubaccountEmailSettings validSenderDomainOnly(Boolean validSenderDomainOnly) {
-    
     this.validSenderDomainOnly = validSenderDomainOnly;
     return this;
   }
 
-   /**
+  /**
    * Get validSenderDomainOnly
    * @return validSenderDomainOnly
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public Boolean getValidSenderDomainOnly() {
     return validSenderDomainOnly;
   }
 
-
   public void setValidSenderDomainOnly(Boolean validSenderDomainOnly) {
     this.validSenderDomainOnly = validSenderDomainOnly;
   }
+
 
 
   @Override
@@ -312,5 +302,99 @@ public class SubaccountEmailSettings {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("MonthlyRefillCredits");
+    openapiFields.add("RequiresEmailCredits");
+    openapiFields.add("EmailSizeLimit");
+    openapiFields.add("DailySendLimit");
+    openapiFields.add("MaxContacts");
+    openapiFields.add("EnablePrivateIPPurchase");
+    openapiFields.add("PoolName");
+    openapiFields.add("ValidSenderDomainOnly");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettings
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SubaccountEmailSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SubaccountEmailSettings is not found in the empty JSON string", SubaccountEmailSettings.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!SubaccountEmailSettings.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SubaccountEmailSettings` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("PoolName") != null && !jsonObj.get("PoolName").isJsonNull()) && !jsonObj.get("PoolName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `PoolName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("PoolName").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SubaccountEmailSettings.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SubaccountEmailSettings' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SubaccountEmailSettings> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SubaccountEmailSettings.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SubaccountEmailSettings>() {
+           @Override
+           public void write(JsonWriter out, SubaccountEmailSettings value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SubaccountEmailSettings read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of SubaccountEmailSettings given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubaccountEmailSettings
+   * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettings
+   */
+  public static SubaccountEmailSettings fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SubaccountEmailSettings.class);
+  }
+
+  /**
+   * Convert an instance of SubaccountEmailSettings to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

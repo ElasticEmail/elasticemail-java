@@ -2,21 +2,21 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**verificationsByEmailDelete**](VerificationsApi.md#verificationsByEmailDelete) | **DELETE** /verifications/{email} | Delete Email Verification Result
-[**verificationsByEmailGet**](VerificationsApi.md#verificationsByEmailGet) | **GET** /verifications/{email} | Get Email Verification Result
-[**verificationsByEmailPost**](VerificationsApi.md#verificationsByEmailPost) | **POST** /verifications/{email} | Verify Email
-[**verificationsFilesByIdDelete**](VerificationsApi.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
-[**verificationsFilesByIdResultDownloadGet**](VerificationsApi.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
-[**verificationsFilesByIdResultGet**](VerificationsApi.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-[**verificationsFilesByIdVerificationPost**](VerificationsApi.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification
-[**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
-[**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
-[**verificationsGet**](VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**verificationsByEmailDelete**](VerificationsApi.md#verificationsByEmailDelete) | **DELETE** /verifications/{email} | Delete Email Verification Result |
+| [**verificationsByEmailGet**](VerificationsApi.md#verificationsByEmailGet) | **GET** /verifications/{email} | Get Email Verification Result |
+| [**verificationsByEmailPost**](VerificationsApi.md#verificationsByEmailPost) | **POST** /verifications/{email} | Verify Email |
+| [**verificationsFilesByIdDelete**](VerificationsApi.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result |
+| [**verificationsFilesByIdResultDownloadGet**](VerificationsApi.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result |
+| [**verificationsFilesByIdResultGet**](VerificationsApi.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result |
+| [**verificationsFilesByIdVerificationPost**](VerificationsApi.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification |
+| [**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails |
+| [**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results |
+| [**verificationsGet**](VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results |
 
 
-<a name="verificationsByEmailDelete"></a>
+<a id="verificationsByEmailDelete"></a>
 # **verificationsByEmailDelete**
 > verificationsByEmailDelete(email)
 
@@ -62,9 +62,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address to verification |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address to verification | |
 
 ### Return type
 
@@ -82,15 +82,15 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsByEmailGet"></a>
+<a id="verificationsByEmailGet"></a>
 # **verificationsByEmailGet**
 > EmailValidationResult verificationsByEmailGet(email)
 
 Get Email Verification Result
 
-Returns a result of verified email. Required Access Level: ViewEmailVerifications
+Returns a result of verified email. Required Access Level: VerifyEmails
 
 ### Example
 ```java
@@ -131,9 +131,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address to view verification result of |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address to view verification result of | |
 
 ### Return type
 
@@ -151,9 +151,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsByEmailPost"></a>
+<a id="verificationsByEmailPost"></a>
 # **verificationsByEmailPost**
 > EmailValidationResult verificationsByEmailPost(email)
 
@@ -200,9 +200,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address to verify |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address to verify | |
 
 ### Return type
 
@@ -220,9 +220,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsFilesByIdDelete"></a>
+<a id="verificationsFilesByIdDelete"></a>
 # **verificationsFilesByIdDelete**
 > verificationsFilesByIdDelete(id)
 
@@ -268,9 +268,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the exported file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID of the exported file | |
 
 ### Return type
 
@@ -288,9 +288,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsFilesByIdResultDownloadGet"></a>
+<a id="verificationsFilesByIdResultDownloadGet"></a>
 # **verificationsFilesByIdResultDownloadGet**
 > File verificationsFilesByIdResultDownloadGet(id)
 
@@ -337,9 +337,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Verification ID to download |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| Verification ID to download | |
 
 ### Return type
 
@@ -352,20 +352,20 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/_*
+ - **Accept**: application/*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | A ZIP file with verification details |  -  |
+| **200** | A ZIP file with verification details |  -  |
 
-<a name="verificationsFilesByIdResultGet"></a>
+<a id="verificationsFilesByIdResultGet"></a>
 # **verificationsFilesByIdResultGet**
 > VerificationFileResultDetails verificationsFilesByIdResultGet(id, limit, offset)
 
 Get Detailed File Verification Result
 
-Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
+Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
 
 ### Example
 ```java
@@ -408,11 +408,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the Verification to display status of |
- **limit** | **Integer**| Maximum number of returned email verification results | [optional]
- **offset** | **Integer**| How many result items should be returned ahead | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID of the Verification to display status of | |
+| **limit** | **Integer**| Maximum number of returned email verification results | [optional] |
+| **offset** | **Integer**| How many result items should be returned ahead | [optional] |
 
 ### Return type
 
@@ -430,9 +430,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsFilesByIdVerificationPost"></a>
+<a id="verificationsFilesByIdVerificationPost"></a>
 # **verificationsFilesByIdVerificationPost**
 > verificationsFilesByIdVerificationPost(id)
 
@@ -478,9 +478,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| File ID to start verification |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| File ID to start verification | |
 
 ### Return type
 
@@ -498,9 +498,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsFilesPost"></a>
+<a id="verificationsFilesPost"></a>
 # **verificationsFilesPost**
 > VerificationFileResult verificationsFilesPost(_file)
 
@@ -547,9 +547,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **_file** | **File**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**|  | [optional] |
 
 ### Return type
 
@@ -567,15 +567,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsFilesResultGet"></a>
+<a id="verificationsFilesResultGet"></a>
 # **verificationsFilesResultGet**
 > List&lt;VerificationFileResult&gt; verificationsFilesResultGet()
 
 Get Files Verification Results
 
-Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
+Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
 
 ### Example
 ```java
@@ -632,15 +632,15 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="verificationsGet"></a>
+<a id="verificationsGet"></a>
 # **verificationsGet**
 > List&lt;EmailValidationResult&gt; verificationsGet(limit, offset)
 
 Get Emails Verification Results
 
-Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
+Returns a results of all verified single emails. Required Access Level: VerifyEmails
 
 ### Example
 ```java
@@ -682,10 +682,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -703,5 +703,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

@@ -5,11 +5,15 @@
 ## Enum
 
 
-* `RAWHTML` (value: `"RawHTML"`)
+* `RAW_HTML` (value: `"RawHTML"`)
 
-* `DRAGDROPEDITOR` (value: `"DragDropEditor"`)
+* `DRAG_DROP_EDITOR` (value: `"DragDropEditor"`)
 
-* `LANDINGPAGEEDITOR` (value: `"LandingPageEditor"`)
+* `LANDING_PAGE_EDITOR` (value: `"LandingPageEditor"`)
+
+* `TEMPLATE_EDITOR` (value: `"TemplateEditor"`)
+
+* `FORM_TEMPLATE` (value: `"FormTemplate"`)
 
 
 

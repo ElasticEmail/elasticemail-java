@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.EventType;
 import com.elasticemail.model.MessageCategory;
 import com.google.gson.TypeAdapter;
@@ -22,17 +21,39 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Detailed information about message recipient
  */
-@ApiModel(description = "Detailed information about message recipient")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RecipientEvent {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -86,26 +107,22 @@ public class RecipientEvent {
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
   private String poolName;
 
-  public RecipientEvent() { 
+  public RecipientEvent() {
   }
 
   public RecipientEvent transactionID(String transactionID) {
-    
     this.transactionID = transactionID;
     return this;
   }
 
-   /**
+  /**
    * ID number of transaction
    * @return transactionID
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "TransactionID", value = "ID number of transaction")
-
   public String getTransactionID() {
     return transactionID;
   }
-
 
   public void setTransactionID(String transactionID) {
     this.transactionID = transactionID;
@@ -113,22 +130,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent msgID(String msgID) {
-    
     this.msgID = msgID;
     return this;
   }
 
-   /**
+  /**
    * ID number of selected message.
    * @return msgID
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "ABCDE_9RPhSWiaJq_ab1g1", value = "ID number of selected message.")
-
   public String getMsgID() {
     return msgID;
   }
-
 
   public void setMsgID(String msgID) {
     this.msgID = msgID;
@@ -136,22 +149,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent fromEmail(String fromEmail) {
-    
     this.fromEmail = fromEmail;
     return this;
   }
 
-   /**
+  /**
    * Default From: email address.
    * @return fromEmail
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "sender@yourdomain.com", value = "Default From: email address.")
-
   public String getFromEmail() {
     return fromEmail;
   }
-
 
   public void setFromEmail(String fromEmail) {
     this.fromEmail = fromEmail;
@@ -159,22 +168,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent to(String to) {
-    
     this.to = to;
     return this;
   }
 
-   /**
+  /**
    * Ending date for search in YYYY-MM-DDThh:mm:ss format.
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "2001-01-01T01:01:01", value = "Ending date for search in YYYY-MM-DDThh:mm:ss format.")
-
   public String getTo() {
     return to;
   }
-
 
   public void setTo(String to) {
     this.to = to;
@@ -182,22 +187,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent subject(String subject) {
-    
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Hello!", value = "Default subject of email.")
-
   public String getSubject() {
     return subject;
   }
-
 
   public void setSubject(String subject) {
     this.subject = subject;
@@ -205,22 +206,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent eventType(EventType eventType) {
-    
     this.eventType = eventType;
     return this;
   }
 
-   /**
+  /**
    * Get eventType
    * @return eventType
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public EventType getEventType() {
     return eventType;
   }
-
 
   public void setEventType(EventType eventType) {
     this.eventType = eventType;
@@ -228,22 +225,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent eventDate(OffsetDateTime eventDate) {
-    
     this.eventDate = eventDate;
     return this;
   }
 
-   /**
+  /**
    * Creation date
    * @return eventDate
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Creation date")
-
   public OffsetDateTime getEventDate() {
     return eventDate;
   }
-
 
   public void setEventDate(OffsetDateTime eventDate) {
     this.eventDate = eventDate;
@@ -251,22 +244,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent channelName(String channelName) {
-    
     this.channelName = channelName;
     return this;
   }
 
-   /**
+  /**
    * Name of selected channel.
    * @return channelName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Channel01", value = "Name of selected channel.")
-
   public String getChannelName() {
     return channelName;
   }
-
 
   public void setChannelName(String channelName) {
     this.channelName = channelName;
@@ -274,22 +263,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent messageCategory(MessageCategory messageCategory) {
-    
     this.messageCategory = messageCategory;
     return this;
   }
 
-   /**
+  /**
    * Get messageCategory
    * @return messageCategory
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public MessageCategory getMessageCategory() {
     return messageCategory;
   }
-
 
   public void setMessageCategory(MessageCategory messageCategory) {
     this.messageCategory = messageCategory;
@@ -297,22 +282,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent nextTryOn(OffsetDateTime nextTryOn) {
-    
     this.nextTryOn = nextTryOn;
     return this;
   }
 
-   /**
+  /**
    * Date of next try
    * @return nextTryOn
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of next try")
-
   public OffsetDateTime getNextTryOn() {
     return nextTryOn;
   }
-
 
   public void setNextTryOn(OffsetDateTime nextTryOn) {
     this.nextTryOn = nextTryOn;
@@ -320,22 +301,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent message(String message) {
-    
     this.message = message;
     return this;
   }
 
-   /**
+  /**
    * Content of message, HTML encoded
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Lorem ipsum", value = "Content of message, HTML encoded")
-
   public String getMessage() {
     return message;
   }
-
 
   public void setMessage(String message) {
     this.message = message;
@@ -343,22 +320,18 @@ public class RecipientEvent {
 
 
   public RecipientEvent ipAddress(String ipAddress) {
-    
     this.ipAddress = ipAddress;
     return this;
   }
 
-   /**
+  /**
    * IP which this email was sent through
    * @return ipAddress
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "IP which this email was sent through")
-
   public String getIpAddress() {
     return ipAddress;
   }
-
 
   public void setIpAddress(String ipAddress) {
     this.ipAddress = ipAddress;
@@ -366,26 +339,23 @@ public class RecipientEvent {
 
 
   public RecipientEvent poolName(String poolName) {
-    
     this.poolName = poolName;
     return this;
   }
 
-   /**
+  /**
    * Name of an IP pool this email was sent through
    * @return poolName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of an IP pool this email was sent through")
-
   public String getPoolName() {
     return poolName;
   }
 
-
   public void setPoolName(String poolName) {
     this.poolName = poolName;
   }
+
 
 
   @Override
@@ -460,5 +430,136 @@ public class RecipientEvent {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("TransactionID");
+    openapiFields.add("MsgID");
+    openapiFields.add("FromEmail");
+    openapiFields.add("To");
+    openapiFields.add("Subject");
+    openapiFields.add("EventType");
+    openapiFields.add("EventDate");
+    openapiFields.add("ChannelName");
+    openapiFields.add("MessageCategory");
+    openapiFields.add("NextTryOn");
+    openapiFields.add("Message");
+    openapiFields.add("IPAddress");
+    openapiFields.add("PoolName");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RecipientEvent
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!RecipientEvent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RecipientEvent is not found in the empty JSON string", RecipientEvent.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!RecipientEvent.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RecipientEvent` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("TransactionID") != null && !jsonObj.get("TransactionID").isJsonNull()) && !jsonObj.get("TransactionID").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `TransactionID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("TransactionID").toString()));
+      }
+      if ((jsonObj.get("MsgID") != null && !jsonObj.get("MsgID").isJsonNull()) && !jsonObj.get("MsgID").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `MsgID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("MsgID").toString()));
+      }
+      if ((jsonObj.get("FromEmail") != null && !jsonObj.get("FromEmail").isJsonNull()) && !jsonObj.get("FromEmail").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `FromEmail` to be a primitive type in the JSON string but got `%s`", jsonObj.get("FromEmail").toString()));
+      }
+      if ((jsonObj.get("To") != null && !jsonObj.get("To").isJsonNull()) && !jsonObj.get("To").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `To` to be a primitive type in the JSON string but got `%s`", jsonObj.get("To").toString()));
+      }
+      if ((jsonObj.get("Subject") != null && !jsonObj.get("Subject").isJsonNull()) && !jsonObj.get("Subject").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Subject` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Subject").toString()));
+      }
+      // validate the optional field `EventType`
+      if (jsonObj.get("EventType") != null && !jsonObj.get("EventType").isJsonNull()) {
+        EventType.validateJsonElement(jsonObj.get("EventType"));
+      }
+      if ((jsonObj.get("ChannelName") != null && !jsonObj.get("ChannelName").isJsonNull()) && !jsonObj.get("ChannelName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ChannelName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ChannelName").toString()));
+      }
+      // validate the optional field `MessageCategory`
+      if (jsonObj.get("MessageCategory") != null && !jsonObj.get("MessageCategory").isJsonNull()) {
+        MessageCategory.validateJsonElement(jsonObj.get("MessageCategory"));
+      }
+      if ((jsonObj.get("Message") != null && !jsonObj.get("Message").isJsonNull()) && !jsonObj.get("Message").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Message").toString()));
+      }
+      if ((jsonObj.get("IPAddress") != null && !jsonObj.get("IPAddress").isJsonNull()) && !jsonObj.get("IPAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `IPAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("IPAddress").toString()));
+      }
+      if ((jsonObj.get("PoolName") != null && !jsonObj.get("PoolName").isJsonNull()) && !jsonObj.get("PoolName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `PoolName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("PoolName").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!RecipientEvent.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RecipientEvent' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<RecipientEvent> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RecipientEvent.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<RecipientEvent>() {
+           @Override
+           public void write(JsonWriter out, RecipientEvent value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public RecipientEvent read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of RecipientEvent given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RecipientEvent
+   * @throws IOException if the JSON string is invalid with respect to RecipientEvent
+   */
+  public static RecipientEvent fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RecipientEvent.class);
+  }
+
+  /**
+   * Convert an instance of RecipientEvent to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

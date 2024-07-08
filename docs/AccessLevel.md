@@ -7,97 +7,105 @@
 
 * `NONE` (value: `"None"`)
 
-* `VIEWACCOUNT` (value: `"ViewAccount"`)
+* `VIEW_ACCOUNT` (value: `"ViewAccount"`)
 
-* `VIEWCONTACTS` (value: `"ViewContacts"`)
+* `VIEW_CONTACTS` (value: `"ViewContacts"`)
 
-* `VIEWFORMS` (value: `"ViewForms"`)
+* `VIEW_FORMS` (value: `"ViewForms"`)
 
-* `VIEWTEMPLATES` (value: `"ViewTemplates"`)
+* `VIEW_TEMPLATES` (value: `"ViewTemplates"`)
 
-* `VIEWCAMPAIGNS` (value: `"ViewCampaigns"`)
+* `VIEW_CAMPAIGNS` (value: `"ViewCampaigns"`)
 
-* `VIEWCHANNELS` (value: `"ViewChannels"`)
+* `VIEW_CHANNELS` (value: `"ViewChannels"`)
 
-* `VIEWAUTOMATIONS` (value: `"ViewAutomations"`)
+* `VIEW_AUTOMATIONS` (value: `"ViewAutomations"`)
 
-* `VIEWSURVEYS` (value: `"ViewSurveys"`)
+* `VIEW_SURVEYS` (value: `"ViewSurveys"`)
 
-* `VIEWSETTINGS` (value: `"ViewSettings"`)
+* `VIEW_SETTINGS` (value: `"ViewSettings"`)
 
-* `VIEWBILLING` (value: `"ViewBilling"`)
+* `VIEW_BILLING` (value: `"ViewBilling"`)
 
-* `VIEWSUBACCOUNTS` (value: `"ViewSubAccounts"`)
+* `VIEW_SUB_ACCOUNTS` (value: `"ViewSubAccounts"`)
 
-* `VIEWUSERS` (value: `"ViewUsers"`)
+* `VIEW_USERS` (value: `"ViewUsers"`)
 
-* `VIEWFILES` (value: `"ViewFiles"`)
+* `VIEW_FILES` (value: `"ViewFiles"`)
 
-* `VIEWREPORTS` (value: `"ViewReports"`)
+* `VIEW_REPORTS` (value: `"ViewReports"`)
 
-* `MODIFYACCOUNT` (value: `"ModifyAccount"`)
+* `MODIFY_ACCOUNT` (value: `"ModifyAccount"`)
 
-* `MODIFYCONTACTS` (value: `"ModifyContacts"`)
+* `MODIFY_CONTACTS` (value: `"ModifyContacts"`)
 
-* `MODIFYFORMS` (value: `"ModifyForms"`)
+* `MODIFY_FORMS` (value: `"ModifyForms"`)
 
-* `MODIFYTEMPLATES` (value: `"ModifyTemplates"`)
+* `MODIFY_TEMPLATES` (value: `"ModifyTemplates"`)
 
-* `MODIFYCAMPAIGNS` (value: `"ModifyCampaigns"`)
+* `MODIFY_CAMPAIGNS` (value: `"ModifyCampaigns"`)
 
-* `MODIFYCHANNELS` (value: `"ModifyChannels"`)
+* `MODIFY_CHANNELS` (value: `"ModifyChannels"`)
 
-* `MODIFYAUTOMATIONS` (value: `"ModifyAutomations"`)
+* `MODIFY_AUTOMATIONS` (value: `"ModifyAutomations"`)
 
-* `MODIFYSURVEYS` (value: `"ModifySurveys"`)
+* `MODIFY_SURVEYS` (value: `"ModifySurveys"`)
 
-* `MODIFYFILES` (value: `"ModifyFiles"`)
+* `MODIFY_FILES` (value: `"ModifyFiles"`)
 
 * `EXPORT` (value: `"Export"`)
 
-* `SENDSMTP` (value: `"SendSmtp"`)
+* `SEND_SMTP` (value: `"SendSmtp"`)
 
-* `SENDSMS` (value: `"SendSMS"`)
+* `SEND_SMS` (value: `"SendSMS"`)
 
-* `MODIFYSETTINGS` (value: `"ModifySettings"`)
+* `MODIFY_SETTINGS` (value: `"ModifySettings"`)
 
-* `MODIFYBILLING` (value: `"ModifyBilling"`)
+* `MODIFY_BILLING` (value: `"ModifyBilling"`)
 
-* `MODIFYPROFILE` (value: `"ModifyProfile"`)
+* `MODIFY_PROFILE` (value: `"ModifyProfile"`)
 
-* `MODIFYSUBACCOUNTS` (value: `"ModifySubAccounts"`)
+* `MODIFY_SUB_ACCOUNTS` (value: `"ModifySubAccounts"`)
 
-* `MODIFYUSERS` (value: `"ModifyUsers"`)
+* `MODIFY_USERS` (value: `"ModifyUsers"`)
 
 * `SECURITY` (value: `"Security"`)
 
-* `MODIFYLANGUAGE` (value: `"ModifyLanguage"`)
+* `MODIFY_LANGUAGE` (value: `"ModifyLanguage"`)
 
-* `VIEWSUPPORT` (value: `"ViewSupport"`)
+* `VIEW_SUPPORT` (value: `"ViewSupport"`)
 
-* `SENDHTTP` (value: `"SendHttp"`)
+* `SEND_HTTP` (value: `"SendHttp"`)
 
-* `MODIFY2FA` (value: `"Modify2FA"`)
+* `MODIFY2_FA_EMAIL` (value: `"Modify2FAEmail"`)
 
-* `MODIFYSUPPORT` (value: `"ModifySupport"`)
+* `MODIFY_SUPPORT` (value: `"ModifySupport"`)
 
-* `VIEWCUSTOMFIELDS` (value: `"ViewCustomFields"`)
+* `VIEW_CUSTOM_FIELDS` (value: `"ViewCustomFields"`)
 
-* `MODIFYCUSTOMFIELDS` (value: `"ModifyCustomFields"`)
+* `MODIFY_CUSTOM_FIELDS` (value: `"ModifyCustomFields"`)
 
-* `MODIFYWEBNOTIFICATIONS` (value: `"ModifyWebNotifications"`)
+* `MODIFY_WEB_NOTIFICATIONS` (value: `"ModifyWebNotifications"`)
 
-* `EXTENDEDLOGS` (value: `"ExtendedLogs"`)
+* `EXTENDED_LOGS` (value: `"ExtendedLogs"`)
 
-* `VERIFYEMAILS` (value: `"VerifyEmails"`)
+* `VERIFY_EMAILS` (value: `"VerifyEmails"`)
 
-* `VIEWEMAILVERIFICATIONS` (value: `"ViewEmailVerifications"`)
+* `MODIFY2_FA_SMS` (value: `"Modify2FASms"`)
 
-* `VIEWMARKETING` (value: `"ViewMarketing"`)
+* `MODIFY_LANDING_PAGES` (value: `"ModifyLandingPages"`)
 
-* `VIEWEMAILAPI` (value: `"ViewEmailApi"`)
+* `VIEW_LANDING_PAGES` (value: `"ViewLandingPages"`)
 
-* `VIEWINBOUND` (value: `"ViewInbound"`)
+* `MODIFY_SUPPRESSIONS` (value: `"ModifySuppressions"`)
+
+* `VIEW_SUPPRESSIONS` (value: `"ViewSuppressions"`)
+
+* `VIEW_DRAG_DROP_EDITOR` (value: `"ViewDragDropEditor"`)
+
+* `VIEW_TEMPLATE_EDITOR` (value: `"ViewTemplateEditor"`)
+
+* `VIEW_AI_TOOLS` (value: `"ViewAITools"`)
 
 
 

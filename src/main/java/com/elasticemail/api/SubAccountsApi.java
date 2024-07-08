@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -90,7 +90,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsByEmailCreditsPatchCall(String email, SubaccountEmailCreditsPayload subaccountEmailCreditsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -107,7 +106,7 @@ public class SubAccountsApi {
 
         // create path and map variables
         String localVarPath = "/subaccounts/{email}/credits"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -116,7 +115,6 @@ public class SubAccountsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -137,20 +135,17 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsByEmailCreditsPatchValidateBeforeCall(String email, SubaccountEmailCreditsPayload subaccountEmailCreditsPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling subaccountsByEmailCreditsPatch(Async)");
         }
-        
+
         // verify the required parameter 'subaccountEmailCreditsPayload' is set
         if (subaccountEmailCreditsPayload == null) {
             throw new ApiException("Missing the required parameter 'subaccountEmailCreditsPayload' when calling subaccountsByEmailCreditsPatch(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = subaccountsByEmailCreditsPatchCall(email, subaccountEmailCreditsPayload, _callback);
-        return localVarCall;
+        return subaccountsByEmailCreditsPatchCall(email, subaccountEmailCreditsPayload, _callback);
 
     }
 
@@ -222,7 +217,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsByEmailDeleteCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -239,7 +233,7 @@ public class SubAccountsApi {
 
         // create path and map variables
         String localVarPath = "/subaccounts/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -248,7 +242,6 @@ public class SubAccountsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -256,7 +249,6 @@ public class SubAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -269,15 +261,12 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsByEmailDeleteValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling subaccountsByEmailDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = subaccountsByEmailDeleteCall(email, _callback);
-        return localVarCall;
+        return subaccountsByEmailDeleteCall(email, _callback);
 
     }
 
@@ -346,7 +335,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsByEmailGetCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -363,7 +351,7 @@ public class SubAccountsApi {
 
         // create path and map variables
         String localVarPath = "/subaccounts/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -380,7 +368,6 @@ public class SubAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -393,15 +380,12 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsByEmailGetValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling subaccountsByEmailGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = subaccountsByEmailGetCall(email, _callback);
-        return localVarCall;
+        return subaccountsByEmailGetCall(email, _callback);
 
     }
 
@@ -475,7 +459,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsByEmailSettingsEmailPutCall(String email, SubaccountEmailSettings subaccountEmailSettings, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -492,7 +475,7 @@ public class SubAccountsApi {
 
         // create path and map variables
         String localVarPath = "/subaccounts/{email}/settings/email"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -522,20 +505,17 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsByEmailSettingsEmailPutValidateBeforeCall(String email, SubaccountEmailSettings subaccountEmailSettings, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling subaccountsByEmailSettingsEmailPut(Async)");
         }
-        
+
         // verify the required parameter 'subaccountEmailSettings' is set
         if (subaccountEmailSettings == null) {
             throw new ApiException("Missing the required parameter 'subaccountEmailSettings' when calling subaccountsByEmailSettingsEmailPut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = subaccountsByEmailSettingsEmailPutCall(email, subaccountEmailSettings, _callback);
-        return localVarCall;
+        return subaccountsByEmailSettingsEmailPutCall(email, subaccountEmailSettings, _callback);
 
     }
 
@@ -612,7 +592,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -653,7 +632,6 @@ public class SubAccountsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -666,10 +644,7 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = subaccountsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return subaccountsGetCall(limit, offset, _callback);
 
     }
 
@@ -745,7 +720,6 @@ public class SubAccountsApi {
      */
     public okhttp3.Call subaccountsPostCall(SubaccountPayload subaccountPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -791,15 +765,12 @@ public class SubAccountsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call subaccountsPostValidateBeforeCall(SubaccountPayload subaccountPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'subaccountPayload' is set
         if (subaccountPayload == null) {
             throw new ApiException("Missing the required parameter 'subaccountPayload' when calling subaccountsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = subaccountsPostCall(subaccountPayload, _callback);
-        return localVarCall;
+        return subaccountsPostCall(subaccountPayload, _callback);
 
     }
 

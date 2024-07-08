@@ -7,11 +7,9 @@
 
 * `DISABLED` (value: `"Disabled"`)
 
-* `UNDERREVIEW` (value: `"UnderReview"`)
+* `UNDER_REVIEW` (value: `"UnderReview"`)
 
-* `NOPAYMENTSALLOWED` (value: `"NoPaymentsAllowed"`)
-
-* `NEVERSIGNEDIN` (value: `"NeverSignedIn"`)
+* `NEVER_SIGNED_IN` (value: `"NeverSignedIn"`)
 
 * `ACTIVE` (value: `"Active"`)
 

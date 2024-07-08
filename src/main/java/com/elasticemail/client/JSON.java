@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -23,11 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import com.google.gson.JsonElement;
 import io.gsonfire.GsonFireBuilder;
 import io.gsonfire.TypeSelector;
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
-import com.elasticemail.model.*;
 import okio.ByteString;
 
 import java.io.IOException;
@@ -36,19 +32,28 @@ import java.lang.reflect.Type;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.ParsePosition;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
 import java.util.HashMap;
 
+/*
+ * A JSON utility class
+ *
+ * NOTE: in the future, this class may be converted to static, which may break
+ *       backward-compatibility
+ */
 public class JSON {
-    private Gson gson;
-    private boolean isLenientOnJson = false;
-    private DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
-    private SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
-    private OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
-    private LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
-    private ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
+    private static Gson gson;
+    private static boolean isLenientOnJson = false;
+    private static DateTypeAdapter dateTypeAdapter = new DateTypeAdapter();
+    private static SqlDateTypeAdapter sqlDateTypeAdapter = new SqlDateTypeAdapter();
+    private static OffsetDateTimeTypeAdapter offsetDateTimeTypeAdapter = new OffsetDateTimeTypeAdapter();
+    private static LocalDateTypeAdapter localDateTypeAdapter = new LocalDateTypeAdapter();
+    private static ByteArrayAdapter byteArrayAdapter = new ByteArrayAdapter();
 
     @SuppressWarnings("unchecked")
     public static GsonBuilder createGson() {
@@ -81,14 +86,75 @@ public class JSON {
         return clazz;
     }
 
-    public JSON() {
-        gson = createGson()
-            .registerTypeAdapter(Date.class, dateTypeAdapter)
-            .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
-            .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
-            .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
-            .registerTypeAdapter(byte[].class, byteArrayAdapter)
-            .create();
+    static {
+        GsonBuilder gsonBuilder = createGson();
+        gsonBuilder.registerTypeAdapter(Date.class, dateTypeAdapter);
+        gsonBuilder.registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter);
+        gsonBuilder.registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter);
+        gsonBuilder.registerTypeAdapter(LocalDate.class, localDateTypeAdapter);
+        gsonBuilder.registerTypeAdapter(byte[].class, byteArrayAdapter);
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ApiKey.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ApiKeyPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.BodyPart.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Campaign.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.CampaignOptions.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.CampaignRecipient.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.CampaignTemplate.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ChannelLogStatusSummary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ConsentData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Contact.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactActivity.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactUpdatePayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactsList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailContent.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailJobFailedStatus.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailJobStatus.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailMessageData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailRecipient.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailSend.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailStatus.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailTransactionalMessageData.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailValidationResult.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailView.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.EmailsPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ExportLink.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.FileInfo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.FilePayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.FileUploadResult.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.InboundPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.InboundRoute.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ListPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ListUpdatePayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.LogStatusSummary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.MergeEmailPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.MessageAttachment.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.NewApiKey.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.NewSmtpCredentials.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Options.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.RecipientEvent.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Segment.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SegmentPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SmtpCredentials.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SmtpCredentialsPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SortOrderItem.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SplitOptions.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubAccountInfo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountEmailCreditsPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountEmailSettings.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountEmailSettingsPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountSettingsInfo.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.SubaccountSettingsInfoPayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Suppression.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Template.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.TemplatePayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.TransactionalRecipient.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Utm.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.VerificationFileResult.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.VerificationFileResultDetails.CustomTypeAdapterFactory());
+        gson = gsonBuilder.create();
     }
 
     /**
@@ -96,7 +162,7 @@ public class JSON {
      *
      * @return Gson
      */
-    public Gson getGson() {
+    public static Gson getGson() {
         return gson;
     }
 
@@ -104,23 +170,13 @@ public class JSON {
      * Set Gson.
      *
      * @param gson Gson
-     * @return JSON
      */
-    public JSON setGson(Gson gson) {
-        this.gson = gson;
-        return this;
+    public static void setGson(Gson gson) {
+        JSON.gson = gson;
     }
 
-    /**
-     * Configure the parser to be liberal in what it accepts.
-     *
-     * @param lenientOnJson Set it to true to ignore some syntax errors
-     * @return JSON
-     * @see <a href="https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html">https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html</a>
-     */
-    public JSON setLenientOnJson(boolean lenientOnJson) {
+    public static void setLenientOnJson(boolean lenientOnJson) {
         isLenientOnJson = lenientOnJson;
-        return this;
     }
 
     /**
@@ -129,7 +185,7 @@ public class JSON {
      * @param obj Object
      * @return String representation of the JSON
      */
-    public String serialize(Object obj) {
+    public static String serialize(Object obj) {
         return gson.toJson(obj);
     }
 
@@ -142,11 +198,11 @@ public class JSON {
      * @return The deserialized Java object
      */
     @SuppressWarnings("unchecked")
-    public <T> T deserialize(String body, Type returnType) {
+    public static <T> T deserialize(String body, Type returnType) {
         try {
             if (isLenientOnJson) {
                 JsonReader jsonReader = new JsonReader(new StringReader(body));
-                // see https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5/com/google/gson/stream/JsonReader.html
+                // see https://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/stream/JsonReader.html#setLenient(boolean)
                 jsonReader.setLenient(true);
                 return gson.fromJson(jsonReader, returnType);
             } else {
@@ -166,7 +222,7 @@ public class JSON {
     /**
      * Gson TypeAdapter for Byte Array type
      */
-    public class ByteArrayAdapter extends TypeAdapter<byte[]> {
+    public static class ByteArrayAdapter extends TypeAdapter<byte[]> {
 
         @Override
         public void write(JsonWriter out, byte[] value) throws IOException {
@@ -238,7 +294,7 @@ public class JSON {
     /**
      * Gson TypeAdapter for JSR310 LocalDate type
      */
-    public class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
+    public static class LocalDateTypeAdapter extends TypeAdapter<LocalDate> {
 
         private DateTimeFormatter formatter;
 
@@ -276,14 +332,12 @@ public class JSON {
         }
     }
 
-    public JSON setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
+    public static void setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
         offsetDateTimeTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
-    public JSON setLocalDateFormat(DateTimeFormatter dateFormat) {
+    public static void setLocalDateFormat(DateTimeFormatter dateFormat) {
         localDateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
     /**
@@ -397,14 +451,11 @@ public class JSON {
         }
     }
 
-    public JSON setDateFormat(DateFormat dateFormat) {
+    public static void setDateFormat(DateFormat dateFormat) {
         dateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
 
-    public JSON setSqlDateFormat(DateFormat dateFormat) {
+    public static void setSqlDateFormat(DateFormat dateFormat) {
         sqlDateTypeAdapter.setFormat(dateFormat);
-        return this;
     }
-
 }

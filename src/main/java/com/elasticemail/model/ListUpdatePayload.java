@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,20 +14,42 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * ListUpdatePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ListUpdatePayload {
   public static final String SERIALIZED_NAME_NEW_LIST_NAME = "NewListName";
   @SerializedName(SERIALIZED_NAME_NEW_LIST_NAME)
@@ -37,26 +59,22 @@ public class ListUpdatePayload {
   @SerializedName(SERIALIZED_NAME_ALLOW_UNSUBSCRIBE)
   private Boolean allowUnsubscribe;
 
-  public ListUpdatePayload() { 
+  public ListUpdatePayload() {
   }
 
   public ListUpdatePayload newListName(String newListName) {
-    
     this.newListName = newListName;
     return this;
   }
 
-   /**
+  /**
    * Name of your list if you want to change it.
    * @return newListName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My List 2", value = "Name of your list if you want to change it.")
-
   public String getNewListName() {
     return newListName;
   }
-
 
   public void setNewListName(String newListName) {
     this.newListName = newListName;
@@ -64,26 +82,23 @@ public class ListUpdatePayload {
 
 
   public ListUpdatePayload allowUnsubscribe(Boolean allowUnsubscribe) {
-    
     this.allowUnsubscribe = allowUnsubscribe;
     return this;
   }
 
-   /**
+  /**
    * True: Allow unsubscribing from this list. Otherwise, false
    * @return allowUnsubscribe
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "false", value = "True: Allow unsubscribing from this list. Otherwise, false")
-
   public Boolean getAllowUnsubscribe() {
     return allowUnsubscribe;
   }
 
-
   public void setAllowUnsubscribe(Boolean allowUnsubscribe) {
     this.allowUnsubscribe = allowUnsubscribe;
   }
+
 
 
   @Override
@@ -125,5 +140,93 @@ public class ListUpdatePayload {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("NewListName");
+    openapiFields.add("AllowUnsubscribe");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ListUpdatePayload
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ListUpdatePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListUpdatePayload is not found in the empty JSON string", ListUpdatePayload.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ListUpdatePayload.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListUpdatePayload` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("NewListName") != null && !jsonObj.get("NewListName").isJsonNull()) && !jsonObj.get("NewListName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `NewListName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("NewListName").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListUpdatePayload.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListUpdatePayload' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListUpdatePayload> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListUpdatePayload.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListUpdatePayload>() {
+           @Override
+           public void write(JsonWriter out, ListUpdatePayload value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListUpdatePayload read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of ListUpdatePayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ListUpdatePayload
+   * @throws IOException if the JSON string is invalid with respect to ListUpdatePayload
+   */
+  public static ListUpdatePayload fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListUpdatePayload.class);
+  }
+
+  /**
+   * Convert an instance of ListUpdatePayload to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

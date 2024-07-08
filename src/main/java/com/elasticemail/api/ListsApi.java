@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.elasticemail.model.Contact;
 import com.elasticemail.model.ContactsList;
 import com.elasticemail.model.EmailsPayload;
 import com.elasticemail.model.ListPayload;
@@ -76,6 +77,145 @@ public class ListsApi {
     }
 
     /**
+     * Build call for listsByListnameContactsGet
+     * @param listname Name of your list. (required)
+     * @param limit Maximum number of returned items. (optional)
+     * @param offset How many items should be returned ahead. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listsByListnameContactsGetCall(String listname, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/lists/{listname}/contacts"
+            .replace("{" + "listname" + "}", localVarApiClient.escapeString(listname.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "apikey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listsByListnameContactsGetValidateBeforeCall(String listname, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'listname' is set
+        if (listname == null) {
+            throw new ApiException("Missing the required parameter 'listname' when calling listsByListnameContactsGet(Async)");
+        }
+
+        return listsByListnameContactsGetCall(listname, limit, offset, _callback);
+
+    }
+
+    /**
+     * Load Contacts in List
+     * Returns a list of contacts. Required Access Level: ViewContacts
+     * @param listname Name of your list. (required)
+     * @param limit Maximum number of returned items. (optional)
+     * @param offset How many items should be returned ahead. (optional)
+     * @return List&lt;Contact&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<Contact> listsByListnameContactsGet(String listname, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<List<Contact>> localVarResp = listsByListnameContactsGetWithHttpInfo(listname, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Load Contacts in List
+     * Returns a list of contacts. Required Access Level: ViewContacts
+     * @param listname Name of your list. (required)
+     * @param limit Maximum number of returned items. (optional)
+     * @param offset How many items should be returned ahead. (optional)
+     * @return ApiResponse&lt;List&lt;Contact&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<Contact>> listsByListnameContactsGetWithHttpInfo(String listname, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listsByListnameContactsGetValidateBeforeCall(listname, limit, offset, null);
+        Type localVarReturnType = new TypeToken<List<Contact>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Load Contacts in List (asynchronously)
+     * Returns a list of contacts. Required Access Level: ViewContacts
+     * @param listname Name of your list. (required)
+     * @param limit Maximum number of returned items. (optional)
+     * @param offset How many items should be returned ahead. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listsByListnameContactsGetAsync(String listname, Integer limit, Integer offset, final ApiCallback<List<Contact>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listsByListnameContactsGetValidateBeforeCall(listname, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<List<Contact>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listsByNameContactsPost
      * @param name Name of your list. (required)
      * @param emailsPayload Provide either rule or a list of emails, not both. (required)
@@ -90,7 +230,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsByNameContactsPostCall(String name, EmailsPayload emailsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -107,7 +246,7 @@ public class ListsApi {
 
         // create path and map variables
         String localVarPath = "/lists/{name}/contacts"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -137,20 +276,17 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsByNameContactsPostValidateBeforeCall(String name, EmailsPayload emailsPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling listsByNameContactsPost(Async)");
         }
-        
+
         // verify the required parameter 'emailsPayload' is set
         if (emailsPayload == null) {
             throw new ApiException("Missing the required parameter 'emailsPayload' when calling listsByNameContactsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsByNameContactsPostCall(name, emailsPayload, _callback);
-        return localVarCall;
+        return listsByNameContactsPostCall(name, emailsPayload, _callback);
 
     }
 
@@ -227,7 +363,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsByNameContactsRemovePostCall(String name, EmailsPayload emailsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -244,7 +379,7 @@ public class ListsApi {
 
         // create path and map variables
         String localVarPath = "/lists/{name}/contacts/remove"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -253,7 +388,6 @@ public class ListsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -274,20 +408,17 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsByNameContactsRemovePostValidateBeforeCall(String name, EmailsPayload emailsPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling listsByNameContactsRemovePost(Async)");
         }
-        
+
         // verify the required parameter 'emailsPayload' is set
         if (emailsPayload == null) {
             throw new ApiException("Missing the required parameter 'emailsPayload' when calling listsByNameContactsRemovePost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsByNameContactsRemovePostCall(name, emailsPayload, _callback);
-        return localVarCall;
+        return listsByNameContactsRemovePostCall(name, emailsPayload, _callback);
 
     }
 
@@ -359,7 +490,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsByNameDeleteCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -376,7 +506,7 @@ public class ListsApi {
 
         // create path and map variables
         String localVarPath = "/lists/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -385,7 +515,6 @@ public class ListsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -393,7 +522,6 @@ public class ListsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -406,15 +534,12 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsByNameDeleteValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling listsByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsByNameDeleteCall(name, _callback);
-        return localVarCall;
+        return listsByNameDeleteCall(name, _callback);
 
     }
 
@@ -483,7 +608,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -500,7 +624,7 @@ public class ListsApi {
 
         // create path and map variables
         String localVarPath = "/lists/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -517,7 +641,6 @@ public class ListsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -530,15 +653,12 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling listsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsByNameGetCall(name, _callback);
-        return localVarCall;
+        return listsByNameGetCall(name, _callback);
 
     }
 
@@ -612,7 +732,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsByNamePutCall(String name, ListUpdatePayload listUpdatePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -629,7 +748,7 @@ public class ListsApi {
 
         // create path and map variables
         String localVarPath = "/lists/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -659,20 +778,17 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsByNamePutValidateBeforeCall(String name, ListUpdatePayload listUpdatePayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling listsByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'listUpdatePayload' is set
         if (listUpdatePayload == null) {
             throw new ApiException("Missing the required parameter 'listUpdatePayload' when calling listsByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsByNamePutCall(name, listUpdatePayload, _callback);
-        return localVarCall;
+        return listsByNamePutCall(name, listUpdatePayload, _callback);
 
     }
 
@@ -749,7 +865,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -790,7 +905,6 @@ public class ListsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -803,10 +917,7 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = listsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return listsGetCall(limit, offset, _callback);
 
     }
 
@@ -882,7 +993,6 @@ public class ListsApi {
      */
     public okhttp3.Call listsPostCall(ListPayload listPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -928,15 +1038,12 @@ public class ListsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call listsPostValidateBeforeCall(ListPayload listPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'listPayload' is set
         if (listPayload == null) {
             throw new ApiException("Missing the required parameter 'listPayload' when calling listsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = listsPostCall(listPayload, _callback);
-        return localVarCall;
+        return listsPostCall(listPayload, _callback);
 
     }
 

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,23 +14,45 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.ConsentTracking;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * ConsentData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ConsentData {
   public static final String SERIALIZED_NAME_CONSENT_I_P = "ConsentIP";
   @SerializedName(SERIALIZED_NAME_CONSENT_I_P)
@@ -44,26 +66,22 @@ public class ConsentData {
   @SerializedName(SERIALIZED_NAME_CONSENT_TRACKING)
   private ConsentTracking consentTracking = ConsentTracking.UNKNOWN;
 
-  public ConsentData() { 
+  public ConsentData() {
   }
 
   public ConsentData consentIP(String consentIP) {
-    
     this.consentIP = consentIP;
     return this;
   }
 
-   /**
+  /**
    * IP address of consent to send this contact(s) your email. If not provided your current public IP address is used for consent.
    * @return consentIP
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "192.168.0.1", value = "IP address of consent to send this contact(s) your email. If not provided your current public IP address is used for consent.")
-
   public String getConsentIP() {
     return consentIP;
   }
-
 
   public void setConsentIP(String consentIP) {
     this.consentIP = consentIP;
@@ -71,22 +89,18 @@ public class ConsentData {
 
 
   public ConsentData consentDate(OffsetDateTime consentDate) {
-    
     this.consentDate = consentDate;
     return this;
   }
 
-   /**
+  /**
    * Date of consent to send this contact(s) your email. If not provided current date is used for consent.
    * @return consentDate
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of consent to send this contact(s) your email. If not provided current date is used for consent.")
-
   public OffsetDateTime getConsentDate() {
     return consentDate;
   }
-
 
   public void setConsentDate(OffsetDateTime consentDate) {
     this.consentDate = consentDate;
@@ -94,26 +108,23 @@ public class ConsentData {
 
 
   public ConsentData consentTracking(ConsentTracking consentTracking) {
-    
     this.consentTracking = consentTracking;
     return this;
   }
 
-   /**
+  /**
    * Get consentTracking
    * @return consentTracking
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public ConsentTracking getConsentTracking() {
     return consentTracking;
   }
 
-
   public void setConsentTracking(ConsentTracking consentTracking) {
     this.consentTracking = consentTracking;
   }
+
 
 
   @Override
@@ -168,5 +179,98 @@ public class ConsentData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("ConsentIP");
+    openapiFields.add("ConsentDate");
+    openapiFields.add("ConsentTracking");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ConsentData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ConsentData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ConsentData is not found in the empty JSON string", ConsentData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ConsentData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ConsentData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("ConsentIP") != null && !jsonObj.get("ConsentIP").isJsonNull()) && !jsonObj.get("ConsentIP").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ConsentIP` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ConsentIP").toString()));
+      }
+      // validate the optional field `ConsentTracking`
+      if (jsonObj.get("ConsentTracking") != null && !jsonObj.get("ConsentTracking").isJsonNull()) {
+        ConsentTracking.validateJsonElement(jsonObj.get("ConsentTracking"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ConsentData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ConsentData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ConsentData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ConsentData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ConsentData>() {
+           @Override
+           public void write(JsonWriter out, ConsentData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ConsentData read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of ConsentData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ConsentData
+   * @throws IOException if the JSON string is invalid with respect to ConsentData
+   */
+  public static ConsentData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ConsentData.class);
+  }
+
+  /**
+   * Convert an instance of ConsentData to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

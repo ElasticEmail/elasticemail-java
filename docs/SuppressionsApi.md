@@ -2,29 +2,29 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**suppressionsBouncesGet**](SuppressionsApi.md#suppressionsBouncesGet) | **GET** /suppressions/bounces | Get Bounce List
-[**suppressionsBouncesImportPost**](SuppressionsApi.md#suppressionsBouncesImportPost) | **POST** /suppressions/bounces/import | Add Bounces Async
-[**suppressionsBouncesPost**](SuppressionsApi.md#suppressionsBouncesPost) | **POST** /suppressions/bounces | Add Bounces
-[**suppressionsByEmailDelete**](SuppressionsApi.md#suppressionsByEmailDelete) | **DELETE** /suppressions/{email} | Delete Suppression
-[**suppressionsByEmailGet**](SuppressionsApi.md#suppressionsByEmailGet) | **GET** /suppressions/{email} | Get Suppression
-[**suppressionsComplaintsGet**](SuppressionsApi.md#suppressionsComplaintsGet) | **GET** /suppressions/complaints | Get Complaints List
-[**suppressionsComplaintsImportPost**](SuppressionsApi.md#suppressionsComplaintsImportPost) | **POST** /suppressions/complaints/import | Add Complaints Async
-[**suppressionsComplaintsPost**](SuppressionsApi.md#suppressionsComplaintsPost) | **POST** /suppressions/complaints | Add Complaints
-[**suppressionsGet**](SuppressionsApi.md#suppressionsGet) | **GET** /suppressions | Get Suppressions
-[**suppressionsUnsubscribesGet**](SuppressionsApi.md#suppressionsUnsubscribesGet) | **GET** /suppressions/unsubscribes | Get Unsubscribes List
-[**suppressionsUnsubscribesImportPost**](SuppressionsApi.md#suppressionsUnsubscribesImportPost) | **POST** /suppressions/unsubscribes/import | Add Unsubscribes Async
-[**suppressionsUnsubscribesPost**](SuppressionsApi.md#suppressionsUnsubscribesPost) | **POST** /suppressions/unsubscribes | Add Unsubscribes
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**suppressionsBouncesGet**](SuppressionsApi.md#suppressionsBouncesGet) | **GET** /suppressions/bounces | Get Bounce List |
+| [**suppressionsBouncesImportPost**](SuppressionsApi.md#suppressionsBouncesImportPost) | **POST** /suppressions/bounces/import | Add Bounces Async |
+| [**suppressionsBouncesPost**](SuppressionsApi.md#suppressionsBouncesPost) | **POST** /suppressions/bounces | Add Bounces |
+| [**suppressionsByEmailDelete**](SuppressionsApi.md#suppressionsByEmailDelete) | **DELETE** /suppressions/{email} | Delete Suppression |
+| [**suppressionsByEmailGet**](SuppressionsApi.md#suppressionsByEmailGet) | **GET** /suppressions/{email} | Get Suppression |
+| [**suppressionsComplaintsGet**](SuppressionsApi.md#suppressionsComplaintsGet) | **GET** /suppressions/complaints | Get Complaints List |
+| [**suppressionsComplaintsImportPost**](SuppressionsApi.md#suppressionsComplaintsImportPost) | **POST** /suppressions/complaints/import | Add Complaints Async |
+| [**suppressionsComplaintsPost**](SuppressionsApi.md#suppressionsComplaintsPost) | **POST** /suppressions/complaints | Add Complaints |
+| [**suppressionsGet**](SuppressionsApi.md#suppressionsGet) | **GET** /suppressions | Get Suppressions |
+| [**suppressionsUnsubscribesGet**](SuppressionsApi.md#suppressionsUnsubscribesGet) | **GET** /suppressions/unsubscribes | Get Unsubscribes List |
+| [**suppressionsUnsubscribesImportPost**](SuppressionsApi.md#suppressionsUnsubscribesImportPost) | **POST** /suppressions/unsubscribes/import | Add Unsubscribes Async |
+| [**suppressionsUnsubscribesPost**](SuppressionsApi.md#suppressionsUnsubscribesPost) | **POST** /suppressions/unsubscribes | Add Unsubscribes |
 
 
-<a name="suppressionsBouncesGet"></a>
+<a id="suppressionsBouncesGet"></a>
 # **suppressionsBouncesGet**
 > List&lt;Suppression&gt; suppressionsBouncesGet(search, limit, offset)
 
 Get Bounce List
 
-Retrieve your list of bounced emails. Required Access Level: ViewContacts
+Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -67,11 +67,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **String**| Text fragment used for searching. | [optional]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | **String**| Text fragment used for searching. | [optional] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -89,15 +89,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsBouncesImportPost"></a>
+<a id="suppressionsBouncesImportPost"></a>
 # **suppressionsBouncesImportPost**
 > suppressionsBouncesImportPost(_file)
 
 Add Bounces Async
 
-Add Bounced. Required Access Level: ModifyContacts
+Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -137,9 +137,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **_file** | **File**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**|  | [optional] |
 
 ### Return type
 
@@ -157,15 +157,15 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="suppressionsBouncesPost"></a>
+<a id="suppressionsBouncesPost"></a>
 # **suppressionsBouncesPost**
 > List&lt;Suppression&gt; suppressionsBouncesPost(requestBody)
 
 Add Bounces
 
-Add Bounced. Required Access Level: ModifyContacts
+Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -206,9 +206,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as bounces. Limited to 1000 per request |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as bounces. Limited to 1000 per request | |
 
 ### Return type
 
@@ -226,15 +226,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 
-<a name="suppressionsByEmailDelete"></a>
+<a id="suppressionsByEmailDelete"></a>
 # **suppressionsByEmailDelete**
 > suppressionsByEmailDelete(email)
 
 Delete Suppression
 
-Delete Suppression. Required Access Level: ViewContacts
+Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -274,9 +274,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Proper email address. | |
 
 ### Return type
 
@@ -294,15 +294,15 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsByEmailGet"></a>
+<a id="suppressionsByEmailGet"></a>
 # **suppressionsByEmailGet**
 > Suppression suppressionsByEmailGet(email)
 
 Get Suppression
 
-Retrieve your suppression. Required Access Level: ViewContacts
+Retrieve your suppression. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -343,9 +343,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Proper email address. | |
 
 ### Return type
 
@@ -363,15 +363,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsComplaintsGet"></a>
+<a id="suppressionsComplaintsGet"></a>
 # **suppressionsComplaintsGet**
 > List&lt;Suppression&gt; suppressionsComplaintsGet(search, limit, offset)
 
 Get Complaints List
 
-Retrieve your list of complaints. Required Access Level: ViewContacts
+Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -414,11 +414,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **String**| Text fragment used for searching. | [optional]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | **String**| Text fragment used for searching. | [optional] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -436,15 +436,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsComplaintsImportPost"></a>
+<a id="suppressionsComplaintsImportPost"></a>
 # **suppressionsComplaintsImportPost**
 > suppressionsComplaintsImportPost(_file)
 
 Add Complaints Async
 
-Add Complaints. Required Access Level: ModifyContacts
+Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -484,9 +484,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **_file** | **File**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**|  | [optional] |
 
 ### Return type
 
@@ -504,15 +504,15 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="suppressionsComplaintsPost"></a>
+<a id="suppressionsComplaintsPost"></a>
 # **suppressionsComplaintsPost**
 > List&lt;Suppression&gt; suppressionsComplaintsPost(requestBody)
 
 Add Complaints
 
-Add Complaints. Required Access Level: ModifyContacts
+Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -553,9 +553,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as complaints. Limited to 1000 per request |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as complaints. Limited to 1000 per request | |
 
 ### Return type
 
@@ -573,15 +573,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 
-<a name="suppressionsGet"></a>
+<a id="suppressionsGet"></a>
 # **suppressionsGet**
 > List&lt;Suppression&gt; suppressionsGet(limit, offset)
 
 Get Suppressions
 
-Retrieve your suppressions. Required Access Level: ViewContacts
+Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -623,10 +623,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -644,15 +644,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsUnsubscribesGet"></a>
+<a id="suppressionsUnsubscribesGet"></a>
 # **suppressionsUnsubscribesGet**
 > List&lt;Suppression&gt; suppressionsUnsubscribesGet(search, limit, offset)
 
 Get Unsubscribes List
 
-Retrieve your list of unsubscribes. Required Access Level: ViewContacts
+Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 ```java
@@ -695,11 +695,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **String**| Text fragment used for searching. | [optional]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | **String**| Text fragment used for searching. | [optional] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -717,15 +717,15 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="suppressionsUnsubscribesImportPost"></a>
+<a id="suppressionsUnsubscribesImportPost"></a>
 # **suppressionsUnsubscribesImportPost**
 > suppressionsUnsubscribesImportPost(_file)
 
 Add Unsubscribes Async
 
-Add Unsubscribes. Required Access Level: ModifyContacts
+Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -765,9 +765,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **_file** | **File**|  | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **_file** | **File**|  | [optional] |
 
 ### Return type
 
@@ -785,15 +785,15 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="suppressionsUnsubscribesPost"></a>
+<a id="suppressionsUnsubscribesPost"></a>
 # **suppressionsUnsubscribesPost**
 > List&lt;Suppression&gt; suppressionsUnsubscribesPost(requestBody)
 
 Add Unsubscribes
 
-Add Unsubscribes. Required Access Level: ModifyContacts
+Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 ```java
@@ -834,9 +834,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as unsubscribes. Limited to 1000 per request |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **requestBody** | [**List&lt;String&gt;**](String.md)| Emails to add as unsubscribes. Limited to 1000 per request | |
 
 ### Return type
 
@@ -854,5 +854,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

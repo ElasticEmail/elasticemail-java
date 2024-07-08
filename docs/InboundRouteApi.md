@@ -2,17 +2,17 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**inboundrouteByIdDelete**](InboundRouteApi.md#inboundrouteByIdDelete) | **DELETE** /inboundroute/{id} | Delete Route
-[**inboundrouteByIdGet**](InboundRouteApi.md#inboundrouteByIdGet) | **GET** /inboundroute/{id} | Get Route
-[**inboundrouteByIdPut**](InboundRouteApi.md#inboundrouteByIdPut) | **PUT** /inboundroute/{id} | Update Route
-[**inboundrouteGet**](InboundRouteApi.md#inboundrouteGet) | **GET** /inboundroute | Get Routes
-[**inboundrouteOrderPut**](InboundRouteApi.md#inboundrouteOrderPut) | **PUT** /inboundroute/order | Update Sorting
-[**inboundroutePost**](InboundRouteApi.md#inboundroutePost) | **POST** /inboundroute | Create Route
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**inboundrouteByIdDelete**](InboundRouteApi.md#inboundrouteByIdDelete) | **DELETE** /inboundroute/{id} | Delete Route |
+| [**inboundrouteByIdGet**](InboundRouteApi.md#inboundrouteByIdGet) | **GET** /inboundroute/{id} | Get Route |
+| [**inboundrouteByIdPut**](InboundRouteApi.md#inboundrouteByIdPut) | **PUT** /inboundroute/{id} | Update Route |
+| [**inboundrouteGet**](InboundRouteApi.md#inboundrouteGet) | **GET** /inboundroute | Get Routes |
+| [**inboundrouteOrderPut**](InboundRouteApi.md#inboundrouteOrderPut) | **PUT** /inboundroute/order | Update Sorting |
+| [**inboundroutePost**](InboundRouteApi.md#inboundroutePost) | **POST** /inboundroute | Create Route |
 
 
-<a name="inboundrouteByIdDelete"></a>
+<a id="inboundrouteByIdDelete"></a>
 # **inboundrouteByIdDelete**
 > inboundrouteByIdDelete(id)
 
@@ -58,9 +58,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
 
 ### Return type
 
@@ -78,9 +78,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="inboundrouteByIdGet"></a>
+<a id="inboundrouteByIdGet"></a>
 # **inboundrouteByIdGet**
 > InboundRoute inboundrouteByIdGet(id)
 
@@ -127,9 +127,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID number of your attachment |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID number of your attachment | |
 
 ### Return type
 
@@ -147,9 +147,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="inboundrouteByIdPut"></a>
+<a id="inboundrouteByIdPut"></a>
 # **inboundrouteByIdPut**
 > InboundRoute inboundrouteByIdPut(id, inboundPayload)
 
@@ -197,10 +197,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  |
- **inboundPayload** | [**InboundPayload**](InboundPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**|  | |
+| **inboundPayload** | [**InboundPayload**](InboundPayload.md)|  | |
 
 ### Return type
 
@@ -218,9 +218,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="inboundrouteGet"></a>
+<a id="inboundrouteGet"></a>
 # **inboundrouteGet**
 > List&lt;InboundRoute&gt; inboundrouteGet()
 
@@ -283,9 +283,9 @@ This endpoint does not need any parameter.
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="inboundrouteOrderPut"></a>
+<a id="inboundrouteOrderPut"></a>
 # **inboundrouteOrderPut**
 > List&lt;InboundRoute&gt; inboundrouteOrderPut(sortOrderItem)
 
@@ -332,9 +332,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sortOrderItem** | [**List&lt;SortOrderItem&gt;**](SortOrderItem.md)| Change the ordering of inbound routes for when matching the inbound |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **sortOrderItem** | [**List&lt;SortOrderItem&gt;**](SortOrderItem.md)| Change the ordering of inbound routes for when matching the inbound | |
 
 ### Return type
 
@@ -352,9 +352,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="inboundroutePost"></a>
+<a id="inboundroutePost"></a>
 # **inboundroutePost**
 > InboundRoute inboundroutePost(inboundPayload)
 
@@ -401,9 +401,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **inboundPayload** | [**InboundPayload**](InboundPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **inboundPayload** | [**InboundPayload**](InboundPayload.md)|  | |
 
 ### Return type
 
@@ -421,5 +421,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

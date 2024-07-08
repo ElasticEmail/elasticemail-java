@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,7 +16,6 @@ package com.elasticemail.api;
 import com.elasticemail.client.ApiException;
 import com.elasticemail.model.CompressionFormat;
 import com.elasticemail.model.Contact;
-import com.elasticemail.model.ContactHistory;
 import com.elasticemail.model.ContactPayload;
 import com.elasticemail.model.ContactUpdatePayload;
 import com.elasticemail.model.EmailsPayload;
@@ -24,8 +23,8 @@ import com.elasticemail.model.ExportFileFormats;
 import com.elasticemail.model.ExportLink;
 import com.elasticemail.model.ExportStatus;
 import java.io.File;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,118 +34,88 @@ import java.util.Map;
 /**
  * API tests for ContactsApi
  */
-@Ignore
+@Disabled
 public class ContactsApiTest {
 
     private final ContactsApi api = new ContactsApi();
 
-    
     /**
      * Delete Contact
      *
      * Deletes the provided contact. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsByEmailDeleteTest() throws ApiException {
         String email = null;
         api.contactsByEmailDelete(email);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Contact
      *
      * Load detailed contact information for specified email. Required Access Level: ViewContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsByEmailGetTest() throws ApiException {
         String email = null;
         Contact response = api.contactsByEmailGet(email);
-
         // TODO: test validations
     }
-    
-    /**
-     * Load History
-     *
-     * Returns detailed history of specified Contact. Required Access Level: ViewContacts
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void contactsByEmailHistoryGetTest() throws ApiException {
-        String email = null;
-        Integer limit = null;
-        Integer offset = null;
-        List<ContactHistory> response = api.contactsByEmailHistoryGet(email, limit, offset);
 
-        // TODO: test validations
-    }
-    
     /**
      * Update Contact
      *
      * Update selected contact. Omitted contact&#39;s fields will not be changed. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsByEmailPutTest() throws ApiException {
         String email = null;
         ContactUpdatePayload contactUpdatePayload = null;
         Contact response = api.contactsByEmailPut(email, contactUpdatePayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Delete Contacts Bulk
      *
      * Deletes provided contacts in bulk. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsDeletePostTest() throws ApiException {
         EmailsPayload emailsPayload = null;
         api.contactsDeletePost(emailsPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Check Export Status
      *
      * Check the current status of the export. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsExportByIdStatusGetTest() throws ApiException {
         String id = null;
         ExportStatus response = api.contactsExportByIdStatusGet(id);
-
         // TODO: test validations
     }
-    
+
     /**
      * Export Contacts
      *
      * Request an Export of specified Contacts. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsExportPostTest() throws ApiException {
@@ -156,60 +125,54 @@ public class ContactsApiTest {
         CompressionFormat compressionFormat = null;
         String fileName = null;
         ExportLink response = api.contactsExportPost(fileFormat, rule, emails, compressionFormat, fileName);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Contacts
      *
      * Returns a list of contacts. Required Access Level: ViewContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<Contact> response = api.contactsGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Upload Contacts
      *
      * Upload contacts from a file. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsImportPostTest() throws ApiException {
         String listName = null;
         String encodingName = null;
-        File file = null;
-        api.contactsImportPost(listName, encodingName, file);
-
+        String fileUrl = null;
+        File _file = null;
+        api.contactsImportPost(listName, encodingName, fileUrl, _file);
         // TODO: test validations
     }
-    
+
     /**
      * Add Contact
      *
      * Add new Contacts to your Lists. Up to 1000 can be added (for more please refer to the import request). Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void contactsPostTest() throws ApiException {
         List<ContactPayload> contactPayload = null;
         List<String> listnames = null;
         List<Contact> response = api.contactsPost(contactPayload, listnames);
-
         // TODO: test validations
     }
-    
+
 }

@@ -2,7 +2,8 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2022-01-31T08:08:48.625855188Z[Etc/UTC]
+  - Build date: 2024-07-08T09:36:05.709243Z[Etc/UTC]
+  - Generator version: 7.7.0
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
 
@@ -10,9 +11,7 @@ Every API call is established on which specific request type (GET, POST, PUT, DE
 
 The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.
 
-To start using this API, you will need your Access Token (available [here](https://elasticemail.com/account#/settings/new/manage-api)). Remember to keep it safe. Required access levels are listed in the given request’s description.
-
-This is the documentation for REST API.
+To start using this API, you will need your Access Token (available [here](https://app.elasticemail.com/marketing/settings/new/manage-api)). Remember to keep it safe. Required access levels are listed in the given request’s description.
 
 Downloadable library clients can be found in our Github repository [here](https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme)
 
@@ -23,7 +22,7 @@ Downloadable library clients can be found in our Github repository [here](https:
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
+1. Java 1.8+
 2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
@@ -50,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.0.16</version>
+  <version>4.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -66,7 +65,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.elasticemail:elasticemail:4.0.16"
+     implementation "com.elasticemail:elasticemail:4.1.0"
   }
 ```
 
@@ -80,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.0.16.jar`
+* `target/elasticemail-4.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -124,7 +123,7 @@ public class Example {
 
 ```
 
-## Documentation for API Endpoints
+
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
@@ -137,7 +136,6 @@ Class | Method | HTTP request | Description
 *CampaignsApi* | [**campaignsPost**](docs/CampaignsApi.md#campaignsPost) | **POST** /campaigns | Add Campaign
 *ContactsApi* | [**contactsByEmailDelete**](docs/ContactsApi.md#contactsByEmailDelete) | **DELETE** /contacts/{email} | Delete Contact
 *ContactsApi* | [**contactsByEmailGet**](docs/ContactsApi.md#contactsByEmailGet) | **GET** /contacts/{email} | Load Contact
-*ContactsApi* | [**contactsByEmailHistoryGet**](docs/ContactsApi.md#contactsByEmailHistoryGet) | **GET** /contacts/{email}/history | Load History
 *ContactsApi* | [**contactsByEmailPut**](docs/ContactsApi.md#contactsByEmailPut) | **PUT** /contacts/{email} | Update Contact
 *ContactsApi* | [**contactsDeletePost**](docs/ContactsApi.md#contactsDeletePost) | **POST** /contacts/delete | Delete Contacts Bulk
 *ContactsApi* | [**contactsExportByIdStatusGet**](docs/ContactsApi.md#contactsExportByIdStatusGet) | **GET** /contacts/export/{id}/status | Check Export Status
@@ -146,6 +144,7 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**contactsImportPost**](docs/ContactsApi.md#contactsImportPost) | **POST** /contacts/import | Upload Contacts
 *ContactsApi* | [**contactsPost**](docs/ContactsApi.md#contactsPost) | **POST** /contacts | Add Contact
 *EmailsApi* | [**emailsByMsgidViewGet**](docs/EmailsApi.md#emailsByMsgidViewGet) | **GET** /emails/{msgid}/view | View Email
+*EmailsApi* | [**emailsByTransactionidStatusGet**](docs/EmailsApi.md#emailsByTransactionidStatusGet) | **GET** /emails/{transactionid}/status | Get Status
 *EmailsApi* | [**emailsMergefilePost**](docs/EmailsApi.md#emailsMergefilePost) | **POST** /emails/mergefile | Send Bulk Emails CSV
 *EmailsApi* | [**emailsPost**](docs/EmailsApi.md#emailsPost) | **POST** /emails | Send Bulk Emails
 *EmailsApi* | [**emailsTransactionalPost**](docs/EmailsApi.md#emailsTransactionalPost) | **POST** /emails/transactional | Send Transactional Email
@@ -167,6 +166,7 @@ Class | Method | HTTP request | Description
 *InboundRouteApi* | [**inboundrouteGet**](docs/InboundRouteApi.md#inboundrouteGet) | **GET** /inboundroute | Get Routes
 *InboundRouteApi* | [**inboundrouteOrderPut**](docs/InboundRouteApi.md#inboundrouteOrderPut) | **PUT** /inboundroute/order | Update Sorting
 *InboundRouteApi* | [**inboundroutePost**](docs/InboundRouteApi.md#inboundroutePost) | **POST** /inboundroute | Create Route
+*ListsApi* | [**listsByListnameContactsGet**](docs/ListsApi.md#listsByListnameContactsGet) | **GET** /lists/{listname}/contacts | Load Contacts in List
 *ListsApi* | [**listsByNameContactsPost**](docs/ListsApi.md#listsByNameContactsPost) | **POST** /lists/{name}/contacts | Add Contacts to List
 *ListsApi* | [**listsByNameContactsRemovePost**](docs/ListsApi.md#listsByNameContactsRemovePost) | **POST** /lists/{name}/contacts/remove | Remove Contacts from List
 *ListsApi* | [**listsByNameDelete**](docs/ListsApi.md#listsByNameDelete) | **DELETE** /lists/{name} | Delete List
@@ -248,8 +248,6 @@ Class | Method | HTTP request | Description
  - [ConsentTracking](docs/ConsentTracking.md)
  - [Contact](docs/Contact.md)
  - [ContactActivity](docs/ContactActivity.md)
- - [ContactHistEventType](docs/ContactHistEventType.md)
- - [ContactHistory](docs/ContactHistory.md)
  - [ContactPayload](docs/ContactPayload.md)
  - [ContactSource](docs/ContactSource.md)
  - [ContactStatus](docs/ContactStatus.md)
@@ -258,7 +256,10 @@ Class | Method | HTTP request | Description
  - [DeliveryOptimizationType](docs/DeliveryOptimizationType.md)
  - [EmailContent](docs/EmailContent.md)
  - [EmailData](docs/EmailData.md)
+ - [EmailJobFailedStatus](docs/EmailJobFailedStatus.md)
+ - [EmailJobStatus](docs/EmailJobStatus.md)
  - [EmailMessageData](docs/EmailMessageData.md)
+ - [EmailPredictedValidationStatus](docs/EmailPredictedValidationStatus.md)
  - [EmailRecipient](docs/EmailRecipient.md)
  - [EmailSend](docs/EmailSend.md)
  - [EmailStatus](docs/EmailStatus.md)
@@ -317,9 +318,12 @@ Class | Method | HTTP request | Description
  - [VerificationStatus](docs/VerificationStatus.md)
 
 
+<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
+
 Authentication schemes defined for the API:
+<a id="apikey"></a>
 ### apikey
 
 - **Type**: API key

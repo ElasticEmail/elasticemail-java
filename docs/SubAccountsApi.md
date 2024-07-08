@@ -2,17 +2,17 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**subaccountsByEmailCreditsPatch**](SubAccountsApi.md#subaccountsByEmailCreditsPatch) | **PATCH** /subaccounts/{email}/credits | Add, Subtract Email Credits
-[**subaccountsByEmailDelete**](SubAccountsApi.md#subaccountsByEmailDelete) | **DELETE** /subaccounts/{email} | Delete SubAccount
-[**subaccountsByEmailGet**](SubAccountsApi.md#subaccountsByEmailGet) | **GET** /subaccounts/{email} | Load SubAccount
-[**subaccountsByEmailSettingsEmailPut**](SubAccountsApi.md#subaccountsByEmailSettingsEmailPut) | **PUT** /subaccounts/{email}/settings/email | Update SubAccount Email Settings
-[**subaccountsGet**](SubAccountsApi.md#subaccountsGet) | **GET** /subaccounts | Load SubAccounts
-[**subaccountsPost**](SubAccountsApi.md#subaccountsPost) | **POST** /subaccounts | Add SubAccount
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**subaccountsByEmailCreditsPatch**](SubAccountsApi.md#subaccountsByEmailCreditsPatch) | **PATCH** /subaccounts/{email}/credits | Add, Subtract Email Credits |
+| [**subaccountsByEmailDelete**](SubAccountsApi.md#subaccountsByEmailDelete) | **DELETE** /subaccounts/{email} | Delete SubAccount |
+| [**subaccountsByEmailGet**](SubAccountsApi.md#subaccountsByEmailGet) | **GET** /subaccounts/{email} | Load SubAccount |
+| [**subaccountsByEmailSettingsEmailPut**](SubAccountsApi.md#subaccountsByEmailSettingsEmailPut) | **PUT** /subaccounts/{email}/settings/email | Update SubAccount Email Settings |
+| [**subaccountsGet**](SubAccountsApi.md#subaccountsGet) | **GET** /subaccounts | Load SubAccounts |
+| [**subaccountsPost**](SubAccountsApi.md#subaccountsPost) | **POST** /subaccounts | Add SubAccount |
 
 
-<a name="subaccountsByEmailCreditsPatch"></a>
+<a id="subaccountsByEmailCreditsPatch"></a>
 # **subaccountsByEmailCreditsPatch**
 > subaccountsByEmailCreditsPatch(email, subaccountEmailCreditsPayload)
 
@@ -59,10 +59,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address of Sub-Account |
- **subaccountEmailCreditsPayload** | [**SubaccountEmailCreditsPayload**](SubaccountEmailCreditsPayload.md)| Amount of email credits to add or subtract from the current SubAccount email credits pool (positive or negative value) |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address of Sub-Account | |
+| **subaccountEmailCreditsPayload** | [**SubaccountEmailCreditsPayload**](SubaccountEmailCreditsPayload.md)| Amount of email credits to add or subtract from the current SubAccount email credits pool (positive or negative value) | |
 
 ### Return type
 
@@ -80,9 +80,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="subaccountsByEmailDelete"></a>
+<a id="subaccountsByEmailDelete"></a>
 # **subaccountsByEmailDelete**
 > subaccountsByEmailDelete(email)
 
@@ -128,9 +128,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address of Sub-Account |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address of Sub-Account | |
 
 ### Return type
 
@@ -148,9 +148,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="subaccountsByEmailGet"></a>
+<a id="subaccountsByEmailGet"></a>
 # **subaccountsByEmailGet**
 > SubAccountInfo subaccountsByEmailGet(email)
 
@@ -197,9 +197,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Email address of Sub-Account |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address of Sub-Account | |
 
 ### Return type
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="subaccountsByEmailSettingsEmailPut"></a>
+<a id="subaccountsByEmailSettingsEmailPut"></a>
 # **subaccountsByEmailSettingsEmailPut**
 > SubaccountEmailSettings subaccountsByEmailSettingsEmailPut(email, subaccountEmailSettings)
 
@@ -267,10 +267,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**|  |
- **subaccountEmailSettings** | [**SubaccountEmailSettings**](SubaccountEmailSettings.md)| Updated Email Settings |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**|  | |
+| **subaccountEmailSettings** | [**SubaccountEmailSettings**](SubaccountEmailSettings.md)| Updated Email Settings | |
 
 ### Return type
 
@@ -288,9 +288,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 
-<a name="subaccountsGet"></a>
+<a id="subaccountsGet"></a>
 # **subaccountsGet**
 > List&lt;SubAccountInfo&gt; subaccountsGet(limit, offset)
 
@@ -338,10 +338,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -359,9 +359,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="subaccountsPost"></a>
+<a id="subaccountsPost"></a>
 # **subaccountsPost**
 > SubAccountInfo subaccountsPost(subaccountPayload)
 
@@ -408,9 +408,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subaccountPayload** | [**SubaccountPayload**](SubaccountPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **subaccountPayload** | [**SubaccountPayload**](SubaccountPayload.md)|  | |
 
 ### Return type
 
@@ -428,5 +428,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,12 +14,13 @@
 package com.elasticemail.api;
 
 import com.elasticemail.client.ApiException;
+import com.elasticemail.model.Contact;
 import com.elasticemail.model.ContactsList;
 import com.elasticemail.model.EmailsPayload;
 import com.elasticemail.model.ListPayload;
 import com.elasticemail.model.ListUpdatePayload;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,126 +30,127 @@ import java.util.Map;
 /**
  * API tests for ListsApi
  */
-@Ignore
+@Disabled
 public class ListsApiTest {
 
     private final ListsApi api = new ListsApi();
 
-    
+    /**
+     * Load Contacts in List
+     *
+     * Returns a list of contacts. Required Access Level: ViewContacts
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listsByListnameContactsGetTest() throws ApiException {
+        String listname = null;
+        Integer limit = null;
+        Integer offset = null;
+        List<Contact> response = api.listsByListnameContactsGet(listname, limit, offset);
+        // TODO: test validations
+    }
+
     /**
      * Add Contacts to List
      *
      * Add existing Contacts to specified list. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsByNameContactsPostTest() throws ApiException {
         String name = null;
         EmailsPayload emailsPayload = null;
         ContactsList response = api.listsByNameContactsPost(name, emailsPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Remove Contacts from List
      *
      * Remove specified Contacts from your list. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsByNameContactsRemovePostTest() throws ApiException {
         String name = null;
         EmailsPayload emailsPayload = null;
         api.listsByNameContactsRemovePost(name, emailsPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Delete List
      *
      * Deletes List and removes all the Contacts from it (does not delete Contacts). Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsByNameDeleteTest() throws ApiException {
         String name = null;
         api.listsByNameDelete(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load List
      *
      * Returns detailed information about specified list. Required Access Level: ViewContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsByNameGetTest() throws ApiException {
         String name = null;
         ContactsList response = api.listsByNameGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Update List
      *
      * Update existing list. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsByNamePutTest() throws ApiException {
         String name = null;
         ListUpdatePayload listUpdatePayload = null;
         ContactsList response = api.listsByNamePut(name, listUpdatePayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Lists
      *
      * Returns all your existing lists. Required Access Level: ViewContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<ContactsList> response = api.listsGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Add List
      *
      * Add a new list. Required Access Level: ModifyContacts
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listsPostTest() throws ApiException {
         ListPayload listPayload = null;
         ContactsList response = api.listsPost(listPayload);
-
         // TODO: test validations
     }
-    
+
 }

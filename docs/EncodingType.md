@@ -5,7 +5,7 @@
 ## Enum
 
 
-* `USERPROVIDED` (value: `"UserProvided"`)
+* `USER_PROVIDED` (value: `"UserProvided"`)
 
 * `NONE` (value: `"None"`)
 
@@ -13,7 +13,7 @@
 
 * `RAW8BIT` (value: `"Raw8bit"`)
 
-* `QUOTEDPRINTABLE` (value: `"QuotedPrintable"`)
+* `QUOTED_PRINTABLE` (value: `"QuotedPrintable"`)
 
 * `BASE64` (value: `"Base64"`)
 

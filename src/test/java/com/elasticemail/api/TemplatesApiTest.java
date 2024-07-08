@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,10 +16,10 @@ package com.elasticemail.api;
 import com.elasticemail.client.ApiException;
 import com.elasticemail.model.Template;
 import com.elasticemail.model.TemplatePayload;
-import com.elasticemail.model.TemplateScopeType;
+import com.elasticemail.model.TemplateScope;
 import com.elasticemail.model.TemplateType;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,94 +29,83 @@ import java.util.Map;
 /**
  * API tests for TemplatesApi
  */
-@Ignore
+@Disabled
 public class TemplatesApiTest {
 
     private final TemplatesApi api = new TemplatesApi();
 
-    
     /**
      * Delete Template
      *
      * Delete template with the specified name. Required Access Level: ModifyTemplates
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void templatesByNameDeleteTest() throws ApiException {
         String name = null;
         api.templatesByNameDelete(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Template
      *
      * Load detailed information of the specified template. Required Access Level: ViewTemplates
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void templatesByNameGetTest() throws ApiException {
         String name = null;
         Template response = api.templatesByNameGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Update Template
      *
      * Update existing template, overwriting existing data. Required Access Level: ModifyTemplates
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void templatesByNamePutTest() throws ApiException {
         String name = null;
         TemplatePayload templatePayload = null;
         Template response = api.templatesByNamePut(name, templatePayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Templates
      *
      * Returns a list of templates for the specified type. Required Access Level: ViewTemplates
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void templatesGetTest() throws ApiException {
-        List<TemplateScopeType> scopeType = null;
+        List<TemplateScope> scopeType = null;
         List<TemplateType> templateTypes = null;
         Integer limit = null;
         Integer offset = null;
         List<Template> response = api.templatesGet(scopeType, templateTypes, limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Add Template
      *
      * Add a new Template. Required Access Level: ModifyTemplates
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void templatesPostTest() throws ApiException {
         TemplatePayload templatePayload = null;
         Template response = api.templatesPost(templatePayload);
-
         // TODO: test validations
     }
-    
+
 }

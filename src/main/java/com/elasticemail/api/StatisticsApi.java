@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -29,7 +29,7 @@ import java.io.IOException;
 
 import com.elasticemail.model.ChannelLogStatusSummary;
 import com.elasticemail.model.LogStatusSummary;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -88,7 +88,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call statisticsCampaignsByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -105,7 +104,7 @@ public class StatisticsApi {
 
         // create path and map variables
         String localVarPath = "/statistics/campaigns/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -122,7 +121,6 @@ public class StatisticsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -135,15 +133,12 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call statisticsCampaignsByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling statisticsCampaignsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = statisticsCampaignsByNameGetCall(name, _callback);
-        return localVarCall;
+        return statisticsCampaignsByNameGetCall(name, _callback);
 
     }
 
@@ -217,7 +212,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call statisticsCampaignsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -258,7 +252,6 @@ public class StatisticsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -271,10 +264,7 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call statisticsCampaignsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = statisticsCampaignsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return statisticsCampaignsGetCall(limit, offset, _callback);
 
     }
 
@@ -350,7 +340,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call statisticsChannelsByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -367,7 +356,7 @@ public class StatisticsApi {
 
         // create path and map variables
         String localVarPath = "/statistics/channels/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -384,7 +373,6 @@ public class StatisticsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -397,15 +385,12 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call statisticsChannelsByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling statisticsChannelsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = statisticsChannelsByNameGetCall(name, _callback);
-        return localVarCall;
+        return statisticsChannelsByNameGetCall(name, _callback);
 
     }
 
@@ -479,7 +464,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call statisticsChannelsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -520,7 +504,6 @@ public class StatisticsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -533,10 +516,7 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call statisticsChannelsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = statisticsChannelsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return statisticsChannelsGetCall(limit, offset, _callback);
 
     }
 
@@ -613,7 +593,6 @@ public class StatisticsApi {
      */
     public okhttp3.Call statisticsGetCall(OffsetDateTime from, OffsetDateTime to, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -654,7 +633,6 @@ public class StatisticsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -667,15 +645,12 @@ public class StatisticsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call statisticsGetValidateBeforeCall(OffsetDateTime from, OffsetDateTime to, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'from' is set
         if (from == null) {
             throw new ApiException("Missing the required parameter 'from' when calling statisticsGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = statisticsGetCall(from, to, _callback);
-        return localVarCall;
+        return statisticsGetCall(from, to, _callback);
 
     }
 

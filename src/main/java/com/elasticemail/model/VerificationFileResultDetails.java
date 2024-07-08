@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.EmailValidationResult;
 import com.elasticemail.model.FileUploadResult;
 import com.elasticemail.model.VerificationStatus;
@@ -23,22 +22,44 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Detailed verification file result info
  */
-@ApiModel(description = "Detailed verification file result info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class VerificationFileResultDetails {
   public static final String SERIALIZED_NAME_VERIFICATION_RESULT = "VerificationResult";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_RESULT)
-  private List<EmailValidationResult> verificationResult = null;
+  private List<EmailValidationResult> verificationResult = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERIFICATION_I_D = "VerificationID";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_I_D)
@@ -64,34 +85,30 @@ public class VerificationFileResultDetails {
   @SerializedName(SERIALIZED_NAME_SOURCE)
   private String source;
 
-  public VerificationFileResultDetails() { 
+  public VerificationFileResultDetails() {
   }
 
   public VerificationFileResultDetails verificationResult(List<EmailValidationResult> verificationResult) {
-    
     this.verificationResult = verificationResult;
     return this;
   }
 
   public VerificationFileResultDetails addVerificationResultItem(EmailValidationResult verificationResultItem) {
     if (this.verificationResult == null) {
-      this.verificationResult = new ArrayList<EmailValidationResult>();
+      this.verificationResult = new ArrayList<>();
     }
     this.verificationResult.add(verificationResultItem);
     return this;
   }
 
-   /**
+  /**
    * Verification result&#39;s details
    * @return verificationResult
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Verification result's details")
-
   public List<EmailValidationResult> getVerificationResult() {
     return verificationResult;
   }
-
 
   public void setVerificationResult(List<EmailValidationResult> verificationResult) {
     this.verificationResult = verificationResult;
@@ -99,22 +116,18 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails verificationID(String verificationID) {
-    
     this.verificationID = verificationID;
     return this;
   }
 
-   /**
+  /**
    * Identifier of this verification result
    * @return verificationID
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Identifier of this verification result")
-
   public String getVerificationID() {
     return verificationID;
   }
-
 
   public void setVerificationID(String verificationID) {
     this.verificationID = verificationID;
@@ -122,22 +135,18 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails filename(String filename) {
-    
     this.filename = filename;
     return this;
   }
 
-   /**
+  /**
    * Origin file name
    * @return filename
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Origin file name")
-
   public String getFilename() {
     return filename;
   }
-
 
   public void setFilename(String filename) {
     this.filename = filename;
@@ -145,22 +154,18 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails verificationStatus(VerificationStatus verificationStatus) {
-    
     this.verificationStatus = verificationStatus;
     return this;
   }
 
-   /**
+  /**
    * Get verificationStatus
    * @return verificationStatus
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public VerificationStatus getVerificationStatus() {
     return verificationStatus;
   }
-
 
   public void setVerificationStatus(VerificationStatus verificationStatus) {
     this.verificationStatus = verificationStatus;
@@ -168,22 +173,18 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails fileUploadResult(FileUploadResult fileUploadResult) {
-    
     this.fileUploadResult = fileUploadResult;
     return this;
   }
 
-   /**
+  /**
    * Get fileUploadResult
    * @return fileUploadResult
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public FileUploadResult getFileUploadResult() {
     return fileUploadResult;
   }
-
 
   public void setFileUploadResult(FileUploadResult fileUploadResult) {
     this.fileUploadResult = fileUploadResult;
@@ -191,22 +192,18 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails dateAdded(OffsetDateTime dateAdded) {
-    
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of creation in YYYY-MM-DDThh:ii:ss format")
-
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
-
 
   public void setDateAdded(OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
@@ -214,26 +211,23 @@ public class VerificationFileResultDetails {
 
 
   public VerificationFileResultDetails source(String source) {
-    
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Origin file extension
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Origin file extension")
-
   public String getSource() {
     return source;
   }
 
-
   public void setSource(String source) {
     this.source = source;
   }
+
 
 
   @Override
@@ -285,5 +279,126 @@ public class VerificationFileResultDetails {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("VerificationResult");
+    openapiFields.add("VerificationID");
+    openapiFields.add("Filename");
+    openapiFields.add("VerificationStatus");
+    openapiFields.add("FileUploadResult");
+    openapiFields.add("DateAdded");
+    openapiFields.add("Source");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VerificationFileResultDetails
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!VerificationFileResultDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in VerificationFileResultDetails is not found in the empty JSON string", VerificationFileResultDetails.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!VerificationFileResultDetails.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `VerificationFileResultDetails` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (jsonObj.get("VerificationResult") != null && !jsonObj.get("VerificationResult").isJsonNull()) {
+        JsonArray jsonArrayverificationResult = jsonObj.getAsJsonArray("VerificationResult");
+        if (jsonArrayverificationResult != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("VerificationResult").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `VerificationResult` to be an array in the JSON string but got `%s`", jsonObj.get("VerificationResult").toString()));
+          }
+
+          // validate the optional field `VerificationResult` (array)
+          for (int i = 0; i < jsonArrayverificationResult.size(); i++) {
+            EmailValidationResult.validateJsonElement(jsonArrayverificationResult.get(i));
+          };
+        }
+      }
+      if ((jsonObj.get("VerificationID") != null && !jsonObj.get("VerificationID").isJsonNull()) && !jsonObj.get("VerificationID").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `VerificationID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("VerificationID").toString()));
+      }
+      if ((jsonObj.get("Filename") != null && !jsonObj.get("Filename").isJsonNull()) && !jsonObj.get("Filename").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Filename` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Filename").toString()));
+      }
+      // validate the optional field `VerificationStatus`
+      if (jsonObj.get("VerificationStatus") != null && !jsonObj.get("VerificationStatus").isJsonNull()) {
+        VerificationStatus.validateJsonElement(jsonObj.get("VerificationStatus"));
+      }
+      // validate the optional field `FileUploadResult`
+      if (jsonObj.get("FileUploadResult") != null && !jsonObj.get("FileUploadResult").isJsonNull()) {
+        FileUploadResult.validateJsonElement(jsonObj.get("FileUploadResult"));
+      }
+      if ((jsonObj.get("Source") != null && !jsonObj.get("Source").isJsonNull()) && !jsonObj.get("Source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Source").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!VerificationFileResultDetails.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'VerificationFileResultDetails' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<VerificationFileResultDetails> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(VerificationFileResultDetails.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<VerificationFileResultDetails>() {
+           @Override
+           public void write(JsonWriter out, VerificationFileResultDetails value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public VerificationFileResultDetails read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of VerificationFileResultDetails given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VerificationFileResultDetails
+   * @throws IOException if the JSON string is invalid with respect to VerificationFileResultDetails
+   */
+  public static VerificationFileResultDetails fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, VerificationFileResultDetails.class);
+  }
+
+  /**
+   * Convert an instance of VerificationFileResultDetails to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

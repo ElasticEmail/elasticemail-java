@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.AccountStatusEnum;
 import com.elasticemail.model.SubaccountSettingsInfo;
 import com.google.gson.TypeAdapter;
@@ -22,16 +21,38 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Detailed information about SubAccount.
  */
-@ApiModel(description = "Detailed information about SubAccount.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class SubAccountInfo {
   public static final String SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D = "PublicAccountID";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D)
@@ -69,26 +90,22 @@ public class SubAccountInfo {
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
   private Integer contactsCount;
 
-  public SubAccountInfo() { 
+  public SubAccountInfo() {
   }
 
   public SubAccountInfo publicAccountID(String publicAccountID) {
-    
     this.publicAccountID = publicAccountID;
     return this;
   }
 
-   /**
+  /**
    * Public key for limited access to your Account such as contact/add so you can use it safely on public websites.
    * @return publicAccountID
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "EB3EBB7A-C20D-4D39-8F2F-5E6842F58E6F", value = "Public key for limited access to your Account such as contact/add so you can use it safely on public websites.")
-
   public String getPublicAccountID() {
     return publicAccountID;
   }
-
 
   public void setPublicAccountID(String publicAccountID) {
     this.publicAccountID = publicAccountID;
@@ -96,22 +113,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo email(String email) {
-    
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Proper email address.
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "mail@example.com", value = "Proper email address.")
-
   public String getEmail() {
     return email;
   }
-
 
   public void setEmail(String email) {
     this.email = email;
@@ -119,22 +132,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo settings(SubaccountSettingsInfo settings) {
-    
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public SubaccountSettingsInfo getSettings() {
     return settings;
   }
-
 
   public void setSettings(SubaccountSettingsInfo settings) {
     this.settings = settings;
@@ -142,22 +151,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo lastActivity(OffsetDateTime lastActivity) {
-    
     this.lastActivity = lastActivity;
     return this;
   }
 
-   /**
+  /**
    * Date of last activity on Account
    * @return lastActivity
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of last activity on Account")
-
   public OffsetDateTime getLastActivity() {
     return lastActivity;
   }
-
 
   public void setLastActivity(OffsetDateTime lastActivity) {
     this.lastActivity = lastActivity;
@@ -165,22 +170,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo emailCredits(Integer emailCredits) {
-    
     this.emailCredits = emailCredits;
     return this;
   }
 
-   /**
+  /**
    * Amount of email credits
    * @return emailCredits
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Amount of email credits")
-
   public Integer getEmailCredits() {
     return emailCredits;
   }
-
 
   public void setEmailCredits(Integer emailCredits) {
     this.emailCredits = emailCredits;
@@ -188,22 +189,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo totalEmailsSent(Long totalEmailsSent) {
-    
     this.totalEmailsSent = totalEmailsSent;
     return this;
   }
 
-   /**
+  /**
    * Amount of emails sent from this Account
    * @return totalEmailsSent
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Amount of emails sent from this Account")
-
   public Long getTotalEmailsSent() {
     return totalEmailsSent;
   }
-
 
   public void setTotalEmailsSent(Long totalEmailsSent) {
     this.totalEmailsSent = totalEmailsSent;
@@ -211,22 +208,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo reputation(Double reputation) {
-    
     this.reputation = reputation;
     return this;
   }
 
-   /**
+  /**
    * Numeric reputation
    * @return reputation
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "100", value = "Numeric reputation")
-
   public Double getReputation() {
     return reputation;
   }
-
 
   public void setReputation(Double reputation) {
     this.reputation = reputation;
@@ -234,22 +227,18 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo status(AccountStatusEnum status) {
-    
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public AccountStatusEnum getStatus() {
     return status;
   }
-
 
   public void setStatus(AccountStatusEnum status) {
     this.status = status;
@@ -257,26 +246,23 @@ public class SubAccountInfo {
 
 
   public SubAccountInfo contactsCount(Integer contactsCount) {
-    
     this.contactsCount = contactsCount;
     return this;
   }
 
-   /**
+  /**
    * How many contacts this SubAccount has stored
    * @return contactsCount
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "How many contacts this SubAccount has stored")
-
   public Integer getContactsCount() {
     return contactsCount;
   }
 
-
   public void setContactsCount(Integer contactsCount) {
     this.contactsCount = contactsCount;
   }
+
 
 
   @Override
@@ -332,5 +318,111 @@ public class SubAccountInfo {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("PublicAccountID");
+    openapiFields.add("Email");
+    openapiFields.add("Settings");
+    openapiFields.add("LastActivity");
+    openapiFields.add("EmailCredits");
+    openapiFields.add("TotalEmailsSent");
+    openapiFields.add("Reputation");
+    openapiFields.add("Status");
+    openapiFields.add("ContactsCount");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubAccountInfo
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!SubAccountInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SubAccountInfo is not found in the empty JSON string", SubAccountInfo.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!SubAccountInfo.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `SubAccountInfo` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("PublicAccountID") != null && !jsonObj.get("PublicAccountID").isJsonNull()) && !jsonObj.get("PublicAccountID").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `PublicAccountID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("PublicAccountID").toString()));
+      }
+      if ((jsonObj.get("Email") != null && !jsonObj.get("Email").isJsonNull()) && !jsonObj.get("Email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Email").toString()));
+      }
+      // validate the optional field `Settings`
+      if (jsonObj.get("Settings") != null && !jsonObj.get("Settings").isJsonNull()) {
+        SubaccountSettingsInfo.validateJsonElement(jsonObj.get("Settings"));
+      }
+      // validate the optional field `Status`
+      if (jsonObj.get("Status") != null && !jsonObj.get("Status").isJsonNull()) {
+        AccountStatusEnum.validateJsonElement(jsonObj.get("Status"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!SubAccountInfo.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SubAccountInfo' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<SubAccountInfo> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SubAccountInfo.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<SubAccountInfo>() {
+           @Override
+           public void write(JsonWriter out, SubAccountInfo value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public SubAccountInfo read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of SubAccountInfo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubAccountInfo
+   * @throws IOException if the JSON string is invalid with respect to SubAccountInfo
+   */
+  public static SubAccountInfo fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SubAccountInfo.class);
+  }
+
+  /**
+   * Convert an instance of SubAccountInfo to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

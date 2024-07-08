@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.BodyPart;
 import com.elasticemail.model.TemplateScope;
 import com.elasticemail.model.TemplateType;
@@ -23,22 +22,44 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Template info
  */
-@ApiModel(description = "Template info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class Template {
   public static final String SERIALIZED_NAME_TEMPLATE_TYPE = "TemplateType";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_TYPE)
-  private TemplateType templateType = TemplateType.RAWHTML;
+  private TemplateType templateType = TemplateType.RAW_HTML;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -54,32 +75,28 @@ public class Template {
 
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
-  private List<BodyPart> body = null;
+  private List<BodyPart> body = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPLATE_SCOPE = "TemplateScope";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_SCOPE)
   private TemplateScope templateScope = TemplateScope.PERSONAL;
 
-  public Template() { 
+  public Template() {
   }
 
   public Template templateType(TemplateType templateType) {
-    
     this.templateType = templateType;
     return this;
   }
 
-   /**
+  /**
    * Get templateType
    * @return templateType
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public TemplateType getTemplateType() {
     return templateType;
   }
-
 
   public void setTemplateType(TemplateType templateType) {
     this.templateType = templateType;
@@ -87,22 +104,18 @@ public class Template {
 
 
   public Template name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Template name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Template name")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -110,22 +123,18 @@ public class Template {
 
 
   public Template dateAdded(OffsetDateTime dateAdded) {
-    
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of creation in YYYY-MM-DDThh:ii:ss format")
-
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
-
 
   public void setDateAdded(OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
@@ -133,22 +142,18 @@ public class Template {
 
 
   public Template subject(String subject) {
-    
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Hello!", value = "Default subject of email.")
-
   public String getSubject() {
     return subject;
   }
-
 
   public void setSubject(String subject) {
     this.subject = subject;
@@ -156,30 +161,26 @@ public class Template {
 
 
   public Template body(List<BodyPart> body) {
-    
     this.body = body;
     return this;
   }
 
   public Template addBodyItem(BodyPart bodyItem) {
     if (this.body == null) {
-      this.body = new ArrayList<BodyPart>();
+      this.body = new ArrayList<>();
     }
     this.body.add(bodyItem);
     return this;
   }
 
-   /**
+  /**
    * Email content of this template
    * @return body
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Email content of this template")
-
   public List<BodyPart> getBody() {
     return body;
   }
-
 
   public void setBody(List<BodyPart> body) {
     this.body = body;
@@ -187,26 +188,23 @@ public class Template {
 
 
   public Template templateScope(TemplateScope templateScope) {
-    
     this.templateScope = templateScope;
     return this;
   }
 
-   /**
+  /**
    * Get templateScope
    * @return templateScope
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public TemplateScope getTemplateScope() {
     return templateScope;
   }
 
-
   public void setTemplateScope(TemplateScope templateScope) {
     this.templateScope = templateScope;
   }
+
 
 
   @Override
@@ -256,5 +254,122 @@ public class Template {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("TemplateType");
+    openapiFields.add("Name");
+    openapiFields.add("DateAdded");
+    openapiFields.add("Subject");
+    openapiFields.add("Body");
+    openapiFields.add("TemplateScope");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Template
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Template.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Template is not found in the empty JSON string", Template.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Template.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Template` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `TemplateType`
+      if (jsonObj.get("TemplateType") != null && !jsonObj.get("TemplateType").isJsonNull()) {
+        TemplateType.validateJsonElement(jsonObj.get("TemplateType"));
+      }
+      if ((jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonNull()) && !jsonObj.get("Name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+      }
+      if ((jsonObj.get("Subject") != null && !jsonObj.get("Subject").isJsonNull()) && !jsonObj.get("Subject").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Subject` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Subject").toString()));
+      }
+      if (jsonObj.get("Body") != null && !jsonObj.get("Body").isJsonNull()) {
+        JsonArray jsonArraybody = jsonObj.getAsJsonArray("Body");
+        if (jsonArraybody != null) {
+          // ensure the json data is an array
+          if (!jsonObj.get("Body").isJsonArray()) {
+            throw new IllegalArgumentException(String.format("Expected the field `Body` to be an array in the JSON string but got `%s`", jsonObj.get("Body").toString()));
+          }
+
+          // validate the optional field `Body` (array)
+          for (int i = 0; i < jsonArraybody.size(); i++) {
+            BodyPart.validateJsonElement(jsonArraybody.get(i));
+          };
+        }
+      }
+      // validate the optional field `TemplateScope`
+      if (jsonObj.get("TemplateScope") != null && !jsonObj.get("TemplateScope").isJsonNull()) {
+        TemplateScope.validateJsonElement(jsonObj.get("TemplateScope"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Template.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Template' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Template> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Template.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Template>() {
+           @Override
+           public void write(JsonWriter out, Template value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Template read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of Template given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Template
+   * @throws IOException if the JSON string is invalid with respect to Template
+   */
+  public static Template fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Template.class);
+  }
+
+  /**
+   * Convert an instance of Template to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

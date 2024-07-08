@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -33,7 +33,7 @@ import com.elasticemail.model.EventsOrderBy;
 import com.elasticemail.model.ExportFileFormats;
 import com.elasticemail.model.ExportLink;
 import com.elasticemail.model.ExportStatus;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 import com.elasticemail.model.RecipientEvent;
 
 import java.lang.reflect.Type;
@@ -98,7 +98,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsByTransactionidGetCall(String transactionid, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -115,7 +114,7 @@ public class EventsApi {
 
         // create path and map variables
         String localVarPath = "/events/{transactionid}"
-            .replaceAll("\\{" + "transactionid" + "\\}", localVarApiClient.escapeString(transactionid.toString()));
+            .replace("{" + "transactionid" + "}", localVarApiClient.escapeString(transactionid.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -152,7 +151,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -165,15 +163,12 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsByTransactionidGetValidateBeforeCall(String transactionid, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'transactionid' is set
         if (transactionid == null) {
             throw new ApiException("Missing the required parameter 'transactionid' when calling eventsByTransactionidGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = eventsByTransactionidGetCall(transactionid, from, to, orderBy, limit, offset, _callback);
-        return localVarCall;
+        return eventsByTransactionidGetCall(transactionid, from, to, orderBy, limit, offset, _callback);
 
     }
 
@@ -267,7 +262,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsChannelsByNameExportPostCall(String name, List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, ExportFileFormats fileFormat, CompressionFormat compressionFormat, String fileName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -284,7 +278,7 @@ public class EventsApi {
 
         // create path and map variables
         String localVarPath = "/events/channels/{name}/export"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -325,7 +319,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -338,15 +331,12 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsChannelsByNameExportPostValidateBeforeCall(String name, List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, ExportFileFormats fileFormat, CompressionFormat compressionFormat, String fileName, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling eventsChannelsByNameExportPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = eventsChannelsByNameExportPostCall(name, eventTypes, from, to, fileFormat, compressionFormat, fileName, _callback);
-        return localVarCall;
+        return eventsChannelsByNameExportPostCall(name, eventTypes, from, to, fileFormat, compressionFormat, fileName, _callback);
 
     }
 
@@ -443,7 +433,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsChannelsByNameGetCall(String name, List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -460,7 +449,7 @@ public class EventsApi {
 
         // create path and map variables
         String localVarPath = "/events/channels/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -501,7 +490,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -514,15 +502,12 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsChannelsByNameGetValidateBeforeCall(String name, List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling eventsChannelsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = eventsChannelsByNameGetCall(name, eventTypes, from, to, orderBy, limit, offset, _callback);
-        return localVarCall;
+        return eventsChannelsByNameGetCall(name, eventTypes, from, to, orderBy, limit, offset, _callback);
 
     }
 
@@ -613,7 +598,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsChannelsExportByIdStatusGetCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -630,7 +614,7 @@ public class EventsApi {
 
         // create path and map variables
         String localVarPath = "/events/channels/export/{id}/status"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -647,7 +631,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -660,15 +643,12 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsChannelsExportByIdStatusGetValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling eventsChannelsExportByIdStatusGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = eventsChannelsExportByIdStatusGetCall(id, _callback);
-        return localVarCall;
+        return eventsChannelsExportByIdStatusGetCall(id, _callback);
 
     }
 
@@ -741,7 +721,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsExportByIdStatusGetCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -758,7 +737,7 @@ public class EventsApi {
 
         // create path and map variables
         String localVarPath = "/events/export/{id}/status"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -775,7 +754,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -788,15 +766,12 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsExportByIdStatusGetValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling eventsExportByIdStatusGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = eventsExportByIdStatusGetCall(id, _callback);
-        return localVarCall;
+        return eventsExportByIdStatusGetCall(id, _callback);
 
     }
 
@@ -874,7 +849,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsExportPostCall(List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, ExportFileFormats fileFormat, CompressionFormat compressionFormat, String fileName, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -931,7 +905,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -944,10 +917,7 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsExportPostValidateBeforeCall(List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, ExportFileFormats fileFormat, CompressionFormat compressionFormat, String fileName, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = eventsExportPostCall(eventTypes, from, to, fileFormat, compressionFormat, fileName, _callback);
-        return localVarCall;
+        return eventsExportPostCall(eventTypes, from, to, fileFormat, compressionFormat, fileName, _callback);
 
     }
 
@@ -1040,7 +1010,6 @@ public class EventsApi {
      */
     public okhttp3.Call eventsGetCall(List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1097,7 +1066,6 @@ public class EventsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1110,10 +1078,7 @@ public class EventsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call eventsGetValidateBeforeCall(List<EventType> eventTypes, OffsetDateTime from, OffsetDateTime to, EventsOrderBy orderBy, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = eventsGetCall(eventTypes, from, to, orderBy, limit, offset, _callback);
-        return localVarCall;
+        return eventsGetCall(eventTypes, from, to, orderBy, limit, offset, _callback);
 
     }
 

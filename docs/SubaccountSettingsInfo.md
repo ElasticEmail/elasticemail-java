@@ -6,9 +6,9 @@ SubAccount settings
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**email** | [**SubaccountEmailSettings**](SubaccountEmailSettings.md) |  |  [optional]
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**email** | [**SubaccountEmailSettings**](SubaccountEmailSettings.md) |  |  [optional] |
 
 
 

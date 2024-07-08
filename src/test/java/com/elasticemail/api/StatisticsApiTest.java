@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,9 +16,9 @@ package com.elasticemail.api;
 import com.elasticemail.client.ApiException;
 import com.elasticemail.model.ChannelLogStatusSummary;
 import com.elasticemail.model.LogStatusSummary;
-import org.threeten.bp.OffsetDateTime;
-import org.junit.Test;
-import org.junit.Ignore;
+import java.time.OffsetDateTime;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,93 +28,82 @@ import java.util.Map;
 /**
  * API tests for StatisticsApi
  */
-@Ignore
+@Disabled
 public class StatisticsApiTest {
 
     private final StatisticsApi api = new StatisticsApi();
 
-    
     /**
      * Load Campaign Stats
      *
      * Retrieve stats of an existing campaign. Required Access Level: ViewChannels
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void statisticsCampaignsByNameGetTest() throws ApiException {
         String name = null;
         ChannelLogStatusSummary response = api.statisticsCampaignsByNameGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Campaigns Stats
      *
      * Returns a list of your Campaigns&#39; stats. Required Access Level: ViewChannels
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void statisticsCampaignsGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<ChannelLogStatusSummary> response = api.statisticsCampaignsGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Channel Stats
      *
      * Retrieve an existing channel stats. Required Access Level: ViewChannels
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void statisticsChannelsByNameGetTest() throws ApiException {
         String name = null;
         ChannelLogStatusSummary response = api.statisticsChannelsByNameGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Channels Stats
      *
      * Returns a list of your Channels&#39; stats. Required Access Level: ViewChannels
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void statisticsChannelsGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<ChannelLogStatusSummary> response = api.statisticsChannelsGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Statistics
      *
      * Returns basic statistics. Required Access Level: ViewReports
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void statisticsGetTest() throws ApiException {
         OffsetDateTime from = null;
         OffsetDateTime to = null;
         LogStatusSummary response = api.statisticsGet(from, to);
-
         // TODO: test validations
     }
-    
+
 }

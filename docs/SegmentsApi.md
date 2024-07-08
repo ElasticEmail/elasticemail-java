@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**segmentsByNameDelete**](SegmentsApi.md#segmentsByNameDelete) | **DELETE** /segments/{name} | Delete Segment
-[**segmentsByNameGet**](SegmentsApi.md#segmentsByNameGet) | **GET** /segments/{name} | Load Segment
-[**segmentsByNamePut**](SegmentsApi.md#segmentsByNamePut) | **PUT** /segments/{name} | Update Segment
-[**segmentsGet**](SegmentsApi.md#segmentsGet) | **GET** /segments | Load Segments
-[**segmentsPost**](SegmentsApi.md#segmentsPost) | **POST** /segments | Add Segment
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**segmentsByNameDelete**](SegmentsApi.md#segmentsByNameDelete) | **DELETE** /segments/{name} | Delete Segment |
+| [**segmentsByNameGet**](SegmentsApi.md#segmentsByNameGet) | **GET** /segments/{name} | Load Segment |
+| [**segmentsByNamePut**](SegmentsApi.md#segmentsByNamePut) | **PUT** /segments/{name} | Update Segment |
+| [**segmentsGet**](SegmentsApi.md#segmentsGet) | **GET** /segments | Load Segments |
+| [**segmentsPost**](SegmentsApi.md#segmentsPost) | **POST** /segments | Add Segment |
 
 
-<a name="segmentsByNameDelete"></a>
+<a id="segmentsByNameDelete"></a>
 # **segmentsByNameDelete**
 > segmentsByNameDelete(name)
 
@@ -57,9 +57,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of your segment. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of your segment. | |
 
 ### Return type
 
@@ -77,9 +77,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="segmentsByNameGet"></a>
+<a id="segmentsByNameGet"></a>
 # **segmentsByNameGet**
 > Segment segmentsByNameGet(name)
 
@@ -126,9 +126,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the segment you want to load. Will load all contacts if the &#39;All Contacts&#39; name has been provided |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the segment you want to load. Will load all contacts if the &#39;All Contacts&#39; name has been provided | |
 
 ### Return type
 
@@ -146,9 +146,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="segmentsByNamePut"></a>
+<a id="segmentsByNamePut"></a>
 # **segmentsByNamePut**
 > Segment segmentsByNamePut(name, segmentPayload)
 
@@ -196,10 +196,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of your segment. |
- **segmentPayload** | [**SegmentPayload**](SegmentPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of your segment. | |
+| **segmentPayload** | [**SegmentPayload**](SegmentPayload.md)|  | |
 
 ### Return type
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="segmentsGet"></a>
+<a id="segmentsGet"></a>
 # **segmentsGet**
 > List&lt;Segment&gt; segmentsGet(limit, offset)
 
@@ -267,10 +267,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -288,9 +288,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="segmentsPost"></a>
+<a id="segmentsPost"></a>
 # **segmentsPost**
 > Segment segmentsPost(segmentPayload)
 
@@ -337,9 +337,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **segmentPayload** | [**SegmentPayload**](SegmentPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **segmentPayload** | [**SegmentPayload**](SegmentPayload.md)|  | |
 
 ### Return type
 
@@ -357,5 +357,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

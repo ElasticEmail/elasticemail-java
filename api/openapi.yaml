@@ -7,13 +7,10 @@ info:
     \ API call is established on which specific request type (GET, POST, PUT, DELETE)\
     \ will be used.\r\n\r\nThe API has a limit of 20 concurrent connections and a\
     \ hard timeout of 600 seconds per request.\r\n\r\nTo start using this API, you\
-    \ will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\"\
+    \ will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\"\
     >here</a>). Remember to keep it safe. Required access levels are listed in the\
-    \ given request’s description.\r\n\r\nThis is the documentation for REST API.\
-    \ If you’d like to read our legacy documentation regarding Web API v2 click <a\
-    \ target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.\r\
-    \n\r\nDownloadable library clients can be found in our Github repository <a target=\"\
-    _blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\"\
+    \ given request’s description.\r\n\r\nDownloadable library clients can be found\
+    \ in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\"\
     >here</a>"
   license:
     name: MIT
@@ -34,8 +31,8 @@ tags:
   name: Emails
 - description: Methods to check logs of your campaigns
   name: Events
-- description: Manage the files on your account to be used as attachments in your
-    email, templates, etc.
+- description: "Manage the files on your account to be used as attachments in your\
+    \ email, templates, etc."
   name: Files
 - description: Inbounds operations
   name: InboundRoute
@@ -43,8 +40,8 @@ tags:
   name: Lists
 - description: Security methods
   name: Security
-- description: 'Manages your segments - dynamically created lists of contacts. Help
-    for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules'
+- description: "Manages your segments - dynamically created lists of contacts. Help\
+    \ for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules"
   name: Segments
 - description: Methods to check logs of your campaigns
   name: Statistics
@@ -59,8 +56,8 @@ tags:
 paths:
   /campaigns:
     get:
-      description: 'Returns a list all of your campaigns. Limited to 1000 results.
-        Required Access Level: ViewCampaigns'
+      description: "Returns a list all of your campaigns. Limited to 1000 results.\
+        \ Required Access Level: ViewCampaigns"
       operationId: campaignsGet
       parameters:
       - description: Text fragment used for searching in Campaign name (using the
@@ -108,9 +105,10 @@ paths:
       summary: Load Campaigns
       tags:
       - Campaigns
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a campaign for processing. Required Access Level: ModifyCampaigns'
+      description: "Add a campaign for processing. Required Access Level: ModifyCampaigns"
       operationId: campaignsPost
       requestBody:
         content:
@@ -129,12 +127,13 @@ paths:
       summary: Add Campaign
       tags:
       - Campaigns
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /campaigns/{name}:
     delete:
-      description: 'Delete the specific campaign.  This does not cancel in progress
-        email, see Cancel In Progress. Required Access Level: ModifyCampaigns'
+      description: "Delete the specific campaign.  This does not cancel in progress\
+        \ email, see Cancel In Progress. Required Access Level: ModifyCampaigns"
       operationId: campaignsByNameDelete
       parameters:
       - description: Name of Campaign to delete
@@ -153,10 +152,11 @@ paths:
       summary: Delete Campaign
       tags:
       - Campaigns
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Returns the specified campaign details. Required Access Level:
-        ViewCampaigns'
+      description: "Returns the specified campaign details. Required Access Level:\
+        \ ViewCampaigns"
       operationId: campaignsByNameGet
       parameters:
       - description: Name of Campaign to get
@@ -179,10 +179,11 @@ paths:
       summary: Load Campaign
       tags:
       - Campaigns
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Updates a previously added campaign.  Only Active and Paused campaigns
-        can be updated. Required Access Level: ModifyCampaigns'
+      description: "Updates a previously added campaign.  Only Active and Paused campaigns\
+        \ can be updated. Required Access Level: ModifyCampaigns"
       operationId: campaignsByNamePut
       parameters:
       - description: Name of Campaign to update
@@ -212,11 +213,12 @@ paths:
       summary: Update Campaign
       tags:
       - Campaigns
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /contacts:
     get:
-      description: 'Returns a list of contacts. Required Access Level: ViewContacts'
+      description: "Returns a list of contacts. Required Access Level: ViewContacts"
       operationId: contactsGet
       parameters:
       - description: Maximum number of returned items.
@@ -253,10 +255,11 @@ paths:
       summary: Load Contacts
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add new Contacts to your Lists. Up to 1000 can be added (for more
-        please refer to the import request). Required Access Level: ModifyContacts'
+      description: "Add new Contacts to your Lists. Up to 1000 can be added (for more\
+        \ please refer to the import request). Required Access Level: ModifyContacts"
       operationId: contactsPost
       parameters:
       - description: Names of lists to which the uploaded contacts should be added
@@ -292,11 +295,12 @@ paths:
       summary: Add Contact
       tags:
       - Contacts
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /contacts/{email}:
     delete:
-      description: 'Deletes the provided contact. Required Access Level: ModifyContacts'
+      description: "Deletes the provided contact. Required Access Level: ModifyContacts"
       operationId: contactsByEmailDelete
       parameters:
       - description: Proper email address.
@@ -316,10 +320,11 @@ paths:
       summary: Delete Contact
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Load detailed contact information for specified email. Required
-        Access Level: ViewContacts'
+      description: "Load detailed contact information for specified email. Required\
+        \ Access Level: ViewContacts"
       operationId: contactsByEmailGet
       parameters:
       - description: Proper email address.
@@ -343,10 +348,11 @@ paths:
       summary: Load Contact
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update selected contact. Omitted contact''s fields will not be
-        changed. Required Access Level: ModifyContacts'
+      description: "Update selected contact. Omitted contact's fields will not be\
+        \ changed. Required Access Level: ModifyContacts"
       operationId: contactsByEmailPut
       parameters:
       - description: Proper email address.
@@ -376,70 +382,19 @@ paths:
       summary: Update Contact
       tags:
       - Contacts
-      x-contentType: application/json
-      x-accepts: application/json
-  /contacts/{email}/history:
-    get:
-      description: 'Returns detailed history of specified Contact. Required Access
-        Level: ViewContacts'
-      operationId: contactsByEmailHistoryGet
-      parameters:
-      - description: Proper email address.
-        explode: false
-        in: path
-        name: email
-        required: true
-        schema:
-          description: string
-          example: mail@example.com
-          format: string
-          type: string
-        style: simple
-      - description: Maximum number of returned items.
-        explode: true
-        in: query
-        name: limit
-        required: false
-        schema:
-          description: integer
-          example: 100
-          format: int32
-          type: integer
-        style: form
-      - description: How many items should be returned ahead.
-        explode: true
-        in: query
-        name: offset
-        required: false
-        schema:
-          description: integer
-          example: 20
-          format: int32
-          type: integer
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ContactHistory'
-                type: array
-          description: OK
-      summary: Load History
-      tags:
-      - Contacts
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /contacts/delete:
     post:
-      description: 'Deletes provided contacts in bulk. Required Access Level: ModifyContacts'
+      description: "Deletes provided contacts in bulk. Required Access Level: ModifyContacts"
       operationId: contactsDeletePost
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/EmailsPayload'
-        description: Provide either rule or a list of emails, not both.
+        description: "Provide either rule or a list of emails, not both."
         required: true
       responses:
         "200":
@@ -447,12 +402,13 @@ paths:
       summary: Delete Contacts Bulk
       tags:
       - Contacts
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /contacts/export:
     post:
-      description: 'Request an Export of specified Contacts. Required Access Level:
-        Export'
+      description: "Request an Export of specified Contacts. Required Access Level:\
+        \ Export"
       operationId: contactsExportPost
       parameters:
       - description: Format of the exported file
@@ -481,7 +437,8 @@ paths:
         required: false
         schema:
           description: array
-          example: mail@contact.com,mail1@contact.com,mail2@contact.com
+          example:
+          - "mail@contact.com,mail1@contact.com,mail2@contact.com"
           items:
             format: string
             type: string
@@ -516,11 +473,12 @@ paths:
       summary: Export Contacts
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /contacts/export/{id}/status:
     get:
-      description: 'Check the current status of the export. Required Access Level:
-        Export'
+      description: "Check the current status of the export. Required Access Level:\
+        \ Export"
       operationId: contactsExportByIdStatusGet
       parameters:
       - description: ID of the exported file
@@ -544,10 +502,11 @@ paths:
       summary: Check Export Status
       tags:
       - Contacts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /contacts/import:
     post:
-      description: 'Upload contacts from a file. Required Access Level: ModifyContacts'
+      description: "Upload contacts from a file. Required Access Level: ModifyContacts"
       operationId: contactsImportPost
       parameters:
       - description: Name of an existing list to add these contacts to
@@ -570,20 +529,24 @@ paths:
           format: string
           type: string
         style: form
+      - description: Optional url of csv to import
+        explode: true
+        in: query
+        name: fileUrl
+        required: false
+        schema:
+          description: string
+          format: string
+          type: string
+        style: form
       requestBody:
-        $ref: '#/components/requestBodies/inline_object'
         content:
           multipart/form-data:
             schema:
-              format: binary
-              properties:
-                file:
-                  format: binary
-                  type: string
-              type: object
-        description: 'File in CSV format with columns to upload as Contact fields.
-          Required columns: Email. Suggested columns: AllowUnsubscribe, Status, ConsentDate,
-          ConsentIP, ConsentTracking.'
+              $ref: '#/components/schemas/contactsImportPost_request'
+        description: "File in CSV format with columns to upload as Contact fields.\
+          \ Required columns: Email. Suggested columns: AllowUnsubscribe, Status,\
+          \ ConsentDate, ConsentIP, ConsentTracking."
         required: true
       responses:
         "202":
@@ -591,11 +554,12 @@ paths:
       summary: Upload Contacts
       tags:
       - Contacts
-      x-contentType: multipart/form-data
-      x-accepts: application/json
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
   /emails:
     post:
-      description: 'Send bulk merge email. Required Access Level: SendHttp'
+      description: "Send bulk merge email. Required Access Level: SendHttp"
       operationId: emailsPost
       requestBody:
         content:
@@ -614,12 +578,13 @@ paths:
       summary: Send Bulk Emails
       tags:
       - Emails
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /emails/{msgid}/view:
     get:
-      description: 'Returns email details for viewing or rendering. Required Access
-        Level: None'
+      description: "Returns email details for viewing or rendering. Required Access\
+        \ Level: None"
       operationId: emailsByMsgidViewGet
       parameters:
       - description: Message identifier
@@ -642,10 +607,149 @@ paths:
       summary: View Email
       tags:
       - Emails
-      x-accepts: application/json
+      x-accepts:
+      - application/json
+  /emails/{transactionid}/status:
+    get:
+      description: "Get status details of an email transaction. Required Access Level:\
+        \ ViewReports"
+      operationId: emailsByTransactionidStatusGet
+      parameters:
+      - description: Transaction identifier
+        explode: false
+        in: path
+        name: transactionid
+        required: true
+        schema:
+          description: string
+          format: string
+          type: string
+        style: simple
+      - description: Include Bounced email addresses.
+        explode: true
+        in: query
+        name: showFailed
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Sent email addresses.
+        explode: true
+        in: query
+        name: showSent
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include all delivered email addresses.
+        explode: true
+        in: query
+        name: showDelivered
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Ready to send email addresses.
+        explode: true
+        in: query
+        name: showPending
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Opened email addresses.
+        explode: true
+        in: query
+        name: showOpened
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Clicked email addresses.
+        explode: true
+        in: query
+        name: showClicked
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Reported as abuse email addresses.
+        explode: true
+        in: query
+        name: showAbuse
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include Unsubscribed email addresses.
+        explode: true
+        in: query
+        name: showUnsubscribed
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include error messages for bounced emails.
+        explode: true
+        in: query
+        name: showErrors
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      - description: Include all MessageIDs for this transaction
+        explode: true
+        in: query
+        name: showMessageIDs
+        required: false
+        schema:
+          default: false
+          description: boolean
+          format: boolean
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EmailJobStatus'
+          description: OK
+      summary: Get Status
+      tags:
+      - Emails
+      x-accepts:
+      - application/json
   /emails/mergefile:
     post:
-      description: 'Send bulk merge email. Required Access Level: SendHttp'
+      description: "Send bulk merge email. Required Access Level: SendHttp"
       operationId: emailsMergefilePost
       requestBody:
         content:
@@ -664,12 +768,13 @@ paths:
       summary: Send Bulk Emails CSV
       tags:
       - Emails
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /emails/transactional:
     post:
-      description: 'Send transactional emails (recipients will be known to each other).
-        Required Access Level: SendHttp'
+      description: "Send transactional emails (recipients will be known to each other).\
+        \ Required Access Level: SendHttp"
       operationId: emailsTransactionalPost
       requestBody:
         content:
@@ -688,12 +793,13 @@ paths:
       summary: Send Transactional Email
       tags:
       - Emails
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /events:
     get:
-      description: 'Returns a log of delivery events filtered by specified parameters.
-        Required Access Level: ViewReports'
+      description: "Returns a log of delivery events filtered by specified parameters.\
+        \ Required Access Level: ViewReports"
       operationId: eventsGet
       parameters:
       - description: Types of Events to return
@@ -769,11 +875,12 @@ paths:
       summary: Load Events
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/{transactionid}:
     get:
-      description: 'Returns a log of delivery events for the specific transaction
-        ID. Required Access Level: ViewReports'
+      description: "Returns a log of delivery events for the specific transaction\
+        \ ID. Required Access Level: ViewReports"
       operationId: eventsByTransactionidGet
       parameters:
       - description: ID number of transaction
@@ -850,11 +957,12 @@ paths:
       summary: Load Email Events
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/channels/{name}:
     get:
-      description: 'Returns a log of delivery events filtered by specified parameters.
-        Required Access Level: ViewReports'
+      description: "Returns a log of delivery events filtered by specified parameters.\
+        \ Required Access Level: ViewReports"
       operationId: eventsChannelsByNameGet
       parameters:
       - description: Name of selected channel.
@@ -941,11 +1049,12 @@ paths:
       summary: Load Channel Events
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/channels/{name}/export:
     post:
-      description: 'Export delivery events log information to the specified file format.
-        Required Access Level: Export'
+      description: "Export delivery events log information to the specified file format.\
+        \ Required Access Level: Export"
       operationId: eventsChannelsByNameExportPost
       parameters:
       - description: Name of selected channel.
@@ -1029,11 +1138,12 @@ paths:
       summary: Export Channel Events
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/channels/export/{id}/status:
     get:
-      description: 'Check the current status of the channel export. Required Access
-        Level: Export'
+      description: "Check the current status of the channel export. Required Access\
+        \ Level: Export"
       operationId: eventsChannelsExportByIdStatusGet
       parameters:
       - description: ID of the exported file
@@ -1057,11 +1167,12 @@ paths:
       summary: Check Channel Export Status
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/export:
     post:
-      description: 'Export delivery events log information to the specified file format.
-        Required Access Level: Export'
+      description: "Export delivery events log information to the specified file format.\
+        \ Required Access Level: Export"
       operationId: eventsExportPost
       parameters:
       - description: Types of Events to return
@@ -1134,11 +1245,12 @@ paths:
       summary: Export Events
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /events/export/{id}/status:
     get:
-      description: 'Check the current status of the export. Required Access Level:
-        Export'
+      description: "Check the current status of the export. Required Access Level:\
+        \ Export"
       operationId: eventsExportByIdStatusGet
       parameters:
       - description: ID of the exported file
@@ -1162,11 +1274,12 @@ paths:
       summary: Check Export Status
       tags:
       - Events
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /files:
     get:
-      description: 'Returns a list of all your available files. Required Access Level:
-        ViewFiles'
+      description: "Returns a list of all your available files. Required Access Level:\
+        \ ViewFiles"
       operationId: filesGet
       parameters:
       - description: Maximum number of returned items.
@@ -1203,9 +1316,10 @@ paths:
       summary: List Files
       tags:
       - Files
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Uploads selected file to the server. Required Access Level: ModifyFiles'
+      description: "Uploads selected file to the server. Required Access Level: ModifyFiles"
       operationId: filesPost
       parameters:
       - description: After how many days should the file be deleted.
@@ -1218,6 +1332,7 @@ paths:
           format: int32
           nullable: true
           type: integer
+          example: null
         style: form
       requestBody:
         content:
@@ -1235,12 +1350,13 @@ paths:
       summary: Upload File
       tags:
       - Files
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /files/{name}:
     delete:
-      description: 'Permanently deletes the file from your Account. Required Access
-        Level: ModifyFiles'
+      description: "Permanently deletes the file from your Account. Required Access\
+        \ Level: ModifyFiles"
       operationId: filesByNameDelete
       parameters:
       - description: Name of your file including extension.
@@ -1260,9 +1376,10 @@ paths:
       summary: Delete File
       tags:
       - Files
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Gets content of the specified File. Required Access Level: ViewFiles'
+      description: "Gets content of the specified File. Required Access Level: ViewFiles"
       operationId: filesByNameGet
       parameters:
       - description: Name of your file including extension.
@@ -1287,11 +1404,11 @@ paths:
       summary: Download File
       tags:
       - Files
-      x-accepts: application/*
+      x-accepts:
+      - application/*
   /files/{name}/info:
     get:
-      description: 'Returns the specified File''s details. Required Access Level:
-        ViewFiles'
+      description: "Returns the specified File's details. Required Access Level: ViewFiles"
       operationId: filesByNameInfoGet
       parameters:
       - description: Name of your file including extension.
@@ -1315,10 +1432,11 @@ paths:
       summary: Load File Details
       tags:
       - Files
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /inboundroute:
     get:
-      description: 'Get all your Inbound Routes. Required Access Level: ViewSettings'
+      description: "Get all your Inbound Routes. Required Access Level: ViewSettings"
       operationId: inboundrouteGet
       responses:
         "200":
@@ -1332,9 +1450,10 @@ paths:
       summary: Get Routes
       tags:
       - InboundRoute
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Create new Inbound Route. Required Access Level: ModifySettings'
+      description: "Create new Inbound Route. Required Access Level: ModifySettings"
       operationId: inboundroutePost
       requestBody:
         content:
@@ -1352,11 +1471,12 @@ paths:
       summary: Create Route
       tags:
       - InboundRoute
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /inboundroute/{id}:
     delete:
-      description: 'Deletes the Inbound Route. Required Access Level: ModifySettings'
+      description: "Deletes the Inbound Route. Required Access Level: ModifySettings"
       operationId: inboundrouteByIdDelete
       parameters:
       - explode: false
@@ -1374,9 +1494,10 @@ paths:
       summary: Delete Route
       tags:
       - InboundRoute
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Load an Inbound Route. Required Access Level: ViewSettings'
+      description: "Load an Inbound Route. Required Access Level: ViewSettings"
       operationId: inboundrouteByIdGet
       parameters:
       - description: ID number of your attachment
@@ -1400,9 +1521,10 @@ paths:
       summary: Get Route
       tags:
       - InboundRoute
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update the Inbound Route. Required Access Level: ModifySettings'
+      description: "Update the Inbound Route. Required Access Level: ModifySettings"
       operationId: inboundrouteByIdPut
       parameters:
       - explode: false
@@ -1430,11 +1552,12 @@ paths:
       summary: Update Route
       tags:
       - InboundRoute
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /inboundroute/order:
     put:
-      description: 'Required Access Level: ViewSettings'
+      description: "Required Access Level: ViewSettings"
       operationId: inboundrouteOrderPut
       requestBody:
         content:
@@ -1457,11 +1580,12 @@ paths:
       summary: Update Sorting
       tags:
       - InboundRoute
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /lists:
     get:
-      description: 'Returns all your existing lists. Required Access Level: ViewContacts'
+      description: "Returns all your existing lists. Required Access Level: ViewContacts"
       operationId: listsGet
       parameters:
       - description: Maximum number of returned items.
@@ -1498,9 +1622,10 @@ paths:
       summary: Load Lists
       tags:
       - Lists
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a new list. Required Access Level: ModifyContacts'
+      description: "Add a new list. Required Access Level: ModifyContacts"
       operationId: listsPost
       requestBody:
         content:
@@ -1518,12 +1643,65 @@ paths:
       summary: Add List
       tags:
       - Lists
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /lists/{listname}/contacts:
+    get:
+      description: "Returns a list of contacts. Required Access Level: ViewContacts"
+      operationId: listsByListnameContactsGet
+      parameters:
+      - description: Name of your list.
+        explode: false
+        in: path
+        name: listname
+        required: true
+        schema:
+          description: string
+          example: My List 1
+          format: string
+          type: string
+        style: simple
+      - description: Maximum number of returned items.
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          description: integer
+          example: 100
+          format: int32
+          type: integer
+        style: form
+      - description: How many items should be returned ahead.
+        explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          description: integer
+          example: 20
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Contact'
+                type: array
+          description: OK
+      summary: Load Contacts in List
+      tags:
+      - Lists
+      x-accepts:
+      - application/json
   /lists/{name}:
     delete:
-      description: 'Deletes List and removes all the Contacts from it (does not delete
-        Contacts). Required Access Level: ModifyContacts'
+      description: "Deletes List and removes all the Contacts from it (does not delete\
+        \ Contacts). Required Access Level: ModifyContacts"
       operationId: listsByNameDelete
       parameters:
       - description: Name of your list.
@@ -1543,10 +1721,11 @@ paths:
       summary: Delete List
       tags:
       - Lists
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Returns detailed information about specified list. Required Access
-        Level: ViewContacts'
+      description: "Returns detailed information about specified list. Required Access\
+        \ Level: ViewContacts"
       operationId: listsByNameGet
       parameters:
       - description: Name of your list.
@@ -1570,9 +1749,10 @@ paths:
       summary: Load List
       tags:
       - Lists
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update existing list. Required Access Level: ModifyContacts'
+      description: "Update existing list. Required Access Level: ModifyContacts"
       operationId: listsByNamePut
       parameters:
       - description: Name of your list.
@@ -1602,12 +1782,13 @@ paths:
       summary: Update List
       tags:
       - Lists
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /lists/{name}/contacts:
     post:
-      description: 'Add existing Contacts to specified list. Required Access Level:
-        ModifyContacts'
+      description: "Add existing Contacts to specified list. Required Access Level:\
+        \ ModifyContacts"
       operationId: listsByNameContactsPost
       parameters:
       - description: Name of your list.
@@ -1626,7 +1807,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EmailsPayload'
-        description: Provide either rule or a list of emails, not both.
+        description: "Provide either rule or a list of emails, not both."
         required: true
       responses:
         "200":
@@ -1638,12 +1819,13 @@ paths:
       summary: Add Contacts to List
       tags:
       - Lists
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /lists/{name}/contacts/remove:
     post:
-      description: 'Remove specified Contacts from your list. Required Access Level:
-        ModifyContacts'
+      description: "Remove specified Contacts from your list. Required Access Level:\
+        \ ModifyContacts"
       operationId: listsByNameContactsRemovePost
       parameters:
       - description: Name of your list.
@@ -1662,7 +1844,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/EmailsPayload'
-        description: Provide either rule or a list of emails, not both.
+        description: "Provide either rule or a list of emails, not both."
         required: true
       responses:
         "200":
@@ -1670,11 +1852,12 @@ paths:
       summary: Remove Contacts from List
       tags:
       - Lists
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /security/apikeys:
     get:
-      description: 'List all your existing ApiKeys. Required Access Level: Security'
+      description: "List all your existing ApiKeys. Required Access Level: Security"
       operationId: securityApikeysGet
       parameters:
       - description: Email of the subaccount of which ApiKeys should be loaded
@@ -1699,9 +1882,10 @@ paths:
       summary: List ApiKeys
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a new ApiKey. Required Access Level: Security'
+      description: "Add a new ApiKey. Required Access Level: Security"
       operationId: securityApikeysPost
       requestBody:
         content:
@@ -1719,11 +1903,12 @@ paths:
       summary: Add ApiKey
       tags:
       - Security
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /security/apikeys/{name}:
     delete:
-      description: 'Delete your existing ApiKey. Required Access Level: Security'
+      description: "Delete your existing ApiKey. Required Access Level: Security"
       operationId: securityApikeysByNameDelete
       parameters:
       - description: Name of the ApiKey
@@ -1752,9 +1937,10 @@ paths:
       summary: Delete ApiKey
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Load your existing ApiKey info. Required Access Level: Security'
+      description: "Load your existing ApiKey info. Required Access Level: Security"
       operationId: securityApikeysByNameGet
       parameters:
       - description: Name of the ApiKey
@@ -1787,9 +1973,10 @@ paths:
       summary: Load ApiKey
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update your existing ApiKey. Required Access Level: Security'
+      description: "Update your existing ApiKey. Required Access Level: Security"
       operationId: securityApikeysByNamePut
       parameters:
       - description: Name of the ApiKey
@@ -1818,12 +2005,13 @@ paths:
       summary: Update ApiKey
       tags:
       - Security
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /security/smtp:
     get:
-      description: 'List all your existing SMTP Credentials. Required Access Level:
-        Security'
+      description: "List all your existing SMTP Credentials. Required Access Level:\
+        \ Security"
       operationId: securitySmtpGet
       parameters:
       - description: Email of the subaccount of which credentials should be listed
@@ -1848,9 +2036,10 @@ paths:
       summary: List SMTP Credentials
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add new SMTP Credential. Required Access Level: Security'
+      description: "Add new SMTP Credential. Required Access Level: Security"
       operationId: securitySmtpPost
       requestBody:
         content:
@@ -1868,12 +2057,13 @@ paths:
       summary: Add SMTP Credential
       tags:
       - Security
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /security/smtp/{name}:
     delete:
-      description: 'Delete your existing SMTP Credentials. Required Access Level:
-        Security'
+      description: "Delete your existing SMTP Credentials. Required Access Level:\
+        \ Security"
       operationId: securitySmtpByNameDelete
       parameters:
       - description: Name of the SMTP Credential
@@ -1902,10 +2092,11 @@ paths:
       summary: Delete SMTP Credential
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Load your existing SMTP Credential info. Required Access Level:
-        Security'
+      description: "Load your existing SMTP Credential info. Required Access Level:\
+        \ Security"
       operationId: securitySmtpByNameGet
       parameters:
       - description: Name of the SMTP Credential
@@ -1938,10 +2129,11 @@ paths:
       summary: Load SMTP Credential
       tags:
       - Security
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update your existing SMTP Credentials. Required Access Level:
-        Security'
+      description: "Update your existing SMTP Credentials. Required Access Level:\
+        \ Security"
       operationId: securitySmtpByNamePut
       parameters:
       - description: Name of the SMTP Credential
@@ -1970,12 +2162,13 @@ paths:
       summary: Update SMTP Credential
       tags:
       - Security
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /segments:
     get:
-      description: 'Returns a list of all your available Segments. Required Access
-        Level: ViewContacts'
+      description: "Returns a list of all your available Segments. Required Access\
+        \ Level: ViewContacts"
       operationId: segmentsGet
       parameters:
       - description: Maximum number of returned items.
@@ -2012,10 +2205,11 @@ paths:
       summary: Load Segments
       tags:
       - Segments
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a new segment, based on specified RULE. Required Access Level:
-        ModifyContacts'
+      description: "Add a new segment, based on specified RULE. Required Access Level:\
+        \ ModifyContacts"
       operationId: segmentsPost
       requestBody:
         content:
@@ -2033,11 +2227,12 @@ paths:
       summary: Add Segment
       tags:
       - Segments
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /segments/{name}:
     delete:
-      description: 'Delete an existing segment. Required Access Level: ModifyContacts'
+      description: "Delete an existing segment. Required Access Level: ModifyContacts"
       operationId: segmentsByNameDelete
       parameters:
       - description: Name of your segment.
@@ -2057,10 +2252,11 @@ paths:
       summary: Delete Segment
       tags:
       - Segments
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Returns details for the specified segment. Required Access Level:
-        ViewContacts'
+      description: "Returns details for the specified segment. Required Access Level:\
+        \ ViewContacts"
       operationId: segmentsByNameGet
       parameters:
       - description: Name of the segment you want to load. Will load all contacts
@@ -2084,10 +2280,11 @@ paths:
       summary: Load Segment
       tags:
       - Segments
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Rename or change RULE for your segment. Required Access Level:
-        ModifyContacts'
+      description: "Rename or change RULE for your segment. Required Access Level:\
+        \ ModifyContacts"
       operationId: segmentsByNamePut
       parameters:
       - description: Name of your segment.
@@ -2117,11 +2314,12 @@ paths:
       summary: Update Segment
       tags:
       - Segments
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /statistics:
     get:
-      description: 'Returns basic statistics. Required Access Level: ViewReports'
+      description: "Returns basic statistics. Required Access Level: ViewReports"
       operationId: statisticsGet
       parameters:
       - description: Starting date for search in YYYY-MM-DDThh:mm:ss format.
@@ -2155,11 +2353,12 @@ paths:
       summary: Load Statistics
       tags:
       - Statistics
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /statistics/campaigns:
     get:
-      description: 'Returns a list of your Campaigns'' stats. Required Access Level:
-        ViewChannels'
+      description: "Returns a list of your Campaigns' stats. Required Access Level:\
+        \ ViewChannels"
       operationId: statisticsCampaignsGet
       parameters:
       - description: Maximum number of returned items.
@@ -2196,11 +2395,12 @@ paths:
       summary: Load Campaigns Stats
       tags:
       - Statistics
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /statistics/campaigns/{name}:
     get:
-      description: 'Retrieve stats of an existing campaign. Required Access Level:
-        ViewChannels'
+      description: "Retrieve stats of an existing campaign. Required Access Level:\
+        \ ViewChannels"
       operationId: statisticsCampaignsByNameGet
       parameters:
       - description: The name of the campaign to get.
@@ -2223,11 +2423,12 @@ paths:
       summary: Load Campaign Stats
       tags:
       - Statistics
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /statistics/channels:
     get:
-      description: 'Returns a list of your Channels'' stats. Required Access Level:
-        ViewChannels'
+      description: "Returns a list of your Channels' stats. Required Access Level:\
+        \ ViewChannels"
       operationId: statisticsChannelsGet
       parameters:
       - description: Maximum number of returned items.
@@ -2264,10 +2465,11 @@ paths:
       summary: Load Channels Stats
       tags:
       - Statistics
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /statistics/channels/{name}:
     get:
-      description: 'Retrieve an existing channel stats. Required Access Level: ViewChannels'
+      description: "Retrieve an existing channel stats. Required Access Level: ViewChannels"
       operationId: statisticsChannelsByNameGet
       parameters:
       - description: The name of the channel to get.
@@ -2290,11 +2492,12 @@ paths:
       summary: Load Channel Stats
       tags:
       - Statistics
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /subaccounts:
     get:
-      description: 'Returns a list of all your SubAccounts. Required Access Level:
-        ViewSubAccounts'
+      description: "Returns a list of all your SubAccounts. Required Access Level:\
+        \ ViewSubAccounts"
       operationId: subaccountsGet
       parameters:
       - description: Maximum number of returned items.
@@ -2331,11 +2534,12 @@ paths:
       summary: Load SubAccounts
       tags:
       - SubAccounts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a new SubAccount to your Account. To receive an access token
-        for this SubAccount, make a POST security/apikeys request using the ''subaccount''
-        parameter. Required Access Level: ModifySubAccounts'
+      description: "Add a new SubAccount to your Account. To receive an access token\
+        \ for this SubAccount, make a POST security/apikeys request using the 'subaccount'\
+        \ parameter. Required Access Level: ModifySubAccounts"
       operationId: subaccountsPost
       requestBody:
         content:
@@ -2353,12 +2557,13 @@ paths:
       summary: Add SubAccount
       tags:
       - SubAccounts
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /subaccounts/{email}:
     delete:
-      description: 'Deletes specified SubAccount. An email will be sent to confirm
-        this change. Required Access Level: ModifySubAccounts'
+      description: "Deletes specified SubAccount. An email will be sent to confirm\
+        \ this change. Required Access Level: ModifySubAccounts"
       operationId: subaccountsByEmailDelete
       parameters:
       - description: Email address of Sub-Account
@@ -2378,10 +2583,11 @@ paths:
       summary: Delete SubAccount
       tags:
       - SubAccounts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Returns details for the specified SubAccount. Required Access
-        Level: ViewSubAccounts'
+      description: "Returns details for the specified SubAccount. Required Access\
+        \ Level: ViewSubAccounts"
       operationId: subaccountsByEmailGet
       parameters:
       - description: Email address of Sub-Account
@@ -2405,11 +2611,12 @@ paths:
       summary: Load SubAccount
       tags:
       - SubAccounts
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /subaccounts/{email}/credits:
     patch:
-      description: 'Update email credits of a subaccount by the given amount. Required
-        Access Level: ModifySubAccounts'
+      description: "Update email credits of a subaccount by the given amount. Required\
+        \ Access Level: ModifySubAccounts"
       operationId: subaccountsByEmailCreditsPatch
       parameters:
       - description: Email address of Sub-Account
@@ -2434,14 +2641,15 @@ paths:
       responses:
         "200":
           description: OK
-      summary: Add, Subtract Email Credits
+      summary: "Add, Subtract Email Credits"
       tags:
       - SubAccounts
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /subaccounts/{email}/settings/email:
     put:
-      description: 'Update SubAccount email settings. Required Access Level: ModifySubAccounts'
+      description: "Update SubAccount email settings. Required Access Level: ModifySubAccounts"
       operationId: subaccountsByEmailSettingsEmailPut
       parameters:
       - explode: false
@@ -2470,11 +2678,13 @@ paths:
       summary: Update SubAccount Email Settings
       tags:
       - SubAccounts
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /suppressions:
     get:
-      description: 'Retrieve your suppressions. Required Access Level: ViewContacts'
+      description: "Retrieve your suppressions. Required Access Level: ViewContacts,\
+        \ ViewSuppressions"
       operationId: suppressionsGet
       parameters:
       - description: Maximum number of returned items.
@@ -2511,10 +2721,11 @@ paths:
       summary: Get Suppressions
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /suppressions/{email}:
     delete:
-      description: 'Delete Suppression. Required Access Level: ViewContacts'
+      description: "Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions"
       operationId: suppressionsByEmailDelete
       parameters:
       - description: Proper email address.
@@ -2534,9 +2745,11 @@ paths:
       summary: Delete Suppression
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Retrieve your suppression. Required Access Level: ViewContacts'
+      description: "Retrieve your suppression. Required Access Level: ViewContacts,\
+        \ ViewSuppressions"
       operationId: suppressionsByEmailGet
       parameters:
       - description: Proper email address.
@@ -2560,10 +2773,12 @@ paths:
       summary: Get Suppression
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /suppressions/bounces:
     get:
-      description: 'Retrieve your list of bounced emails. Required Access Level: ViewContacts'
+      description: "Retrieve your list of bounced emails. Required Access Level: ViewContacts,\
+        \ ViewSuppressions"
       operationId: suppressionsBouncesGet
       parameters:
       - description: Text fragment used for searching.
@@ -2611,9 +2826,10 @@ paths:
       summary: Get Bounce List
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add Bounced. Required Access Level: ModifyContacts'
+      description: "Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsBouncesPost
       requestBody:
         content:
@@ -2637,23 +2853,18 @@ paths:
       summary: Add Bounces
       tags:
       - Suppressions
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /suppressions/bounces/import:
     post:
-      description: 'Add Bounced. Required Access Level: ModifyContacts'
+      description: "Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsBouncesImportPost
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_1'
         content:
           multipart/form-data:
             schema:
-              format: binary
-              properties:
-                file:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/contactsImportPost_request'
         description: Emails to add as bounces.
         required: true
       responses:
@@ -2662,11 +2873,13 @@ paths:
       summary: Add Bounces Async
       tags:
       - Suppressions
-      x-contentType: multipart/form-data
-      x-accepts: application/json
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
   /suppressions/complaints:
     get:
-      description: 'Retrieve your list of complaints. Required Access Level: ViewContacts'
+      description: "Retrieve your list of complaints. Required Access Level: ViewContacts,\
+        \ ViewSuppressions"
       operationId: suppressionsComplaintsGet
       parameters:
       - description: Text fragment used for searching.
@@ -2714,9 +2927,10 @@ paths:
       summary: Get Complaints List
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add Complaints. Required Access Level: ModifyContacts'
+      description: "Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsComplaintsPost
       requestBody:
         content:
@@ -2740,23 +2954,18 @@ paths:
       summary: Add Complaints
       tags:
       - Suppressions
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /suppressions/complaints/import:
     post:
-      description: 'Add Complaints. Required Access Level: ModifyContacts'
+      description: "Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsComplaintsImportPost
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_2'
         content:
           multipart/form-data:
             schema:
-              format: binary
-              properties:
-                file:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/contactsImportPost_request'
         description: Emails to add as complaints.
         required: true
       responses:
@@ -2765,11 +2974,13 @@ paths:
       summary: Add Complaints Async
       tags:
       - Suppressions
-      x-contentType: multipart/form-data
-      x-accepts: application/json
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
   /suppressions/unsubscribes:
     get:
-      description: 'Retrieve your list of unsubscribes. Required Access Level: ViewContacts'
+      description: "Retrieve your list of unsubscribes. Required Access Level: ViewContacts,\
+        \ ViewSuppressions"
       operationId: suppressionsUnsubscribesGet
       parameters:
       - description: Text fragment used for searching.
@@ -2817,9 +3028,10 @@ paths:
       summary: Get Unsubscribes List
       tags:
       - Suppressions
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add Unsubscribes. Required Access Level: ModifyContacts'
+      description: "Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsUnsubscribesPost
       requestBody:
         content:
@@ -2843,23 +3055,18 @@ paths:
       summary: Add Unsubscribes
       tags:
       - Suppressions
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /suppressions/unsubscribes/import:
     post:
-      description: 'Add Unsubscribes. Required Access Level: ModifyContacts'
+      description: "Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions"
       operationId: suppressionsUnsubscribesImportPost
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_3'
         content:
           multipart/form-data:
             schema:
-              format: binary
-              properties:
-                file:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/contactsImportPost_request'
         description: Emails to add as unsubscribes.
         required: true
       responses:
@@ -2868,12 +3075,13 @@ paths:
       summary: Add Unsubscribes Async
       tags:
       - Suppressions
-      x-contentType: multipart/form-data
-      x-accepts: application/json
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
   /templates:
     get:
-      description: 'Returns a list of templates for the specified type. Required Access
-        Level: ViewTemplates'
+      description: "Returns a list of templates for the specified type. Required Access\
+        \ Level: ViewTemplates"
       operationId: templatesGet
       parameters:
       - description: Return templates with specified scope only
@@ -2932,9 +3140,10 @@ paths:
       summary: Load Templates
       tags:
       - Templates
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Add a new Template. Required Access Level: ModifyTemplates'
+      description: "Add a new Template. Required Access Level: ModifyTemplates"
       operationId: templatesPost
       requestBody:
         content:
@@ -2952,12 +3161,13 @@ paths:
       summary: Add Template
       tags:
       - Templates
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /templates/{name}:
     delete:
-      description: 'Delete template with the specified name. Required Access Level:
-        ModifyTemplates'
+      description: "Delete template with the specified name. Required Access Level:\
+        \ ModifyTemplates"
       operationId: templatesByNameDelete
       parameters:
       - description: Name of template.
@@ -2977,10 +3187,11 @@ paths:
       summary: Delete Template
       tags:
       - Templates
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Load detailed information of the specified template. Required
-        Access Level: ViewTemplates'
+      description: "Load detailed information of the specified template. Required\
+        \ Access Level: ViewTemplates"
       operationId: templatesByNameGet
       parameters:
       - description: Name of template.
@@ -3004,10 +3215,11 @@ paths:
       summary: Load Template
       tags:
       - Templates
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     put:
-      description: 'Update existing template, overwriting existing data. Required
-        Access Level: ModifyTemplates'
+      description: "Update existing template, overwriting existing data. Required\
+        \ Access Level: ModifyTemplates"
       operationId: templatesByNamePut
       parameters:
       - description: Name of template.
@@ -3037,12 +3249,13 @@ paths:
       summary: Update Template
       tags:
       - Templates
-      x-contentType: application/json
-      x-accepts: application/json
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /verifications:
     get:
-      description: 'Returns a results of all verified single emails. Required Access
-        Level: ViewEmailVerifications'
+      description: "Returns a results of all verified single emails. Required Access\
+        \ Level: VerifyEmails"
       operationId: verificationsGet
       parameters:
       - description: Maximum number of returned items.
@@ -3079,11 +3292,12 @@ paths:
       summary: Get Emails Verification Results
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /verifications/{email}:
     delete:
-      description: 'Delete a result with given email if exists. Required Access Level:
-        VerifyEmails'
+      description: "Delete a result with given email if exists. Required Access Level:\
+        \ VerifyEmails"
       operationId: verificationsByEmailDelete
       parameters:
       - description: Email address to verification
@@ -3102,9 +3316,10 @@ paths:
       summary: Delete Email Verification Result
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     get:
-      description: 'Returns a result of verified email. Required Access Level: ViewEmailVerifications'
+      description: "Returns a result of verified email. Required Access Level: VerifyEmails"
       operationId: verificationsByEmailGet
       parameters:
       - description: Email address to view verification result of
@@ -3127,10 +3342,11 @@ paths:
       summary: Get Email Verification Result
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
     post:
-      description: 'Verify single email address and returns result of verification.
-        Required Access Level: VerifyEmails'
+      description: "Verify single email address and returns result of verification.\
+        \ Required Access Level: VerifyEmails"
       operationId: verificationsByEmailPost
       parameters:
       - description: Email address to verify
@@ -3153,24 +3369,19 @@ paths:
       summary: Verify Email
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /verifications/files:
     post:
-      description: 'Uploads a CSV file with list of emails that can then be triggered
-        for verification. An ''email'' column is required. Required Access Level:
-        VerifyEmails'
+      description: "Uploads a CSV file with list of emails that can then be triggered\
+        \ for verification. An 'email' column is required. Required Access Level:\
+        \ VerifyEmails"
       operationId: verificationsFilesPost
       requestBody:
-        $ref: '#/components/requestBodies/inline_object_4'
         content:
           multipart/form-data:
             schema:
-              format: binary
-              properties:
-                file:
-                  format: binary
-                  type: string
-              type: object
+              $ref: '#/components/schemas/contactsImportPost_request'
         description: Uploaded file
         required: true
       responses:
@@ -3183,12 +3394,13 @@ paths:
       summary: Upload File with Emails
       tags:
       - Verifications
-      x-contentType: multipart/form-data
-      x-accepts: application/json
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
   /verifications/files/{id}:
     delete:
-      description: 'Delete Verification Results if they exist. Required Access Level:
-        VerifyEmails'
+      description: "Delete Verification Results if they exist. Required Access Level:\
+        \ VerifyEmails"
       operationId: verificationsFilesByIdDelete
       parameters:
       - description: ID of the exported file
@@ -3208,11 +3420,12 @@ paths:
       summary: Delete File Verification Result
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /verifications/files/{id}/result:
     get:
-      description: 'Returns status and results (if verified) of file with given ID.
-        Required Access Level: ViewEmailVerifications'
+      description: "Returns status and results (if verified) of file with given ID.\
+        \ Required Access Level: VerifyEmails"
       operationId: verificationsFilesByIdResultGet
       parameters:
       - description: ID of the Verification to display status of
@@ -3255,11 +3468,12 @@ paths:
       summary: Get Detailed File Verification Result
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /verifications/files/{id}/result/download:
     get:
-      description: 'Download verification results as a ZIP file. Required Access Level:
-        VerifyEmails'
+      description: "Download verification results as a ZIP file. Required Access Level:\
+        \ VerifyEmails"
       operationId: verificationsFilesByIdResultDownloadGet
       parameters:
       - description: Verification ID to download
@@ -3283,11 +3497,12 @@ paths:
       summary: Download File Verification Result
       tags:
       - Verifications
-      x-accepts: application/*
+      x-accepts:
+      - application/*
   /verifications/files/{id}/verification:
     post:
-      description: 'Start a verification of the previously uploaded file with emails.
-        Required Access Level: VerifyEmails'
+      description: "Start a verification of the previously uploaded file with emails.\
+        \ Required Access Level: VerifyEmails"
       operationId: verificationsFilesByIdVerificationPost
       parameters:
       - description: File ID to start verification
@@ -3306,11 +3521,12 @@ paths:
       summary: Start verification
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
   /verifications/files/result:
     get:
-      description: 'Returns a list of uploaded files, their statuses and results.
-        Required Access Level: ViewEmailVerifications'
+      description: "Returns a list of uploaded files, their statuses and results.\
+        \ Required Access Level: VerifyEmails"
       operationId: verificationsFilesResultGet
       responses:
         "200":
@@ -3324,39 +3540,9 @@ paths:
       summary: Get Files Verification Results
       tags:
       - Verifications
-      x-accepts: application/json
+      x-accepts:
+      - application/json
 components:
-  requestBodies:
-    inline_object_1:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/inline_object_1'
-      required: true
-    inline_object:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/inline_object'
-      required: true
-    inline_object_4:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/inline_object_4'
-      required: true
-    inline_object_3:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/inline_object_3'
-      required: true
-    inline_object_2:
-      content:
-        multipart/form-data:
-          schema:
-            $ref: '#/components/schemas/inline_object_2'
-      required: true
   schemas:
     AccessLevel:
       default: None
@@ -3397,24 +3583,27 @@ components:
       - ModifyLanguage
       - ViewSupport
       - SendHttp
-      - Modify2FA
+      - Modify2FAEmail
       - ModifySupport
       - ViewCustomFields
       - ModifyCustomFields
       - ModifyWebNotifications
       - ExtendedLogs
       - VerifyEmails
-      - ViewEmailVerifications
-      - ViewMarketing
-      - ViewEmailApi
-      - ViewInbound
+      - Modify2FASms
+      - ModifyLandingPages
+      - ViewLandingPages
+      - ModifySuppressions
+      - ViewSuppressions
+      - ViewDragDropEditor
+      - ViewTemplateEditor
+      - ViewAITools
       type: string
     AccountStatusEnum:
       default: Disabled
       enum:
       - Disabled
       - UnderReview
-      - NoPaymentsAllowed
       - NeverSignedIn
       - Active
       type: string
@@ -3428,8 +3617,8 @@ components:
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         AccessLevel:
@@ -3450,11 +3639,13 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         Expires:
           description: Date this ApiKey expires.
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this ApiKey
           items:
@@ -3471,8 +3662,8 @@ components:
         - RestrictAccessToIPRange
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         Name:
@@ -3489,6 +3680,7 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this ApiKey
           items:
@@ -3513,9 +3705,10 @@ components:
       - CSS
       type: string
     BodyPart:
-      description: Email body part with user-provided MIME type (text/html, text/plain,
-        etc)
+      description: "Email body part with user-provided MIME type (text/html, text/plain,\
+        \ etc)"
       example:
+        ContentType: HTML
         Content: Content
         Charset: Charset
       properties:
@@ -3526,8 +3719,8 @@ components:
           format: string
           type: string
         Charset:
-          description: 'Text value of charset encoding for example: iso-8859-1, windows-1251,
-            utf-8, us-ascii, windows-1250 and more…'
+          description: "Text value of charset encoding for example: iso-8859-1, windows-1251,\
+            \ utf-8, us-ascii, windows-1250 and more..."
           format: string
           type: string
       required:
@@ -3535,11 +3728,16 @@ components:
       type: object
     Campaign:
       example:
+        Status: Deleted
         Options:
           TrackClicks: true
+          TriggerCount: 6
           ScheduleFor: 2000-01-23T04:56:07.000+00:00
+          TriggerFrequency: 0.8008281904610115
+          DeliveryOptimization: None
           TrackOpens: true
           SplitOptions:
+            OptimizeFor: Opens
             OptimizePeriodMinutes: 30
         Recipients:
           SegmentNames:
@@ -3553,7 +3751,8 @@ components:
           Poolname: My Custom Pool
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles: '[ "preuploaded.jpg" ]'
+          AttachFiles:
+          - preuploaded.jpg
           Subject: Hello!
           Utm:
             Campaign: Campaign
@@ -3564,7 +3763,8 @@ components:
           Poolname: My Custom Pool
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles: '[ "preuploaded.jpg" ]'
+          AttachFiles:
+          - preuploaded.jpg
           Subject: Hello!
           Utm:
             Campaign: Campaign
@@ -3597,23 +3797,27 @@ components:
       description: Different send options for a Campaign
       example:
         TrackClicks: true
+        TriggerCount: 6
         ScheduleFor: 2000-01-23T04:56:07.000+00:00
+        TriggerFrequency: 0.8008281904610115
+        DeliveryOptimization: None
         TrackOpens: true
         SplitOptions:
+          OptimizeFor: Opens
           OptimizePeriodMinutes: 30
       properties:
         DeliveryOptimization:
           $ref: '#/components/schemas/DeliveryOptimizationType'
         TrackOpens:
-          description: Should the opens be tracked? If no value has been provided,
-            Account's default setting will be used.
+          description: "Should the opens be tracked? If no value has been provided,\
+            \ Account's default setting will be used."
           example: true
           format: boolean
           nullable: true
           type: boolean
         TrackClicks:
-          description: Should the clicks be tracked? If no value has been provided,
-            Account's default setting will be used.
+          description: "Should the clicks be tracked? If no value has been provided,\
+            \ Account's default setting will be used."
           example: true
           format: boolean
           nullable: true
@@ -3623,6 +3827,15 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
+        TriggerFrequency:
+          description: How often (in minutes) to send the campaign
+          format: double
+          type: number
+        TriggerCount:
+          description: How many times send the campaign
+          format: int32
+          type: integer
         SplitOptions:
           $ref: '#/components/schemas/SplitOptions'
       type: object
@@ -3668,7 +3881,8 @@ components:
         Poolname: My Custom Pool
         TemplateName: Template01
         From: John Doe <email@domain.com>
-        AttachFiles: '[ "preuploaded.jpg" ]'
+        AttachFiles:
+        - preuploaded.jpg
         Subject: Hello!
         Utm:
           Campaign: Campaign
@@ -3682,7 +3896,7 @@ components:
           format: string
           type: string
         From:
-          description: 'Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)'
+          description: "Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)"
           example: John Doe <email@domain.com>
           format: string
           type: string
@@ -3705,13 +3919,16 @@ components:
         AttachFiles:
           description: Names of previously uploaded files that should be sent as downloadable
             attachments
-          example: '[ "preuploaded.jpg" ]'
+          example:
+          - preuploaded.jpg
           items:
             format: string
             type: string
           type: array
         Utm:
           $ref: '#/components/schemas/Utm'
+      required:
+      - From
       type: object
     ChannelLogStatusSummary:
       description: Summary of channel log status
@@ -3810,6 +4027,7 @@ components:
       type: string
     ConsentData:
       example:
+        ConsentTracking: Unknown
         ConsentDate: 2000-01-23T04:56:07.000+00:00
         ConsentIP: 192.168.0.1
       properties:
@@ -3838,12 +4056,14 @@ components:
     Contact:
       description: Contact
       example:
+        Status: Transactional
         CustomFields:
           city: New York
           age: "34"
         Email: mail@example.com
         StatusChangeDate: 2000-01-23T04:56:07.000+00:00
         Consent:
+          ConsentTracking: Unknown
           ConsentDate: 2000-01-23T04:56:07.000+00:00
           ConsentIP: 192.168.0.1
         FirstName: Fred
@@ -3862,6 +4082,7 @@ components:
           TotalOpened: 1000
         LastName: Flintstone
         DateAdded: 2000-01-23T04:56:07.000+00:00
+        Source: DeliveryApi
       properties:
         Email:
           description: Proper email address.
@@ -3949,6 +4170,7 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         LastOpened:
           description: Date this contact last opened an email
           format: date-time
@@ -3959,11 +4181,13 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         LastFailed:
           description: Last date when an email sent to this contact bounced
           format: date-time
           nullable: true
           type: string
+          example: null
         LastIP:
           description: IP from which this contact opened or clicked their email last
             time
@@ -3974,72 +4198,21 @@ components:
           format: int32
           nullable: true
           type: integer
+          example: null
         FriendlyErrorMessage:
           description: Last RFC error message if any occurred
           format: string
           type: string
       type: object
-    ContactHistEventType:
-      default: Opened
-      enum:
-      - Opened
-      - Clicked
-      - Bounced
-      - Unsubscribed
-      - Complained
-      - Activated
-      - TransactionalUnsubscribed
-      - ManualStatusChange
-      - ManualConsentTrackingChange
-      - ActivationSent
-      - JourneyStarted
-      - JourneyStepProcessed
-      - JourneyFinished
-      - Deleted
-      type: string
-    ContactHistory:
-      example:
-        EventDate: 2000-01-23T04:56:07.000+00:00
-        ChannelName: ChannelName
-        TemplateName: TemplateName
-        Country: Country
-        Data: Data
-        IPAddress: IPAddress
-      properties:
-        EventType:
-          $ref: '#/components/schemas/ContactHistEventType'
-        EventDate:
-          description: Formatted date of event.
-          format: date-time
-          type: string
-        ChannelName:
-          description: Name of channel this event occured on
-          format: string
-          type: string
-        TemplateName:
-          description: Name of template this event occured on
-          format: string
-          type: string
-        IPAddress:
-          description: IP Address of the event.
-          format: string
-          type: string
-        Country:
-          description: Country of the event.
-          format: string
-          type: string
-        Data:
-          description: Additional information about the event
-          format: string
-          type: string
-      type: object
     ContactPayload:
       example:
+        Status: Transactional
         CustomFields:
           city: New York
           age: "34"
         Email: mail@example.com
         Consent:
+          ConsentTracking: Unknown
           ConsentDate: 2000-01-23T04:56:07.000+00:00
           ConsentIP: 192.168.0.1
         FirstName: Fred
@@ -4149,17 +4322,22 @@ components:
         EnvelopeFrom: John Doe <email@domain.com>
         TemplateName: Template01
         From: John Doe <email@domain.com>
-        AttachFiles: '[ "preuploaded.jpg" ]'
+        AttachFiles:
+        - preuploaded.jpg
         Body:
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
         Attachments:
         - ContentType: ContentType
+          Size: 100
           BinaryContent: BinaryContent
           Name: Name
         - ContentType: ContentType
+          Size: 100
           BinaryContent: BinaryContent
           Name: Name
         Subject: Hello!
@@ -4170,17 +4348,17 @@ components:
           Source: Source
       properties:
         Body:
-          description: List of e-mail body parts, with user-provided MIME types (text/html,
-            text/plain etc)
+          description: "List of e-mail body parts, with user-provided MIME types (text/html,\
+            \ text/plain etc)"
           items:
             $ref: '#/components/schemas/BodyPart'
           type: array
         Merge:
           additionalProperties:
             type: string
-          description: 'A key-value collection of custom merge fields, shared between
-            recipients. Should be used in e-mail body like so: {firstname}, {lastname}
-            etc.'
+          description: "A key-value collection of custom merge fields, shared between\
+            \ recipients. Should be used in e-mail body like so: {firstname}, {lastname}\
+            \ etc."
           example:
             city: New York
             age: "34"
@@ -4203,13 +4381,13 @@ components:
           format: string
           type: string
         EnvelopeFrom:
-          description: 'E-mail with an optional name to be used as the envelope from
-            address (e.g.: John Doe <email@domain.com>)'
+          description: "E-mail with an optional name to be used as the envelope from\
+            \ address (e.g.: John Doe <email@domain.com>)"
           example: John Doe <email@domain.com>
           format: string
           type: string
         From:
-          description: 'Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)'
+          description: "Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)"
           example: John Doe <email@domain.com>
           format: string
           type: string
@@ -4232,17 +4410,21 @@ components:
         AttachFiles:
           description: Names of previously uploaded files that should be sent as downloadable
             attachments
-          example: '[ "preuploaded.jpg" ]'
+          example:
+          - preuploaded.jpg
           items:
             format: string
             type: string
           type: array
         Utm:
           $ref: '#/components/schemas/Utm'
+      required:
+      - From
       type: object
     EmailData:
       example:
         Status:
+          Status: All
           DateOpened: 2000-01-23T04:56:07.000+00:00
           DateSent: 2000-01-23T04:56:07.000+00:00
           StatusChangeDate: 2000-01-23T04:56:07.000+00:00
@@ -4280,6 +4462,175 @@ components:
         Status:
           $ref: '#/components/schemas/EmailStatus'
       type: object
+    EmailJobFailedStatus:
+      example:
+        Category: Category
+        Address: Address
+        Error: Error
+        ErrorCode: 550
+      properties:
+        Address:
+          format: string
+          type: string
+        Error:
+          format: string
+          type: string
+        ErrorCode:
+          description: RFC Error code
+          example: 550
+          format: int32
+          type: integer
+        Category:
+          format: string
+          type: string
+      type: object
+    EmailJobStatus:
+      example:
+        Status: Status
+        PendingCount: 1
+        RecipientsCount: 0
+        Opened:
+        - "1000"
+        Delivered:
+        - "1000"
+        Clicked:
+        - "1000"
+        ClickedCount: 1000
+        Failed:
+        - Category: Category
+          Address: Address
+          Error: Error
+          ErrorCode: 550
+        - Category: Category
+          Address: Address
+          Error: Error
+          ErrorCode: 550
+        AbuseReportsCount: 5
+        OpenedCount: 1000
+        DeliveredCount: 6
+        FailedCount: 1000
+        AbuseReports:
+        - AbuseReports
+        - AbuseReports
+        MessageIDs:
+        - MessageIDs
+        - MessageIDs
+        ID: "123456"
+        UnsubscribedCount: 1000
+        SentCount: 1000
+        Pending:
+        - Pending
+        - Pending
+        Sent:
+        - Sent
+        - Sent
+        Unsubscribed:
+        - "1000"
+      properties:
+        ID:
+          description: ID number of your attachment
+          example: "123456"
+          format: string
+          type: string
+        Status:
+          description: "Name of status: submitted, complete, in_progress"
+          format: string
+          type: string
+        RecipientsCount:
+          format: int32
+          type: integer
+        Failed:
+          items:
+            $ref: '#/components/schemas/EmailJobFailedStatus'
+          type: array
+        FailedCount:
+          description: Total emails failed.
+          example: 1000
+          format: int32
+          type: integer
+        Sent:
+          items:
+            format: string
+            type: string
+          type: array
+        SentCount:
+          description: Total emails sent.
+          example: 1000
+          format: int32
+          type: integer
+        Delivered:
+          description: Number of delivered messages
+          example:
+          - "1000"
+          items:
+            format: string
+            type: string
+          type: array
+        DeliveredCount:
+          format: int32
+          type: integer
+        Pending:
+          items:
+            format: string
+            type: string
+          type: array
+        PendingCount:
+          format: int32
+          type: integer
+        Opened:
+          description: Number of opened messages
+          example:
+          - "1000"
+          items:
+            format: string
+            type: string
+          type: array
+        OpenedCount:
+          description: Total emails opened.
+          example: 1000
+          format: int32
+          type: integer
+        Clicked:
+          description: Number of clicked messages
+          example:
+          - "1000"
+          items:
+            format: string
+            type: string
+          type: array
+        ClickedCount:
+          description: Total emails clicked
+          example: 1000
+          format: int32
+          type: integer
+        Unsubscribed:
+          description: Number of unsubscribed messages
+          example:
+          - "1000"
+          items:
+            format: string
+            type: string
+          type: array
+        UnsubscribedCount:
+          description: Total emails unsubscribed
+          example: 1000
+          format: int32
+          type: integer
+        AbuseReports:
+          items:
+            format: string
+            type: string
+          type: array
+        AbuseReportsCount:
+          format: int32
+          type: integer
+        MessageIDs:
+          description: List of all MessageIDs for this job.
+          items:
+            format: string
+            type: string
+          type: array
+      type: object
     EmailMessageData:
       description: Email data
       example:
@@ -4287,6 +4638,7 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         Recipients:
@@ -4310,17 +4662,22 @@ components:
           EnvelopeFrom: John Doe <email@domain.com>
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles: '[ "preuploaded.jpg" ]'
+          AttachFiles:
+          - preuploaded.jpg
           Body:
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
           Attachments:
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           Subject: Hello!
@@ -4340,8 +4697,18 @@ components:
         Options:
           $ref: '#/components/schemas/Options'
       required:
+      - Content
       - Recipients
       type: object
+    EmailPredictedValidationStatus:
+      default: None
+      enum:
+      - None
+      - Valid
+      - LowRisk
+      - HighRisk
+      - Invalid
+      type: string
     EmailRecipient:
       description: List of recipients
       example:
@@ -4384,20 +4751,22 @@ components:
           type: string
       type: object
     EmailsPayload:
-      description: Provide either rule or a list of emails, not both.
+      description: "Provide either rule or a list of emails, not both."
       example:
         Rule: Rule
-        Emails: '[ "john.doe@sample.com" ]'
+        Emails:
+        - john.doe@sample.com
       properties:
         Rule:
-          description: 'SQL-like rule. Sending ''All'' as a value loads all resources
-            of the given type. Help for building a segment rule can be found here:
-            https://help.elasticemail.com/en/articles/5162182-segment-rules'
+          description: "SQL-like rule. Sending 'All' as a value loads all resources\
+            \ of the given type. Help for building a segment rule can be found here:\
+            \ https://help.elasticemail.com/en/articles/5162182-segment-rules"
           format: string
           type: string
         Emails:
           description: Comma delimited list of contact emails
-          example: '[ "john.doe@sample.com" ]'
+          example:
+          - john.doe@sample.com
           items:
             format: string
             type: string
@@ -4406,6 +4775,7 @@ components:
     EmailStatus:
       description: Status information of the specified email
       example:
+        Status: All
         DateOpened: 2000-01-23T04:56:07.000+00:00
         DateSent: 2000-01-23T04:56:07.000+00:00
         StatusChangeDate: 2000-01-23T04:56:07.000+00:00
@@ -4475,6 +4845,7 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         Recipients:
@@ -4499,17 +4870,22 @@ components:
           EnvelopeFrom: John Doe <email@domain.com>
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles: '[ "preuploaded.jpg" ]'
+          AttachFiles:
+          - preuploaded.jpg
           Body:
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
           Attachments:
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           Subject: Hello!
@@ -4526,18 +4902,22 @@ components:
         Options:
           $ref: '#/components/schemas/Options'
       required:
+      - Content
       - Recipients
       type: object
     EmailValidationResult:
       example:
         Disposable: true
         Role: true
+        PredictedStatus: None
         Account: Account
         SuggestedSpelling: SuggestedSpelling
         Email: Email
+        PredictedScore: 0.8008281904610115
         Domain: example.com
         DateAdded: 2000-01-23T04:56:07.000+00:00
         Reason: Reason
+        Result: None
       properties:
         Account:
           description: Local part of an email
@@ -4561,7 +4941,7 @@ components:
           format: boolean
           type: boolean
         Role:
-          description: Is an email a role email (e.g. info@, noreply@ etc.)
+          description: "Is an email a role email (e.g. info@, noreply@ etc.)"
           format: boolean
           type: boolean
         Reason:
@@ -4569,11 +4949,17 @@ components:
           format: string
           type: string
         DateAdded:
-          description: Date of creation in YYYY-MM-DDThh:ii:ss format
+          description: Added date
           format: date-time
           type: string
         Result:
           $ref: '#/components/schemas/EmailValidationStatus'
+        PredictedScore:
+          description: Predicted score
+          format: single
+          type: number
+        PredictedStatus:
+          $ref: '#/components/schemas/EmailPredictedValidationStatus'
       type: object
     EmailValidationStatus:
       default: None
@@ -4592,7 +4978,7 @@ components:
         Subject: Hello!
       properties:
         Body:
-          description: Body (HTML, otherwise plain text) of email
+          description: "Body (HTML, otherwise plain text) of email"
           format: string
           type: string
         Subject:
@@ -4697,6 +5083,7 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         ContentType:
           description: Content type of the file.
           example: image/jpeg
@@ -4741,6 +5128,8 @@ components:
       type: object
     InboundPayload:
       example:
+        FilterType: EmailAddress
+        ActionType: ForwardToEmail
         HttpAddress: HttpAddress
         Filter: Filter
         EmailAddress: EmailAddress
@@ -4775,6 +5164,8 @@ components:
     InboundRoute:
       example:
         PublicId: PublicId
+        FilterType: EmailAddress
+        ActionType: ForwardToEmail
         Filter: Filter
         SortOrder: 0
         ActionParameter: ActionParameter
@@ -4818,7 +5209,7 @@ components:
       - Subject
       type: string
     ContactsList:
-      description: List of Lists, with detailed data about its contents.
+      description: "List of Lists, with detailed data about its contents."
       example:
         AllowUnsubscribe: false
         ListName: My List 1
@@ -4842,7 +5233,7 @@ components:
           format: date-time
           type: string
         AllowUnsubscribe:
-          description: 'True: Allow unsubscribing from this list. Otherwise, false'
+          description: "True: Allow unsubscribing from this list. Otherwise, false"
           example: false
           format: boolean
           type: boolean
@@ -4852,8 +5243,7 @@ components:
         AllowUnsubscribe: false
         ListName: My List 1
         Emails:
-        - Emails
-        - Emails
+        - john.doe@sample.com
       properties:
         ListName:
           description: Name of your list.
@@ -4861,13 +5251,15 @@ components:
           format: string
           type: string
         AllowUnsubscribe:
-          description: 'True: Allow unsubscribing from this list. Otherwise, false'
+          description: "True: Allow unsubscribing from this list. Otherwise, false"
           example: false
           format: boolean
           type: boolean
         Emails:
           description: Comma delimited list of existing contact emails that should
             be added to this list. Leave empty for all contacts
+          example:
+          - john.doe@sample.com
           items:
             format: string
             type: string
@@ -4886,7 +5278,7 @@ components:
           format: string
           type: string
         AllowUnsubscribe:
-          description: 'True: Allow unsubscribing from this list. Otherwise, false'
+          description: "True: Allow unsubscribing from this list. Otherwise, false"
           example: false
           format: boolean
           type: boolean
@@ -4994,10 +5386,12 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         MergeFile:
           ContentType: ContentType
+          Size: 100
           BinaryContent: BinaryContent
           Name: Name
         Content:
@@ -5012,17 +5406,22 @@ components:
           EnvelopeFrom: John Doe <email@domain.com>
           TemplateName: Template01
           From: John Doe <email@domain.com>
-          AttachFiles: '[ "preuploaded.jpg" ]'
+          AttachFiles:
+          - preuploaded.jpg
           Body:
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
-          - Content: Content
+          - ContentType: HTML
+            Content: Content
             Charset: Charset
           Attachments:
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           - ContentType: ContentType
+            Size: 100
             BinaryContent: BinaryContent
             Name: Name
           Subject: Hello!
@@ -5039,11 +5438,13 @@ components:
         Options:
           $ref: '#/components/schemas/Options'
       required:
+      - Content
       - MergeFile
       type: object
     MessageAttachment:
       example:
         ContentType: ContentType
+        Size: 100
         BinaryContent: BinaryContent
         Name: Name
       properties:
@@ -5059,8 +5460,14 @@ components:
           description: MIME content type
           format: string
           type: string
+        Size:
+          description: Size of your attachment (in bytes).
+          example: 100
+          format: int32
+          type: integer
       required:
       - BinaryContent
+      - Name
       type: object
     MessageCategory:
       default: Unknown
@@ -5094,8 +5501,8 @@ components:
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         Token:
@@ -5120,11 +5527,13 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         Expires:
           description: Date this ApiKey expires.
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this ApiKey
           items:
@@ -5142,6 +5551,7 @@ components:
         Token: Token
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
+        AccessLevel: None
         Name: Name
       properties:
         Token:
@@ -5163,11 +5573,13 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         Expires:
           description: Date this SmtpCredential expires.
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this SmtpCredential
           items:
@@ -5181,6 +5593,7 @@ components:
         TrackClicks: true
         ChannelName: Channel01
         PoolName: My Custom Pool
+        Encoding: UserProvided
         TimeOffset: 0
         TrackOpens: true
       properties:
@@ -5190,6 +5603,7 @@ components:
           format: int32
           nullable: true
           type: integer
+          example: null
         PoolName:
           description: Name of your custom IP Pool to be used in the sending process
           example: My Custom Pool
@@ -5203,16 +5617,18 @@ components:
         Encoding:
           $ref: '#/components/schemas/EncodingType'
         TrackOpens:
-          description: Should the opens be tracked? If no value has been provided,
-            Account's default setting will be used.
+          description: "Should the opens be tracked? If no value has been provided,\
+            \ Account's default setting will be used."
           example: true
           format: boolean
+          nullable: true
           type: boolean
         TrackClicks:
-          description: Should the clicks be tracked? If no value has been provided,
-            Account's default setting will be used.
+          description: "Should the clicks be tracked? If no value has been provided,\
+            \ Account's default setting will be used."
           example: true
           format: boolean
+          nullable: true
           type: boolean
       type: object
     RecipientEvent:
@@ -5221,12 +5637,14 @@ components:
         EventDate: 2000-01-23T04:56:07.000+00:00
         NextTryOn: 2000-01-23T04:56:07.000+00:00
         Message: Lorem ipsum
+        EventType: Submission
         MsgID: ABCDE_9RPhSWiaJq_ab1g1
         Subject: Hello!
         TransactionID: TransactionID
         ChannelName: Channel01
         PoolName: PoolName
         To: 2001-01-01T01:01:01
+        MessageCategory: Unknown
         IPAddress: IPAddress
         FromEmail: sender@yourdomain.com
       properties:
@@ -5241,7 +5659,7 @@ components:
           format: string
           type: string
         FromEmail:
-          description: 'Default From: email address.'
+          description: "Default From: email address."
           example: sender@yourdomain.com
           format: string
           type: string
@@ -5274,7 +5692,7 @@ components:
           nullable: true
           type: string
         Message:
-          description: Content of message, HTML encoded
+          description: "Content of message, HTML encoded"
           example: Lorem ipsum
           format: string
           type: string
@@ -5288,7 +5706,7 @@ components:
           type: string
       type: object
     Segment:
-      description: Dynamic collection of Contacts, managed by SQL-like rule.
+      description: "Dynamic collection of Contacts, managed by SQL-like rule."
       example:
         Rule: Rule
         Name: Name
@@ -5312,8 +5730,8 @@ components:
           format: string
           type: string
         Rule:
-          description: 'SQL-like rule to determine which Contacts belong to this Segment.
-            Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules'
+          description: "SQL-like rule to determine which Contacts belong to this Segment.\
+            \ Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules"
           format: string
           type: string
       required:
@@ -5329,6 +5747,7 @@ components:
         DateCreated: 2000-01-23T04:56:07.000+00:00
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
+        AccessLevel: None
         Name: Name
       properties:
         AccessLevel:
@@ -5346,11 +5765,13 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         Expires:
           description: Date this SmtpCredential expires.
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this SmtpCredential
           items:
@@ -5378,6 +5799,7 @@ components:
           format: date-time
           nullable: true
           type: string
+          example: null
         RestrictAccessToIPRange:
           description: Which IPs can use this SmtpCredential
           items:
@@ -5420,6 +5842,7 @@ components:
     SplitOptions:
       description: Optional A/X split campaign options
       example:
+        OptimizeFor: Opens
         OptimizePeriodMinutes: 30
       properties:
         OptimizeFor:
@@ -5432,7 +5855,8 @@ components:
           type: integer
       type: object
     SubaccountEmailCreditsPayload:
-      description: A change to SubAccount email credits pool, with an additional note.
+      description: "A change to SubAccount email credits pool, with an additional\
+        \ note."
       example:
         Credits: 0
         Notes: Notes
@@ -5443,7 +5867,7 @@ components:
           format: int32
           type: integer
         Notes:
-          description: Note to append to this credits change, for history.
+          description: "Note to append to this credits change, for history."
           format: string
           type: string
       required:
@@ -5467,7 +5891,8 @@ components:
           format: int32
           type: integer
         RequiresEmailCredits:
-          description: True, if Account needs credits to send emails. Otherwise, false
+          description: "True, if Account needs credits to send emails. Otherwise,\
+            \ false"
           example: true
           format: boolean
           type: boolean
@@ -5499,6 +5924,7 @@ components:
           format: boolean
           nullable: true
           type: boolean
+          example: null
       type: object
     SubaccountEmailSettingsPayload:
       description: Settings related to sending emails
@@ -5512,7 +5938,8 @@ components:
         EnablePrivateIPPurchase: true
       properties:
         RequiresEmailCredits:
-          description: True, if Account needs credits to send emails. Otherwise, false
+          description: "True, if Account needs credits to send emails. Otherwise,\
+            \ false"
           example: true
           format: boolean
           type: boolean
@@ -5544,11 +5971,13 @@ components:
           format: boolean
           nullable: true
           type: boolean
+          example: null
       type: object
     SubAccountInfo:
       description: Detailed information about SubAccount.
       example:
         EmailCredits: 1000
+        Status: Disabled
         Email: mail@example.com
         PublicAccountID: EB3EBB7A-C20D-4D39-8F2F-5E6842F58E6F
         ContactsCount: 6
@@ -5632,9 +6061,9 @@ components:
           format: string
           type: string
         SendActivation:
-          description: True, if you want to send activation email to this Account
-            to confirm the creation of a new SubAccount. Otherwise, false (SubAccount
-            will immediately be Active).
+          description: "True, if you want to send activation email to this Account\
+            \ to confirm the creation of a new SubAccount. Otherwise, false (SubAccount\
+            \ will immediately be Active)."
           format: boolean
           type: boolean
         Settings:
@@ -5697,6 +6126,7 @@ components:
           format: int32
           nullable: true
           type: integer
+          example: null
         DateUpdated:
           description: Last change date
           format: date-time
@@ -5706,11 +6136,15 @@ components:
     Template:
       description: Template info
       example:
+        TemplateScope: Personal
+        TemplateType: RawHTML
         DateAdded: 2000-01-23T04:56:07.000+00:00
         Body:
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
         Subject: Hello!
         Name: Name
@@ -5741,10 +6175,13 @@ components:
     TemplatePayload:
       description: New template object
       example:
+        TemplateScope: Personal
         Body:
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
-        - Content: Content
+        - ContentType: HTML
+          Content: Content
           Charset: Charset
         Subject: Hello!
         Name: Name
@@ -5781,6 +6218,8 @@ components:
       - RawHTML
       - DragDropEditor
       - LandingPageEditor
+      - TemplateEditor
+      - FormTemplate
       type: string
     TransactionalRecipient:
       description: List of transactional recipients
@@ -5844,6 +6283,7 @@ components:
     VerificationFileResult:
       description: Simple verification file result info
       example:
+        VerificationStatus: Processing
         FileUploadResult:
           EmailsCount: 0
           DuplicatedEmailsCount: 6
@@ -5876,26 +6316,33 @@ components:
     VerificationFileResultDetails:
       description: Detailed verification file result info
       example:
+        VerificationStatus: Processing
         FileUploadResult:
           EmailsCount: 0
           DuplicatedEmailsCount: 6
         VerificationResult:
         - Disposable: true
           Role: true
+          PredictedStatus: None
           Account: Account
           SuggestedSpelling: SuggestedSpelling
           Email: Email
+          PredictedScore: 0.8008281904610115
           Domain: example.com
           DateAdded: 2000-01-23T04:56:07.000+00:00
           Reason: Reason
+          Result: None
         - Disposable: true
           Role: true
+          PredictedStatus: None
           Account: Account
           SuggestedSpelling: SuggestedSpelling
           Email: Email
+          PredictedScore: 0.8008281904610115
           Domain: example.com
           DateAdded: 2000-01-23T04:56:07.000+00:00
           Reason: Reason
+          Result: None
         VerificationID: VerificationID
         Filename: Filename
         DateAdded: 2000-01-23T04:56:07.000+00:00
@@ -5936,35 +6383,7 @@ components:
       - Verified
       - Error
       type: string
-    inline_object:
-      format: binary
-      properties:
-        file:
-          format: binary
-          type: string
-      type: object
-    inline_object_1:
-      format: binary
-      properties:
-        file:
-          format: binary
-          type: string
-      type: object
-    inline_object_2:
-      format: binary
-      properties:
-        file:
-          format: binary
-          type: string
-      type: object
-    inline_object_3:
-      format: binary
-      properties:
-        file:
-          format: binary
-          type: string
-      type: object
-    inline_object_4:
+    contactsImportPost_request:
       format: binary
       properties:
         file:

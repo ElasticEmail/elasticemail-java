@@ -2,18 +2,18 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**eventsByTransactionidGet**](EventsApi.md#eventsByTransactionidGet) | **GET** /events/{transactionid} | Load Email Events
-[**eventsChannelsByNameExportPost**](EventsApi.md#eventsChannelsByNameExportPost) | **POST** /events/channels/{name}/export | Export Channel Events
-[**eventsChannelsByNameGet**](EventsApi.md#eventsChannelsByNameGet) | **GET** /events/channels/{name} | Load Channel Events
-[**eventsChannelsExportByIdStatusGet**](EventsApi.md#eventsChannelsExportByIdStatusGet) | **GET** /events/channels/export/{id}/status | Check Channel Export Status
-[**eventsExportByIdStatusGet**](EventsApi.md#eventsExportByIdStatusGet) | **GET** /events/export/{id}/status | Check Export Status
-[**eventsExportPost**](EventsApi.md#eventsExportPost) | **POST** /events/export | Export Events
-[**eventsGet**](EventsApi.md#eventsGet) | **GET** /events | Load Events
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**eventsByTransactionidGet**](EventsApi.md#eventsByTransactionidGet) | **GET** /events/{transactionid} | Load Email Events |
+| [**eventsChannelsByNameExportPost**](EventsApi.md#eventsChannelsByNameExportPost) | **POST** /events/channels/{name}/export | Export Channel Events |
+| [**eventsChannelsByNameGet**](EventsApi.md#eventsChannelsByNameGet) | **GET** /events/channels/{name} | Load Channel Events |
+| [**eventsChannelsExportByIdStatusGet**](EventsApi.md#eventsChannelsExportByIdStatusGet) | **GET** /events/channels/export/{id}/status | Check Channel Export Status |
+| [**eventsExportByIdStatusGet**](EventsApi.md#eventsExportByIdStatusGet) | **GET** /events/export/{id}/status | Check Export Status |
+| [**eventsExportPost**](EventsApi.md#eventsExportPost) | **POST** /events/export | Export Events |
+| [**eventsGet**](EventsApi.md#eventsGet) | **GET** /events | Load Events |
 
 
-<a name="eventsByTransactionidGet"></a>
+<a id="eventsByTransactionidGet"></a>
 # **eventsByTransactionidGet**
 > List&lt;RecipientEvent&gt; eventsByTransactionidGet(transactionid, from, to, orderBy, limit, offset)
 
@@ -65,14 +65,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **transactionid** | **String**| ID number of transaction |
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **transactionid** | **String**| ID number of transaction | |
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -90,9 +90,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="eventsChannelsByNameExportPost"></a>
+<a id="eventsChannelsByNameExportPost"></a>
 # **eventsChannelsByNameExportPost**
 > ExportLink eventsChannelsByNameExportPost(name, eventTypes, from, to, fileFormat, compressionFormat, fileName)
 
@@ -145,15 +145,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of selected channel. |
- **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
- **fileName** | **String**| Name of your file including extension. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of selected channel. | |
+| **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional] |
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json] |
+| **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip] |
+| **fileName** | **String**| Name of your file including extension. | [optional] |
 
 ### Return type
 
@@ -171,9 +171,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="eventsChannelsByNameGet"></a>
+<a id="eventsChannelsByNameGet"></a>
 # **eventsChannelsByNameGet**
 > List&lt;RecipientEvent&gt; eventsChannelsByNameGet(name, eventTypes, from, to, orderBy, limit, offset)
 
@@ -226,15 +226,15 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of selected channel. |
- **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
- **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of selected channel. | |
+| **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional] |
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending] |
+| **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -252,9 +252,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="eventsChannelsExportByIdStatusGet"></a>
+<a id="eventsChannelsExportByIdStatusGet"></a>
 # **eventsChannelsExportByIdStatusGet**
 > ExportStatus eventsChannelsExportByIdStatusGet(id)
 
@@ -301,9 +301,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the exported file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID of the exported file | |
 
 ### Return type
 
@@ -321,9 +321,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="eventsExportByIdStatusGet"></a>
+<a id="eventsExportByIdStatusGet"></a>
 # **eventsExportByIdStatusGet**
 > ExportStatus eventsExportByIdStatusGet(id)
 
@@ -370,9 +370,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the exported file |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| ID of the exported file | |
 
 ### Return type
 
@@ -390,9 +390,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="eventsExportPost"></a>
+<a id="eventsExportPost"></a>
 # **eventsExportPost**
 > ExportLink eventsExportPost(eventTypes, from, to, fileFormat, compressionFormat, fileName)
 
@@ -444,14 +444,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json]
- **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip]
- **fileName** | **String**| Name of your file including extension. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional] |
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **fileFormat** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] [default to Csv] [enum: Csv, Xml, Json] |
+| **compressionFormat** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] [default to None] [enum: None, Zip] |
+| **fileName** | **String**| Name of your file including extension. | [optional] |
 
 ### Return type
 
@@ -469,9 +469,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**202** | Accepted |  -  |
+| **202** | Accepted |  -  |
 
-<a name="eventsGet"></a>
+<a id="eventsGet"></a>
 # **eventsGet**
 > List&lt;RecipientEvent&gt; eventsGet(eventTypes, from, to, orderBy, limit, offset)
 
@@ -523,14 +523,14 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional]
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
- **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending]
- **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **eventTypes** | [**List&lt;EventType&gt;**](EventType.md)| Types of Events to return | [optional] |
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
+| **orderBy** | [**EventsOrderBy**](.md)|  | [optional] [default to DateDescending] [enum: DateDescending, DateAscending] |
+| **limit** | **Integer**| How many items to load. Maximum for this request is 1000 items | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -548,5 +548,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.elasticemail.model.EmailData;
+import com.elasticemail.model.EmailJobStatus;
 import com.elasticemail.model.EmailMessageData;
 import com.elasticemail.model.EmailSend;
 import com.elasticemail.model.EmailTransactionalMessageData;
@@ -90,7 +91,6 @@ public class EmailsApi {
      */
     public okhttp3.Call emailsByMsgidViewGetCall(String msgid, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -107,7 +107,7 @@ public class EmailsApi {
 
         // create path and map variables
         String localVarPath = "/emails/{msgid}/view"
-            .replaceAll("\\{" + "msgid" + "\\}", localVarApiClient.escapeString(msgid.toString()));
+            .replace("{" + "msgid" + "}", localVarApiClient.escapeString(msgid.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -124,7 +124,6 @@ public class EmailsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -137,15 +136,12 @@ public class EmailsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call emailsByMsgidViewGetValidateBeforeCall(String msgid, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'msgid' is set
         if (msgid == null) {
             throw new ApiException("Missing the required parameter 'msgid' when calling emailsByMsgidViewGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = emailsByMsgidViewGetCall(msgid, _callback);
-        return localVarCall;
+        return emailsByMsgidViewGetCall(msgid, _callback);
 
     }
 
@@ -205,6 +201,209 @@ public class EmailsApi {
         return localVarCall;
     }
     /**
+     * Build call for emailsByTransactionidStatusGet
+     * @param transactionid Transaction identifier (required)
+     * @param showFailed Include Bounced email addresses. (optional, default to false)
+     * @param showSent Include Sent email addresses. (optional, default to false)
+     * @param showDelivered Include all delivered email addresses. (optional, default to false)
+     * @param showPending Include Ready to send email addresses. (optional, default to false)
+     * @param showOpened Include Opened email addresses. (optional, default to false)
+     * @param showClicked Include Clicked email addresses. (optional, default to false)
+     * @param showAbuse Include Reported as abuse email addresses. (optional, default to false)
+     * @param showUnsubscribed Include Unsubscribed email addresses. (optional, default to false)
+     * @param showErrors Include error messages for bounced emails. (optional, default to false)
+     * @param showMessageIDs Include all MessageIDs for this transaction (optional, default to false)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call emailsByTransactionidStatusGetCall(String transactionid, Boolean showFailed, Boolean showSent, Boolean showDelivered, Boolean showPending, Boolean showOpened, Boolean showClicked, Boolean showAbuse, Boolean showUnsubscribed, Boolean showErrors, Boolean showMessageIDs, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/emails/{transactionid}/status"
+            .replace("{" + "transactionid" + "}", localVarApiClient.escapeString(transactionid.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (showFailed != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showFailed", showFailed));
+        }
+
+        if (showSent != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showSent", showSent));
+        }
+
+        if (showDelivered != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showDelivered", showDelivered));
+        }
+
+        if (showPending != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showPending", showPending));
+        }
+
+        if (showOpened != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showOpened", showOpened));
+        }
+
+        if (showClicked != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showClicked", showClicked));
+        }
+
+        if (showAbuse != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showAbuse", showAbuse));
+        }
+
+        if (showUnsubscribed != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showUnsubscribed", showUnsubscribed));
+        }
+
+        if (showErrors != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showErrors", showErrors));
+        }
+
+        if (showMessageIDs != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("showMessageIDs", showMessageIDs));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "apikey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call emailsByTransactionidStatusGetValidateBeforeCall(String transactionid, Boolean showFailed, Boolean showSent, Boolean showDelivered, Boolean showPending, Boolean showOpened, Boolean showClicked, Boolean showAbuse, Boolean showUnsubscribed, Boolean showErrors, Boolean showMessageIDs, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'transactionid' is set
+        if (transactionid == null) {
+            throw new ApiException("Missing the required parameter 'transactionid' when calling emailsByTransactionidStatusGet(Async)");
+        }
+
+        return emailsByTransactionidStatusGetCall(transactionid, showFailed, showSent, showDelivered, showPending, showOpened, showClicked, showAbuse, showUnsubscribed, showErrors, showMessageIDs, _callback);
+
+    }
+
+    /**
+     * Get Status
+     * Get status details of an email transaction. Required Access Level: ViewReports
+     * @param transactionid Transaction identifier (required)
+     * @param showFailed Include Bounced email addresses. (optional, default to false)
+     * @param showSent Include Sent email addresses. (optional, default to false)
+     * @param showDelivered Include all delivered email addresses. (optional, default to false)
+     * @param showPending Include Ready to send email addresses. (optional, default to false)
+     * @param showOpened Include Opened email addresses. (optional, default to false)
+     * @param showClicked Include Clicked email addresses. (optional, default to false)
+     * @param showAbuse Include Reported as abuse email addresses. (optional, default to false)
+     * @param showUnsubscribed Include Unsubscribed email addresses. (optional, default to false)
+     * @param showErrors Include error messages for bounced emails. (optional, default to false)
+     * @param showMessageIDs Include all MessageIDs for this transaction (optional, default to false)
+     * @return EmailJobStatus
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public EmailJobStatus emailsByTransactionidStatusGet(String transactionid, Boolean showFailed, Boolean showSent, Boolean showDelivered, Boolean showPending, Boolean showOpened, Boolean showClicked, Boolean showAbuse, Boolean showUnsubscribed, Boolean showErrors, Boolean showMessageIDs) throws ApiException {
+        ApiResponse<EmailJobStatus> localVarResp = emailsByTransactionidStatusGetWithHttpInfo(transactionid, showFailed, showSent, showDelivered, showPending, showOpened, showClicked, showAbuse, showUnsubscribed, showErrors, showMessageIDs);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Status
+     * Get status details of an email transaction. Required Access Level: ViewReports
+     * @param transactionid Transaction identifier (required)
+     * @param showFailed Include Bounced email addresses. (optional, default to false)
+     * @param showSent Include Sent email addresses. (optional, default to false)
+     * @param showDelivered Include all delivered email addresses. (optional, default to false)
+     * @param showPending Include Ready to send email addresses. (optional, default to false)
+     * @param showOpened Include Opened email addresses. (optional, default to false)
+     * @param showClicked Include Clicked email addresses. (optional, default to false)
+     * @param showAbuse Include Reported as abuse email addresses. (optional, default to false)
+     * @param showUnsubscribed Include Unsubscribed email addresses. (optional, default to false)
+     * @param showErrors Include error messages for bounced emails. (optional, default to false)
+     * @param showMessageIDs Include all MessageIDs for this transaction (optional, default to false)
+     * @return ApiResponse&lt;EmailJobStatus&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EmailJobStatus> emailsByTransactionidStatusGetWithHttpInfo(String transactionid, Boolean showFailed, Boolean showSent, Boolean showDelivered, Boolean showPending, Boolean showOpened, Boolean showClicked, Boolean showAbuse, Boolean showUnsubscribed, Boolean showErrors, Boolean showMessageIDs) throws ApiException {
+        okhttp3.Call localVarCall = emailsByTransactionidStatusGetValidateBeforeCall(transactionid, showFailed, showSent, showDelivered, showPending, showOpened, showClicked, showAbuse, showUnsubscribed, showErrors, showMessageIDs, null);
+        Type localVarReturnType = new TypeToken<EmailJobStatus>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Status (asynchronously)
+     * Get status details of an email transaction. Required Access Level: ViewReports
+     * @param transactionid Transaction identifier (required)
+     * @param showFailed Include Bounced email addresses. (optional, default to false)
+     * @param showSent Include Sent email addresses. (optional, default to false)
+     * @param showDelivered Include all delivered email addresses. (optional, default to false)
+     * @param showPending Include Ready to send email addresses. (optional, default to false)
+     * @param showOpened Include Opened email addresses. (optional, default to false)
+     * @param showClicked Include Clicked email addresses. (optional, default to false)
+     * @param showAbuse Include Reported as abuse email addresses. (optional, default to false)
+     * @param showUnsubscribed Include Unsubscribed email addresses. (optional, default to false)
+     * @param showErrors Include error messages for bounced emails. (optional, default to false)
+     * @param showMessageIDs Include all MessageIDs for this transaction (optional, default to false)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call emailsByTransactionidStatusGetAsync(String transactionid, Boolean showFailed, Boolean showSent, Boolean showDelivered, Boolean showPending, Boolean showOpened, Boolean showClicked, Boolean showAbuse, Boolean showUnsubscribed, Boolean showErrors, Boolean showMessageIDs, final ApiCallback<EmailJobStatus> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = emailsByTransactionidStatusGetValidateBeforeCall(transactionid, showFailed, showSent, showDelivered, showPending, showOpened, showClicked, showAbuse, showUnsubscribed, showErrors, showMessageIDs, _callback);
+        Type localVarReturnType = new TypeToken<EmailJobStatus>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for emailsMergefilePost
      * @param mergeEmailPayload Email data (required)
      * @param _callback Callback for upload/download progress
@@ -218,7 +417,6 @@ public class EmailsApi {
      */
     public okhttp3.Call emailsMergefilePostCall(MergeEmailPayload mergeEmailPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -264,15 +462,12 @@ public class EmailsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call emailsMergefilePostValidateBeforeCall(MergeEmailPayload mergeEmailPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'mergeEmailPayload' is set
         if (mergeEmailPayload == null) {
             throw new ApiException("Missing the required parameter 'mergeEmailPayload' when calling emailsMergefilePost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = emailsMergefilePostCall(mergeEmailPayload, _callback);
-        return localVarCall;
+        return emailsMergefilePostCall(mergeEmailPayload, _callback);
 
     }
 
@@ -345,7 +540,6 @@ public class EmailsApi {
      */
     public okhttp3.Call emailsPostCall(EmailMessageData emailMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -391,15 +585,12 @@ public class EmailsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call emailsPostValidateBeforeCall(EmailMessageData emailMessageData, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'emailMessageData' is set
         if (emailMessageData == null) {
             throw new ApiException("Missing the required parameter 'emailMessageData' when calling emailsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = emailsPostCall(emailMessageData, _callback);
-        return localVarCall;
+        return emailsPostCall(emailMessageData, _callback);
 
     }
 
@@ -472,7 +663,6 @@ public class EmailsApi {
      */
     public okhttp3.Call emailsTransactionalPostCall(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -518,15 +708,12 @@ public class EmailsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call emailsTransactionalPostValidateBeforeCall(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'emailTransactionalMessageData' is set
         if (emailTransactionalMessageData == null) {
             throw new ApiException("Missing the required parameter 'emailTransactionalMessageData' when calling emailsTransactionalPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = emailsTransactionalPostCall(emailTransactionalMessageData, _callback);
-        return localVarCall;
+        return emailsTransactionalPostCall(emailTransactionalMessageData, _callback);
 
     }
 

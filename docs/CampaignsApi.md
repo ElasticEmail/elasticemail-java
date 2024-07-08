@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**campaignsByNameDelete**](CampaignsApi.md#campaignsByNameDelete) | **DELETE** /campaigns/{name} | Delete Campaign
-[**campaignsByNameGet**](CampaignsApi.md#campaignsByNameGet) | **GET** /campaigns/{name} | Load Campaign
-[**campaignsByNamePut**](CampaignsApi.md#campaignsByNamePut) | **PUT** /campaigns/{name} | Update Campaign
-[**campaignsGet**](CampaignsApi.md#campaignsGet) | **GET** /campaigns | Load Campaigns
-[**campaignsPost**](CampaignsApi.md#campaignsPost) | **POST** /campaigns | Add Campaign
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**campaignsByNameDelete**](CampaignsApi.md#campaignsByNameDelete) | **DELETE** /campaigns/{name} | Delete Campaign |
+| [**campaignsByNameGet**](CampaignsApi.md#campaignsByNameGet) | **GET** /campaigns/{name} | Load Campaign |
+| [**campaignsByNamePut**](CampaignsApi.md#campaignsByNamePut) | **PUT** /campaigns/{name} | Update Campaign |
+| [**campaignsGet**](CampaignsApi.md#campaignsGet) | **GET** /campaigns | Load Campaigns |
+| [**campaignsPost**](CampaignsApi.md#campaignsPost) | **POST** /campaigns | Add Campaign |
 
 
-<a name="campaignsByNameDelete"></a>
+<a id="campaignsByNameDelete"></a>
 # **campaignsByNameDelete**
 > campaignsByNameDelete(name)
 
@@ -57,9 +57,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of Campaign to delete |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of Campaign to delete | |
 
 ### Return type
 
@@ -77,9 +77,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="campaignsByNameGet"></a>
+<a id="campaignsByNameGet"></a>
 # **campaignsByNameGet**
 > Campaign campaignsByNameGet(name)
 
@@ -126,9 +126,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of Campaign to get |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of Campaign to get | |
 
 ### Return type
 
@@ -146,9 +146,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="campaignsByNamePut"></a>
+<a id="campaignsByNamePut"></a>
 # **campaignsByNamePut**
 > Campaign campaignsByNamePut(name, campaign)
 
@@ -196,10 +196,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of Campaign to update |
- **campaign** | [**Campaign**](Campaign.md)| JSON representation of a campaign |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of Campaign to update | |
+| **campaign** | [**Campaign**](Campaign.md)| JSON representation of a campaign | |
 
 ### Return type
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="campaignsGet"></a>
+<a id="campaignsGet"></a>
 # **campaignsGet**
 > List&lt;Campaign&gt; campaignsGet(search, offset, limit)
 
@@ -268,11 +268,11 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search** | **String**| Text fragment used for searching in Campaign name (using the &#39;contains&#39; rule) | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **search** | **String**| Text fragment used for searching in Campaign name (using the &#39;contains&#39; rule) | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
 
 ### Return type
 
@@ -290,9 +290,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="campaignsPost"></a>
+<a id="campaignsPost"></a>
 # **campaignsPost**
 > Campaign campaignsPost(campaign)
 
@@ -339,9 +339,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **campaign** | [**Campaign**](Campaign.md)| JSON representation of a campaign |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **campaign** | [**Campaign**](Campaign.md)| JSON representation of a campaign | |
 
 ### Return type
 
@@ -359,5 +359,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

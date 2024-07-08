@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,11 +14,11 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.IOException;
 import com.google.gson.TypeAdapter;
+import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
@@ -31,97 +31,105 @@ public enum AccessLevel {
   
   NONE("None"),
   
-  VIEWACCOUNT("ViewAccount"),
+  VIEW_ACCOUNT("ViewAccount"),
   
-  VIEWCONTACTS("ViewContacts"),
+  VIEW_CONTACTS("ViewContacts"),
   
-  VIEWFORMS("ViewForms"),
+  VIEW_FORMS("ViewForms"),
   
-  VIEWTEMPLATES("ViewTemplates"),
+  VIEW_TEMPLATES("ViewTemplates"),
   
-  VIEWCAMPAIGNS("ViewCampaigns"),
+  VIEW_CAMPAIGNS("ViewCampaigns"),
   
-  VIEWCHANNELS("ViewChannels"),
+  VIEW_CHANNELS("ViewChannels"),
   
-  VIEWAUTOMATIONS("ViewAutomations"),
+  VIEW_AUTOMATIONS("ViewAutomations"),
   
-  VIEWSURVEYS("ViewSurveys"),
+  VIEW_SURVEYS("ViewSurveys"),
   
-  VIEWSETTINGS("ViewSettings"),
+  VIEW_SETTINGS("ViewSettings"),
   
-  VIEWBILLING("ViewBilling"),
+  VIEW_BILLING("ViewBilling"),
   
-  VIEWSUBACCOUNTS("ViewSubAccounts"),
+  VIEW_SUB_ACCOUNTS("ViewSubAccounts"),
   
-  VIEWUSERS("ViewUsers"),
+  VIEW_USERS("ViewUsers"),
   
-  VIEWFILES("ViewFiles"),
+  VIEW_FILES("ViewFiles"),
   
-  VIEWREPORTS("ViewReports"),
+  VIEW_REPORTS("ViewReports"),
   
-  MODIFYACCOUNT("ModifyAccount"),
+  MODIFY_ACCOUNT("ModifyAccount"),
   
-  MODIFYCONTACTS("ModifyContacts"),
+  MODIFY_CONTACTS("ModifyContacts"),
   
-  MODIFYFORMS("ModifyForms"),
+  MODIFY_FORMS("ModifyForms"),
   
-  MODIFYTEMPLATES("ModifyTemplates"),
+  MODIFY_TEMPLATES("ModifyTemplates"),
   
-  MODIFYCAMPAIGNS("ModifyCampaigns"),
+  MODIFY_CAMPAIGNS("ModifyCampaigns"),
   
-  MODIFYCHANNELS("ModifyChannels"),
+  MODIFY_CHANNELS("ModifyChannels"),
   
-  MODIFYAUTOMATIONS("ModifyAutomations"),
+  MODIFY_AUTOMATIONS("ModifyAutomations"),
   
-  MODIFYSURVEYS("ModifySurveys"),
+  MODIFY_SURVEYS("ModifySurveys"),
   
-  MODIFYFILES("ModifyFiles"),
+  MODIFY_FILES("ModifyFiles"),
   
   EXPORT("Export"),
   
-  SENDSMTP("SendSmtp"),
+  SEND_SMTP("SendSmtp"),
   
-  SENDSMS("SendSMS"),
+  SEND_SMS("SendSMS"),
   
-  MODIFYSETTINGS("ModifySettings"),
+  MODIFY_SETTINGS("ModifySettings"),
   
-  MODIFYBILLING("ModifyBilling"),
+  MODIFY_BILLING("ModifyBilling"),
   
-  MODIFYPROFILE("ModifyProfile"),
+  MODIFY_PROFILE("ModifyProfile"),
   
-  MODIFYSUBACCOUNTS("ModifySubAccounts"),
+  MODIFY_SUB_ACCOUNTS("ModifySubAccounts"),
   
-  MODIFYUSERS("ModifyUsers"),
+  MODIFY_USERS("ModifyUsers"),
   
   SECURITY("Security"),
   
-  MODIFYLANGUAGE("ModifyLanguage"),
+  MODIFY_LANGUAGE("ModifyLanguage"),
   
-  VIEWSUPPORT("ViewSupport"),
+  VIEW_SUPPORT("ViewSupport"),
   
-  SENDHTTP("SendHttp"),
+  SEND_HTTP("SendHttp"),
   
-  MODIFY2FA("Modify2FA"),
+  MODIFY2_FA_EMAIL("Modify2FAEmail"),
   
-  MODIFYSUPPORT("ModifySupport"),
+  MODIFY_SUPPORT("ModifySupport"),
   
-  VIEWCUSTOMFIELDS("ViewCustomFields"),
+  VIEW_CUSTOM_FIELDS("ViewCustomFields"),
   
-  MODIFYCUSTOMFIELDS("ModifyCustomFields"),
+  MODIFY_CUSTOM_FIELDS("ModifyCustomFields"),
   
-  MODIFYWEBNOTIFICATIONS("ModifyWebNotifications"),
+  MODIFY_WEB_NOTIFICATIONS("ModifyWebNotifications"),
   
-  EXTENDEDLOGS("ExtendedLogs"),
+  EXTENDED_LOGS("ExtendedLogs"),
   
-  VERIFYEMAILS("VerifyEmails"),
+  VERIFY_EMAILS("VerifyEmails"),
   
-  VIEWEMAILVERIFICATIONS("ViewEmailVerifications"),
+  MODIFY2_FA_SMS("Modify2FASms"),
   
-  VIEWMARKETING("ViewMarketing"),
+  MODIFY_LANDING_PAGES("ModifyLandingPages"),
   
-  VIEWEMAILAPI("ViewEmailApi"),
+  VIEW_LANDING_PAGES("ViewLandingPages"),
   
-  VIEWINBOUND("ViewInbound");
+  MODIFY_SUPPRESSIONS("ModifySuppressions"),
+  
+  VIEW_SUPPRESSIONS("ViewSuppressions"),
+  
+  VIEW_DRAG_DROP_EDITOR("ViewDragDropEditor"),
+  
+  VIEW_TEMPLATE_EDITOR("ViewTemplateEditor"),
+  
+  VIEW_AI_TOOLS("ViewAITools");
 
   private String value;
 
@@ -158,6 +166,11 @@ public enum AccessLevel {
       String value = jsonReader.nextString();
       return AccessLevel.fromValue(value);
     }
+  }
+
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+    String value = jsonElement.getAsString();
+    AccessLevel.fromValue(value);
   }
 }
 

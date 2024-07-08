@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -20,8 +20,8 @@ import com.elasticemail.model.NewApiKey;
 import com.elasticemail.model.NewSmtpCredentials;
 import com.elasticemail.model.SmtpCredentials;
 import com.elasticemail.model.SmtpCredentialsPayload;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,176 +31,155 @@ import java.util.Map;
 /**
  * API tests for SecurityApi
  */
-@Ignore
+@Disabled
 public class SecurityApiTest {
 
     private final SecurityApi api = new SecurityApi();
 
-    
     /**
      * Delete ApiKey
      *
      * Delete your existing ApiKey. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securityApikeysByNameDeleteTest() throws ApiException {
         String name = null;
         String subaccount = null;
         api.securityApikeysByNameDelete(name, subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load ApiKey
      *
      * Load your existing ApiKey info. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securityApikeysByNameGetTest() throws ApiException {
         String name = null;
         String subaccount = null;
         ApiKey response = api.securityApikeysByNameGet(name, subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Update ApiKey
      *
      * Update your existing ApiKey. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securityApikeysByNamePutTest() throws ApiException {
         String name = null;
         ApiKeyPayload apiKeyPayload = null;
         ApiKey response = api.securityApikeysByNamePut(name, apiKeyPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * List ApiKeys
      *
      * List all your existing ApiKeys. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securityApikeysGetTest() throws ApiException {
         String subaccount = null;
         List<ApiKey> response = api.securityApikeysGet(subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Add ApiKey
      *
      * Add a new ApiKey. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securityApikeysPostTest() throws ApiException {
         ApiKeyPayload apiKeyPayload = null;
         NewApiKey response = api.securityApikeysPost(apiKeyPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * Delete SMTP Credential
      *
      * Delete your existing SMTP Credentials. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securitySmtpByNameDeleteTest() throws ApiException {
         String name = null;
         String subaccount = null;
         api.securitySmtpByNameDelete(name, subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load SMTP Credential
      *
      * Load your existing SMTP Credential info. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securitySmtpByNameGetTest() throws ApiException {
         String name = null;
         String subaccount = null;
         SmtpCredentials response = api.securitySmtpByNameGet(name, subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Update SMTP Credential
      *
      * Update your existing SMTP Credentials. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securitySmtpByNamePutTest() throws ApiException {
         String name = null;
         SmtpCredentialsPayload smtpCredentialsPayload = null;
         SmtpCredentials response = api.securitySmtpByNamePut(name, smtpCredentialsPayload);
-
         // TODO: test validations
     }
-    
+
     /**
      * List SMTP Credentials
      *
      * List all your existing SMTP Credentials. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securitySmtpGetTest() throws ApiException {
         String subaccount = null;
         List<SmtpCredentials> response = api.securitySmtpGet(subaccount);
-
         // TODO: test validations
     }
-    
+
     /**
      * Add SMTP Credential
      *
      * Add new SMTP Credential. Required Access Level: Security
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void securitySmtpPostTest() throws ApiException {
         SmtpCredentialsPayload smtpCredentialsPayload = null;
         NewSmtpCredentials response = api.securitySmtpPost(smtpCredentialsPayload);
-
         // TODO: test validations
     }
-    
+
 }

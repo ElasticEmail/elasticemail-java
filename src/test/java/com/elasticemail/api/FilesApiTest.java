@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -17,8 +17,8 @@ import com.elasticemail.client.ApiException;
 import java.io.File;
 import com.elasticemail.model.FileInfo;
 import com.elasticemail.model.FilePayload;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,92 +28,81 @@ import java.util.Map;
 /**
  * API tests for FilesApi
  */
-@Ignore
+@Disabled
 public class FilesApiTest {
 
     private final FilesApi api = new FilesApi();
 
-    
     /**
      * Delete File
      *
      * Permanently deletes the file from your Account. Required Access Level: ModifyFiles
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void filesByNameDeleteTest() throws ApiException {
         String name = null;
         api.filesByNameDelete(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Download File
      *
      * Gets content of the specified File. Required Access Level: ViewFiles
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void filesByNameGetTest() throws ApiException {
         String name = null;
         File response = api.filesByNameGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load File Details
      *
      * Returns the specified File&#39;s details. Required Access Level: ViewFiles
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void filesByNameInfoGetTest() throws ApiException {
         String name = null;
         FileInfo response = api.filesByNameInfoGet(name);
-
         // TODO: test validations
     }
-    
+
     /**
      * List Files
      *
      * Returns a list of all your available files. Required Access Level: ViewFiles
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void filesGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<FileInfo> response = api.filesGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Upload File
      *
      * Uploads selected file to the server. Required Access Level: ModifyFiles
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void filesPostTest() throws ApiException {
         FilePayload filePayload = null;
         Integer expiresAfterDays = null;
         FileInfo response = api.filesPost(filePayload, expiresAfterDays);
-
         // TODO: test validations
     }
-    
+
 }

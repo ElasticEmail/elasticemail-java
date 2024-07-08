@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**filesByNameDelete**](FilesApi.md#filesByNameDelete) | **DELETE** /files/{name} | Delete File
-[**filesByNameGet**](FilesApi.md#filesByNameGet) | **GET** /files/{name} | Download File
-[**filesByNameInfoGet**](FilesApi.md#filesByNameInfoGet) | **GET** /files/{name}/info | Load File Details
-[**filesGet**](FilesApi.md#filesGet) | **GET** /files | List Files
-[**filesPost**](FilesApi.md#filesPost) | **POST** /files | Upload File
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**filesByNameDelete**](FilesApi.md#filesByNameDelete) | **DELETE** /files/{name} | Delete File |
+| [**filesByNameGet**](FilesApi.md#filesByNameGet) | **GET** /files/{name} | Download File |
+| [**filesByNameInfoGet**](FilesApi.md#filesByNameInfoGet) | **GET** /files/{name}/info | Load File Details |
+| [**filesGet**](FilesApi.md#filesGet) | **GET** /files | List Files |
+| [**filesPost**](FilesApi.md#filesPost) | **POST** /files | Upload File |
 
 
-<a name="filesByNameDelete"></a>
+<a id="filesByNameDelete"></a>
 # **filesByNameDelete**
 > filesByNameDelete(name)
 
@@ -57,9 +57,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of your file including extension. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of your file including extension. | |
 
 ### Return type
 
@@ -77,9 +77,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="filesByNameGet"></a>
+<a id="filesByNameGet"></a>
 # **filesByNameGet**
 > File filesByNameGet(name)
 
@@ -126,9 +126,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of your file including extension. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of your file including extension. | |
 
 ### Return type
 
@@ -141,14 +141,14 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/_*
+ - **Accept**: application/*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="filesByNameInfoGet"></a>
+<a id="filesByNameInfoGet"></a>
 # **filesByNameInfoGet**
 > FileInfo filesByNameInfoGet(name)
 
@@ -195,9 +195,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of your file including extension. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of your file including extension. | |
 
 ### Return type
 
@@ -215,9 +215,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="filesGet"></a>
+<a id="filesGet"></a>
 # **filesGet**
 > List&lt;FileInfo&gt; filesGet(limit, offset)
 
@@ -265,10 +265,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -286,9 +286,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="filesPost"></a>
+<a id="filesPost"></a>
 # **filesPost**
 > FileInfo filesPost(filePayload, expiresAfterDays)
 
@@ -336,10 +336,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filePayload** | [**FilePayload**](FilePayload.md)|  |
- **expiresAfterDays** | **Integer**| After how many days should the file be deleted. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **filePayload** | [**FilePayload**](FilePayload.md)|  | |
+| **expiresAfterDays** | **Integer**| After how many days should the file be deleted. | [optional] |
 
 ### Return type
 
@@ -357,5 +357,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

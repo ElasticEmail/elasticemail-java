@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.InboundRouteActionType;
 import com.elasticemail.model.InboundRouteFilterType;
 import com.google.gson.TypeAdapter;
@@ -22,14 +21,37 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * InboundRoute
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class InboundRoute {
   public static final String SERIALIZED_NAME_PUBLIC_ID = "PublicId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ID)
@@ -41,7 +63,7 @@ public class InboundRoute {
 
   public static final String SERIALIZED_NAME_FILTER_TYPE = "FilterType";
   @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAILADDRESS;
+  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAIL_ADDRESS;
 
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -49,7 +71,7 @@ public class InboundRoute {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "ActionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  private InboundRouteActionType actionType = InboundRouteActionType.FORWARDTOEMAIL;
+  private InboundRouteActionType actionType = InboundRouteActionType.FORWARD_TO_EMAIL;
 
   public static final String SERIALIZED_NAME_ACTION_PARAMETER = "ActionParameter";
   @SerializedName(SERIALIZED_NAME_ACTION_PARAMETER)
@@ -59,26 +81,22 @@ public class InboundRoute {
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
   private Integer sortOrder;
 
-  public InboundRoute() { 
+  public InboundRoute() {
   }
 
   public InboundRoute publicId(String publicId) {
-    
     this.publicId = publicId;
     return this;
   }
 
-   /**
+  /**
    * Get publicId
    * @return publicId
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public String getPublicId() {
     return publicId;
   }
-
 
   public void setPublicId(String publicId) {
     this.publicId = publicId;
@@ -86,22 +104,18 @@ public class InboundRoute {
 
 
   public InboundRoute name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of this route
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of this route")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -109,22 +123,18 @@ public class InboundRoute {
 
 
   public InboundRoute filterType(InboundRouteFilterType filterType) {
-    
     this.filterType = filterType;
     return this;
   }
 
-   /**
+  /**
    * Get filterType
    * @return filterType
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public InboundRouteFilterType getFilterType() {
     return filterType;
   }
-
 
   public void setFilterType(InboundRouteFilterType filterType) {
     this.filterType = filterType;
@@ -132,22 +142,18 @@ public class InboundRoute {
 
 
   public InboundRoute filter(String filter) {
-    
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * Filter of the inbound data
    * @return filter
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Filter of the inbound data")
-
   public String getFilter() {
     return filter;
   }
-
 
   public void setFilter(String filter) {
     this.filter = filter;
@@ -155,22 +161,18 @@ public class InboundRoute {
 
 
   public InboundRoute actionType(InboundRouteActionType actionType) {
-    
     this.actionType = actionType;
     return this;
   }
 
-   /**
+  /**
    * Get actionType
    * @return actionType
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public InboundRouteActionType getActionType() {
     return actionType;
   }
-
 
   public void setActionType(InboundRouteActionType actionType) {
     this.actionType = actionType;
@@ -178,22 +180,18 @@ public class InboundRoute {
 
 
   public InboundRoute actionParameter(String actionParameter) {
-    
     this.actionParameter = actionParameter;
     return this;
   }
 
-   /**
+  /**
    * URL address or Email to notify about the inbound
    * @return actionParameter
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "URL address or Email to notify about the inbound")
-
   public String getActionParameter() {
     return actionParameter;
   }
-
 
   public void setActionParameter(String actionParameter) {
     this.actionParameter = actionParameter;
@@ -201,26 +199,23 @@ public class InboundRoute {
 
 
   public InboundRoute sortOrder(Integer sortOrder) {
-    
     this.sortOrder = sortOrder;
     return this;
   }
 
-   /**
+  /**
    * Place of this route in your routes queue&#39;s order
    * @return sortOrder
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Place of this route in your routes queue's order")
-
   public Integer getSortOrder() {
     return sortOrder;
   }
 
-
   public void setSortOrder(Integer sortOrder) {
     this.sortOrder = sortOrder;
   }
+
 
 
   @Override
@@ -272,5 +267,115 @@ public class InboundRoute {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("PublicId");
+    openapiFields.add("Name");
+    openapiFields.add("FilterType");
+    openapiFields.add("Filter");
+    openapiFields.add("ActionType");
+    openapiFields.add("ActionParameter");
+    openapiFields.add("SortOrder");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InboundRoute
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!InboundRoute.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in InboundRoute is not found in the empty JSON string", InboundRoute.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!InboundRoute.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InboundRoute` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("PublicId") != null && !jsonObj.get("PublicId").isJsonNull()) && !jsonObj.get("PublicId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `PublicId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("PublicId").toString()));
+      }
+      if ((jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonNull()) && !jsonObj.get("Name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+      }
+      // validate the optional field `FilterType`
+      if (jsonObj.get("FilterType") != null && !jsonObj.get("FilterType").isJsonNull()) {
+        InboundRouteFilterType.validateJsonElement(jsonObj.get("FilterType"));
+      }
+      if ((jsonObj.get("Filter") != null && !jsonObj.get("Filter").isJsonNull()) && !jsonObj.get("Filter").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Filter").toString()));
+      }
+      // validate the optional field `ActionType`
+      if (jsonObj.get("ActionType") != null && !jsonObj.get("ActionType").isJsonNull()) {
+        InboundRouteActionType.validateJsonElement(jsonObj.get("ActionType"));
+      }
+      if ((jsonObj.get("ActionParameter") != null && !jsonObj.get("ActionParameter").isJsonNull()) && !jsonObj.get("ActionParameter").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ActionParameter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ActionParameter").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!InboundRoute.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'InboundRoute' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<InboundRoute> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(InboundRoute.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<InboundRoute>() {
+           @Override
+           public void write(JsonWriter out, InboundRoute value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public InboundRoute read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of InboundRoute given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InboundRoute
+   * @throws IOException if the JSON string is invalid with respect to InboundRoute
+   */
+  public static InboundRoute fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, InboundRoute.class);
+  }
+
+  /**
+   * Convert an instance of InboundRoute to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

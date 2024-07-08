@@ -7,7 +7,7 @@
 
 * `SUBMISSION` (value: `"Submission"`)
 
-* `FAILEDATTEMPT` (value: `"FailedAttempt"`)
+* `FAILED_ATTEMPT` (value: `"FailedAttempt"`)
 
 * `BOUNCE` (value: `"Bounce"`)
 

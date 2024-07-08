@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -89,7 +89,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsByEmailDeleteCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -106,7 +105,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -115,7 +114,6 @@ public class VerificationsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -123,7 +121,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -136,15 +133,12 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsByEmailDeleteValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling verificationsByEmailDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsByEmailDeleteCall(email, _callback);
-        return localVarCall;
+        return verificationsByEmailDeleteCall(email, _callback);
 
     }
 
@@ -213,7 +207,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsByEmailGetCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -230,7 +223,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -247,7 +240,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -260,21 +252,18 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsByEmailGetValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling verificationsByEmailGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsByEmailGetCall(email, _callback);
-        return localVarCall;
+        return verificationsByEmailGetCall(email, _callback);
 
     }
 
     /**
      * Get Email Verification Result
-     * Returns a result of verified email. Required Access Level: ViewEmailVerifications
+     * Returns a result of verified email. Required Access Level: VerifyEmails
      * @param email Email address to view verification result of (required)
      * @return EmailValidationResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -291,7 +280,7 @@ public class VerificationsApi {
 
     /**
      * Get Email Verification Result
-     * Returns a result of verified email. Required Access Level: ViewEmailVerifications
+     * Returns a result of verified email. Required Access Level: VerifyEmails
      * @param email Email address to view verification result of (required)
      * @return ApiResponse&lt;EmailValidationResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -309,7 +298,7 @@ public class VerificationsApi {
 
     /**
      * Get Email Verification Result (asynchronously)
-     * Returns a result of verified email. Required Access Level: ViewEmailVerifications
+     * Returns a result of verified email. Required Access Level: VerifyEmails
      * @param email Email address to view verification result of (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -341,7 +330,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsByEmailPostCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -358,7 +346,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -375,7 +363,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -388,15 +375,12 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsByEmailPostValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling verificationsByEmailPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsByEmailPostCall(email, _callback);
-        return localVarCall;
+        return verificationsByEmailPostCall(email, _callback);
 
     }
 
@@ -469,7 +453,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesByIdDeleteCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -486,7 +469,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/files/{id}"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -495,7 +478,6 @@ public class VerificationsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -503,7 +485,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -516,15 +497,12 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesByIdDeleteValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling verificationsFilesByIdDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsFilesByIdDeleteCall(id, _callback);
-        return localVarCall;
+        return verificationsFilesByIdDeleteCall(id, _callback);
 
     }
 
@@ -593,7 +571,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesByIdResultDownloadGetCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -610,7 +587,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/files/{id}/result/download"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -619,7 +596,7 @@ public class VerificationsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/_*"
+            "application/*"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -627,7 +604,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -640,15 +616,12 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesByIdResultDownloadGetValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling verificationsFilesByIdResultDownloadGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsFilesByIdResultDownloadGetCall(id, _callback);
-        return localVarCall;
+        return verificationsFilesByIdResultDownloadGetCall(id, _callback);
 
     }
 
@@ -723,7 +696,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesByIdResultGetCall(String id, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -740,7 +712,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/files/{id}/result"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -765,7 +737,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -778,21 +749,18 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesByIdResultGetValidateBeforeCall(String id, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling verificationsFilesByIdResultGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsFilesByIdResultGetCall(id, limit, offset, _callback);
-        return localVarCall;
+        return verificationsFilesByIdResultGetCall(id, limit, offset, _callback);
 
     }
 
     /**
      * Get Detailed File Verification Result
-     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
+     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
@@ -811,7 +779,7 @@ public class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result
-     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
+     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
@@ -831,7 +799,7 @@ public class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result (asynchronously)
-     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
+     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
@@ -865,7 +833,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesByIdVerificationPostCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -882,7 +849,7 @@ public class VerificationsApi {
 
         // create path and map variables
         String localVarPath = "/verifications/files/{id}/verification"
-            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -891,7 +858,6 @@ public class VerificationsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -899,7 +865,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -912,15 +877,12 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesByIdVerificationPostValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'id' is set
         if (id == null) {
             throw new ApiException("Missing the required parameter 'id' when calling verificationsFilesByIdVerificationPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = verificationsFilesByIdVerificationPostCall(id, _callback);
-        return localVarCall;
+        return verificationsFilesByIdVerificationPostCall(id, _callback);
 
     }
 
@@ -989,7 +951,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesPostCall(File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1039,10 +1000,7 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = verificationsFilesPostCall(_file, _callback);
-        return localVarCall;
+        return verificationsFilesPostCall(_file, _callback);
 
     }
 
@@ -1114,7 +1072,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsFilesResultGetCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1147,7 +1104,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1160,16 +1116,13 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsFilesResultGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = verificationsFilesResultGetCall(_callback);
-        return localVarCall;
+        return verificationsFilesResultGetCall(_callback);
 
     }
 
     /**
      * Get Files Verification Results
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
      * @return List&lt;VerificationFileResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1185,7 +1138,7 @@ public class VerificationsApi {
 
     /**
      * Get Files Verification Results
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
      * @return ApiResponse&lt;List&lt;VerificationFileResult&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1202,7 +1155,7 @@ public class VerificationsApi {
 
     /**
      * Get Files Verification Results (asynchronously)
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1234,7 +1187,6 @@ public class VerificationsApi {
      */
     public okhttp3.Call verificationsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1275,7 +1227,6 @@ public class VerificationsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1288,16 +1239,13 @@ public class VerificationsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call verificationsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = verificationsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return verificationsGetCall(limit, offset, _callback);
 
     }
 
     /**
      * Get Emails Verification Results
-     * Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
+     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;EmailValidationResult&gt;
@@ -1315,7 +1263,7 @@ public class VerificationsApi {
 
     /**
      * Get Emails Verification Results
-     * Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
+     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;EmailValidationResult&gt;&gt;
@@ -1334,7 +1282,7 @@ public class VerificationsApi {
 
     /**
      * Get Emails Verification Results (asynchronously)
-     * Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
+     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes

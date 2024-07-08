@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -86,7 +86,6 @@ public class CampaignsApi {
      */
     public okhttp3.Call campaignsByNameDeleteCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -103,7 +102,7 @@ public class CampaignsApi {
 
         // create path and map variables
         String localVarPath = "/campaigns/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -112,7 +111,6 @@ public class CampaignsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -120,7 +118,6 @@ public class CampaignsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -133,15 +130,12 @@ public class CampaignsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call campaignsByNameDeleteValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling campaignsByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = campaignsByNameDeleteCall(name, _callback);
-        return localVarCall;
+        return campaignsByNameDeleteCall(name, _callback);
 
     }
 
@@ -210,7 +204,6 @@ public class CampaignsApi {
      */
     public okhttp3.Call campaignsByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -227,7 +220,7 @@ public class CampaignsApi {
 
         // create path and map variables
         String localVarPath = "/campaigns/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -244,7 +237,6 @@ public class CampaignsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -257,15 +249,12 @@ public class CampaignsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call campaignsByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling campaignsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = campaignsByNameGetCall(name, _callback);
-        return localVarCall;
+        return campaignsByNameGetCall(name, _callback);
 
     }
 
@@ -339,7 +328,6 @@ public class CampaignsApi {
      */
     public okhttp3.Call campaignsByNamePutCall(String name, Campaign campaign, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -356,7 +344,7 @@ public class CampaignsApi {
 
         // create path and map variables
         String localVarPath = "/campaigns/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -386,20 +374,17 @@ public class CampaignsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call campaignsByNamePutValidateBeforeCall(String name, Campaign campaign, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling campaignsByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'campaign' is set
         if (campaign == null) {
             throw new ApiException("Missing the required parameter 'campaign' when calling campaignsByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = campaignsByNamePutCall(name, campaign, _callback);
-        return localVarCall;
+        return campaignsByNamePutCall(name, campaign, _callback);
 
     }
 
@@ -477,7 +462,6 @@ public class CampaignsApi {
      */
     public okhttp3.Call campaignsGetCall(String search, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -522,7 +506,6 @@ public class CampaignsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -535,10 +518,7 @@ public class CampaignsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call campaignsGetValidateBeforeCall(String search, Integer offset, Integer limit, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = campaignsGetCall(search, offset, limit, _callback);
-        return localVarCall;
+        return campaignsGetCall(search, offset, limit, _callback);
 
     }
 
@@ -617,7 +597,6 @@ public class CampaignsApi {
      */
     public okhttp3.Call campaignsPostCall(Campaign campaign, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -663,15 +642,12 @@ public class CampaignsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call campaignsPostValidateBeforeCall(Campaign campaign, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'campaign' is set
         if (campaign == null) {
             throw new ApiException("Missing the required parameter 'campaign' when calling campaignsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = campaignsPostCall(campaign, _callback);
-        return localVarCall;
+        return campaignsPostCall(campaign, _callback);
 
     }
 

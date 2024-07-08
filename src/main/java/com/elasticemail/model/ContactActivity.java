@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,22 +14,44 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * ContactActivity
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ContactActivity {
   public static final String SERIALIZED_NAME_TOTAL_SENT = "TotalSent";
   @SerializedName(SERIALIZED_NAME_TOTAL_SENT)
@@ -75,26 +97,22 @@ public class ContactActivity {
   @SerializedName(SERIALIZED_NAME_FRIENDLY_ERROR_MESSAGE)
   private String friendlyErrorMessage;
 
-  public ContactActivity() { 
+  public ContactActivity() {
   }
 
   public ContactActivity totalSent(Integer totalSent) {
-    
     this.totalSent = totalSent;
     return this;
   }
 
-   /**
+  /**
    * Total emails sent.
    * @return totalSent
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Total emails sent.")
-
   public Integer getTotalSent() {
     return totalSent;
   }
-
 
   public void setTotalSent(Integer totalSent) {
     this.totalSent = totalSent;
@@ -102,22 +120,18 @@ public class ContactActivity {
 
 
   public ContactActivity totalOpened(Integer totalOpened) {
-    
     this.totalOpened = totalOpened;
     return this;
   }
 
-   /**
+  /**
    * Total emails opened.
    * @return totalOpened
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Total emails opened.")
-
   public Integer getTotalOpened() {
     return totalOpened;
   }
-
 
   public void setTotalOpened(Integer totalOpened) {
     this.totalOpened = totalOpened;
@@ -125,22 +139,18 @@ public class ContactActivity {
 
 
   public ContactActivity totalClicked(Integer totalClicked) {
-    
     this.totalClicked = totalClicked;
     return this;
   }
 
-   /**
+  /**
    * Total emails clicked
    * @return totalClicked
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Total emails clicked")
-
   public Integer getTotalClicked() {
     return totalClicked;
   }
-
 
   public void setTotalClicked(Integer totalClicked) {
     this.totalClicked = totalClicked;
@@ -148,22 +158,18 @@ public class ContactActivity {
 
 
   public ContactActivity totalFailed(Integer totalFailed) {
-    
     this.totalFailed = totalFailed;
     return this;
   }
 
-   /**
+  /**
    * Total emails failed.
    * @return totalFailed
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Total emails failed.")
-
   public Integer getTotalFailed() {
     return totalFailed;
   }
-
 
   public void setTotalFailed(Integer totalFailed) {
     this.totalFailed = totalFailed;
@@ -171,22 +177,18 @@ public class ContactActivity {
 
 
   public ContactActivity lastSent(OffsetDateTime lastSent) {
-    
     this.lastSent = lastSent;
     return this;
   }
 
-   /**
+  /**
    * Last date when an email was sent to this contact
    * @return lastSent
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Last date when an email was sent to this contact")
-
   public OffsetDateTime getLastSent() {
     return lastSent;
   }
-
 
   public void setLastSent(OffsetDateTime lastSent) {
     this.lastSent = lastSent;
@@ -194,22 +196,18 @@ public class ContactActivity {
 
 
   public ContactActivity lastOpened(OffsetDateTime lastOpened) {
-    
     this.lastOpened = lastOpened;
     return this;
   }
 
-   /**
+  /**
    * Date this contact last opened an email
    * @return lastOpened
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date this contact last opened an email")
-
   public OffsetDateTime getLastOpened() {
     return lastOpened;
   }
-
 
   public void setLastOpened(OffsetDateTime lastOpened) {
     this.lastOpened = lastOpened;
@@ -217,22 +215,18 @@ public class ContactActivity {
 
 
   public ContactActivity lastClicked(OffsetDateTime lastClicked) {
-    
     this.lastClicked = lastClicked;
     return this;
   }
 
-   /**
+  /**
    * Date this contact last clicked an email
    * @return lastClicked
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date this contact last clicked an email")
-
   public OffsetDateTime getLastClicked() {
     return lastClicked;
   }
-
 
   public void setLastClicked(OffsetDateTime lastClicked) {
     this.lastClicked = lastClicked;
@@ -240,22 +234,18 @@ public class ContactActivity {
 
 
   public ContactActivity lastFailed(OffsetDateTime lastFailed) {
-    
     this.lastFailed = lastFailed;
     return this;
   }
 
-   /**
+  /**
    * Last date when an email sent to this contact bounced
    * @return lastFailed
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Last date when an email sent to this contact bounced")
-
   public OffsetDateTime getLastFailed() {
     return lastFailed;
   }
-
 
   public void setLastFailed(OffsetDateTime lastFailed) {
     this.lastFailed = lastFailed;
@@ -263,22 +253,18 @@ public class ContactActivity {
 
 
   public ContactActivity lastIP(String lastIP) {
-    
     this.lastIP = lastIP;
     return this;
   }
 
-   /**
+  /**
    * IP from which this contact opened or clicked their email last time
    * @return lastIP
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "IP from which this contact opened or clicked their email last time")
-
   public String getLastIP() {
     return lastIP;
   }
-
 
   public void setLastIP(String lastIP) {
     this.lastIP = lastIP;
@@ -286,22 +272,18 @@ public class ContactActivity {
 
 
   public ContactActivity errorCode(Integer errorCode) {
-    
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * Last RFC Error code if any occurred
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Last RFC Error code if any occurred")
-
   public Integer getErrorCode() {
     return errorCode;
   }
-
 
   public void setErrorCode(Integer errorCode) {
     this.errorCode = errorCode;
@@ -309,26 +291,23 @@ public class ContactActivity {
 
 
   public ContactActivity friendlyErrorMessage(String friendlyErrorMessage) {
-    
     this.friendlyErrorMessage = friendlyErrorMessage;
     return this;
   }
 
-   /**
+  /**
    * Last RFC error message if any occurred
    * @return friendlyErrorMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Last RFC error message if any occurred")
-
   public String getFriendlyErrorMessage() {
     return friendlyErrorMessage;
   }
 
-
   public void setFriendlyErrorMessage(String friendlyErrorMessage) {
     this.friendlyErrorMessage = friendlyErrorMessage;
   }
+
 
 
   @Override
@@ -399,5 +378,105 @@ public class ContactActivity {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("TotalSent");
+    openapiFields.add("TotalOpened");
+    openapiFields.add("TotalClicked");
+    openapiFields.add("TotalFailed");
+    openapiFields.add("LastSent");
+    openapiFields.add("LastOpened");
+    openapiFields.add("LastClicked");
+    openapiFields.add("LastFailed");
+    openapiFields.add("LastIP");
+    openapiFields.add("ErrorCode");
+    openapiFields.add("FriendlyErrorMessage");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContactActivity
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ContactActivity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ContactActivity is not found in the empty JSON string", ContactActivity.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ContactActivity.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ContactActivity` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("LastIP") != null && !jsonObj.get("LastIP").isJsonNull()) && !jsonObj.get("LastIP").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `LastIP` to be a primitive type in the JSON string but got `%s`", jsonObj.get("LastIP").toString()));
+      }
+      if ((jsonObj.get("FriendlyErrorMessage") != null && !jsonObj.get("FriendlyErrorMessage").isJsonNull()) && !jsonObj.get("FriendlyErrorMessage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `FriendlyErrorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("FriendlyErrorMessage").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ContactActivity.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ContactActivity' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ContactActivity> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ContactActivity.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ContactActivity>() {
+           @Override
+           public void write(JsonWriter out, ContactActivity value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ContactActivity read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of ContactActivity given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContactActivity
+   * @throws IOException if the JSON string is invalid with respect to ContactActivity
+   */
+  public static ContactActivity fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ContactActivity.class);
+  }
+
+  /**
+   * Convert an instance of ContactActivity to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

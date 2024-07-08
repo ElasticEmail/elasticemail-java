@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.DeliveryOptimizationType;
 import com.elasticemail.model.SplitOptions;
 import com.google.gson.TypeAdapter;
@@ -22,17 +21,39 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Different send options for a Campaign
  */
-@ApiModel(description = "Different send options for a Campaign")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)
@@ -50,30 +71,34 @@ public class CampaignOptions {
   @SerializedName(SERIALIZED_NAME_SCHEDULE_FOR)
   private OffsetDateTime scheduleFor;
 
+  public static final String SERIALIZED_NAME_TRIGGER_FREQUENCY = "TriggerFrequency";
+  @SerializedName(SERIALIZED_NAME_TRIGGER_FREQUENCY)
+  private Double triggerFrequency;
+
+  public static final String SERIALIZED_NAME_TRIGGER_COUNT = "TriggerCount";
+  @SerializedName(SERIALIZED_NAME_TRIGGER_COUNT)
+  private Integer triggerCount;
+
   public static final String SERIALIZED_NAME_SPLIT_OPTIONS = "SplitOptions";
   @SerializedName(SERIALIZED_NAME_SPLIT_OPTIONS)
   private SplitOptions splitOptions;
 
-  public CampaignOptions() { 
+  public CampaignOptions() {
   }
 
   public CampaignOptions deliveryOptimization(DeliveryOptimizationType deliveryOptimization) {
-    
     this.deliveryOptimization = deliveryOptimization;
     return this;
   }
 
-   /**
+  /**
    * Get deliveryOptimization
    * @return deliveryOptimization
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public DeliveryOptimizationType getDeliveryOptimization() {
     return deliveryOptimization;
   }
-
 
   public void setDeliveryOptimization(DeliveryOptimizationType deliveryOptimization) {
     this.deliveryOptimization = deliveryOptimization;
@@ -81,22 +106,18 @@ public class CampaignOptions {
 
 
   public CampaignOptions trackOpens(Boolean trackOpens) {
-    
     this.trackOpens = trackOpens;
     return this;
   }
 
-   /**
+  /**
    * Should the opens be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackOpens
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Should the opens be tracked? If no value has been provided, Account's default setting will be used.")
-
   public Boolean getTrackOpens() {
     return trackOpens;
   }
-
 
   public void setTrackOpens(Boolean trackOpens) {
     this.trackOpens = trackOpens;
@@ -104,22 +125,18 @@ public class CampaignOptions {
 
 
   public CampaignOptions trackClicks(Boolean trackClicks) {
-    
     this.trackClicks = trackClicks;
     return this;
   }
 
-   /**
+  /**
    * Should the clicks be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackClicks
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "true", value = "Should the clicks be tracked? If no value has been provided, Account's default setting will be used.")
-
   public Boolean getTrackClicks() {
     return trackClicks;
   }
-
 
   public void setTrackClicks(Boolean trackClicks) {
     this.trackClicks = trackClicks;
@@ -127,49 +144,80 @@ public class CampaignOptions {
 
 
   public CampaignOptions scheduleFor(OffsetDateTime scheduleFor) {
-    
     this.scheduleFor = scheduleFor;
     return this;
   }
 
-   /**
+  /**
    * Date when this Campaign is scheduled to be sent on
    * @return scheduleFor
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date when this Campaign is scheduled to be sent on")
-
   public OffsetDateTime getScheduleFor() {
     return scheduleFor;
   }
-
 
   public void setScheduleFor(OffsetDateTime scheduleFor) {
     this.scheduleFor = scheduleFor;
   }
 
 
+  public CampaignOptions triggerFrequency(Double triggerFrequency) {
+    this.triggerFrequency = triggerFrequency;
+    return this;
+  }
+
+  /**
+   * How often (in minutes) to send the campaign
+   * @return triggerFrequency
+   */
+  @javax.annotation.Nullable
+  public Double getTriggerFrequency() {
+    return triggerFrequency;
+  }
+
+  public void setTriggerFrequency(Double triggerFrequency) {
+    this.triggerFrequency = triggerFrequency;
+  }
+
+
+  public CampaignOptions triggerCount(Integer triggerCount) {
+    this.triggerCount = triggerCount;
+    return this;
+  }
+
+  /**
+   * How many times send the campaign
+   * @return triggerCount
+   */
+  @javax.annotation.Nullable
+  public Integer getTriggerCount() {
+    return triggerCount;
+  }
+
+  public void setTriggerCount(Integer triggerCount) {
+    this.triggerCount = triggerCount;
+  }
+
+
   public CampaignOptions splitOptions(SplitOptions splitOptions) {
-    
     this.splitOptions = splitOptions;
     return this;
   }
 
-   /**
+  /**
    * Get splitOptions
    * @return splitOptions
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public SplitOptions getSplitOptions() {
     return splitOptions;
   }
 
-
   public void setSplitOptions(SplitOptions splitOptions) {
     this.splitOptions = splitOptions;
   }
+
 
 
   @Override
@@ -185,6 +233,8 @@ public class CampaignOptions {
         Objects.equals(this.trackOpens, campaignOptions.trackOpens) &&
         Objects.equals(this.trackClicks, campaignOptions.trackClicks) &&
         Objects.equals(this.scheduleFor, campaignOptions.scheduleFor) &&
+        Objects.equals(this.triggerFrequency, campaignOptions.triggerFrequency) &&
+        Objects.equals(this.triggerCount, campaignOptions.triggerCount) &&
         Objects.equals(this.splitOptions, campaignOptions.splitOptions);
   }
 
@@ -194,7 +244,7 @@ public class CampaignOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(deliveryOptimization, trackOpens, trackClicks, scheduleFor, splitOptions);
+    return Objects.hash(deliveryOptimization, trackOpens, trackClicks, scheduleFor, triggerFrequency, triggerCount, splitOptions);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -212,6 +262,8 @@ public class CampaignOptions {
     sb.append("    trackOpens: ").append(toIndentedString(trackOpens)).append("\n");
     sb.append("    trackClicks: ").append(toIndentedString(trackClicks)).append("\n");
     sb.append("    scheduleFor: ").append(toIndentedString(scheduleFor)).append("\n");
+    sb.append("    triggerFrequency: ").append(toIndentedString(triggerFrequency)).append("\n");
+    sb.append("    triggerCount: ").append(toIndentedString(triggerCount)).append("\n");
     sb.append("    splitOptions: ").append(toIndentedString(splitOptions)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -228,5 +280,103 @@ public class CampaignOptions {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("DeliveryOptimization");
+    openapiFields.add("TrackOpens");
+    openapiFields.add("TrackClicks");
+    openapiFields.add("ScheduleFor");
+    openapiFields.add("TriggerFrequency");
+    openapiFields.add("TriggerCount");
+    openapiFields.add("SplitOptions");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CampaignOptions
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CampaignOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CampaignOptions is not found in the empty JSON string", CampaignOptions.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!CampaignOptions.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CampaignOptions` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // validate the optional field `DeliveryOptimization`
+      if (jsonObj.get("DeliveryOptimization") != null && !jsonObj.get("DeliveryOptimization").isJsonNull()) {
+        DeliveryOptimizationType.validateJsonElement(jsonObj.get("DeliveryOptimization"));
+      }
+      // validate the optional field `SplitOptions`
+      if (jsonObj.get("SplitOptions") != null && !jsonObj.get("SplitOptions").isJsonNull()) {
+        SplitOptions.validateJsonElement(jsonObj.get("SplitOptions"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CampaignOptions.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CampaignOptions' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CampaignOptions> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CampaignOptions.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CampaignOptions>() {
+           @Override
+           public void write(JsonWriter out, CampaignOptions value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CampaignOptions read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of CampaignOptions given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CampaignOptions
+   * @throws IOException if the JSON string is invalid with respect to CampaignOptions
+   */
+  public static CampaignOptions fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CampaignOptions.class);
+  }
+
+  /**
+   * Convert an instance of CampaignOptions to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

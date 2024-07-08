@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,21 +14,42 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Utm marketing data to be attached to every link in this e-mail.
  */
-@ApiModel(description = "Utm marketing data to be attached to every link in this e-mail.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class Utm {
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -46,26 +67,22 @@ public class Utm {
   @SerializedName(SERIALIZED_NAME_CONTENT)
   private String content;
 
-  public Utm() { 
+  public Utm() {
   }
 
   public Utm source(String source) {
-    
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * utmsource value
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "utmsource value")
-
   public String getSource() {
     return source;
   }
-
 
   public void setSource(String source) {
     this.source = source;
@@ -73,22 +90,18 @@ public class Utm {
 
 
   public Utm medium(String medium) {
-    
     this.medium = medium;
     return this;
   }
 
-   /**
+  /**
    * utmmedium value
    * @return medium
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "utmmedium value")
-
   public String getMedium() {
     return medium;
   }
-
 
   public void setMedium(String medium) {
     this.medium = medium;
@@ -96,22 +109,18 @@ public class Utm {
 
 
   public Utm campaign(String campaign) {
-    
     this.campaign = campaign;
     return this;
   }
 
-   /**
+  /**
    * utmcampaign value
    * @return campaign
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "utmcampaign value")
-
   public String getCampaign() {
     return campaign;
   }
-
 
   public void setCampaign(String campaign) {
     this.campaign = campaign;
@@ -119,26 +128,23 @@ public class Utm {
 
 
   public Utm content(String content) {
-    
     this.content = content;
     return this;
   }
 
-   /**
+  /**
    * utmcontent value
    * @return content
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "utmcontent value")
-
   public String getContent() {
     return content;
   }
 
-
   public void setContent(String content) {
     this.content = content;
   }
+
 
 
   @Override
@@ -184,5 +190,104 @@ public class Utm {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("Source");
+    openapiFields.add("Medium");
+    openapiFields.add("Campaign");
+    openapiFields.add("Content");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Utm
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!Utm.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in Utm is not found in the empty JSON string", Utm.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!Utm.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Utm` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("Source") != null && !jsonObj.get("Source").isJsonNull()) && !jsonObj.get("Source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Source").toString()));
+      }
+      if ((jsonObj.get("Medium") != null && !jsonObj.get("Medium").isJsonNull()) && !jsonObj.get("Medium").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Medium` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Medium").toString()));
+      }
+      if ((jsonObj.get("Campaign") != null && !jsonObj.get("Campaign").isJsonNull()) && !jsonObj.get("Campaign").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Campaign` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Campaign").toString()));
+      }
+      if ((jsonObj.get("Content") != null && !jsonObj.get("Content").isJsonNull()) && !jsonObj.get("Content").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Content` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Content").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!Utm.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'Utm' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<Utm> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(Utm.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<Utm>() {
+           @Override
+           public void write(JsonWriter out, Utm value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public Utm read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of Utm given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Utm
+   * @throws IOException if the JSON string is invalid with respect to Utm
+   */
+  public static Utm fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, Utm.class);
+  }
+
+  /**
+   * Convert an instance of Utm to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

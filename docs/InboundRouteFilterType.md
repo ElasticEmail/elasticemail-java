@@ -5,7 +5,7 @@
 ## Enum
 
 
-* `EMAILADDRESS` (value: `"EmailAddress"`)
+* `EMAIL_ADDRESS` (value: `"EmailAddress"`)
 
 * `SUBJECT` (value: `"Subject"`)
 

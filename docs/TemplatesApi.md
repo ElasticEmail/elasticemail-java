@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**templatesByNameDelete**](TemplatesApi.md#templatesByNameDelete) | **DELETE** /templates/{name} | Delete Template
-[**templatesByNameGet**](TemplatesApi.md#templatesByNameGet) | **GET** /templates/{name} | Load Template
-[**templatesByNamePut**](TemplatesApi.md#templatesByNamePut) | **PUT** /templates/{name} | Update Template
-[**templatesGet**](TemplatesApi.md#templatesGet) | **GET** /templates | Load Templates
-[**templatesPost**](TemplatesApi.md#templatesPost) | **POST** /templates | Add Template
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**templatesByNameDelete**](TemplatesApi.md#templatesByNameDelete) | **DELETE** /templates/{name} | Delete Template |
+| [**templatesByNameGet**](TemplatesApi.md#templatesByNameGet) | **GET** /templates/{name} | Load Template |
+| [**templatesByNamePut**](TemplatesApi.md#templatesByNamePut) | **PUT** /templates/{name} | Update Template |
+| [**templatesGet**](TemplatesApi.md#templatesGet) | **GET** /templates | Load Templates |
+| [**templatesPost**](TemplatesApi.md#templatesPost) | **POST** /templates | Add Template |
 
 
-<a name="templatesByNameDelete"></a>
+<a id="templatesByNameDelete"></a>
 # **templatesByNameDelete**
 > templatesByNameDelete(name)
 
@@ -57,9 +57,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of template. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of template. | |
 
 ### Return type
 
@@ -77,9 +77,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="templatesByNameGet"></a>
+<a id="templatesByNameGet"></a>
 # **templatesByNameGet**
 > Template templatesByNameGet(name)
 
@@ -126,9 +126,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of template. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of template. | |
 
 ### Return type
 
@@ -146,9 +146,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | Serialized template |  -  |
+| **200** | Serialized template |  -  |
 
-<a name="templatesByNamePut"></a>
+<a id="templatesByNamePut"></a>
 # **templatesByNamePut**
 > Template templatesByNamePut(name, templatePayload)
 
@@ -196,10 +196,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of template. |
- **templatePayload** | [**TemplatePayload**](TemplatePayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of template. | |
+| **templatePayload** | [**TemplatePayload**](TemplatePayload.md)|  | |
 
 ### Return type
 
@@ -217,9 +217,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="templatesGet"></a>
+<a id="templatesGet"></a>
 # **templatesGet**
 > List&lt;Template&gt; templatesGet(scopeType, templateTypes, limit, offset)
 
@@ -269,12 +269,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **scopeType** | [**List&lt;TemplateScope&gt;**](TemplateScope.md)| Return templates with specified scope only |
- **templateTypes** | [**List&lt;TemplateType&gt;**](TemplateType.md)| Return templates with specified type only | [optional]
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **scopeType** | [**List&lt;TemplateScope&gt;**](TemplateScope.md)| Return templates with specified scope only | |
+| **templateTypes** | [**List&lt;TemplateType&gt;**](TemplateType.md)| Return templates with specified type only | [optional] |
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -292,9 +292,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="templatesPost"></a>
+<a id="templatesPost"></a>
 # **templatesPost**
 > Template templatesPost(templatePayload)
 
@@ -341,9 +341,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templatePayload** | [**TemplatePayload**](TemplatePayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **templatePayload** | [**TemplatePayload**](TemplatePayload.md)|  | |
 
 ### Return type
 
@@ -361,5 +361,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Template |  -  |
+| **201** | Template |  -  |
 

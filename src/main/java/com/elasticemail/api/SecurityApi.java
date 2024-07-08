@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -92,7 +92,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securityApikeysByNameDeleteCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -109,7 +108,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/apikeys/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -122,7 +121,6 @@ public class SecurityApi {
         }
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -130,7 +128,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -143,15 +140,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securityApikeysByNameDeleteValidateBeforeCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securityApikeysByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securityApikeysByNameDeleteCall(name, subaccount, _callback);
-        return localVarCall;
+        return securityApikeysByNameDeleteCall(name, subaccount, _callback);
 
     }
 
@@ -224,7 +218,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securityApikeysByNameGetCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -241,7 +234,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/apikeys/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -262,7 +255,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -275,15 +267,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securityApikeysByNameGetValidateBeforeCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securityApikeysByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securityApikeysByNameGetCall(name, subaccount, _callback);
-        return localVarCall;
+        return securityApikeysByNameGetCall(name, subaccount, _callback);
 
     }
 
@@ -360,7 +349,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securityApikeysByNamePutCall(String name, ApiKeyPayload apiKeyPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -377,7 +365,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/apikeys/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -407,20 +395,17 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securityApikeysByNamePutValidateBeforeCall(String name, ApiKeyPayload apiKeyPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securityApikeysByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'apiKeyPayload' is set
         if (apiKeyPayload == null) {
             throw new ApiException("Missing the required parameter 'apiKeyPayload' when calling securityApikeysByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securityApikeysByNamePutCall(name, apiKeyPayload, _callback);
-        return localVarCall;
+        return securityApikeysByNamePutCall(name, apiKeyPayload, _callback);
 
     }
 
@@ -496,7 +481,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securityApikeysGetCall(String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -533,7 +517,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -546,10 +529,7 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securityApikeysGetValidateBeforeCall(String subaccount, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = securityApikeysGetCall(subaccount, _callback);
-        return localVarCall;
+        return securityApikeysGetCall(subaccount, _callback);
 
     }
 
@@ -622,7 +602,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securityApikeysPostCall(ApiKeyPayload apiKeyPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -668,15 +647,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securityApikeysPostValidateBeforeCall(ApiKeyPayload apiKeyPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'apiKeyPayload' is set
         if (apiKeyPayload == null) {
             throw new ApiException("Missing the required parameter 'apiKeyPayload' when calling securityApikeysPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securityApikeysPostCall(apiKeyPayload, _callback);
-        return localVarCall;
+        return securityApikeysPostCall(apiKeyPayload, _callback);
 
     }
 
@@ -750,7 +726,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securitySmtpByNameDeleteCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -767,7 +742,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/smtp/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -780,7 +755,6 @@ public class SecurityApi {
         }
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -788,7 +762,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -801,15 +774,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securitySmtpByNameDeleteValidateBeforeCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securitySmtpByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securitySmtpByNameDeleteCall(name, subaccount, _callback);
-        return localVarCall;
+        return securitySmtpByNameDeleteCall(name, subaccount, _callback);
 
     }
 
@@ -882,7 +852,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securitySmtpByNameGetCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -899,7 +868,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/smtp/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -920,7 +889,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -933,15 +901,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securitySmtpByNameGetValidateBeforeCall(String name, String subaccount, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securitySmtpByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securitySmtpByNameGetCall(name, subaccount, _callback);
-        return localVarCall;
+        return securitySmtpByNameGetCall(name, subaccount, _callback);
 
     }
 
@@ -1018,7 +983,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securitySmtpByNamePutCall(String name, SmtpCredentialsPayload smtpCredentialsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1035,7 +999,7 @@ public class SecurityApi {
 
         // create path and map variables
         String localVarPath = "/security/smtp/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1065,20 +1029,17 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securitySmtpByNamePutValidateBeforeCall(String name, SmtpCredentialsPayload smtpCredentialsPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling securitySmtpByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'smtpCredentialsPayload' is set
         if (smtpCredentialsPayload == null) {
             throw new ApiException("Missing the required parameter 'smtpCredentialsPayload' when calling securitySmtpByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securitySmtpByNamePutCall(name, smtpCredentialsPayload, _callback);
-        return localVarCall;
+        return securitySmtpByNamePutCall(name, smtpCredentialsPayload, _callback);
 
     }
 
@@ -1154,7 +1115,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securitySmtpGetCall(String subaccount, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1191,7 +1151,6 @@ public class SecurityApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1204,10 +1163,7 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securitySmtpGetValidateBeforeCall(String subaccount, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = securitySmtpGetCall(subaccount, _callback);
-        return localVarCall;
+        return securitySmtpGetCall(subaccount, _callback);
 
     }
 
@@ -1280,7 +1236,6 @@ public class SecurityApi {
      */
     public okhttp3.Call securitySmtpPostCall(SmtpCredentialsPayload smtpCredentialsPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1326,15 +1281,12 @@ public class SecurityApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call securitySmtpPostValidateBeforeCall(SmtpCredentialsPayload smtpCredentialsPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'smtpCredentialsPayload' is set
         if (smtpCredentialsPayload == null) {
             throw new ApiException("Missing the required parameter 'smtpCredentialsPayload' when calling securitySmtpPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = securitySmtpPostCall(smtpCredentialsPayload, _callback);
-        return localVarCall;
+        return securitySmtpPostCall(smtpCredentialsPayload, _callback);
 
     }
 

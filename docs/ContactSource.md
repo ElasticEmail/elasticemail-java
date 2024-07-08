@@ -5,19 +5,19 @@
 ## Enum
 
 
-* `DELIVERYAPI` (value: `"DeliveryApi"`)
+* `DELIVERY_API` (value: `"DeliveryApi"`)
 
-* `MANUALINPUT` (value: `"ManualInput"`)
+* `MANUAL_INPUT` (value: `"ManualInput"`)
 
-* `FILEUPLOAD` (value: `"FileUpload"`)
+* `FILE_UPLOAD` (value: `"FileUpload"`)
 
-* `WEBFORM` (value: `"WebForm"`)
+* `WEB_FORM` (value: `"WebForm"`)
 
-* `CONTACTAPI` (value: `"ContactApi"`)
+* `CONTACT_API` (value: `"ContactApi"`)
 
-* `VERIFICATIONAPI` (value: `"VerificationApi"`)
+* `VERIFICATION_API` (value: `"VerificationApi"`)
 
-* `FILEVERIFICATIONAPI` (value: `"FileVerificationApi"`)
+* `FILE_VERIFICATION_API` (value: `"FileVerificationApi"`)
 
 
 

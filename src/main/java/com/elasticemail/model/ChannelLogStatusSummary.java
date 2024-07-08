@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,21 +14,42 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Summary of channel log status
  */
-@ApiModel(description = "Summary of channel log status")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ChannelLogStatusSummary {
   public static final String SERIALIZED_NAME_CHANNEL_NAME = "ChannelName";
   @SerializedName(SERIALIZED_NAME_CHANNEL_NAME)
@@ -86,26 +107,22 @@ public class ChannelLogStatusSummary {
   @SerializedName(SERIALIZED_NAME_NOT_DELIVERED)
   private Long notDelivered;
 
-  public ChannelLogStatusSummary() { 
+  public ChannelLogStatusSummary() {
   }
 
   public ChannelLogStatusSummary channelName(String channelName) {
-    
     this.channelName = channelName;
     return this;
   }
 
-   /**
+  /**
    * Channel name
    * @return channelName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Channel name")
-
   public String getChannelName() {
     return channelName;
   }
-
 
   public void setChannelName(String channelName) {
     this.channelName = channelName;
@@ -113,22 +130,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary recipients(Long recipients) {
-    
     this.recipients = recipients;
     return this;
   }
 
-   /**
+  /**
    * Number of recipients
    * @return recipients
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1234", value = "Number of recipients")
-
   public Long getRecipients() {
     return recipients;
   }
-
 
   public void setRecipients(Long recipients) {
     this.recipients = recipients;
@@ -136,22 +149,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary emailTotal(Long emailTotal) {
-    
     this.emailTotal = emailTotal;
     return this;
   }
 
-   /**
+  /**
    * Number of emails
    * @return emailTotal
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1234", value = "Number of emails")
-
   public Long getEmailTotal() {
     return emailTotal;
   }
-
 
   public void setEmailTotal(Long emailTotal) {
     this.emailTotal = emailTotal;
@@ -159,22 +168,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary smsTotal(Long smsTotal) {
-    
     this.smsTotal = smsTotal;
     return this;
   }
 
-   /**
+  /**
    * Number of SMS
    * @return smsTotal
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "12", value = "Number of SMS")
-
   public Long getSmsTotal() {
     return smsTotal;
   }
-
 
   public void setSmsTotal(Long smsTotal) {
     this.smsTotal = smsTotal;
@@ -182,22 +187,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary delivered(Long delivered) {
-    
     this.delivered = delivered;
     return this;
   }
 
-   /**
+  /**
    * Number of delivered messages
    * @return delivered
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of delivered messages")
-
   public Long getDelivered() {
     return delivered;
   }
-
 
   public void setDelivered(Long delivered) {
     this.delivered = delivered;
@@ -205,22 +206,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary bounced(Long bounced) {
-    
     this.bounced = bounced;
     return this;
   }
 
-   /**
+  /**
    * Number of bounced messages
    * @return bounced
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of bounced messages")
-
   public Long getBounced() {
     return bounced;
   }
-
 
   public void setBounced(Long bounced) {
     this.bounced = bounced;
@@ -228,22 +225,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary inProgress(Long inProgress) {
-    
     this.inProgress = inProgress;
     return this;
   }
 
-   /**
+  /**
    * Number of messages in progress
    * @return inProgress
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1234", value = "Number of messages in progress")
-
   public Long getInProgress() {
     return inProgress;
   }
-
 
   public void setInProgress(Long inProgress) {
     this.inProgress = inProgress;
@@ -251,22 +244,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary opened(Long opened) {
-    
     this.opened = opened;
     return this;
   }
 
-   /**
+  /**
    * Number of opened messages
    * @return opened
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of opened messages")
-
   public Long getOpened() {
     return opened;
   }
-
 
   public void setOpened(Long opened) {
     this.opened = opened;
@@ -274,22 +263,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary clicked(Long clicked) {
-    
     this.clicked = clicked;
     return this;
   }
 
-   /**
+  /**
    * Number of clicked messages
    * @return clicked
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of clicked messages")
-
   public Long getClicked() {
     return clicked;
   }
-
 
   public void setClicked(Long clicked) {
     this.clicked = clicked;
@@ -297,22 +282,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary unsubscribed(Long unsubscribed) {
-    
     this.unsubscribed = unsubscribed;
     return this;
   }
 
-   /**
+  /**
    * Number of unsubscribed messages
    * @return unsubscribed
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of unsubscribed messages")
-
   public Long getUnsubscribed() {
     return unsubscribed;
   }
-
 
   public void setUnsubscribed(Long unsubscribed) {
     this.unsubscribed = unsubscribed;
@@ -320,22 +301,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary complaints(Long complaints) {
-    
     this.complaints = complaints;
     return this;
   }
 
-   /**
+  /**
    * Number of complaint messages
    * @return complaints
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of complaint messages")
-
   public Long getComplaints() {
     return complaints;
   }
-
 
   public void setComplaints(Long complaints) {
     this.complaints = complaints;
@@ -343,22 +320,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary inbound(Long inbound) {
-    
     this.inbound = inbound;
     return this;
   }
 
-   /**
+  /**
    * Number of inbound messages
    * @return inbound
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of inbound messages")
-
   public Long getInbound() {
     return inbound;
   }
-
 
   public void setInbound(Long inbound) {
     this.inbound = inbound;
@@ -366,22 +339,18 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary manualCancel(Long manualCancel) {
-    
     this.manualCancel = manualCancel;
     return this;
   }
 
-   /**
+  /**
    * Number of manually cancelled messages
    * @return manualCancel
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "1000", value = "Number of manually cancelled messages")
-
   public Long getManualCancel() {
     return manualCancel;
   }
-
 
   public void setManualCancel(Long manualCancel) {
     this.manualCancel = manualCancel;
@@ -389,26 +358,23 @@ public class ChannelLogStatusSummary {
 
 
   public ChannelLogStatusSummary notDelivered(Long notDelivered) {
-    
     this.notDelivered = notDelivered;
     return this;
   }
 
-   /**
+  /**
    * Number of messages flagged with &#39;Not Delivered&#39;
    * @return notDelivered
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "0", value = "Number of messages flagged with 'Not Delivered'")
-
   public Long getNotDelivered() {
     return notDelivered;
   }
 
-
   public void setNotDelivered(Long notDelivered) {
     this.notDelivered = notDelivered;
   }
+
 
 
   @Override
@@ -474,5 +440,105 @@ public class ChannelLogStatusSummary {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("ChannelName");
+    openapiFields.add("Recipients");
+    openapiFields.add("EmailTotal");
+    openapiFields.add("SmsTotal");
+    openapiFields.add("Delivered");
+    openapiFields.add("Bounced");
+    openapiFields.add("InProgress");
+    openapiFields.add("Opened");
+    openapiFields.add("Clicked");
+    openapiFields.add("Unsubscribed");
+    openapiFields.add("Complaints");
+    openapiFields.add("Inbound");
+    openapiFields.add("ManualCancel");
+    openapiFields.add("NotDelivered");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ChannelLogStatusSummary
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ChannelLogStatusSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ChannelLogStatusSummary is not found in the empty JSON string", ChannelLogStatusSummary.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ChannelLogStatusSummary.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ChannelLogStatusSummary` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("ChannelName") != null && !jsonObj.get("ChannelName").isJsonNull()) && !jsonObj.get("ChannelName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ChannelName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ChannelName").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ChannelLogStatusSummary.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ChannelLogStatusSummary' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ChannelLogStatusSummary> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ChannelLogStatusSummary.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ChannelLogStatusSummary>() {
+           @Override
+           public void write(JsonWriter out, ChannelLogStatusSummary value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ChannelLogStatusSummary read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of ChannelLogStatusSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ChannelLogStatusSummary
+   * @throws IOException if the JSON string is invalid with respect to ChannelLogStatusSummary
+   */
+  public static ChannelLogStatusSummary fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ChannelLogStatusSummary.class);
+  }
+
+  /**
+   * Convert an instance of ChannelLogStatusSummary to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

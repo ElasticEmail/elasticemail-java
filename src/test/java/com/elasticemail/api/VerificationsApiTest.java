@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -18,8 +18,8 @@ import com.elasticemail.model.EmailValidationResult;
 import java.io.File;
 import com.elasticemail.model.VerificationFileResult;
 import com.elasticemail.model.VerificationFileResultDetails;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,99 +29,87 @@ import java.util.Map;
 /**
  * API tests for VerificationsApi
  */
-@Ignore
+@Disabled
 public class VerificationsApiTest {
 
     private final VerificationsApi api = new VerificationsApi();
 
-    
     /**
      * Delete Email Verification Result
      *
      * Delete a result with given email if exists. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsByEmailDeleteTest() throws ApiException {
         String email = null;
         api.verificationsByEmailDelete(email);
-
         // TODO: test validations
     }
-    
+
     /**
      * Get Email Verification Result
      *
-     * Returns a result of verified email. Required Access Level: ViewEmailVerifications
+     * Returns a result of verified email. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsByEmailGetTest() throws ApiException {
         String email = null;
         EmailValidationResult response = api.verificationsByEmailGet(email);
-
         // TODO: test validations
     }
-    
+
     /**
      * Verify Email
      *
      * Verify single email address and returns result of verification. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsByEmailPostTest() throws ApiException {
         String email = null;
         EmailValidationResult response = api.verificationsByEmailPost(email);
-
         // TODO: test validations
     }
-    
+
     /**
      * Delete File Verification Result
      *
      * Delete Verification Results if they exist. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsFilesByIdDeleteTest() throws ApiException {
         String id = null;
         api.verificationsFilesByIdDelete(id);
-
         // TODO: test validations
     }
-    
+
     /**
      * Download File Verification Result
      *
      * Download verification results as a ZIP file. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsFilesByIdResultDownloadGetTest() throws ApiException {
         String id = null;
         File response = api.verificationsFilesByIdResultDownloadGet(id);
-
         // TODO: test validations
     }
-    
+
     /**
      * Get Detailed File Verification Result
      *
-     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
+     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsFilesByIdResultGetTest() throws ApiException {
@@ -129,56 +117,63 @@ public class VerificationsApiTest {
         Integer limit = null;
         Integer offset = null;
         VerificationFileResultDetails response = api.verificationsFilesByIdResultGet(id, limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
-     * Verify From File
+     * Start verification
      *
-     * Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+     * Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void verificationsFilesByIdVerificationPostTest() throws ApiException {
+        String id = null;
+        api.verificationsFilesByIdVerificationPost(id);
+        // TODO: test validations
+    }
+
+    /**
+     * Upload File with Emails
+     *
+     * Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+     *
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsFilesPostTest() throws ApiException {
-        File file = null;
-        VerificationFileResult response = api.verificationsFilesPost(file);
-
+        File _file = null;
+        VerificationFileResult response = api.verificationsFilesPost(_file);
         // TODO: test validations
     }
-    
+
     /**
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      *
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsFilesResultGetTest() throws ApiException {
         List<VerificationFileResult> response = api.verificationsFilesResultGet();
-
         // TODO: test validations
     }
-    
+
     /**
      * Get Emails Verification Results
      *
-     * Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
+     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void verificationsGetTest() throws ApiException {
         Integer limit = null;
         Integer offset = null;
         List<EmailValidationResult> response = api.verificationsGet(limit, offset);
-
         // TODO: test validations
     }
-    
+
 }

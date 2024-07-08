@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -87,7 +87,6 @@ public class SegmentsApi {
      */
     public okhttp3.Call segmentsByNameDeleteCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -104,7 +103,7 @@ public class SegmentsApi {
 
         // create path and map variables
         String localVarPath = "/segments/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -113,7 +112,6 @@ public class SegmentsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -121,7 +119,6 @@ public class SegmentsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -134,15 +131,12 @@ public class SegmentsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call segmentsByNameDeleteValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling segmentsByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = segmentsByNameDeleteCall(name, _callback);
-        return localVarCall;
+        return segmentsByNameDeleteCall(name, _callback);
 
     }
 
@@ -211,7 +205,6 @@ public class SegmentsApi {
      */
     public okhttp3.Call segmentsByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -228,7 +221,7 @@ public class SegmentsApi {
 
         // create path and map variables
         String localVarPath = "/segments/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -245,7 +238,6 @@ public class SegmentsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -258,15 +250,12 @@ public class SegmentsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call segmentsByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling segmentsByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = segmentsByNameGetCall(name, _callback);
-        return localVarCall;
+        return segmentsByNameGetCall(name, _callback);
 
     }
 
@@ -340,7 +329,6 @@ public class SegmentsApi {
      */
     public okhttp3.Call segmentsByNamePutCall(String name, SegmentPayload segmentPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -357,7 +345,7 @@ public class SegmentsApi {
 
         // create path and map variables
         String localVarPath = "/segments/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -387,20 +375,17 @@ public class SegmentsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call segmentsByNamePutValidateBeforeCall(String name, SegmentPayload segmentPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling segmentsByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'segmentPayload' is set
         if (segmentPayload == null) {
             throw new ApiException("Missing the required parameter 'segmentPayload' when calling segmentsByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = segmentsByNamePutCall(name, segmentPayload, _callback);
-        return localVarCall;
+        return segmentsByNamePutCall(name, segmentPayload, _callback);
 
     }
 
@@ -477,7 +462,6 @@ public class SegmentsApi {
      */
     public okhttp3.Call segmentsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -518,7 +502,6 @@ public class SegmentsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -531,10 +514,7 @@ public class SegmentsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call segmentsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = segmentsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return segmentsGetCall(limit, offset, _callback);
 
     }
 
@@ -610,7 +590,6 @@ public class SegmentsApi {
      */
     public okhttp3.Call segmentsPostCall(SegmentPayload segmentPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -656,15 +635,12 @@ public class SegmentsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call segmentsPostValidateBeforeCall(SegmentPayload segmentPayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'segmentPayload' is set
         if (segmentPayload == null) {
             throw new ApiException("Missing the required parameter 'segmentPayload' when calling segmentsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = segmentsPostCall(segmentPayload, _callback);
-        return localVarCall;
+        return segmentsPostCall(segmentPayload, _callback);
 
     }
 

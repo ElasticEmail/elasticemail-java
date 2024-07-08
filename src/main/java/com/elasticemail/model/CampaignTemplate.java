@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,24 +14,45 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.Utm;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Content of a Campaign
  */
-@ApiModel(description = "Content of a Campaign")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class CampaignTemplate {
   public static final String SERIALIZED_NAME_POOLNAME = "Poolname";
   @SerializedName(SERIALIZED_NAME_POOLNAME)
@@ -55,32 +76,28 @@ public class CampaignTemplate {
 
   public static final String SERIALIZED_NAME_ATTACH_FILES = "AttachFiles";
   @SerializedName(SERIALIZED_NAME_ATTACH_FILES)
-  private List<String> attachFiles = null;
+  private List<String> attachFiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UTM = "Utm";
   @SerializedName(SERIALIZED_NAME_UTM)
   private Utm utm;
 
-  public CampaignTemplate() { 
+  public CampaignTemplate() {
   }
 
   public CampaignTemplate poolname(String poolname) {
-    
     this.poolname = poolname;
     return this;
   }
 
-   /**
+  /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolname
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "My Custom Pool", value = "Name of your custom IP Pool to be used in the sending process")
-
   public String getPoolname() {
     return poolname;
   }
-
 
   public void setPoolname(String poolname) {
     this.poolname = poolname;
@@ -88,22 +105,18 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate from(String from) {
-    
     this.from = from;
     return this;
   }
 
-   /**
+  /**
    * Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;)
    * @return from
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "John Doe <email@domain.com>", value = "Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)")
-
+   */
+  @javax.annotation.Nonnull
   public String getFrom() {
     return from;
   }
-
 
   public void setFrom(String from) {
     this.from = from;
@@ -111,22 +124,18 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate replyTo(String replyTo) {
-    
     this.replyTo = replyTo;
     return this;
   }
 
-   /**
+  /**
    * To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
    * @return replyTo
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "John Doe <email@domain.com>", value = "To what address should the recipients reply to (e.g. John Doe <email@domain.com>)")
-
   public String getReplyTo() {
     return replyTo;
   }
-
 
   public void setReplyTo(String replyTo) {
     this.replyTo = replyTo;
@@ -134,22 +143,18 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate subject(String subject) {
-    
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Hello!", value = "Default subject of email.")
-
   public String getSubject() {
     return subject;
   }
-
 
   public void setSubject(String subject) {
     this.subject = subject;
@@ -157,22 +162,18 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate templateName(String templateName) {
-    
     this.templateName = templateName;
     return this;
   }
 
-   /**
+  /**
    * Name of template.
    * @return templateName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "Template01", value = "Name of template.")
-
   public String getTemplateName() {
     return templateName;
   }
-
 
   public void setTemplateName(String templateName) {
     this.templateName = templateName;
@@ -180,30 +181,26 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate attachFiles(List<String> attachFiles) {
-    
     this.attachFiles = attachFiles;
     return this;
   }
 
   public CampaignTemplate addAttachFilesItem(String attachFilesItem) {
     if (this.attachFiles == null) {
-      this.attachFiles = new ArrayList<String>();
+      this.attachFiles = new ArrayList<>();
     }
     this.attachFiles.add(attachFilesItem);
     return this;
   }
 
-   /**
+  /**
    * Names of previously uploaded files that should be sent as downloadable attachments
    * @return attachFiles
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "[ \"preuploaded.jpg\" ]", value = "Names of previously uploaded files that should be sent as downloadable attachments")
-
   public List<String> getAttachFiles() {
     return attachFiles;
   }
-
 
   public void setAttachFiles(List<String> attachFiles) {
     this.attachFiles = attachFiles;
@@ -211,26 +208,23 @@ public class CampaignTemplate {
 
 
   public CampaignTemplate utm(Utm utm) {
-    
     this.utm = utm;
     return this;
   }
 
-   /**
+  /**
    * Get utm
    * @return utm
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public Utm getUtm() {
     return utm;
   }
 
-
   public void setUtm(Utm utm) {
     this.utm = utm;
   }
+
 
 
   @Override
@@ -282,5 +276,126 @@ public class CampaignTemplate {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("Poolname");
+    openapiFields.add("From");
+    openapiFields.add("ReplyTo");
+    openapiFields.add("Subject");
+    openapiFields.add("TemplateName");
+    openapiFields.add("AttachFiles");
+    openapiFields.add("Utm");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("From");
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CampaignTemplate
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!CampaignTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CampaignTemplate is not found in the empty JSON string", CampaignTemplate.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!CampaignTemplate.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CampaignTemplate` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CampaignTemplate.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("Poolname") != null && !jsonObj.get("Poolname").isJsonNull()) && !jsonObj.get("Poolname").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Poolname` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Poolname").toString()));
+      }
+      if (!jsonObj.get("From").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `From` to be a primitive type in the JSON string but got `%s`", jsonObj.get("From").toString()));
+      }
+      if ((jsonObj.get("ReplyTo") != null && !jsonObj.get("ReplyTo").isJsonNull()) && !jsonObj.get("ReplyTo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ReplyTo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ReplyTo").toString()));
+      }
+      if ((jsonObj.get("Subject") != null && !jsonObj.get("Subject").isJsonNull()) && !jsonObj.get("Subject").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Subject` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Subject").toString()));
+      }
+      if ((jsonObj.get("TemplateName") != null && !jsonObj.get("TemplateName").isJsonNull()) && !jsonObj.get("TemplateName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `TemplateName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("TemplateName").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("AttachFiles") != null && !jsonObj.get("AttachFiles").isJsonNull() && !jsonObj.get("AttachFiles").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `AttachFiles` to be an array in the JSON string but got `%s`", jsonObj.get("AttachFiles").toString()));
+      }
+      // validate the optional field `Utm`
+      if (jsonObj.get("Utm") != null && !jsonObj.get("Utm").isJsonNull()) {
+        Utm.validateJsonElement(jsonObj.get("Utm"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CampaignTemplate.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CampaignTemplate' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CampaignTemplate> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CampaignTemplate.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CampaignTemplate>() {
+           @Override
+           public void write(JsonWriter out, CampaignTemplate value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CampaignTemplate read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of CampaignTemplate given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CampaignTemplate
+   * @throws IOException if the JSON string is invalid with respect to CampaignTemplate
+   */
+  public static CampaignTemplate fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CampaignTemplate.class);
+  }
+
+  /**
+   * Convert an instance of CampaignTemplate to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -88,7 +88,6 @@ public class FilesApi {
      */
     public okhttp3.Call filesByNameDeleteCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -105,7 +104,7 @@ public class FilesApi {
 
         // create path and map variables
         String localVarPath = "/files/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -114,7 +113,6 @@ public class FilesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -122,7 +120,6 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -135,15 +132,12 @@ public class FilesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call filesByNameDeleteValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling filesByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = filesByNameDeleteCall(name, _callback);
-        return localVarCall;
+        return filesByNameDeleteCall(name, _callback);
 
     }
 
@@ -212,7 +206,6 @@ public class FilesApi {
      */
     public okhttp3.Call filesByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -229,7 +222,7 @@ public class FilesApi {
 
         // create path and map variables
         String localVarPath = "/files/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -238,7 +231,7 @@ public class FilesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/_*"
+            "application/*"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -246,7 +239,6 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -259,15 +251,12 @@ public class FilesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call filesByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling filesByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = filesByNameGetCall(name, _callback);
-        return localVarCall;
+        return filesByNameGetCall(name, _callback);
 
     }
 
@@ -340,7 +329,6 @@ public class FilesApi {
      */
     public okhttp3.Call filesByNameInfoGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -357,7 +345,7 @@ public class FilesApi {
 
         // create path and map variables
         String localVarPath = "/files/{name}/info"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -374,7 +362,6 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -387,15 +374,12 @@ public class FilesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call filesByNameInfoGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling filesByNameInfoGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = filesByNameInfoGetCall(name, _callback);
-        return localVarCall;
+        return filesByNameInfoGetCall(name, _callback);
 
     }
 
@@ -469,7 +453,6 @@ public class FilesApi {
      */
     public okhttp3.Call filesGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -510,7 +493,6 @@ public class FilesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -523,10 +505,7 @@ public class FilesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call filesGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = filesGetCall(limit, offset, _callback);
-        return localVarCall;
+        return filesGetCall(limit, offset, _callback);
 
     }
 
@@ -603,7 +582,6 @@ public class FilesApi {
      */
     public okhttp3.Call filesPostCall(FilePayload filePayload, Integer expiresAfterDays, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -653,15 +631,12 @@ public class FilesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call filesPostValidateBeforeCall(FilePayload filePayload, Integer expiresAfterDays, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'filePayload' is set
         if (filePayload == null) {
             throw new ApiException("Missing the required parameter 'filePayload' when calling filesPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = filesPostCall(filePayload, expiresAfterDays, _callback);
-        return localVarCall;
+        return filesPostCall(filePayload, expiresAfterDays, _callback);
 
     }
 

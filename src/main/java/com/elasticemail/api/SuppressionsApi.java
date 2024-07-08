@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -89,7 +89,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsBouncesGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -134,7 +133,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -147,16 +145,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsBouncesGetValidateBeforeCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsBouncesGetCall(search, limit, offset, _callback);
-        return localVarCall;
+        return suppressionsBouncesGetCall(search, limit, offset, _callback);
 
     }
 
     /**
      * Get Bounce List
-     * Retrieve your list of bounced emails. Required Access Level: ViewContacts
+     * Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -175,7 +170,7 @@ public class SuppressionsApi {
 
     /**
      * Get Bounce List
-     * Retrieve your list of bounced emails. Required Access Level: ViewContacts
+     * Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -195,7 +190,7 @@ public class SuppressionsApi {
 
     /**
      * Get Bounce List (asynchronously)
-     * Retrieve your list of bounced emails. Required Access Level: ViewContacts
+     * Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -229,7 +224,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsBouncesImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -258,7 +252,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -279,16 +272,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsBouncesImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsBouncesImportPostCall(_file, _callback);
-        return localVarCall;
+        return suppressionsBouncesImportPostCall(_file, _callback);
 
     }
 
     /**
      * Add Bounces Async
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -303,7 +293,7 @@ public class SuppressionsApi {
 
     /**
      * Add Bounces Async
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -320,7 +310,7 @@ public class SuppressionsApi {
 
     /**
      * Add Bounces Async (asynchronously)
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -351,7 +341,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsBouncesPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -397,21 +386,18 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsBouncesPostValidateBeforeCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
             throw new ApiException("Missing the required parameter 'requestBody' when calling suppressionsBouncesPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = suppressionsBouncesPostCall(requestBody, _callback);
-        return localVarCall;
+        return suppressionsBouncesPostCall(requestBody, _callback);
 
     }
 
     /**
      * Add Bounces
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as bounces. Limited to 1000 per request (required)
      * @return List&lt;Suppression&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -428,7 +414,7 @@ public class SuppressionsApi {
 
     /**
      * Add Bounces
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as bounces. Limited to 1000 per request (required)
      * @return ApiResponse&lt;List&lt;Suppression&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -446,7 +432,7 @@ public class SuppressionsApi {
 
     /**
      * Add Bounces (asynchronously)
-     * Add Bounced. Required Access Level: ModifyContacts
+     * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as bounces. Limited to 1000 per request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -478,7 +464,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsByEmailDeleteCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -495,7 +480,7 @@ public class SuppressionsApi {
 
         // create path and map variables
         String localVarPath = "/suppressions/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -504,7 +489,6 @@ public class SuppressionsApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -512,7 +496,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -525,21 +508,18 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsByEmailDeleteValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling suppressionsByEmailDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = suppressionsByEmailDeleteCall(email, _callback);
-        return localVarCall;
+        return suppressionsByEmailDeleteCall(email, _callback);
 
     }
 
     /**
      * Delete Suppression
-     * Delete Suppression. Required Access Level: ViewContacts
+     * Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -554,7 +534,7 @@ public class SuppressionsApi {
 
     /**
      * Delete Suppression
-     * Delete Suppression. Required Access Level: ViewContacts
+     * Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -571,7 +551,7 @@ public class SuppressionsApi {
 
     /**
      * Delete Suppression (asynchronously)
-     * Delete Suppression. Required Access Level: ViewContacts
+     * Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -602,7 +582,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsByEmailGetCall(String email, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -619,7 +598,7 @@ public class SuppressionsApi {
 
         // create path and map variables
         String localVarPath = "/suppressions/{email}"
-            .replaceAll("\\{" + "email" + "\\}", localVarApiClient.escapeString(email.toString()));
+            .replace("{" + "email" + "}", localVarApiClient.escapeString(email.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -636,7 +615,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -649,21 +627,18 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsByEmailGetValidateBeforeCall(String email, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'email' is set
         if (email == null) {
             throw new ApiException("Missing the required parameter 'email' when calling suppressionsByEmailGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = suppressionsByEmailGetCall(email, _callback);
-        return localVarCall;
+        return suppressionsByEmailGetCall(email, _callback);
 
     }
 
     /**
      * Get Suppression
-     * Retrieve your suppression. Required Access Level: ViewContacts
+     * Retrieve your suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @return Suppression
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -680,7 +655,7 @@ public class SuppressionsApi {
 
     /**
      * Get Suppression
-     * Retrieve your suppression. Required Access Level: ViewContacts
+     * Retrieve your suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @return ApiResponse&lt;Suppression&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -698,7 +673,7 @@ public class SuppressionsApi {
 
     /**
      * Get Suppression (asynchronously)
-     * Retrieve your suppression. Required Access Level: ViewContacts
+     * Retrieve your suppression. Required Access Level: ViewContacts, ViewSuppressions
      * @param email Proper email address. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -732,7 +707,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsComplaintsGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -777,7 +751,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -790,16 +763,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsComplaintsGetValidateBeforeCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsComplaintsGetCall(search, limit, offset, _callback);
-        return localVarCall;
+        return suppressionsComplaintsGetCall(search, limit, offset, _callback);
 
     }
 
     /**
      * Get Complaints List
-     * Retrieve your list of complaints. Required Access Level: ViewContacts
+     * Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -818,7 +788,7 @@ public class SuppressionsApi {
 
     /**
      * Get Complaints List
-     * Retrieve your list of complaints. Required Access Level: ViewContacts
+     * Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -838,7 +808,7 @@ public class SuppressionsApi {
 
     /**
      * Get Complaints List (asynchronously)
-     * Retrieve your list of complaints. Required Access Level: ViewContacts
+     * Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -872,7 +842,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsComplaintsImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -901,7 +870,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -922,16 +890,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsComplaintsImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsComplaintsImportPostCall(_file, _callback);
-        return localVarCall;
+        return suppressionsComplaintsImportPostCall(_file, _callback);
 
     }
 
     /**
      * Add Complaints Async
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -946,7 +911,7 @@ public class SuppressionsApi {
 
     /**
      * Add Complaints Async
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -963,7 +928,7 @@ public class SuppressionsApi {
 
     /**
      * Add Complaints Async (asynchronously)
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -994,7 +959,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsComplaintsPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1040,21 +1004,18 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsComplaintsPostValidateBeforeCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
             throw new ApiException("Missing the required parameter 'requestBody' when calling suppressionsComplaintsPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = suppressionsComplaintsPostCall(requestBody, _callback);
-        return localVarCall;
+        return suppressionsComplaintsPostCall(requestBody, _callback);
 
     }
 
     /**
      * Add Complaints
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as complaints. Limited to 1000 per request (required)
      * @return List&lt;Suppression&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1071,7 +1032,7 @@ public class SuppressionsApi {
 
     /**
      * Add Complaints
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as complaints. Limited to 1000 per request (required)
      * @return ApiResponse&lt;List&lt;Suppression&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1089,7 +1050,7 @@ public class SuppressionsApi {
 
     /**
      * Add Complaints (asynchronously)
-     * Add Complaints. Required Access Level: ModifyContacts
+     * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as complaints. Limited to 1000 per request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1122,7 +1083,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsGetCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1163,7 +1123,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1176,16 +1135,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsGetValidateBeforeCall(Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsGetCall(limit, offset, _callback);
-        return localVarCall;
+        return suppressionsGetCall(limit, offset, _callback);
 
     }
 
     /**
      * Get Suppressions
-     * Retrieve your suppressions. Required Access Level: ViewContacts
+     * Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;Suppression&gt;
@@ -1203,7 +1159,7 @@ public class SuppressionsApi {
 
     /**
      * Get Suppressions
-     * Retrieve your suppressions. Required Access Level: ViewContacts
+     * Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;Suppression&gt;&gt;
@@ -1222,7 +1178,7 @@ public class SuppressionsApi {
 
     /**
      * Get Suppressions (asynchronously)
-     * Retrieve your suppressions. Required Access Level: ViewContacts
+     * Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1257,7 +1213,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsUnsubscribesGetCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1302,7 +1257,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1315,16 +1269,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsUnsubscribesGetValidateBeforeCall(String search, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsUnsubscribesGetCall(search, limit, offset, _callback);
-        return localVarCall;
+        return suppressionsUnsubscribesGetCall(search, limit, offset, _callback);
 
     }
 
     /**
      * Get Unsubscribes List
-     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts
+     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -1343,7 +1294,7 @@ public class SuppressionsApi {
 
     /**
      * Get Unsubscribes List
-     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts
+     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -1363,7 +1314,7 @@ public class SuppressionsApi {
 
     /**
      * Get Unsubscribes List (asynchronously)
-     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts
+     * Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
      * @param search Text fragment used for searching. (optional)
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
@@ -1397,7 +1348,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsUnsubscribesImportPostCall(File _file, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1426,7 +1376,6 @@ public class SuppressionsApi {
         }
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1447,16 +1396,13 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsUnsubscribesImportPostValidateBeforeCall(File _file, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = suppressionsUnsubscribesImportPostCall(_file, _callback);
-        return localVarCall;
+        return suppressionsUnsubscribesImportPostCall(_file, _callback);
 
     }
 
     /**
      * Add Unsubscribes Async
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1471,7 +1417,7 @@ public class SuppressionsApi {
 
     /**
      * Add Unsubscribes Async
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1488,7 +1434,7 @@ public class SuppressionsApi {
 
     /**
      * Add Unsubscribes Async (asynchronously)
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param _file  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1519,7 +1465,6 @@ public class SuppressionsApi {
      */
     public okhttp3.Call suppressionsUnsubscribesPostCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1565,21 +1510,18 @@ public class SuppressionsApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call suppressionsUnsubscribesPostValidateBeforeCall(List<String> requestBody, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'requestBody' is set
         if (requestBody == null) {
             throw new ApiException("Missing the required parameter 'requestBody' when calling suppressionsUnsubscribesPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = suppressionsUnsubscribesPostCall(requestBody, _callback);
-        return localVarCall;
+        return suppressionsUnsubscribesPostCall(requestBody, _callback);
 
     }
 
     /**
      * Add Unsubscribes
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as unsubscribes. Limited to 1000 per request (required)
      * @return List&lt;Suppression&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1596,7 +1538,7 @@ public class SuppressionsApi {
 
     /**
      * Add Unsubscribes
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as unsubscribes. Limited to 1000 per request (required)
      * @return ApiResponse&lt;List&lt;Suppression&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1614,7 +1556,7 @@ public class SuppressionsApi {
 
     /**
      * Add Unsubscribes (asynchronously)
-     * Add Unsubscribes. Required Access Level: ModifyContacts
+     * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param requestBody Emails to add as unsubscribes. Limited to 1000 per request (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

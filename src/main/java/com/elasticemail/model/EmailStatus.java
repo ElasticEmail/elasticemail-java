@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,24 +14,45 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.LogJobStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Status information of the specified email
  */
-@ApiModel(description = "Status information of the specified email")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EmailStatus {
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -81,26 +102,22 @@ public class EmailStatus {
   @SerializedName(SERIALIZED_NAME_ENVELOPE_FROM)
   private String envelopeFrom;
 
-  public EmailStatus() { 
+  public EmailStatus() {
   }
 
   public EmailStatus from(String from) {
-    
     this.from = from;
     return this;
   }
 
-   /**
+  /**
    * Email address this email was sent from.
    * @return from
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Email address this email was sent from.")
-
   public String getFrom() {
     return from;
   }
-
 
   public void setFrom(String from) {
     this.from = from;
@@ -108,22 +125,18 @@ public class EmailStatus {
 
 
   public EmailStatus to(String to) {
-    
     this.to = to;
     return this;
   }
 
-   /**
+  /**
    * Email address this email was sent to.
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Email address this email was sent to.")
-
   public String getTo() {
     return to;
   }
-
 
   public void setTo(String to) {
     this.to = to;
@@ -131,22 +144,18 @@ public class EmailStatus {
 
 
   public EmailStatus date(OffsetDateTime date) {
-    
     this.date = date;
     return this;
   }
 
-   /**
+  /**
    * Date the email was submitted.
    * @return date
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date the email was submitted.")
-
   public OffsetDateTime getDate() {
     return date;
   }
-
 
   public void setDate(OffsetDateTime date) {
     this.date = date;
@@ -154,22 +163,18 @@ public class EmailStatus {
 
 
   public EmailStatus status(LogJobStatus status) {
-    
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public LogJobStatus getStatus() {
     return status;
   }
-
 
   public void setStatus(LogJobStatus status) {
     this.status = status;
@@ -177,22 +182,18 @@ public class EmailStatus {
 
 
   public EmailStatus statusName(String statusName) {
-    
     this.statusName = statusName;
     return this;
   }
 
-   /**
+  /**
    * Name of email&#39;s status
    * @return statusName
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of email's status")
-
   public String getStatusName() {
     return statusName;
   }
-
 
   public void setStatusName(String statusName) {
     this.statusName = statusName;
@@ -200,22 +201,18 @@ public class EmailStatus {
 
 
   public EmailStatus statusChangeDate(OffsetDateTime statusChangeDate) {
-    
     this.statusChangeDate = statusChangeDate;
     return this;
   }
 
-   /**
+  /**
    * Date of last status change.
    * @return statusChangeDate
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of last status change.")
-
   public OffsetDateTime getStatusChangeDate() {
     return statusChangeDate;
   }
-
 
   public void setStatusChangeDate(OffsetDateTime statusChangeDate) {
     this.statusChangeDate = statusChangeDate;
@@ -223,22 +220,18 @@ public class EmailStatus {
 
 
   public EmailStatus dateSent(OffsetDateTime dateSent) {
-    
     this.dateSent = dateSent;
     return this;
   }
 
-   /**
+  /**
    * Date when the email was sent
    * @return dateSent
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date when the email was sent")
-
   public OffsetDateTime getDateSent() {
     return dateSent;
   }
-
 
   public void setDateSent(OffsetDateTime dateSent) {
     this.dateSent = dateSent;
@@ -246,22 +239,18 @@ public class EmailStatus {
 
 
   public EmailStatus dateOpened(OffsetDateTime dateOpened) {
-    
     this.dateOpened = dateOpened;
     return this;
   }
 
-   /**
+  /**
    * Date when the email changed the status to &#39;opened&#39;
    * @return dateOpened
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date when the email changed the status to 'opened'")
-
   public OffsetDateTime getDateOpened() {
     return dateOpened;
   }
-
 
   public void setDateOpened(OffsetDateTime dateOpened) {
     this.dateOpened = dateOpened;
@@ -269,22 +258,18 @@ public class EmailStatus {
 
 
   public EmailStatus dateClicked(OffsetDateTime dateClicked) {
-    
     this.dateClicked = dateClicked;
     return this;
   }
 
-   /**
+  /**
    * Date when the email changed the status to &#39;clicked&#39;
    * @return dateClicked
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date when the email changed the status to 'clicked'")
-
   public OffsetDateTime getDateClicked() {
     return dateClicked;
   }
-
 
   public void setDateClicked(OffsetDateTime dateClicked) {
     this.dateClicked = dateClicked;
@@ -292,22 +277,18 @@ public class EmailStatus {
 
 
   public EmailStatus errorMessage(String errorMessage) {
-    
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * Detailed error or bounced message.
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Detailed error or bounced message.")
-
   public String getErrorMessage() {
     return errorMessage;
   }
-
 
   public void setErrorMessage(String errorMessage) {
     this.errorMessage = errorMessage;
@@ -315,22 +296,18 @@ public class EmailStatus {
 
 
   public EmailStatus transactionID(String transactionID) {
-    
     this.transactionID = transactionID;
     return this;
   }
 
-   /**
+  /**
    * ID number of transaction
    * @return transactionID
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "TransactionID", value = "ID number of transaction")
-
   public String getTransactionID() {
     return transactionID;
   }
-
 
   public void setTransactionID(String transactionID) {
     this.transactionID = transactionID;
@@ -338,26 +315,23 @@ public class EmailStatus {
 
 
   public EmailStatus envelopeFrom(String envelopeFrom) {
-    
     this.envelopeFrom = envelopeFrom;
     return this;
   }
 
-   /**
+  /**
    * Envelope from address
    * @return envelopeFrom
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Envelope from address")
-
   public String getEnvelopeFrom() {
     return envelopeFrom;
   }
 
-
   public void setEnvelopeFrom(String envelopeFrom) {
     this.envelopeFrom = envelopeFrom;
   }
+
 
 
   @Override
@@ -430,5 +404,122 @@ public class EmailStatus {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("From");
+    openapiFields.add("To");
+    openapiFields.add("Date");
+    openapiFields.add("Status");
+    openapiFields.add("StatusName");
+    openapiFields.add("StatusChangeDate");
+    openapiFields.add("DateSent");
+    openapiFields.add("DateOpened");
+    openapiFields.add("DateClicked");
+    openapiFields.add("ErrorMessage");
+    openapiFields.add("TransactionID");
+    openapiFields.add("EnvelopeFrom");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailStatus
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!EmailStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in EmailStatus is not found in the empty JSON string", EmailStatus.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!EmailStatus.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EmailStatus` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("From") != null && !jsonObj.get("From").isJsonNull()) && !jsonObj.get("From").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `From` to be a primitive type in the JSON string but got `%s`", jsonObj.get("From").toString()));
+      }
+      if ((jsonObj.get("To") != null && !jsonObj.get("To").isJsonNull()) && !jsonObj.get("To").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `To` to be a primitive type in the JSON string but got `%s`", jsonObj.get("To").toString()));
+      }
+      // validate the optional field `Status`
+      if (jsonObj.get("Status") != null && !jsonObj.get("Status").isJsonNull()) {
+        LogJobStatus.validateJsonElement(jsonObj.get("Status"));
+      }
+      if ((jsonObj.get("StatusName") != null && !jsonObj.get("StatusName").isJsonNull()) && !jsonObj.get("StatusName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `StatusName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("StatusName").toString()));
+      }
+      if ((jsonObj.get("ErrorMessage") != null && !jsonObj.get("ErrorMessage").isJsonNull()) && !jsonObj.get("ErrorMessage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `ErrorMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ErrorMessage").toString()));
+      }
+      if ((jsonObj.get("TransactionID") != null && !jsonObj.get("TransactionID").isJsonNull()) && !jsonObj.get("TransactionID").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `TransactionID` to be a primitive type in the JSON string but got `%s`", jsonObj.get("TransactionID").toString()));
+      }
+      if ((jsonObj.get("EnvelopeFrom") != null && !jsonObj.get("EnvelopeFrom").isJsonNull()) && !jsonObj.get("EnvelopeFrom").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `EnvelopeFrom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("EnvelopeFrom").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!EmailStatus.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'EmailStatus' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<EmailStatus> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(EmailStatus.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<EmailStatus>() {
+           @Override
+           public void write(JsonWriter out, EmailStatus value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public EmailStatus read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of EmailStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailStatus
+   * @throws IOException if the JSON string is invalid with respect to EmailStatus
+   */
+  public static EmailStatus fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, EmailStatus.class);
+  }
+
+  /**
+   * Convert an instance of EmailStatus to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

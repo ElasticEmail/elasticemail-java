@@ -2,21 +2,21 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**securityApikeysByNameDelete**](SecurityApi.md#securityApikeysByNameDelete) | **DELETE** /security/apikeys/{name} | Delete ApiKey
-[**securityApikeysByNameGet**](SecurityApi.md#securityApikeysByNameGet) | **GET** /security/apikeys/{name} | Load ApiKey
-[**securityApikeysByNamePut**](SecurityApi.md#securityApikeysByNamePut) | **PUT** /security/apikeys/{name} | Update ApiKey
-[**securityApikeysGet**](SecurityApi.md#securityApikeysGet) | **GET** /security/apikeys | List ApiKeys
-[**securityApikeysPost**](SecurityApi.md#securityApikeysPost) | **POST** /security/apikeys | Add ApiKey
-[**securitySmtpByNameDelete**](SecurityApi.md#securitySmtpByNameDelete) | **DELETE** /security/smtp/{name} | Delete SMTP Credential
-[**securitySmtpByNameGet**](SecurityApi.md#securitySmtpByNameGet) | **GET** /security/smtp/{name} | Load SMTP Credential
-[**securitySmtpByNamePut**](SecurityApi.md#securitySmtpByNamePut) | **PUT** /security/smtp/{name} | Update SMTP Credential
-[**securitySmtpGet**](SecurityApi.md#securitySmtpGet) | **GET** /security/smtp | List SMTP Credentials
-[**securitySmtpPost**](SecurityApi.md#securitySmtpPost) | **POST** /security/smtp | Add SMTP Credential
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**securityApikeysByNameDelete**](SecurityApi.md#securityApikeysByNameDelete) | **DELETE** /security/apikeys/{name} | Delete ApiKey |
+| [**securityApikeysByNameGet**](SecurityApi.md#securityApikeysByNameGet) | **GET** /security/apikeys/{name} | Load ApiKey |
+| [**securityApikeysByNamePut**](SecurityApi.md#securityApikeysByNamePut) | **PUT** /security/apikeys/{name} | Update ApiKey |
+| [**securityApikeysGet**](SecurityApi.md#securityApikeysGet) | **GET** /security/apikeys | List ApiKeys |
+| [**securityApikeysPost**](SecurityApi.md#securityApikeysPost) | **POST** /security/apikeys | Add ApiKey |
+| [**securitySmtpByNameDelete**](SecurityApi.md#securitySmtpByNameDelete) | **DELETE** /security/smtp/{name} | Delete SMTP Credential |
+| [**securitySmtpByNameGet**](SecurityApi.md#securitySmtpByNameGet) | **GET** /security/smtp/{name} | Load SMTP Credential |
+| [**securitySmtpByNamePut**](SecurityApi.md#securitySmtpByNamePut) | **PUT** /security/smtp/{name} | Update SMTP Credential |
+| [**securitySmtpGet**](SecurityApi.md#securitySmtpGet) | **GET** /security/smtp | List SMTP Credentials |
+| [**securitySmtpPost**](SecurityApi.md#securitySmtpPost) | **POST** /security/smtp | Add SMTP Credential |
 
 
-<a name="securityApikeysByNameDelete"></a>
+<a id="securityApikeysByNameDelete"></a>
 # **securityApikeysByNameDelete**
 > securityApikeysByNameDelete(name, subaccount)
 
@@ -63,10 +63,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the ApiKey |
- **subaccount** | **String**| Email of the subaccount of which ApiKey should be deleted | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the ApiKey | |
+| **subaccount** | **String**| Email of the subaccount of which ApiKey should be deleted | [optional] |
 
 ### Return type
 
@@ -84,9 +84,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securityApikeysByNameGet"></a>
+<a id="securityApikeysByNameGet"></a>
 # **securityApikeysByNameGet**
 > ApiKey securityApikeysByNameGet(name, subaccount)
 
@@ -134,10 +134,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the ApiKey |
- **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the ApiKey | |
+| **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded | [optional] |
 
 ### Return type
 
@@ -155,9 +155,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securityApikeysByNamePut"></a>
+<a id="securityApikeysByNamePut"></a>
 # **securityApikeysByNamePut**
 > ApiKey securityApikeysByNamePut(name, apiKeyPayload)
 
@@ -205,10 +205,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the ApiKey |
- **apiKeyPayload** | [**ApiKeyPayload**](ApiKeyPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the ApiKey | |
+| **apiKeyPayload** | [**ApiKeyPayload**](ApiKeyPayload.md)|  | |
 
 ### Return type
 
@@ -226,9 +226,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securityApikeysGet"></a>
+<a id="securityApikeysGet"></a>
 # **securityApikeysGet**
 > List&lt;ApiKey&gt; securityApikeysGet(subaccount)
 
@@ -275,9 +275,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded | [optional] |
 
 ### Return type
 
@@ -295,9 +295,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securityApikeysPost"></a>
+<a id="securityApikeysPost"></a>
 # **securityApikeysPost**
 > NewApiKey securityApikeysPost(apiKeyPayload)
 
@@ -344,9 +344,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **apiKeyPayload** | [**ApiKeyPayload**](ApiKeyPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **apiKeyPayload** | [**ApiKeyPayload**](ApiKeyPayload.md)|  | |
 
 ### Return type
 
@@ -364,9 +364,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 
-<a name="securitySmtpByNameDelete"></a>
+<a id="securitySmtpByNameDelete"></a>
 # **securitySmtpByNameDelete**
 > securitySmtpByNameDelete(name, subaccount)
 
@@ -413,10 +413,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the SMTP Credential |
- **subaccount** | **String**| Email of the subaccount of which credential should be deleted | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the SMTP Credential | |
+| **subaccount** | **String**| Email of the subaccount of which credential should be deleted | [optional] |
 
 ### Return type
 
@@ -434,9 +434,9 @@ null (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securitySmtpByNameGet"></a>
+<a id="securitySmtpByNameGet"></a>
 # **securitySmtpByNameGet**
 > SmtpCredentials securitySmtpByNameGet(name, subaccount)
 
@@ -484,10 +484,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the SMTP Credential |
- **subaccount** | **String**| Email of the subaccount of which credential should be loaded | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the SMTP Credential | |
+| **subaccount** | **String**| Email of the subaccount of which credential should be loaded | [optional] |
 
 ### Return type
 
@@ -505,9 +505,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securitySmtpByNamePut"></a>
+<a id="securitySmtpByNamePut"></a>
 # **securitySmtpByNamePut**
 > SmtpCredentials securitySmtpByNamePut(name, smtpCredentialsPayload)
 
@@ -555,10 +555,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| Name of the SMTP Credential |
- **smtpCredentialsPayload** | [**SmtpCredentialsPayload**](SmtpCredentialsPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of the SMTP Credential | |
+| **smtpCredentialsPayload** | [**SmtpCredentialsPayload**](SmtpCredentialsPayload.md)|  | |
 
 ### Return type
 
@@ -576,9 +576,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securitySmtpGet"></a>
+<a id="securitySmtpGet"></a>
 # **securitySmtpGet**
 > List&lt;SmtpCredentials&gt; securitySmtpGet(subaccount)
 
@@ -625,9 +625,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subaccount** | **String**| Email of the subaccount of which credentials should be listed | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **subaccount** | **String**| Email of the subaccount of which credentials should be listed | [optional] |
 
 ### Return type
 
@@ -645,9 +645,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="securitySmtpPost"></a>
+<a id="securitySmtpPost"></a>
 # **securitySmtpPost**
 > NewSmtpCredentials securitySmtpPost(smtpCredentialsPayload)
 
@@ -694,9 +694,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **smtpCredentialsPayload** | [**SmtpCredentialsPayload**](SmtpCredentialsPayload.md)|  |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **smtpCredentialsPayload** | [**SmtpCredentialsPayload**](SmtpCredentialsPayload.md)|  | |
 
 ### Return type
 
@@ -714,5 +714,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  -  |
+| **201** | Created |  -  |
 

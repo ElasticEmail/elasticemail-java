@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,30 +14,51 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.AccessLevel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
-import org.threeten.bp.OffsetDateTime;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * ApiKey info
  */
-@ApiModel(description = "ApiKey info")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class ApiKey {
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
-  private List<AccessLevel> accessLevel = null;
+  private List<AccessLevel> accessLevel = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -57,36 +78,32 @@ public class ApiKey {
 
   public static final String SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE = "RestrictAccessToIPRange";
   @SerializedName(SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE)
-  private List<String> restrictAccessToIPRange = null;
+  private List<String> restrictAccessToIPRange = new ArrayList<>();
 
-  public ApiKey() { 
+  public ApiKey() {
   }
 
   public ApiKey accessLevel(List<AccessLevel> accessLevel) {
-    
     this.accessLevel = accessLevel;
     return this;
   }
 
   public ApiKey addAccessLevelItem(AccessLevel accessLevelItem) {
     if (this.accessLevel == null) {
-      this.accessLevel = new ArrayList<AccessLevel>();
+      this.accessLevel = new ArrayList<>();
     }
     this.accessLevel.add(accessLevelItem);
     return this;
   }
 
-   /**
+  /**
    * Access level or permission to be assigned to this ApiKey.
    * @return accessLevel
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Access level or permission to be assigned to this ApiKey.")
-
   public List<AccessLevel> getAccessLevel() {
     return accessLevel;
   }
-
 
   public void setAccessLevel(List<AccessLevel> accessLevel) {
     this.accessLevel = accessLevel;
@@ -94,22 +111,18 @@ public class ApiKey {
 
 
   public ApiKey name(String name) {
-    
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the ApiKey.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Name of the ApiKey.")
-
   public String getName() {
     return name;
   }
-
 
   public void setName(String name) {
     this.name = name;
@@ -117,22 +130,18 @@ public class ApiKey {
 
 
   public ApiKey dateCreated(OffsetDateTime dateCreated) {
-    
     this.dateCreated = dateCreated;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey was created.
    * @return dateCreated
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date this ApiKey was created.")
-
   public OffsetDateTime getDateCreated() {
     return dateCreated;
   }
-
 
   public void setDateCreated(OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
@@ -140,22 +149,18 @@ public class ApiKey {
 
 
   public ApiKey lastUse(OffsetDateTime lastUse) {
-    
     this.lastUse = lastUse;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey was last used.
    * @return lastUse
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date this ApiKey was last used.")
-
   public OffsetDateTime getLastUse() {
     return lastUse;
   }
-
 
   public void setLastUse(OffsetDateTime lastUse) {
     this.lastUse = lastUse;
@@ -163,22 +168,18 @@ public class ApiKey {
 
 
   public ApiKey expires(OffsetDateTime expires) {
-    
     this.expires = expires;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey expires.
    * @return expires
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date this ApiKey expires.")
-
   public OffsetDateTime getExpires() {
     return expires;
   }
-
 
   public void setExpires(OffsetDateTime expires) {
     this.expires = expires;
@@ -186,34 +187,31 @@ public class ApiKey {
 
 
   public ApiKey restrictAccessToIPRange(List<String> restrictAccessToIPRange) {
-    
     this.restrictAccessToIPRange = restrictAccessToIPRange;
     return this;
   }
 
   public ApiKey addRestrictAccessToIPRangeItem(String restrictAccessToIPRangeItem) {
     if (this.restrictAccessToIPRange == null) {
-      this.restrictAccessToIPRange = new ArrayList<String>();
+      this.restrictAccessToIPRange = new ArrayList<>();
     }
     this.restrictAccessToIPRange.add(restrictAccessToIPRangeItem);
     return this;
   }
 
-   /**
+  /**
    * Which IPs can use this ApiKey
    * @return restrictAccessToIPRange
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Which IPs can use this ApiKey")
-
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
   }
 
-
   public void setRestrictAccessToIPRange(List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
   }
+
 
 
   @Override
@@ -274,5 +272,105 @@ public class ApiKey {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("AccessLevel");
+    openapiFields.add("Name");
+    openapiFields.add("DateCreated");
+    openapiFields.add("LastUse");
+    openapiFields.add("Expires");
+    openapiFields.add("RestrictAccessToIPRange");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApiKey
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!ApiKey.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ApiKey is not found in the empty JSON string", ApiKey.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!ApiKey.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApiKey` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("AccessLevel") != null && !jsonObj.get("AccessLevel").isJsonNull() && !jsonObj.get("AccessLevel").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `AccessLevel` to be an array in the JSON string but got `%s`", jsonObj.get("AccessLevel").toString()));
+      }
+      if ((jsonObj.get("Name") != null && !jsonObj.get("Name").isJsonNull()) && !jsonObj.get("Name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Name").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("RestrictAccessToIPRange") != null && !jsonObj.get("RestrictAccessToIPRange").isJsonNull() && !jsonObj.get("RestrictAccessToIPRange").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `RestrictAccessToIPRange` to be an array in the JSON string but got `%s`", jsonObj.get("RestrictAccessToIPRange").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ApiKey.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ApiKey' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ApiKey> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ApiKey.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ApiKey>() {
+           @Override
+           public void write(JsonWriter out, ApiKey value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ApiKey read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of ApiKey given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApiKey
+   * @throws IOException if the JSON string is invalid with respect to ApiKey
+   */
+  public static ApiKey fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ApiKey.class);
+  }
+
+  /**
+   * Convert an instance of ApiKey to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

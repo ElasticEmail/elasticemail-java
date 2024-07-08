@@ -2,16 +2,16 @@
 
 All URIs are relative to *https://api.elasticemail.com/v4*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**statisticsCampaignsByNameGet**](StatisticsApi.md#statisticsCampaignsByNameGet) | **GET** /statistics/campaigns/{name} | Load Campaign Stats
-[**statisticsCampaignsGet**](StatisticsApi.md#statisticsCampaignsGet) | **GET** /statistics/campaigns | Load Campaigns Stats
-[**statisticsChannelsByNameGet**](StatisticsApi.md#statisticsChannelsByNameGet) | **GET** /statistics/channels/{name} | Load Channel Stats
-[**statisticsChannelsGet**](StatisticsApi.md#statisticsChannelsGet) | **GET** /statistics/channels | Load Channels Stats
-[**statisticsGet**](StatisticsApi.md#statisticsGet) | **GET** /statistics | Load Statistics
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**statisticsCampaignsByNameGet**](StatisticsApi.md#statisticsCampaignsByNameGet) | **GET** /statistics/campaigns/{name} | Load Campaign Stats |
+| [**statisticsCampaignsGet**](StatisticsApi.md#statisticsCampaignsGet) | **GET** /statistics/campaigns | Load Campaigns Stats |
+| [**statisticsChannelsByNameGet**](StatisticsApi.md#statisticsChannelsByNameGet) | **GET** /statistics/channels/{name} | Load Channel Stats |
+| [**statisticsChannelsGet**](StatisticsApi.md#statisticsChannelsGet) | **GET** /statistics/channels | Load Channels Stats |
+| [**statisticsGet**](StatisticsApi.md#statisticsGet) | **GET** /statistics | Load Statistics |
 
 
-<a name="statisticsCampaignsByNameGet"></a>
+<a id="statisticsCampaignsByNameGet"></a>
 # **statisticsCampaignsByNameGet**
 > ChannelLogStatusSummary statisticsCampaignsByNameGet(name)
 
@@ -58,9 +58,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| The name of the campaign to get. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| The name of the campaign to get. | |
 
 ### Return type
 
@@ -78,9 +78,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="statisticsCampaignsGet"></a>
+<a id="statisticsCampaignsGet"></a>
 # **statisticsCampaignsGet**
 > List&lt;ChannelLogStatusSummary&gt; statisticsCampaignsGet(limit, offset)
 
@@ -128,10 +128,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -149,9 +149,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="statisticsChannelsByNameGet"></a>
+<a id="statisticsChannelsByNameGet"></a>
 # **statisticsChannelsByNameGet**
 > ChannelLogStatusSummary statisticsChannelsByNameGet(name)
 
@@ -198,9 +198,9 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **String**| The name of the channel to get. |
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| The name of the channel to get. | |
 
 ### Return type
 
@@ -218,9 +218,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="statisticsChannelsGet"></a>
+<a id="statisticsChannelsGet"></a>
 # **statisticsChannelsGet**
 > List&lt;ChannelLogStatusSummary&gt; statisticsChannelsGet(limit, offset)
 
@@ -268,10 +268,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| Maximum number of returned items. | [optional]
- **offset** | **Integer**| How many items should be returned ahead. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **limit** | **Integer**| Maximum number of returned items. | [optional] |
+| **offset** | **Integer**| How many items should be returned ahead. | [optional] |
 
 ### Return type
 
@@ -289,9 +289,9 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 
-<a name="statisticsGet"></a>
+<a id="statisticsGet"></a>
 # **statisticsGet**
 > LogStatusSummary statisticsGet(from, to)
 
@@ -339,10 +339,10 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. |
- **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **from** | **OffsetDateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | |
+| **to** | **OffsetDateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] |
 
 ### Return type
 
@@ -360,5 +360,5 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+| **200** | OK |  -  |
 

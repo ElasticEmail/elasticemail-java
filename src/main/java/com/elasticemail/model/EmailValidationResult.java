@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,22 +14,46 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
+import com.elasticemail.model.EmailPredictedValidationStatus;
 import com.elasticemail.model.EmailValidationStatus;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.threeten.bp.OffsetDateTime;
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.Arrays;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * EmailValidationResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EmailValidationResult {
   public static final String SERIALIZED_NAME_ACCOUNT = "Account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -67,26 +91,30 @@ public class EmailValidationResult {
   @SerializedName(SERIALIZED_NAME_RESULT)
   private EmailValidationStatus result = EmailValidationStatus.NONE;
 
-  public EmailValidationResult() { 
+  public static final String SERIALIZED_NAME_PREDICTED_SCORE = "PredictedScore";
+  @SerializedName(SERIALIZED_NAME_PREDICTED_SCORE)
+  private BigDecimal predictedScore;
+
+  public static final String SERIALIZED_NAME_PREDICTED_STATUS = "PredictedStatus";
+  @SerializedName(SERIALIZED_NAME_PREDICTED_STATUS)
+  private EmailPredictedValidationStatus predictedStatus = EmailPredictedValidationStatus.NONE;
+
+  public EmailValidationResult() {
   }
 
   public EmailValidationResult account(String account) {
-    
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Local part of an email
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Local part of an email")
-
   public String getAccount() {
     return account;
   }
-
 
   public void setAccount(String account) {
     this.account = account;
@@ -94,22 +122,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult domain(String domain) {
-    
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * Name of selected domain.
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "example.com", value = "Name of selected domain.")
-
   public String getDomain() {
     return domain;
   }
-
 
   public void setDomain(String domain) {
     this.domain = domain;
@@ -117,22 +141,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult email(String email) {
-    
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Full email address that was verified
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Full email address that was verified")
-
   public String getEmail() {
     return email;
   }
-
 
   public void setEmail(String email) {
     this.email = email;
@@ -140,22 +160,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult suggestedSpelling(String suggestedSpelling) {
-    
     this.suggestedSpelling = suggestedSpelling;
     return this;
   }
 
-   /**
+  /**
    * Suggested spelling if a possible mistake was found
    * @return suggestedSpelling
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Suggested spelling if a possible mistake was found")
-
   public String getSuggestedSpelling() {
     return suggestedSpelling;
   }
-
 
   public void setSuggestedSpelling(String suggestedSpelling) {
     this.suggestedSpelling = suggestedSpelling;
@@ -163,22 +179,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult disposable(Boolean disposable) {
-    
     this.disposable = disposable;
     return this;
   }
 
-   /**
+  /**
    * Does the email have a temporary domain
    * @return disposable
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Does the email have a temporary domain")
-
   public Boolean getDisposable() {
     return disposable;
   }
-
 
   public void setDisposable(Boolean disposable) {
     this.disposable = disposable;
@@ -186,22 +198,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult role(Boolean role) {
-    
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Is an email a role email (e.g. info@, noreply@ etc.)
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Is an email a role email (e.g. info@, noreply@ etc.)")
-
   public Boolean getRole() {
     return role;
   }
-
 
   public void setRole(Boolean role) {
     this.role = role;
@@ -209,22 +217,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult reason(String reason) {
-    
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * All detected issues
    * @return reason
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "All detected issues")
-
   public String getReason() {
     return reason;
   }
-
 
   public void setReason(String reason) {
     this.reason = reason;
@@ -232,22 +236,18 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult dateAdded(OffsetDateTime dateAdded) {
-    
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
-   * Date of creation in YYYY-MM-DDThh:ii:ss format
+  /**
+   * Added date
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Date of creation in YYYY-MM-DDThh:ii:ss format")
-
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
-
 
   public void setDateAdded(OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
@@ -255,26 +255,61 @@ public class EmailValidationResult {
 
 
   public EmailValidationResult result(EmailValidationStatus result) {
-    
     this.result = result;
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public EmailValidationStatus getResult() {
     return result;
   }
 
-
   public void setResult(EmailValidationStatus result) {
     this.result = result;
   }
+
+
+  public EmailValidationResult predictedScore(BigDecimal predictedScore) {
+    this.predictedScore = predictedScore;
+    return this;
+  }
+
+  /**
+   * Predicted score
+   * @return predictedScore
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getPredictedScore() {
+    return predictedScore;
+  }
+
+  public void setPredictedScore(BigDecimal predictedScore) {
+    this.predictedScore = predictedScore;
+  }
+
+
+  public EmailValidationResult predictedStatus(EmailPredictedValidationStatus predictedStatus) {
+    this.predictedStatus = predictedStatus;
+    return this;
+  }
+
+  /**
+   * Get predictedStatus
+   * @return predictedStatus
+   */
+  @javax.annotation.Nullable
+  public EmailPredictedValidationStatus getPredictedStatus() {
+    return predictedStatus;
+  }
+
+  public void setPredictedStatus(EmailPredictedValidationStatus predictedStatus) {
+    this.predictedStatus = predictedStatus;
+  }
+
 
 
   @Override
@@ -294,12 +329,14 @@ public class EmailValidationResult {
         Objects.equals(this.role, emailValidationResult.role) &&
         Objects.equals(this.reason, emailValidationResult.reason) &&
         Objects.equals(this.dateAdded, emailValidationResult.dateAdded) &&
-        Objects.equals(this.result, emailValidationResult.result);
+        Objects.equals(this.result, emailValidationResult.result) &&
+        Objects.equals(this.predictedScore, emailValidationResult.predictedScore) &&
+        Objects.equals(this.predictedStatus, emailValidationResult.predictedStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(account, domain, email, suggestedSpelling, disposable, role, reason, dateAdded, result);
+    return Objects.hash(account, domain, email, suggestedSpelling, disposable, role, reason, dateAdded, result, predictedScore, predictedStatus);
   }
 
   @Override
@@ -315,6 +352,8 @@ public class EmailValidationResult {
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    dateAdded: ").append(toIndentedString(dateAdded)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
+    sb.append("    predictedScore: ").append(toIndentedString(predictedScore)).append("\n");
+    sb.append("    predictedStatus: ").append(toIndentedString(predictedStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -330,5 +369,122 @@ public class EmailValidationResult {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("Account");
+    openapiFields.add("Domain");
+    openapiFields.add("Email");
+    openapiFields.add("SuggestedSpelling");
+    openapiFields.add("Disposable");
+    openapiFields.add("Role");
+    openapiFields.add("Reason");
+    openapiFields.add("DateAdded");
+    openapiFields.add("Result");
+    openapiFields.add("PredictedScore");
+    openapiFields.add("PredictedStatus");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailValidationResult
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!EmailValidationResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in EmailValidationResult is not found in the empty JSON string", EmailValidationResult.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!EmailValidationResult.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EmailValidationResult` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("Account") != null && !jsonObj.get("Account").isJsonNull()) && !jsonObj.get("Account").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Account` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Account").toString()));
+      }
+      if ((jsonObj.get("Domain") != null && !jsonObj.get("Domain").isJsonNull()) && !jsonObj.get("Domain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Domain").toString()));
+      }
+      if ((jsonObj.get("Email") != null && !jsonObj.get("Email").isJsonNull()) && !jsonObj.get("Email").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Email").toString()));
+      }
+      if ((jsonObj.get("SuggestedSpelling") != null && !jsonObj.get("SuggestedSpelling").isJsonNull()) && !jsonObj.get("SuggestedSpelling").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `SuggestedSpelling` to be a primitive type in the JSON string but got `%s`", jsonObj.get("SuggestedSpelling").toString()));
+      }
+      if ((jsonObj.get("Reason") != null && !jsonObj.get("Reason").isJsonNull()) && !jsonObj.get("Reason").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Reason` to be a primitive type in the JSON string but got `%s`", jsonObj.get("Reason").toString()));
+      }
+      // validate the optional field `Result`
+      if (jsonObj.get("Result") != null && !jsonObj.get("Result").isJsonNull()) {
+        EmailValidationStatus.validateJsonElement(jsonObj.get("Result"));
+      }
+      // validate the optional field `PredictedStatus`
+      if (jsonObj.get("PredictedStatus") != null && !jsonObj.get("PredictedStatus").isJsonNull()) {
+        EmailPredictedValidationStatus.validateJsonElement(jsonObj.get("PredictedStatus"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!EmailValidationResult.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'EmailValidationResult' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<EmailValidationResult> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(EmailValidationResult.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<EmailValidationResult>() {
+           @Override
+           public void write(JsonWriter out, EmailValidationResult value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public EmailValidationResult read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of EmailValidationResult given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailValidationResult
+   * @throws IOException if the JSON string is invalid with respect to EmailValidationResult
+   */
+  public static EmailValidationResult fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, EmailValidationResult.class);
+  }
+
+  /**
+   * Convert an instance of EmailValidationResult to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

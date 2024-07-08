@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -89,7 +89,6 @@ public class TemplatesApi {
      */
     public okhttp3.Call templatesByNameDeleteCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -106,7 +105,7 @@ public class TemplatesApi {
 
         // create path and map variables
         String localVarPath = "/templates/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -115,7 +114,6 @@ public class TemplatesApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -123,7 +121,6 @@ public class TemplatesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -136,15 +133,12 @@ public class TemplatesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call templatesByNameDeleteValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling templatesByNameDelete(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = templatesByNameDeleteCall(name, _callback);
-        return localVarCall;
+        return templatesByNameDeleteCall(name, _callback);
 
     }
 
@@ -213,7 +207,6 @@ public class TemplatesApi {
      */
     public okhttp3.Call templatesByNameGetCall(String name, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -230,7 +223,7 @@ public class TemplatesApi {
 
         // create path and map variables
         String localVarPath = "/templates/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -247,7 +240,6 @@ public class TemplatesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -260,15 +252,12 @@ public class TemplatesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call templatesByNameGetValidateBeforeCall(String name, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling templatesByNameGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = templatesByNameGetCall(name, _callback);
-        return localVarCall;
+        return templatesByNameGetCall(name, _callback);
 
     }
 
@@ -342,7 +331,6 @@ public class TemplatesApi {
      */
     public okhttp3.Call templatesByNamePutCall(String name, TemplatePayload templatePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -359,7 +347,7 @@ public class TemplatesApi {
 
         // create path and map variables
         String localVarPath = "/templates/{name}"
-            .replaceAll("\\{" + "name" + "\\}", localVarApiClient.escapeString(name.toString()));
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -389,20 +377,17 @@ public class TemplatesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call templatesByNamePutValidateBeforeCall(String name, TemplatePayload templatePayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling templatesByNamePut(Async)");
         }
-        
+
         // verify the required parameter 'templatePayload' is set
         if (templatePayload == null) {
             throw new ApiException("Missing the required parameter 'templatePayload' when calling templatesByNamePut(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = templatesByNamePutCall(name, templatePayload, _callback);
-        return localVarCall;
+        return templatesByNamePutCall(name, templatePayload, _callback);
 
     }
 
@@ -481,7 +466,6 @@ public class TemplatesApi {
      */
     public okhttp3.Call templatesGetCall(List<TemplateScope> scopeType, List<TemplateType> templateTypes, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -530,7 +514,6 @@ public class TemplatesApi {
         }
 
         final String[] localVarContentTypes = {
-            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -543,15 +526,12 @@ public class TemplatesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call templatesGetValidateBeforeCall(List<TemplateScope> scopeType, List<TemplateType> templateTypes, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'scopeType' is set
         if (scopeType == null) {
             throw new ApiException("Missing the required parameter 'scopeType' when calling templatesGet(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = templatesGetCall(scopeType, templateTypes, limit, offset, _callback);
-        return localVarCall;
+        return templatesGetCall(scopeType, templateTypes, limit, offset, _callback);
 
     }
 
@@ -633,7 +613,6 @@ public class TemplatesApi {
      */
     public okhttp3.Call templatesPostCall(TemplatePayload templatePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -679,15 +658,12 @@ public class TemplatesApi {
 
     @SuppressWarnings("rawtypes")
     private okhttp3.Call templatesPostValidateBeforeCall(TemplatePayload templatePayload, final ApiCallback _callback) throws ApiException {
-        
         // verify the required parameter 'templatePayload' is set
         if (templatePayload == null) {
             throw new ApiException("Missing the required parameter 'templatePayload' when calling templatesPost(Async)");
         }
-        
 
-        okhttp3.Call localVarCall = templatesPostCall(templatePayload, _callback);
-        return localVarCall;
+        return templatesPostCall(templatePayload, _callback);
 
     }
 

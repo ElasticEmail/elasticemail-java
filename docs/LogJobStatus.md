@@ -7,9 +7,9 @@
 
 * `ALL` (value: `"All"`)
 
-* `READYTOSEND` (value: `"ReadyToSend"`)
+* `READY_TO_SEND` (value: `"ReadyToSend"`)
 
-* `WAITINGTORETRY` (value: `"WaitingToRetry"`)
+* `WAITING_TO_RETRY` (value: `"WaitingToRetry"`)
 
 * `SENDING` (value: `"Sending"`)
 
@@ -23,7 +23,7 @@
 
 * `UNSUBSCRIBED` (value: `"Unsubscribed"`)
 
-* `ABUSEREPORT` (value: `"AbuseReport"`)
+* `ABUSE_REPORT` (value: `"AbuseReport"`)
 
 
 

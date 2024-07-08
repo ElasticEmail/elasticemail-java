@@ -7,9 +7,9 @@
 
 * `NONE` (value: `"None"`)
 
-* `TOENGAGEDFIRST` (value: `"ToEngagedFirst"`)
+* `TO_ENGAGED_FIRST` (value: `"ToEngagedFirst"`)
 
-* `BYOPENTIME` (value: `"ByOpenTime"`)
+* `BY_OPEN_TIME` (value: `"ByOpenTime"`)
 
 
 

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    To start using this API, you will need your Access Token (available <a href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a href=\"https://api.elasticemail.com/public/help\">here</a>.
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -20,10 +20,10 @@ import com.elasticemail.model.EventsOrderBy;
 import com.elasticemail.model.ExportFileFormats;
 import com.elasticemail.model.ExportLink;
 import com.elasticemail.model.ExportStatus;
-import org.threeten.bp.OffsetDateTime;
+import java.time.OffsetDateTime;
 import com.elasticemail.model.RecipientEvent;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,19 +33,17 @@ import java.util.Map;
 /**
  * API tests for EventsApi
  */
-@Ignore
+@Disabled
 public class EventsApiTest {
 
     private final EventsApi api = new EventsApi();
 
-    
     /**
      * Load Email Events
      *
      * Returns a log of delivery events for the specific transaction ID. Required Access Level: ViewReports
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsByTransactionidGetTest() throws ApiException {
@@ -56,17 +54,15 @@ public class EventsApiTest {
         Integer limit = null;
         Integer offset = null;
         List<RecipientEvent> response = api.eventsByTransactionidGet(transactionid, from, to, orderBy, limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Export Channel Events
      *
      * Export delivery events log information to the specified file format. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsChannelsByNameExportPostTest() throws ApiException {
@@ -78,17 +74,15 @@ public class EventsApiTest {
         CompressionFormat compressionFormat = null;
         String fileName = null;
         ExportLink response = api.eventsChannelsByNameExportPost(name, eventTypes, from, to, fileFormat, compressionFormat, fileName);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Channel Events
      *
      * Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsChannelsByNameGetTest() throws ApiException {
@@ -100,49 +94,43 @@ public class EventsApiTest {
         Integer limit = null;
         Integer offset = null;
         List<RecipientEvent> response = api.eventsChannelsByNameGet(name, eventTypes, from, to, orderBy, limit, offset);
-
         // TODO: test validations
     }
-    
+
     /**
      * Check Channel Export Status
      *
      * Check the current status of the channel export. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsChannelsExportByIdStatusGetTest() throws ApiException {
         String id = null;
         ExportStatus response = api.eventsChannelsExportByIdStatusGet(id);
-
         // TODO: test validations
     }
-    
+
     /**
      * Check Export Status
      *
      * Check the current status of the export. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsExportByIdStatusGetTest() throws ApiException {
         String id = null;
         ExportStatus response = api.eventsExportByIdStatusGet(id);
-
         // TODO: test validations
     }
-    
+
     /**
      * Export Events
      *
      * Export delivery events log information to the specified file format. Required Access Level: Export
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsExportPostTest() throws ApiException {
@@ -153,17 +141,15 @@ public class EventsApiTest {
         CompressionFormat compressionFormat = null;
         String fileName = null;
         ExportLink response = api.eventsExportPost(eventTypes, from, to, fileFormat, compressionFormat, fileName);
-
         // TODO: test validations
     }
-    
+
     /**
      * Load Events
      *
      * Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void eventsGetTest() throws ApiException {
@@ -174,8 +160,7 @@ public class EventsApiTest {
         Integer limit = null;
         Integer offset = null;
         List<RecipientEvent> response = api.eventsGet(eventTypes, from, to, orderBy, limit, offset);
-
         // TODO: test validations
     }
-    
+
 }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    This is the documentation for REST API. If you’d like to read our legacy documentation regarding Web API v2 click <a target=\"_blank\" href=\"https://api.elasticemail.com/public/help\">here</a>.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -14,7 +14,6 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
-import java.util.Arrays;
 import com.elasticemail.model.EmailContent;
 import com.elasticemail.model.EmailRecipient;
 import com.elasticemail.model.Options;
@@ -23,21 +22,43 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.TypeAdapter;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import com.elasticemail.client.JSON;
 
 /**
  * Email data
  */
-@ApiModel(description = "Email data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-31T08:08:48.625855188Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class EmailMessageData {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<EmailRecipient> recipients = new ArrayList<EmailRecipient>();
+  private List<EmailRecipient> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
@@ -47,31 +68,30 @@ public class EmailMessageData {
   @SerializedName(SERIALIZED_NAME_OPTIONS)
   private Options options;
 
-  public EmailMessageData() { 
+  public EmailMessageData() {
   }
 
   public EmailMessageData recipients(List<EmailRecipient> recipients) {
-    
     this.recipients = recipients;
     return this;
   }
 
   public EmailMessageData addRecipientsItem(EmailRecipient recipientsItem) {
+    if (this.recipients == null) {
+      this.recipients = new ArrayList<>();
+    }
     this.recipients.add(recipientsItem);
     return this;
   }
 
-   /**
+  /**
    * List of recipients
    * @return recipients
-  **/
+   */
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "List of recipients")
-
   public List<EmailRecipient> getRecipients() {
     return recipients;
   }
-
 
   public void setRecipients(List<EmailRecipient> recipients) {
     this.recipients = recipients;
@@ -79,22 +99,18 @@ public class EmailMessageData {
 
 
   public EmailMessageData content(EmailContent content) {
-    
     this.content = content;
     return this;
   }
 
-   /**
+  /**
    * Get content
    * @return content
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
+   */
+  @javax.annotation.Nonnull
   public EmailContent getContent() {
     return content;
   }
-
 
   public void setContent(EmailContent content) {
     this.content = content;
@@ -102,26 +118,23 @@ public class EmailMessageData {
 
 
   public EmailMessageData options(Options options) {
-    
     this.options = options;
     return this;
   }
 
-   /**
+  /**
    * Get options
    * @return options
-  **/
+   */
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
   public Options getOptions() {
     return options;
   }
 
-
   public void setOptions(Options options) {
     this.options = options;
   }
+
 
 
   @Override
@@ -165,5 +178,116 @@ public class EmailMessageData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("Recipients");
+    openapiFields.add("Content");
+    openapiFields.add("Options");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("Recipients");
+    openapiRequiredFields.add("Content");
+  }
+
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailMessageData
+   */
+  public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      if (jsonElement == null) {
+        if (!EmailMessageData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in EmailMessageData is not found in the empty JSON string", EmailMessageData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Map.Entry<String, JsonElement> entry : entries) {
+        if (!EmailMessageData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EmailMessageData` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : EmailMessageData.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        }
+      }
+        JsonObject jsonObj = jsonElement.getAsJsonObject();
+      // ensure the json data is an array
+      if (!jsonObj.get("Recipients").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `Recipients` to be an array in the JSON string but got `%s`", jsonObj.get("Recipients").toString()));
+      }
+
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("Recipients");
+      // validate the required field `Recipients` (array)
+      for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+        EmailRecipient.validateJsonElement(jsonArrayrecipients.get(i));
+      };
+      // validate the required field `Content`
+      EmailContent.validateJsonElement(jsonObj.get("Content"));
+      // validate the optional field `Options`
+      if (jsonObj.get("Options") != null && !jsonObj.get("Options").isJsonNull()) {
+        Options.validateJsonElement(jsonObj.get("Options"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!EmailMessageData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'EmailMessageData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<EmailMessageData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(EmailMessageData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<EmailMessageData>() {
+           @Override
+           public void write(JsonWriter out, EmailMessageData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public EmailMessageData read(JsonReader in) throws IOException {
+             JsonElement jsonElement = elementAdapter.read(in);
+             validateJsonElement(jsonElement);
+             return thisAdapter.fromJsonTree(jsonElement);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+  /**
+   * Create an instance of EmailMessageData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailMessageData
+   * @throws IOException if the JSON string is invalid with respect to EmailMessageData
+   */
+  public static EmailMessageData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, EmailMessageData.class);
+  }
+
+  /**
+   * Convert an instance of EmailMessageData to an JSON string
+   *
+   * @return JSON string
+   */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 
