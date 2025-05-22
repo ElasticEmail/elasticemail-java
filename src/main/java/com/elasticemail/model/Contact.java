@@ -57,7 +57,7 @@ import com.elasticemail.client.JSON;
 /**
  * Contact
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Contact {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -85,7 +85,7 @@ public class Contact {
 
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  private ContactSource source = ContactSource.DELIVERY_API;
+  private ContactSource source = ContactSource.DELIVERYAPI;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
@@ -111,10 +111,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Proper email address.
    * @return email
-   */
+  **/
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
@@ -130,10 +130,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Get status
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public ContactStatus getStatus() {
     return status;
@@ -149,10 +149,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * First name.
    * @return firstName
-   */
+  **/
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -168,10 +168,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Last name.
    * @return lastName
-   */
+  **/
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -195,10 +195,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * A key-value collection of custom contact fields which can be used in the system.
    * @return customFields
-   */
+  **/
   @javax.annotation.Nullable
   public Map<String, String> getCustomFields() {
     return customFields;
@@ -214,10 +214,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Get consent
    * @return consent
-   */
+  **/
   @javax.annotation.Nullable
   public ConsentData getConsent() {
     return consent;
@@ -233,10 +233,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Get source
    * @return source
-   */
+  **/
   @javax.annotation.Nullable
   public ContactSource getSource() {
     return source;
@@ -252,10 +252,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
@@ -271,10 +271,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Last change date
    * @return dateUpdated
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateUpdated() {
     return dateUpdated;
@@ -290,10 +290,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Date of last status change.
    * @return statusChangeDate
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getStatusChangeDate() {
     return statusChangeDate;
@@ -309,10 +309,10 @@ public class Contact {
     return this;
   }
 
-  /**
+   /**
    * Get activity
    * @return activity
-   */
+  **/
   @javax.annotation.Nullable
   public ContactActivity getActivity() {
     return activity;
@@ -415,12 +415,12 @@ public class Contact {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Contact
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Contact
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Contact.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -492,22 +492,22 @@ public class Contact {
     }
   }
 
-  /**
-   * Create an instance of Contact given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of Contact
-   * @throws IOException if the JSON string is invalid with respect to Contact
-   */
+ /**
+  * Create an instance of Contact given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of Contact
+  * @throws IOException if the JSON string is invalid with respect to Contact
+  */
   public static Contact fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Contact.class);
   }
 
-  /**
-   * Convert an instance of Contact to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of Contact to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

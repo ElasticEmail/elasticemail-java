@@ -29,15 +29,25 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(TemplateType.Adapter.class)
 public enum TemplateType {
   
-  RAW_HTML("RawHTML"),
+  RAWHTML("RawHTML"),
   
-  DRAG_DROP_EDITOR("DragDropEditor"),
+  DRAGDROPEDITOR("DragDropEditor"),
   
-  LANDING_PAGE_EDITOR("LandingPageEditor"),
+  LANDINGPAGEEDITOR("LandingPageEditor"),
   
-  TEMPLATE_EDITOR("TemplateEditor"),
+  TEMPLATEEDITOR("TemplateEditor"),
   
-  FORM_TEMPLATE("FormTemplate");
+  FORMTEMPLATE("FormTemplate"),
+  
+  LANDINGPAGETEMPLATE("LandingPageTemplate"),
+  
+  PAYMENTCONFIRMATIONTEMPLATE("PaymentConfirmationTemplate"),
+  
+  LANDINGPAGEPRODUCTTEMPLATE("LandingPageProductTemplate"),
+  
+  LANDINGPAGECHECKOUTTEMPLATE("LandingPageCheckoutTemplate"),
+  
+  LANDINGPAGEPAYMENTCONFIRMATIONTEMPLATE("LandingPagePaymentConfirmationTemplate");
 
   private String value;
 

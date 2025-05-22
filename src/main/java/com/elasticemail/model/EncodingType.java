@@ -29,7 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(EncodingType.Adapter.class)
 public enum EncodingType {
   
-  USER_PROVIDED("UserProvided"),
+  USERPROVIDED("UserProvided"),
   
   NONE("None"),
   
@@ -37,7 +37,7 @@ public enum EncodingType {
   
   RAW8BIT("Raw8bit"),
   
-  QUOTED_PRINTABLE("QuotedPrintable"),
+  QUOTEDPRINTABLE("QuotedPrintable"),
   
   BASE64("Base64"),
   

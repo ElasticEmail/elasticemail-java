@@ -29,9 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(EventsOrderBy.Adapter.class)
 public enum EventsOrderBy {
   
-  DATE_DESCENDING("DateDescending"),
+  DATEDESCENDING("DateDescending"),
   
-  DATE_ASCENDING("DateAscending");
+  DATEASCENDING("DateAscending");
 
   private String value;
 

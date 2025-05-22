@@ -101,6 +101,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("apikey", new ApiKeyAuth("header", "X-ElasticEmail-ApiKey"));
+        authentications.put("ApiKeyAuthCustomBranding", new ApiKeyAuth("header", "X-Auth-Token"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -117,6 +118,7 @@ public class ApiClient {
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("apikey", new ApiKeyAuth("header", "X-ElasticEmail-ApiKey"));
+        authentications.put("ApiKeyAuthCustomBranding", new ApiKeyAuth("header", "X-Auth-Token"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
     }
@@ -141,7 +143,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/4.1.0/java");
+        setUserAgent("OpenAPI-Generator/4.0.26/java");
 
         authentications = new HashMap<String, Authentication>();
     }

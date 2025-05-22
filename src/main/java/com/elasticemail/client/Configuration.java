@@ -13,9 +13,9 @@
 
 package com.elasticemail.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Configuration {
-    public static final String VERSION = "4.1.0";
+    public static final String VERSION = "4.0.26";
 
     private static ApiClient defaultApiClient = new ApiClient();
 

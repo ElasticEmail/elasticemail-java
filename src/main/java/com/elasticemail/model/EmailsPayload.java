@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * Provide either rule or a list of emails, not both.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailsPayload {
   public static final String SERIALIZED_NAME_RULE = "Rule";
   @SerializedName(SERIALIZED_NAME_RULE)
@@ -69,10 +69,10 @@ public class EmailsPayload {
     return this;
   }
 
-  /**
+   /**
    * SQL-like rule. Sending &#39;All&#39; as a value loads all resources of the given type. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules
    * @return rule
-   */
+  **/
   @javax.annotation.Nullable
   public String getRule() {
     return rule;
@@ -96,10 +96,10 @@ public class EmailsPayload {
     return this;
   }
 
-  /**
+   /**
    * Comma delimited list of contact emails
    * @return emails
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getEmails() {
     return emails;
@@ -164,12 +164,12 @@ public class EmailsPayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailsPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailsPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailsPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -223,22 +223,22 @@ public class EmailsPayload {
     }
   }
 
-  /**
-   * Create an instance of EmailsPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailsPayload
-   * @throws IOException if the JSON string is invalid with respect to EmailsPayload
-   */
+ /**
+  * Create an instance of EmailsPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailsPayload
+  * @throws IOException if the JSON string is invalid with respect to EmailsPayload
+  */
   public static EmailsPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailsPayload.class);
   }
 
-  /**
-   * Convert an instance of EmailsPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailsPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

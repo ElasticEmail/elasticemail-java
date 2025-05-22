@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * MessageAttachment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class MessageAttachment {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
@@ -75,10 +75,10 @@ public class MessageAttachment {
     return this;
   }
 
-  /**
+   /**
    * File&#39;s content as byte array (or a Base64 string)
    * @return binaryContent
-   */
+  **/
   @javax.annotation.Nonnull
   public byte[] getBinaryContent() {
     return binaryContent;
@@ -94,10 +94,10 @@ public class MessageAttachment {
     return this;
   }
 
-  /**
+   /**
    * Display name of the file
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -113,10 +113,10 @@ public class MessageAttachment {
     return this;
   }
 
-  /**
+   /**
    * MIME content type
    * @return contentType
-   */
+  **/
   @javax.annotation.Nullable
   public String getContentType() {
     return contentType;
@@ -132,10 +132,10 @@ public class MessageAttachment {
     return this;
   }
 
-  /**
+   /**
    * Size of your attachment (in bytes).
    * @return size
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getSize() {
     return size;
@@ -208,12 +208,12 @@ public class MessageAttachment {
     openapiRequiredFields.add("Name");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to MessageAttachment
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to MessageAttachment
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MessageAttachment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -273,22 +273,22 @@ public class MessageAttachment {
     }
   }
 
-  /**
-   * Create an instance of MessageAttachment given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of MessageAttachment
-   * @throws IOException if the JSON string is invalid with respect to MessageAttachment
-   */
+ /**
+  * Create an instance of MessageAttachment given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of MessageAttachment
+  * @throws IOException if the JSON string is invalid with respect to MessageAttachment
+  */
   public static MessageAttachment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MessageAttachment.class);
   }
 
-  /**
-   * Convert an instance of MessageAttachment to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of MessageAttachment to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

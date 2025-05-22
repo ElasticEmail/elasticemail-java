@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * FilePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class FilePayload {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
@@ -71,10 +71,10 @@ public class FilePayload {
     return this;
   }
 
-  /**
+   /**
    * Content of the file sent as binary data
    * @return binaryContent
-   */
+  **/
   @javax.annotation.Nonnull
   public byte[] getBinaryContent() {
     return binaryContent;
@@ -90,10 +90,10 @@ public class FilePayload {
     return this;
   }
 
-  /**
+   /**
    * Filename
    * @return name
-   */
+  **/
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -109,10 +109,10 @@ public class FilePayload {
     return this;
   }
 
-  /**
+   /**
    * Type of file&#39;s content (e.g. image/jpeg)
    * @return contentType
-   */
+  **/
   @javax.annotation.Nullable
   public String getContentType() {
     return contentType;
@@ -181,12 +181,12 @@ public class FilePayload {
     openapiRequiredFields.add("BinaryContent");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to FilePayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to FilePayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FilePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -246,22 +246,22 @@ public class FilePayload {
     }
   }
 
-  /**
-   * Create an instance of FilePayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of FilePayload
-   * @throws IOException if the JSON string is invalid with respect to FilePayload
-   */
+ /**
+  * Create an instance of FilePayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of FilePayload
+  * @throws IOException if the JSON string is invalid with respect to FilePayload
+  */
   public static FilePayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FilePayload.class);
   }
 
-  /**
-   * Convert an instance of FilePayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of FilePayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

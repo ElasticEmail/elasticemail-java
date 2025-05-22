@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * A change to SubAccount email credits pool, with an additional note.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SubaccountEmailCreditsPayload {
   public static final String SERIALIZED_NAME_CREDITS = "Credits";
   @SerializedName(SERIALIZED_NAME_CREDITS)
@@ -67,10 +67,10 @@ public class SubaccountEmailCreditsPayload {
     return this;
   }
 
-  /**
+   /**
    * Positive or negative value; this will be added or subtracted from Subaccount&#39;s current email Credits pool.
    * @return credits
-   */
+  **/
   @javax.annotation.Nonnull
   public Integer getCredits() {
     return credits;
@@ -86,10 +86,10 @@ public class SubaccountEmailCreditsPayload {
     return this;
   }
 
-  /**
+   /**
    * Note to append to this credits change, for history.
    * @return notes
-   */
+  **/
   @javax.annotation.Nullable
   public String getNotes() {
     return notes;
@@ -155,12 +155,12 @@ public class SubaccountEmailCreditsPayload {
     openapiRequiredFields.add("Credits");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailCreditsPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailCreditsPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountEmailCreditsPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -217,22 +217,22 @@ public class SubaccountEmailCreditsPayload {
     }
   }
 
-  /**
-   * Create an instance of SubaccountEmailCreditsPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SubaccountEmailCreditsPayload
-   * @throws IOException if the JSON string is invalid with respect to SubaccountEmailCreditsPayload
-   */
+ /**
+  * Create an instance of SubaccountEmailCreditsPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SubaccountEmailCreditsPayload
+  * @throws IOException if the JSON string is invalid with respect to SubaccountEmailCreditsPayload
+  */
   public static SubaccountEmailCreditsPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountEmailCreditsPayload.class);
   }
 
-  /**
-   * Convert an instance of SubaccountEmailCreditsPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SubaccountEmailCreditsPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

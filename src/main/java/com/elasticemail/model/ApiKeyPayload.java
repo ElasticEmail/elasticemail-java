@@ -54,7 +54,7 @@ import com.elasticemail.client.JSON;
 /**
  * Create a new ApiKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ApiKeyPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -84,10 +84,10 @@ public class ApiKeyPayload {
     return this;
   }
 
-  /**
+   /**
    * Name of the ApiKey for ease of reference.
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -111,10 +111,10 @@ public class ApiKeyPayload {
     return this;
   }
 
-  /**
+   /**
    * Access level or permission to be assigned to this ApiKey.
    * @return accessLevel
-   */
+  **/
   @javax.annotation.Nonnull
   public List<AccessLevel> getAccessLevel() {
     return accessLevel;
@@ -130,10 +130,10 @@ public class ApiKeyPayload {
     return this;
   }
 
-  /**
+   /**
    * Date this ApiKey expires.
    * @return expires
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getExpires() {
     return expires;
@@ -157,10 +157,10 @@ public class ApiKeyPayload {
     return this;
   }
 
-  /**
+   /**
    * Which IPs can use this ApiKey
    * @return restrictAccessToIPRange
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
@@ -176,10 +176,10 @@ public class ApiKeyPayload {
     return this;
   }
 
-  /**
+   /**
    * Email of the subaccount for which this ApiKey should be created
    * @return subaccount
-   */
+  **/
   @javax.annotation.Nullable
   public String getSubaccount() {
     return subaccount;
@@ -266,12 +266,12 @@ public class ApiKeyPayload {
     openapiRequiredFields.add("AccessLevel");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ApiKeyPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ApiKeyPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApiKeyPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -341,22 +341,22 @@ public class ApiKeyPayload {
     }
   }
 
-  /**
-   * Create an instance of ApiKeyPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ApiKeyPayload
-   * @throws IOException if the JSON string is invalid with respect to ApiKeyPayload
-   */
+ /**
+  * Create an instance of ApiKeyPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ApiKeyPayload
+  * @throws IOException if the JSON string is invalid with respect to ApiKeyPayload
+  */
   public static ApiKeyPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApiKeyPayload.class);
   }
 
-  /**
-   * Convert an instance of ApiKeyPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ApiKeyPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

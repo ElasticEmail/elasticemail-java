@@ -6,6 +6,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 |------------- | ------------- | -------------|
 | [**campaignsByNameDelete**](CampaignsApi.md#campaignsByNameDelete) | **DELETE** /campaigns/{name} | Delete Campaign |
 | [**campaignsByNameGet**](CampaignsApi.md#campaignsByNameGet) | **GET** /campaigns/{name} | Load Campaign |
+| [**campaignsByNamePausePut**](CampaignsApi.md#campaignsByNamePausePut) | **PUT** /campaigns/{name}/pause | Pause Campaign |
 | [**campaignsByNamePut**](CampaignsApi.md#campaignsByNamePut) | **PUT** /campaigns/{name} | Update Campaign |
 | [**campaignsGet**](CampaignsApi.md#campaignsGet) | **GET** /campaigns | Load Campaigns |
 | [**campaignsPost**](CampaignsApi.md#campaignsPost) | **POST** /campaigns | Add Campaign |
@@ -142,6 +143,74 @@ public class Example {
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+<a id="campaignsByNamePausePut"></a>
+# **campaignsByNamePausePut**
+> campaignsByNamePausePut(name)
+
+Pause Campaign
+
+Pauses the specific campaign, cancelling emails that are waiting to be sent. Required Access Level: ModifyCampaigns
+
+### Example
+```java
+// Import classes:
+import com.elasticemail.client.ApiClient;
+import com.elasticemail.client.ApiException;
+import com.elasticemail.client.Configuration;
+import com.elasticemail.client.auth.*;
+import com.elasticemail.client.models.*;
+import com.elasticemail.api.CampaignsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.elasticemail.com/v4");
+    
+    // Configure API key authorization: apikey
+    ApiKeyAuth apikey = (ApiKeyAuth) defaultClient.getAuthentication("apikey");
+    apikey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apikey.setApiKeyPrefix("Token");
+
+    CampaignsApi apiInstance = new CampaignsApi(defaultClient);
+    String name = "name_example"; // String | Name of Campaign to pause
+    try {
+      apiInstance.campaignsByNamePausePut(name);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CampaignsApi#campaignsByNamePausePut");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**| Name of Campaign to pause | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |

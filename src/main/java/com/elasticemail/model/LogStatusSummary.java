@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * Summary of log status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class LogStatusSummary {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -111,10 +111,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of recipients
    * @return recipients
-   */
+  **/
   @javax.annotation.Nullable
   public Long getRecipients() {
     return recipients;
@@ -130,10 +130,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of emails
    * @return emailTotal
-   */
+  **/
   @javax.annotation.Nullable
   public Long getEmailTotal() {
     return emailTotal;
@@ -149,10 +149,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of SMS
    * @return smsTotal
-   */
+  **/
   @javax.annotation.Nullable
   public Long getSmsTotal() {
     return smsTotal;
@@ -168,10 +168,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of delivered messages
    * @return delivered
-   */
+  **/
   @javax.annotation.Nullable
   public Long getDelivered() {
     return delivered;
@@ -187,10 +187,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of bounced messages
    * @return bounced
-   */
+  **/
   @javax.annotation.Nullable
   public Long getBounced() {
     return bounced;
@@ -206,10 +206,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of messages in progress
    * @return inProgress
-   */
+  **/
   @javax.annotation.Nullable
   public Long getInProgress() {
     return inProgress;
@@ -225,10 +225,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of opened messages
    * @return opened
-   */
+  **/
   @javax.annotation.Nullable
   public Long getOpened() {
     return opened;
@@ -244,10 +244,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of clicked messages
    * @return clicked
-   */
+  **/
   @javax.annotation.Nullable
   public Long getClicked() {
     return clicked;
@@ -263,10 +263,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of unsubscribed messages
    * @return unsubscribed
-   */
+  **/
   @javax.annotation.Nullable
   public Long getUnsubscribed() {
     return unsubscribed;
@@ -282,10 +282,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of complaint messages
    * @return complaints
-   */
+  **/
   @javax.annotation.Nullable
   public Long getComplaints() {
     return complaints;
@@ -301,10 +301,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of inbound messages
    * @return inbound
-   */
+  **/
   @javax.annotation.Nullable
   public Long getInbound() {
     return inbound;
@@ -320,10 +320,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of manually cancelled messages
    * @return manualCancel
-   */
+  **/
   @javax.annotation.Nullable
   public Long getManualCancel() {
     return manualCancel;
@@ -339,10 +339,10 @@ public class LogStatusSummary {
     return this;
   }
 
-  /**
+   /**
    * Number of messages flagged with &#39;Not Delivered&#39;
    * @return notDelivered
-   */
+  **/
   @javax.annotation.Nullable
   public Long getNotDelivered() {
     return notDelivered;
@@ -440,12 +440,12 @@ public class LogStatusSummary {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to LogStatusSummary
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to LogStatusSummary
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LogStatusSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -492,22 +492,22 @@ public class LogStatusSummary {
     }
   }
 
-  /**
-   * Create an instance of LogStatusSummary given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of LogStatusSummary
-   * @throws IOException if the JSON string is invalid with respect to LogStatusSummary
-   */
+ /**
+  * Create an instance of LogStatusSummary given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of LogStatusSummary
+  * @throws IOException if the JSON string is invalid with respect to LogStatusSummary
+  */
   public static LogStatusSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LogStatusSummary.class);
   }
 
-  /**
-   * Convert an instance of LogStatusSummary to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of LogStatusSummary to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

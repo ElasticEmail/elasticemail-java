@@ -29,9 +29,9 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(InboundRouteActionType.Adapter.class)
 public enum InboundRouteActionType {
   
-  FORWARD_TO_EMAIL("ForwardToEmail"),
+  FORWARDTOEMAIL("ForwardToEmail"),
   
-  NOTIFY_VIA_HTTP("NotifyViaHttp"),
+  NOTIFYVIAHTTP("NotifyViaHttp"),
   
   STOP("Stop");
 

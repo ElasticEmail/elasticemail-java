@@ -31,9 +31,9 @@ public enum DeliveryOptimizationType {
   
   NONE("None"),
   
-  TO_ENGAGED_FIRST("ToEngagedFirst"),
+  TOENGAGEDFIRST("ToEngagedFirst"),
   
-  BY_OPEN_TIME("ByOpenTime");
+  BYOPENTIME("ByOpenTime");
 
   private String value;
 

@@ -7,7 +7,7 @@
 
 * `HTML` (value: `"HTML"`)
 
-* `PLAIN_TEXT` (value: `"PlainText"`)
+* `PLAINTEXT` (value: `"PlainText"`)
 
 * `AMP` (value: `"AMP"`)
 

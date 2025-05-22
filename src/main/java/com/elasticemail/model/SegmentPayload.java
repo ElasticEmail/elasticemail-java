@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * SegmentPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SegmentPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -67,10 +67,10 @@ public class SegmentPayload {
     return this;
   }
 
-  /**
+   /**
    * Segment name
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -86,10 +86,10 @@ public class SegmentPayload {
     return this;
   }
 
-  /**
+   /**
    * SQL-like rule to determine which Contacts belong to this Segment. Help for building a segment rule can be found here: https://help.elasticemail.com/en/articles/5162182-segment-rules
    * @return rule
-   */
+  **/
   @javax.annotation.Nonnull
   public String getRule() {
     return rule;
@@ -156,12 +156,12 @@ public class SegmentPayload {
     openapiRequiredFields.add("Rule");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SegmentPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SegmentPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SegmentPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -221,22 +221,22 @@ public class SegmentPayload {
     }
   }
 
-  /**
-   * Create an instance of SegmentPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SegmentPayload
-   * @throws IOException if the JSON string is invalid with respect to SegmentPayload
-   */
+ /**
+  * Create an instance of SegmentPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SegmentPayload
+  * @throws IOException if the JSON string is invalid with respect to SegmentPayload
+  */
   public static SegmentPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SegmentPayload.class);
   }
 
-  /**
-   * Convert an instance of SegmentPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SegmentPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

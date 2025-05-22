@@ -31,7 +31,7 @@ public enum BodyContentType {
   
   HTML("HTML"),
   
-  PLAIN_TEXT("PlainText"),
+  PLAINTEXT("PlainText"),
   
   AMP("AMP"),
   

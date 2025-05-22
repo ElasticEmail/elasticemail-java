@@ -9,9 +9,9 @@
 
 * `VALID` (value: `"Valid"`)
 
-* `LOW_RISK` (value: `"LowRisk"`)
+* `LOWRISK` (value: `"LowRisk"`)
 
-* `HIGH_RISK` (value: `"HighRisk"`)
+* `HIGHRISK` (value: `"HighRisk"`)
 
 * `INVALID` (value: `"Invalid"`)
 

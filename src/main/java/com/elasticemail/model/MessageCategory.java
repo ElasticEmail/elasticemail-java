@@ -35,33 +35,33 @@ public enum MessageCategory {
   
   SPAM("Spam"),
   
-  BLACK_LISTED("BlackListed"),
+  BLACKLISTED("BlackListed"),
   
-  NO_MAILBOX("NoMailbox"),
+  NOMAILBOX("NoMailbox"),
   
-  GREY_LISTED("GreyListed"),
+  GREYLISTED("GreyListed"),
   
   THROTTLED("Throttled"),
   
   TIMEOUT("Timeout"),
   
-  CONNECTION_PROBLEM("ConnectionProblem"),
+  CONNECTIONPROBLEM("ConnectionProblem"),
   
-  SPF_PROBLEM("SPFProblem"),
+  SPFPROBLEM("SPFProblem"),
   
-  ACCOUNT_PROBLEM("AccountProblem"),
+  ACCOUNTPROBLEM("AccountProblem"),
   
-  DNS_PROBLEM("DNSProblem"),
+  DNSPROBLEM("DNSProblem"),
   
-  NOT_DELIVERED_CANCELLED("NotDeliveredCancelled"),
+  NOTDELIVEREDCANCELLED("NotDeliveredCancelled"),
   
-  CODE_ERROR("CodeError"),
+  CODEERROR("CodeError"),
   
-  MANUAL_CANCEL("ManualCancel"),
+  MANUALCANCEL("ManualCancel"),
   
-  CONNECTION_TERMINATED("ConnectionTerminated"),
+  CONNECTIONTERMINATED("ConnectionTerminated"),
   
-  NOT_DELIVERED("NotDelivered");
+  NOTDELIVERED("NotDelivered");
 
   private String value;
 

@@ -45,7 +45,7 @@ public enum ContactStatus {
   
   STALE("Stale"),
   
-  NOT_CONFIRMED("NotConfirmed");
+  NOTCONFIRMED("NotConfirmed");
 
   private String value;
 

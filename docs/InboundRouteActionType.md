@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `FORWARD_TO_EMAIL` (value: `"ForwardToEmail"`)
+* `FORWARDTOEMAIL` (value: `"ForwardToEmail"`)
 
-* `NOTIFY_VIA_HTTP` (value: `"NotifyViaHttp"`)
+* `NOTIFYVIAHTTP` (value: `"NotifyViaHttp"`)
 
 * `STOP` (value: `"Stop"`)
 

@@ -54,7 +54,7 @@ import com.elasticemail.client.JSON;
 /**
  * Newly generated SMTP Credentials with Token
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class NewSmtpCredentials {
   public static final String SERIALIZED_NAME_TOKEN = "Token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
@@ -92,10 +92,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Unique token to be used in the system
    * @return token
-   */
+  **/
   @javax.annotation.Nullable
   public String getToken() {
     return token;
@@ -111,10 +111,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Get accessLevel
    * @return accessLevel
-   */
+  **/
   @javax.annotation.Nullable
   public AccessLevel getAccessLevel() {
     return accessLevel;
@@ -130,10 +130,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Name of the key.
    * @return name
-   */
+  **/
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -149,10 +149,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Date this SmtpCredential was created.
    * @return dateCreated
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateCreated() {
     return dateCreated;
@@ -168,10 +168,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Date this SmtpCredential was last used.
    * @return lastUse
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getLastUse() {
     return lastUse;
@@ -187,10 +187,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Date this SmtpCredential expires.
    * @return expires
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getExpires() {
     return expires;
@@ -214,10 +214,10 @@ public class NewSmtpCredentials {
     return this;
   }
 
-  /**
+   /**
    * Which IPs can use this SmtpCredential
    * @return restrictAccessToIPRange
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
@@ -308,12 +308,12 @@ public class NewSmtpCredentials {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to NewSmtpCredentials
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to NewSmtpCredentials
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NewSmtpCredentials.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -374,22 +374,22 @@ public class NewSmtpCredentials {
     }
   }
 
-  /**
-   * Create an instance of NewSmtpCredentials given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of NewSmtpCredentials
-   * @throws IOException if the JSON string is invalid with respect to NewSmtpCredentials
-   */
+ /**
+  * Create an instance of NewSmtpCredentials given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of NewSmtpCredentials
+  * @throws IOException if the JSON string is invalid with respect to NewSmtpCredentials
+  */
   public static NewSmtpCredentials fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NewSmtpCredentials.class);
   }
 
-  /**
-   * Convert an instance of NewSmtpCredentials to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of NewSmtpCredentials to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -15,6 +15,7 @@ package com.elasticemail.model;
 
 import java.util.Objects;
 import com.elasticemail.model.LogJobStatus;
+import com.elasticemail.model.MessageCategoryEnum;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * Status information of the specified email
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailStatus {
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
@@ -102,6 +103,10 @@ public class EmailStatus {
   @SerializedName(SERIALIZED_NAME_ENVELOPE_FROM)
   private String envelopeFrom;
 
+  public static final String SERIALIZED_NAME_ERROR_CATEGORY = "ErrorCategory";
+  @SerializedName(SERIALIZED_NAME_ERROR_CATEGORY)
+  private MessageCategoryEnum errorCategory = MessageCategoryEnum.UNKNOWN;
+
   public EmailStatus() {
   }
 
@@ -110,10 +115,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Email address this email was sent from.
    * @return from
-   */
+  **/
   @javax.annotation.Nullable
   public String getFrom() {
     return from;
@@ -129,10 +134,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Email address this email was sent to.
    * @return to
-   */
+  **/
   @javax.annotation.Nullable
   public String getTo() {
     return to;
@@ -148,10 +153,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Date the email was submitted.
    * @return date
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDate() {
     return date;
@@ -167,10 +172,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Get status
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public LogJobStatus getStatus() {
     return status;
@@ -186,10 +191,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Name of email&#39;s status
    * @return statusName
-   */
+  **/
   @javax.annotation.Nullable
   public String getStatusName() {
     return statusName;
@@ -205,10 +210,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Date of last status change.
    * @return statusChangeDate
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getStatusChangeDate() {
     return statusChangeDate;
@@ -224,10 +229,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Date when the email was sent
    * @return dateSent
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateSent() {
     return dateSent;
@@ -243,10 +248,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Date when the email changed the status to &#39;opened&#39;
    * @return dateOpened
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateOpened() {
     return dateOpened;
@@ -262,10 +267,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Date when the email changed the status to &#39;clicked&#39;
    * @return dateClicked
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateClicked() {
     return dateClicked;
@@ -281,10 +286,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Detailed error or bounced message.
    * @return errorMessage
-   */
+  **/
   @javax.annotation.Nullable
   public String getErrorMessage() {
     return errorMessage;
@@ -300,10 +305,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * ID number of transaction
    * @return transactionID
-   */
+  **/
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
@@ -319,10 +324,10 @@ public class EmailStatus {
     return this;
   }
 
-  /**
+   /**
    * Envelope from address
    * @return envelopeFrom
-   */
+  **/
   @javax.annotation.Nullable
   public String getEnvelopeFrom() {
     return envelopeFrom;
@@ -330,6 +335,25 @@ public class EmailStatus {
 
   public void setEnvelopeFrom(String envelopeFrom) {
     this.envelopeFrom = envelopeFrom;
+  }
+
+
+  public EmailStatus errorCategory(MessageCategoryEnum errorCategory) {
+    this.errorCategory = errorCategory;
+    return this;
+  }
+
+   /**
+   * Get errorCategory
+   * @return errorCategory
+  **/
+  @javax.annotation.Nullable
+  public MessageCategoryEnum getErrorCategory() {
+    return errorCategory;
+  }
+
+  public void setErrorCategory(MessageCategoryEnum errorCategory) {
+    this.errorCategory = errorCategory;
   }
 
 
@@ -354,7 +378,8 @@ public class EmailStatus {
         Objects.equals(this.dateClicked, emailStatus.dateClicked) &&
         Objects.equals(this.errorMessage, emailStatus.errorMessage) &&
         Objects.equals(this.transactionID, emailStatus.transactionID) &&
-        Objects.equals(this.envelopeFrom, emailStatus.envelopeFrom);
+        Objects.equals(this.envelopeFrom, emailStatus.envelopeFrom) &&
+        Objects.equals(this.errorCategory, emailStatus.errorCategory);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -363,7 +388,7 @@ public class EmailStatus {
 
   @Override
   public int hashCode() {
-    return Objects.hash(from, to, date, status, statusName, statusChangeDate, dateSent, dateOpened, dateClicked, errorMessage, transactionID, envelopeFrom);
+    return Objects.hash(from, to, date, status, statusName, statusChangeDate, dateSent, dateOpened, dateClicked, errorMessage, transactionID, envelopeFrom, errorCategory);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -389,6 +414,7 @@ public class EmailStatus {
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    transactionID: ").append(toIndentedString(transactionID)).append("\n");
     sb.append("    envelopeFrom: ").append(toIndentedString(envelopeFrom)).append("\n");
+    sb.append("    errorCategory: ").append(toIndentedString(errorCategory)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -423,17 +449,18 @@ public class EmailStatus {
     openapiFields.add("ErrorMessage");
     openapiFields.add("TransactionID");
     openapiFields.add("EnvelopeFrom");
+    openapiFields.add("ErrorCategory");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailStatus
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailStatus
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -471,6 +498,10 @@ public class EmailStatus {
       if ((jsonObj.get("EnvelopeFrom") != null && !jsonObj.get("EnvelopeFrom").isJsonNull()) && !jsonObj.get("EnvelopeFrom").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `EnvelopeFrom` to be a primitive type in the JSON string but got `%s`", jsonObj.get("EnvelopeFrom").toString()));
       }
+      // validate the optional field `ErrorCategory`
+      if (jsonObj.get("ErrorCategory") != null && !jsonObj.get("ErrorCategory").isJsonNull()) {
+        MessageCategoryEnum.validateJsonElement(jsonObj.get("ErrorCategory"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
@@ -502,22 +533,22 @@ public class EmailStatus {
     }
   }
 
-  /**
-   * Create an instance of EmailStatus given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailStatus
-   * @throws IOException if the JSON string is invalid with respect to EmailStatus
-   */
+ /**
+  * Create an instance of EmailStatus given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailStatus
+  * @throws IOException if the JSON string is invalid with respect to EmailStatus
+  */
   public static EmailStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailStatus.class);
   }
 
-  /**
-   * Convert an instance of EmailStatus to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailStatus to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

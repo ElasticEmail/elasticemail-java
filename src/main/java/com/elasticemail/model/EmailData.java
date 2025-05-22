@@ -54,7 +54,7 @@ import com.elasticemail.client.JSON;
 /**
  * EmailData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailData {
   public static final String SERIALIZED_NAME_PREVIEW = "Preview";
   @SerializedName(SERIALIZED_NAME_PREVIEW)
@@ -76,10 +76,10 @@ public class EmailData {
     return this;
   }
 
-  /**
+   /**
    * Get preview
    * @return preview
-   */
+  **/
   @javax.annotation.Nullable
   public EmailView getPreview() {
     return preview;
@@ -103,10 +103,10 @@ public class EmailData {
     return this;
   }
 
-  /**
+   /**
    * Attachments sent with the email
    * @return attachments
-   */
+  **/
   @javax.annotation.Nullable
   public List<FileInfo> getAttachments() {
     return attachments;
@@ -122,10 +122,10 @@ public class EmailData {
     return this;
   }
 
-  /**
+   /**
    * Get status
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public EmailStatus getStatus() {
     return status;
@@ -193,12 +193,12 @@ public class EmailData {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailData
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailData
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -267,22 +267,22 @@ public class EmailData {
     }
   }
 
-  /**
-   * Create an instance of EmailData given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailData
-   * @throws IOException if the JSON string is invalid with respect to EmailData
-   */
+ /**
+  * Create an instance of EmailData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailData
+  * @throws IOException if the JSON string is invalid with respect to EmailData
+  */
   public static EmailData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailData.class);
   }
 
-  /**
-   * Convert an instance of EmailData to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailData to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

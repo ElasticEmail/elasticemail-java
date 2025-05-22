@@ -2,8 +2,8 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2024-07-08T09:36:05.709243Z[Etc/UTC]
-  - Generator version: 7.7.0
+  - Build date: 2025-05-22T13:34:56.566653Z[Etc/UTC]
+  - Generator version: 7.5.0
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
 
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.1.0</version>
+  <version>4.0.26</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -65,7 +65,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.elasticemail:elasticemail:4.1.0"
+     implementation "com.elasticemail:elasticemail:4.0.26"
   }
 ```
 
@@ -79,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.1.0.jar`
+* `target/elasticemail-4.0.26.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -131,6 +131,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CampaignsApi* | [**campaignsByNameDelete**](docs/CampaignsApi.md#campaignsByNameDelete) | **DELETE** /campaigns/{name} | Delete Campaign
 *CampaignsApi* | [**campaignsByNameGet**](docs/CampaignsApi.md#campaignsByNameGet) | **GET** /campaigns/{name} | Load Campaign
+*CampaignsApi* | [**campaignsByNamePausePut**](docs/CampaignsApi.md#campaignsByNamePausePut) | **PUT** /campaigns/{name}/pause | Pause Campaign
 *CampaignsApi* | [**campaignsByNamePut**](docs/CampaignsApi.md#campaignsByNamePut) | **PUT** /campaigns/{name} | Update Campaign
 *CampaignsApi* | [**campaignsGet**](docs/CampaignsApi.md#campaignsGet) | **GET** /campaigns | Load Campaigns
 *CampaignsApi* | [**campaignsPost**](docs/CampaignsApi.md#campaignsPost) | **POST** /campaigns | Add Campaign
@@ -143,6 +144,14 @@ Class | Method | HTTP request | Description
 *ContactsApi* | [**contactsGet**](docs/ContactsApi.md#contactsGet) | **GET** /contacts | Load Contacts
 *ContactsApi* | [**contactsImportPost**](docs/ContactsApi.md#contactsImportPost) | **POST** /contacts/import | Upload Contacts
 *ContactsApi* | [**contactsPost**](docs/ContactsApi.md#contactsPost) | **POST** /contacts | Add Contact
+*DomainsApi* | [**domainsByDomainDelete**](docs/DomainsApi.md#domainsByDomainDelete) | **DELETE** /domains/{domain} | Delete Domain
+*DomainsApi* | [**domainsByDomainGet**](docs/DomainsApi.md#domainsByDomainGet) | **GET** /domains/{domain} | Load Domain
+*DomainsApi* | [**domainsByDomainPut**](docs/DomainsApi.md#domainsByDomainPut) | **PUT** /domains/{domain} | Update Domain
+*DomainsApi* | [**domainsByDomainRestrictedGet**](docs/DomainsApi.md#domainsByDomainRestrictedGet) | **GET** /domains/{domain}/restricted | Check for domain restriction
+*DomainsApi* | [**domainsByDomainVerificationPut**](docs/DomainsApi.md#domainsByDomainVerificationPut) | **PUT** /domains/{domain}/verification | Verify Domain
+*DomainsApi* | [**domainsByEmailDefaultPatch**](docs/DomainsApi.md#domainsByEmailDefaultPatch) | **PATCH** /domains/{email}/default | Set Default
+*DomainsApi* | [**domainsGet**](docs/DomainsApi.md#domainsGet) | **GET** /domains | Load Domains
+*DomainsApi* | [**domainsPost**](docs/DomainsApi.md#domainsPost) | **POST** /domains | Add Domain
 *EmailsApi* | [**emailsByMsgidViewGet**](docs/EmailsApi.md#emailsByMsgidViewGet) | **GET** /emails/{msgid}/view | View Email
 *EmailsApi* | [**emailsByTransactionidStatusGet**](docs/EmailsApi.md#emailsByTransactionidStatusGet) | **GET** /emails/{transactionid}/status | Get Status
 *EmailsApi* | [**emailsMergefilePost**](docs/EmailsApi.md#emailsMergefilePost) | **POST** /emails/mergefile | Send Bulk Emails CSV
@@ -242,6 +251,7 @@ Class | Method | HTTP request | Description
  - [CampaignRecipient](docs/CampaignRecipient.md)
  - [CampaignStatus](docs/CampaignStatus.md)
  - [CampaignTemplate](docs/CampaignTemplate.md)
+ - [CertificateValidationStatus](docs/CertificateValidationStatus.md)
  - [ChannelLogStatusSummary](docs/ChannelLogStatusSummary.md)
  - [CompressionFormat](docs/CompressionFormat.md)
  - [ConsentData](docs/ConsentData.md)
@@ -254,6 +264,11 @@ Class | Method | HTTP request | Description
  - [ContactUpdatePayload](docs/ContactUpdatePayload.md)
  - [ContactsList](docs/ContactsList.md)
  - [DeliveryOptimizationType](docs/DeliveryOptimizationType.md)
+ - [DomainData](docs/DomainData.md)
+ - [DomainDetail](docs/DomainDetail.md)
+ - [DomainOwner](docs/DomainOwner.md)
+ - [DomainPayload](docs/DomainPayload.md)
+ - [DomainUpdatePayload](docs/DomainUpdatePayload.md)
  - [EmailContent](docs/EmailContent.md)
  - [EmailData](docs/EmailData.md)
  - [EmailJobFailedStatus](docs/EmailJobFailedStatus.md)
@@ -288,6 +303,7 @@ Class | Method | HTTP request | Description
  - [MergeEmailPayload](docs/MergeEmailPayload.md)
  - [MessageAttachment](docs/MessageAttachment.md)
  - [MessageCategory](docs/MessageCategory.md)
+ - [MessageCategoryEnum](docs/MessageCategoryEnum.md)
  - [NewApiKey](docs/NewApiKey.md)
  - [NewSmtpCredentials](docs/NewSmtpCredentials.md)
  - [Options](docs/Options.md)
@@ -311,6 +327,8 @@ Class | Method | HTTP request | Description
  - [TemplatePayload](docs/TemplatePayload.md)
  - [TemplateScope](docs/TemplateScope.md)
  - [TemplateType](docs/TemplateType.md)
+ - [TrackingType](docs/TrackingType.md)
+ - [TrackingValidationStatus](docs/TrackingValidationStatus.md)
  - [TransactionalRecipient](docs/TransactionalRecipient.md)
  - [Utm](docs/Utm.md)
  - [VerificationFileResult](docs/VerificationFileResult.md)
@@ -328,6 +346,13 @@ Authentication schemes defined for the API:
 
 - **Type**: API key
 - **API key parameter name**: X-ElasticEmail-ApiKey
+- **Location**: HTTP header
+
+<a id="ApiKeyAuthCustomBranding"></a>
+### ApiKeyAuthCustomBranding
+
+- **Type**: API key
+- **API key parameter name**: X-Auth-Token
 - **Location**: HTTP header
 
 

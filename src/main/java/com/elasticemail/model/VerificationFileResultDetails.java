@@ -55,7 +55,7 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed verification file result info
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class VerificationFileResultDetails {
   public static final String SERIALIZED_NAME_VERIFICATION_RESULT = "VerificationResult";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_RESULT)
@@ -101,10 +101,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Verification result&#39;s details
    * @return verificationResult
-   */
+  **/
   @javax.annotation.Nullable
   public List<EmailValidationResult> getVerificationResult() {
     return verificationResult;
@@ -120,10 +120,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Identifier of this verification result
    * @return verificationID
-   */
+  **/
   @javax.annotation.Nullable
   public String getVerificationID() {
     return verificationID;
@@ -139,10 +139,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Origin file name
    * @return filename
-   */
+  **/
   @javax.annotation.Nullable
   public String getFilename() {
     return filename;
@@ -158,10 +158,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Get verificationStatus
    * @return verificationStatus
-   */
+  **/
   @javax.annotation.Nullable
   public VerificationStatus getVerificationStatus() {
     return verificationStatus;
@@ -177,10 +177,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Get fileUploadResult
    * @return fileUploadResult
-   */
+  **/
   @javax.annotation.Nullable
   public FileUploadResult getFileUploadResult() {
     return fileUploadResult;
@@ -196,10 +196,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
@@ -215,10 +215,10 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-  /**
+   /**
    * Origin file extension
    * @return source
-   */
+  **/
   @javax.annotation.Nullable
   public String getSource() {
     return source;
@@ -298,12 +298,12 @@ public class VerificationFileResultDetails {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to VerificationFileResultDetails
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to VerificationFileResultDetails
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VerificationFileResultDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -381,22 +381,22 @@ public class VerificationFileResultDetails {
     }
   }
 
-  /**
-   * Create an instance of VerificationFileResultDetails given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of VerificationFileResultDetails
-   * @throws IOException if the JSON string is invalid with respect to VerificationFileResultDetails
-   */
+ /**
+  * Create an instance of VerificationFileResultDetails given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of VerificationFileResultDetails
+  * @throws IOException if the JSON string is invalid with respect to VerificationFileResultDetails
+  */
   public static VerificationFileResultDetails fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VerificationFileResultDetails.class);
   }
 
-  /**
-   * Convert an instance of VerificationFileResultDetails to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of VerificationFileResultDetails to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

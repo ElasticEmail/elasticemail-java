@@ -33,9 +33,9 @@ public enum EmailPredictedValidationStatus {
   
   VALID("Valid"),
   
-  LOW_RISK("LowRisk"),
+  LOWRISK("LowRisk"),
   
-  HIGH_RISK("HighRisk"),
+  HIGHRISK("HighRisk"),
   
   INVALID("Invalid");
 

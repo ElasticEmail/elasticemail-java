@@ -5,15 +5,25 @@
 ## Enum
 
 
-* `RAW_HTML` (value: `"RawHTML"`)
+* `RAWHTML` (value: `"RawHTML"`)
 
-* `DRAG_DROP_EDITOR` (value: `"DragDropEditor"`)
+* `DRAGDROPEDITOR` (value: `"DragDropEditor"`)
 
-* `LANDING_PAGE_EDITOR` (value: `"LandingPageEditor"`)
+* `LANDINGPAGEEDITOR` (value: `"LandingPageEditor"`)
 
-* `TEMPLATE_EDITOR` (value: `"TemplateEditor"`)
+* `TEMPLATEEDITOR` (value: `"TemplateEditor"`)
 
-* `FORM_TEMPLATE` (value: `"FormTemplate"`)
+* `FORMTEMPLATE` (value: `"FormTemplate"`)
+
+* `LANDINGPAGETEMPLATE` (value: `"LandingPageTemplate"`)
+
+* `PAYMENTCONFIRMATIONTEMPLATE` (value: `"PaymentConfirmationTemplate"`)
+
+* `LANDINGPAGEPRODUCTTEMPLATE` (value: `"LandingPageProductTemplate"`)
+
+* `LANDINGPAGECHECKOUTTEMPLATE` (value: `"LandingPageCheckoutTemplate"`)
+
+* `LANDINGPAGEPAYMENTCONFIRMATIONTEMPLATE` (value: `"LandingPagePaymentConfirmationTemplate"`)
 
 
 

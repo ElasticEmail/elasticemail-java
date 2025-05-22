@@ -50,7 +50,7 @@ import com.elasticemail.client.JSON;
 /**
  * Optional A/X split campaign options
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SplitOptions {
   public static final String SERIALIZED_NAME_OPTIMIZE_FOR = "OptimizeFor";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_FOR)
@@ -68,10 +68,10 @@ public class SplitOptions {
     return this;
   }
 
-  /**
+   /**
    * Get optimizeFor
    * @return optimizeFor
-   */
+  **/
   @javax.annotation.Nullable
   public SplitOptimizationType getOptimizeFor() {
     return optimizeFor;
@@ -87,10 +87,10 @@ public class SplitOptions {
     return this;
   }
 
-  /**
+   /**
    * For how long should the results be measured until determining the winner template (content)
    * @return optimizePeriodMinutes
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getOptimizePeriodMinutes() {
     return optimizePeriodMinutes;
@@ -155,12 +155,12 @@ public class SplitOptions {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SplitOptions
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SplitOptions
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SplitOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -211,22 +211,22 @@ public class SplitOptions {
     }
   }
 
-  /**
-   * Create an instance of SplitOptions given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SplitOptions
-   * @throws IOException if the JSON string is invalid with respect to SplitOptions
-   */
+ /**
+  * Create an instance of SplitOptions given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SplitOptions
+  * @throws IOException if the JSON string is invalid with respect to SplitOptions
+  */
   public static SplitOptions fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SplitOptions.class);
   }
 
-  /**
-   * Convert an instance of SplitOptions to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SplitOptions to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

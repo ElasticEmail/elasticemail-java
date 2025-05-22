@@ -53,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * ContactPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ContactPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -87,10 +87,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * Proper email address.
    * @return email
-   */
+  **/
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
@@ -106,10 +106,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * Get status
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public ContactStatus getStatus() {
     return status;
@@ -125,10 +125,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * First name.
    * @return firstName
-   */
+  **/
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
@@ -144,10 +144,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * Last name.
    * @return lastName
-   */
+  **/
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
@@ -171,10 +171,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * A key-value collection of custom contact fields which can be used in the system. Only already existing custom fields will be saved.
    * @return customFields
-   */
+  **/
   @javax.annotation.Nullable
   public Map<String, String> getCustomFields() {
     return customFields;
@@ -190,10 +190,10 @@ public class ContactPayload {
     return this;
   }
 
-  /**
+   /**
    * Get consent
    * @return consent
-   */
+  **/
   @javax.annotation.Nullable
   public ConsentData getConsent() {
     return consent;
@@ -271,12 +271,12 @@ public class ContactPayload {
     openapiRequiredFields.add("Email");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContactPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ContactPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -347,22 +347,22 @@ public class ContactPayload {
     }
   }
 
-  /**
-   * Create an instance of ContactPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ContactPayload
-   * @throws IOException if the JSON string is invalid with respect to ContactPayload
-   */
+ /**
+  * Create an instance of ContactPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ContactPayload
+  * @throws IOException if the JSON string is invalid with respect to ContactPayload
+  */
   public static ContactPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactPayload.class);
   }
 
-  /**
-   * Convert an instance of ContactPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ContactPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

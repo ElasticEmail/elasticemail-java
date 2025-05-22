@@ -53,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * New template object
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class TemplatePayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -79,10 +79,10 @@ public class TemplatePayload {
     return this;
   }
 
-  /**
+   /**
    * Template name
    * @return name
-   */
+  **/
   @javax.annotation.Nonnull
   public String getName() {
     return name;
@@ -98,10 +98,10 @@ public class TemplatePayload {
     return this;
   }
 
-  /**
+   /**
    * Default subject of email.
    * @return subject
-   */
+  **/
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
@@ -125,10 +125,10 @@ public class TemplatePayload {
     return this;
   }
 
-  /**
+   /**
    * Email content of this template
    * @return body
-   */
+  **/
   @javax.annotation.Nullable
   public List<BodyPart> getBody() {
     return body;
@@ -144,10 +144,10 @@ public class TemplatePayload {
     return this;
   }
 
-  /**
+   /**
    * Get templateScope
    * @return templateScope
-   */
+  **/
   @javax.annotation.Nullable
   public TemplateScope getTemplateScope() {
     return templateScope;
@@ -219,12 +219,12 @@ public class TemplatePayload {
     openapiRequiredFields.add("Name");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to TemplatePayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to TemplatePayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TemplatePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -302,22 +302,22 @@ public class TemplatePayload {
     }
   }
 
-  /**
-   * Create an instance of TemplatePayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of TemplatePayload
-   * @throws IOException if the JSON string is invalid with respect to TemplatePayload
-   */
+ /**
+  * Create an instance of TemplatePayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of TemplatePayload
+  * @throws IOException if the JSON string is invalid with respect to TemplatePayload
+  */
   public static TemplatePayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TemplatePayload.class);
   }
 
-  /**
-   * Convert an instance of TemplatePayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of TemplatePayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

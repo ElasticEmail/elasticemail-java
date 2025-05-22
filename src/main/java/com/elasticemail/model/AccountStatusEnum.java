@@ -31,9 +31,9 @@ public enum AccountStatusEnum {
   
   DISABLED("Disabled"),
   
-  UNDER_REVIEW("UnderReview"),
+  UNDERREVIEW("UnderReview"),
   
-  NEVER_SIGNED_IN("NeverSignedIn"),
+  NEVERSIGNEDIN("NeverSignedIn"),
   
   ACTIVE("Active");
 

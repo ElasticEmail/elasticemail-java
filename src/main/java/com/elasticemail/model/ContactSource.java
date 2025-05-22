@@ -29,19 +29,19 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ContactSource.Adapter.class)
 public enum ContactSource {
   
-  DELIVERY_API("DeliveryApi"),
+  DELIVERYAPI("DeliveryApi"),
   
-  MANUAL_INPUT("ManualInput"),
+  MANUALINPUT("ManualInput"),
   
-  FILE_UPLOAD("FileUpload"),
+  FILEUPLOAD("FileUpload"),
   
-  WEB_FORM("WebForm"),
+  WEBFORM("WebForm"),
   
-  CONTACT_API("ContactApi"),
+  CONTACTAPI("ContactApi"),
   
-  VERIFICATION_API("VerificationApi"),
+  VERIFICATIONAPI("VerificationApi"),
   
-  FILE_VERIFICATION_API("FileVerificationApi");
+  FILEVERIFICATIONAPI("FileVerificationApi");
 
   private String value;
 

@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * EmailJobStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailJobStatus {
   public static final String SERIALIZED_NAME_I_D = "ID";
   @SerializedName(SERIALIZED_NAME_I_D)
@@ -142,10 +142,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * ID number of your attachment
    * @return ID
-   */
+  **/
   @javax.annotation.Nullable
   public String getID() {
     return ID;
@@ -161,10 +161,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Name of status: submitted, complete, in_progress
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public String getStatus() {
     return status;
@@ -180,10 +180,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get recipientsCount
    * @return recipientsCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getRecipientsCount() {
     return recipientsCount;
@@ -207,10 +207,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get failed
    * @return failed
-   */
+  **/
   @javax.annotation.Nullable
   public List<EmailJobFailedStatus> getFailed() {
     return failed;
@@ -226,10 +226,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Total emails failed.
    * @return failedCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getFailedCount() {
     return failedCount;
@@ -253,10 +253,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get sent
    * @return sent
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getSent() {
     return sent;
@@ -272,10 +272,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Total emails sent.
    * @return sentCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getSentCount() {
     return sentCount;
@@ -299,10 +299,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Number of delivered messages
    * @return delivered
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getDelivered() {
     return delivered;
@@ -318,10 +318,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get deliveredCount
    * @return deliveredCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getDeliveredCount() {
     return deliveredCount;
@@ -345,10 +345,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get pending
    * @return pending
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getPending() {
     return pending;
@@ -364,10 +364,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get pendingCount
    * @return pendingCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getPendingCount() {
     return pendingCount;
@@ -391,10 +391,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Number of opened messages
    * @return opened
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getOpened() {
     return opened;
@@ -410,10 +410,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Total emails opened.
    * @return openedCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getOpenedCount() {
     return openedCount;
@@ -437,10 +437,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Number of clicked messages
    * @return clicked
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getClicked() {
     return clicked;
@@ -456,10 +456,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Total emails clicked
    * @return clickedCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getClickedCount() {
     return clickedCount;
@@ -483,10 +483,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Number of unsubscribed messages
    * @return unsubscribed
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getUnsubscribed() {
     return unsubscribed;
@@ -502,10 +502,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Total emails unsubscribed
    * @return unsubscribedCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getUnsubscribedCount() {
     return unsubscribedCount;
@@ -529,10 +529,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get abuseReports
    * @return abuseReports
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getAbuseReports() {
     return abuseReports;
@@ -548,10 +548,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * Get abuseReportsCount
    * @return abuseReportsCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getAbuseReportsCount() {
     return abuseReportsCount;
@@ -575,10 +575,10 @@ public class EmailJobStatus {
     return this;
   }
 
-  /**
+   /**
    * List of all MessageIDs for this job.
    * @return messageIDs
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getMessageIDs() {
     return messageIDs;
@@ -697,12 +697,12 @@ public class EmailJobStatus {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailJobStatus
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailJobStatus
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailJobStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -801,22 +801,22 @@ public class EmailJobStatus {
     }
   }
 
-  /**
-   * Create an instance of EmailJobStatus given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailJobStatus
-   * @throws IOException if the JSON string is invalid with respect to EmailJobStatus
-   */
+ /**
+  * Create an instance of EmailJobStatus given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailJobStatus
+  * @throws IOException if the JSON string is invalid with respect to EmailJobStatus
+  */
   public static EmailJobStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailJobStatus.class);
   }
 
-  /**
-   * Convert an instance of EmailJobStatus to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailJobStatus to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

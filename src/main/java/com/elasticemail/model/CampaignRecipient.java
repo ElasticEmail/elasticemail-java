@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * A set of lists and segments names to read recipients from
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class CampaignRecipient {
   public static final String SERIALIZED_NAME_LIST_NAMES = "ListNames";
   @SerializedName(SERIALIZED_NAME_LIST_NAMES)
@@ -77,10 +77,10 @@ public class CampaignRecipient {
     return this;
   }
 
-  /**
+   /**
    * Names of lists from your Account to read recipients from
    * @return listNames
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getListNames() {
     return listNames;
@@ -104,10 +104,10 @@ public class CampaignRecipient {
     return this;
   }
 
-  /**
+   /**
    * Names of segments from your Account to read recipients from
    * @return segmentNames
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getSegmentNames() {
     return segmentNames;
@@ -172,12 +172,12 @@ public class CampaignRecipient {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CampaignRecipient
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CampaignRecipient
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CampaignRecipient.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -232,22 +232,22 @@ public class CampaignRecipient {
     }
   }
 
-  /**
-   * Create an instance of CampaignRecipient given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of CampaignRecipient
-   * @throws IOException if the JSON string is invalid with respect to CampaignRecipient
-   */
+ /**
+  * Create an instance of CampaignRecipient given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CampaignRecipient
+  * @throws IOException if the JSON string is invalid with respect to CampaignRecipient
+  */
   public static CampaignRecipient fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CampaignRecipient.class);
   }
 
-  /**
-   * Convert an instance of CampaignRecipient to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of CampaignRecipient to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

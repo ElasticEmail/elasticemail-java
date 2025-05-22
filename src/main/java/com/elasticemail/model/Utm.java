@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * Utm marketing data to be attached to every link in this e-mail.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Utm {
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
@@ -75,10 +75,10 @@ public class Utm {
     return this;
   }
 
-  /**
+   /**
    * utmsource value
    * @return source
-   */
+  **/
   @javax.annotation.Nullable
   public String getSource() {
     return source;
@@ -94,10 +94,10 @@ public class Utm {
     return this;
   }
 
-  /**
+   /**
    * utmmedium value
    * @return medium
-   */
+  **/
   @javax.annotation.Nullable
   public String getMedium() {
     return medium;
@@ -113,10 +113,10 @@ public class Utm {
     return this;
   }
 
-  /**
+   /**
    * utmcampaign value
    * @return campaign
-   */
+  **/
   @javax.annotation.Nullable
   public String getCampaign() {
     return campaign;
@@ -132,10 +132,10 @@ public class Utm {
     return this;
   }
 
-  /**
+   /**
    * utmcontent value
    * @return content
-   */
+  **/
   @javax.annotation.Nullable
   public String getContent() {
     return content;
@@ -206,12 +206,12 @@ public class Utm {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Utm
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Utm
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Utm.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -270,22 +270,22 @@ public class Utm {
     }
   }
 
-  /**
-   * Create an instance of Utm given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of Utm
-   * @throws IOException if the JSON string is invalid with respect to Utm
-   */
+ /**
+  * Create an instance of Utm given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of Utm
+  * @throws IOException if the JSON string is invalid with respect to Utm
+  */
   public static Utm fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Utm.class);
   }
 
-  /**
-   * Convert an instance of Utm to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of Utm to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

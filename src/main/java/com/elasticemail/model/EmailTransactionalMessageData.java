@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Email data
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailTransactionalMessageData {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -74,10 +74,10 @@ public class EmailTransactionalMessageData {
     return this;
   }
 
-  /**
+   /**
    * Get recipients
    * @return recipients
-   */
+  **/
   @javax.annotation.Nonnull
   public TransactionalRecipient getRecipients() {
     return recipients;
@@ -93,10 +93,10 @@ public class EmailTransactionalMessageData {
     return this;
   }
 
-  /**
+   /**
    * Get content
    * @return content
-   */
+  **/
   @javax.annotation.Nonnull
   public EmailContent getContent() {
     return content;
@@ -112,10 +112,10 @@ public class EmailTransactionalMessageData {
     return this;
   }
 
-  /**
+   /**
    * Get options
    * @return options
-   */
+  **/
   @javax.annotation.Nullable
   public Options getOptions() {
     return options;
@@ -185,12 +185,12 @@ public class EmailTransactionalMessageData {
     openapiRequiredFields.add("Content");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailTransactionalMessageData
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailTransactionalMessageData
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailTransactionalMessageData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -252,22 +252,22 @@ public class EmailTransactionalMessageData {
     }
   }
 
-  /**
-   * Create an instance of EmailTransactionalMessageData given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailTransactionalMessageData
-   * @throws IOException if the JSON string is invalid with respect to EmailTransactionalMessageData
-   */
+ /**
+  * Create an instance of EmailTransactionalMessageData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailTransactionalMessageData
+  * @throws IOException if the JSON string is invalid with respect to EmailTransactionalMessageData
+  */
   public static EmailTransactionalMessageData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailTransactionalMessageData.class);
   }
 
-  /**
-   * Convert an instance of EmailTransactionalMessageData to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailTransactionalMessageData to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

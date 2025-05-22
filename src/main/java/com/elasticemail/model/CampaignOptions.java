@@ -53,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * Different send options for a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)
@@ -91,10 +91,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * Get deliveryOptimization
    * @return deliveryOptimization
-   */
+  **/
   @javax.annotation.Nullable
   public DeliveryOptimizationType getDeliveryOptimization() {
     return deliveryOptimization;
@@ -110,10 +110,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * Should the opens be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackOpens
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getTrackOpens() {
     return trackOpens;
@@ -129,10 +129,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * Should the clicks be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackClicks
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getTrackClicks() {
     return trackClicks;
@@ -148,10 +148,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * Date when this Campaign is scheduled to be sent on
    * @return scheduleFor
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getScheduleFor() {
     return scheduleFor;
@@ -167,10 +167,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * How often (in minutes) to send the campaign
    * @return triggerFrequency
-   */
+  **/
   @javax.annotation.Nullable
   public Double getTriggerFrequency() {
     return triggerFrequency;
@@ -186,10 +186,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * How many times send the campaign
    * @return triggerCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getTriggerCount() {
     return triggerCount;
@@ -205,10 +205,10 @@ public class CampaignOptions {
     return this;
   }
 
-  /**
+   /**
    * Get splitOptions
    * @return splitOptions
-   */
+  **/
   @javax.annotation.Nullable
   public SplitOptions getSplitOptions() {
     return splitOptions;
@@ -299,12 +299,12 @@ public class CampaignOptions {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CampaignOptions
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CampaignOptions
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CampaignOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -359,22 +359,22 @@ public class CampaignOptions {
     }
   }
 
-  /**
-   * Create an instance of CampaignOptions given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of CampaignOptions
-   * @throws IOException if the JSON string is invalid with respect to CampaignOptions
-   */
+ /**
+  * Create an instance of CampaignOptions given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CampaignOptions
+  * @throws IOException if the JSON string is invalid with respect to CampaignOptions
+  */
   public static CampaignOptions fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CampaignOptions.class);
   }
 
-  /**
-   * Convert an instance of CampaignOptions to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of CampaignOptions to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

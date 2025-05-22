@@ -50,7 +50,7 @@ import com.elasticemail.client.JSON;
 /**
  * Settings related to sending emails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SubaccountEmailSettings {
   public static final String SERIALIZED_NAME_MONTHLY_REFILL_CREDITS = "MonthlyRefillCredits";
   @SerializedName(SERIALIZED_NAME_MONTHLY_REFILL_CREDITS)
@@ -92,10 +92,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Amount of credits added to Account automatically
    * @return monthlyRefillCredits
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getMonthlyRefillCredits() {
     return monthlyRefillCredits;
@@ -111,10 +111,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * True, if Account needs credits to send emails. Otherwise, false
    * @return requiresEmailCredits
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getRequiresEmailCredits() {
     return requiresEmailCredits;
@@ -130,10 +130,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Maximum size of email including attachments in MB&#39;s
    * @return emailSizeLimit
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getEmailSizeLimit() {
     return emailSizeLimit;
@@ -149,10 +149,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Amount of emails Account can send daily
    * @return dailySendLimit
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getDailySendLimit() {
     return dailySendLimit;
@@ -168,10 +168,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used.
    * @return maxContacts
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getMaxContacts() {
     return maxContacts;
@@ -187,10 +187,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Can the SubAccount purchase Private IP for themselves
    * @return enablePrivateIPPurchase
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getEnablePrivateIPPurchase() {
     return enablePrivateIPPurchase;
@@ -206,10 +206,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-   */
+  **/
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
@@ -225,10 +225,10 @@ public class SubaccountEmailSettings {
     return this;
   }
 
-  /**
+   /**
    * Get validSenderDomainOnly
    * @return validSenderDomainOnly
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getValidSenderDomainOnly() {
     return validSenderDomainOnly;
@@ -322,12 +322,12 @@ public class SubaccountEmailSettings {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettings
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettings
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountEmailSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -377,22 +377,22 @@ public class SubaccountEmailSettings {
     }
   }
 
-  /**
-   * Create an instance of SubaccountEmailSettings given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SubaccountEmailSettings
-   * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettings
-   */
+ /**
+  * Create an instance of SubaccountEmailSettings given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SubaccountEmailSettings
+  * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettings
+  */
   public static SubaccountEmailSettings fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountEmailSettings.class);
   }
 
-  /**
-   * Convert an instance of SubaccountEmailSettings to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SubaccountEmailSettings to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

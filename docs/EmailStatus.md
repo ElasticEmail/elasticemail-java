@@ -20,6 +20,7 @@ Status information of the specified email
 |**errorMessage** | **String** | Detailed error or bounced message. |  [optional] |
 |**transactionID** | **String** | ID number of transaction |  [optional] |
 |**envelopeFrom** | **String** | Envelope from address |  [optional] |
+|**errorCategory** | **MessageCategoryEnum** |  |  [optional] |
 
 
 

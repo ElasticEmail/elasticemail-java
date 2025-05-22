@@ -151,7 +151,7 @@ public class SecurityApi {
 
     /**
      * Delete ApiKey
-     * Delete your existing ApiKey. Required Access Level: Security
+     * Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param subaccount Email of the subaccount of which ApiKey should be deleted (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -167,7 +167,7 @@ public class SecurityApi {
 
     /**
      * Delete ApiKey
-     * Delete your existing ApiKey. Required Access Level: Security
+     * Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param subaccount Email of the subaccount of which ApiKey should be deleted (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -185,7 +185,7 @@ public class SecurityApi {
 
     /**
      * Delete ApiKey (asynchronously)
-     * Delete your existing ApiKey. Required Access Level: Security
+     * Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param subaccount Email of the subaccount of which ApiKey should be deleted (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -411,7 +411,7 @@ public class SecurityApi {
 
     /**
      * Update ApiKey
-     * Update your existing ApiKey. Required Access Level: Security
+     * Update your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param apiKeyPayload  (required)
      * @return ApiKey
@@ -429,7 +429,7 @@ public class SecurityApi {
 
     /**
      * Update ApiKey
-     * Update your existing ApiKey. Required Access Level: Security
+     * Update your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param apiKeyPayload  (required)
      * @return ApiResponse&lt;ApiKey&gt;
@@ -448,7 +448,7 @@ public class SecurityApi {
 
     /**
      * Update ApiKey (asynchronously)
-     * Update your existing ApiKey. Required Access Level: Security
+     * Update your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param name Name of the ApiKey (required)
      * @param apiKeyPayload  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -658,7 +658,7 @@ public class SecurityApi {
 
     /**
      * Add ApiKey
-     * Add a new ApiKey. Required Access Level: Security
+     * Add a new ApiKey. Required Access Level: ModifyAccessTokens
      * @param apiKeyPayload  (required)
      * @return NewApiKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -675,7 +675,7 @@ public class SecurityApi {
 
     /**
      * Add ApiKey
-     * Add a new ApiKey. Required Access Level: Security
+     * Add a new ApiKey. Required Access Level: ModifyAccessTokens
      * @param apiKeyPayload  (required)
      * @return ApiResponse&lt;NewApiKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -693,7 +693,7 @@ public class SecurityApi {
 
     /**
      * Add ApiKey (asynchronously)
-     * Add a new ApiKey. Required Access Level: Security
+     * Add a new ApiKey. Required Access Level: ModifyAccessTokens
      * @param apiKeyPayload  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -785,7 +785,7 @@ public class SecurityApi {
 
     /**
      * Delete SMTP Credential
-     * Delete your existing SMTP Credentials. Required Access Level: Security
+     * Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param subaccount Email of the subaccount of which credential should be deleted (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -801,7 +801,7 @@ public class SecurityApi {
 
     /**
      * Delete SMTP Credential
-     * Delete your existing SMTP Credentials. Required Access Level: Security
+     * Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param subaccount Email of the subaccount of which credential should be deleted (optional)
      * @return ApiResponse&lt;Void&gt;
@@ -819,7 +819,7 @@ public class SecurityApi {
 
     /**
      * Delete SMTP Credential (asynchronously)
-     * Delete your existing SMTP Credentials. Required Access Level: Security
+     * Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param subaccount Email of the subaccount of which credential should be deleted (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1045,7 +1045,7 @@ public class SecurityApi {
 
     /**
      * Update SMTP Credential
-     * Update your existing SMTP Credentials. Required Access Level: Security
+     * Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param smtpCredentialsPayload  (required)
      * @return SmtpCredentials
@@ -1063,7 +1063,7 @@ public class SecurityApi {
 
     /**
      * Update SMTP Credential
-     * Update your existing SMTP Credentials. Required Access Level: Security
+     * Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param smtpCredentialsPayload  (required)
      * @return ApiResponse&lt;SmtpCredentials&gt;
@@ -1082,7 +1082,7 @@ public class SecurityApi {
 
     /**
      * Update SMTP Credential (asynchronously)
-     * Update your existing SMTP Credentials. Required Access Level: Security
+     * Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param name Name of the SMTP Credential (required)
      * @param smtpCredentialsPayload  (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -1292,7 +1292,7 @@ public class SecurityApi {
 
     /**
      * Add SMTP Credential
-     * Add new SMTP Credential. Required Access Level: Security
+     * Add new SMTP Credential. Required Access Level: ModifyAccessTokens
      * @param smtpCredentialsPayload  (required)
      * @return NewSmtpCredentials
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1309,7 +1309,7 @@ public class SecurityApi {
 
     /**
      * Add SMTP Credential
-     * Add new SMTP Credential. Required Access Level: Security
+     * Add new SMTP Credential. Required Access Level: ModifyAccessTokens
      * @param smtpCredentialsPayload  (required)
      * @return ApiResponse&lt;NewSmtpCredentials&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1327,7 +1327,7 @@ public class SecurityApi {
 
     /**
      * Add SMTP Credential (asynchronously)
-     * Add new SMTP Credential. Required Access Level: Security
+     * Add new SMTP Credential. Required Access Level: ModifyAccessTokens
      * @param smtpCredentialsPayload  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

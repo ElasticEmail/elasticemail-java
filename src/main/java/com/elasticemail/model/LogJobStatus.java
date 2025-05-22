@@ -31,9 +31,9 @@ public enum LogJobStatus {
   
   ALL("All"),
   
-  READY_TO_SEND("ReadyToSend"),
+  READYTOSEND("ReadyToSend"),
   
-  WAITING_TO_RETRY("WaitingToRetry"),
+  WAITINGTORETRY("WaitingToRetry"),
   
   SENDING("Sending"),
   
@@ -47,7 +47,7 @@ public enum LogJobStatus {
   
   UNSUBSCRIBED("Unsubscribed"),
   
-  ABUSE_REPORT("AbuseReport");
+  ABUSEREPORT("AbuseReport");
 
   private String value;
 

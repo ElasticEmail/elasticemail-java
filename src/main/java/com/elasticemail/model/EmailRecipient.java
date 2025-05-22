@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * List of recipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailRecipient {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -69,10 +69,10 @@ public class EmailRecipient {
     return this;
   }
 
-  /**
+   /**
    * Proper email address.
    * @return email
-   */
+  **/
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
@@ -96,10 +96,10 @@ public class EmailRecipient {
     return this;
   }
 
-  /**
+   /**
    * A key-value collection of merge fields which can be used in e-mail body.
    * @return fields
-   */
+  **/
   @javax.annotation.Nullable
   public Map<String, String> getFields() {
     return fields;
@@ -165,12 +165,12 @@ public class EmailRecipient {
     openapiRequiredFields.add("Email");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailRecipient
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailRecipient
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailRecipient.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -227,22 +227,22 @@ public class EmailRecipient {
     }
   }
 
-  /**
-   * Create an instance of EmailRecipient given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailRecipient
-   * @throws IOException if the JSON string is invalid with respect to EmailRecipient
-   */
+ /**
+  * Create an instance of EmailRecipient given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailRecipient
+  * @throws IOException if the JSON string is invalid with respect to EmailRecipient
+  */
   public static EmailRecipient fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailRecipient.class);
   }
 
-  /**
-   * Convert an instance of EmailRecipient to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailRecipient to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

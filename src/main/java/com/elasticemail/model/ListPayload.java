@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * ListPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ListPayload {
   public static final String SERIALIZED_NAME_LIST_NAME = "ListName";
   @SerializedName(SERIALIZED_NAME_LIST_NAME)
@@ -73,10 +73,10 @@ public class ListPayload {
     return this;
   }
 
-  /**
+   /**
    * Name of your list.
    * @return listName
-   */
+  **/
   @javax.annotation.Nonnull
   public String getListName() {
     return listName;
@@ -92,10 +92,10 @@ public class ListPayload {
     return this;
   }
 
-  /**
+   /**
    * True: Allow unsubscribing from this list. Otherwise, false
    * @return allowUnsubscribe
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getAllowUnsubscribe() {
     return allowUnsubscribe;
@@ -119,10 +119,10 @@ public class ListPayload {
     return this;
   }
 
-  /**
+   /**
    * Comma delimited list of existing contact emails that should be added to this list. Leave empty for all contacts
    * @return emails
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getEmails() {
     return emails;
@@ -191,12 +191,12 @@ public class ListPayload {
     openapiRequiredFields.add("ListName");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ListPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ListPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ListPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -257,22 +257,22 @@ public class ListPayload {
     }
   }
 
-  /**
-   * Create an instance of ListPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ListPayload
-   * @throws IOException if the JSON string is invalid with respect to ListPayload
-   */
+ /**
+  * Create an instance of ListPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListPayload
+  * @throws IOException if the JSON string is invalid with respect to ListPayload
+  */
   public static ListPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ListPayload.class);
   }
 
-  /**
-   * Convert an instance of ListPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ListPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

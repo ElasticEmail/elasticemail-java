@@ -39,7 +39,7 @@ public class SecurityApiTest {
     /**
      * Delete ApiKey
      *
-     * Delete your existing ApiKey. Required Access Level: Security
+     * Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */
@@ -69,7 +69,7 @@ public class SecurityApiTest {
     /**
      * Update ApiKey
      *
-     * Update your existing ApiKey. Required Access Level: Security
+     * Update your existing ApiKey. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */
@@ -98,7 +98,7 @@ public class SecurityApiTest {
     /**
      * Add ApiKey
      *
-     * Add a new ApiKey. Required Access Level: Security
+     * Add a new ApiKey. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */
@@ -112,7 +112,7 @@ public class SecurityApiTest {
     /**
      * Delete SMTP Credential
      *
-     * Delete your existing SMTP Credentials. Required Access Level: Security
+     * Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */
@@ -142,7 +142,7 @@ public class SecurityApiTest {
     /**
      * Update SMTP Credential
      *
-     * Update your existing SMTP Credentials. Required Access Level: Security
+     * Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */
@@ -171,7 +171,7 @@ public class SecurityApiTest {
     /**
      * Add SMTP Credential
      *
-     * Add new SMTP Credential. Required Access Level: Security
+     * Add new SMTP Credential. Required Access Level: ModifyAccessTokens
      *
      * @throws ApiException if the Api call fails
      */

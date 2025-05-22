@@ -60,6 +60,20 @@ public class CampaignsApiTest {
     }
 
     /**
+     * Pause Campaign
+     *
+     * Pauses the specific campaign, cancelling emails that are waiting to be sent. Required Access Level: ModifyCampaigns
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void campaignsByNamePausePutTest() throws ApiException {
+        String name = null;
+        api.campaignsByNamePausePut(name);
+        // TODO: test validations
+    }
+
+    /**
      * Update Campaign
      *
      * Updates a previously added campaign.  Only Active and Paused campaigns can be updated. Required Access Level: ModifyCampaigns

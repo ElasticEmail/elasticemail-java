@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * MergeEmailPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class MergeEmailPayload {
   public static final String SERIALIZED_NAME_MERGE_FILE = "MergeFile";
   @SerializedName(SERIALIZED_NAME_MERGE_FILE)
@@ -74,10 +74,10 @@ public class MergeEmailPayload {
     return this;
   }
 
-  /**
+   /**
    * Get mergeFile
    * @return mergeFile
-   */
+  **/
   @javax.annotation.Nonnull
   public MessageAttachment getMergeFile() {
     return mergeFile;
@@ -93,10 +93,10 @@ public class MergeEmailPayload {
     return this;
   }
 
-  /**
+   /**
    * Get content
    * @return content
-   */
+  **/
   @javax.annotation.Nonnull
   public EmailContent getContent() {
     return content;
@@ -112,10 +112,10 @@ public class MergeEmailPayload {
     return this;
   }
 
-  /**
+   /**
    * Get options
    * @return options
-   */
+  **/
   @javax.annotation.Nullable
   public Options getOptions() {
     return options;
@@ -185,12 +185,12 @@ public class MergeEmailPayload {
     openapiRequiredFields.add("Content");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to MergeEmailPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to MergeEmailPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MergeEmailPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -252,22 +252,22 @@ public class MergeEmailPayload {
     }
   }
 
-  /**
-   * Create an instance of MergeEmailPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of MergeEmailPayload
-   * @throws IOException if the JSON string is invalid with respect to MergeEmailPayload
-   */
+ /**
+  * Create an instance of MergeEmailPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of MergeEmailPayload
+  * @throws IOException if the JSON string is invalid with respect to MergeEmailPayload
+  */
   public static MergeEmailPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MergeEmailPayload.class);
   }
 
-  /**
-   * Convert an instance of MergeEmailPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of MergeEmailPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

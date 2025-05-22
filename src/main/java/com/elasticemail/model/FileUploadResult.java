@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * FileUploadResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class FileUploadResult {
   public static final String SERIALIZED_NAME_EMAILS_COUNT = "EmailsCount";
   @SerializedName(SERIALIZED_NAME_EMAILS_COUNT)
@@ -67,10 +67,10 @@ public class FileUploadResult {
     return this;
   }
 
-  /**
+   /**
    * How many unique emails were detected the file
    * @return emailsCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getEmailsCount() {
     return emailsCount;
@@ -86,10 +86,10 @@ public class FileUploadResult {
     return this;
   }
 
-  /**
+   /**
    * How many email duplicates were detected
    * @return duplicatedEmailsCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getDuplicatedEmailsCount() {
     return duplicatedEmailsCount;
@@ -154,12 +154,12 @@ public class FileUploadResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to FileUploadResult
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to FileUploadResult
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FileUploadResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -206,22 +206,22 @@ public class FileUploadResult {
     }
   }
 
-  /**
-   * Create an instance of FileUploadResult given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of FileUploadResult
-   * @throws IOException if the JSON string is invalid with respect to FileUploadResult
-   */
+ /**
+  * Create an instance of FileUploadResult given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of FileUploadResult
+  * @throws IOException if the JSON string is invalid with respect to FileUploadResult
+  */
   public static FileUploadResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FileUploadResult.class);
   }
 
-  /**
-   * Convert an instance of FileUploadResult to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of FileUploadResult to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

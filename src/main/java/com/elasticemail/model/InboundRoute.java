@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * InboundRoute
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class InboundRoute {
   public static final String SERIALIZED_NAME_PUBLIC_ID = "PublicId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ID)
@@ -63,7 +63,7 @@ public class InboundRoute {
 
   public static final String SERIALIZED_NAME_FILTER_TYPE = "FilterType";
   @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAIL_ADDRESS;
+  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAILADDRESS;
 
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -71,7 +71,7 @@ public class InboundRoute {
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "ActionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  private InboundRouteActionType actionType = InboundRouteActionType.FORWARD_TO_EMAIL;
+  private InboundRouteActionType actionType = InboundRouteActionType.FORWARDTOEMAIL;
 
   public static final String SERIALIZED_NAME_ACTION_PARAMETER = "ActionParameter";
   @SerializedName(SERIALIZED_NAME_ACTION_PARAMETER)
@@ -89,10 +89,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Get publicId
    * @return publicId
-   */
+  **/
   @javax.annotation.Nullable
   public String getPublicId() {
     return publicId;
@@ -108,10 +108,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Name of this route
    * @return name
-   */
+  **/
   @javax.annotation.Nullable
   public String getName() {
     return name;
@@ -127,10 +127,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Get filterType
    * @return filterType
-   */
+  **/
   @javax.annotation.Nullable
   public InboundRouteFilterType getFilterType() {
     return filterType;
@@ -146,10 +146,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Filter of the inbound data
    * @return filter
-   */
+  **/
   @javax.annotation.Nullable
   public String getFilter() {
     return filter;
@@ -165,10 +165,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Get actionType
    * @return actionType
-   */
+  **/
   @javax.annotation.Nullable
   public InboundRouteActionType getActionType() {
     return actionType;
@@ -184,10 +184,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * URL address or Email to notify about the inbound
    * @return actionParameter
-   */
+  **/
   @javax.annotation.Nullable
   public String getActionParameter() {
     return actionParameter;
@@ -203,10 +203,10 @@ public class InboundRoute {
     return this;
   }
 
-  /**
+   /**
    * Place of this route in your routes queue&#39;s order
    * @return sortOrder
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getSortOrder() {
     return sortOrder;
@@ -286,12 +286,12 @@ public class InboundRoute {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to InboundRoute
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to InboundRoute
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InboundRoute.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -358,22 +358,22 @@ public class InboundRoute {
     }
   }
 
-  /**
-   * Create an instance of InboundRoute given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of InboundRoute
-   * @throws IOException if the JSON string is invalid with respect to InboundRoute
-   */
+ /**
+  * Create an instance of InboundRoute given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of InboundRoute
+  * @throws IOException if the JSON string is invalid with respect to InboundRoute
+  */
   public static InboundRoute fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InboundRoute.class);
   }
 
-  /**
-   * Convert an instance of InboundRoute to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of InboundRoute to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

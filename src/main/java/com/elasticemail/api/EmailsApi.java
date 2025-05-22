@@ -473,7 +473,7 @@ public class EmailsApi {
 
     /**
      * Send Bulk Emails CSV
-     * Send bulk merge email. Required Access Level: SendHttp
+     * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
      * @return EmailSend
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -490,7 +490,7 @@ public class EmailsApi {
 
     /**
      * Send Bulk Emails CSV
-     * Send bulk merge email. Required Access Level: SendHttp
+     * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
      * @return ApiResponse&lt;EmailSend&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -508,7 +508,7 @@ public class EmailsApi {
 
     /**
      * Send Bulk Emails CSV (asynchronously)
-     * Send bulk merge email. Required Access Level: SendHttp
+     * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call

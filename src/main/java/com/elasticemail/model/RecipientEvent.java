@@ -53,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed information about message recipient
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class RecipientEvent {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -115,10 +115,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * ID number of transaction
    * @return transactionID
-   */
+  **/
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
@@ -134,10 +134,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * ID number of selected message.
    * @return msgID
-   */
+  **/
   @javax.annotation.Nullable
   public String getMsgID() {
     return msgID;
@@ -153,10 +153,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Default From: email address.
    * @return fromEmail
-   */
+  **/
   @javax.annotation.Nullable
   public String getFromEmail() {
     return fromEmail;
@@ -172,10 +172,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Ending date for search in YYYY-MM-DDThh:mm:ss format.
    * @return to
-   */
+  **/
   @javax.annotation.Nullable
   public String getTo() {
     return to;
@@ -191,10 +191,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Default subject of email.
    * @return subject
-   */
+  **/
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
@@ -210,10 +210,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Get eventType
    * @return eventType
-   */
+  **/
   @javax.annotation.Nullable
   public EventType getEventType() {
     return eventType;
@@ -229,10 +229,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Creation date
    * @return eventDate
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getEventDate() {
     return eventDate;
@@ -248,10 +248,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Name of selected channel.
    * @return channelName
-   */
+  **/
   @javax.annotation.Nullable
   public String getChannelName() {
     return channelName;
@@ -267,10 +267,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Get messageCategory
    * @return messageCategory
-   */
+  **/
   @javax.annotation.Nullable
   public MessageCategory getMessageCategory() {
     return messageCategory;
@@ -286,10 +286,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Date of next try
    * @return nextTryOn
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getNextTryOn() {
     return nextTryOn;
@@ -305,10 +305,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Content of message, HTML encoded
    * @return message
-   */
+  **/
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
@@ -324,10 +324,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * IP which this email was sent through
    * @return ipAddress
-   */
+  **/
   @javax.annotation.Nullable
   public String getIpAddress() {
     return ipAddress;
@@ -343,10 +343,10 @@ public class RecipientEvent {
     return this;
   }
 
-  /**
+   /**
    * Name of an IP pool this email was sent through
    * @return poolName
-   */
+  **/
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
@@ -455,12 +455,12 @@ public class RecipientEvent {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to RecipientEvent
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to RecipientEvent
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RecipientEvent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -542,22 +542,22 @@ public class RecipientEvent {
     }
   }
 
-  /**
-   * Create an instance of RecipientEvent given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of RecipientEvent
-   * @throws IOException if the JSON string is invalid with respect to RecipientEvent
-   */
+ /**
+  * Create an instance of RecipientEvent given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of RecipientEvent
+  * @throws IOException if the JSON string is invalid with respect to RecipientEvent
+  */
   public static RecipientEvent fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RecipientEvent.class);
   }
 
-  /**
-   * Convert an instance of RecipientEvent to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of RecipientEvent to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

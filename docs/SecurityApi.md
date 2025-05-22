@@ -22,7 +22,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Delete ApiKey
 
-Delete your existing ApiKey. Required Access Level: Security
+Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java
@@ -163,7 +163,7 @@ public class Example {
 
 Update ApiKey
 
-Update your existing ApiKey. Required Access Level: Security
+Update your existing ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java
@@ -303,7 +303,7 @@ public class Example {
 
 Add ApiKey
 
-Add a new ApiKey. Required Access Level: Security
+Add a new ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java
@@ -372,7 +372,7 @@ public class Example {
 
 Delete SMTP Credential
 
-Delete your existing SMTP Credentials. Required Access Level: Security
+Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java
@@ -513,7 +513,7 @@ public class Example {
 
 Update SMTP Credential
 
-Update your existing SMTP Credentials. Required Access Level: Security
+Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java
@@ -653,7 +653,7 @@ public class Example {
 
 Add SMTP Credential
 
-Add new SMTP Credential. Required Access Level: Security
+Add new SMTP Credential. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```java

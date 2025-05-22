@@ -31,7 +31,7 @@ public enum EventType {
   
   SUBMISSION("Submission"),
   
-  FAILED_ATTEMPT("FailedAttempt"),
+  FAILEDATTEMPT("FailedAttempt"),
   
   BOUNCE("Bounce"),
   

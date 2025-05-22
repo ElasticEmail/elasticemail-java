@@ -50,7 +50,7 @@ import com.elasticemail.client.JSON;
 /**
  * New SubAccount payload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SubaccountPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
@@ -76,10 +76,10 @@ public class SubaccountPayload {
     return this;
   }
 
-  /**
+   /**
    * Proper email address.
    * @return email
-   */
+  **/
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
@@ -95,10 +95,10 @@ public class SubaccountPayload {
     return this;
   }
 
-  /**
+   /**
    * Current password.
    * @return password
-   */
+  **/
   @javax.annotation.Nonnull
   public String getPassword() {
     return password;
@@ -114,10 +114,10 @@ public class SubaccountPayload {
     return this;
   }
 
-  /**
+   /**
    * True, if you want to send activation email to this Account to confirm the creation of a new SubAccount. Otherwise, false (SubAccount will immediately be Active).
    * @return sendActivation
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getSendActivation() {
     return sendActivation;
@@ -133,10 +133,10 @@ public class SubaccountPayload {
     return this;
   }
 
-  /**
+   /**
    * Get settings
    * @return settings
-   */
+  **/
   @javax.annotation.Nullable
   public SubaccountSettingsInfoPayload getSettings() {
     return settings;
@@ -209,12 +209,12 @@ public class SubaccountPayload {
     openapiRequiredFields.add("Password");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SubaccountPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SubaccountPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -278,22 +278,22 @@ public class SubaccountPayload {
     }
   }
 
-  /**
-   * Create an instance of SubaccountPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SubaccountPayload
-   * @throws IOException if the JSON string is invalid with respect to SubaccountPayload
-   */
+ /**
+  * Create an instance of SubaccountPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SubaccountPayload
+  * @throws IOException if the JSON string is invalid with respect to SubaccountPayload
+  */
   public static SubaccountPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountPayload.class);
   }
 
-  /**
-   * Convert an instance of SubaccountPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SubaccountPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Simple verification file result info
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class VerificationFileResult {
   public static final String SERIALIZED_NAME_VERIFICATION_I_D = "VerificationID";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_I_D)
@@ -86,10 +86,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Identifier of this verification result
    * @return verificationID
-   */
+  **/
   @javax.annotation.Nullable
   public String getVerificationID() {
     return verificationID;
@@ -105,10 +105,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Origin file name
    * @return filename
-   */
+  **/
   @javax.annotation.Nullable
   public String getFilename() {
     return filename;
@@ -124,10 +124,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Get verificationStatus
    * @return verificationStatus
-   */
+  **/
   @javax.annotation.Nullable
   public VerificationStatus getVerificationStatus() {
     return verificationStatus;
@@ -143,10 +143,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Get fileUploadResult
    * @return fileUploadResult
-   */
+  **/
   @javax.annotation.Nullable
   public FileUploadResult getFileUploadResult() {
     return fileUploadResult;
@@ -162,10 +162,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
@@ -181,10 +181,10 @@ public class VerificationFileResult {
     return this;
   }
 
-  /**
+   /**
    * Origin file extension
    * @return source
-   */
+  **/
   @javax.annotation.Nullable
   public String getSource() {
     return source;
@@ -261,12 +261,12 @@ public class VerificationFileResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to VerificationFileResult
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to VerificationFileResult
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VerificationFileResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -330,22 +330,22 @@ public class VerificationFileResult {
     }
   }
 
-  /**
-   * Create an instance of VerificationFileResult given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of VerificationFileResult
-   * @throws IOException if the JSON string is invalid with respect to VerificationFileResult
-   */
+ /**
+  * Create an instance of VerificationFileResult given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of VerificationFileResult
+  * @throws IOException if the JSON string is invalid with respect to VerificationFileResult
+  */
   public static VerificationFileResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VerificationFileResult.class);
   }
 
-  /**
-   * Convert an instance of VerificationFileResult to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of VerificationFileResult to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

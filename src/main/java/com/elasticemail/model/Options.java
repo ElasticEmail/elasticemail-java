@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * E-mail configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class Options {
   public static final String SERIALIZED_NAME_TIME_OFFSET = "TimeOffset";
   @SerializedName(SERIALIZED_NAME_TIME_OFFSET)
@@ -67,7 +67,7 @@ public class Options {
 
   public static final String SERIALIZED_NAME_ENCODING = "Encoding";
   @SerializedName(SERIALIZED_NAME_ENCODING)
-  private EncodingType encoding = EncodingType.USER_PROVIDED;
+  private EncodingType encoding = EncodingType.USERPROVIDED;
 
   public static final String SERIALIZED_NAME_TRACK_OPENS = "TrackOpens";
   @SerializedName(SERIALIZED_NAME_TRACK_OPENS)
@@ -85,10 +85,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * By how long should an e-mail be delayed (in minutes). Maximum is 35 days.
    * @return timeOffset
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getTimeOffset() {
     return timeOffset;
@@ -104,10 +104,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-   */
+  **/
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
@@ -123,10 +123,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * Name of selected channel.
    * @return channelName
-   */
+  **/
   @javax.annotation.Nullable
   public String getChannelName() {
     return channelName;
@@ -142,10 +142,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * Get encoding
    * @return encoding
-   */
+  **/
   @javax.annotation.Nullable
   public EncodingType getEncoding() {
     return encoding;
@@ -161,10 +161,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * Should the opens be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackOpens
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getTrackOpens() {
     return trackOpens;
@@ -180,10 +180,10 @@ public class Options {
     return this;
   }
 
-  /**
+   /**
    * Should the clicks be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackClicks
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getTrackClicks() {
     return trackClicks;
@@ -271,12 +271,12 @@ public class Options {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to Options
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to Options
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Options.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -333,22 +333,22 @@ public class Options {
     }
   }
 
-  /**
-   * Create an instance of Options given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of Options
-   * @throws IOException if the JSON string is invalid with respect to Options
-   */
+ /**
+  * Create an instance of Options given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of Options
+  * @throws IOException if the JSON string is invalid with respect to Options
+  */
   public static Options fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Options.class);
   }
 
-  /**
-   * Convert an instance of Options to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of Options to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * Change the ordering of this inbound route for when matching the inbound
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SortOrderItem {
   public static final String SERIALIZED_NAME_PUBLIC_INBOUND_ID = "PublicInboundId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_INBOUND_ID)
@@ -67,10 +67,10 @@ public class SortOrderItem {
     return this;
   }
 
-  /**
+   /**
    * ID of the route to change the order of
    * @return publicInboundId
-   */
+  **/
   @javax.annotation.Nonnull
   public String getPublicInboundId() {
     return publicInboundId;
@@ -86,10 +86,10 @@ public class SortOrderItem {
     return this;
   }
 
-  /**
+   /**
    * 1 - route will be used first
    * @return sortOrder
-   */
+  **/
   @javax.annotation.Nonnull
   public Integer getSortOrder() {
     return sortOrder;
@@ -156,12 +156,12 @@ public class SortOrderItem {
     openapiRequiredFields.add("SortOrder");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SortOrderItem
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SortOrderItem
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SortOrderItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -218,22 +218,22 @@ public class SortOrderItem {
     }
   }
 
-  /**
-   * Create an instance of SortOrderItem given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SortOrderItem
-   * @throws IOException if the JSON string is invalid with respect to SortOrderItem
-   */
+ /**
+  * Create an instance of SortOrderItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SortOrderItem
+  * @throws IOException if the JSON string is invalid with respect to SortOrderItem
+  */
   public static SortOrderItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SortOrderItem.class);
   }
 
-  /**
-   * Convert an instance of SortOrderItem to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SortOrderItem to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -14,6 +14,7 @@
 package com.elasticemail.model;
 
 import com.elasticemail.model.LogJobStatus;
+import com.elasticemail.model.MessageCategoryEnum;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -134,6 +135,14 @@ public class EmailStatusTest {
     @Test
     public void envelopeFromTest() {
         // TODO: test envelopeFrom
+    }
+
+    /**
+     * Test the property 'errorCategory'
+     */
+    @Test
+    public void errorCategoryTest() {
+        // TODO: test errorCategory
     }
 
 }

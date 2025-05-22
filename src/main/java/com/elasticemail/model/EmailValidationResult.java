@@ -53,7 +53,7 @@ import com.elasticemail.client.JSON;
 /**
  * EmailValidationResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailValidationResult {
   public static final String SERIALIZED_NAME_ACCOUNT = "Account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
@@ -107,10 +107,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Local part of an email
    * @return account
-   */
+  **/
   @javax.annotation.Nullable
   public String getAccount() {
     return account;
@@ -126,10 +126,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Name of selected domain.
    * @return domain
-   */
+  **/
   @javax.annotation.Nullable
   public String getDomain() {
     return domain;
@@ -145,10 +145,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Full email address that was verified
    * @return email
-   */
+  **/
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
@@ -164,10 +164,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Suggested spelling if a possible mistake was found
    * @return suggestedSpelling
-   */
+  **/
   @javax.annotation.Nullable
   public String getSuggestedSpelling() {
     return suggestedSpelling;
@@ -183,10 +183,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Does the email have a temporary domain
    * @return disposable
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getDisposable() {
     return disposable;
@@ -202,10 +202,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Is an email a role email (e.g. info@, noreply@ etc.)
    * @return role
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getRole() {
     return role;
@@ -221,10 +221,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * All detected issues
    * @return reason
-   */
+  **/
   @javax.annotation.Nullable
   public String getReason() {
     return reason;
@@ -240,10 +240,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Added date
    * @return dateAdded
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
@@ -259,10 +259,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Get result
    * @return result
-   */
+  **/
   @javax.annotation.Nullable
   public EmailValidationStatus getResult() {
     return result;
@@ -278,10 +278,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Predicted score
    * @return predictedScore
-   */
+  **/
   @javax.annotation.Nullable
   public BigDecimal getPredictedScore() {
     return predictedScore;
@@ -297,10 +297,10 @@ public class EmailValidationResult {
     return this;
   }
 
-  /**
+   /**
    * Get predictedStatus
    * @return predictedStatus
-   */
+  **/
   @javax.annotation.Nullable
   public EmailPredictedValidationStatus getPredictedStatus() {
     return predictedStatus;
@@ -392,12 +392,12 @@ public class EmailValidationResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailValidationResult
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailValidationResult
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailValidationResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -467,22 +467,22 @@ public class EmailValidationResult {
     }
   }
 
-  /**
-   * Create an instance of EmailValidationResult given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailValidationResult
-   * @throws IOException if the JSON string is invalid with respect to EmailValidationResult
-   */
+ /**
+  * Create an instance of EmailValidationResult given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailValidationResult
+  * @throws IOException if the JSON string is invalid with respect to EmailValidationResult
+  */
   public static EmailValidationResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailValidationResult.class);
   }
 
-  /**
-   * Convert an instance of EmailValidationResult to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailValidationResult to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

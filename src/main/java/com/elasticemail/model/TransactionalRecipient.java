@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * List of transactional recipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class TransactionalRecipient {
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)
@@ -81,10 +81,10 @@ public class TransactionalRecipient {
     return this;
   }
 
-  /**
+   /**
    * List of recipients (visible to others)
    * @return to
-   */
+  **/
   @javax.annotation.Nonnull
   public List<String> getTo() {
     return to;
@@ -108,10 +108,10 @@ public class TransactionalRecipient {
     return this;
   }
 
-  /**
+   /**
    * List of Carbon Copy recipients (visible to others)
    * @return CC
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getCC() {
     return CC;
@@ -135,10 +135,10 @@ public class TransactionalRecipient {
     return this;
   }
 
-  /**
+   /**
    * List of Blind Carbon Copy recipients (hidden from other recipients)
    * @return BCC
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getBCC() {
     return BCC;
@@ -207,12 +207,12 @@ public class TransactionalRecipient {
     openapiRequiredFields.add("To");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to TransactionalRecipient
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to TransactionalRecipient
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TransactionalRecipient.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -280,22 +280,22 @@ public class TransactionalRecipient {
     }
   }
 
-  /**
-   * Create an instance of TransactionalRecipient given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of TransactionalRecipient
-   * @throws IOException if the JSON string is invalid with respect to TransactionalRecipient
-   */
+ /**
+  * Create an instance of TransactionalRecipient given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of TransactionalRecipient
+  * @throws IOException if the JSON string is invalid with respect to TransactionalRecipient
+  */
   public static TransactionalRecipient fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TransactionalRecipient.class);
   }
 
-  /**
-   * Convert an instance of TransactionalRecipient to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of TransactionalRecipient to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

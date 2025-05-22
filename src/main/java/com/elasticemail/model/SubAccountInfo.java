@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed information about SubAccount.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SubAccountInfo {
   public static final String SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D = "PublicAccountID";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D)
@@ -98,10 +98,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Public key for limited access to your Account such as contact/add so you can use it safely on public websites.
    * @return publicAccountID
-   */
+  **/
   @javax.annotation.Nullable
   public String getPublicAccountID() {
     return publicAccountID;
@@ -117,10 +117,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Proper email address.
    * @return email
-   */
+  **/
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
@@ -136,10 +136,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Get settings
    * @return settings
-   */
+  **/
   @javax.annotation.Nullable
   public SubaccountSettingsInfo getSettings() {
     return settings;
@@ -155,10 +155,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Date of last activity on Account
    * @return lastActivity
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getLastActivity() {
     return lastActivity;
@@ -174,10 +174,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Amount of email credits
    * @return emailCredits
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getEmailCredits() {
     return emailCredits;
@@ -193,10 +193,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Amount of emails sent from this Account
    * @return totalEmailsSent
-   */
+  **/
   @javax.annotation.Nullable
   public Long getTotalEmailsSent() {
     return totalEmailsSent;
@@ -212,10 +212,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Numeric reputation
    * @return reputation
-   */
+  **/
   @javax.annotation.Nullable
   public Double getReputation() {
     return reputation;
@@ -231,10 +231,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * Get status
    * @return status
-   */
+  **/
   @javax.annotation.Nullable
   public AccountStatusEnum getStatus() {
     return status;
@@ -250,10 +250,10 @@ public class SubAccountInfo {
     return this;
   }
 
-  /**
+   /**
    * How many contacts this SubAccount has stored
    * @return contactsCount
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getContactsCount() {
     return contactsCount;
@@ -339,12 +339,12 @@ public class SubAccountInfo {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SubAccountInfo
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SubAccountInfo
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubAccountInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -405,22 +405,22 @@ public class SubAccountInfo {
     }
   }
 
-  /**
-   * Create an instance of SubAccountInfo given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SubAccountInfo
-   * @throws IOException if the JSON string is invalid with respect to SubAccountInfo
-   */
+ /**
+  * Create an instance of SubAccountInfo given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SubAccountInfo
+  * @throws IOException if the JSON string is invalid with respect to SubAccountInfo
+  */
   public static SubAccountInfo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubAccountInfo.class);
   }
 
-  /**
-   * Convert an instance of SubAccountInfo to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SubAccountInfo to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

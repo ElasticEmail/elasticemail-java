@@ -56,7 +56,7 @@ import com.elasticemail.client.JSON;
 /**
  * Proper e-mail content
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailContent {
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -122,10 +122,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * List of e-mail body parts, with user-provided MIME types (text/html, text/plain etc)
    * @return body
-   */
+  **/
   @javax.annotation.Nullable
   public List<BodyPart> getBody() {
     return body;
@@ -149,10 +149,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * A key-value collection of custom merge fields, shared between recipients. Should be used in e-mail body like so: {firstname}, {lastname} etc.
    * @return merge
-   */
+  **/
   @javax.annotation.Nullable
   public Map<String, String> getMerge() {
     return merge;
@@ -176,10 +176,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Attachments provided by sending binary data
    * @return attachments
-   */
+  **/
   @javax.annotation.Nullable
   public List<MessageAttachment> getAttachments() {
     return attachments;
@@ -203,10 +203,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * A key-value collection of custom e-mail headers.
    * @return headers
-   */
+  **/
   @javax.annotation.Nullable
   public Map<String, String> getHeaders() {
     return headers;
@@ -222,10 +222,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Postback header.
    * @return postback
-   */
+  **/
   @javax.annotation.Nullable
   public String getPostback() {
     return postback;
@@ -241,10 +241,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * E-mail with an optional name to be used as the envelope from address (e.g.: John Doe &lt;email@domain.com&gt;)
    * @return envelopeFrom
-   */
+  **/
   @javax.annotation.Nullable
   public String getEnvelopeFrom() {
     return envelopeFrom;
@@ -260,10 +260,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;)
    * @return from
-   */
+  **/
   @javax.annotation.Nonnull
   public String getFrom() {
     return from;
@@ -279,10 +279,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
    * @return replyTo
-   */
+  **/
   @javax.annotation.Nullable
   public String getReplyTo() {
     return replyTo;
@@ -298,10 +298,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Default subject of email.
    * @return subject
-   */
+  **/
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
@@ -317,10 +317,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Name of template.
    * @return templateName
-   */
+  **/
   @javax.annotation.Nullable
   public String getTemplateName() {
     return templateName;
@@ -344,10 +344,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Names of previously uploaded files that should be sent as downloadable attachments
    * @return attachFiles
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getAttachFiles() {
     return attachFiles;
@@ -363,10 +363,10 @@ public class EmailContent {
     return this;
   }
 
-  /**
+   /**
    * Get utm
    * @return utm
-   */
+  **/
   @javax.annotation.Nullable
   public Utm getUtm() {
     return utm;
@@ -462,12 +462,12 @@ public class EmailContent {
     openapiRequiredFields.add("From");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailContent
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailContent
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailContent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -575,22 +575,22 @@ public class EmailContent {
     }
   }
 
-  /**
-   * Create an instance of EmailContent given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailContent
-   * @throws IOException if the JSON string is invalid with respect to EmailContent
-   */
+ /**
+  * Create an instance of EmailContent given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailContent
+  * @throws IOException if the JSON string is invalid with respect to EmailContent
+  */
   public static EmailContent fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailContent.class);
   }
 
-  /**
-   * Convert an instance of EmailContent to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailContent to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

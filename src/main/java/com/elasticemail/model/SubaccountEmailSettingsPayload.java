@@ -50,7 +50,7 @@ import com.elasticemail.client.JSON;
 /**
  * Settings related to sending emails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class SubaccountEmailSettingsPayload {
   public static final String SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS = "RequiresEmailCredits";
   @SerializedName(SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS)
@@ -88,10 +88,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * True, if Account needs credits to send emails. Otherwise, false
    * @return requiresEmailCredits
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getRequiresEmailCredits() {
     return requiresEmailCredits;
@@ -107,10 +107,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Maximum size of email including attachments in MB&#39;s
    * @return emailSizeLimit
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getEmailSizeLimit() {
     return emailSizeLimit;
@@ -126,10 +126,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Amount of emails Account can send daily
    * @return dailySendLimit
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getDailySendLimit() {
     return dailySendLimit;
@@ -145,10 +145,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used.
    * @return maxContacts
-   */
+  **/
   @javax.annotation.Nullable
   public Integer getMaxContacts() {
     return maxContacts;
@@ -164,10 +164,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Can the SubAccount purchase Private IP for themselves
    * @return enablePrivateIPPurchase
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getEnablePrivateIPPurchase() {
     return enablePrivateIPPurchase;
@@ -183,10 +183,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-   */
+  **/
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
@@ -202,10 +202,10 @@ public class SubaccountEmailSettingsPayload {
     return this;
   }
 
-  /**
+   /**
    * Get validSenderDomainOnly
    * @return validSenderDomainOnly
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getValidSenderDomainOnly() {
     return validSenderDomainOnly;
@@ -296,12 +296,12 @@ public class SubaccountEmailSettingsPayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettingsPayload
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettingsPayload
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountEmailSettingsPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -351,22 +351,22 @@ public class SubaccountEmailSettingsPayload {
     }
   }
 
-  /**
-   * Create an instance of SubaccountEmailSettingsPayload given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of SubaccountEmailSettingsPayload
-   * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettingsPayload
-   */
+ /**
+  * Create an instance of SubaccountEmailSettingsPayload given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of SubaccountEmailSettingsPayload
+  * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettingsPayload
+  */
   public static SubaccountEmailSettingsPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountEmailSettingsPayload.class);
   }
 
-  /**
-   * Convert an instance of SubaccountEmailSettingsPayload to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of SubaccountEmailSettingsPayload to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

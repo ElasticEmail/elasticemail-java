@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Content of a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class CampaignTemplate {
   public static final String SERIALIZED_NAME_POOLNAME = "Poolname";
   @SerializedName(SERIALIZED_NAME_POOLNAME)
@@ -90,10 +90,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolname
-   */
+  **/
   @javax.annotation.Nullable
   public String getPoolname() {
     return poolname;
@@ -109,10 +109,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;)
    * @return from
-   */
+  **/
   @javax.annotation.Nonnull
   public String getFrom() {
     return from;
@@ -128,10 +128,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
    * @return replyTo
-   */
+  **/
   @javax.annotation.Nullable
   public String getReplyTo() {
     return replyTo;
@@ -147,10 +147,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Default subject of email.
    * @return subject
-   */
+  **/
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
@@ -166,10 +166,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Name of template.
    * @return templateName
-   */
+  **/
   @javax.annotation.Nullable
   public String getTemplateName() {
     return templateName;
@@ -193,10 +193,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Names of previously uploaded files that should be sent as downloadable attachments
    * @return attachFiles
-   */
+  **/
   @javax.annotation.Nullable
   public List<String> getAttachFiles() {
     return attachFiles;
@@ -212,10 +212,10 @@ public class CampaignTemplate {
     return this;
   }
 
-  /**
+   /**
    * Get utm
    * @return utm
-   */
+  **/
   @javax.annotation.Nullable
   public Utm getUtm() {
     return utm;
@@ -296,12 +296,12 @@ public class CampaignTemplate {
     openapiRequiredFields.add("From");
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CampaignTemplate
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to CampaignTemplate
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CampaignTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -378,22 +378,22 @@ public class CampaignTemplate {
     }
   }
 
-  /**
-   * Create an instance of CampaignTemplate given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of CampaignTemplate
-   * @throws IOException if the JSON string is invalid with respect to CampaignTemplate
-   */
+ /**
+  * Create an instance of CampaignTemplate given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CampaignTemplate
+  * @throws IOException if the JSON string is invalid with respect to CampaignTemplate
+  */
   public static CampaignTemplate fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CampaignTemplate.class);
   }
 
-  /**
-   * Convert an instance of CampaignTemplate to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of CampaignTemplate to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

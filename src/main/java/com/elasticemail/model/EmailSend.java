@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * EmailSend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class EmailSend {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
@@ -67,10 +67,10 @@ public class EmailSend {
     return this;
   }
 
-  /**
+   /**
    * ID number of transaction
    * @return transactionID
-   */
+  **/
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
@@ -86,10 +86,10 @@ public class EmailSend {
     return this;
   }
 
-  /**
+   /**
    * Unique identifier for this email.
    * @return messageID
-   */
+  **/
   @javax.annotation.Nullable
   public String getMessageID() {
     return messageID;
@@ -154,12 +154,12 @@ public class EmailSend {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EmailSend
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to EmailSend
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailSend.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -212,22 +212,22 @@ public class EmailSend {
     }
   }
 
-  /**
-   * Create an instance of EmailSend given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of EmailSend
-   * @throws IOException if the JSON string is invalid with respect to EmailSend
-   */
+ /**
+  * Create an instance of EmailSend given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of EmailSend
+  * @throws IOException if the JSON string is invalid with respect to EmailSend
+  */
   public static EmailSend fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailSend.class);
   }
 
-  /**
-   * Convert an instance of EmailSend to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of EmailSend to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

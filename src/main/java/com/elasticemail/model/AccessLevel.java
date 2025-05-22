@@ -31,105 +31,119 @@ public enum AccessLevel {
   
   NONE("None"),
   
-  VIEW_ACCOUNT("ViewAccount"),
+  VIEWACCOUNT("ViewAccount"),
   
-  VIEW_CONTACTS("ViewContacts"),
+  VIEWCONTACTS("ViewContacts"),
   
-  VIEW_FORMS("ViewForms"),
+  VIEWFORMS("ViewForms"),
   
-  VIEW_TEMPLATES("ViewTemplates"),
+  VIEWTEMPLATES("ViewTemplates"),
   
-  VIEW_CAMPAIGNS("ViewCampaigns"),
+  VIEWCAMPAIGNS("ViewCampaigns"),
   
-  VIEW_CHANNELS("ViewChannels"),
+  VIEWCHANNELS("ViewChannels"),
   
-  VIEW_AUTOMATIONS("ViewAutomations"),
+  VIEWAUTOMATIONS("ViewAutomations"),
   
-  VIEW_SURVEYS("ViewSurveys"),
+  VIEWSURVEYS("ViewSurveys"),
   
-  VIEW_SETTINGS("ViewSettings"),
+  VIEWSETTINGS("ViewSettings"),
   
-  VIEW_BILLING("ViewBilling"),
+  VIEWBILLING("ViewBilling"),
   
-  VIEW_SUB_ACCOUNTS("ViewSubAccounts"),
+  VIEWSUBACCOUNTS("ViewSubAccounts"),
   
-  VIEW_USERS("ViewUsers"),
+  VIEWUSERS("ViewUsers"),
   
-  VIEW_FILES("ViewFiles"),
+  VIEWFILES("ViewFiles"),
   
-  VIEW_REPORTS("ViewReports"),
+  VIEWREPORTS("ViewReports"),
   
-  MODIFY_ACCOUNT("ModifyAccount"),
+  MODIFYACCOUNT("ModifyAccount"),
   
-  MODIFY_CONTACTS("ModifyContacts"),
+  MODIFYCONTACTS("ModifyContacts"),
   
-  MODIFY_FORMS("ModifyForms"),
+  MODIFYFORMS("ModifyForms"),
   
-  MODIFY_TEMPLATES("ModifyTemplates"),
+  MODIFYTEMPLATES("ModifyTemplates"),
   
-  MODIFY_CAMPAIGNS("ModifyCampaigns"),
+  MODIFYCAMPAIGNS("ModifyCampaigns"),
   
-  MODIFY_CHANNELS("ModifyChannels"),
+  MODIFYCHANNELS("ModifyChannels"),
   
-  MODIFY_AUTOMATIONS("ModifyAutomations"),
+  MODIFYAUTOMATIONS("ModifyAutomations"),
   
-  MODIFY_SURVEYS("ModifySurveys"),
+  MODIFYSURVEYS("ModifySurveys"),
   
-  MODIFY_FILES("ModifyFiles"),
+  MODIFYFILES("ModifyFiles"),
   
   EXPORT("Export"),
   
-  SEND_SMTP("SendSmtp"),
+  SENDSMTP("SendSmtp"),
   
-  SEND_SMS("SendSMS"),
+  SENDSMS("SendSMS"),
   
-  MODIFY_SETTINGS("ModifySettings"),
+  MODIFYSETTINGS("ModifySettings"),
   
-  MODIFY_BILLING("ModifyBilling"),
+  MODIFYBILLING("ModifyBilling"),
   
-  MODIFY_PROFILE("ModifyProfile"),
+  MODIFYPROFILE("ModifyProfile"),
   
-  MODIFY_SUB_ACCOUNTS("ModifySubAccounts"),
+  MODIFYSUBACCOUNTS("ModifySubAccounts"),
   
-  MODIFY_USERS("ModifyUsers"),
+  MODIFYUSERS("ModifyUsers"),
   
   SECURITY("Security"),
   
-  MODIFY_LANGUAGE("ModifyLanguage"),
+  MODIFYLANGUAGE("ModifyLanguage"),
   
-  VIEW_SUPPORT("ViewSupport"),
+  VIEWSUPPORT("ViewSupport"),
   
-  SEND_HTTP("SendHttp"),
+  SENDHTTP("SendHttp"),
   
-  MODIFY2_FA_EMAIL("Modify2FAEmail"),
+  MODIFY2FAEMAIL("Modify2FAEmail"),
   
-  MODIFY_SUPPORT("ModifySupport"),
+  MODIFYSUPPORT("ModifySupport"),
   
-  VIEW_CUSTOM_FIELDS("ViewCustomFields"),
+  VIEWCUSTOMFIELDS("ViewCustomFields"),
   
-  MODIFY_CUSTOM_FIELDS("ModifyCustomFields"),
+  MODIFYCUSTOMFIELDS("ModifyCustomFields"),
   
-  MODIFY_WEB_NOTIFICATIONS("ModifyWebNotifications"),
+  MODIFYWEBNOTIFICATIONS("ModifyWebNotifications"),
   
-  EXTENDED_LOGS("ExtendedLogs"),
+  EXTENDEDLOGS("ExtendedLogs"),
   
-  VERIFY_EMAILS("VerifyEmails"),
+  VERIFYEMAILS("VerifyEmails"),
   
-  MODIFY2_FA_SMS("Modify2FASms"),
+  MODIFY2FASMS("Modify2FASms"),
   
-  MODIFY_LANDING_PAGES("ModifyLandingPages"),
+  MODIFYLANDINGPAGES("ModifyLandingPages"),
   
-  VIEW_LANDING_PAGES("ViewLandingPages"),
+  VIEWLANDINGPAGES("ViewLandingPages"),
   
-  MODIFY_SUPPRESSIONS("ModifySuppressions"),
+  MODIFYSUPPRESSIONS("ModifySuppressions"),
   
-  VIEW_SUPPRESSIONS("ViewSuppressions"),
+  VIEWSUPPRESSIONS("ViewSuppressions"),
   
-  VIEW_DRAG_DROP_EDITOR("ViewDragDropEditor"),
+  VIEWDRAGDROPEDITOR("ViewDragDropEditor"),
   
-  VIEW_TEMPLATE_EDITOR("ViewTemplateEditor"),
+  VIEWTEMPLATEEDITOR("ViewTemplateEditor"),
   
-  VIEW_AI_TOOLS("ViewAITools");
+  VIEWAITOOLS("ViewAITools"),
+  
+  MODIFYSUBSCRIPTIONANTISPAM("ModifySubscriptionAntiSpam"),
+  
+  VIEWLANDINGPAGESCHECKOUT("ViewLandingPagesCheckout"),
+  
+  MODIFYLANDINGPAGESCHECKOUT("ModifyLandingPagesCheckout"),
+  
+  VIEWHTMLEDITOR("ViewHTMLEditor"),
+  
+  MODIFYACCESSTOKENS("ModifyAccessTokens"),
+  
+  VIEWPAIDNEWSLETTERS("ViewPaidNewsletters"),
+  
+  MODIFYPAIDNEWSLETTERS("ModifyPaidNewsletters");
 
   private String value;
 

@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * List of Lists, with detailed data about its contents.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2024-07-08T09:36:05.709243Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
 public class ContactsList {
   public static final String SERIALIZED_NAME_LIST_NAME = "ListName";
   @SerializedName(SERIALIZED_NAME_LIST_NAME)
@@ -77,10 +77,10 @@ public class ContactsList {
     return this;
   }
 
-  /**
+   /**
    * Name of your list.
    * @return listName
-   */
+  **/
   @javax.annotation.Nullable
   public String getListName() {
     return listName;
@@ -96,10 +96,10 @@ public class ContactsList {
     return this;
   }
 
-  /**
+   /**
    * ID code of list. Please note that this is different from the listid field.
    * @return publicListID
-   */
+  **/
   @javax.annotation.Nullable
   public String getPublicListID() {
     return publicListID;
@@ -115,10 +115,10 @@ public class ContactsList {
     return this;
   }
 
-  /**
+   /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-   */
+  **/
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
@@ -134,10 +134,10 @@ public class ContactsList {
     return this;
   }
 
-  /**
+   /**
    * True: Allow unsubscribing from this list. Otherwise, false
    * @return allowUnsubscribe
-   */
+  **/
   @javax.annotation.Nullable
   public Boolean getAllowUnsubscribe() {
     return allowUnsubscribe;
@@ -219,12 +219,12 @@ public class ContactsList {
     openapiRequiredFields = new HashSet<String>();
   }
 
-  /**
-   * Validates the JSON Element and throws an exception if issues found
-   *
-   * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ContactsList
-   */
+ /**
+  * Validates the JSON Element and throws an exception if issues found
+  *
+  * @param jsonElement JSON Element
+  * @throws IOException if the JSON Element is invalid with respect to ContactsList
+  */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactsList.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -277,22 +277,22 @@ public class ContactsList {
     }
   }
 
-  /**
-   * Create an instance of ContactsList given an JSON string
-   *
-   * @param jsonString JSON string
-   * @return An instance of ContactsList
-   * @throws IOException if the JSON string is invalid with respect to ContactsList
-   */
+ /**
+  * Create an instance of ContactsList given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ContactsList
+  * @throws IOException if the JSON string is invalid with respect to ContactsList
+  */
   public static ContactsList fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactsList.class);
   }
 
-  /**
-   * Convert an instance of ContactsList to an JSON string
-   *
-   * @return JSON string
-   */
+ /**
+  * Convert an instance of ContactsList to an JSON string
+  *
+  * @return JSON string
+  */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

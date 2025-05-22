@@ -29,7 +29,7 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(InboundRouteFilterType.Adapter.class)
 public enum InboundRouteFilterType {
   
-  EMAIL_ADDRESS("EmailAddress"),
+  EMAILADDRESS("EmailAddress"),
   
   SUBJECT("Subject");
 
