@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'com.elasticemail'
-version = '4.0.27'
+version = '4.1.1'
 
 buildscript {
     repositories {

@@ -50,7 +50,7 @@ import com.elasticemail.client.JSON;
 /**
  * ListPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
 public class ListPayload {
   public static final String SERIALIZED_NAME_LIST_NAME = "ListName";
   @SerializedName(SERIALIZED_NAME_LIST_NAME)

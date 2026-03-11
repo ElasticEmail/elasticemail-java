@@ -49,7 +49,7 @@ import com.elasticemail.client.JSON;
 /**
  * Email body part with user-provided MIME type (text/html, text/plain, etc)
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
 public class BodyPart {
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "ContentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)

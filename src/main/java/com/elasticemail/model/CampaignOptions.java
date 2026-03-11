@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Different send options for a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)

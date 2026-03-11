@@ -55,7 +55,7 @@ import com.elasticemail.client.JSON;
 /**
  * Proper e-mail content
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailContent {
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)

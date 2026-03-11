@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.elasticemail",
     name := "elasticemail",
-    version := "4.0.27",
+    version := "4.1.1",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
