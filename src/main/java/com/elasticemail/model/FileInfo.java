@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,122 +50,127 @@ import com.elasticemail.client.JSON;
 /**
  * File information
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class FileInfo {
   public static final String SERIALIZED_NAME_FILE_NAME = "FileName";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
+  @javax.annotation.Nullable
   private String fileName;
 
   public static final String SERIALIZED_NAME_SIZE = "Size";
   @SerializedName(SERIALIZED_NAME_SIZE)
+  @javax.annotation.Nullable
   private Integer size;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateAdded;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DATE = "ExpirationDate";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DATE)
+  @javax.annotation.Nullable
   private OffsetDateTime expirationDate;
 
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "ContentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  @javax.annotation.Nullable
   private String contentType;
 
   public FileInfo() {
   }
 
-  public FileInfo fileName(String fileName) {
+  public FileInfo fileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
     return this;
   }
 
-   /**
+  /**
    * Name of your file including extension.
    * @return fileName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFileName() {
     return fileName;
   }
 
-  public void setFileName(String fileName) {
+  public void setFileName(@javax.annotation.Nullable String fileName) {
     this.fileName = fileName;
   }
 
 
-  public FileInfo size(Integer size) {
+  public FileInfo size(@javax.annotation.Nullable Integer size) {
     this.size = size;
     return this;
   }
 
-   /**
+  /**
    * Size of your attachment (in bytes).
    * @return size
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(@javax.annotation.Nullable Integer size) {
     this.size = size;
   }
 
 
-  public FileInfo dateAdded(OffsetDateTime dateAdded) {
+  public FileInfo dateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
 
-  public void setDateAdded(OffsetDateTime dateAdded) {
+  public void setDateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
   }
 
 
-  public FileInfo expirationDate(OffsetDateTime expirationDate) {
+  public FileInfo expirationDate(@javax.annotation.Nullable OffsetDateTime expirationDate) {
     this.expirationDate = expirationDate;
     return this;
   }
 
-   /**
+  /**
    * Date when the file will be deleted from your Account.
    * @return expirationDate
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getExpirationDate() {
     return expirationDate;
   }
 
-  public void setExpirationDate(OffsetDateTime expirationDate) {
+  public void setExpirationDate(@javax.annotation.Nullable OffsetDateTime expirationDate) {
     this.expirationDate = expirationDate;
   }
 
 
-  public FileInfo contentType(String contentType) {
+  public FileInfo contentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
     return this;
   }
 
-   /**
+  /**
    * Content type of the file.
    * @return contentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getContentType() {
     return contentType;
   }
 
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
   }
 
@@ -245,12 +249,12 @@ public class FileInfo {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FileInfo
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FileInfo
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FileInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -303,22 +307,22 @@ public class FileInfo {
     }
   }
 
- /**
-  * Create an instance of FileInfo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FileInfo
-  * @throws IOException if the JSON string is invalid with respect to FileInfo
-  */
+  /**
+   * Create an instance of FileInfo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FileInfo
+   * @throws IOException if the JSON string is invalid with respect to FileInfo
+   */
   public static FileInfo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FileInfo.class);
   }
 
- /**
-  * Convert an instance of FileInfo to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FileInfo to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

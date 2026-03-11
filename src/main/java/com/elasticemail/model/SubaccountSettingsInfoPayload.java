@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,30 +49,31 @@ import com.elasticemail.client.JSON;
 /**
  * SubAccount settings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SubaccountSettingsInfoPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private SubaccountEmailSettingsPayload email;
 
   public SubaccountSettingsInfoPayload() {
   }
 
-  public SubaccountSettingsInfoPayload email(SubaccountEmailSettingsPayload email) {
+  public SubaccountSettingsInfoPayload email(@javax.annotation.Nullable SubaccountEmailSettingsPayload email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Get email
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public SubaccountEmailSettingsPayload getEmail() {
     return email;
   }
 
-  public void setEmail(SubaccountEmailSettingsPayload email) {
+  public void setEmail(@javax.annotation.Nullable SubaccountEmailSettingsPayload email) {
     this.email = email;
   }
 
@@ -129,12 +129,12 @@ public class SubaccountSettingsInfoPayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SubaccountSettingsInfoPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubaccountSettingsInfoPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountSettingsInfoPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -185,22 +185,22 @@ public class SubaccountSettingsInfoPayload {
     }
   }
 
- /**
-  * Create an instance of SubaccountSettingsInfoPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubaccountSettingsInfoPayload
-  * @throws IOException if the JSON string is invalid with respect to SubaccountSettingsInfoPayload
-  */
+  /**
+   * Create an instance of SubaccountSettingsInfoPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubaccountSettingsInfoPayload
+   * @throws IOException if the JSON string is invalid with respect to SubaccountSettingsInfoPayload
+   */
   public static SubaccountSettingsInfoPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountSettingsInfoPayload.class);
   }
 
- /**
-  * Convert an instance of SubaccountSettingsInfoPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubaccountSettingsInfoPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

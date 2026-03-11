@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,214 +51,223 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed information about SubAccount.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SubAccountInfo {
   public static final String SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D = "PublicAccountID";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ACCOUNT_I_D)
+  @javax.annotation.Nullable
   private String publicAccountID;
 
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_SETTINGS = "Settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nullable
   private SubaccountSettingsInfo settings;
 
   public static final String SERIALIZED_NAME_LAST_ACTIVITY = "LastActivity";
   @SerializedName(SERIALIZED_NAME_LAST_ACTIVITY)
+  @javax.annotation.Nullable
   private OffsetDateTime lastActivity;
 
   public static final String SERIALIZED_NAME_EMAIL_CREDITS = "EmailCredits";
   @SerializedName(SERIALIZED_NAME_EMAIL_CREDITS)
+  @javax.annotation.Nullable
   private Integer emailCredits;
 
   public static final String SERIALIZED_NAME_TOTAL_EMAILS_SENT = "TotalEmailsSent";
   @SerializedName(SERIALIZED_NAME_TOTAL_EMAILS_SENT)
+  @javax.annotation.Nullable
   private Long totalEmailsSent;
 
   public static final String SERIALIZED_NAME_REPUTATION = "Reputation";
   @SerializedName(SERIALIZED_NAME_REPUTATION)
+  @javax.annotation.Nullable
   private Double reputation;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private AccountStatusEnum status = AccountStatusEnum.DISABLED;
 
   public static final String SERIALIZED_NAME_CONTACTS_COUNT = "ContactsCount";
   @SerializedName(SERIALIZED_NAME_CONTACTS_COUNT)
+  @javax.annotation.Nullable
   private Integer contactsCount;
 
   public SubAccountInfo() {
   }
 
-  public SubAccountInfo publicAccountID(String publicAccountID) {
+  public SubAccountInfo publicAccountID(@javax.annotation.Nullable String publicAccountID) {
     this.publicAccountID = publicAccountID;
     return this;
   }
 
-   /**
+  /**
    * Public key for limited access to your Account such as contact/add so you can use it safely on public websites.
    * @return publicAccountID
-  **/
+   */
   @javax.annotation.Nullable
   public String getPublicAccountID() {
     return publicAccountID;
   }
 
-  public void setPublicAccountID(String publicAccountID) {
+  public void setPublicAccountID(@javax.annotation.Nullable String publicAccountID) {
     this.publicAccountID = publicAccountID;
   }
 
 
-  public SubAccountInfo email(String email) {
+  public SubAccountInfo email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Proper email address.
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public SubAccountInfo settings(SubaccountSettingsInfo settings) {
+  public SubAccountInfo settings(@javax.annotation.Nullable SubaccountSettingsInfo settings) {
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
   public SubaccountSettingsInfo getSettings() {
     return settings;
   }
 
-  public void setSettings(SubaccountSettingsInfo settings) {
+  public void setSettings(@javax.annotation.Nullable SubaccountSettingsInfo settings) {
     this.settings = settings;
   }
 
 
-  public SubAccountInfo lastActivity(OffsetDateTime lastActivity) {
+  public SubAccountInfo lastActivity(@javax.annotation.Nullable OffsetDateTime lastActivity) {
     this.lastActivity = lastActivity;
     return this;
   }
 
-   /**
+  /**
    * Date of last activity on Account
    * @return lastActivity
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastActivity() {
     return lastActivity;
   }
 
-  public void setLastActivity(OffsetDateTime lastActivity) {
+  public void setLastActivity(@javax.annotation.Nullable OffsetDateTime lastActivity) {
     this.lastActivity = lastActivity;
   }
 
 
-  public SubAccountInfo emailCredits(Integer emailCredits) {
+  public SubAccountInfo emailCredits(@javax.annotation.Nullable Integer emailCredits) {
     this.emailCredits = emailCredits;
     return this;
   }
 
-   /**
+  /**
    * Amount of email credits
    * @return emailCredits
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getEmailCredits() {
     return emailCredits;
   }
 
-  public void setEmailCredits(Integer emailCredits) {
+  public void setEmailCredits(@javax.annotation.Nullable Integer emailCredits) {
     this.emailCredits = emailCredits;
   }
 
 
-  public SubAccountInfo totalEmailsSent(Long totalEmailsSent) {
+  public SubAccountInfo totalEmailsSent(@javax.annotation.Nullable Long totalEmailsSent) {
     this.totalEmailsSent = totalEmailsSent;
     return this;
   }
 
-   /**
+  /**
    * Amount of emails sent from this Account
    * @return totalEmailsSent
-  **/
+   */
   @javax.annotation.Nullable
   public Long getTotalEmailsSent() {
     return totalEmailsSent;
   }
 
-  public void setTotalEmailsSent(Long totalEmailsSent) {
+  public void setTotalEmailsSent(@javax.annotation.Nullable Long totalEmailsSent) {
     this.totalEmailsSent = totalEmailsSent;
   }
 
 
-  public SubAccountInfo reputation(Double reputation) {
+  public SubAccountInfo reputation(@javax.annotation.Nullable Double reputation) {
     this.reputation = reputation;
     return this;
   }
 
-   /**
+  /**
    * Numeric reputation
    * @return reputation
-  **/
+   */
   @javax.annotation.Nullable
   public Double getReputation() {
     return reputation;
   }
 
-  public void setReputation(Double reputation) {
+  public void setReputation(@javax.annotation.Nullable Double reputation) {
     this.reputation = reputation;
   }
 
 
-  public SubAccountInfo status(AccountStatusEnum status) {
+  public SubAccountInfo status(@javax.annotation.Nullable AccountStatusEnum status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public AccountStatusEnum getStatus() {
     return status;
   }
 
-  public void setStatus(AccountStatusEnum status) {
+  public void setStatus(@javax.annotation.Nullable AccountStatusEnum status) {
     this.status = status;
   }
 
 
-  public SubAccountInfo contactsCount(Integer contactsCount) {
+  public SubAccountInfo contactsCount(@javax.annotation.Nullable Integer contactsCount) {
     this.contactsCount = contactsCount;
     return this;
   }
 
-   /**
+  /**
    * How many contacts this SubAccount has stored
    * @return contactsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getContactsCount() {
     return contactsCount;
   }
 
-  public void setContactsCount(Integer contactsCount) {
+  public void setContactsCount(@javax.annotation.Nullable Integer contactsCount) {
     this.contactsCount = contactsCount;
   }
 
@@ -339,12 +347,12 @@ public class SubAccountInfo {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SubAccountInfo
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubAccountInfo
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubAccountInfo.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -405,22 +413,22 @@ public class SubAccountInfo {
     }
   }
 
- /**
-  * Create an instance of SubAccountInfo given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubAccountInfo
-  * @throws IOException if the JSON string is invalid with respect to SubAccountInfo
-  */
+  /**
+   * Create an instance of SubAccountInfo given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubAccountInfo
+   * @throws IOException if the JSON string is invalid with respect to SubAccountInfo
+   */
   public static SubAccountInfo fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubAccountInfo.class);
   }
 
- /**
-  * Convert an instance of SubAccountInfo to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubAccountInfo to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

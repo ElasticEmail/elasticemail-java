@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,168 +52,175 @@ import com.elasticemail.client.JSON;
 /**
  * Different send options for a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)
+  @javax.annotation.Nullable
   private DeliveryOptimizationType deliveryOptimization = DeliveryOptimizationType.NONE;
 
   public static final String SERIALIZED_NAME_TRACK_OPENS = "TrackOpens";
   @SerializedName(SERIALIZED_NAME_TRACK_OPENS)
+  @javax.annotation.Nullable
   private Boolean trackOpens;
 
   public static final String SERIALIZED_NAME_TRACK_CLICKS = "TrackClicks";
   @SerializedName(SERIALIZED_NAME_TRACK_CLICKS)
+  @javax.annotation.Nullable
   private Boolean trackClicks;
 
   public static final String SERIALIZED_NAME_SCHEDULE_FOR = "ScheduleFor";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_FOR)
+  @javax.annotation.Nullable
   private OffsetDateTime scheduleFor;
 
   public static final String SERIALIZED_NAME_TRIGGER_FREQUENCY = "TriggerFrequency";
   @SerializedName(SERIALIZED_NAME_TRIGGER_FREQUENCY)
+  @javax.annotation.Nullable
   private Double triggerFrequency;
 
   public static final String SERIALIZED_NAME_TRIGGER_COUNT = "TriggerCount";
   @SerializedName(SERIALIZED_NAME_TRIGGER_COUNT)
+  @javax.annotation.Nullable
   private Integer triggerCount;
 
   public static final String SERIALIZED_NAME_SPLIT_OPTIONS = "SplitOptions";
   @SerializedName(SERIALIZED_NAME_SPLIT_OPTIONS)
+  @javax.annotation.Nullable
   private SplitOptions splitOptions;
 
   public CampaignOptions() {
   }
 
-  public CampaignOptions deliveryOptimization(DeliveryOptimizationType deliveryOptimization) {
+  public CampaignOptions deliveryOptimization(@javax.annotation.Nullable DeliveryOptimizationType deliveryOptimization) {
     this.deliveryOptimization = deliveryOptimization;
     return this;
   }
 
-   /**
+  /**
    * Get deliveryOptimization
    * @return deliveryOptimization
-  **/
+   */
   @javax.annotation.Nullable
   public DeliveryOptimizationType getDeliveryOptimization() {
     return deliveryOptimization;
   }
 
-  public void setDeliveryOptimization(DeliveryOptimizationType deliveryOptimization) {
+  public void setDeliveryOptimization(@javax.annotation.Nullable DeliveryOptimizationType deliveryOptimization) {
     this.deliveryOptimization = deliveryOptimization;
   }
 
 
-  public CampaignOptions trackOpens(Boolean trackOpens) {
+  public CampaignOptions trackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
     return this;
   }
 
-   /**
+  /**
    * Should the opens be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackOpens
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTrackOpens() {
     return trackOpens;
   }
 
-  public void setTrackOpens(Boolean trackOpens) {
+  public void setTrackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
   }
 
 
-  public CampaignOptions trackClicks(Boolean trackClicks) {
+  public CampaignOptions trackClicks(@javax.annotation.Nullable Boolean trackClicks) {
     this.trackClicks = trackClicks;
     return this;
   }
 
-   /**
+  /**
    * Should the clicks be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackClicks
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTrackClicks() {
     return trackClicks;
   }
 
-  public void setTrackClicks(Boolean trackClicks) {
+  public void setTrackClicks(@javax.annotation.Nullable Boolean trackClicks) {
     this.trackClicks = trackClicks;
   }
 
 
-  public CampaignOptions scheduleFor(OffsetDateTime scheduleFor) {
+  public CampaignOptions scheduleFor(@javax.annotation.Nullable OffsetDateTime scheduleFor) {
     this.scheduleFor = scheduleFor;
     return this;
   }
 
-   /**
+  /**
    * Date when this Campaign is scheduled to be sent on
    * @return scheduleFor
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getScheduleFor() {
     return scheduleFor;
   }
 
-  public void setScheduleFor(OffsetDateTime scheduleFor) {
+  public void setScheduleFor(@javax.annotation.Nullable OffsetDateTime scheduleFor) {
     this.scheduleFor = scheduleFor;
   }
 
 
-  public CampaignOptions triggerFrequency(Double triggerFrequency) {
+  public CampaignOptions triggerFrequency(@javax.annotation.Nullable Double triggerFrequency) {
     this.triggerFrequency = triggerFrequency;
     return this;
   }
 
-   /**
+  /**
    * How often (in minutes) to send the campaign
    * @return triggerFrequency
-  **/
+   */
   @javax.annotation.Nullable
   public Double getTriggerFrequency() {
     return triggerFrequency;
   }
 
-  public void setTriggerFrequency(Double triggerFrequency) {
+  public void setTriggerFrequency(@javax.annotation.Nullable Double triggerFrequency) {
     this.triggerFrequency = triggerFrequency;
   }
 
 
-  public CampaignOptions triggerCount(Integer triggerCount) {
+  public CampaignOptions triggerCount(@javax.annotation.Nullable Integer triggerCount) {
     this.triggerCount = triggerCount;
     return this;
   }
 
-   /**
+  /**
    * How many times send the campaign
    * @return triggerCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTriggerCount() {
     return triggerCount;
   }
 
-  public void setTriggerCount(Integer triggerCount) {
+  public void setTriggerCount(@javax.annotation.Nullable Integer triggerCount) {
     this.triggerCount = triggerCount;
   }
 
 
-  public CampaignOptions splitOptions(SplitOptions splitOptions) {
+  public CampaignOptions splitOptions(@javax.annotation.Nullable SplitOptions splitOptions) {
     this.splitOptions = splitOptions;
     return this;
   }
 
-   /**
+  /**
    * Get splitOptions
    * @return splitOptions
-  **/
+   */
   @javax.annotation.Nullable
   public SplitOptions getSplitOptions() {
     return splitOptions;
   }
 
-  public void setSplitOptions(SplitOptions splitOptions) {
+  public void setSplitOptions(@javax.annotation.Nullable SplitOptions splitOptions) {
     this.splitOptions = splitOptions;
   }
 
@@ -299,12 +305,12 @@ public class CampaignOptions {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CampaignOptions
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CampaignOptions
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CampaignOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -359,22 +365,22 @@ public class CampaignOptions {
     }
   }
 
- /**
-  * Create an instance of CampaignOptions given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CampaignOptions
-  * @throws IOException if the JSON string is invalid with respect to CampaignOptions
-  */
+  /**
+   * Create an instance of CampaignOptions given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CampaignOptions
+   * @throws IOException if the JSON string is invalid with respect to CampaignOptions
+   */
   public static CampaignOptions fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CampaignOptions.class);
   }
 
- /**
-  * Convert an instance of CampaignOptions to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CampaignOptions to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

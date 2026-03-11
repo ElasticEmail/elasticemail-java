@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,135 +51,142 @@ import com.elasticemail.client.JSON;
 /**
  * Content of a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class CampaignTemplate {
   public static final String SERIALIZED_NAME_POOLNAME = "Poolname";
   @SerializedName(SERIALIZED_NAME_POOLNAME)
+  @javax.annotation.Nullable
   private String poolname;
 
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
+  @javax.annotation.Nonnull
   private String from;
 
   public static final String SERIALIZED_NAME_REPLY_TO = "ReplyTo";
   @SerializedName(SERIALIZED_NAME_REPLY_TO)
+  @javax.annotation.Nullable
   private String replyTo;
 
   public static final String SERIALIZED_NAME_SUBJECT = "Subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String SERIALIZED_NAME_TEMPLATE_NAME = "TemplateName";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_NAME)
+  @javax.annotation.Nullable
   private String templateName;
 
   public static final String SERIALIZED_NAME_ATTACH_FILES = "AttachFiles";
   @SerializedName(SERIALIZED_NAME_ATTACH_FILES)
+  @javax.annotation.Nullable
   private List<String> attachFiles = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UTM = "Utm";
   @SerializedName(SERIALIZED_NAME_UTM)
+  @javax.annotation.Nullable
   private Utm utm;
 
   public CampaignTemplate() {
   }
 
-  public CampaignTemplate poolname(String poolname) {
+  public CampaignTemplate poolname(@javax.annotation.Nullable String poolname) {
     this.poolname = poolname;
     return this;
   }
 
-   /**
+  /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolname
-  **/
+   */
   @javax.annotation.Nullable
   public String getPoolname() {
     return poolname;
   }
 
-  public void setPoolname(String poolname) {
+  public void setPoolname(@javax.annotation.Nullable String poolname) {
     this.poolname = poolname;
   }
 
 
-  public CampaignTemplate from(String from) {
+  public CampaignTemplate from(@javax.annotation.Nonnull String from) {
     this.from = from;
     return this;
   }
 
-   /**
+  /**
    * Your e-mail with an optional name (e.g.: John Doe &lt;email@domain.com&gt;)
    * @return from
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFrom() {
     return from;
   }
 
-  public void setFrom(String from) {
+  public void setFrom(@javax.annotation.Nonnull String from) {
     this.from = from;
   }
 
 
-  public CampaignTemplate replyTo(String replyTo) {
+  public CampaignTemplate replyTo(@javax.annotation.Nullable String replyTo) {
     this.replyTo = replyTo;
     return this;
   }
 
-   /**
+  /**
    * To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
    * @return replyTo
-  **/
+   */
   @javax.annotation.Nullable
   public String getReplyTo() {
     return replyTo;
   }
 
-  public void setReplyTo(String replyTo) {
+  public void setReplyTo(@javax.annotation.Nullable String replyTo) {
     this.replyTo = replyTo;
   }
 
 
-  public CampaignTemplate subject(String subject) {
+  public CampaignTemplate subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public CampaignTemplate templateName(String templateName) {
+  public CampaignTemplate templateName(@javax.annotation.Nullable String templateName) {
     this.templateName = templateName;
     return this;
   }
 
-   /**
+  /**
    * Name of template.
    * @return templateName
-  **/
+   */
   @javax.annotation.Nullable
   public String getTemplateName() {
     return templateName;
   }
 
-  public void setTemplateName(String templateName) {
+  public void setTemplateName(@javax.annotation.Nullable String templateName) {
     this.templateName = templateName;
   }
 
 
-  public CampaignTemplate attachFiles(List<String> attachFiles) {
+  public CampaignTemplate attachFiles(@javax.annotation.Nullable List<String> attachFiles) {
     this.attachFiles = attachFiles;
     return this;
   }
@@ -193,35 +199,35 @@ public class CampaignTemplate {
     return this;
   }
 
-   /**
+  /**
    * Names of previously uploaded files that should be sent as downloadable attachments
    * @return attachFiles
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAttachFiles() {
     return attachFiles;
   }
 
-  public void setAttachFiles(List<String> attachFiles) {
+  public void setAttachFiles(@javax.annotation.Nullable List<String> attachFiles) {
     this.attachFiles = attachFiles;
   }
 
 
-  public CampaignTemplate utm(Utm utm) {
+  public CampaignTemplate utm(@javax.annotation.Nullable Utm utm) {
     this.utm = utm;
     return this;
   }
 
-   /**
+  /**
    * Get utm
    * @return utm
-  **/
+   */
   @javax.annotation.Nullable
   public Utm getUtm() {
     return utm;
   }
 
-  public void setUtm(Utm utm) {
+  public void setUtm(@javax.annotation.Nullable Utm utm) {
     this.utm = utm;
   }
 
@@ -296,12 +302,12 @@ public class CampaignTemplate {
     openapiRequiredFields.add("From");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to CampaignTemplate
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to CampaignTemplate
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!CampaignTemplate.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -378,22 +384,22 @@ public class CampaignTemplate {
     }
   }
 
- /**
-  * Create an instance of CampaignTemplate given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of CampaignTemplate
-  * @throws IOException if the JSON string is invalid with respect to CampaignTemplate
-  */
+  /**
+   * Create an instance of CampaignTemplate given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of CampaignTemplate
+   * @throws IOException if the JSON string is invalid with respect to CampaignTemplate
+   */
   public static CampaignTemplate fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, CampaignTemplate.class);
   }
 
- /**
-  * Convert an instance of CampaignTemplate to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of CampaignTemplate to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

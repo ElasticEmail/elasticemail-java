@@ -18,7 +18,7 @@ Detailed information about message recipient
 |**channelName** | **String** | Name of selected channel. |  [optional] |
 |**messageCategory** | **MessageCategory** |  |  [optional] |
 |**nextTryOn** | **OffsetDateTime** | Date of next try |  [optional] |
-|**message** | **String** | Content of message, HTML encoded |  [optional] |
+|**message** | **String** | Error message if sending has failed (FailedAttempt or Bounce) |  [optional] |
 |**ipAddress** | **String** | IP which this email was sent through |  [optional] |
 |**poolName** | **String** | Name of an IP pool this email was sent through |  [optional] |
 

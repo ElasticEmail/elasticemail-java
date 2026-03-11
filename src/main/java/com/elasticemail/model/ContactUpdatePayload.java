@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,62 +50,65 @@ import com.elasticemail.client.JSON;
 /**
  * ContactUpdatePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class ContactUpdatePayload {
   public static final String SERIALIZED_NAME_FIRST_NAME = "FirstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "LastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "CustomFields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
+  @javax.annotation.Nullable
   private Map<String, String> customFields = new HashMap<>();
 
   public ContactUpdatePayload() {
   }
 
-  public ContactUpdatePayload firstName(String firstName) {
+  public ContactUpdatePayload firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * First name.
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public ContactUpdatePayload lastName(String lastName) {
+  public ContactUpdatePayload lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Last name.
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public ContactUpdatePayload customFields(Map<String, String> customFields) {
+  public ContactUpdatePayload customFields(@javax.annotation.Nullable Map<String, String> customFields) {
     this.customFields = customFields;
     return this;
   }
@@ -119,16 +121,16 @@ public class ContactUpdatePayload {
     return this;
   }
 
-   /**
+  /**
    * A key-value collection of custom contact fields which can be used in the system.
    * @return customFields
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, String> getCustomFields() {
     return customFields;
   }
 
-  public void setCustomFields(Map<String, String> customFields) {
+  public void setCustomFields(@javax.annotation.Nullable Map<String, String> customFields) {
     this.customFields = customFields;
   }
 
@@ -190,12 +192,12 @@ public class ContactUpdatePayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContactUpdatePayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContactUpdatePayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactUpdatePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -248,22 +250,22 @@ public class ContactUpdatePayload {
     }
   }
 
- /**
-  * Create an instance of ContactUpdatePayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContactUpdatePayload
-  * @throws IOException if the JSON string is invalid with respect to ContactUpdatePayload
-  */
+  /**
+   * Create an instance of ContactUpdatePayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContactUpdatePayload
+   * @throws IOException if the JSON string is invalid with respect to ContactUpdatePayload
+   */
   public static ContactUpdatePayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactUpdatePayload.class);
   }
 
- /**
-  * Convert an instance of ContactUpdatePayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContactUpdatePayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

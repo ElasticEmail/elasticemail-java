@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -82,7 +82,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -148,7 +149,8 @@ public class VerificationsApi {
      * @param email Email address to verification (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -164,7 +166,8 @@ public class VerificationsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -182,7 +185,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -200,7 +204,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -263,12 +268,13 @@ public class VerificationsApi {
 
     /**
      * Get Email Verification Result
-     * Returns a result of verified email. Required Access Level: VerifyEmails
+     * Returns a result of verified email. Required Access Level: ViewVerifyEmails
      * @param email Email address to view verification result of (required)
      * @return EmailValidationResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -280,12 +286,13 @@ public class VerificationsApi {
 
     /**
      * Get Email Verification Result
-     * Returns a result of verified email. Required Access Level: VerifyEmails
+     * Returns a result of verified email. Required Access Level: ViewVerifyEmails
      * @param email Email address to view verification result of (required)
      * @return ApiResponse&lt;EmailValidationResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -298,13 +305,14 @@ public class VerificationsApi {
 
     /**
      * Get Email Verification Result (asynchronously)
-     * Returns a result of verified email. Required Access Level: VerifyEmails
+     * Returns a result of verified email. Required Access Level: ViewVerifyEmails
      * @param email Email address to view verification result of (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -323,7 +331,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -391,7 +400,8 @@ public class VerificationsApi {
      * @return EmailValidationResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -408,7 +418,8 @@ public class VerificationsApi {
      * @return ApiResponse&lt;EmailValidationResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -427,7 +438,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -446,7 +458,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -512,7 +525,8 @@ public class VerificationsApi {
      * @param id ID of the exported file (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -528,7 +542,8 @@ public class VerificationsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -546,7 +561,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -564,7 +580,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A ZIP file with verification details </td><td>  -  </td></tr>
      </table>
@@ -627,12 +644,13 @@ public class VerificationsApi {
 
     /**
      * Download File Verification Result
-     * Download verification results as a ZIP file. Required Access Level: VerifyEmails
+     * Download verification results as a ZIP file. Required Access Level: ViewVerifyEmails
      * @param id Verification ID to download (required)
      * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A ZIP file with verification details </td><td>  -  </td></tr>
      </table>
@@ -644,12 +662,13 @@ public class VerificationsApi {
 
     /**
      * Download File Verification Result
-     * Download verification results as a ZIP file. Required Access Level: VerifyEmails
+     * Download verification results as a ZIP file. Required Access Level: ViewVerifyEmails
      * @param id Verification ID to download (required)
      * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A ZIP file with verification details </td><td>  -  </td></tr>
      </table>
@@ -662,13 +681,14 @@ public class VerificationsApi {
 
     /**
      * Download File Verification Result (asynchronously)
-     * Download verification results as a ZIP file. Required Access Level: VerifyEmails
+     * Download verification results as a ZIP file. Required Access Level: ViewVerifyEmails
      * @param id Verification ID to download (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> A ZIP file with verification details </td><td>  -  </td></tr>
      </table>
@@ -689,7 +709,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -760,14 +781,15 @@ public class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result
-     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
+     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewVerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
      * @return VerificationFileResultDetails
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -779,14 +801,15 @@ public class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result
-     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
+     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewVerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
      * @return ApiResponse&lt;VerificationFileResultDetails&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -799,7 +822,7 @@ public class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result (asynchronously)
-     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
+     * Returns status and results (if verified) of file with given ID. Required Access Level: ViewVerifyEmails
      * @param id ID of the Verification to display status of (required)
      * @param limit Maximum number of returned email verification results (optional)
      * @param offset How many result items should be returned ahead (optional)
@@ -807,7 +830,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -826,7 +850,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -892,7 +917,8 @@ public class VerificationsApi {
      * @param id File ID to start verification (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -908,7 +934,8 @@ public class VerificationsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -926,7 +953,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -944,7 +972,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1011,7 +1040,8 @@ public class VerificationsApi {
      * @return VerificationFileResult
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1028,7 +1058,8 @@ public class VerificationsApi {
      * @return ApiResponse&lt;VerificationFileResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1047,7 +1078,8 @@ public class VerificationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1065,7 +1097,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1122,11 +1155,12 @@ public class VerificationsApi {
 
     /**
      * Get Files Verification Results
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewVerifyEmails
      * @return List&lt;VerificationFileResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1138,11 +1172,12 @@ public class VerificationsApi {
 
     /**
      * Get Files Verification Results
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewVerifyEmails
      * @return ApiResponse&lt;List&lt;VerificationFileResult&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1155,12 +1190,13 @@ public class VerificationsApi {
 
     /**
      * Get Files Verification Results (asynchronously)
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewVerifyEmails
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1180,7 +1216,8 @@ public class VerificationsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1245,13 +1282,14 @@ public class VerificationsApi {
 
     /**
      * Get Emails Verification Results
-     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
+     * Returns a results of all verified single emails. Required Access Level: ViewVerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return List&lt;EmailValidationResult&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1263,13 +1301,14 @@ public class VerificationsApi {
 
     /**
      * Get Emails Verification Results
-     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
+     * Returns a results of all verified single emails. Required Access Level: ViewVerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @return ApiResponse&lt;List&lt;EmailValidationResult&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>
@@ -1282,14 +1321,15 @@ public class VerificationsApi {
 
     /**
      * Get Emails Verification Results (asynchronously)
-     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
+     * Returns a results of all verified single emails. Required Access Level: ViewVerifyEmails
      * @param limit Maximum number of returned items. (optional)
      * @param offset How many items should be returned ahead. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
-     <table summary="Response Details" border="1">
+     <table border="1">
+       <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
      </table>

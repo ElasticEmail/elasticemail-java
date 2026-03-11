@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,112 +54,118 @@ import com.elasticemail.client.JSON;
 /**
  * Template info
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class Template {
   public static final String SERIALIZED_NAME_TEMPLATE_TYPE = "TemplateType";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_TYPE)
-  private TemplateType templateType = TemplateType.RAWHTML;
+  @javax.annotation.Nullable
+  private TemplateType templateType = TemplateType.RAW_HTML;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateAdded;
 
   public static final String SERIALIZED_NAME_SUBJECT = "Subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String SERIALIZED_NAME_BODY = "Body";
   @SerializedName(SERIALIZED_NAME_BODY)
+  @javax.annotation.Nullable
   private List<BodyPart> body = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TEMPLATE_SCOPE = "TemplateScope";
   @SerializedName(SERIALIZED_NAME_TEMPLATE_SCOPE)
+  @javax.annotation.Nullable
   private TemplateScope templateScope = TemplateScope.PERSONAL;
 
   public Template() {
   }
 
-  public Template templateType(TemplateType templateType) {
+  public Template templateType(@javax.annotation.Nullable TemplateType templateType) {
     this.templateType = templateType;
     return this;
   }
 
-   /**
+  /**
    * Get templateType
    * @return templateType
-  **/
+   */
   @javax.annotation.Nullable
   public TemplateType getTemplateType() {
     return templateType;
   }
 
-  public void setTemplateType(TemplateType templateType) {
+  public void setTemplateType(@javax.annotation.Nullable TemplateType templateType) {
     this.templateType = templateType;
   }
 
 
-  public Template name(String name) {
+  public Template name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Template name
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Template dateAdded(OffsetDateTime dateAdded) {
+  public Template dateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
 
-  public void setDateAdded(OffsetDateTime dateAdded) {
+  public void setDateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
   }
 
 
-  public Template subject(String subject) {
+  public Template subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public Template body(List<BodyPart> body) {
+  public Template body(@javax.annotation.Nullable List<BodyPart> body) {
     this.body = body;
     return this;
   }
@@ -173,35 +178,35 @@ public class Template {
     return this;
   }
 
-   /**
+  /**
    * Email content of this template
    * @return body
-  **/
+   */
   @javax.annotation.Nullable
   public List<BodyPart> getBody() {
     return body;
   }
 
-  public void setBody(List<BodyPart> body) {
+  public void setBody(@javax.annotation.Nullable List<BodyPart> body) {
     this.body = body;
   }
 
 
-  public Template templateScope(TemplateScope templateScope) {
+  public Template templateScope(@javax.annotation.Nullable TemplateScope templateScope) {
     this.templateScope = templateScope;
     return this;
   }
 
-   /**
+  /**
    * Get templateScope
    * @return templateScope
-  **/
+   */
   @javax.annotation.Nullable
   public TemplateScope getTemplateScope() {
     return templateScope;
   }
 
-  public void setTemplateScope(TemplateScope templateScope) {
+  public void setTemplateScope(@javax.annotation.Nullable TemplateScope templateScope) {
     this.templateScope = templateScope;
   }
 
@@ -272,12 +277,12 @@ public class Template {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Template
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Template
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Template.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -352,22 +357,22 @@ public class Template {
     }
   }
 
- /**
-  * Create an instance of Template given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Template
-  * @throws IOException if the JSON string is invalid with respect to Template
-  */
+  /**
+   * Create an instance of Template given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Template
+   * @throws IOException if the JSON string is invalid with respect to Template
+   */
   public static Template fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Template.class);
   }
 
- /**
-  * Convert an instance of Template to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Template to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

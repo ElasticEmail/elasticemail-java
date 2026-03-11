@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +50,27 @@ import com.elasticemail.client.JSON;
 /**
  * List of transactional recipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class TransactionalRecipient {
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)
+  @javax.annotation.Nonnull
   private List<String> to = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_C_C = "CC";
   @SerializedName(SERIALIZED_NAME_C_C)
+  @javax.annotation.Nullable
   private List<String> CC = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_B_C_C = "BCC";
   @SerializedName(SERIALIZED_NAME_B_C_C)
+  @javax.annotation.Nullable
   private List<String> BCC = new ArrayList<>();
 
   public TransactionalRecipient() {
   }
 
-  public TransactionalRecipient to(List<String> to) {
+  public TransactionalRecipient to(@javax.annotation.Nonnull List<String> to) {
     this.to = to;
     return this;
   }
@@ -81,21 +83,21 @@ public class TransactionalRecipient {
     return this;
   }
 
-   /**
+  /**
    * List of recipients (visible to others)
    * @return to
-  **/
+   */
   @javax.annotation.Nonnull
   public List<String> getTo() {
     return to;
   }
 
-  public void setTo(List<String> to) {
+  public void setTo(@javax.annotation.Nonnull List<String> to) {
     this.to = to;
   }
 
 
-  public TransactionalRecipient CC(List<String> CC) {
+  public TransactionalRecipient CC(@javax.annotation.Nullable List<String> CC) {
     this.CC = CC;
     return this;
   }
@@ -108,21 +110,21 @@ public class TransactionalRecipient {
     return this;
   }
 
-   /**
+  /**
    * List of Carbon Copy recipients (visible to others)
    * @return CC
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getCC() {
     return CC;
   }
 
-  public void setCC(List<String> CC) {
+  public void setCC(@javax.annotation.Nullable List<String> CC) {
     this.CC = CC;
   }
 
 
-  public TransactionalRecipient BCC(List<String> BCC) {
+  public TransactionalRecipient BCC(@javax.annotation.Nullable List<String> BCC) {
     this.BCC = BCC;
     return this;
   }
@@ -135,16 +137,16 @@ public class TransactionalRecipient {
     return this;
   }
 
-   /**
+  /**
    * List of Blind Carbon Copy recipients (hidden from other recipients)
    * @return BCC
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getBCC() {
     return BCC;
   }
 
-  public void setBCC(List<String> BCC) {
+  public void setBCC(@javax.annotation.Nullable List<String> BCC) {
     this.BCC = BCC;
   }
 
@@ -207,12 +209,12 @@ public class TransactionalRecipient {
     openapiRequiredFields.add("To");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to TransactionalRecipient
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to TransactionalRecipient
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TransactionalRecipient.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -280,22 +282,22 @@ public class TransactionalRecipient {
     }
   }
 
- /**
-  * Create an instance of TransactionalRecipient given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of TransactionalRecipient
-  * @throws IOException if the JSON string is invalid with respect to TransactionalRecipient
-  */
+  /**
+   * Create an instance of TransactionalRecipient given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of TransactionalRecipient
+   * @throws IOException if the JSON string is invalid with respect to TransactionalRecipient
+   */
   public static TransactionalRecipient fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, TransactionalRecipient.class);
   }
 
- /**
-  * Convert an instance of TransactionalRecipient to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of TransactionalRecipient to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,306 +52,319 @@ import com.elasticemail.client.JSON;
 /**
  * Status information of the specified email
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailStatus {
   public static final String SERIALIZED_NAME_FROM = "From";
   @SerializedName(SERIALIZED_NAME_FROM)
+  @javax.annotation.Nullable
   private String from;
 
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)
+  @javax.annotation.Nullable
   private String to;
 
   public static final String SERIALIZED_NAME_DATE = "Date";
   @SerializedName(SERIALIZED_NAME_DATE)
+  @javax.annotation.Nullable
   private OffsetDateTime date;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private LogJobStatus status = LogJobStatus.ALL;
 
   public static final String SERIALIZED_NAME_STATUS_NAME = "StatusName";
   @SerializedName(SERIALIZED_NAME_STATUS_NAME)
+  @javax.annotation.Nullable
   private String statusName;
 
   public static final String SERIALIZED_NAME_STATUS_CHANGE_DATE = "StatusChangeDate";
   @SerializedName(SERIALIZED_NAME_STATUS_CHANGE_DATE)
+  @javax.annotation.Nullable
   private OffsetDateTime statusChangeDate;
 
   public static final String SERIALIZED_NAME_DATE_SENT = "DateSent";
   @SerializedName(SERIALIZED_NAME_DATE_SENT)
+  @javax.annotation.Nullable
   private OffsetDateTime dateSent;
 
   public static final String SERIALIZED_NAME_DATE_OPENED = "DateOpened";
   @SerializedName(SERIALIZED_NAME_DATE_OPENED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateOpened;
 
   public static final String SERIALIZED_NAME_DATE_CLICKED = "DateClicked";
   @SerializedName(SERIALIZED_NAME_DATE_CLICKED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateClicked;
 
   public static final String SERIALIZED_NAME_ERROR_MESSAGE = "ErrorMessage";
   @SerializedName(SERIALIZED_NAME_ERROR_MESSAGE)
+  @javax.annotation.Nullable
   private String errorMessage;
 
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
+  @javax.annotation.Nullable
   private String transactionID;
 
   public static final String SERIALIZED_NAME_ENVELOPE_FROM = "EnvelopeFrom";
   @SerializedName(SERIALIZED_NAME_ENVELOPE_FROM)
+  @javax.annotation.Nullable
   private String envelopeFrom;
 
   public static final String SERIALIZED_NAME_ERROR_CATEGORY = "ErrorCategory";
   @SerializedName(SERIALIZED_NAME_ERROR_CATEGORY)
+  @javax.annotation.Nullable
   private MessageCategoryEnum errorCategory = MessageCategoryEnum.UNKNOWN;
 
   public EmailStatus() {
   }
 
-  public EmailStatus from(String from) {
+  public EmailStatus from(@javax.annotation.Nullable String from) {
     this.from = from;
     return this;
   }
 
-   /**
+  /**
    * Email address this email was sent from.
    * @return from
-  **/
+   */
   @javax.annotation.Nullable
   public String getFrom() {
     return from;
   }
 
-  public void setFrom(String from) {
+  public void setFrom(@javax.annotation.Nullable String from) {
     this.from = from;
   }
 
 
-  public EmailStatus to(String to) {
+  public EmailStatus to(@javax.annotation.Nullable String to) {
     this.to = to;
     return this;
   }
 
-   /**
+  /**
    * Email address this email was sent to.
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
   public String getTo() {
     return to;
   }
 
-  public void setTo(String to) {
+  public void setTo(@javax.annotation.Nullable String to) {
     this.to = to;
   }
 
 
-  public EmailStatus date(OffsetDateTime date) {
+  public EmailStatus date(@javax.annotation.Nullable OffsetDateTime date) {
     this.date = date;
     return this;
   }
 
-   /**
+  /**
    * Date the email was submitted.
    * @return date
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDate() {
     return date;
   }
 
-  public void setDate(OffsetDateTime date) {
+  public void setDate(@javax.annotation.Nullable OffsetDateTime date) {
     this.date = date;
   }
 
 
-  public EmailStatus status(LogJobStatus status) {
+  public EmailStatus status(@javax.annotation.Nullable LogJobStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public LogJobStatus getStatus() {
     return status;
   }
 
-  public void setStatus(LogJobStatus status) {
+  public void setStatus(@javax.annotation.Nullable LogJobStatus status) {
     this.status = status;
   }
 
 
-  public EmailStatus statusName(String statusName) {
+  public EmailStatus statusName(@javax.annotation.Nullable String statusName) {
     this.statusName = statusName;
     return this;
   }
 
-   /**
+  /**
    * Name of email&#39;s status
    * @return statusName
-  **/
+   */
   @javax.annotation.Nullable
   public String getStatusName() {
     return statusName;
   }
 
-  public void setStatusName(String statusName) {
+  public void setStatusName(@javax.annotation.Nullable String statusName) {
     this.statusName = statusName;
   }
 
 
-  public EmailStatus statusChangeDate(OffsetDateTime statusChangeDate) {
+  public EmailStatus statusChangeDate(@javax.annotation.Nullable OffsetDateTime statusChangeDate) {
     this.statusChangeDate = statusChangeDate;
     return this;
   }
 
-   /**
+  /**
    * Date of last status change.
    * @return statusChangeDate
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getStatusChangeDate() {
     return statusChangeDate;
   }
 
-  public void setStatusChangeDate(OffsetDateTime statusChangeDate) {
+  public void setStatusChangeDate(@javax.annotation.Nullable OffsetDateTime statusChangeDate) {
     this.statusChangeDate = statusChangeDate;
   }
 
 
-  public EmailStatus dateSent(OffsetDateTime dateSent) {
+  public EmailStatus dateSent(@javax.annotation.Nullable OffsetDateTime dateSent) {
     this.dateSent = dateSent;
     return this;
   }
 
-   /**
+  /**
    * Date when the email was sent
    * @return dateSent
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateSent() {
     return dateSent;
   }
 
-  public void setDateSent(OffsetDateTime dateSent) {
+  public void setDateSent(@javax.annotation.Nullable OffsetDateTime dateSent) {
     this.dateSent = dateSent;
   }
 
 
-  public EmailStatus dateOpened(OffsetDateTime dateOpened) {
+  public EmailStatus dateOpened(@javax.annotation.Nullable OffsetDateTime dateOpened) {
     this.dateOpened = dateOpened;
     return this;
   }
 
-   /**
+  /**
    * Date when the email changed the status to &#39;opened&#39;
    * @return dateOpened
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateOpened() {
     return dateOpened;
   }
 
-  public void setDateOpened(OffsetDateTime dateOpened) {
+  public void setDateOpened(@javax.annotation.Nullable OffsetDateTime dateOpened) {
     this.dateOpened = dateOpened;
   }
 
 
-  public EmailStatus dateClicked(OffsetDateTime dateClicked) {
+  public EmailStatus dateClicked(@javax.annotation.Nullable OffsetDateTime dateClicked) {
     this.dateClicked = dateClicked;
     return this;
   }
 
-   /**
+  /**
    * Date when the email changed the status to &#39;clicked&#39;
    * @return dateClicked
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateClicked() {
     return dateClicked;
   }
 
-  public void setDateClicked(OffsetDateTime dateClicked) {
+  public void setDateClicked(@javax.annotation.Nullable OffsetDateTime dateClicked) {
     this.dateClicked = dateClicked;
   }
 
 
-  public EmailStatus errorMessage(String errorMessage) {
+  public EmailStatus errorMessage(@javax.annotation.Nullable String errorMessage) {
     this.errorMessage = errorMessage;
     return this;
   }
 
-   /**
+  /**
    * Detailed error or bounced message.
    * @return errorMessage
-  **/
+   */
   @javax.annotation.Nullable
   public String getErrorMessage() {
     return errorMessage;
   }
 
-  public void setErrorMessage(String errorMessage) {
+  public void setErrorMessage(@javax.annotation.Nullable String errorMessage) {
     this.errorMessage = errorMessage;
   }
 
 
-  public EmailStatus transactionID(String transactionID) {
+  public EmailStatus transactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
     return this;
   }
 
-   /**
+  /**
    * ID number of transaction
    * @return transactionID
-  **/
+   */
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
   }
 
-  public void setTransactionID(String transactionID) {
+  public void setTransactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
   }
 
 
-  public EmailStatus envelopeFrom(String envelopeFrom) {
+  public EmailStatus envelopeFrom(@javax.annotation.Nullable String envelopeFrom) {
     this.envelopeFrom = envelopeFrom;
     return this;
   }
 
-   /**
+  /**
    * Envelope from address
    * @return envelopeFrom
-  **/
+   */
   @javax.annotation.Nullable
   public String getEnvelopeFrom() {
     return envelopeFrom;
   }
 
-  public void setEnvelopeFrom(String envelopeFrom) {
+  public void setEnvelopeFrom(@javax.annotation.Nullable String envelopeFrom) {
     this.envelopeFrom = envelopeFrom;
   }
 
 
-  public EmailStatus errorCategory(MessageCategoryEnum errorCategory) {
+  public EmailStatus errorCategory(@javax.annotation.Nullable MessageCategoryEnum errorCategory) {
     this.errorCategory = errorCategory;
     return this;
   }
 
-   /**
+  /**
    * Get errorCategory
    * @return errorCategory
-  **/
+   */
   @javax.annotation.Nullable
   public MessageCategoryEnum getErrorCategory() {
     return errorCategory;
   }
 
-  public void setErrorCategory(MessageCategoryEnum errorCategory) {
+  public void setErrorCategory(@javax.annotation.Nullable MessageCategoryEnum errorCategory) {
     this.errorCategory = errorCategory;
   }
 
@@ -455,12 +467,12 @@ public class EmailStatus {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -533,22 +545,22 @@ public class EmailStatus {
     }
   }
 
- /**
-  * Create an instance of EmailStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailStatus
-  * @throws IOException if the JSON string is invalid with respect to EmailStatus
-  */
+  /**
+   * Create an instance of EmailStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailStatus
+   * @throws IOException if the JSON string is invalid with respect to EmailStatus
+   */
   public static EmailStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailStatus.class);
   }
 
- /**
-  * Convert an instance of EmailStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

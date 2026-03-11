@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,62 +50,65 @@ import com.elasticemail.client.JSON;
 /**
  * ListPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class ListPayload {
   public static final String SERIALIZED_NAME_LIST_NAME = "ListName";
   @SerializedName(SERIALIZED_NAME_LIST_NAME)
+  @javax.annotation.Nonnull
   private String listName;
 
   public static final String SERIALIZED_NAME_ALLOW_UNSUBSCRIBE = "AllowUnsubscribe";
   @SerializedName(SERIALIZED_NAME_ALLOW_UNSUBSCRIBE)
+  @javax.annotation.Nullable
   private Boolean allowUnsubscribe;
 
   public static final String SERIALIZED_NAME_EMAILS = "Emails";
   @SerializedName(SERIALIZED_NAME_EMAILS)
+  @javax.annotation.Nullable
   private List<String> emails = new ArrayList<>();
 
   public ListPayload() {
   }
 
-  public ListPayload listName(String listName) {
+  public ListPayload listName(@javax.annotation.Nonnull String listName) {
     this.listName = listName;
     return this;
   }
 
-   /**
+  /**
    * Name of your list.
    * @return listName
-  **/
+   */
   @javax.annotation.Nonnull
   public String getListName() {
     return listName;
   }
 
-  public void setListName(String listName) {
+  public void setListName(@javax.annotation.Nonnull String listName) {
     this.listName = listName;
   }
 
 
-  public ListPayload allowUnsubscribe(Boolean allowUnsubscribe) {
+  public ListPayload allowUnsubscribe(@javax.annotation.Nullable Boolean allowUnsubscribe) {
     this.allowUnsubscribe = allowUnsubscribe;
     return this;
   }
 
-   /**
+  /**
    * True: Allow unsubscribing from this list. Otherwise, false
    * @return allowUnsubscribe
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getAllowUnsubscribe() {
     return allowUnsubscribe;
   }
 
-  public void setAllowUnsubscribe(Boolean allowUnsubscribe) {
+  public void setAllowUnsubscribe(@javax.annotation.Nullable Boolean allowUnsubscribe) {
     this.allowUnsubscribe = allowUnsubscribe;
   }
 
 
-  public ListPayload emails(List<String> emails) {
+  public ListPayload emails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
     return this;
   }
@@ -119,16 +121,16 @@ public class ListPayload {
     return this;
   }
 
-   /**
+  /**
    * Comma delimited list of existing contact emails that should be added to this list. Leave empty for all contacts
    * @return emails
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getEmails() {
     return emails;
   }
 
-  public void setEmails(List<String> emails) {
+  public void setEmails(@javax.annotation.Nullable List<String> emails) {
     this.emails = emails;
   }
 
@@ -191,12 +193,12 @@ public class ListPayload {
     openapiRequiredFields.add("ListName");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ListPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ListPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ListPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -257,22 +259,22 @@ public class ListPayload {
     }
   }
 
- /**
-  * Create an instance of ListPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ListPayload
-  * @throws IOException if the JSON string is invalid with respect to ListPayload
-  */
+  /**
+   * Create an instance of ListPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ListPayload
+   * @throws IOException if the JSON string is invalid with respect to ListPayload
+   */
   public static ListPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ListPayload.class);
   }
 
- /**
-  * Convert an instance of ListPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ListPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

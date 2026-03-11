@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,131 +53,137 @@ import com.elasticemail.client.JSON;
 /**
  * SMTP Credentials info
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SmtpCredentials {
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
+  @javax.annotation.Nullable
   private AccessLevel accessLevel = AccessLevel.NONE;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DATE_CREATED = "DateCreated";
   @SerializedName(SERIALIZED_NAME_DATE_CREATED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateCreated;
 
   public static final String SERIALIZED_NAME_LAST_USE = "LastUse";
   @SerializedName(SERIALIZED_NAME_LAST_USE)
+  @javax.annotation.Nullable
   private OffsetDateTime lastUse;
 
   public static final String SERIALIZED_NAME_EXPIRES = "Expires";
   @SerializedName(SERIALIZED_NAME_EXPIRES)
+  @javax.annotation.Nullable
   private OffsetDateTime expires;
 
   public static final String SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE = "RestrictAccessToIPRange";
   @SerializedName(SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE)
+  @javax.annotation.Nullable
   private List<String> restrictAccessToIPRange = new ArrayList<>();
 
   public SmtpCredentials() {
   }
 
-  public SmtpCredentials accessLevel(AccessLevel accessLevel) {
+  public SmtpCredentials accessLevel(@javax.annotation.Nullable AccessLevel accessLevel) {
     this.accessLevel = accessLevel;
     return this;
   }
 
-   /**
+  /**
    * Get accessLevel
    * @return accessLevel
-  **/
+   */
   @javax.annotation.Nullable
   public AccessLevel getAccessLevel() {
     return accessLevel;
   }
 
-  public void setAccessLevel(AccessLevel accessLevel) {
+  public void setAccessLevel(@javax.annotation.Nullable AccessLevel accessLevel) {
     this.accessLevel = accessLevel;
   }
 
 
-  public SmtpCredentials name(String name) {
+  public SmtpCredentials name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the key.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public SmtpCredentials dateCreated(OffsetDateTime dateCreated) {
+  public SmtpCredentials dateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
 
-   /**
+  /**
    * Date this SmtpCredential was created.
    * @return dateCreated
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(OffsetDateTime dateCreated) {
+  public void setDateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
   }
 
 
-  public SmtpCredentials lastUse(OffsetDateTime lastUse) {
+  public SmtpCredentials lastUse(@javax.annotation.Nullable OffsetDateTime lastUse) {
     this.lastUse = lastUse;
     return this;
   }
 
-   /**
+  /**
    * Date this SmtpCredential was last used.
    * @return lastUse
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastUse() {
     return lastUse;
   }
 
-  public void setLastUse(OffsetDateTime lastUse) {
+  public void setLastUse(@javax.annotation.Nullable OffsetDateTime lastUse) {
     this.lastUse = lastUse;
   }
 
 
-  public SmtpCredentials expires(OffsetDateTime expires) {
+  public SmtpCredentials expires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
     return this;
   }
 
-   /**
+  /**
    * Date this SmtpCredential expires.
    * @return expires
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getExpires() {
     return expires;
   }
 
-  public void setExpires(OffsetDateTime expires) {
+  public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
   }
 
 
-  public SmtpCredentials restrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public SmtpCredentials restrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
     return this;
   }
@@ -191,16 +196,16 @@ public class SmtpCredentials {
     return this;
   }
 
-   /**
+  /**
    * Which IPs can use this SmtpCredential
    * @return restrictAccessToIPRange
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
   }
 
-  public void setRestrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public void setRestrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
   }
 
@@ -282,12 +287,12 @@ public class SmtpCredentials {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SmtpCredentials
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SmtpCredentials
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SmtpCredentials.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -345,22 +350,22 @@ public class SmtpCredentials {
     }
   }
 
- /**
-  * Create an instance of SmtpCredentials given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SmtpCredentials
-  * @throws IOException if the JSON string is invalid with respect to SmtpCredentials
-  */
+  /**
+   * Create an instance of SmtpCredentials given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SmtpCredentials
+   * @throws IOException if the JSON string is invalid with respect to SmtpCredentials
+   */
   public static SmtpCredentials fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SmtpCredentials.class);
   }
 
- /**
-  * Convert an instance of SmtpCredentials to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SmtpCredentials to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

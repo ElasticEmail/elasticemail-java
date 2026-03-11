@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,260 +50,271 @@ import com.elasticemail.client.JSON;
 /**
  * ContactActivity
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class ContactActivity {
   public static final String SERIALIZED_NAME_TOTAL_SENT = "TotalSent";
   @SerializedName(SERIALIZED_NAME_TOTAL_SENT)
+  @javax.annotation.Nullable
   private Integer totalSent;
 
   public static final String SERIALIZED_NAME_TOTAL_OPENED = "TotalOpened";
   @SerializedName(SERIALIZED_NAME_TOTAL_OPENED)
+  @javax.annotation.Nullable
   private Integer totalOpened;
 
   public static final String SERIALIZED_NAME_TOTAL_CLICKED = "TotalClicked";
   @SerializedName(SERIALIZED_NAME_TOTAL_CLICKED)
+  @javax.annotation.Nullable
   private Integer totalClicked;
 
   public static final String SERIALIZED_NAME_TOTAL_FAILED = "TotalFailed";
   @SerializedName(SERIALIZED_NAME_TOTAL_FAILED)
+  @javax.annotation.Nullable
   private Integer totalFailed;
 
   public static final String SERIALIZED_NAME_LAST_SENT = "LastSent";
   @SerializedName(SERIALIZED_NAME_LAST_SENT)
+  @javax.annotation.Nullable
   private OffsetDateTime lastSent;
 
   public static final String SERIALIZED_NAME_LAST_OPENED = "LastOpened";
   @SerializedName(SERIALIZED_NAME_LAST_OPENED)
+  @javax.annotation.Nullable
   private OffsetDateTime lastOpened;
 
   public static final String SERIALIZED_NAME_LAST_CLICKED = "LastClicked";
   @SerializedName(SERIALIZED_NAME_LAST_CLICKED)
+  @javax.annotation.Nullable
   private OffsetDateTime lastClicked;
 
   public static final String SERIALIZED_NAME_LAST_FAILED = "LastFailed";
   @SerializedName(SERIALIZED_NAME_LAST_FAILED)
+  @javax.annotation.Nullable
   private OffsetDateTime lastFailed;
 
   public static final String SERIALIZED_NAME_LAST_I_P = "LastIP";
   @SerializedName(SERIALIZED_NAME_LAST_I_P)
+  @javax.annotation.Nullable
   private String lastIP;
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "ErrorCode";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nullable
   private Integer errorCode;
 
   public static final String SERIALIZED_NAME_FRIENDLY_ERROR_MESSAGE = "FriendlyErrorMessage";
   @SerializedName(SERIALIZED_NAME_FRIENDLY_ERROR_MESSAGE)
+  @javax.annotation.Nullable
   private String friendlyErrorMessage;
 
   public ContactActivity() {
   }
 
-  public ContactActivity totalSent(Integer totalSent) {
+  public ContactActivity totalSent(@javax.annotation.Nullable Integer totalSent) {
     this.totalSent = totalSent;
     return this;
   }
 
-   /**
+  /**
    * Total emails sent.
    * @return totalSent
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalSent() {
     return totalSent;
   }
 
-  public void setTotalSent(Integer totalSent) {
+  public void setTotalSent(@javax.annotation.Nullable Integer totalSent) {
     this.totalSent = totalSent;
   }
 
 
-  public ContactActivity totalOpened(Integer totalOpened) {
+  public ContactActivity totalOpened(@javax.annotation.Nullable Integer totalOpened) {
     this.totalOpened = totalOpened;
     return this;
   }
 
-   /**
+  /**
    * Total emails opened.
    * @return totalOpened
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalOpened() {
     return totalOpened;
   }
 
-  public void setTotalOpened(Integer totalOpened) {
+  public void setTotalOpened(@javax.annotation.Nullable Integer totalOpened) {
     this.totalOpened = totalOpened;
   }
 
 
-  public ContactActivity totalClicked(Integer totalClicked) {
+  public ContactActivity totalClicked(@javax.annotation.Nullable Integer totalClicked) {
     this.totalClicked = totalClicked;
     return this;
   }
 
-   /**
+  /**
    * Total emails clicked
    * @return totalClicked
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalClicked() {
     return totalClicked;
   }
 
-  public void setTotalClicked(Integer totalClicked) {
+  public void setTotalClicked(@javax.annotation.Nullable Integer totalClicked) {
     this.totalClicked = totalClicked;
   }
 
 
-  public ContactActivity totalFailed(Integer totalFailed) {
+  public ContactActivity totalFailed(@javax.annotation.Nullable Integer totalFailed) {
     this.totalFailed = totalFailed;
     return this;
   }
 
-   /**
+  /**
    * Total emails failed.
    * @return totalFailed
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTotalFailed() {
     return totalFailed;
   }
 
-  public void setTotalFailed(Integer totalFailed) {
+  public void setTotalFailed(@javax.annotation.Nullable Integer totalFailed) {
     this.totalFailed = totalFailed;
   }
 
 
-  public ContactActivity lastSent(OffsetDateTime lastSent) {
+  public ContactActivity lastSent(@javax.annotation.Nullable OffsetDateTime lastSent) {
     this.lastSent = lastSent;
     return this;
   }
 
-   /**
+  /**
    * Last date when an email was sent to this contact
    * @return lastSent
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastSent() {
     return lastSent;
   }
 
-  public void setLastSent(OffsetDateTime lastSent) {
+  public void setLastSent(@javax.annotation.Nullable OffsetDateTime lastSent) {
     this.lastSent = lastSent;
   }
 
 
-  public ContactActivity lastOpened(OffsetDateTime lastOpened) {
+  public ContactActivity lastOpened(@javax.annotation.Nullable OffsetDateTime lastOpened) {
     this.lastOpened = lastOpened;
     return this;
   }
 
-   /**
+  /**
    * Date this contact last opened an email
    * @return lastOpened
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastOpened() {
     return lastOpened;
   }
 
-  public void setLastOpened(OffsetDateTime lastOpened) {
+  public void setLastOpened(@javax.annotation.Nullable OffsetDateTime lastOpened) {
     this.lastOpened = lastOpened;
   }
 
 
-  public ContactActivity lastClicked(OffsetDateTime lastClicked) {
+  public ContactActivity lastClicked(@javax.annotation.Nullable OffsetDateTime lastClicked) {
     this.lastClicked = lastClicked;
     return this;
   }
 
-   /**
+  /**
    * Date this contact last clicked an email
    * @return lastClicked
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastClicked() {
     return lastClicked;
   }
 
-  public void setLastClicked(OffsetDateTime lastClicked) {
+  public void setLastClicked(@javax.annotation.Nullable OffsetDateTime lastClicked) {
     this.lastClicked = lastClicked;
   }
 
 
-  public ContactActivity lastFailed(OffsetDateTime lastFailed) {
+  public ContactActivity lastFailed(@javax.annotation.Nullable OffsetDateTime lastFailed) {
     this.lastFailed = lastFailed;
     return this;
   }
 
-   /**
+  /**
    * Last date when an email sent to this contact bounced
    * @return lastFailed
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastFailed() {
     return lastFailed;
   }
 
-  public void setLastFailed(OffsetDateTime lastFailed) {
+  public void setLastFailed(@javax.annotation.Nullable OffsetDateTime lastFailed) {
     this.lastFailed = lastFailed;
   }
 
 
-  public ContactActivity lastIP(String lastIP) {
+  public ContactActivity lastIP(@javax.annotation.Nullable String lastIP) {
     this.lastIP = lastIP;
     return this;
   }
 
-   /**
+  /**
    * IP from which this contact opened or clicked their email last time
    * @return lastIP
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastIP() {
     return lastIP;
   }
 
-  public void setLastIP(String lastIP) {
+  public void setLastIP(@javax.annotation.Nullable String lastIP) {
     this.lastIP = lastIP;
   }
 
 
-  public ContactActivity errorCode(Integer errorCode) {
+  public ContactActivity errorCode(@javax.annotation.Nullable Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * Last RFC Error code if any occurred
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(Integer errorCode) {
+  public void setErrorCode(@javax.annotation.Nullable Integer errorCode) {
     this.errorCode = errorCode;
   }
 
 
-  public ContactActivity friendlyErrorMessage(String friendlyErrorMessage) {
+  public ContactActivity friendlyErrorMessage(@javax.annotation.Nullable String friendlyErrorMessage) {
     this.friendlyErrorMessage = friendlyErrorMessage;
     return this;
   }
 
-   /**
+  /**
    * Last RFC error message if any occurred
    * @return friendlyErrorMessage
-  **/
+   */
   @javax.annotation.Nullable
   public String getFriendlyErrorMessage() {
     return friendlyErrorMessage;
   }
 
-  public void setFriendlyErrorMessage(String friendlyErrorMessage) {
+  public void setFriendlyErrorMessage(@javax.annotation.Nullable String friendlyErrorMessage) {
     this.friendlyErrorMessage = friendlyErrorMessage;
   }
 
@@ -401,12 +411,12 @@ public class ContactActivity {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ContactActivity
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ContactActivity
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ContactActivity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -459,22 +469,22 @@ public class ContactActivity {
     }
   }
 
- /**
-  * Create an instance of ContactActivity given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ContactActivity
-  * @throws IOException if the JSON string is invalid with respect to ContactActivity
-  */
+  /**
+   * Create an instance of ContactActivity given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ContactActivity
+   * @throws IOException if the JSON string is invalid with respect to ContactActivity
+   */
   public static ContactActivity fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ContactActivity.class);
   }
 
- /**
-  * Convert an instance of ContactActivity to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ContactActivity to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

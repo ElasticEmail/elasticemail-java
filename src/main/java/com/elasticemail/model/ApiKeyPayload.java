@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,51 +53,56 @@ import com.elasticemail.client.JSON;
 /**
  * Create a new ApiKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class ApiKeyPayload {
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
+  @javax.annotation.Nonnull
   private List<AccessLevel> accessLevel = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_EXPIRES = "Expires";
   @SerializedName(SERIALIZED_NAME_EXPIRES)
+  @javax.annotation.Nullable
   private OffsetDateTime expires;
 
   public static final String SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE = "RestrictAccessToIPRange";
   @SerializedName(SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE)
+  @javax.annotation.Nullable
   private List<String> restrictAccessToIPRange = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SUBACCOUNT = "Subaccount";
   @SerializedName(SERIALIZED_NAME_SUBACCOUNT)
+  @javax.annotation.Nullable
   private String subaccount;
 
   public ApiKeyPayload() {
   }
 
-  public ApiKeyPayload name(String name) {
+  public ApiKeyPayload name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the ApiKey for ease of reference.
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ApiKeyPayload accessLevel(List<AccessLevel> accessLevel) {
+  public ApiKeyPayload accessLevel(@javax.annotation.Nonnull List<AccessLevel> accessLevel) {
     this.accessLevel = accessLevel;
     return this;
   }
@@ -111,40 +115,40 @@ public class ApiKeyPayload {
     return this;
   }
 
-   /**
+  /**
    * Access level or permission to be assigned to this ApiKey.
    * @return accessLevel
-  **/
+   */
   @javax.annotation.Nonnull
   public List<AccessLevel> getAccessLevel() {
     return accessLevel;
   }
 
-  public void setAccessLevel(List<AccessLevel> accessLevel) {
+  public void setAccessLevel(@javax.annotation.Nonnull List<AccessLevel> accessLevel) {
     this.accessLevel = accessLevel;
   }
 
 
-  public ApiKeyPayload expires(OffsetDateTime expires) {
+  public ApiKeyPayload expires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey expires.
    * @return expires
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getExpires() {
     return expires;
   }
 
-  public void setExpires(OffsetDateTime expires) {
+  public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
   }
 
 
-  public ApiKeyPayload restrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public ApiKeyPayload restrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
     return this;
   }
@@ -157,35 +161,35 @@ public class ApiKeyPayload {
     return this;
   }
 
-   /**
+  /**
    * Which IPs can use this ApiKey
    * @return restrictAccessToIPRange
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
   }
 
-  public void setRestrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public void setRestrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
   }
 
 
-  public ApiKeyPayload subaccount(String subaccount) {
+  public ApiKeyPayload subaccount(@javax.annotation.Nullable String subaccount) {
     this.subaccount = subaccount;
     return this;
   }
 
-   /**
+  /**
    * Email of the subaccount for which this ApiKey should be created
    * @return subaccount
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubaccount() {
     return subaccount;
   }
 
-  public void setSubaccount(String subaccount) {
+  public void setSubaccount(@javax.annotation.Nullable String subaccount) {
     this.subaccount = subaccount;
   }
 
@@ -266,12 +270,12 @@ public class ApiKeyPayload {
     openapiRequiredFields.add("AccessLevel");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to ApiKeyPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to ApiKeyPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApiKeyPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -341,22 +345,22 @@ public class ApiKeyPayload {
     }
   }
 
- /**
-  * Create an instance of ApiKeyPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of ApiKeyPayload
-  * @throws IOException if the JSON string is invalid with respect to ApiKeyPayload
-  */
+  /**
+   * Create an instance of ApiKeyPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of ApiKeyPayload
+   * @throws IOException if the JSON string is invalid with respect to ApiKeyPayload
+   */
   public static ApiKeyPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, ApiKeyPayload.class);
   }
 
- /**
-  * Convert an instance of ApiKeyPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of ApiKeyPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

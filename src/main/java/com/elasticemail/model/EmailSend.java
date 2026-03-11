@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,53 +48,55 @@ import com.elasticemail.client.JSON;
 /**
  * EmailSend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailSend {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
+  @javax.annotation.Nullable
   private String transactionID;
 
   public static final String SERIALIZED_NAME_MESSAGE_I_D = "MessageID";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_D)
+  @javax.annotation.Nullable
   private String messageID;
 
   public EmailSend() {
   }
 
-  public EmailSend transactionID(String transactionID) {
+  public EmailSend transactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
     return this;
   }
 
-   /**
+  /**
    * ID number of transaction
    * @return transactionID
-  **/
+   */
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
   }
 
-  public void setTransactionID(String transactionID) {
+  public void setTransactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
   }
 
 
-  public EmailSend messageID(String messageID) {
+  public EmailSend messageID(@javax.annotation.Nullable String messageID) {
     this.messageID = messageID;
     return this;
   }
 
-   /**
+  /**
    * Unique identifier for this email.
    * @return messageID
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessageID() {
     return messageID;
   }
 
-  public void setMessageID(String messageID) {
+  public void setMessageID(@javax.annotation.Nullable String messageID) {
     this.messageID = messageID;
   }
 
@@ -154,12 +155,12 @@ public class EmailSend {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailSend
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailSend
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailSend.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -212,22 +213,22 @@ public class EmailSend {
     }
   }
 
- /**
-  * Create an instance of EmailSend given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailSend
-  * @throws IOException if the JSON string is invalid with respect to EmailSend
-  */
+  /**
+   * Create an instance of EmailSend given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailSend
+   * @throws IOException if the JSON string is invalid with respect to EmailSend
+   */
   public static EmailSend fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailSend.class);
   }
 
- /**
-  * Convert an instance of EmailSend to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailSend to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

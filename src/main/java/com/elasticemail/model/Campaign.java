@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,32 +54,42 @@ import com.elasticemail.client.JSON;
 /**
  * Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class Campaign {
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
+  @javax.annotation.Nullable
   private List<CampaignTemplate> content = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private CampaignStatus status = CampaignStatus.DELETED;
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
+  @javax.annotation.Nonnull
   private CampaignRecipient recipients;
+
+  public static final String SERIALIZED_NAME_EXCLUDED_RECIPIENTS = "ExcludedRecipients";
+  @SerializedName(SERIALIZED_NAME_EXCLUDED_RECIPIENTS)
+  @javax.annotation.Nullable
+  private CampaignRecipient excludedRecipients;
 
   public static final String SERIALIZED_NAME_OPTIONS = "Options";
   @SerializedName(SERIALIZED_NAME_OPTIONS)
+  @javax.annotation.Nullable
   private CampaignOptions options;
 
   public Campaign() {
   }
 
-  public Campaign content(List<CampaignTemplate> content) {
+  public Campaign content(@javax.annotation.Nullable List<CampaignTemplate> content) {
     this.content = content;
     return this;
   }
@@ -93,92 +102,111 @@ public class Campaign {
     return this;
   }
 
-   /**
+  /**
    * Campaign&#39;s email content. Provide multiple items to send an A/X Split Campaign
    * @return content
-  **/
+   */
   @javax.annotation.Nullable
   public List<CampaignTemplate> getContent() {
     return content;
   }
 
-  public void setContent(List<CampaignTemplate> content) {
+  public void setContent(@javax.annotation.Nullable List<CampaignTemplate> content) {
     this.content = content;
   }
 
 
-  public Campaign name(String name) {
+  public Campaign name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Campaign name
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Campaign status(CampaignStatus status) {
+  public Campaign status(@javax.annotation.Nullable CampaignStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public CampaignStatus getStatus() {
     return status;
   }
 
-  public void setStatus(CampaignStatus status) {
+  public void setStatus(@javax.annotation.Nullable CampaignStatus status) {
     this.status = status;
   }
 
 
-  public Campaign recipients(CampaignRecipient recipients) {
+  public Campaign recipients(@javax.annotation.Nonnull CampaignRecipient recipients) {
     this.recipients = recipients;
     return this;
   }
 
-   /**
+  /**
    * Get recipients
    * @return recipients
-  **/
+   */
   @javax.annotation.Nonnull
   public CampaignRecipient getRecipients() {
     return recipients;
   }
 
-  public void setRecipients(CampaignRecipient recipients) {
+  public void setRecipients(@javax.annotation.Nonnull CampaignRecipient recipients) {
     this.recipients = recipients;
   }
 
 
-  public Campaign options(CampaignOptions options) {
+  public Campaign excludedRecipients(@javax.annotation.Nullable CampaignRecipient excludedRecipients) {
+    this.excludedRecipients = excludedRecipients;
+    return this;
+  }
+
+  /**
+   * Get excludedRecipients
+   * @return excludedRecipients
+   */
+  @javax.annotation.Nullable
+  public CampaignRecipient getExcludedRecipients() {
+    return excludedRecipients;
+  }
+
+  public void setExcludedRecipients(@javax.annotation.Nullable CampaignRecipient excludedRecipients) {
+    this.excludedRecipients = excludedRecipients;
+  }
+
+
+  public Campaign options(@javax.annotation.Nullable CampaignOptions options) {
     this.options = options;
     return this;
   }
 
-   /**
+  /**
    * Get options
    * @return options
-  **/
+   */
   @javax.annotation.Nullable
   public CampaignOptions getOptions() {
     return options;
   }
 
-  public void setOptions(CampaignOptions options) {
+  public void setOptions(@javax.annotation.Nullable CampaignOptions options) {
     this.options = options;
   }
 
@@ -197,12 +225,13 @@ public class Campaign {
         Objects.equals(this.name, campaign.name) &&
         Objects.equals(this.status, campaign.status) &&
         Objects.equals(this.recipients, campaign.recipients) &&
+        Objects.equals(this.excludedRecipients, campaign.excludedRecipients) &&
         Objects.equals(this.options, campaign.options);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(content, name, status, recipients, options);
+    return Objects.hash(content, name, status, recipients, excludedRecipients, options);
   }
 
   @Override
@@ -213,6 +242,7 @@ public class Campaign {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
+    sb.append("    excludedRecipients: ").append(toIndentedString(excludedRecipients)).append("\n");
     sb.append("    options: ").append(toIndentedString(options)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -240,6 +270,7 @@ public class Campaign {
     openapiFields.add("Name");
     openapiFields.add("Status");
     openapiFields.add("Recipients");
+    openapiFields.add("ExcludedRecipients");
     openapiFields.add("Options");
 
     // a set of required properties/fields (JSON key names)
@@ -248,12 +279,12 @@ public class Campaign {
     openapiRequiredFields.add("Recipients");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Campaign
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Campaign
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Campaign.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -299,6 +330,10 @@ public class Campaign {
       }
       // validate the required field `Recipients`
       CampaignRecipient.validateJsonElement(jsonObj.get("Recipients"));
+      // validate the optional field `ExcludedRecipients`
+      if (jsonObj.get("ExcludedRecipients") != null && !jsonObj.get("ExcludedRecipients").isJsonNull()) {
+        CampaignRecipient.validateJsonElement(jsonObj.get("ExcludedRecipients"));
+      }
       // validate the optional field `Options`
       if (jsonObj.get("Options") != null && !jsonObj.get("Options").isJsonNull()) {
         CampaignOptions.validateJsonElement(jsonObj.get("Options"));
@@ -334,22 +369,22 @@ public class Campaign {
     }
   }
 
- /**
-  * Create an instance of Campaign given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Campaign
-  * @throws IOException if the JSON string is invalid with respect to Campaign
-  */
+  /**
+   * Create an instance of Campaign given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Campaign
+   * @throws IOException if the JSON string is invalid with respect to Campaign
+   */
   public static Campaign fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Campaign.class);
   }
 
- /**
-  * Convert an instance of Campaign to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Campaign to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,99 +48,103 @@ import com.elasticemail.client.JSON;
 /**
  * EmailJobFailedStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailJobFailedStatus {
   public static final String SERIALIZED_NAME_ADDRESS = "Address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
+  @javax.annotation.Nullable
   private String address;
 
   public static final String SERIALIZED_NAME_ERROR = "Error";
   @SerializedName(SERIALIZED_NAME_ERROR)
+  @javax.annotation.Nullable
   private String error;
 
   public static final String SERIALIZED_NAME_ERROR_CODE = "ErrorCode";
   @SerializedName(SERIALIZED_NAME_ERROR_CODE)
+  @javax.annotation.Nullable
   private Integer errorCode;
 
   public static final String SERIALIZED_NAME_CATEGORY = "Category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
+  @javax.annotation.Nullable
   private String category;
 
   public EmailJobFailedStatus() {
   }
 
-  public EmailJobFailedStatus address(String address) {
+  public EmailJobFailedStatus address(@javax.annotation.Nullable String address) {
     this.address = address;
     return this;
   }
 
-   /**
+  /**
    * Get address
    * @return address
-  **/
+   */
   @javax.annotation.Nullable
   public String getAddress() {
     return address;
   }
 
-  public void setAddress(String address) {
+  public void setAddress(@javax.annotation.Nullable String address) {
     this.address = address;
   }
 
 
-  public EmailJobFailedStatus error(String error) {
+  public EmailJobFailedStatus error(@javax.annotation.Nullable String error) {
     this.error = error;
     return this;
   }
 
-   /**
+  /**
    * Get error
    * @return error
-  **/
+   */
   @javax.annotation.Nullable
   public String getError() {
     return error;
   }
 
-  public void setError(String error) {
+  public void setError(@javax.annotation.Nullable String error) {
     this.error = error;
   }
 
 
-  public EmailJobFailedStatus errorCode(Integer errorCode) {
+  public EmailJobFailedStatus errorCode(@javax.annotation.Nullable Integer errorCode) {
     this.errorCode = errorCode;
     return this;
   }
 
-   /**
+  /**
    * RFC Error code
    * @return errorCode
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getErrorCode() {
     return errorCode;
   }
 
-  public void setErrorCode(Integer errorCode) {
+  public void setErrorCode(@javax.annotation.Nullable Integer errorCode) {
     this.errorCode = errorCode;
   }
 
 
-  public EmailJobFailedStatus category(String category) {
+  public EmailJobFailedStatus category(@javax.annotation.Nullable String category) {
     this.category = category;
     return this;
   }
 
-   /**
+  /**
    * Get category
    * @return category
-  **/
+   */
   @javax.annotation.Nullable
   public String getCategory() {
     return category;
   }
 
-  public void setCategory(String category) {
+  public void setCategory(@javax.annotation.Nullable String category) {
     this.category = category;
   }
 
@@ -206,12 +209,12 @@ public class EmailJobFailedStatus {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailJobFailedStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailJobFailedStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailJobFailedStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -267,22 +270,22 @@ public class EmailJobFailedStatus {
     }
   }
 
- /**
-  * Create an instance of EmailJobFailedStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailJobFailedStatus
-  * @throws IOException if the JSON string is invalid with respect to EmailJobFailedStatus
-  */
+  /**
+   * Create an instance of EmailJobFailedStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailJobFailedStatus
+   * @throws IOException if the JSON string is invalid with respect to EmailJobFailedStatus
+   */
   public static EmailJobFailedStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailJobFailedStatus.class);
   }
 
- /**
-  * Convert an instance of EmailJobFailedStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailJobFailedStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

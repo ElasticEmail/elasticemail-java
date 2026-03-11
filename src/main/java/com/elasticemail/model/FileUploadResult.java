@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,53 +48,55 @@ import com.elasticemail.client.JSON;
 /**
  * FileUploadResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class FileUploadResult {
   public static final String SERIALIZED_NAME_EMAILS_COUNT = "EmailsCount";
   @SerializedName(SERIALIZED_NAME_EMAILS_COUNT)
+  @javax.annotation.Nullable
   private Integer emailsCount;
 
   public static final String SERIALIZED_NAME_DUPLICATED_EMAILS_COUNT = "DuplicatedEmailsCount";
   @SerializedName(SERIALIZED_NAME_DUPLICATED_EMAILS_COUNT)
+  @javax.annotation.Nullable
   private Integer duplicatedEmailsCount;
 
   public FileUploadResult() {
   }
 
-  public FileUploadResult emailsCount(Integer emailsCount) {
+  public FileUploadResult emailsCount(@javax.annotation.Nullable Integer emailsCount) {
     this.emailsCount = emailsCount;
     return this;
   }
 
-   /**
+  /**
    * How many unique emails were detected the file
    * @return emailsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getEmailsCount() {
     return emailsCount;
   }
 
-  public void setEmailsCount(Integer emailsCount) {
+  public void setEmailsCount(@javax.annotation.Nullable Integer emailsCount) {
     this.emailsCount = emailsCount;
   }
 
 
-  public FileUploadResult duplicatedEmailsCount(Integer duplicatedEmailsCount) {
+  public FileUploadResult duplicatedEmailsCount(@javax.annotation.Nullable Integer duplicatedEmailsCount) {
     this.duplicatedEmailsCount = duplicatedEmailsCount;
     return this;
   }
 
-   /**
+  /**
    * How many email duplicates were detected
    * @return duplicatedEmailsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDuplicatedEmailsCount() {
     return duplicatedEmailsCount;
   }
 
-  public void setDuplicatedEmailsCount(Integer duplicatedEmailsCount) {
+  public void setDuplicatedEmailsCount(@javax.annotation.Nullable Integer duplicatedEmailsCount) {
     this.duplicatedEmailsCount = duplicatedEmailsCount;
   }
 
@@ -154,12 +155,12 @@ public class FileUploadResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FileUploadResult
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FileUploadResult
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FileUploadResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -206,22 +207,22 @@ public class FileUploadResult {
     }
   }
 
- /**
-  * Create an instance of FileUploadResult given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FileUploadResult
-  * @throws IOException if the JSON string is invalid with respect to FileUploadResult
-  */
+  /**
+   * Create an instance of FileUploadResult given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FileUploadResult
+   * @throws IOException if the JSON string is invalid with respect to FileUploadResult
+   */
   public static FileUploadResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FileUploadResult.class);
   }
 
- /**
-  * Convert an instance of FileUploadResult to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FileUploadResult to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

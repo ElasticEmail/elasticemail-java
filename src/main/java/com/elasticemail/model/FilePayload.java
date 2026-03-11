@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,76 +48,79 @@ import com.elasticemail.client.JSON;
 /**
  * FilePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class FilePayload {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
+  @javax.annotation.Nonnull
   private byte[] binaryContent;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "ContentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  @javax.annotation.Nullable
   private String contentType;
 
   public FilePayload() {
   }
 
-  public FilePayload binaryContent(byte[] binaryContent) {
+  public FilePayload binaryContent(@javax.annotation.Nonnull byte[] binaryContent) {
     this.binaryContent = binaryContent;
     return this;
   }
 
-   /**
+  /**
    * Content of the file sent as binary data
    * @return binaryContent
-  **/
+   */
   @javax.annotation.Nonnull
   public byte[] getBinaryContent() {
     return binaryContent;
   }
 
-  public void setBinaryContent(byte[] binaryContent) {
+  public void setBinaryContent(@javax.annotation.Nonnull byte[] binaryContent) {
     this.binaryContent = binaryContent;
   }
 
 
-  public FilePayload name(String name) {
+  public FilePayload name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Filename
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public FilePayload contentType(String contentType) {
+  public FilePayload contentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
     return this;
   }
 
-   /**
+  /**
    * Type of file&#39;s content (e.g. image/jpeg)
    * @return contentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getContentType() {
     return contentType;
   }
 
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
   }
 
@@ -181,12 +183,12 @@ public class FilePayload {
     openapiRequiredFields.add("BinaryContent");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to FilePayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to FilePayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!FilePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -246,22 +248,22 @@ public class FilePayload {
     }
   }
 
- /**
-  * Create an instance of FilePayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of FilePayload
-  * @throws IOException if the JSON string is invalid with respect to FilePayload
-  */
+  /**
+   * Create an instance of FilePayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of FilePayload
+   * @throws IOException if the JSON string is invalid with respect to FilePayload
+   */
   public static FilePayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, FilePayload.class);
   }
 
- /**
-  * Convert an instance of FilePayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of FilePayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

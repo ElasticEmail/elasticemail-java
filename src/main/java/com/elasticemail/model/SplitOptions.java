@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,53 +49,55 @@ import com.elasticemail.client.JSON;
 /**
  * Optional A/X split campaign options
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SplitOptions {
   public static final String SERIALIZED_NAME_OPTIMIZE_FOR = "OptimizeFor";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_FOR)
+  @javax.annotation.Nullable
   private SplitOptimizationType optimizeFor = SplitOptimizationType.OPENS;
 
   public static final String SERIALIZED_NAME_OPTIMIZE_PERIOD_MINUTES = "OptimizePeriodMinutes";
   @SerializedName(SERIALIZED_NAME_OPTIMIZE_PERIOD_MINUTES)
+  @javax.annotation.Nullable
   private Integer optimizePeriodMinutes;
 
   public SplitOptions() {
   }
 
-  public SplitOptions optimizeFor(SplitOptimizationType optimizeFor) {
+  public SplitOptions optimizeFor(@javax.annotation.Nullable SplitOptimizationType optimizeFor) {
     this.optimizeFor = optimizeFor;
     return this;
   }
 
-   /**
+  /**
    * Get optimizeFor
    * @return optimizeFor
-  **/
+   */
   @javax.annotation.Nullable
   public SplitOptimizationType getOptimizeFor() {
     return optimizeFor;
   }
 
-  public void setOptimizeFor(SplitOptimizationType optimizeFor) {
+  public void setOptimizeFor(@javax.annotation.Nullable SplitOptimizationType optimizeFor) {
     this.optimizeFor = optimizeFor;
   }
 
 
-  public SplitOptions optimizePeriodMinutes(Integer optimizePeriodMinutes) {
+  public SplitOptions optimizePeriodMinutes(@javax.annotation.Nullable Integer optimizePeriodMinutes) {
     this.optimizePeriodMinutes = optimizePeriodMinutes;
     return this;
   }
 
-   /**
+  /**
    * For how long should the results be measured until determining the winner template (content)
    * @return optimizePeriodMinutes
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getOptimizePeriodMinutes() {
     return optimizePeriodMinutes;
   }
 
-  public void setOptimizePeriodMinutes(Integer optimizePeriodMinutes) {
+  public void setOptimizePeriodMinutes(@javax.annotation.Nullable Integer optimizePeriodMinutes) {
     this.optimizePeriodMinutes = optimizePeriodMinutes;
   }
 
@@ -155,12 +156,12 @@ public class SplitOptions {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SplitOptions
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SplitOptions
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SplitOptions.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -211,22 +212,22 @@ public class SplitOptions {
     }
   }
 
- /**
-  * Create an instance of SplitOptions given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SplitOptions
-  * @throws IOException if the JSON string is invalid with respect to SplitOptions
-  */
+  /**
+   * Create an instance of SplitOptions given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SplitOptions
+   * @throws IOException if the JSON string is invalid with respect to SplitOptions
+   */
   public static SplitOptions fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SplitOptions.class);
   }
 
- /**
-  * Convert an instance of SplitOptions to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SplitOptions to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

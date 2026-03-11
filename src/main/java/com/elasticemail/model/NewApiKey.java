@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,59 +53,66 @@ import com.elasticemail.client.JSON;
 /**
  * Newly generated ApiKey with Token
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class NewApiKey {
   public static final String SERIALIZED_NAME_TOKEN = "Token";
   @SerializedName(SERIALIZED_NAME_TOKEN)
+  @javax.annotation.Nullable
   private String token;
 
   public static final String SERIALIZED_NAME_ACCESS_LEVEL = "AccessLevel";
   @SerializedName(SERIALIZED_NAME_ACCESS_LEVEL)
+  @javax.annotation.Nullable
   private List<AccessLevel> accessLevel = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_DATE_CREATED = "DateCreated";
   @SerializedName(SERIALIZED_NAME_DATE_CREATED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateCreated;
 
   public static final String SERIALIZED_NAME_LAST_USE = "LastUse";
   @SerializedName(SERIALIZED_NAME_LAST_USE)
+  @javax.annotation.Nullable
   private OffsetDateTime lastUse;
 
   public static final String SERIALIZED_NAME_EXPIRES = "Expires";
   @SerializedName(SERIALIZED_NAME_EXPIRES)
+  @javax.annotation.Nullable
   private OffsetDateTime expires;
 
   public static final String SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE = "RestrictAccessToIPRange";
   @SerializedName(SERIALIZED_NAME_RESTRICT_ACCESS_TO_I_P_RANGE)
+  @javax.annotation.Nullable
   private List<String> restrictAccessToIPRange = new ArrayList<>();
 
   public NewApiKey() {
   }
 
-  public NewApiKey token(String token) {
+  public NewApiKey token(@javax.annotation.Nullable String token) {
     this.token = token;
     return this;
   }
 
-   /**
+  /**
    * Unique token to be used in the system
    * @return token
-  **/
+   */
   @javax.annotation.Nullable
   public String getToken() {
     return token;
   }
 
-  public void setToken(String token) {
+  public void setToken(@javax.annotation.Nullable String token) {
     this.token = token;
   }
 
 
-  public NewApiKey accessLevel(List<AccessLevel> accessLevel) {
+  public NewApiKey accessLevel(@javax.annotation.Nullable List<AccessLevel> accessLevel) {
     this.accessLevel = accessLevel;
     return this;
   }
@@ -119,97 +125,97 @@ public class NewApiKey {
     return this;
   }
 
-   /**
+  /**
    * Access level or permission to be assigned to this ApiKey.
    * @return accessLevel
-  **/
+   */
   @javax.annotation.Nullable
   public List<AccessLevel> getAccessLevel() {
     return accessLevel;
   }
 
-  public void setAccessLevel(List<AccessLevel> accessLevel) {
+  public void setAccessLevel(@javax.annotation.Nullable List<AccessLevel> accessLevel) {
     this.accessLevel = accessLevel;
   }
 
 
-  public NewApiKey name(String name) {
+  public NewApiKey name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of the ApiKey.
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public NewApiKey dateCreated(OffsetDateTime dateCreated) {
+  public NewApiKey dateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey was created.
    * @return dateCreated
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(OffsetDateTime dateCreated) {
+  public void setDateCreated(@javax.annotation.Nullable OffsetDateTime dateCreated) {
     this.dateCreated = dateCreated;
   }
 
 
-  public NewApiKey lastUse(OffsetDateTime lastUse) {
+  public NewApiKey lastUse(@javax.annotation.Nullable OffsetDateTime lastUse) {
     this.lastUse = lastUse;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey was last used.
    * @return lastUse
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getLastUse() {
     return lastUse;
   }
 
-  public void setLastUse(OffsetDateTime lastUse) {
+  public void setLastUse(@javax.annotation.Nullable OffsetDateTime lastUse) {
     this.lastUse = lastUse;
   }
 
 
-  public NewApiKey expires(OffsetDateTime expires) {
+  public NewApiKey expires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
     return this;
   }
 
-   /**
+  /**
    * Date this ApiKey expires.
    * @return expires
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getExpires() {
     return expires;
   }
 
-  public void setExpires(OffsetDateTime expires) {
+  public void setExpires(@javax.annotation.Nullable OffsetDateTime expires) {
     this.expires = expires;
   }
 
 
-  public NewApiKey restrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public NewApiKey restrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
     return this;
   }
@@ -222,16 +228,16 @@ public class NewApiKey {
     return this;
   }
 
-   /**
+  /**
    * Which IPs can use this ApiKey
    * @return restrictAccessToIPRange
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getRestrictAccessToIPRange() {
     return restrictAccessToIPRange;
   }
 
-  public void setRestrictAccessToIPRange(List<String> restrictAccessToIPRange) {
+  public void setRestrictAccessToIPRange(@javax.annotation.Nullable List<String> restrictAccessToIPRange) {
     this.restrictAccessToIPRange = restrictAccessToIPRange;
   }
 
@@ -316,12 +322,12 @@ public class NewApiKey {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to NewApiKey
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to NewApiKey
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NewApiKey.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -382,22 +388,22 @@ public class NewApiKey {
     }
   }
 
- /**
-  * Create an instance of NewApiKey given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of NewApiKey
-  * @throws IOException if the JSON string is invalid with respect to NewApiKey
-  */
+  /**
+   * Create an instance of NewApiKey given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of NewApiKey
+   * @throws IOException if the JSON string is invalid with respect to NewApiKey
+   */
   public static NewApiKey fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, NewApiKey.class);
   }
 
- /**
-  * Convert an instance of NewApiKey to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of NewApiKey to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,260 +52,271 @@ import com.elasticemail.client.JSON;
 /**
  * EmailValidationResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailValidationResult {
   public static final String SERIALIZED_NAME_ACCOUNT = "Account";
   @SerializedName(SERIALIZED_NAME_ACCOUNT)
+  @javax.annotation.Nullable
   private String account;
 
   public static final String SERIALIZED_NAME_DOMAIN = "Domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_SUGGESTED_SPELLING = "SuggestedSpelling";
   @SerializedName(SERIALIZED_NAME_SUGGESTED_SPELLING)
+  @javax.annotation.Nullable
   private String suggestedSpelling;
 
   public static final String SERIALIZED_NAME_DISPOSABLE = "Disposable";
   @SerializedName(SERIALIZED_NAME_DISPOSABLE)
+  @javax.annotation.Nullable
   private Boolean disposable;
 
   public static final String SERIALIZED_NAME_ROLE = "Role";
   @SerializedName(SERIALIZED_NAME_ROLE)
+  @javax.annotation.Nullable
   private Boolean role;
 
   public static final String SERIALIZED_NAME_REASON = "Reason";
   @SerializedName(SERIALIZED_NAME_REASON)
+  @javax.annotation.Nullable
   private String reason;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateAdded;
 
   public static final String SERIALIZED_NAME_RESULT = "Result";
   @SerializedName(SERIALIZED_NAME_RESULT)
+  @javax.annotation.Nullable
   private EmailValidationStatus result = EmailValidationStatus.NONE;
 
   public static final String SERIALIZED_NAME_PREDICTED_SCORE = "PredictedScore";
   @SerializedName(SERIALIZED_NAME_PREDICTED_SCORE)
+  @javax.annotation.Nullable
   private BigDecimal predictedScore;
 
   public static final String SERIALIZED_NAME_PREDICTED_STATUS = "PredictedStatus";
   @SerializedName(SERIALIZED_NAME_PREDICTED_STATUS)
+  @javax.annotation.Nullable
   private EmailPredictedValidationStatus predictedStatus = EmailPredictedValidationStatus.NONE;
 
   public EmailValidationResult() {
   }
 
-  public EmailValidationResult account(String account) {
+  public EmailValidationResult account(@javax.annotation.Nullable String account) {
     this.account = account;
     return this;
   }
 
-   /**
+  /**
    * Local part of an email
    * @return account
-  **/
+   */
   @javax.annotation.Nullable
   public String getAccount() {
     return account;
   }
 
-  public void setAccount(String account) {
+  public void setAccount(@javax.annotation.Nullable String account) {
     this.account = account;
   }
 
 
-  public EmailValidationResult domain(String domain) {
+  public EmailValidationResult domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * Name of selected domain.
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
   public String getDomain() {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public EmailValidationResult email(String email) {
+  public EmailValidationResult email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Full email address that was verified
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public EmailValidationResult suggestedSpelling(String suggestedSpelling) {
+  public EmailValidationResult suggestedSpelling(@javax.annotation.Nullable String suggestedSpelling) {
     this.suggestedSpelling = suggestedSpelling;
     return this;
   }
 
-   /**
+  /**
    * Suggested spelling if a possible mistake was found
    * @return suggestedSpelling
-  **/
+   */
   @javax.annotation.Nullable
   public String getSuggestedSpelling() {
     return suggestedSpelling;
   }
 
-  public void setSuggestedSpelling(String suggestedSpelling) {
+  public void setSuggestedSpelling(@javax.annotation.Nullable String suggestedSpelling) {
     this.suggestedSpelling = suggestedSpelling;
   }
 
 
-  public EmailValidationResult disposable(Boolean disposable) {
+  public EmailValidationResult disposable(@javax.annotation.Nullable Boolean disposable) {
     this.disposable = disposable;
     return this;
   }
 
-   /**
+  /**
    * Does the email have a temporary domain
    * @return disposable
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDisposable() {
     return disposable;
   }
 
-  public void setDisposable(Boolean disposable) {
+  public void setDisposable(@javax.annotation.Nullable Boolean disposable) {
     this.disposable = disposable;
   }
 
 
-  public EmailValidationResult role(Boolean role) {
+  public EmailValidationResult role(@javax.annotation.Nullable Boolean role) {
     this.role = role;
     return this;
   }
 
-   /**
+  /**
    * Is an email a role email (e.g. info@, noreply@ etc.)
    * @return role
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRole() {
     return role;
   }
 
-  public void setRole(Boolean role) {
+  public void setRole(@javax.annotation.Nullable Boolean role) {
     this.role = role;
   }
 
 
-  public EmailValidationResult reason(String reason) {
+  public EmailValidationResult reason(@javax.annotation.Nullable String reason) {
     this.reason = reason;
     return this;
   }
 
-   /**
+  /**
    * All detected issues
    * @return reason
-  **/
+   */
   @javax.annotation.Nullable
   public String getReason() {
     return reason;
   }
 
-  public void setReason(String reason) {
+  public void setReason(@javax.annotation.Nullable String reason) {
     this.reason = reason;
   }
 
 
-  public EmailValidationResult dateAdded(OffsetDateTime dateAdded) {
+  public EmailValidationResult dateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Added date
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
 
-  public void setDateAdded(OffsetDateTime dateAdded) {
+  public void setDateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
   }
 
 
-  public EmailValidationResult result(EmailValidationStatus result) {
+  public EmailValidationResult result(@javax.annotation.Nullable EmailValidationStatus result) {
     this.result = result;
     return this;
   }
 
-   /**
+  /**
    * Get result
    * @return result
-  **/
+   */
   @javax.annotation.Nullable
   public EmailValidationStatus getResult() {
     return result;
   }
 
-  public void setResult(EmailValidationStatus result) {
+  public void setResult(@javax.annotation.Nullable EmailValidationStatus result) {
     this.result = result;
   }
 
 
-  public EmailValidationResult predictedScore(BigDecimal predictedScore) {
+  public EmailValidationResult predictedScore(@javax.annotation.Nullable BigDecimal predictedScore) {
     this.predictedScore = predictedScore;
     return this;
   }
 
-   /**
+  /**
    * Predicted score
    * @return predictedScore
-  **/
+   */
   @javax.annotation.Nullable
   public BigDecimal getPredictedScore() {
     return predictedScore;
   }
 
-  public void setPredictedScore(BigDecimal predictedScore) {
+  public void setPredictedScore(@javax.annotation.Nullable BigDecimal predictedScore) {
     this.predictedScore = predictedScore;
   }
 
 
-  public EmailValidationResult predictedStatus(EmailPredictedValidationStatus predictedStatus) {
+  public EmailValidationResult predictedStatus(@javax.annotation.Nullable EmailPredictedValidationStatus predictedStatus) {
     this.predictedStatus = predictedStatus;
     return this;
   }
 
-   /**
+  /**
    * Get predictedStatus
    * @return predictedStatus
-  **/
+   */
   @javax.annotation.Nullable
   public EmailPredictedValidationStatus getPredictedStatus() {
     return predictedStatus;
   }
 
-  public void setPredictedStatus(EmailPredictedValidationStatus predictedStatus) {
+  public void setPredictedStatus(@javax.annotation.Nullable EmailPredictedValidationStatus predictedStatus) {
     this.predictedStatus = predictedStatus;
   }
 
@@ -392,12 +402,12 @@ public class EmailValidationResult {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailValidationResult
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailValidationResult
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailValidationResult.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -467,22 +477,22 @@ public class EmailValidationResult {
     }
   }
 
- /**
-  * Create an instance of EmailValidationResult given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailValidationResult
-  * @throws IOException if the JSON string is invalid with respect to EmailValidationResult
-  */
+  /**
+   * Create an instance of EmailValidationResult given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailValidationResult
+   * @throws IOException if the JSON string is invalid with respect to EmailValidationResult
+   */
   public static EmailValidationResult fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailValidationResult.class);
   }
 
- /**
-  * Convert an instance of EmailValidationResult to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailValidationResult to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

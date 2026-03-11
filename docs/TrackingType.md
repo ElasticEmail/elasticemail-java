@@ -11,11 +11,11 @@
 
 * `HTTP` (value: `"Http"`)
 
-* `EXTERNALHTTPS` (value: `"ExternalHttps"`)
+* `EXTERNAL_HTTPS` (value: `"ExternalHttps"`)
 
-* `INTERNALCERTHTTPS` (value: `"InternalCertHttps"`)
+* `INTERNAL_CERT_HTTPS` (value: `"InternalCertHttps"`)
 
-* `LETSENCRYPTCERT` (value: `"LetsEncryptCert"`)
+* `LETS_ENCRYPT_CERT` (value: `"LetsEncryptCert"`)
 
 
 

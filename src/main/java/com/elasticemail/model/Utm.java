@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,99 +48,103 @@ import com.elasticemail.client.JSON;
 /**
  * Utm marketing data to be attached to every link in this e-mail.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class Utm {
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private String source;
 
   public static final String SERIALIZED_NAME_MEDIUM = "Medium";
   @SerializedName(SERIALIZED_NAME_MEDIUM)
+  @javax.annotation.Nullable
   private String medium;
 
   public static final String SERIALIZED_NAME_CAMPAIGN = "Campaign";
   @SerializedName(SERIALIZED_NAME_CAMPAIGN)
+  @javax.annotation.Nullable
   private String campaign;
 
   public static final String SERIALIZED_NAME_CONTENT = "Content";
   @SerializedName(SERIALIZED_NAME_CONTENT)
+  @javax.annotation.Nullable
   private String content;
 
   public Utm() {
   }
 
-  public Utm source(String source) {
+  public Utm source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * utmsource value
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public String getSource() {
     return source;
   }
 
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
 
-  public Utm medium(String medium) {
+  public Utm medium(@javax.annotation.Nullable String medium) {
     this.medium = medium;
     return this;
   }
 
-   /**
+  /**
    * utmmedium value
    * @return medium
-  **/
+   */
   @javax.annotation.Nullable
   public String getMedium() {
     return medium;
   }
 
-  public void setMedium(String medium) {
+  public void setMedium(@javax.annotation.Nullable String medium) {
     this.medium = medium;
   }
 
 
-  public Utm campaign(String campaign) {
+  public Utm campaign(@javax.annotation.Nullable String campaign) {
     this.campaign = campaign;
     return this;
   }
 
-   /**
+  /**
    * utmcampaign value
    * @return campaign
-  **/
+   */
   @javax.annotation.Nullable
   public String getCampaign() {
     return campaign;
   }
 
-  public void setCampaign(String campaign) {
+  public void setCampaign(@javax.annotation.Nullable String campaign) {
     this.campaign = campaign;
   }
 
 
-  public Utm content(String content) {
+  public Utm content(@javax.annotation.Nullable String content) {
     this.content = content;
     return this;
   }
 
-   /**
+  /**
    * utmcontent value
    * @return content
-  **/
+   */
   @javax.annotation.Nullable
   public String getContent() {
     return content;
   }
 
-  public void setContent(String content) {
+  public void setContent(@javax.annotation.Nullable String content) {
     this.content = content;
   }
 
@@ -206,12 +209,12 @@ public class Utm {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Utm
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Utm
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Utm.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -270,22 +273,22 @@ public class Utm {
     }
   }
 
- /**
-  * Create an instance of Utm given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Utm
-  * @throws IOException if the JSON string is invalid with respect to Utm
-  */
+  /**
+   * Create an instance of Utm given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Utm
+   * @throws IOException if the JSON string is invalid with respect to Utm
+   */
   public static Utm fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Utm.class);
   }
 
- /**
-  * Convert an instance of Utm to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Utm to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

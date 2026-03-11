@@ -92,7 +92,7 @@ null (empty response body)
 
 Load ApiKey
 
-Load your existing ApiKey info. Required Access Level: Security
+Load your existing ApiKey info. Required Access Level: ViewAccessTokens
 
 ### Example
 ```java
@@ -234,7 +234,7 @@ public class Example {
 
 List ApiKeys
 
-List all your existing ApiKeys. Required Access Level: Security
+List all your existing ApiKeys. Required Access Level: ViewAccessTokens
 
 ### Example
 ```java
@@ -442,7 +442,7 @@ null (empty response body)
 
 Load SMTP Credential
 
-Load your existing SMTP Credential info. Required Access Level: Security
+Load your existing SMTP Credential info. Required Access Level: ViewAccessTokens
 
 ### Example
 ```java
@@ -584,7 +584,7 @@ public class Example {
 
 List SMTP Credentials
 
-List all your existing SMTP Credentials. Required Access Level: Security
+List all your existing SMTP Credentials. Required Access Level: ViewAccessTokens
 
 ### Example
 ```java

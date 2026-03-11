@@ -5,25 +5,31 @@
 ## Enum
 
 
-* `RAWHTML` (value: `"RawHTML"`)
+* `RAW_HTML` (value: `"RawHTML"`)
 
-* `DRAGDROPEDITOR` (value: `"DragDropEditor"`)
+* `DRAG_DROP_EDITOR` (value: `"DragDropEditor"`)
 
-* `LANDINGPAGEEDITOR` (value: `"LandingPageEditor"`)
+* `LANDING_PAGE_EDITOR` (value: `"LandingPageEditor"`)
 
-* `TEMPLATEEDITOR` (value: `"TemplateEditor"`)
+* `TEMPLATE_EDITOR` (value: `"TemplateEditor"`)
 
-* `FORMTEMPLATE` (value: `"FormTemplate"`)
+* `FORM_TEMPLATE` (value: `"FormTemplate"`)
 
-* `LANDINGPAGETEMPLATE` (value: `"LandingPageTemplate"`)
+* `LANDING_PAGE_TEMPLATE` (value: `"LandingPageTemplate"`)
 
-* `PAYMENTCONFIRMATIONTEMPLATE` (value: `"PaymentConfirmationTemplate"`)
+* `PAYMENT_CONFIRMATION_TEMPLATE` (value: `"PaymentConfirmationTemplate"`)
 
-* `LANDINGPAGEPRODUCTTEMPLATE` (value: `"LandingPageProductTemplate"`)
+* `LANDING_PAGE_PRODUCT_TEMPLATE` (value: `"LandingPageProductTemplate"`)
 
-* `LANDINGPAGECHECKOUTTEMPLATE` (value: `"LandingPageCheckoutTemplate"`)
+* `LANDING_PAGE_CHECKOUT_TEMPLATE` (value: `"LandingPageCheckoutTemplate"`)
 
-* `LANDINGPAGEPAYMENTCONFIRMATIONTEMPLATE` (value: `"LandingPagePaymentConfirmationTemplate"`)
+* `LANDING_PAGE_PAYMENT_CONFIRMATION_TEMPLATE` (value: `"LandingPagePaymentConfirmationTemplate"`)
+
+* `LANDING_PAGE_NEWSLETTER_PRODUCT_TEMPLATE` (value: `"LandingPageNewsletterProductTemplate"`)
+
+* `LANDING_PAGE_NEWSLETTER_PAYMENT_CONFIRMATION_TEMPLATE` (value: `"LandingPageNewsletterPaymentConfirmationTemplate"`)
+
+* `NEWSLETTER_SUBSCRIPTION_CANCELLATION_TEMPLATE` (value: `"NewsletterSubscriptionCancellationTemplate"`)
 
 
 

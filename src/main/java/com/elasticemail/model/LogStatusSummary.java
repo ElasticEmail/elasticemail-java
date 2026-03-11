@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,306 +48,319 @@ import com.elasticemail.client.JSON;
 /**
  * Summary of log status
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class LogStatusSummary {
   public static final String SERIALIZED_NAME_RECIPIENTS = "Recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
+  @javax.annotation.Nullable
   private Long recipients;
 
   public static final String SERIALIZED_NAME_EMAIL_TOTAL = "EmailTotal";
   @SerializedName(SERIALIZED_NAME_EMAIL_TOTAL)
+  @javax.annotation.Nullable
   private Long emailTotal;
 
   public static final String SERIALIZED_NAME_SMS_TOTAL = "SmsTotal";
   @SerializedName(SERIALIZED_NAME_SMS_TOTAL)
+  @javax.annotation.Nullable
   private Long smsTotal;
 
   public static final String SERIALIZED_NAME_DELIVERED = "Delivered";
   @SerializedName(SERIALIZED_NAME_DELIVERED)
+  @javax.annotation.Nullable
   private Long delivered;
 
   public static final String SERIALIZED_NAME_BOUNCED = "Bounced";
   @SerializedName(SERIALIZED_NAME_BOUNCED)
+  @javax.annotation.Nullable
   private Long bounced;
 
   public static final String SERIALIZED_NAME_IN_PROGRESS = "InProgress";
   @SerializedName(SERIALIZED_NAME_IN_PROGRESS)
+  @javax.annotation.Nullable
   private Long inProgress;
 
   public static final String SERIALIZED_NAME_OPENED = "Opened";
   @SerializedName(SERIALIZED_NAME_OPENED)
+  @javax.annotation.Nullable
   private Long opened;
 
   public static final String SERIALIZED_NAME_CLICKED = "Clicked";
   @SerializedName(SERIALIZED_NAME_CLICKED)
+  @javax.annotation.Nullable
   private Long clicked;
 
   public static final String SERIALIZED_NAME_UNSUBSCRIBED = "Unsubscribed";
   @SerializedName(SERIALIZED_NAME_UNSUBSCRIBED)
+  @javax.annotation.Nullable
   private Long unsubscribed;
 
   public static final String SERIALIZED_NAME_COMPLAINTS = "Complaints";
   @SerializedName(SERIALIZED_NAME_COMPLAINTS)
+  @javax.annotation.Nullable
   private Long complaints;
 
   public static final String SERIALIZED_NAME_INBOUND = "Inbound";
   @SerializedName(SERIALIZED_NAME_INBOUND)
+  @javax.annotation.Nullable
   private Long inbound;
 
   public static final String SERIALIZED_NAME_MANUAL_CANCEL = "ManualCancel";
   @SerializedName(SERIALIZED_NAME_MANUAL_CANCEL)
+  @javax.annotation.Nullable
   private Long manualCancel;
 
   public static final String SERIALIZED_NAME_NOT_DELIVERED = "NotDelivered";
   @SerializedName(SERIALIZED_NAME_NOT_DELIVERED)
+  @javax.annotation.Nullable
   private Long notDelivered;
 
   public LogStatusSummary() {
   }
 
-  public LogStatusSummary recipients(Long recipients) {
+  public LogStatusSummary recipients(@javax.annotation.Nullable Long recipients) {
     this.recipients = recipients;
     return this;
   }
 
-   /**
+  /**
    * Number of recipients
    * @return recipients
-  **/
+   */
   @javax.annotation.Nullable
   public Long getRecipients() {
     return recipients;
   }
 
-  public void setRecipients(Long recipients) {
+  public void setRecipients(@javax.annotation.Nullable Long recipients) {
     this.recipients = recipients;
   }
 
 
-  public LogStatusSummary emailTotal(Long emailTotal) {
+  public LogStatusSummary emailTotal(@javax.annotation.Nullable Long emailTotal) {
     this.emailTotal = emailTotal;
     return this;
   }
 
-   /**
+  /**
    * Number of emails
    * @return emailTotal
-  **/
+   */
   @javax.annotation.Nullable
   public Long getEmailTotal() {
     return emailTotal;
   }
 
-  public void setEmailTotal(Long emailTotal) {
+  public void setEmailTotal(@javax.annotation.Nullable Long emailTotal) {
     this.emailTotal = emailTotal;
   }
 
 
-  public LogStatusSummary smsTotal(Long smsTotal) {
+  public LogStatusSummary smsTotal(@javax.annotation.Nullable Long smsTotal) {
     this.smsTotal = smsTotal;
     return this;
   }
 
-   /**
+  /**
    * Number of SMS
    * @return smsTotal
-  **/
+   */
   @javax.annotation.Nullable
   public Long getSmsTotal() {
     return smsTotal;
   }
 
-  public void setSmsTotal(Long smsTotal) {
+  public void setSmsTotal(@javax.annotation.Nullable Long smsTotal) {
     this.smsTotal = smsTotal;
   }
 
 
-  public LogStatusSummary delivered(Long delivered) {
+  public LogStatusSummary delivered(@javax.annotation.Nullable Long delivered) {
     this.delivered = delivered;
     return this;
   }
 
-   /**
+  /**
    * Number of delivered messages
    * @return delivered
-  **/
+   */
   @javax.annotation.Nullable
   public Long getDelivered() {
     return delivered;
   }
 
-  public void setDelivered(Long delivered) {
+  public void setDelivered(@javax.annotation.Nullable Long delivered) {
     this.delivered = delivered;
   }
 
 
-  public LogStatusSummary bounced(Long bounced) {
+  public LogStatusSummary bounced(@javax.annotation.Nullable Long bounced) {
     this.bounced = bounced;
     return this;
   }
 
-   /**
+  /**
    * Number of bounced messages
    * @return bounced
-  **/
+   */
   @javax.annotation.Nullable
   public Long getBounced() {
     return bounced;
   }
 
-  public void setBounced(Long bounced) {
+  public void setBounced(@javax.annotation.Nullable Long bounced) {
     this.bounced = bounced;
   }
 
 
-  public LogStatusSummary inProgress(Long inProgress) {
+  public LogStatusSummary inProgress(@javax.annotation.Nullable Long inProgress) {
     this.inProgress = inProgress;
     return this;
   }
 
-   /**
+  /**
    * Number of messages in progress
    * @return inProgress
-  **/
+   */
   @javax.annotation.Nullable
   public Long getInProgress() {
     return inProgress;
   }
 
-  public void setInProgress(Long inProgress) {
+  public void setInProgress(@javax.annotation.Nullable Long inProgress) {
     this.inProgress = inProgress;
   }
 
 
-  public LogStatusSummary opened(Long opened) {
+  public LogStatusSummary opened(@javax.annotation.Nullable Long opened) {
     this.opened = opened;
     return this;
   }
 
-   /**
+  /**
    * Number of opened messages
    * @return opened
-  **/
+   */
   @javax.annotation.Nullable
   public Long getOpened() {
     return opened;
   }
 
-  public void setOpened(Long opened) {
+  public void setOpened(@javax.annotation.Nullable Long opened) {
     this.opened = opened;
   }
 
 
-  public LogStatusSummary clicked(Long clicked) {
+  public LogStatusSummary clicked(@javax.annotation.Nullable Long clicked) {
     this.clicked = clicked;
     return this;
   }
 
-   /**
+  /**
    * Number of clicked messages
    * @return clicked
-  **/
+   */
   @javax.annotation.Nullable
   public Long getClicked() {
     return clicked;
   }
 
-  public void setClicked(Long clicked) {
+  public void setClicked(@javax.annotation.Nullable Long clicked) {
     this.clicked = clicked;
   }
 
 
-  public LogStatusSummary unsubscribed(Long unsubscribed) {
+  public LogStatusSummary unsubscribed(@javax.annotation.Nullable Long unsubscribed) {
     this.unsubscribed = unsubscribed;
     return this;
   }
 
-   /**
+  /**
    * Number of unsubscribed messages
    * @return unsubscribed
-  **/
+   */
   @javax.annotation.Nullable
   public Long getUnsubscribed() {
     return unsubscribed;
   }
 
-  public void setUnsubscribed(Long unsubscribed) {
+  public void setUnsubscribed(@javax.annotation.Nullable Long unsubscribed) {
     this.unsubscribed = unsubscribed;
   }
 
 
-  public LogStatusSummary complaints(Long complaints) {
+  public LogStatusSummary complaints(@javax.annotation.Nullable Long complaints) {
     this.complaints = complaints;
     return this;
   }
 
-   /**
+  /**
    * Number of complaint messages
    * @return complaints
-  **/
+   */
   @javax.annotation.Nullable
   public Long getComplaints() {
     return complaints;
   }
 
-  public void setComplaints(Long complaints) {
+  public void setComplaints(@javax.annotation.Nullable Long complaints) {
     this.complaints = complaints;
   }
 
 
-  public LogStatusSummary inbound(Long inbound) {
+  public LogStatusSummary inbound(@javax.annotation.Nullable Long inbound) {
     this.inbound = inbound;
     return this;
   }
 
-   /**
+  /**
    * Number of inbound messages
    * @return inbound
-  **/
+   */
   @javax.annotation.Nullable
   public Long getInbound() {
     return inbound;
   }
 
-  public void setInbound(Long inbound) {
+  public void setInbound(@javax.annotation.Nullable Long inbound) {
     this.inbound = inbound;
   }
 
 
-  public LogStatusSummary manualCancel(Long manualCancel) {
+  public LogStatusSummary manualCancel(@javax.annotation.Nullable Long manualCancel) {
     this.manualCancel = manualCancel;
     return this;
   }
 
-   /**
+  /**
    * Number of manually cancelled messages
    * @return manualCancel
-  **/
+   */
   @javax.annotation.Nullable
   public Long getManualCancel() {
     return manualCancel;
   }
 
-  public void setManualCancel(Long manualCancel) {
+  public void setManualCancel(@javax.annotation.Nullable Long manualCancel) {
     this.manualCancel = manualCancel;
   }
 
 
-  public LogStatusSummary notDelivered(Long notDelivered) {
+  public LogStatusSummary notDelivered(@javax.annotation.Nullable Long notDelivered) {
     this.notDelivered = notDelivered;
     return this;
   }
 
-   /**
+  /**
    * Number of messages flagged with &#39;Not Delivered&#39;
    * @return notDelivered
-  **/
+   */
   @javax.annotation.Nullable
   public Long getNotDelivered() {
     return notDelivered;
   }
 
-  public void setNotDelivered(Long notDelivered) {
+  public void setNotDelivered(@javax.annotation.Nullable Long notDelivered) {
     this.notDelivered = notDelivered;
   }
 
@@ -440,12 +452,12 @@ public class LogStatusSummary {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to LogStatusSummary
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to LogStatusSummary
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!LogStatusSummary.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -492,22 +504,22 @@ public class LogStatusSummary {
     }
   }
 
- /**
-  * Create an instance of LogStatusSummary given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of LogStatusSummary
-  * @throws IOException if the JSON string is invalid with respect to LogStatusSummary
-  */
+  /**
+   * Create an instance of LogStatusSummary given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of LogStatusSummary
+   * @throws IOException if the JSON string is invalid with respect to LogStatusSummary
+   */
   public static LogStatusSummary fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, LogStatusSummary.class);
   }
 
- /**
-  * Convert an instance of LogStatusSummary to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of LogStatusSummary to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

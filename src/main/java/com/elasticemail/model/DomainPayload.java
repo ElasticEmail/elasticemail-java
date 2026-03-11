@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,53 +48,55 @@ import com.elasticemail.client.JSON;
 /**
  * DomainPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class DomainPayload {
   public static final String SERIALIZED_NAME_DOMAIN = "Domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String SERIALIZED_NAME_SET_AS_DEFAULT = "SetAsDefault";
   @SerializedName(SERIALIZED_NAME_SET_AS_DEFAULT)
+  @javax.annotation.Nullable
   private Boolean setAsDefault;
 
   public DomainPayload() {
   }
 
-  public DomainPayload domain(String domain) {
+  public DomainPayload domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * Name of selected domain.
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
   public String getDomain() {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public DomainPayload setAsDefault(Boolean setAsDefault) {
+  public DomainPayload setAsDefault(@javax.annotation.Nullable Boolean setAsDefault) {
     this.setAsDefault = setAsDefault;
     return this;
   }
 
-   /**
+  /**
    * Get setAsDefault
    * @return setAsDefault
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSetAsDefault() {
     return setAsDefault;
   }
 
-  public void setSetAsDefault(Boolean setAsDefault) {
+  public void setSetAsDefault(@javax.annotation.Nullable Boolean setAsDefault) {
     this.setAsDefault = setAsDefault;
   }
 
@@ -154,12 +155,12 @@ public class DomainPayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DomainPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DomainPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DomainPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -209,22 +210,22 @@ public class DomainPayload {
     }
   }
 
- /**
-  * Create an instance of DomainPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DomainPayload
-  * @throws IOException if the JSON string is invalid with respect to DomainPayload
-  */
+  /**
+   * Create an instance of DomainPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DomainPayload
+   * @throws IOException if the JSON string is invalid with respect to DomainPayload
+   */
   public static DomainPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DomainPayload.class);
   }
 
- /**
-  * Convert an instance of DomainPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DomainPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

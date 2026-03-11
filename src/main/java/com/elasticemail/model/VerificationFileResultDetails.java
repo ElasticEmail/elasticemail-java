@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -43,7 +43,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -55,40 +54,47 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed verification file result info
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class VerificationFileResultDetails {
   public static final String SERIALIZED_NAME_VERIFICATION_RESULT = "VerificationResult";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_RESULT)
+  @javax.annotation.Nullable
   private List<EmailValidationResult> verificationResult = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VERIFICATION_I_D = "VerificationID";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_I_D)
+  @javax.annotation.Nullable
   private String verificationID;
 
   public static final String SERIALIZED_NAME_FILENAME = "Filename";
   @SerializedName(SERIALIZED_NAME_FILENAME)
+  @javax.annotation.Nullable
   private String filename;
 
   public static final String SERIALIZED_NAME_VERIFICATION_STATUS = "VerificationStatus";
   @SerializedName(SERIALIZED_NAME_VERIFICATION_STATUS)
+  @javax.annotation.Nullable
   private VerificationStatus verificationStatus = VerificationStatus.PROCESSING;
 
   public static final String SERIALIZED_NAME_FILE_UPLOAD_RESULT = "FileUploadResult";
   @SerializedName(SERIALIZED_NAME_FILE_UPLOAD_RESULT)
+  @javax.annotation.Nullable
   private FileUploadResult fileUploadResult;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateAdded;
 
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
+  @javax.annotation.Nullable
   private String source;
 
   public VerificationFileResultDetails() {
   }
 
-  public VerificationFileResultDetails verificationResult(List<EmailValidationResult> verificationResult) {
+  public VerificationFileResultDetails verificationResult(@javax.annotation.Nullable List<EmailValidationResult> verificationResult) {
     this.verificationResult = verificationResult;
     return this;
   }
@@ -101,130 +107,130 @@ public class VerificationFileResultDetails {
     return this;
   }
 
-   /**
+  /**
    * Verification result&#39;s details
    * @return verificationResult
-  **/
+   */
   @javax.annotation.Nullable
   public List<EmailValidationResult> getVerificationResult() {
     return verificationResult;
   }
 
-  public void setVerificationResult(List<EmailValidationResult> verificationResult) {
+  public void setVerificationResult(@javax.annotation.Nullable List<EmailValidationResult> verificationResult) {
     this.verificationResult = verificationResult;
   }
 
 
-  public VerificationFileResultDetails verificationID(String verificationID) {
+  public VerificationFileResultDetails verificationID(@javax.annotation.Nullable String verificationID) {
     this.verificationID = verificationID;
     return this;
   }
 
-   /**
+  /**
    * Identifier of this verification result
    * @return verificationID
-  **/
+   */
   @javax.annotation.Nullable
   public String getVerificationID() {
     return verificationID;
   }
 
-  public void setVerificationID(String verificationID) {
+  public void setVerificationID(@javax.annotation.Nullable String verificationID) {
     this.verificationID = verificationID;
   }
 
 
-  public VerificationFileResultDetails filename(String filename) {
+  public VerificationFileResultDetails filename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
     return this;
   }
 
-   /**
+  /**
    * Origin file name
    * @return filename
-  **/
+   */
   @javax.annotation.Nullable
   public String getFilename() {
     return filename;
   }
 
-  public void setFilename(String filename) {
+  public void setFilename(@javax.annotation.Nullable String filename) {
     this.filename = filename;
   }
 
 
-  public VerificationFileResultDetails verificationStatus(VerificationStatus verificationStatus) {
+  public VerificationFileResultDetails verificationStatus(@javax.annotation.Nullable VerificationStatus verificationStatus) {
     this.verificationStatus = verificationStatus;
     return this;
   }
 
-   /**
+  /**
    * Get verificationStatus
    * @return verificationStatus
-  **/
+   */
   @javax.annotation.Nullable
   public VerificationStatus getVerificationStatus() {
     return verificationStatus;
   }
 
-  public void setVerificationStatus(VerificationStatus verificationStatus) {
+  public void setVerificationStatus(@javax.annotation.Nullable VerificationStatus verificationStatus) {
     this.verificationStatus = verificationStatus;
   }
 
 
-  public VerificationFileResultDetails fileUploadResult(FileUploadResult fileUploadResult) {
+  public VerificationFileResultDetails fileUploadResult(@javax.annotation.Nullable FileUploadResult fileUploadResult) {
     this.fileUploadResult = fileUploadResult;
     return this;
   }
 
-   /**
+  /**
    * Get fileUploadResult
    * @return fileUploadResult
-  **/
+   */
   @javax.annotation.Nullable
   public FileUploadResult getFileUploadResult() {
     return fileUploadResult;
   }
 
-  public void setFileUploadResult(FileUploadResult fileUploadResult) {
+  public void setFileUploadResult(@javax.annotation.Nullable FileUploadResult fileUploadResult) {
     this.fileUploadResult = fileUploadResult;
   }
 
 
-  public VerificationFileResultDetails dateAdded(OffsetDateTime dateAdded) {
+  public VerificationFileResultDetails dateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
 
-  public void setDateAdded(OffsetDateTime dateAdded) {
+  public void setDateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
   }
 
 
-  public VerificationFileResultDetails source(String source) {
+  public VerificationFileResultDetails source(@javax.annotation.Nullable String source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Origin file extension
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public String getSource() {
     return source;
   }
 
-  public void setSource(String source) {
+  public void setSource(@javax.annotation.Nullable String source) {
     this.source = source;
   }
 
@@ -298,12 +304,12 @@ public class VerificationFileResultDetails {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to VerificationFileResultDetails
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to VerificationFileResultDetails
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!VerificationFileResultDetails.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -381,22 +387,22 @@ public class VerificationFileResultDetails {
     }
   }
 
- /**
-  * Create an instance of VerificationFileResultDetails given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of VerificationFileResultDetails
-  * @throws IOException if the JSON string is invalid with respect to VerificationFileResultDetails
-  */
+  /**
+   * Create an instance of VerificationFileResultDetails given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of VerificationFileResultDetails
+   * @throws IOException if the JSON string is invalid with respect to VerificationFileResultDetails
+   */
   public static VerificationFileResultDetails fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, VerificationFileResultDetails.class);
   }
 
- /**
-  * Convert an instance of VerificationFileResultDetails to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of VerificationFileResultDetails to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

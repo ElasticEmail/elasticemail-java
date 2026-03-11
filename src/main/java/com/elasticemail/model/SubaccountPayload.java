@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,99 +49,103 @@ import com.elasticemail.client.JSON;
 /**
  * New SubAccount payload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SubaccountPayload {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nonnull
   private String email;
 
   public static final String SERIALIZED_NAME_PASSWORD = "Password";
   @SerializedName(SERIALIZED_NAME_PASSWORD)
+  @javax.annotation.Nonnull
   private String password;
 
   public static final String SERIALIZED_NAME_SEND_ACTIVATION = "SendActivation";
   @SerializedName(SERIALIZED_NAME_SEND_ACTIVATION)
+  @javax.annotation.Nullable
   private Boolean sendActivation;
 
   public static final String SERIALIZED_NAME_SETTINGS = "Settings";
   @SerializedName(SERIALIZED_NAME_SETTINGS)
+  @javax.annotation.Nullable
   private SubaccountSettingsInfoPayload settings;
 
   public SubaccountPayload() {
   }
 
-  public SubaccountPayload email(String email) {
+  public SubaccountPayload email(@javax.annotation.Nonnull String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Proper email address.
    * @return email
-  **/
+   */
   @javax.annotation.Nonnull
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nonnull String email) {
     this.email = email;
   }
 
 
-  public SubaccountPayload password(String password) {
+  public SubaccountPayload password(@javax.annotation.Nonnull String password) {
     this.password = password;
     return this;
   }
 
-   /**
+  /**
    * Current password.
    * @return password
-  **/
+   */
   @javax.annotation.Nonnull
   public String getPassword() {
     return password;
   }
 
-  public void setPassword(String password) {
+  public void setPassword(@javax.annotation.Nonnull String password) {
     this.password = password;
   }
 
 
-  public SubaccountPayload sendActivation(Boolean sendActivation) {
+  public SubaccountPayload sendActivation(@javax.annotation.Nullable Boolean sendActivation) {
     this.sendActivation = sendActivation;
     return this;
   }
 
-   /**
+  /**
    * True, if you want to send activation email to this Account to confirm the creation of a new SubAccount. Otherwise, false (SubAccount will immediately be Active).
    * @return sendActivation
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSendActivation() {
     return sendActivation;
   }
 
-  public void setSendActivation(Boolean sendActivation) {
+  public void setSendActivation(@javax.annotation.Nullable Boolean sendActivation) {
     this.sendActivation = sendActivation;
   }
 
 
-  public SubaccountPayload settings(SubaccountSettingsInfoPayload settings) {
+  public SubaccountPayload settings(@javax.annotation.Nullable SubaccountSettingsInfoPayload settings) {
     this.settings = settings;
     return this;
   }
 
-   /**
+  /**
    * Get settings
    * @return settings
-  **/
+   */
   @javax.annotation.Nullable
   public SubaccountSettingsInfoPayload getSettings() {
     return settings;
   }
 
-  public void setSettings(SubaccountSettingsInfoPayload settings) {
+  public void setSettings(@javax.annotation.Nullable SubaccountSettingsInfoPayload settings) {
     this.settings = settings;
   }
 
@@ -209,12 +212,12 @@ public class SubaccountPayload {
     openapiRequiredFields.add("Password");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SubaccountPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubaccountPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -278,22 +281,22 @@ public class SubaccountPayload {
     }
   }
 
- /**
-  * Create an instance of SubaccountPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubaccountPayload
-  * @throws IOException if the JSON string is invalid with respect to SubaccountPayload
-  */
+  /**
+   * Create an instance of SubaccountPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubaccountPayload
+   * @throws IOException if the JSON string is invalid with respect to SubaccountPayload
+   */
   public static SubaccountPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountPayload.class);
   }
 
- /**
-  * Convert an instance of SubaccountPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubaccountPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

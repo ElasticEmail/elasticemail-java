@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -31,119 +31,125 @@ public enum AccessLevel {
   
   NONE("None"),
   
-  VIEWACCOUNT("ViewAccount"),
+  VIEW_ACCOUNT("ViewAccount"),
   
-  VIEWCONTACTS("ViewContacts"),
+  VIEW_CONTACTS("ViewContacts"),
   
-  VIEWFORMS("ViewForms"),
+  VIEW_FORMS("ViewForms"),
   
-  VIEWTEMPLATES("ViewTemplates"),
+  VIEW_TEMPLATES("ViewTemplates"),
   
-  VIEWCAMPAIGNS("ViewCampaigns"),
+  VIEW_CAMPAIGNS("ViewCampaigns"),
   
-  VIEWCHANNELS("ViewChannels"),
+  VIEW_CHANNELS("ViewChannels"),
   
-  VIEWAUTOMATIONS("ViewAutomations"),
+  VIEW_AUTOMATIONS("ViewAutomations"),
   
-  VIEWSURVEYS("ViewSurveys"),
+  VIEW_SURVEYS("ViewSurveys"),
   
-  VIEWSETTINGS("ViewSettings"),
+  VIEW_SETTINGS("ViewSettings"),
   
-  VIEWBILLING("ViewBilling"),
+  VIEW_BILLING("ViewBilling"),
   
-  VIEWSUBACCOUNTS("ViewSubAccounts"),
+  VIEW_SUB_ACCOUNTS("ViewSubAccounts"),
   
-  VIEWUSERS("ViewUsers"),
+  VIEW_USERS("ViewUsers"),
   
-  VIEWFILES("ViewFiles"),
+  VIEW_FILES("ViewFiles"),
   
-  VIEWREPORTS("ViewReports"),
+  VIEW_REPORTS("ViewReports"),
   
-  MODIFYACCOUNT("ModifyAccount"),
+  MODIFY_ACCOUNT("ModifyAccount"),
   
-  MODIFYCONTACTS("ModifyContacts"),
+  MODIFY_CONTACTS("ModifyContacts"),
   
-  MODIFYFORMS("ModifyForms"),
+  MODIFY_FORMS("ModifyForms"),
   
-  MODIFYTEMPLATES("ModifyTemplates"),
+  MODIFY_TEMPLATES("ModifyTemplates"),
   
-  MODIFYCAMPAIGNS("ModifyCampaigns"),
+  MODIFY_CAMPAIGNS("ModifyCampaigns"),
   
-  MODIFYCHANNELS("ModifyChannels"),
+  MODIFY_CHANNELS("ModifyChannels"),
   
-  MODIFYAUTOMATIONS("ModifyAutomations"),
+  MODIFY_AUTOMATIONS("ModifyAutomations"),
   
-  MODIFYSURVEYS("ModifySurveys"),
+  MODIFY_SURVEYS("ModifySurveys"),
   
-  MODIFYFILES("ModifyFiles"),
+  MODIFY_FILES("ModifyFiles"),
   
   EXPORT("Export"),
   
-  SENDSMTP("SendSmtp"),
+  SEND_SMTP("SendSmtp"),
   
-  SENDSMS("SendSMS"),
+  SEND_SMS("SendSMS"),
   
-  MODIFYSETTINGS("ModifySettings"),
+  MODIFY_SETTINGS("ModifySettings"),
   
-  MODIFYBILLING("ModifyBilling"),
+  MODIFY_BILLING("ModifyBilling"),
   
-  MODIFYPROFILE("ModifyProfile"),
+  MODIFY_PROFILE("ModifyProfile"),
   
-  MODIFYSUBACCOUNTS("ModifySubAccounts"),
+  MODIFY_SUB_ACCOUNTS("ModifySubAccounts"),
   
-  MODIFYUSERS("ModifyUsers"),
+  MODIFY_USERS("ModifyUsers"),
   
   SECURITY("Security"),
   
-  MODIFYLANGUAGE("ModifyLanguage"),
+  MODIFY_LANGUAGE("ModifyLanguage"),
   
-  VIEWSUPPORT("ViewSupport"),
+  VIEW_SUPPORT("ViewSupport"),
   
-  SENDHTTP("SendHttp"),
+  SEND_HTTP("SendHttp"),
   
-  MODIFY2FAEMAIL("Modify2FAEmail"),
+  MODIFY2_FA_EMAIL("Modify2FAEmail"),
   
-  MODIFYSUPPORT("ModifySupport"),
+  MODIFY_SUPPORT("ModifySupport"),
   
-  VIEWCUSTOMFIELDS("ViewCustomFields"),
+  VIEW_CUSTOM_FIELDS("ViewCustomFields"),
   
-  MODIFYCUSTOMFIELDS("ModifyCustomFields"),
+  MODIFY_CUSTOM_FIELDS("ModifyCustomFields"),
   
-  MODIFYWEBNOTIFICATIONS("ModifyWebNotifications"),
+  MODIFY_WEB_NOTIFICATIONS("ModifyWebNotifications"),
   
-  EXTENDEDLOGS("ExtendedLogs"),
+  EXTENDED_LOGS("ExtendedLogs"),
   
-  VERIFYEMAILS("VerifyEmails"),
+  VERIFY_EMAILS("VerifyEmails"),
   
-  MODIFY2FASMS("Modify2FASms"),
+  MODIFY2_FA_SMS("Modify2FASms"),
   
-  MODIFYLANDINGPAGES("ModifyLandingPages"),
+  VIEW_VERIFY_EMAILS("ViewVerifyEmails"),
   
-  VIEWLANDINGPAGES("ViewLandingPages"),
+  VIEW_ACCESS_TOKENS("ViewAccessTokens"),
   
-  MODIFYSUPPRESSIONS("ModifySuppressions"),
+  VIEW_WEB_NOTIFICATIONS("ViewWebNotifications"),
   
-  VIEWSUPPRESSIONS("ViewSuppressions"),
+  MODIFY_LANDING_PAGES("ModifyLandingPages"),
   
-  VIEWDRAGDROPEDITOR("ViewDragDropEditor"),
+  VIEW_LANDING_PAGES("ViewLandingPages"),
   
-  VIEWTEMPLATEEDITOR("ViewTemplateEditor"),
+  MODIFY_SUPPRESSIONS("ModifySuppressions"),
   
-  VIEWAITOOLS("ViewAITools"),
+  VIEW_SUPPRESSIONS("ViewSuppressions"),
   
-  MODIFYSUBSCRIPTIONANTISPAM("ModifySubscriptionAntiSpam"),
+  VIEW_DRAG_DROP_EDITOR("ViewDragDropEditor"),
   
-  VIEWLANDINGPAGESCHECKOUT("ViewLandingPagesCheckout"),
+  VIEW_TEMPLATE_EDITOR("ViewTemplateEditor"),
   
-  MODIFYLANDINGPAGESCHECKOUT("ModifyLandingPagesCheckout"),
+  VIEW_AI_TOOLS("ViewAITools"),
   
-  VIEWHTMLEDITOR("ViewHTMLEditor"),
+  MODIFY_SUBSCRIPTION_ANTI_SPAM("ModifySubscriptionAntiSpam"),
   
-  MODIFYACCESSTOKENS("ModifyAccessTokens"),
+  VIEW_LANDING_PAGES_CHECKOUT("ViewLandingPagesCheckout"),
   
-  VIEWPAIDNEWSLETTERS("ViewPaidNewsletters"),
+  MODIFY_LANDING_PAGES_CHECKOUT("ModifyLandingPagesCheckout"),
   
-  MODIFYPAIDNEWSLETTERS("ModifyPaidNewsletters");
+  VIEW_HTML_EDITOR("ViewHTMLEditor"),
+  
+  MODIFY_ACCESS_TOKENS("ModifyAccessTokens"),
+  
+  VIEW_PAID_NEWSLETTERS("ViewPaidNewsletters"),
+  
+  MODIFY_PAID_NEWSLETTERS("ModifyPaidNewsletters");
 
   private String value;
 

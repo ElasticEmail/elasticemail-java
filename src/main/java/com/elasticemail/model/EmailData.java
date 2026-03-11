@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -42,7 +42,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -54,43 +53,46 @@ import com.elasticemail.client.JSON;
 /**
  * EmailData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailData {
   public static final String SERIALIZED_NAME_PREVIEW = "Preview";
   @SerializedName(SERIALIZED_NAME_PREVIEW)
+  @javax.annotation.Nullable
   private EmailView preview;
 
   public static final String SERIALIZED_NAME_ATTACHMENTS = "Attachments";
   @SerializedName(SERIALIZED_NAME_ATTACHMENTS)
+  @javax.annotation.Nullable
   private List<FileInfo> attachments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private EmailStatus status;
 
   public EmailData() {
   }
 
-  public EmailData preview(EmailView preview) {
+  public EmailData preview(@javax.annotation.Nullable EmailView preview) {
     this.preview = preview;
     return this;
   }
 
-   /**
+  /**
    * Get preview
    * @return preview
-  **/
+   */
   @javax.annotation.Nullable
   public EmailView getPreview() {
     return preview;
   }
 
-  public void setPreview(EmailView preview) {
+  public void setPreview(@javax.annotation.Nullable EmailView preview) {
     this.preview = preview;
   }
 
 
-  public EmailData attachments(List<FileInfo> attachments) {
+  public EmailData attachments(@javax.annotation.Nullable List<FileInfo> attachments) {
     this.attachments = attachments;
     return this;
   }
@@ -103,35 +105,35 @@ public class EmailData {
     return this;
   }
 
-   /**
+  /**
    * Attachments sent with the email
    * @return attachments
-  **/
+   */
   @javax.annotation.Nullable
   public List<FileInfo> getAttachments() {
     return attachments;
   }
 
-  public void setAttachments(List<FileInfo> attachments) {
+  public void setAttachments(@javax.annotation.Nullable List<FileInfo> attachments) {
     this.attachments = attachments;
   }
 
 
-  public EmailData status(EmailStatus status) {
+  public EmailData status(@javax.annotation.Nullable EmailStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public EmailStatus getStatus() {
     return status;
   }
 
-  public void setStatus(EmailStatus status) {
+  public void setStatus(@javax.annotation.Nullable EmailStatus status) {
     this.status = status;
   }
 
@@ -193,12 +195,12 @@ public class EmailData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailData
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailData
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -267,22 +269,22 @@ public class EmailData {
     }
   }
 
- /**
-  * Create an instance of EmailData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailData
-  * @throws IOException if the JSON string is invalid with respect to EmailData
-  */
+  /**
+   * Create an instance of EmailData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailData
+   * @throws IOException if the JSON string is invalid with respect to EmailData
+   */
   public static EmailData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailData.class);
   }
 
- /**
-  * Convert an instance of EmailData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

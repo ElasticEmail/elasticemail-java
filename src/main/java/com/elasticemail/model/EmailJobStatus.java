@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -40,7 +40,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -52,149 +51,169 @@ import com.elasticemail.client.JSON;
 /**
  * EmailJobStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class EmailJobStatus {
   public static final String SERIALIZED_NAME_I_D = "ID";
   @SerializedName(SERIALIZED_NAME_I_D)
+  @javax.annotation.Nullable
   private String ID;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_RECIPIENTS_COUNT = "RecipientsCount";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS_COUNT)
+  @javax.annotation.Nullable
   private Integer recipientsCount;
 
   public static final String SERIALIZED_NAME_FAILED = "Failed";
   @SerializedName(SERIALIZED_NAME_FAILED)
+  @javax.annotation.Nullable
   private List<EmailJobFailedStatus> failed = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FAILED_COUNT = "FailedCount";
   @SerializedName(SERIALIZED_NAME_FAILED_COUNT)
+  @javax.annotation.Nullable
   private Integer failedCount;
 
   public static final String SERIALIZED_NAME_SENT = "Sent";
   @SerializedName(SERIALIZED_NAME_SENT)
+  @javax.annotation.Nullable
   private List<String> sent = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENT_COUNT = "SentCount";
   @SerializedName(SERIALIZED_NAME_SENT_COUNT)
+  @javax.annotation.Nullable
   private Integer sentCount;
 
   public static final String SERIALIZED_NAME_DELIVERED = "Delivered";
   @SerializedName(SERIALIZED_NAME_DELIVERED)
+  @javax.annotation.Nullable
   private List<String> delivered = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DELIVERED_COUNT = "DeliveredCount";
   @SerializedName(SERIALIZED_NAME_DELIVERED_COUNT)
+  @javax.annotation.Nullable
   private Integer deliveredCount;
 
   public static final String SERIALIZED_NAME_PENDING = "Pending";
   @SerializedName(SERIALIZED_NAME_PENDING)
+  @javax.annotation.Nullable
   private List<String> pending = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PENDING_COUNT = "PendingCount";
   @SerializedName(SERIALIZED_NAME_PENDING_COUNT)
+  @javax.annotation.Nullable
   private Integer pendingCount;
 
   public static final String SERIALIZED_NAME_OPENED = "Opened";
   @SerializedName(SERIALIZED_NAME_OPENED)
+  @javax.annotation.Nullable
   private List<String> opened = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OPENED_COUNT = "OpenedCount";
   @SerializedName(SERIALIZED_NAME_OPENED_COUNT)
+  @javax.annotation.Nullable
   private Integer openedCount;
 
   public static final String SERIALIZED_NAME_CLICKED = "Clicked";
   @SerializedName(SERIALIZED_NAME_CLICKED)
+  @javax.annotation.Nullable
   private List<String> clicked = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CLICKED_COUNT = "ClickedCount";
   @SerializedName(SERIALIZED_NAME_CLICKED_COUNT)
+  @javax.annotation.Nullable
   private Integer clickedCount;
 
   public static final String SERIALIZED_NAME_UNSUBSCRIBED = "Unsubscribed";
   @SerializedName(SERIALIZED_NAME_UNSUBSCRIBED)
+  @javax.annotation.Nullable
   private List<String> unsubscribed = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_UNSUBSCRIBED_COUNT = "UnsubscribedCount";
   @SerializedName(SERIALIZED_NAME_UNSUBSCRIBED_COUNT)
+  @javax.annotation.Nullable
   private Integer unsubscribedCount;
 
   public static final String SERIALIZED_NAME_ABUSE_REPORTS = "AbuseReports";
   @SerializedName(SERIALIZED_NAME_ABUSE_REPORTS)
+  @javax.annotation.Nullable
   private List<String> abuseReports = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ABUSE_REPORTS_COUNT = "AbuseReportsCount";
   @SerializedName(SERIALIZED_NAME_ABUSE_REPORTS_COUNT)
+  @javax.annotation.Nullable
   private Integer abuseReportsCount;
 
   public static final String SERIALIZED_NAME_MESSAGE_I_DS = "MessageIDs";
   @SerializedName(SERIALIZED_NAME_MESSAGE_I_DS)
+  @javax.annotation.Nullable
   private List<String> messageIDs = new ArrayList<>();
 
   public EmailJobStatus() {
   }
 
-  public EmailJobStatus ID(String ID) {
+  public EmailJobStatus ID(@javax.annotation.Nullable String ID) {
     this.ID = ID;
     return this;
   }
 
-   /**
+  /**
    * ID number of your attachment
    * @return ID
-  **/
+   */
   @javax.annotation.Nullable
   public String getID() {
     return ID;
   }
 
-  public void setID(String ID) {
+  public void setID(@javax.annotation.Nullable String ID) {
     this.ID = ID;
   }
 
 
-  public EmailJobStatus status(String status) {
+  public EmailJobStatus status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Name of status: submitted, complete, in_progress
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public EmailJobStatus recipientsCount(Integer recipientsCount) {
+  public EmailJobStatus recipientsCount(@javax.annotation.Nullable Integer recipientsCount) {
     this.recipientsCount = recipientsCount;
     return this;
   }
 
-   /**
+  /**
    * Get recipientsCount
    * @return recipientsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getRecipientsCount() {
     return recipientsCount;
   }
 
-  public void setRecipientsCount(Integer recipientsCount) {
+  public void setRecipientsCount(@javax.annotation.Nullable Integer recipientsCount) {
     this.recipientsCount = recipientsCount;
   }
 
 
-  public EmailJobStatus failed(List<EmailJobFailedStatus> failed) {
+  public EmailJobStatus failed(@javax.annotation.Nullable List<EmailJobFailedStatus> failed) {
     this.failed = failed;
     return this;
   }
@@ -207,40 +226,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Get failed
    * @return failed
-  **/
+   */
   @javax.annotation.Nullable
   public List<EmailJobFailedStatus> getFailed() {
     return failed;
   }
 
-  public void setFailed(List<EmailJobFailedStatus> failed) {
+  public void setFailed(@javax.annotation.Nullable List<EmailJobFailedStatus> failed) {
     this.failed = failed;
   }
 
 
-  public EmailJobStatus failedCount(Integer failedCount) {
+  public EmailJobStatus failedCount(@javax.annotation.Nullable Integer failedCount) {
     this.failedCount = failedCount;
     return this;
   }
 
-   /**
+  /**
    * Total emails failed.
    * @return failedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getFailedCount() {
     return failedCount;
   }
 
-  public void setFailedCount(Integer failedCount) {
+  public void setFailedCount(@javax.annotation.Nullable Integer failedCount) {
     this.failedCount = failedCount;
   }
 
 
-  public EmailJobStatus sent(List<String> sent) {
+  public EmailJobStatus sent(@javax.annotation.Nullable List<String> sent) {
     this.sent = sent;
     return this;
   }
@@ -253,40 +272,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Get sent
    * @return sent
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getSent() {
     return sent;
   }
 
-  public void setSent(List<String> sent) {
+  public void setSent(@javax.annotation.Nullable List<String> sent) {
     this.sent = sent;
   }
 
 
-  public EmailJobStatus sentCount(Integer sentCount) {
+  public EmailJobStatus sentCount(@javax.annotation.Nullable Integer sentCount) {
     this.sentCount = sentCount;
     return this;
   }
 
-   /**
+  /**
    * Total emails sent.
    * @return sentCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSentCount() {
     return sentCount;
   }
 
-  public void setSentCount(Integer sentCount) {
+  public void setSentCount(@javax.annotation.Nullable Integer sentCount) {
     this.sentCount = sentCount;
   }
 
 
-  public EmailJobStatus delivered(List<String> delivered) {
+  public EmailJobStatus delivered(@javax.annotation.Nullable List<String> delivered) {
     this.delivered = delivered;
     return this;
   }
@@ -299,40 +318,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Number of delivered messages
    * @return delivered
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getDelivered() {
     return delivered;
   }
 
-  public void setDelivered(List<String> delivered) {
+  public void setDelivered(@javax.annotation.Nullable List<String> delivered) {
     this.delivered = delivered;
   }
 
 
-  public EmailJobStatus deliveredCount(Integer deliveredCount) {
+  public EmailJobStatus deliveredCount(@javax.annotation.Nullable Integer deliveredCount) {
     this.deliveredCount = deliveredCount;
     return this;
   }
 
-   /**
+  /**
    * Get deliveredCount
    * @return deliveredCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDeliveredCount() {
     return deliveredCount;
   }
 
-  public void setDeliveredCount(Integer deliveredCount) {
+  public void setDeliveredCount(@javax.annotation.Nullable Integer deliveredCount) {
     this.deliveredCount = deliveredCount;
   }
 
 
-  public EmailJobStatus pending(List<String> pending) {
+  public EmailJobStatus pending(@javax.annotation.Nullable List<String> pending) {
     this.pending = pending;
     return this;
   }
@@ -345,40 +364,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Get pending
    * @return pending
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getPending() {
     return pending;
   }
 
-  public void setPending(List<String> pending) {
+  public void setPending(@javax.annotation.Nullable List<String> pending) {
     this.pending = pending;
   }
 
 
-  public EmailJobStatus pendingCount(Integer pendingCount) {
+  public EmailJobStatus pendingCount(@javax.annotation.Nullable Integer pendingCount) {
     this.pendingCount = pendingCount;
     return this;
   }
 
-   /**
+  /**
    * Get pendingCount
    * @return pendingCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getPendingCount() {
     return pendingCount;
   }
 
-  public void setPendingCount(Integer pendingCount) {
+  public void setPendingCount(@javax.annotation.Nullable Integer pendingCount) {
     this.pendingCount = pendingCount;
   }
 
 
-  public EmailJobStatus opened(List<String> opened) {
+  public EmailJobStatus opened(@javax.annotation.Nullable List<String> opened) {
     this.opened = opened;
     return this;
   }
@@ -391,40 +410,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Number of opened messages
    * @return opened
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getOpened() {
     return opened;
   }
 
-  public void setOpened(List<String> opened) {
+  public void setOpened(@javax.annotation.Nullable List<String> opened) {
     this.opened = opened;
   }
 
 
-  public EmailJobStatus openedCount(Integer openedCount) {
+  public EmailJobStatus openedCount(@javax.annotation.Nullable Integer openedCount) {
     this.openedCount = openedCount;
     return this;
   }
 
-   /**
+  /**
    * Total emails opened.
    * @return openedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getOpenedCount() {
     return openedCount;
   }
 
-  public void setOpenedCount(Integer openedCount) {
+  public void setOpenedCount(@javax.annotation.Nullable Integer openedCount) {
     this.openedCount = openedCount;
   }
 
 
-  public EmailJobStatus clicked(List<String> clicked) {
+  public EmailJobStatus clicked(@javax.annotation.Nullable List<String> clicked) {
     this.clicked = clicked;
     return this;
   }
@@ -437,40 +456,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Number of clicked messages
    * @return clicked
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getClicked() {
     return clicked;
   }
 
-  public void setClicked(List<String> clicked) {
+  public void setClicked(@javax.annotation.Nullable List<String> clicked) {
     this.clicked = clicked;
   }
 
 
-  public EmailJobStatus clickedCount(Integer clickedCount) {
+  public EmailJobStatus clickedCount(@javax.annotation.Nullable Integer clickedCount) {
     this.clickedCount = clickedCount;
     return this;
   }
 
-   /**
+  /**
    * Total emails clicked
    * @return clickedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getClickedCount() {
     return clickedCount;
   }
 
-  public void setClickedCount(Integer clickedCount) {
+  public void setClickedCount(@javax.annotation.Nullable Integer clickedCount) {
     this.clickedCount = clickedCount;
   }
 
 
-  public EmailJobStatus unsubscribed(List<String> unsubscribed) {
+  public EmailJobStatus unsubscribed(@javax.annotation.Nullable List<String> unsubscribed) {
     this.unsubscribed = unsubscribed;
     return this;
   }
@@ -483,40 +502,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Number of unsubscribed messages
    * @return unsubscribed
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getUnsubscribed() {
     return unsubscribed;
   }
 
-  public void setUnsubscribed(List<String> unsubscribed) {
+  public void setUnsubscribed(@javax.annotation.Nullable List<String> unsubscribed) {
     this.unsubscribed = unsubscribed;
   }
 
 
-  public EmailJobStatus unsubscribedCount(Integer unsubscribedCount) {
+  public EmailJobStatus unsubscribedCount(@javax.annotation.Nullable Integer unsubscribedCount) {
     this.unsubscribedCount = unsubscribedCount;
     return this;
   }
 
-   /**
+  /**
    * Total emails unsubscribed
    * @return unsubscribedCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getUnsubscribedCount() {
     return unsubscribedCount;
   }
 
-  public void setUnsubscribedCount(Integer unsubscribedCount) {
+  public void setUnsubscribedCount(@javax.annotation.Nullable Integer unsubscribedCount) {
     this.unsubscribedCount = unsubscribedCount;
   }
 
 
-  public EmailJobStatus abuseReports(List<String> abuseReports) {
+  public EmailJobStatus abuseReports(@javax.annotation.Nullable List<String> abuseReports) {
     this.abuseReports = abuseReports;
     return this;
   }
@@ -529,40 +548,40 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * Get abuseReports
    * @return abuseReports
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getAbuseReports() {
     return abuseReports;
   }
 
-  public void setAbuseReports(List<String> abuseReports) {
+  public void setAbuseReports(@javax.annotation.Nullable List<String> abuseReports) {
     this.abuseReports = abuseReports;
   }
 
 
-  public EmailJobStatus abuseReportsCount(Integer abuseReportsCount) {
+  public EmailJobStatus abuseReportsCount(@javax.annotation.Nullable Integer abuseReportsCount) {
     this.abuseReportsCount = abuseReportsCount;
     return this;
   }
 
-   /**
+  /**
    * Get abuseReportsCount
    * @return abuseReportsCount
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getAbuseReportsCount() {
     return abuseReportsCount;
   }
 
-  public void setAbuseReportsCount(Integer abuseReportsCount) {
+  public void setAbuseReportsCount(@javax.annotation.Nullable Integer abuseReportsCount) {
     this.abuseReportsCount = abuseReportsCount;
   }
 
 
-  public EmailJobStatus messageIDs(List<String> messageIDs) {
+  public EmailJobStatus messageIDs(@javax.annotation.Nullable List<String> messageIDs) {
     this.messageIDs = messageIDs;
     return this;
   }
@@ -575,16 +594,16 @@ public class EmailJobStatus {
     return this;
   }
 
-   /**
+  /**
    * List of all MessageIDs for this job.
    * @return messageIDs
-  **/
+   */
   @javax.annotation.Nullable
   public List<String> getMessageIDs() {
     return messageIDs;
   }
 
-  public void setMessageIDs(List<String> messageIDs) {
+  public void setMessageIDs(@javax.annotation.Nullable List<String> messageIDs) {
     this.messageIDs = messageIDs;
   }
 
@@ -697,12 +716,12 @@ public class EmailJobStatus {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to EmailJobStatus
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to EmailJobStatus
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!EmailJobStatus.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -801,22 +820,22 @@ public class EmailJobStatus {
     }
   }
 
- /**
-  * Create an instance of EmailJobStatus given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of EmailJobStatus
-  * @throws IOException if the JSON string is invalid with respect to EmailJobStatus
-  */
+  /**
+   * Create an instance of EmailJobStatus given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of EmailJobStatus
+   * @throws IOException if the JSON string is invalid with respect to EmailJobStatus
+   */
   public static EmailJobStatus fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, EmailJobStatus.class);
   }
 
- /**
-  * Convert an instance of EmailJobStatus to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of EmailJobStatus to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

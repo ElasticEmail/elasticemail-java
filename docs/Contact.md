@@ -15,6 +15,7 @@ Contact
 |**customFields** | **Map&lt;String, String&gt;** | A key-value collection of custom contact fields which can be used in the system. |  [optional] |
 |**consent** | [**ConsentData**](ConsentData.md) |  |  [optional] |
 |**source** | **ContactSource** |  |  [optional] |
+|**sourceInfo** | **String** |  |  [optional] |
 |**dateAdded** | **OffsetDateTime** | Date of creation in YYYY-MM-DDThh:ii:ss format |  [optional] |
 |**dateUpdated** | **OffsetDateTime** | Last change date |  [optional] |
 |**statusChangeDate** | **OffsetDateTime** | Date of last status change. |  [optional] |

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,145 +50,151 @@ import com.elasticemail.client.JSON;
 /**
  * E-mail configuration
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class Options {
   public static final String SERIALIZED_NAME_TIME_OFFSET = "TimeOffset";
   @SerializedName(SERIALIZED_NAME_TIME_OFFSET)
+  @javax.annotation.Nullable
   private Integer timeOffset;
 
   public static final String SERIALIZED_NAME_POOL_NAME = "PoolName";
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
+  @javax.annotation.Nullable
   private String poolName;
 
   public static final String SERIALIZED_NAME_CHANNEL_NAME = "ChannelName";
   @SerializedName(SERIALIZED_NAME_CHANNEL_NAME)
+  @javax.annotation.Nullable
   private String channelName;
 
   public static final String SERIALIZED_NAME_ENCODING = "Encoding";
   @SerializedName(SERIALIZED_NAME_ENCODING)
-  private EncodingType encoding = EncodingType.USERPROVIDED;
+  @javax.annotation.Nullable
+  private EncodingType encoding = EncodingType.USER_PROVIDED;
 
   public static final String SERIALIZED_NAME_TRACK_OPENS = "TrackOpens";
   @SerializedName(SERIALIZED_NAME_TRACK_OPENS)
+  @javax.annotation.Nullable
   private Boolean trackOpens;
 
   public static final String SERIALIZED_NAME_TRACK_CLICKS = "TrackClicks";
   @SerializedName(SERIALIZED_NAME_TRACK_CLICKS)
+  @javax.annotation.Nullable
   private Boolean trackClicks;
 
   public Options() {
   }
 
-  public Options timeOffset(Integer timeOffset) {
+  public Options timeOffset(@javax.annotation.Nullable Integer timeOffset) {
     this.timeOffset = timeOffset;
     return this;
   }
 
-   /**
+  /**
    * By how long should an e-mail be delayed (in minutes). Maximum is 35 days.
    * @return timeOffset
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getTimeOffset() {
     return timeOffset;
   }
 
-  public void setTimeOffset(Integer timeOffset) {
+  public void setTimeOffset(@javax.annotation.Nullable Integer timeOffset) {
     this.timeOffset = timeOffset;
   }
 
 
-  public Options poolName(String poolName) {
+  public Options poolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
     return this;
   }
 
-   /**
+  /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-  **/
+   */
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
   }
 
-  public void setPoolName(String poolName) {
+  public void setPoolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
   }
 
 
-  public Options channelName(String channelName) {
+  public Options channelName(@javax.annotation.Nullable String channelName) {
     this.channelName = channelName;
     return this;
   }
 
-   /**
+  /**
    * Name of selected channel.
    * @return channelName
-  **/
+   */
   @javax.annotation.Nullable
   public String getChannelName() {
     return channelName;
   }
 
-  public void setChannelName(String channelName) {
+  public void setChannelName(@javax.annotation.Nullable String channelName) {
     this.channelName = channelName;
   }
 
 
-  public Options encoding(EncodingType encoding) {
+  public Options encoding(@javax.annotation.Nullable EncodingType encoding) {
     this.encoding = encoding;
     return this;
   }
 
-   /**
+  /**
    * Get encoding
    * @return encoding
-  **/
+   */
   @javax.annotation.Nullable
   public EncodingType getEncoding() {
     return encoding;
   }
 
-  public void setEncoding(EncodingType encoding) {
+  public void setEncoding(@javax.annotation.Nullable EncodingType encoding) {
     this.encoding = encoding;
   }
 
 
-  public Options trackOpens(Boolean trackOpens) {
+  public Options trackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
     return this;
   }
 
-   /**
+  /**
    * Should the opens be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackOpens
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTrackOpens() {
     return trackOpens;
   }
 
-  public void setTrackOpens(Boolean trackOpens) {
+  public void setTrackOpens(@javax.annotation.Nullable Boolean trackOpens) {
     this.trackOpens = trackOpens;
   }
 
 
-  public Options trackClicks(Boolean trackClicks) {
+  public Options trackClicks(@javax.annotation.Nullable Boolean trackClicks) {
     this.trackClicks = trackClicks;
     return this;
   }
 
-   /**
+  /**
    * Should the clicks be tracked? If no value has been provided, Account&#39;s default setting will be used.
    * @return trackClicks
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getTrackClicks() {
     return trackClicks;
   }
 
-  public void setTrackClicks(Boolean trackClicks) {
+  public void setTrackClicks(@javax.annotation.Nullable Boolean trackClicks) {
     this.trackClicks = trackClicks;
   }
 
@@ -271,12 +276,12 @@ public class Options {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Options
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Options
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Options.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -333,22 +338,22 @@ public class Options {
     }
   }
 
- /**
-  * Create an instance of Options given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Options
-  * @throws IOException if the JSON string is invalid with respect to Options
-  */
+  /**
+   * Create an instance of Options given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Options
+   * @throws IOException if the JSON string is invalid with respect to Options
+   */
   public static Options fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Options.class);
   }
 
- /**
-  * Convert an instance of Options to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Options to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -45,7 +45,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -57,132 +56,148 @@ import com.elasticemail.client.JSON;
 /**
  * Contact
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class Contact {
   public static final String SERIALIZED_NAME_EMAIL = "Email";
   @SerializedName(SERIALIZED_NAME_EMAIL)
+  @javax.annotation.Nullable
   private String email;
 
   public static final String SERIALIZED_NAME_STATUS = "Status";
   @SerializedName(SERIALIZED_NAME_STATUS)
+  @javax.annotation.Nullable
   private ContactStatus status = ContactStatus.TRANSACTIONAL;
 
   public static final String SERIALIZED_NAME_FIRST_NAME = "FirstName";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)
+  @javax.annotation.Nullable
   private String firstName;
 
   public static final String SERIALIZED_NAME_LAST_NAME = "LastName";
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
+  @javax.annotation.Nullable
   private String lastName;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "CustomFields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
+  @javax.annotation.Nullable
   private Map<String, String> customFields = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CONSENT = "Consent";
   @SerializedName(SERIALIZED_NAME_CONSENT)
+  @javax.annotation.Nullable
   private ConsentData consent;
 
   public static final String SERIALIZED_NAME_SOURCE = "Source";
   @SerializedName(SERIALIZED_NAME_SOURCE)
-  private ContactSource source = ContactSource.DELIVERYAPI;
+  @javax.annotation.Nullable
+  private ContactSource source = ContactSource.DELIVERY_API;
+
+  public static final String SERIALIZED_NAME_SOURCE_INFO = "SourceInfo";
+  @SerializedName(SERIALIZED_NAME_SOURCE_INFO)
+  @javax.annotation.Nullable
+  private String sourceInfo;
 
   public static final String SERIALIZED_NAME_DATE_ADDED = "DateAdded";
   @SerializedName(SERIALIZED_NAME_DATE_ADDED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateAdded;
 
   public static final String SERIALIZED_NAME_DATE_UPDATED = "DateUpdated";
   @SerializedName(SERIALIZED_NAME_DATE_UPDATED)
+  @javax.annotation.Nullable
   private OffsetDateTime dateUpdated;
 
   public static final String SERIALIZED_NAME_STATUS_CHANGE_DATE = "StatusChangeDate";
   @SerializedName(SERIALIZED_NAME_STATUS_CHANGE_DATE)
+  @javax.annotation.Nullable
   private OffsetDateTime statusChangeDate;
 
   public static final String SERIALIZED_NAME_ACTIVITY = "Activity";
   @SerializedName(SERIALIZED_NAME_ACTIVITY)
+  @javax.annotation.Nullable
   private ContactActivity activity;
 
   public Contact() {
   }
 
-  public Contact email(String email) {
+  public Contact email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
 
-   /**
+  /**
    * Proper email address.
    * @return email
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+  public void setEmail(@javax.annotation.Nullable String email) {
     this.email = email;
   }
 
 
-  public Contact status(ContactStatus status) {
+  public Contact status(@javax.annotation.Nullable ContactStatus status) {
     this.status = status;
     return this;
   }
 
-   /**
+  /**
    * Get status
    * @return status
-  **/
+   */
   @javax.annotation.Nullable
   public ContactStatus getStatus() {
     return status;
   }
 
-  public void setStatus(ContactStatus status) {
+  public void setStatus(@javax.annotation.Nullable ContactStatus status) {
     this.status = status;
   }
 
 
-  public Contact firstName(String firstName) {
+  public Contact firstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
     return this;
   }
 
-   /**
+  /**
    * First name.
    * @return firstName
-  **/
+   */
   @javax.annotation.Nullable
   public String getFirstName() {
     return firstName;
   }
 
-  public void setFirstName(String firstName) {
+  public void setFirstName(@javax.annotation.Nullable String firstName) {
     this.firstName = firstName;
   }
 
 
-  public Contact lastName(String lastName) {
+  public Contact lastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
     return this;
   }
 
-   /**
+  /**
    * Last name.
    * @return lastName
-  **/
+   */
   @javax.annotation.Nullable
   public String getLastName() {
     return lastName;
   }
 
-  public void setLastName(String lastName) {
+  public void setLastName(@javax.annotation.Nullable String lastName) {
     this.lastName = lastName;
   }
 
 
-  public Contact customFields(Map<String, String> customFields) {
+  public Contact customFields(@javax.annotation.Nullable Map<String, String> customFields) {
     this.customFields = customFields;
     return this;
   }
@@ -195,130 +210,149 @@ public class Contact {
     return this;
   }
 
-   /**
+  /**
    * A key-value collection of custom contact fields which can be used in the system.
    * @return customFields
-  **/
+   */
   @javax.annotation.Nullable
   public Map<String, String> getCustomFields() {
     return customFields;
   }
 
-  public void setCustomFields(Map<String, String> customFields) {
+  public void setCustomFields(@javax.annotation.Nullable Map<String, String> customFields) {
     this.customFields = customFields;
   }
 
 
-  public Contact consent(ConsentData consent) {
+  public Contact consent(@javax.annotation.Nullable ConsentData consent) {
     this.consent = consent;
     return this;
   }
 
-   /**
+  /**
    * Get consent
    * @return consent
-  **/
+   */
   @javax.annotation.Nullable
   public ConsentData getConsent() {
     return consent;
   }
 
-  public void setConsent(ConsentData consent) {
+  public void setConsent(@javax.annotation.Nullable ConsentData consent) {
     this.consent = consent;
   }
 
 
-  public Contact source(ContactSource source) {
+  public Contact source(@javax.annotation.Nullable ContactSource source) {
     this.source = source;
     return this;
   }
 
-   /**
+  /**
    * Get source
    * @return source
-  **/
+   */
   @javax.annotation.Nullable
   public ContactSource getSource() {
     return source;
   }
 
-  public void setSource(ContactSource source) {
+  public void setSource(@javax.annotation.Nullable ContactSource source) {
     this.source = source;
   }
 
 
-  public Contact dateAdded(OffsetDateTime dateAdded) {
+  public Contact sourceInfo(@javax.annotation.Nullable String sourceInfo) {
+    this.sourceInfo = sourceInfo;
+    return this;
+  }
+
+  /**
+   * Get sourceInfo
+   * @return sourceInfo
+   */
+  @javax.annotation.Nullable
+  public String getSourceInfo() {
+    return sourceInfo;
+  }
+
+  public void setSourceInfo(@javax.annotation.Nullable String sourceInfo) {
+    this.sourceInfo = sourceInfo;
+  }
+
+
+  public Contact dateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
     return this;
   }
 
-   /**
+  /**
    * Date of creation in YYYY-MM-DDThh:ii:ss format
    * @return dateAdded
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateAdded() {
     return dateAdded;
   }
 
-  public void setDateAdded(OffsetDateTime dateAdded) {
+  public void setDateAdded(@javax.annotation.Nullable OffsetDateTime dateAdded) {
     this.dateAdded = dateAdded;
   }
 
 
-  public Contact dateUpdated(OffsetDateTime dateUpdated) {
+  public Contact dateUpdated(@javax.annotation.Nullable OffsetDateTime dateUpdated) {
     this.dateUpdated = dateUpdated;
     return this;
   }
 
-   /**
+  /**
    * Last change date
    * @return dateUpdated
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getDateUpdated() {
     return dateUpdated;
   }
 
-  public void setDateUpdated(OffsetDateTime dateUpdated) {
+  public void setDateUpdated(@javax.annotation.Nullable OffsetDateTime dateUpdated) {
     this.dateUpdated = dateUpdated;
   }
 
 
-  public Contact statusChangeDate(OffsetDateTime statusChangeDate) {
+  public Contact statusChangeDate(@javax.annotation.Nullable OffsetDateTime statusChangeDate) {
     this.statusChangeDate = statusChangeDate;
     return this;
   }
 
-   /**
+  /**
    * Date of last status change.
    * @return statusChangeDate
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getStatusChangeDate() {
     return statusChangeDate;
   }
 
-  public void setStatusChangeDate(OffsetDateTime statusChangeDate) {
+  public void setStatusChangeDate(@javax.annotation.Nullable OffsetDateTime statusChangeDate) {
     this.statusChangeDate = statusChangeDate;
   }
 
 
-  public Contact activity(ContactActivity activity) {
+  public Contact activity(@javax.annotation.Nullable ContactActivity activity) {
     this.activity = activity;
     return this;
   }
 
-   /**
+  /**
    * Get activity
    * @return activity
-  **/
+   */
   @javax.annotation.Nullable
   public ContactActivity getActivity() {
     return activity;
   }
 
-  public void setActivity(ContactActivity activity) {
+  public void setActivity(@javax.annotation.Nullable ContactActivity activity) {
     this.activity = activity;
   }
 
@@ -340,6 +374,7 @@ public class Contact {
         Objects.equals(this.customFields, contact.customFields) &&
         Objects.equals(this.consent, contact.consent) &&
         Objects.equals(this.source, contact.source) &&
+        Objects.equals(this.sourceInfo, contact.sourceInfo) &&
         Objects.equals(this.dateAdded, contact.dateAdded) &&
         Objects.equals(this.dateUpdated, contact.dateUpdated) &&
         Objects.equals(this.statusChangeDate, contact.statusChangeDate) &&
@@ -352,7 +387,7 @@ public class Contact {
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, status, firstName, lastName, customFields, consent, source, dateAdded, dateUpdated, statusChangeDate, activity);
+    return Objects.hash(email, status, firstName, lastName, customFields, consent, source, sourceInfo, dateAdded, dateUpdated, statusChangeDate, activity);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -373,6 +408,7 @@ public class Contact {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    consent: ").append(toIndentedString(consent)).append("\n");
     sb.append("    source: ").append(toIndentedString(source)).append("\n");
+    sb.append("    sourceInfo: ").append(toIndentedString(sourceInfo)).append("\n");
     sb.append("    dateAdded: ").append(toIndentedString(dateAdded)).append("\n");
     sb.append("    dateUpdated: ").append(toIndentedString(dateUpdated)).append("\n");
     sb.append("    statusChangeDate: ").append(toIndentedString(statusChangeDate)).append("\n");
@@ -406,6 +442,7 @@ public class Contact {
     openapiFields.add("CustomFields");
     openapiFields.add("Consent");
     openapiFields.add("Source");
+    openapiFields.add("SourceInfo");
     openapiFields.add("DateAdded");
     openapiFields.add("DateUpdated");
     openapiFields.add("StatusChangeDate");
@@ -415,12 +452,12 @@ public class Contact {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to Contact
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to Contact
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Contact.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -457,6 +494,9 @@ public class Contact {
       if (jsonObj.get("Source") != null && !jsonObj.get("Source").isJsonNull()) {
         ContactSource.validateJsonElement(jsonObj.get("Source"));
       }
+      if ((jsonObj.get("SourceInfo") != null && !jsonObj.get("SourceInfo").isJsonNull()) && !jsonObj.get("SourceInfo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `SourceInfo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("SourceInfo").toString()));
+      }
       // validate the optional field `Activity`
       if (jsonObj.get("Activity") != null && !jsonObj.get("Activity").isJsonNull()) {
         ContactActivity.validateJsonElement(jsonObj.get("Activity"));
@@ -492,22 +532,22 @@ public class Contact {
     }
   }
 
- /**
-  * Create an instance of Contact given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of Contact
-  * @throws IOException if the JSON string is invalid with respect to Contact
-  */
+  /**
+   * Create an instance of Contact given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of Contact
+   * @throws IOException if the JSON string is invalid with respect to Contact
+   */
   public static Contact fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, Contact.class);
   }
 
- /**
-  * Convert an instance of Contact to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of Contact to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

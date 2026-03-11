@@ -5,13 +5,13 @@
 ## Enum
 
 
-* `ERROROCCURED` (value: `"ErrorOccured"`)
+* `ERROR_OCCURED` (value: `"ErrorOccured"`)
 
-* `CERTNOTSET` (value: `"CertNotSet"`)
+* `CERT_NOT_SET` (value: `"CertNotSet"`)
 
 * `VALID` (value: `"Valid"`)
 
-* `NOTVALID` (value: `"NotValid"`)
+* `NOT_VALID` (value: `"NotValid"`)
 
 
 

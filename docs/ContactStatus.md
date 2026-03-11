@@ -21,7 +21,7 @@
 
 * `STALE` (value: `"Stale"`)
 
-* `NOTCONFIRMED` (value: `"NotConfirmed"`)
+* `NOT_CONFIRMED` (value: `"NotConfirmed"`)
 
 
 

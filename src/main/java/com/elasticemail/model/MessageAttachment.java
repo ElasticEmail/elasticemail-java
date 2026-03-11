@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,99 +48,103 @@ import com.elasticemail.client.JSON;
 /**
  * MessageAttachment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class MessageAttachment {
   public static final String SERIALIZED_NAME_BINARY_CONTENT = "BinaryContent";
   @SerializedName(SERIALIZED_NAME_BINARY_CONTENT)
+  @javax.annotation.Nonnull
   private byte[] binaryContent;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "ContentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)
+  @javax.annotation.Nullable
   private String contentType;
 
   public static final String SERIALIZED_NAME_SIZE = "Size";
   @SerializedName(SERIALIZED_NAME_SIZE)
+  @javax.annotation.Nullable
   private Integer size;
 
   public MessageAttachment() {
   }
 
-  public MessageAttachment binaryContent(byte[] binaryContent) {
+  public MessageAttachment binaryContent(@javax.annotation.Nonnull byte[] binaryContent) {
     this.binaryContent = binaryContent;
     return this;
   }
 
-   /**
+  /**
    * File&#39;s content as byte array (or a Base64 string)
    * @return binaryContent
-  **/
+   */
   @javax.annotation.Nonnull
   public byte[] getBinaryContent() {
     return binaryContent;
   }
 
-  public void setBinaryContent(byte[] binaryContent) {
+  public void setBinaryContent(@javax.annotation.Nonnull byte[] binaryContent) {
     this.binaryContent = binaryContent;
   }
 
 
-  public MessageAttachment name(String name) {
+  public MessageAttachment name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Display name of the file
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public MessageAttachment contentType(String contentType) {
+  public MessageAttachment contentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
     return this;
   }
 
-   /**
+  /**
    * MIME content type
    * @return contentType
-  **/
+   */
   @javax.annotation.Nullable
   public String getContentType() {
     return contentType;
   }
 
-  public void setContentType(String contentType) {
+  public void setContentType(@javax.annotation.Nullable String contentType) {
     this.contentType = contentType;
   }
 
 
-  public MessageAttachment size(Integer size) {
+  public MessageAttachment size(@javax.annotation.Nullable Integer size) {
     this.size = size;
     return this;
   }
 
-   /**
+  /**
    * Size of your attachment (in bytes).
    * @return size
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSize() {
     return size;
   }
 
-  public void setSize(Integer size) {
+  public void setSize(@javax.annotation.Nullable Integer size) {
     this.size = size;
   }
 
@@ -208,12 +211,12 @@ public class MessageAttachment {
     openapiRequiredFields.add("Name");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to MessageAttachment
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to MessageAttachment
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!MessageAttachment.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -273,22 +276,22 @@ public class MessageAttachment {
     }
   }
 
- /**
-  * Create an instance of MessageAttachment given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of MessageAttachment
-  * @throws IOException if the JSON string is invalid with respect to MessageAttachment
-  */
+  /**
+   * Create an instance of MessageAttachment given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of MessageAttachment
+   * @throws IOException if the JSON string is invalid with respect to MessageAttachment
+   */
   public static MessageAttachment fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, MessageAttachment.class);
   }
 
- /**
-  * Convert an instance of MessageAttachment to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of MessageAttachment to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

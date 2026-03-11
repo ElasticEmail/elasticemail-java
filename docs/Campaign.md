@@ -11,6 +11,7 @@
 |**name** | **String** | Campaign name |  |
 |**status** | **CampaignStatus** |  |  [optional] |
 |**recipients** | [**CampaignRecipient**](CampaignRecipient.md) |  |  |
+|**excludedRecipients** | [**CampaignRecipient**](CampaignRecipient.md) |  |  [optional] |
 |**options** | [**CampaignOptions**](CampaignOptions.md) |  |  [optional] |
 
 

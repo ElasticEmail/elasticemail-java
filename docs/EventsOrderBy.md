@@ -5,9 +5,9 @@
 ## Enum
 
 
-* `DATEDESCENDING` (value: `"DateDescending"`)
+* `DATE_DESCENDING` (value: `"DateDescending"`)
 
-* `DATEASCENDING` (value: `"DateAscending"`)
+* `DATE_ASCENDING` (value: `"DateAscending"`)
 
 
 

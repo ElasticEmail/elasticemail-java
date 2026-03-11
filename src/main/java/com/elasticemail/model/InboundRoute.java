@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,168 +50,175 @@ import com.elasticemail.client.JSON;
 /**
  * InboundRoute
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class InboundRoute {
   public static final String SERIALIZED_NAME_PUBLIC_ID = "PublicId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_ID)
+  @javax.annotation.Nullable
   private String publicId;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_FILTER_TYPE = "FilterType";
   @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAILADDRESS;
+  @javax.annotation.Nullable
+  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAIL_ADDRESS;
 
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nullable
   private String filter;
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "ActionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  private InboundRouteActionType actionType = InboundRouteActionType.FORWARDTOEMAIL;
+  @javax.annotation.Nullable
+  private InboundRouteActionType actionType = InboundRouteActionType.FORWARD_TO_EMAIL;
 
   public static final String SERIALIZED_NAME_ACTION_PARAMETER = "ActionParameter";
   @SerializedName(SERIALIZED_NAME_ACTION_PARAMETER)
+  @javax.annotation.Nullable
   private String actionParameter;
 
   public static final String SERIALIZED_NAME_SORT_ORDER = "SortOrder";
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
+  @javax.annotation.Nullable
   private Integer sortOrder;
 
   public InboundRoute() {
   }
 
-  public InboundRoute publicId(String publicId) {
+  public InboundRoute publicId(@javax.annotation.Nullable String publicId) {
     this.publicId = publicId;
     return this;
   }
 
-   /**
+  /**
    * Get publicId
    * @return publicId
-  **/
+   */
   @javax.annotation.Nullable
   public String getPublicId() {
     return publicId;
   }
 
-  public void setPublicId(String publicId) {
+  public void setPublicId(@javax.annotation.Nullable String publicId) {
     this.publicId = publicId;
   }
 
 
-  public InboundRoute name(String name) {
+  public InboundRoute name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of this route
    * @return name
-  **/
+   */
   @javax.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public InboundRoute filterType(InboundRouteFilterType filterType) {
+  public InboundRoute filterType(@javax.annotation.Nullable InboundRouteFilterType filterType) {
     this.filterType = filterType;
     return this;
   }
 
-   /**
+  /**
    * Get filterType
    * @return filterType
-  **/
+   */
   @javax.annotation.Nullable
   public InboundRouteFilterType getFilterType() {
     return filterType;
   }
 
-  public void setFilterType(InboundRouteFilterType filterType) {
+  public void setFilterType(@javax.annotation.Nullable InboundRouteFilterType filterType) {
     this.filterType = filterType;
   }
 
 
-  public InboundRoute filter(String filter) {
+  public InboundRoute filter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * Filter of the inbound data
    * @return filter
-  **/
+   */
   @javax.annotation.Nullable
   public String getFilter() {
     return filter;
   }
 
-  public void setFilter(String filter) {
+  public void setFilter(@javax.annotation.Nullable String filter) {
     this.filter = filter;
   }
 
 
-  public InboundRoute actionType(InboundRouteActionType actionType) {
+  public InboundRoute actionType(@javax.annotation.Nullable InboundRouteActionType actionType) {
     this.actionType = actionType;
     return this;
   }
 
-   /**
+  /**
    * Get actionType
    * @return actionType
-  **/
+   */
   @javax.annotation.Nullable
   public InboundRouteActionType getActionType() {
     return actionType;
   }
 
-  public void setActionType(InboundRouteActionType actionType) {
+  public void setActionType(@javax.annotation.Nullable InboundRouteActionType actionType) {
     this.actionType = actionType;
   }
 
 
-  public InboundRoute actionParameter(String actionParameter) {
+  public InboundRoute actionParameter(@javax.annotation.Nullable String actionParameter) {
     this.actionParameter = actionParameter;
     return this;
   }
 
-   /**
+  /**
    * URL address or Email to notify about the inbound
    * @return actionParameter
-  **/
+   */
   @javax.annotation.Nullable
   public String getActionParameter() {
     return actionParameter;
   }
 
-  public void setActionParameter(String actionParameter) {
+  public void setActionParameter(@javax.annotation.Nullable String actionParameter) {
     this.actionParameter = actionParameter;
   }
 
 
-  public InboundRoute sortOrder(Integer sortOrder) {
+  public InboundRoute sortOrder(@javax.annotation.Nullable Integer sortOrder) {
     this.sortOrder = sortOrder;
     return this;
   }
 
-   /**
+  /**
    * Place of this route in your routes queue&#39;s order
    * @return sortOrder
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getSortOrder() {
     return sortOrder;
   }
 
-  public void setSortOrder(Integer sortOrder) {
+  public void setSortOrder(@javax.annotation.Nullable Integer sortOrder) {
     this.sortOrder = sortOrder;
   }
 
@@ -286,12 +292,12 @@ public class InboundRoute {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InboundRoute
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InboundRoute
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InboundRoute.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -358,22 +364,22 @@ public class InboundRoute {
     }
   }
 
- /**
-  * Create an instance of InboundRoute given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InboundRoute
-  * @throws IOException if the JSON string is invalid with respect to InboundRoute
-  */
+  /**
+   * Create an instance of InboundRoute given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InboundRoute
+   * @throws IOException if the JSON string is invalid with respect to InboundRoute
+   */
   public static InboundRoute fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InboundRoute.class);
   }
 
- /**
-  * Convert an instance of InboundRoute to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InboundRoute to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

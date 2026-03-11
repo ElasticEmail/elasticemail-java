@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,99 +49,103 @@ import com.elasticemail.client.JSON;
 /**
  * DomainUpdatePayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class DomainUpdatePayload {
   public static final String SERIALIZED_NAME_CERTIFICATE_STATUS = "CertificateStatus";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_STATUS)
-  private CertificateValidationStatus certificateStatus = CertificateValidationStatus.ERROROCCURED;
+  @javax.annotation.Nullable
+  private CertificateValidationStatus certificateStatus = CertificateValidationStatus.ERROR_OCCURED;
 
   public static final String SERIALIZED_NAME_V_E_R_P = "VERP";
   @SerializedName(SERIALIZED_NAME_V_E_R_P)
+  @javax.annotation.Nullable
   private Boolean VERP;
 
   public static final String SERIALIZED_NAME_CUSTOM_BOUNCES_DOMAIN = "CustomBouncesDomain";
   @SerializedName(SERIALIZED_NAME_CUSTOM_BOUNCES_DOMAIN)
+  @javax.annotation.Nullable
   private String customBouncesDomain;
 
   public static final String SERIALIZED_NAME_IS_CUSTOM_BOUNCES_DOMAIN_DEFAULT = "IsCustomBouncesDomainDefault";
   @SerializedName(SERIALIZED_NAME_IS_CUSTOM_BOUNCES_DOMAIN_DEFAULT)
+  @javax.annotation.Nullable
   private Boolean isCustomBouncesDomainDefault;
 
   public DomainUpdatePayload() {
   }
 
-  public DomainUpdatePayload certificateStatus(CertificateValidationStatus certificateStatus) {
+  public DomainUpdatePayload certificateStatus(@javax.annotation.Nullable CertificateValidationStatus certificateStatus) {
     this.certificateStatus = certificateStatus;
     return this;
   }
 
-   /**
+  /**
    * Get certificateStatus
    * @return certificateStatus
-  **/
+   */
   @javax.annotation.Nullable
   public CertificateValidationStatus getCertificateStatus() {
     return certificateStatus;
   }
 
-  public void setCertificateStatus(CertificateValidationStatus certificateStatus) {
+  public void setCertificateStatus(@javax.annotation.Nullable CertificateValidationStatus certificateStatus) {
     this.certificateStatus = certificateStatus;
   }
 
 
-  public DomainUpdatePayload VERP(Boolean VERP) {
+  public DomainUpdatePayload VERP(@javax.annotation.Nullable Boolean VERP) {
     this.VERP = VERP;
     return this;
   }
 
-   /**
+  /**
    * Get VERP
    * @return VERP
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getVERP() {
     return VERP;
   }
 
-  public void setVERP(Boolean VERP) {
+  public void setVERP(@javax.annotation.Nullable Boolean VERP) {
     this.VERP = VERP;
   }
 
 
-  public DomainUpdatePayload customBouncesDomain(String customBouncesDomain) {
+  public DomainUpdatePayload customBouncesDomain(@javax.annotation.Nullable String customBouncesDomain) {
     this.customBouncesDomain = customBouncesDomain;
     return this;
   }
 
-   /**
+  /**
    * Get customBouncesDomain
    * @return customBouncesDomain
-  **/
+   */
   @javax.annotation.Nullable
   public String getCustomBouncesDomain() {
     return customBouncesDomain;
   }
 
-  public void setCustomBouncesDomain(String customBouncesDomain) {
+  public void setCustomBouncesDomain(@javax.annotation.Nullable String customBouncesDomain) {
     this.customBouncesDomain = customBouncesDomain;
   }
 
 
-  public DomainUpdatePayload isCustomBouncesDomainDefault(Boolean isCustomBouncesDomainDefault) {
+  public DomainUpdatePayload isCustomBouncesDomainDefault(@javax.annotation.Nullable Boolean isCustomBouncesDomainDefault) {
     this.isCustomBouncesDomainDefault = isCustomBouncesDomainDefault;
     return this;
   }
 
-   /**
+  /**
    * Get isCustomBouncesDomainDefault
    * @return isCustomBouncesDomainDefault
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsCustomBouncesDomainDefault() {
     return isCustomBouncesDomainDefault;
   }
 
-  public void setIsCustomBouncesDomainDefault(Boolean isCustomBouncesDomainDefault) {
+  public void setIsCustomBouncesDomainDefault(@javax.annotation.Nullable Boolean isCustomBouncesDomainDefault) {
     this.isCustomBouncesDomainDefault = isCustomBouncesDomainDefault;
   }
 
@@ -207,12 +210,12 @@ public class DomainUpdatePayload {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DomainUpdatePayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DomainUpdatePayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DomainUpdatePayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -266,22 +269,22 @@ public class DomainUpdatePayload {
     }
   }
 
- /**
-  * Create an instance of DomainUpdatePayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DomainUpdatePayload
-  * @throws IOException if the JSON string is invalid with respect to DomainUpdatePayload
-  */
+  /**
+   * Create an instance of DomainUpdatePayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DomainUpdatePayload
+   * @throws IOException if the JSON string is invalid with respect to DomainUpdatePayload
+   */
   public static DomainUpdatePayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DomainUpdatePayload.class);
   }
 
- /**
-  * Convert an instance of DomainUpdatePayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DomainUpdatePayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,306 +52,319 @@ import com.elasticemail.client.JSON;
 /**
  * Detailed information about message recipient
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class RecipientEvent {
   public static final String SERIALIZED_NAME_TRANSACTION_I_D = "TransactionID";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_I_D)
+  @javax.annotation.Nullable
   private String transactionID;
 
   public static final String SERIALIZED_NAME_MSG_I_D = "MsgID";
   @SerializedName(SERIALIZED_NAME_MSG_I_D)
+  @javax.annotation.Nullable
   private String msgID;
 
   public static final String SERIALIZED_NAME_FROM_EMAIL = "FromEmail";
   @SerializedName(SERIALIZED_NAME_FROM_EMAIL)
+  @javax.annotation.Nullable
   private String fromEmail;
 
   public static final String SERIALIZED_NAME_TO = "To";
   @SerializedName(SERIALIZED_NAME_TO)
+  @javax.annotation.Nullable
   private String to;
 
   public static final String SERIALIZED_NAME_SUBJECT = "Subject";
   @SerializedName(SERIALIZED_NAME_SUBJECT)
+  @javax.annotation.Nullable
   private String subject;
 
   public static final String SERIALIZED_NAME_EVENT_TYPE = "EventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
+  @javax.annotation.Nullable
   private EventType eventType = EventType.SUBMISSION;
 
   public static final String SERIALIZED_NAME_EVENT_DATE = "EventDate";
   @SerializedName(SERIALIZED_NAME_EVENT_DATE)
+  @javax.annotation.Nullable
   private OffsetDateTime eventDate;
 
   public static final String SERIALIZED_NAME_CHANNEL_NAME = "ChannelName";
   @SerializedName(SERIALIZED_NAME_CHANNEL_NAME)
+  @javax.annotation.Nullable
   private String channelName;
 
   public static final String SERIALIZED_NAME_MESSAGE_CATEGORY = "MessageCategory";
   @SerializedName(SERIALIZED_NAME_MESSAGE_CATEGORY)
+  @javax.annotation.Nullable
   private MessageCategory messageCategory = MessageCategory.UNKNOWN;
 
   public static final String SERIALIZED_NAME_NEXT_TRY_ON = "NextTryOn";
   @SerializedName(SERIALIZED_NAME_NEXT_TRY_ON)
+  @javax.annotation.Nullable
   private OffsetDateTime nextTryOn;
 
   public static final String SERIALIZED_NAME_MESSAGE = "Message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)
+  @javax.annotation.Nullable
   private String message;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "IPAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
+  @javax.annotation.Nullable
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_POOL_NAME = "PoolName";
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
+  @javax.annotation.Nullable
   private String poolName;
 
   public RecipientEvent() {
   }
 
-  public RecipientEvent transactionID(String transactionID) {
+  public RecipientEvent transactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
     return this;
   }
 
-   /**
+  /**
    * ID number of transaction
    * @return transactionID
-  **/
+   */
   @javax.annotation.Nullable
   public String getTransactionID() {
     return transactionID;
   }
 
-  public void setTransactionID(String transactionID) {
+  public void setTransactionID(@javax.annotation.Nullable String transactionID) {
     this.transactionID = transactionID;
   }
 
 
-  public RecipientEvent msgID(String msgID) {
+  public RecipientEvent msgID(@javax.annotation.Nullable String msgID) {
     this.msgID = msgID;
     return this;
   }
 
-   /**
+  /**
    * ID number of selected message.
    * @return msgID
-  **/
+   */
   @javax.annotation.Nullable
   public String getMsgID() {
     return msgID;
   }
 
-  public void setMsgID(String msgID) {
+  public void setMsgID(@javax.annotation.Nullable String msgID) {
     this.msgID = msgID;
   }
 
 
-  public RecipientEvent fromEmail(String fromEmail) {
+  public RecipientEvent fromEmail(@javax.annotation.Nullable String fromEmail) {
     this.fromEmail = fromEmail;
     return this;
   }
 
-   /**
+  /**
    * Default From: email address.
    * @return fromEmail
-  **/
+   */
   @javax.annotation.Nullable
   public String getFromEmail() {
     return fromEmail;
   }
 
-  public void setFromEmail(String fromEmail) {
+  public void setFromEmail(@javax.annotation.Nullable String fromEmail) {
     this.fromEmail = fromEmail;
   }
 
 
-  public RecipientEvent to(String to) {
+  public RecipientEvent to(@javax.annotation.Nullable String to) {
     this.to = to;
     return this;
   }
 
-   /**
+  /**
    * Ending date for search in YYYY-MM-DDThh:mm:ss format.
    * @return to
-  **/
+   */
   @javax.annotation.Nullable
   public String getTo() {
     return to;
   }
 
-  public void setTo(String to) {
+  public void setTo(@javax.annotation.Nullable String to) {
     this.to = to;
   }
 
 
-  public RecipientEvent subject(String subject) {
+  public RecipientEvent subject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
     return this;
   }
 
-   /**
+  /**
    * Default subject of email.
    * @return subject
-  **/
+   */
   @javax.annotation.Nullable
   public String getSubject() {
     return subject;
   }
 
-  public void setSubject(String subject) {
+  public void setSubject(@javax.annotation.Nullable String subject) {
     this.subject = subject;
   }
 
 
-  public RecipientEvent eventType(EventType eventType) {
+  public RecipientEvent eventType(@javax.annotation.Nullable EventType eventType) {
     this.eventType = eventType;
     return this;
   }
 
-   /**
+  /**
    * Get eventType
    * @return eventType
-  **/
+   */
   @javax.annotation.Nullable
   public EventType getEventType() {
     return eventType;
   }
 
-  public void setEventType(EventType eventType) {
+  public void setEventType(@javax.annotation.Nullable EventType eventType) {
     this.eventType = eventType;
   }
 
 
-  public RecipientEvent eventDate(OffsetDateTime eventDate) {
+  public RecipientEvent eventDate(@javax.annotation.Nullable OffsetDateTime eventDate) {
     this.eventDate = eventDate;
     return this;
   }
 
-   /**
+  /**
    * Creation date
    * @return eventDate
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getEventDate() {
     return eventDate;
   }
 
-  public void setEventDate(OffsetDateTime eventDate) {
+  public void setEventDate(@javax.annotation.Nullable OffsetDateTime eventDate) {
     this.eventDate = eventDate;
   }
 
 
-  public RecipientEvent channelName(String channelName) {
+  public RecipientEvent channelName(@javax.annotation.Nullable String channelName) {
     this.channelName = channelName;
     return this;
   }
 
-   /**
+  /**
    * Name of selected channel.
    * @return channelName
-  **/
+   */
   @javax.annotation.Nullable
   public String getChannelName() {
     return channelName;
   }
 
-  public void setChannelName(String channelName) {
+  public void setChannelName(@javax.annotation.Nullable String channelName) {
     this.channelName = channelName;
   }
 
 
-  public RecipientEvent messageCategory(MessageCategory messageCategory) {
+  public RecipientEvent messageCategory(@javax.annotation.Nullable MessageCategory messageCategory) {
     this.messageCategory = messageCategory;
     return this;
   }
 
-   /**
+  /**
    * Get messageCategory
    * @return messageCategory
-  **/
+   */
   @javax.annotation.Nullable
   public MessageCategory getMessageCategory() {
     return messageCategory;
   }
 
-  public void setMessageCategory(MessageCategory messageCategory) {
+  public void setMessageCategory(@javax.annotation.Nullable MessageCategory messageCategory) {
     this.messageCategory = messageCategory;
   }
 
 
-  public RecipientEvent nextTryOn(OffsetDateTime nextTryOn) {
+  public RecipientEvent nextTryOn(@javax.annotation.Nullable OffsetDateTime nextTryOn) {
     this.nextTryOn = nextTryOn;
     return this;
   }
 
-   /**
+  /**
    * Date of next try
    * @return nextTryOn
-  **/
+   */
   @javax.annotation.Nullable
   public OffsetDateTime getNextTryOn() {
     return nextTryOn;
   }
 
-  public void setNextTryOn(OffsetDateTime nextTryOn) {
+  public void setNextTryOn(@javax.annotation.Nullable OffsetDateTime nextTryOn) {
     this.nextTryOn = nextTryOn;
   }
 
 
-  public RecipientEvent message(String message) {
+  public RecipientEvent message(@javax.annotation.Nullable String message) {
     this.message = message;
     return this;
   }
 
-   /**
-   * Content of message, HTML encoded
+  /**
+   * Error message if sending has failed (FailedAttempt or Bounce)
    * @return message
-  **/
+   */
   @javax.annotation.Nullable
   public String getMessage() {
     return message;
   }
 
-  public void setMessage(String message) {
+  public void setMessage(@javax.annotation.Nullable String message) {
     this.message = message;
   }
 
 
-  public RecipientEvent ipAddress(String ipAddress) {
+  public RecipientEvent ipAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
 
-   /**
+  /**
    * IP which this email was sent through
    * @return ipAddress
-  **/
+   */
   @javax.annotation.Nullable
   public String getIpAddress() {
     return ipAddress;
   }
 
-  public void setIpAddress(String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
 
-  public RecipientEvent poolName(String poolName) {
+  public RecipientEvent poolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
     return this;
   }
 
-   /**
+  /**
    * Name of an IP pool this email was sent through
    * @return poolName
-  **/
+   */
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
   }
 
-  public void setPoolName(String poolName) {
+  public void setPoolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
   }
 
@@ -455,12 +467,12 @@ public class RecipientEvent {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to RecipientEvent
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to RecipientEvent
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!RecipientEvent.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -542,22 +554,22 @@ public class RecipientEvent {
     }
   }
 
- /**
-  * Create an instance of RecipientEvent given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of RecipientEvent
-  * @throws IOException if the JSON string is invalid with respect to RecipientEvent
-  */
+  /**
+   * Create an instance of RecipientEvent given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of RecipientEvent
+   * @throws IOException if the JSON string is invalid with respect to RecipientEvent
+   */
   public static RecipientEvent fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, RecipientEvent.class);
   }
 
- /**
-  * Convert an instance of RecipientEvent to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of RecipientEvent to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

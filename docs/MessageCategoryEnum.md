@@ -11,33 +11,33 @@
 
 * `SPAM` (value: `"Spam"`)
 
-* `BLACKLISTED` (value: `"BlackListed"`)
+* `BLACK_LISTED` (value: `"BlackListed"`)
 
-* `NOMAILBOX` (value: `"NoMailbox"`)
+* `NO_MAILBOX` (value: `"NoMailbox"`)
 
-* `GREYLISTED` (value: `"GreyListed"`)
+* `GREY_LISTED` (value: `"GreyListed"`)
 
 * `THROTTLED` (value: `"Throttled"`)
 
 * `TIMEOUT` (value: `"Timeout"`)
 
-* `CONNECTIONPROBLEM` (value: `"ConnectionProblem"`)
+* `CONNECTION_PROBLEM` (value: `"ConnectionProblem"`)
 
-* `SPFPROBLEM` (value: `"SPFProblem"`)
+* `SPF_PROBLEM` (value: `"SPFProblem"`)
 
-* `ACCOUNTPROBLEM` (value: `"AccountProblem"`)
+* `ACCOUNT_PROBLEM` (value: `"AccountProblem"`)
 
-* `DNSPROBLEM` (value: `"DNSProblem"`)
+* `DNS_PROBLEM` (value: `"DNSProblem"`)
 
-* `NOTDELIVEREDCANCELLED` (value: `"NotDeliveredCancelled"`)
+* `NOT_DELIVERED_CANCELLED` (value: `"NotDeliveredCancelled"`)
 
-* `CODEERROR` (value: `"CodeError"`)
+* `CODE_ERROR` (value: `"CodeError"`)
 
-* `MANUALCANCEL` (value: `"ManualCancel"`)
+* `MANUAL_CANCEL` (value: `"ManualCancel"`)
 
-* `CONNECTIONTERMINATED` (value: `"ConnectionTerminated"`)
+* `CONNECTION_TERMINATED` (value: `"ConnectionTerminated"`)
 
-* `NOTDELIVERED` (value: `"NotDelivered"`)
+* `NOT_DELIVERED` (value: `"NotDelivered"`)
 
 
 

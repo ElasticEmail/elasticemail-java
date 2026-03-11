@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -39,7 +39,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,145 +50,151 @@ import com.elasticemail.client.JSON;
 /**
  * InboundPayload
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class InboundPayload {
   public static final String SERIALIZED_NAME_FILTER = "Filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
+  @javax.annotation.Nonnull
   private String filter;
 
   public static final String SERIALIZED_NAME_NAME = "Name";
   @SerializedName(SERIALIZED_NAME_NAME)
+  @javax.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_FILTER_TYPE = "FilterType";
   @SerializedName(SERIALIZED_NAME_FILTER_TYPE)
-  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAILADDRESS;
+  @javax.annotation.Nonnull
+  private InboundRouteFilterType filterType = InboundRouteFilterType.EMAIL_ADDRESS;
 
   public static final String SERIALIZED_NAME_ACTION_TYPE = "ActionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)
-  private InboundRouteActionType actionType = InboundRouteActionType.FORWARDTOEMAIL;
+  @javax.annotation.Nonnull
+  private InboundRouteActionType actionType = InboundRouteActionType.FORWARD_TO_EMAIL;
 
   public static final String SERIALIZED_NAME_EMAIL_ADDRESS = "EmailAddress";
   @SerializedName(SERIALIZED_NAME_EMAIL_ADDRESS)
+  @javax.annotation.Nullable
   private String emailAddress;
 
   public static final String SERIALIZED_NAME_HTTP_ADDRESS = "HttpAddress";
   @SerializedName(SERIALIZED_NAME_HTTP_ADDRESS)
+  @javax.annotation.Nullable
   private String httpAddress;
 
   public InboundPayload() {
   }
 
-  public InboundPayload filter(String filter) {
+  public InboundPayload filter(@javax.annotation.Nonnull String filter) {
     this.filter = filter;
     return this;
   }
 
-   /**
+  /**
    * Filter of the inbound data
    * @return filter
-  **/
+   */
   @javax.annotation.Nonnull
   public String getFilter() {
     return filter;
   }
 
-  public void setFilter(String filter) {
+  public void setFilter(@javax.annotation.Nonnull String filter) {
     this.filter = filter;
   }
 
 
-  public InboundPayload name(String name) {
+  public InboundPayload name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
 
-   /**
+  /**
    * Name of this route
    * @return name
-  **/
+   */
   @javax.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(String name) {
+  public void setName(@javax.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public InboundPayload filterType(InboundRouteFilterType filterType) {
+  public InboundPayload filterType(@javax.annotation.Nonnull InboundRouteFilterType filterType) {
     this.filterType = filterType;
     return this;
   }
 
-   /**
+  /**
    * Get filterType
    * @return filterType
-  **/
+   */
   @javax.annotation.Nonnull
   public InboundRouteFilterType getFilterType() {
     return filterType;
   }
 
-  public void setFilterType(InboundRouteFilterType filterType) {
+  public void setFilterType(@javax.annotation.Nonnull InboundRouteFilterType filterType) {
     this.filterType = filterType;
   }
 
 
-  public InboundPayload actionType(InboundRouteActionType actionType) {
+  public InboundPayload actionType(@javax.annotation.Nonnull InboundRouteActionType actionType) {
     this.actionType = actionType;
     return this;
   }
 
-   /**
+  /**
    * Get actionType
    * @return actionType
-  **/
+   */
   @javax.annotation.Nonnull
   public InboundRouteActionType getActionType() {
     return actionType;
   }
 
-  public void setActionType(InboundRouteActionType actionType) {
+  public void setActionType(@javax.annotation.Nonnull InboundRouteActionType actionType) {
     this.actionType = actionType;
   }
 
 
-  public InboundPayload emailAddress(String emailAddress) {
+  public InboundPayload emailAddress(@javax.annotation.Nullable String emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
 
-   /**
+  /**
    * Email to forward the inbound to
    * @return emailAddress
-  **/
+   */
   @javax.annotation.Nullable
   public String getEmailAddress() {
     return emailAddress;
   }
 
-  public void setEmailAddress(String emailAddress) {
+  public void setEmailAddress(@javax.annotation.Nullable String emailAddress) {
     this.emailAddress = emailAddress;
   }
 
 
-  public InboundPayload httpAddress(String httpAddress) {
+  public InboundPayload httpAddress(@javax.annotation.Nullable String httpAddress) {
     this.httpAddress = httpAddress;
     return this;
   }
 
-   /**
+  /**
    * Address to notify about the inbound
    * @return httpAddress
-  **/
+   */
   @javax.annotation.Nullable
   public String getHttpAddress() {
     return httpAddress;
   }
 
-  public void setHttpAddress(String httpAddress) {
+  public void setHttpAddress(@javax.annotation.Nullable String httpAddress) {
     this.httpAddress = httpAddress;
   }
 
@@ -264,12 +269,12 @@ public class InboundPayload {
     openapiRequiredFields.add("ActionType");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to InboundPayload
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to InboundPayload
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!InboundPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -339,22 +344,22 @@ public class InboundPayload {
     }
   }
 
- /**
-  * Create an instance of InboundPayload given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of InboundPayload
-  * @throws IOException if the JSON string is invalid with respect to InboundPayload
-  */
+  /**
+   * Create an instance of InboundPayload given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of InboundPayload
+   * @throws IOException if the JSON string is invalid with respect to InboundPayload
+   */
   public static InboundPayload fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, InboundPayload.class);
   }
 
- /**
-  * Convert an instance of InboundPayload to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of InboundPayload to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

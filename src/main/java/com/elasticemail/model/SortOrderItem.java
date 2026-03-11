@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -37,7 +37,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -49,53 +48,55 @@ import com.elasticemail.client.JSON;
 /**
  * Change the ordering of this inbound route for when matching the inbound
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SortOrderItem {
   public static final String SERIALIZED_NAME_PUBLIC_INBOUND_ID = "PublicInboundId";
   @SerializedName(SERIALIZED_NAME_PUBLIC_INBOUND_ID)
+  @javax.annotation.Nonnull
   private String publicInboundId;
 
   public static final String SERIALIZED_NAME_SORT_ORDER = "SortOrder";
   @SerializedName(SERIALIZED_NAME_SORT_ORDER)
+  @javax.annotation.Nonnull
   private Integer sortOrder;
 
   public SortOrderItem() {
   }
 
-  public SortOrderItem publicInboundId(String publicInboundId) {
+  public SortOrderItem publicInboundId(@javax.annotation.Nonnull String publicInboundId) {
     this.publicInboundId = publicInboundId;
     return this;
   }
 
-   /**
+  /**
    * ID of the route to change the order of
    * @return publicInboundId
-  **/
+   */
   @javax.annotation.Nonnull
   public String getPublicInboundId() {
     return publicInboundId;
   }
 
-  public void setPublicInboundId(String publicInboundId) {
+  public void setPublicInboundId(@javax.annotation.Nonnull String publicInboundId) {
     this.publicInboundId = publicInboundId;
   }
 
 
-  public SortOrderItem sortOrder(Integer sortOrder) {
+  public SortOrderItem sortOrder(@javax.annotation.Nonnull Integer sortOrder) {
     this.sortOrder = sortOrder;
     return this;
   }
 
-   /**
+  /**
    * 1 - route will be used first
    * @return sortOrder
-  **/
+   */
   @javax.annotation.Nonnull
   public Integer getSortOrder() {
     return sortOrder;
   }
 
-  public void setSortOrder(Integer sortOrder) {
+  public void setSortOrder(@javax.annotation.Nonnull Integer sortOrder) {
     this.sortOrder = sortOrder;
   }
 
@@ -156,12 +157,12 @@ public class SortOrderItem {
     openapiRequiredFields.add("SortOrder");
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SortOrderItem
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SortOrderItem
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SortOrderItem.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -218,22 +219,22 @@ public class SortOrderItem {
     }
   }
 
- /**
-  * Create an instance of SortOrderItem given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SortOrderItem
-  * @throws IOException if the JSON string is invalid with respect to SortOrderItem
-  */
+  /**
+   * Create an instance of SortOrderItem given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SortOrderItem
+   * @throws IOException if the JSON string is invalid with respect to SortOrderItem
+   */
   public static SortOrderItem fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SortOrderItem.class);
   }
 
- /**
-  * Convert an instance of SortOrderItem to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SortOrderItem to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

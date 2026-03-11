@@ -7,11 +7,10 @@ info:
     \ API call is established on which specific request type (GET, POST, PUT, DELETE)\
     \ will be used.\r\n\r\nThe API has a limit of 20 concurrent connections and a\
     \ hard timeout of 600 seconds per request.\r\n\r\nTo start using this API, you\
-    \ will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\"\
-    >here</a>). Remember to keep it safe. Required access levels are listed in the\
-    \ given request’s description.\r\n\r\nDownloadable library clients can be found\
-    \ in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\"\
-    >here</a>"
+    \ will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>).\
+    \ Remember to keep it safe. Required access levels are listed in the given request’\
+    s description.\r\n\r\nDownloadable library clients can be found in our Github\
+    \ repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>"
   license:
     name: MIT
     url: https://opensource.org/licenses/MIT
@@ -2117,7 +2116,7 @@ paths:
       - application/json
   /security/apikeys:
     get:
-      description: "List all your existing ApiKeys. Required Access Level: Security"
+      description: "List all your existing ApiKeys. Required Access Level: ViewAccessTokens"
       operationId: securityApikeysGet
       parameters:
       - description: Email of the subaccount of which ApiKeys should be loaded
@@ -2200,7 +2199,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      description: "Load your existing ApiKey info. Required Access Level: Security"
+      description: "Load your existing ApiKey info. Required Access Level: ViewAccessTokens"
       operationId: securityApikeysByNameGet
       parameters:
       - description: Name of the ApiKey
@@ -2271,7 +2270,7 @@ paths:
   /security/smtp:
     get:
       description: "List all your existing SMTP Credentials. Required Access Level:\
-        \ Security"
+        \ ViewAccessTokens"
       operationId: securitySmtpGet
       parameters:
       - description: Email of the subaccount of which credentials should be listed
@@ -2356,7 +2355,7 @@ paths:
       - application/json
     get:
       description: "Load your existing SMTP Credential info. Required Access Level:\
-        \ Security"
+        \ ViewAccessTokens"
       operationId: securitySmtpByNameGet
       parameters:
       - description: Name of the SMTP Credential
@@ -3515,7 +3514,7 @@ paths:
   /verifications:
     get:
       description: "Returns a results of all verified single emails. Required Access\
-        \ Level: VerifyEmails"
+        \ Level: ViewVerifyEmails"
       operationId: verificationsGet
       parameters:
       - description: Maximum number of returned items.
@@ -3579,7 +3578,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      description: "Returns a result of verified email. Required Access Level: VerifyEmails"
+      description: "Returns a result of verified email. Required Access Level: ViewVerifyEmails"
       operationId: verificationsByEmailGet
       parameters:
       - description: Email address to view verification result of
@@ -3685,7 +3684,7 @@ paths:
   /verifications/files/{id}/result:
     get:
       description: "Returns status and results (if verified) of file with given ID.\
-        \ Required Access Level: VerifyEmails"
+        \ Required Access Level: ViewVerifyEmails"
       operationId: verificationsFilesByIdResultGet
       parameters:
       - description: ID of the Verification to display status of
@@ -3733,7 +3732,7 @@ paths:
   /verifications/files/{id}/result/download:
     get:
       description: "Download verification results as a ZIP file. Required Access Level:\
-        \ VerifyEmails"
+        \ ViewVerifyEmails"
       operationId: verificationsFilesByIdResultDownloadGet
       parameters:
       - description: Verification ID to download
@@ -3786,7 +3785,7 @@ paths:
   /verifications/files/result:
     get:
       description: "Returns a list of uploaded files, their statuses and results.\
-        \ Required Access Level: VerifyEmails"
+        \ Required Access Level: ViewVerifyEmails"
       operationId: verificationsFilesResultGet
       responses:
         "200":
@@ -3851,6 +3850,9 @@ components:
       - ExtendedLogs
       - VerifyEmails
       - Modify2FASms
+      - ViewVerifyEmails
+      - ViewAccessTokens
+      - ViewWebNotifications
       - ModifyLandingPages
       - ViewLandingPages
       - ModifySuppressions
@@ -3884,8 +3886,8 @@ components:
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         AccessLevel:
@@ -3929,8 +3931,8 @@ components:
         - RestrictAccessToIPRange
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         Name:
@@ -3975,7 +3977,7 @@ components:
       description: "Email body part with user-provided MIME type (text/html, text/plain,\
         \ etc)"
       example:
-        ContentType: null
+        ContentType: HTML
         Content: Content
         Charset: Charset
       properties:
@@ -3995,16 +3997,16 @@ components:
       type: object
     Campaign:
       example:
-        Status: null
+        Status: Deleted
         Options:
           TrackClicks: true
           TriggerCount: 6
           ScheduleFor: 2000-01-23T04:56:07.000+00:00
           TriggerFrequency: 0.8008281904610115
-          DeliveryOptimization: null
+          DeliveryOptimization: None
           TrackOpens: true
           SplitOptions:
-            OptimizeFor: null
+            OptimizeFor: Opens
             OptimizePeriodMinutes: 30
         Recipients:
           SegmentNames:
@@ -4038,6 +4040,13 @@ components:
             Medium: Medium
             Content: Content
             Source: Source
+        ExcludedRecipients:
+          SegmentNames:
+          - SegmentNames
+          - SegmentNames
+          ListNames:
+          - ListNames
+          - ListNames
         Name: Name
       properties:
         Content:
@@ -4054,6 +4063,8 @@ components:
           $ref: '#/components/schemas/CampaignStatus'
         Recipients:
           $ref: '#/components/schemas/CampaignRecipient'
+        ExcludedRecipients:
+          $ref: '#/components/schemas/CampaignRecipient'
         Options:
           $ref: '#/components/schemas/CampaignOptions'
       required:
@@ -4067,10 +4078,10 @@ components:
         TriggerCount: 6
         ScheduleFor: 2000-01-23T04:56:07.000+00:00
         TriggerFrequency: 0.8008281904610115
-        DeliveryOptimization: null
+        DeliveryOptimization: None
         TrackOpens: true
         SplitOptions:
-          OptimizeFor: null
+          OptimizeFor: Opens
           OptimizePeriodMinutes: 30
       properties:
         DeliveryOptimization:
@@ -4302,7 +4313,7 @@ components:
       type: string
     ConsentData:
       example:
-        ConsentTracking: null
+        ConsentTracking: Unknown
         ConsentDate: 2000-01-23T04:56:07.000+00:00
         ConsentIP: 192.168.0.1
       properties:
@@ -4331,14 +4342,15 @@ components:
     Contact:
       description: Contact
       example:
-        Status: null
+        Status: Transactional
         CustomFields:
           city: New York
           age: "34"
         Email: mail@example.com
+        SourceInfo: SourceInfo
         StatusChangeDate: 2000-01-23T04:56:07.000+00:00
         Consent:
-          ConsentTracking: null
+          ConsentTracking: Unknown
           ConsentDate: 2000-01-23T04:56:07.000+00:00
           ConsentIP: 192.168.0.1
         FirstName: Fred
@@ -4357,7 +4369,7 @@ components:
           TotalOpened: 1000
         LastName: Flintstone
         DateAdded: 2000-01-23T04:56:07.000+00:00
-        Source: null
+        Source: DeliveryApi
       properties:
         Email:
           description: Proper email address.
@@ -4389,6 +4401,9 @@ components:
           $ref: '#/components/schemas/ConsentData'
         Source:
           $ref: '#/components/schemas/ContactSource'
+        SourceInfo:
+          format: string
+          type: string
         DateAdded:
           description: Date of creation in YYYY-MM-DDThh:ii:ss format
           format: date-time
@@ -4481,13 +4496,13 @@ components:
       type: object
     ContactPayload:
       example:
-        Status: null
+        Status: Transactional
         CustomFields:
           city: New York
           age: "34"
         Email: mail@example.com
         Consent:
-          ConsentTracking: null
+          ConsentTracking: Unknown
           ConsentDate: 2000-01-23T04:56:07.000+00:00
           ConsentIP: 192.168.0.1
         FirstName: Fred
@@ -4534,6 +4549,8 @@ components:
       - ContactApi
       - VerificationApi
       - FileVerificationApi
+      - PilotBillingPlan
+      - PaidNewsletter
       type: string
     ContactStatus:
       default: Transactional
@@ -4587,10 +4604,10 @@ components:
       description: "Domain data, with information about domain records."
       example:
         ValidationLog: ValidationLog
-        Ownership: null
+        Ownership: Current
         VERP: true
         IsCustomBouncesDomainDefault: true
-        CertificateStatus: null
+        CertificateStatus: ErrorOccured
         Spf: true
         Dkim: true
         MX: true
@@ -4599,8 +4616,8 @@ components:
         CustomBouncesDomain: CustomBouncesDomain
         DefaultDomain: true
         IsRewriteDomainValid: true
-        TrackingStatus: null
-        Type: null
+        TrackingStatus: Validated
+        Type: None
         CertificateValidationError: CertificateValidationError
         Domain: example.com
         Verify: true
@@ -4677,10 +4694,10 @@ components:
     DomainDetail:
       description: "Domain data, with information about domain records."
       example:
-        Ownership: null
+        Ownership: Current
         VERP: true
         IsCustomBouncesDomainDefault: true
-        CertificateStatus: null
+        CertificateStatus: ErrorOccured
         Spf: true
         Dkim: true
         MX: true
@@ -4689,8 +4706,8 @@ components:
         CustomBouncesDomain: CustomBouncesDomain
         DefaultDomain: true
         IsRewriteDomainValid: true
-        TrackingStatus: null
-        Type: null
+        TrackingStatus: Validated
+        Type: None
         CertificateValidationError: CertificateValidationError
         Domain: example.com
         Verify: true
@@ -4783,7 +4800,7 @@ components:
       example:
         VERP: true
         IsCustomBouncesDomainDefault: true
-        CertificateStatus: null
+        CertificateStatus: ErrorOccured
         CustomBouncesDomain: CustomBouncesDomain
       properties:
         CertificateStatus:
@@ -4815,10 +4832,10 @@ components:
         AttachFiles:
         - preuploaded.jpg
         Body:
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
         Attachments:
@@ -4914,7 +4931,7 @@ components:
     EmailData:
       example:
         Status:
-          Status: null
+          Status: All
           DateOpened: 2000-01-23T04:56:07.000+00:00
           StatusName: StatusName
           From: From
@@ -4922,7 +4939,7 @@ components:
           TransactionID: TransactionID
           DateSent: 2000-01-23T04:56:07.000+00:00
           StatusChangeDate: 2000-01-23T04:56:07.000+00:00
-          ErrorCategory: null
+          ErrorCategory: Unknown
           DateClicked: 2000-01-23T04:56:07.000+00:00
           EnvelopeFrom: EnvelopeFrom
           To: To
@@ -5129,7 +5146,7 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
-          Encoding: null
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         Recipients:
@@ -5156,10 +5173,10 @@ components:
           AttachFiles:
           - preuploaded.jpg
           Body:
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
           Attachments:
@@ -5266,7 +5283,7 @@ components:
     EmailStatus:
       description: Status information of the specified email
       example:
-        Status: null
+        Status: All
         DateOpened: 2000-01-23T04:56:07.000+00:00
         StatusName: StatusName
         From: From
@@ -5274,7 +5291,7 @@ components:
         TransactionID: TransactionID
         DateSent: 2000-01-23T04:56:07.000+00:00
         StatusChangeDate: 2000-01-23T04:56:07.000+00:00
-        ErrorCategory: null
+        ErrorCategory: Unknown
         DateClicked: 2000-01-23T04:56:07.000+00:00
         EnvelopeFrom: EnvelopeFrom
         To: To
@@ -5339,7 +5356,7 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
-          Encoding: null
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         Recipients:
@@ -5367,10 +5384,10 @@ components:
           AttachFiles:
           - preuploaded.jpg
           Body:
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
           Attachments:
@@ -5403,7 +5420,7 @@ components:
       example:
         Disposable: true
         Role: true
-        PredictedStatus: null
+        PredictedStatus: None
         Account: Account
         SuggestedSpelling: SuggestedSpelling
         Email: Email
@@ -5411,7 +5428,7 @@ components:
         Domain: example.com
         DateAdded: 2000-01-23T04:56:07.000+00:00
         Reason: Reason
-        Result: null
+        Result: None
       properties:
         Account:
           description: Local part of an email
@@ -5622,8 +5639,8 @@ components:
       type: object
     InboundPayload:
       example:
-        FilterType: null
-        ActionType: null
+        FilterType: EmailAddress
+        ActionType: ForwardToEmail
         HttpAddress: HttpAddress
         Filter: Filter
         EmailAddress: EmailAddress
@@ -5658,8 +5675,8 @@ components:
     InboundRoute:
       example:
         PublicId: PublicId
-        FilterType: null
-        ActionType: null
+        FilterType: EmailAddress
+        ActionType: ForwardToEmail
         Filter: Filter
         SortOrder: 0
         ActionParameter: ActionParameter
@@ -5880,7 +5897,7 @@ components:
           TrackClicks: true
           ChannelName: Channel01
           PoolName: My Custom Pool
-          Encoding: null
+          Encoding: UserProvided
           TimeOffset: 0
           TrackOpens: true
         MergeFile:
@@ -5903,10 +5920,10 @@ components:
           AttachFiles:
           - preuploaded.jpg
           Body:
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
-          - ContentType: null
+          - ContentType: HTML
             Content: Content
             Charset: Charset
           Attachments:
@@ -6016,8 +6033,8 @@ components:
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
         AccessLevel:
-        - null
-        - null
+        - None
+        - None
         Name: Name
       properties:
         Token:
@@ -6066,7 +6083,7 @@ components:
         Token: Token
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
-        AccessLevel: null
+        AccessLevel: None
         Name: Name
       properties:
         Token:
@@ -6108,7 +6125,7 @@ components:
         TrackClicks: true
         ChannelName: Channel01
         PoolName: My Custom Pool
-        Encoding: null
+        Encoding: UserProvided
         TimeOffset: 0
         TrackOpens: true
       properties:
@@ -6151,15 +6168,15 @@ components:
       example:
         EventDate: 2000-01-23T04:56:07.000+00:00
         NextTryOn: 2000-01-23T04:56:07.000+00:00
-        Message: Lorem ipsum
-        EventType: null
+        Message: Message
+        EventType: Submission
         MsgID: ABCDE_9RPhSWiaJq_ab1g1
         Subject: Hello!
         TransactionID: TransactionID
         ChannelName: Channel01
         PoolName: PoolName
         To: 2001-01-01T01:01:01
-        MessageCategory: null
+        MessageCategory: Unknown
         IPAddress: IPAddress
         FromEmail: sender@yourdomain.com
       properties:
@@ -6207,8 +6224,7 @@ components:
           nullable: true
           type: string
         Message:
-          description: "Content of message, HTML encoded"
-          example: Lorem ipsum
+          description: Error message if sending has failed (FailedAttempt or Bounce)
           format: string
           type: string
         IPAddress:
@@ -6262,7 +6278,7 @@ components:
         DateCreated: 2000-01-23T04:56:07.000+00:00
         LastUse: 2000-01-23T04:56:07.000+00:00
         Expires: 2000-01-23T04:56:07.000+00:00
-        AccessLevel: null
+        AccessLevel: None
         Name: Name
       properties:
         AccessLevel:
@@ -6357,7 +6373,7 @@ components:
     SplitOptions:
       description: Optional A/X split campaign options
       example:
-        OptimizeFor: null
+        OptimizeFor: Opens
         OptimizePeriodMinutes: 30
       properties:
         OptimizeFor:
@@ -6492,7 +6508,7 @@ components:
       description: Detailed information about SubAccount.
       example:
         EmailCredits: 1000
-        Status: null
+        Status: Disabled
         Email: mail@example.com
         PublicAccountID: EB3EBB7A-C20D-4D39-8F2F-5E6842F58E6F
         ContactsCount: 6
@@ -6651,14 +6667,14 @@ components:
     Template:
       description: Template info
       example:
-        TemplateScope: null
-        TemplateType: null
+        TemplateScope: Personal
+        TemplateType: RawHTML
         DateAdded: 2000-01-23T04:56:07.000+00:00
         Body:
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
         Subject: Hello!
@@ -6690,12 +6706,12 @@ components:
     TemplatePayload:
       description: New template object
       example:
-        TemplateScope: null
+        TemplateScope: Personal
         Body:
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
-        - ContentType: null
+        - ContentType: HTML
           Content: Content
           Charset: Charset
         Subject: Hello!
@@ -6740,6 +6756,9 @@ components:
       - LandingPageProductTemplate
       - LandingPageCheckoutTemplate
       - LandingPagePaymentConfirmationTemplate
+      - LandingPageNewsletterProductTemplate
+      - LandingPageNewsletterPaymentConfirmationTemplate
+      - NewsletterSubscriptionCancellationTemplate
       type: string
     TrackingType:
       default: None
@@ -6824,7 +6843,7 @@ components:
     VerificationFileResult:
       description: Simple verification file result info
       example:
-        VerificationStatus: null
+        VerificationStatus: Processing
         FileUploadResult:
           EmailsCount: 0
           DuplicatedEmailsCount: 6
@@ -6857,14 +6876,14 @@ components:
     VerificationFileResultDetails:
       description: Detailed verification file result info
       example:
-        VerificationStatus: null
+        VerificationStatus: Processing
         FileUploadResult:
           EmailsCount: 0
           DuplicatedEmailsCount: 6
         VerificationResult:
         - Disposable: true
           Role: true
-          PredictedStatus: null
+          PredictedStatus: None
           Account: Account
           SuggestedSpelling: SuggestedSpelling
           Email: Email
@@ -6872,10 +6891,10 @@ components:
           Domain: example.com
           DateAdded: 2000-01-23T04:56:07.000+00:00
           Reason: Reason
-          Result: null
+          Result: None
         - Disposable: true
           Role: true
-          PredictedStatus: null
+          PredictedStatus: None
           Account: Account
           SuggestedSpelling: SuggestedSpelling
           Email: Email
@@ -6883,7 +6902,7 @@ components:
           Domain: example.com
           DateAdded: 2000-01-23T04:56:07.000+00:00
           Reason: Reason
-          Result: null
+          Result: None
         VerificationID: VerificationID
         Filename: Filename
         DateAdded: 2000-01-23T04:56:07.000+00:00

@@ -7,7 +7,7 @@
 
 * `VALIDATED` (value: `"Validated"`)
 
-* `NOTVALIDATED` (value: `"NotValidated"`)
+* `NOT_VALIDATED` (value: `"NotValidated"`)
 
 * `INVALID` (value: `"Invalid"`)
 

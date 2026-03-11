@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -38,7 +38,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -50,191 +49,199 @@ import com.elasticemail.client.JSON;
 /**
  * Settings related to sending emails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class SubaccountEmailSettings {
   public static final String SERIALIZED_NAME_MONTHLY_REFILL_CREDITS = "MonthlyRefillCredits";
   @SerializedName(SERIALIZED_NAME_MONTHLY_REFILL_CREDITS)
+  @javax.annotation.Nullable
   private Integer monthlyRefillCredits;
 
   public static final String SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS = "RequiresEmailCredits";
   @SerializedName(SERIALIZED_NAME_REQUIRES_EMAIL_CREDITS)
+  @javax.annotation.Nullable
   private Boolean requiresEmailCredits;
 
   public static final String SERIALIZED_NAME_EMAIL_SIZE_LIMIT = "EmailSizeLimit";
   @SerializedName(SERIALIZED_NAME_EMAIL_SIZE_LIMIT)
+  @javax.annotation.Nullable
   private Integer emailSizeLimit;
 
   public static final String SERIALIZED_NAME_DAILY_SEND_LIMIT = "DailySendLimit";
   @SerializedName(SERIALIZED_NAME_DAILY_SEND_LIMIT)
+  @javax.annotation.Nullable
   private Integer dailySendLimit;
 
   public static final String SERIALIZED_NAME_MAX_CONTACTS = "MaxContacts";
   @SerializedName(SERIALIZED_NAME_MAX_CONTACTS)
+  @javax.annotation.Nullable
   private Integer maxContacts;
 
   public static final String SERIALIZED_NAME_ENABLE_PRIVATE_I_P_PURCHASE = "EnablePrivateIPPurchase";
   @SerializedName(SERIALIZED_NAME_ENABLE_PRIVATE_I_P_PURCHASE)
+  @javax.annotation.Nullable
   private Boolean enablePrivateIPPurchase;
 
   public static final String SERIALIZED_NAME_POOL_NAME = "PoolName";
   @SerializedName(SERIALIZED_NAME_POOL_NAME)
+  @javax.annotation.Nullable
   private String poolName;
 
   public static final String SERIALIZED_NAME_VALID_SENDER_DOMAIN_ONLY = "ValidSenderDomainOnly";
   @SerializedName(SERIALIZED_NAME_VALID_SENDER_DOMAIN_ONLY)
+  @javax.annotation.Nullable
   private Boolean validSenderDomainOnly;
 
   public SubaccountEmailSettings() {
   }
 
-  public SubaccountEmailSettings monthlyRefillCredits(Integer monthlyRefillCredits) {
+  public SubaccountEmailSettings monthlyRefillCredits(@javax.annotation.Nullable Integer monthlyRefillCredits) {
     this.monthlyRefillCredits = monthlyRefillCredits;
     return this;
   }
 
-   /**
+  /**
    * Amount of credits added to Account automatically
    * @return monthlyRefillCredits
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMonthlyRefillCredits() {
     return monthlyRefillCredits;
   }
 
-  public void setMonthlyRefillCredits(Integer monthlyRefillCredits) {
+  public void setMonthlyRefillCredits(@javax.annotation.Nullable Integer monthlyRefillCredits) {
     this.monthlyRefillCredits = monthlyRefillCredits;
   }
 
 
-  public SubaccountEmailSettings requiresEmailCredits(Boolean requiresEmailCredits) {
+  public SubaccountEmailSettings requiresEmailCredits(@javax.annotation.Nullable Boolean requiresEmailCredits) {
     this.requiresEmailCredits = requiresEmailCredits;
     return this;
   }
 
-   /**
+  /**
    * True, if Account needs credits to send emails. Otherwise, false
    * @return requiresEmailCredits
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getRequiresEmailCredits() {
     return requiresEmailCredits;
   }
 
-  public void setRequiresEmailCredits(Boolean requiresEmailCredits) {
+  public void setRequiresEmailCredits(@javax.annotation.Nullable Boolean requiresEmailCredits) {
     this.requiresEmailCredits = requiresEmailCredits;
   }
 
 
-  public SubaccountEmailSettings emailSizeLimit(Integer emailSizeLimit) {
+  public SubaccountEmailSettings emailSizeLimit(@javax.annotation.Nullable Integer emailSizeLimit) {
     this.emailSizeLimit = emailSizeLimit;
     return this;
   }
 
-   /**
+  /**
    * Maximum size of email including attachments in MB&#39;s
    * @return emailSizeLimit
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getEmailSizeLimit() {
     return emailSizeLimit;
   }
 
-  public void setEmailSizeLimit(Integer emailSizeLimit) {
+  public void setEmailSizeLimit(@javax.annotation.Nullable Integer emailSizeLimit) {
     this.emailSizeLimit = emailSizeLimit;
   }
 
 
-  public SubaccountEmailSettings dailySendLimit(Integer dailySendLimit) {
+  public SubaccountEmailSettings dailySendLimit(@javax.annotation.Nullable Integer dailySendLimit) {
     this.dailySendLimit = dailySendLimit;
     return this;
   }
 
-   /**
+  /**
    * Amount of emails Account can send daily
    * @return dailySendLimit
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getDailySendLimit() {
     return dailySendLimit;
   }
 
-  public void setDailySendLimit(Integer dailySendLimit) {
+  public void setDailySendLimit(@javax.annotation.Nullable Integer dailySendLimit) {
     this.dailySendLimit = dailySendLimit;
   }
 
 
-  public SubaccountEmailSettings maxContacts(Integer maxContacts) {
+  public SubaccountEmailSettings maxContacts(@javax.annotation.Nullable Integer maxContacts) {
     this.maxContacts = maxContacts;
     return this;
   }
 
-   /**
+  /**
    * Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used.
    * @return maxContacts
-  **/
+   */
   @javax.annotation.Nullable
   public Integer getMaxContacts() {
     return maxContacts;
   }
 
-  public void setMaxContacts(Integer maxContacts) {
+  public void setMaxContacts(@javax.annotation.Nullable Integer maxContacts) {
     this.maxContacts = maxContacts;
   }
 
 
-  public SubaccountEmailSettings enablePrivateIPPurchase(Boolean enablePrivateIPPurchase) {
+  public SubaccountEmailSettings enablePrivateIPPurchase(@javax.annotation.Nullable Boolean enablePrivateIPPurchase) {
     this.enablePrivateIPPurchase = enablePrivateIPPurchase;
     return this;
   }
 
-   /**
+  /**
    * Can the SubAccount purchase Private IP for themselves
    * @return enablePrivateIPPurchase
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getEnablePrivateIPPurchase() {
     return enablePrivateIPPurchase;
   }
 
-  public void setEnablePrivateIPPurchase(Boolean enablePrivateIPPurchase) {
+  public void setEnablePrivateIPPurchase(@javax.annotation.Nullable Boolean enablePrivateIPPurchase) {
     this.enablePrivateIPPurchase = enablePrivateIPPurchase;
   }
 
 
-  public SubaccountEmailSettings poolName(String poolName) {
+  public SubaccountEmailSettings poolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
     return this;
   }
 
-   /**
+  /**
    * Name of your custom IP Pool to be used in the sending process
    * @return poolName
-  **/
+   */
   @javax.annotation.Nullable
   public String getPoolName() {
     return poolName;
   }
 
-  public void setPoolName(String poolName) {
+  public void setPoolName(@javax.annotation.Nullable String poolName) {
     this.poolName = poolName;
   }
 
 
-  public SubaccountEmailSettings validSenderDomainOnly(Boolean validSenderDomainOnly) {
+  public SubaccountEmailSettings validSenderDomainOnly(@javax.annotation.Nullable Boolean validSenderDomainOnly) {
     this.validSenderDomainOnly = validSenderDomainOnly;
     return this;
   }
 
-   /**
+  /**
    * Get validSenderDomainOnly
    * @return validSenderDomainOnly
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getValidSenderDomainOnly() {
     return validSenderDomainOnly;
   }
 
-  public void setValidSenderDomainOnly(Boolean validSenderDomainOnly) {
+  public void setValidSenderDomainOnly(@javax.annotation.Nullable Boolean validSenderDomainOnly) {
     this.validSenderDomainOnly = validSenderDomainOnly;
   }
 
@@ -322,12 +329,12 @@ public class SubaccountEmailSettings {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettings
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to SubaccountEmailSettings
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!SubaccountEmailSettings.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -377,22 +384,22 @@ public class SubaccountEmailSettings {
     }
   }
 
- /**
-  * Create an instance of SubaccountEmailSettings given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of SubaccountEmailSettings
-  * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettings
-  */
+  /**
+   * Create an instance of SubaccountEmailSettings given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of SubaccountEmailSettings
+   * @throws IOException if the JSON string is invalid with respect to SubaccountEmailSettings
+   */
   public static SubaccountEmailSettings fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, SubaccountEmailSettings.class);
   }
 
- /**
-  * Convert an instance of SubaccountEmailSettings to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of SubaccountEmailSettings to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }

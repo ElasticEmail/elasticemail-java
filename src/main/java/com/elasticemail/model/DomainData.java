@@ -1,6 +1,6 @@
 /*
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -41,7 +41,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
-import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -53,444 +52,463 @@ import com.elasticemail.client.JSON;
 /**
  * Domain data, with information about domain records.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T13:34:56.566653Z[Etc/UTC]", comments = "Generator version: 7.5.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:31:51.754498Z[GMT]", comments = "Generator version: 7.11.0")
 public class DomainData {
   public static final String SERIALIZED_NAME_VALIDATION_LOG = "ValidationLog";
   @SerializedName(SERIALIZED_NAME_VALIDATION_LOG)
+  @javax.annotation.Nullable
   private String validationLog;
 
   public static final String SERIALIZED_NAME_DOMAIN = "Domain";
   @SerializedName(SERIALIZED_NAME_DOMAIN)
+  @javax.annotation.Nullable
   private String domain;
 
   public static final String SERIALIZED_NAME_DEFAULT_DOMAIN = "DefaultDomain";
   @SerializedName(SERIALIZED_NAME_DEFAULT_DOMAIN)
+  @javax.annotation.Nullable
   private Boolean defaultDomain;
 
   public static final String SERIALIZED_NAME_SPF = "Spf";
   @SerializedName(SERIALIZED_NAME_SPF)
+  @javax.annotation.Nullable
   private Boolean spf;
 
   public static final String SERIALIZED_NAME_DKIM = "Dkim";
   @SerializedName(SERIALIZED_NAME_DKIM)
+  @javax.annotation.Nullable
   private Boolean dkim;
 
   public static final String SERIALIZED_NAME_M_X = "MX";
   @SerializedName(SERIALIZED_NAME_M_X)
+  @javax.annotation.Nullable
   private Boolean MX;
 
   public static final String SERIALIZED_NAME_D_M_A_R_C = "DMARC";
   @SerializedName(SERIALIZED_NAME_D_M_A_R_C)
+  @javax.annotation.Nullable
   private Boolean DMARC;
 
   public static final String SERIALIZED_NAME_IS_REWRITE_DOMAIN_VALID = "IsRewriteDomainValid";
   @SerializedName(SERIALIZED_NAME_IS_REWRITE_DOMAIN_VALID)
+  @javax.annotation.Nullable
   private Boolean isRewriteDomainValid;
 
   public static final String SERIALIZED_NAME_VERIFY = "Verify";
   @SerializedName(SERIALIZED_NAME_VERIFY)
+  @javax.annotation.Nullable
   private Boolean verify;
 
   public static final String SERIALIZED_NAME_TYPE = "Type";
   @SerializedName(SERIALIZED_NAME_TYPE)
+  @javax.annotation.Nullable
   private TrackingType type = TrackingType.NONE;
 
   public static final String SERIALIZED_NAME_TRACKING_STATUS = "TrackingStatus";
   @SerializedName(SERIALIZED_NAME_TRACKING_STATUS)
+  @javax.annotation.Nullable
   private TrackingValidationStatus trackingStatus = TrackingValidationStatus.VALIDATED;
 
   public static final String SERIALIZED_NAME_CERTIFICATE_STATUS = "CertificateStatus";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_STATUS)
-  private CertificateValidationStatus certificateStatus = CertificateValidationStatus.ERROROCCURED;
+  @javax.annotation.Nullable
+  private CertificateValidationStatus certificateStatus = CertificateValidationStatus.ERROR_OCCURED;
 
   public static final String SERIALIZED_NAME_CERTIFICATE_VALIDATION_ERROR = "CertificateValidationError";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_VALIDATION_ERROR)
+  @javax.annotation.Nullable
   private String certificateValidationError;
 
   public static final String SERIALIZED_NAME_TRACKING_TYPE_USER_REQUEST = "TrackingTypeUserRequest";
   @SerializedName(SERIALIZED_NAME_TRACKING_TYPE_USER_REQUEST)
+  @javax.annotation.Nullable
   private TrackingType trackingTypeUserRequest = TrackingType.NONE;
 
   public static final String SERIALIZED_NAME_V_E_R_P = "VERP";
   @SerializedName(SERIALIZED_NAME_V_E_R_P)
+  @javax.annotation.Nullable
   private Boolean VERP;
 
   public static final String SERIALIZED_NAME_CUSTOM_BOUNCES_DOMAIN = "CustomBouncesDomain";
   @SerializedName(SERIALIZED_NAME_CUSTOM_BOUNCES_DOMAIN)
+  @javax.annotation.Nullable
   private String customBouncesDomain;
 
   public static final String SERIALIZED_NAME_IS_CUSTOM_BOUNCES_DOMAIN_DEFAULT = "IsCustomBouncesDomainDefault";
   @SerializedName(SERIALIZED_NAME_IS_CUSTOM_BOUNCES_DOMAIN_DEFAULT)
+  @javax.annotation.Nullable
   private Boolean isCustomBouncesDomainDefault;
 
   public static final String SERIALIZED_NAME_IS_MARKED_FOR_DELETION = "IsMarkedForDeletion";
   @SerializedName(SERIALIZED_NAME_IS_MARKED_FOR_DELETION)
+  @javax.annotation.Nullable
   private Boolean isMarkedForDeletion;
 
   public static final String SERIALIZED_NAME_OWNERSHIP = "Ownership";
   @SerializedName(SERIALIZED_NAME_OWNERSHIP)
+  @javax.annotation.Nullable
   private DomainOwner ownership = DomainOwner.CURRENT;
 
   public DomainData() {
   }
 
-  public DomainData validationLog(String validationLog) {
+  public DomainData validationLog(@javax.annotation.Nullable String validationLog) {
     this.validationLog = validationLog;
     return this;
   }
 
-   /**
+  /**
    * Domain validation results - when domain has been running through validation process
    * @return validationLog
-  **/
+   */
   @javax.annotation.Nullable
   public String getValidationLog() {
     return validationLog;
   }
 
-  public void setValidationLog(String validationLog) {
+  public void setValidationLog(@javax.annotation.Nullable String validationLog) {
     this.validationLog = validationLog;
   }
 
 
-  public DomainData domain(String domain) {
+  public DomainData domain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
     return this;
   }
 
-   /**
+  /**
    * Name of selected domain.
    * @return domain
-  **/
+   */
   @javax.annotation.Nullable
   public String getDomain() {
     return domain;
   }
 
-  public void setDomain(String domain) {
+  public void setDomain(@javax.annotation.Nullable String domain) {
     this.domain = domain;
   }
 
 
-  public DomainData defaultDomain(Boolean defaultDomain) {
+  public DomainData defaultDomain(@javax.annotation.Nullable Boolean defaultDomain) {
     this.defaultDomain = defaultDomain;
     return this;
   }
 
-   /**
+  /**
    * True, if domain is used as default. Otherwise, false,
    * @return defaultDomain
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDefaultDomain() {
     return defaultDomain;
   }
 
-  public void setDefaultDomain(Boolean defaultDomain) {
+  public void setDefaultDomain(@javax.annotation.Nullable Boolean defaultDomain) {
     this.defaultDomain = defaultDomain;
   }
 
 
-  public DomainData spf(Boolean spf) {
+  public DomainData spf(@javax.annotation.Nullable Boolean spf) {
     this.spf = spf;
     return this;
   }
 
-   /**
+  /**
    * True, if SPF record is verified
    * @return spf
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getSpf() {
     return spf;
   }
 
-  public void setSpf(Boolean spf) {
+  public void setSpf(@javax.annotation.Nullable Boolean spf) {
     this.spf = spf;
   }
 
 
-  public DomainData dkim(Boolean dkim) {
+  public DomainData dkim(@javax.annotation.Nullable Boolean dkim) {
     this.dkim = dkim;
     return this;
   }
 
-   /**
+  /**
    * True, if DKIM record is verified
    * @return dkim
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDkim() {
     return dkim;
   }
 
-  public void setDkim(Boolean dkim) {
+  public void setDkim(@javax.annotation.Nullable Boolean dkim) {
     this.dkim = dkim;
   }
 
 
-  public DomainData MX(Boolean MX) {
+  public DomainData MX(@javax.annotation.Nullable Boolean MX) {
     this.MX = MX;
     return this;
   }
 
-   /**
+  /**
    * True, if MX record is verified
    * @return MX
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getMX() {
     return MX;
   }
 
-  public void setMX(Boolean MX) {
+  public void setMX(@javax.annotation.Nullable Boolean MX) {
     this.MX = MX;
   }
 
 
-  public DomainData DMARC(Boolean DMARC) {
+  public DomainData DMARC(@javax.annotation.Nullable Boolean DMARC) {
     this.DMARC = DMARC;
     return this;
   }
 
-   /**
+  /**
    * Get DMARC
    * @return DMARC
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getDMARC() {
     return DMARC;
   }
 
-  public void setDMARC(Boolean DMARC) {
+  public void setDMARC(@javax.annotation.Nullable Boolean DMARC) {
     this.DMARC = DMARC;
   }
 
 
-  public DomainData isRewriteDomainValid(Boolean isRewriteDomainValid) {
+  public DomainData isRewriteDomainValid(@javax.annotation.Nullable Boolean isRewriteDomainValid) {
     this.isRewriteDomainValid = isRewriteDomainValid;
     return this;
   }
 
-   /**
+  /**
    * True, if tracking CNAME record is verified
    * @return isRewriteDomainValid
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsRewriteDomainValid() {
     return isRewriteDomainValid;
   }
 
-  public void setIsRewriteDomainValid(Boolean isRewriteDomainValid) {
+  public void setIsRewriteDomainValid(@javax.annotation.Nullable Boolean isRewriteDomainValid) {
     this.isRewriteDomainValid = isRewriteDomainValid;
   }
 
 
-  public DomainData verify(Boolean verify) {
+  public DomainData verify(@javax.annotation.Nullable Boolean verify) {
     this.verify = verify;
     return this;
   }
 
-   /**
+  /**
    * True, if DKIM, SPF, or tracking are still to be verified
    * @return verify
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getVerify() {
     return verify;
   }
 
-  public void setVerify(Boolean verify) {
+  public void setVerify(@javax.annotation.Nullable Boolean verify) {
     this.verify = verify;
   }
 
 
-  public DomainData type(TrackingType type) {
+  public DomainData type(@javax.annotation.Nullable TrackingType type) {
     this.type = type;
     return this;
   }
 
-   /**
+  /**
    * Get type
    * @return type
-  **/
+   */
   @javax.annotation.Nullable
   public TrackingType getType() {
     return type;
   }
 
-  public void setType(TrackingType type) {
+  public void setType(@javax.annotation.Nullable TrackingType type) {
     this.type = type;
   }
 
 
-  public DomainData trackingStatus(TrackingValidationStatus trackingStatus) {
+  public DomainData trackingStatus(@javax.annotation.Nullable TrackingValidationStatus trackingStatus) {
     this.trackingStatus = trackingStatus;
     return this;
   }
 
-   /**
+  /**
    * Get trackingStatus
    * @return trackingStatus
-  **/
+   */
   @javax.annotation.Nullable
   public TrackingValidationStatus getTrackingStatus() {
     return trackingStatus;
   }
 
-  public void setTrackingStatus(TrackingValidationStatus trackingStatus) {
+  public void setTrackingStatus(@javax.annotation.Nullable TrackingValidationStatus trackingStatus) {
     this.trackingStatus = trackingStatus;
   }
 
 
-  public DomainData certificateStatus(CertificateValidationStatus certificateStatus) {
+  public DomainData certificateStatus(@javax.annotation.Nullable CertificateValidationStatus certificateStatus) {
     this.certificateStatus = certificateStatus;
     return this;
   }
 
-   /**
+  /**
    * Get certificateStatus
    * @return certificateStatus
-  **/
+   */
   @javax.annotation.Nullable
   public CertificateValidationStatus getCertificateStatus() {
     return certificateStatus;
   }
 
-  public void setCertificateStatus(CertificateValidationStatus certificateStatus) {
+  public void setCertificateStatus(@javax.annotation.Nullable CertificateValidationStatus certificateStatus) {
     this.certificateStatus = certificateStatus;
   }
 
 
-  public DomainData certificateValidationError(String certificateValidationError) {
+  public DomainData certificateValidationError(@javax.annotation.Nullable String certificateValidationError) {
     this.certificateValidationError = certificateValidationError;
     return this;
   }
 
-   /**
+  /**
    * Get certificateValidationError
    * @return certificateValidationError
-  **/
+   */
   @javax.annotation.Nullable
   public String getCertificateValidationError() {
     return certificateValidationError;
   }
 
-  public void setCertificateValidationError(String certificateValidationError) {
+  public void setCertificateValidationError(@javax.annotation.Nullable String certificateValidationError) {
     this.certificateValidationError = certificateValidationError;
   }
 
 
-  public DomainData trackingTypeUserRequest(TrackingType trackingTypeUserRequest) {
+  public DomainData trackingTypeUserRequest(@javax.annotation.Nullable TrackingType trackingTypeUserRequest) {
     this.trackingTypeUserRequest = trackingTypeUserRequest;
     return this;
   }
 
-   /**
+  /**
    * Get trackingTypeUserRequest
    * @return trackingTypeUserRequest
-  **/
+   */
   @javax.annotation.Nullable
   public TrackingType getTrackingTypeUserRequest() {
     return trackingTypeUserRequest;
   }
 
-  public void setTrackingTypeUserRequest(TrackingType trackingTypeUserRequest) {
+  public void setTrackingTypeUserRequest(@javax.annotation.Nullable TrackingType trackingTypeUserRequest) {
     this.trackingTypeUserRequest = trackingTypeUserRequest;
   }
 
 
-  public DomainData VERP(Boolean VERP) {
+  public DomainData VERP(@javax.annotation.Nullable Boolean VERP) {
     this.VERP = VERP;
     return this;
   }
 
-   /**
+  /**
    * Get VERP
    * @return VERP
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getVERP() {
     return VERP;
   }
 
-  public void setVERP(Boolean VERP) {
+  public void setVERP(@javax.annotation.Nullable Boolean VERP) {
     this.VERP = VERP;
   }
 
 
-  public DomainData customBouncesDomain(String customBouncesDomain) {
+  public DomainData customBouncesDomain(@javax.annotation.Nullable String customBouncesDomain) {
     this.customBouncesDomain = customBouncesDomain;
     return this;
   }
 
-   /**
+  /**
    * Get customBouncesDomain
    * @return customBouncesDomain
-  **/
+   */
   @javax.annotation.Nullable
   public String getCustomBouncesDomain() {
     return customBouncesDomain;
   }
 
-  public void setCustomBouncesDomain(String customBouncesDomain) {
+  public void setCustomBouncesDomain(@javax.annotation.Nullable String customBouncesDomain) {
     this.customBouncesDomain = customBouncesDomain;
   }
 
 
-  public DomainData isCustomBouncesDomainDefault(Boolean isCustomBouncesDomainDefault) {
+  public DomainData isCustomBouncesDomainDefault(@javax.annotation.Nullable Boolean isCustomBouncesDomainDefault) {
     this.isCustomBouncesDomainDefault = isCustomBouncesDomainDefault;
     return this;
   }
 
-   /**
+  /**
    * Get isCustomBouncesDomainDefault
    * @return isCustomBouncesDomainDefault
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsCustomBouncesDomainDefault() {
     return isCustomBouncesDomainDefault;
   }
 
-  public void setIsCustomBouncesDomainDefault(Boolean isCustomBouncesDomainDefault) {
+  public void setIsCustomBouncesDomainDefault(@javax.annotation.Nullable Boolean isCustomBouncesDomainDefault) {
     this.isCustomBouncesDomainDefault = isCustomBouncesDomainDefault;
   }
 
 
-  public DomainData isMarkedForDeletion(Boolean isMarkedForDeletion) {
+  public DomainData isMarkedForDeletion(@javax.annotation.Nullable Boolean isMarkedForDeletion) {
     this.isMarkedForDeletion = isMarkedForDeletion;
     return this;
   }
 
-   /**
+  /**
    * Get isMarkedForDeletion
    * @return isMarkedForDeletion
-  **/
+   */
   @javax.annotation.Nullable
   public Boolean getIsMarkedForDeletion() {
     return isMarkedForDeletion;
   }
 
-  public void setIsMarkedForDeletion(Boolean isMarkedForDeletion) {
+  public void setIsMarkedForDeletion(@javax.annotation.Nullable Boolean isMarkedForDeletion) {
     this.isMarkedForDeletion = isMarkedForDeletion;
   }
 
 
-  public DomainData ownership(DomainOwner ownership) {
+  public DomainData ownership(@javax.annotation.Nullable DomainOwner ownership) {
     this.ownership = ownership;
     return this;
   }
 
-   /**
+  /**
    * Get ownership
    * @return ownership
-  **/
+   */
   @javax.annotation.Nullable
   public DomainOwner getOwnership() {
     return ownership;
   }
 
-  public void setOwnership(DomainOwner ownership) {
+  public void setOwnership(@javax.annotation.Nullable DomainOwner ownership) {
     this.ownership = ownership;
   }
 
@@ -600,12 +618,12 @@ public class DomainData {
     openapiRequiredFields = new HashSet<String>();
   }
 
- /**
-  * Validates the JSON Element and throws an exception if issues found
-  *
-  * @param jsonElement JSON Element
-  * @throws IOException if the JSON Element is invalid with respect to DomainData
-  */
+  /**
+   * Validates the JSON Element and throws an exception if issues found
+   *
+   * @param jsonElement JSON Element
+   * @throws IOException if the JSON Element is invalid with respect to DomainData
+   */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!DomainData.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
@@ -684,22 +702,22 @@ public class DomainData {
     }
   }
 
- /**
-  * Create an instance of DomainData given an JSON string
-  *
-  * @param jsonString JSON string
-  * @return An instance of DomainData
-  * @throws IOException if the JSON string is invalid with respect to DomainData
-  */
+  /**
+   * Create an instance of DomainData given an JSON string
+   *
+   * @param jsonString JSON string
+   * @return An instance of DomainData
+   * @throws IOException if the JSON string is invalid with respect to DomainData
+   */
   public static DomainData fromJson(String jsonString) throws IOException {
     return JSON.getGson().fromJson(jsonString, DomainData.class);
   }
 
- /**
-  * Convert an instance of DomainData to an JSON string
-  *
-  * @return JSON string
-  */
+  /**
+   * Convert an instance of DomainData to an JSON string
+   *
+   * @return JSON string
+   */
   public String toJson() {
     return JSON.getGson().toJson(this);
   }
