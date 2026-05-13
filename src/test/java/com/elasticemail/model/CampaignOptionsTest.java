@@ -97,4 +97,12 @@ public class CampaignOptionsTest {
         // TODO: test splitOptions
     }
 
+    /**
+     * Test the property 'sendAtLocalTime'
+     */
+    @Test
+    public void sendAtLocalTimeTest() {
+        // TODO: test sendAtLocalTime
+    }
+
 }

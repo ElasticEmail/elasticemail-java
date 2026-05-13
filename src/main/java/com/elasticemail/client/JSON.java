@@ -158,6 +158,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Utm.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.VerificationFileResult.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.VerificationFileResultDetails.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.Webhook.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.WebhookCreatePayload.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.WebhookUpdatePayload.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
     }
 

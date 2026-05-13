@@ -51,7 +51,7 @@ import com.elasticemail.client.JSON;
 /**
  * Content of a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-13T07:43:21.752062Z[GMT]", comments = "Generator version: 7.11.0")
 public class CampaignTemplate {
   public static final String SERIALIZED_NAME_POOLNAME = "Poolname";
   @SerializedName(SERIALIZED_NAME_POOLNAME)
@@ -135,7 +135,7 @@ public class CampaignTemplate {
   }
 
   /**
-   * To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
+   * To what addresses should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)
    * @return replyTo
    */
   @javax.annotation.Nullable

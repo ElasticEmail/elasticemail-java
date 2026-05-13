@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2026-03-11T21:33:24.157108Z[GMT]
+  - Build date: 2026-05-13T07:43:21.752062Z[GMT]
   - Generator version: 7.11.0
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.1.1</version>
+  <version>4.0.28</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -65,7 +65,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.elasticemail:elasticemail:4.1.1"
+     implementation "com.elasticemail:elasticemail:4.0.28"
   }
 ```
 
@@ -79,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.1.1.jar`
+* `target/elasticemail-4.0.28.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -236,6 +236,11 @@ Class | Method | HTTP request | Description
 *VerificationsApi* | [**verificationsFilesPost**](docs/VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
 *VerificationsApi* | [**verificationsFilesResultGet**](docs/VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 *VerificationsApi* | [**verificationsGet**](docs/VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
+*WebhookApi* | [**webhookByPublicidDelete**](docs/WebhookApi.md#webhookByPublicidDelete) | **DELETE** /webhook/{publicid} | Delete Webhook
+*WebhookApi* | [**webhookByPublicidGet**](docs/WebhookApi.md#webhookByPublicidGet) | **GET** /webhook/{publicid} | Load Webhook
+*WebhookApi* | [**webhookByPublicidPut**](docs/WebhookApi.md#webhookByPublicidPut) | **PUT** /webhook/{publicid} | Update Webhook
+*WebhookApi* | [**webhookGet**](docs/WebhookApi.md#webhookGet) | **GET** /webhook | Load Webhooks
+*WebhookApi* | [**webhookPost**](docs/WebhookApi.md#webhookPost) | **POST** /webhook | Add Webhook
 
 
 ## Documentation for Models
@@ -334,6 +339,9 @@ Class | Method | HTTP request | Description
  - [VerificationFileResult](docs/VerificationFileResult.md)
  - [VerificationFileResultDetails](docs/VerificationFileResultDetails.md)
  - [VerificationStatus](docs/VerificationStatus.md)
+ - [Webhook](docs/Webhook.md)
+ - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
 
 
 <a id="documentation-for-authorization"></a>

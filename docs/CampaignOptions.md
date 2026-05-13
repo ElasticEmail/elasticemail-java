@@ -15,6 +15,7 @@ Different send options for a Campaign
 |**triggerFrequency** | **Double** | How often (in minutes) to send the campaign |  [optional] |
 |**triggerCount** | **Integer** | How many times send the campaign |  [optional] |
 |**splitOptions** | [**SplitOptions**](SplitOptions.md) |  |  [optional] |
+|**sendAtLocalTime** | **Boolean** | Send email at local time of contact. |  [optional] |
 
 
 

@@ -52,7 +52,7 @@ import com.elasticemail.client.JSON;
 /**
  * Different send options for a Campaign
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-11T21:33:24.157108Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-13T07:43:21.752062Z[GMT]", comments = "Generator version: 7.11.0")
 public class CampaignOptions {
   public static final String SERIALIZED_NAME_DELIVERY_OPTIMIZATION = "DeliveryOptimization";
   @SerializedName(SERIALIZED_NAME_DELIVERY_OPTIMIZATION)
@@ -88,6 +88,11 @@ public class CampaignOptions {
   @SerializedName(SERIALIZED_NAME_SPLIT_OPTIONS)
   @javax.annotation.Nullable
   private SplitOptions splitOptions;
+
+  public static final String SERIALIZED_NAME_SEND_AT_LOCAL_TIME = "SendAtLocalTime";
+  @SerializedName(SERIALIZED_NAME_SEND_AT_LOCAL_TIME)
+  @javax.annotation.Nullable
+  private Boolean sendAtLocalTime;
 
   public CampaignOptions() {
   }
@@ -225,6 +230,25 @@ public class CampaignOptions {
   }
 
 
+  public CampaignOptions sendAtLocalTime(@javax.annotation.Nullable Boolean sendAtLocalTime) {
+    this.sendAtLocalTime = sendAtLocalTime;
+    return this;
+  }
+
+  /**
+   * Send email at local time of contact.
+   * @return sendAtLocalTime
+   */
+  @javax.annotation.Nullable
+  public Boolean getSendAtLocalTime() {
+    return sendAtLocalTime;
+  }
+
+  public void setSendAtLocalTime(@javax.annotation.Nullable Boolean sendAtLocalTime) {
+    this.sendAtLocalTime = sendAtLocalTime;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -241,7 +265,8 @@ public class CampaignOptions {
         Objects.equals(this.scheduleFor, campaignOptions.scheduleFor) &&
         Objects.equals(this.triggerFrequency, campaignOptions.triggerFrequency) &&
         Objects.equals(this.triggerCount, campaignOptions.triggerCount) &&
-        Objects.equals(this.splitOptions, campaignOptions.splitOptions);
+        Objects.equals(this.splitOptions, campaignOptions.splitOptions) &&
+        Objects.equals(this.sendAtLocalTime, campaignOptions.sendAtLocalTime);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -250,7 +275,7 @@ public class CampaignOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(deliveryOptimization, trackOpens, trackClicks, scheduleFor, triggerFrequency, triggerCount, splitOptions);
+    return Objects.hash(deliveryOptimization, trackOpens, trackClicks, scheduleFor, triggerFrequency, triggerCount, splitOptions, sendAtLocalTime);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -271,6 +296,7 @@ public class CampaignOptions {
     sb.append("    triggerFrequency: ").append(toIndentedString(triggerFrequency)).append("\n");
     sb.append("    triggerCount: ").append(toIndentedString(triggerCount)).append("\n");
     sb.append("    splitOptions: ").append(toIndentedString(splitOptions)).append("\n");
+    sb.append("    sendAtLocalTime: ").append(toIndentedString(sendAtLocalTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -300,6 +326,7 @@ public class CampaignOptions {
     openapiFields.add("TriggerFrequency");
     openapiFields.add("TriggerCount");
     openapiFields.add("SplitOptions");
+    openapiFields.add("SendAtLocalTime");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
