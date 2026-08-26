@@ -14,6 +14,7 @@
 package com.elasticemail.model;
 
 import com.elasticemail.model.CertificateValidationStatus;
+import com.elasticemail.model.DKIMRecord;
 import com.elasticemail.model.DomainOwner;
 import com.elasticemail.model.TrackingType;
 import com.elasticemail.model.TrackingValidationStatus;
@@ -23,7 +24,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -138,6 +141,14 @@ public class DomainDataTest {
     }
 
     /**
+     * Test the property 'certificateExpiryDate'
+     */
+    @Test
+    public void certificateExpiryDateTest() {
+        // TODO: test certificateExpiryDate
+    }
+
+    /**
      * Test the property 'certificateValidationError'
      */
     @Test
@@ -178,6 +189,14 @@ public class DomainDataTest {
     }
 
     /**
+     * Test the property 'wasEverVerified'
+     */
+    @Test
+    public void wasEverVerifiedTest() {
+        // TODO: test wasEverVerified
+    }
+
+    /**
      * Test the property 'isMarkedForDeletion'
      */
     @Test
@@ -191,6 +210,14 @@ public class DomainDataTest {
     @Test
     public void ownershipTest() {
         // TODO: test ownership
+    }
+
+    /**
+     * Test the property 'dkIMRecord'
+     */
+    @Test
+    public void dkIMRecordTest() {
+        // TODO: test dkIMRecord
     }
 
 }

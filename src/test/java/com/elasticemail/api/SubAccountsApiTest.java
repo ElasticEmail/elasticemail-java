@@ -35,6 +35,20 @@ public class SubAccountsApiTest {
     private final SubAccountsApi api = new SubAccountsApi();
 
     /**
+     * Get SubAccount ApiKey
+     *
+     * Returns API key token for the specified SubAccount.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void subaccountsByEmailApikeyGetTest() throws ApiException {
+        String email = null;
+        String response = api.subaccountsByEmailApikeyGet(email);
+        // TODO: test validations
+    }
+
+    /**
      * Add, Subtract Email Credits
      *
      * Update email credits of a subaccount by the given amount. Required Access Level: ModifySubAccounts
@@ -110,7 +124,7 @@ public class SubAccountsApiTest {
     /**
      * Add SubAccount
      *
-     * Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the &#39;subaccount&#39; parameter. Required Access Level: ModifySubAccounts
+     * Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the &#39;subaccount&#39; parameter.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
      *
      * @throws ApiException if the Api call fails
      */

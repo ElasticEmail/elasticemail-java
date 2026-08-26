@@ -107,6 +107,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactPayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactUpdatePayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.ContactsList.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.DKIMRecord.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.DomainData.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.DomainDetail.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.elasticemail.model.DomainPayload.CustomTypeAdapterFactory());

@@ -117,7 +117,7 @@ public class Example {
 
     SecurityApi apiInstance = new SecurityApi(defaultClient);
     String name = "name_example"; // String | Name of the ApiKey
-    String subaccount = "subaccount_example"; // String | Email of the subaccount of which ApiKey should be loaded
+    String subaccount = "subaccount_example"; // String | Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
     try {
       ApiKey result = apiInstance.securityApikeysByNameGet(name, subaccount);
       System.out.println(result);
@@ -137,7 +137,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **name** | **String**| Name of the ApiKey | |
-| **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded | [optional] |
+| **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] |
 
 ### Return type
 
@@ -258,7 +258,7 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     SecurityApi apiInstance = new SecurityApi(defaultClient);
-    String subaccount = "subaccount_example"; // String | Email of the subaccount of which ApiKeys should be loaded
+    String subaccount = "subaccount_example"; // String | Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
     try {
       List<ApiKey> result = apiInstance.securityApikeysGet(subaccount);
       System.out.println(result);
@@ -277,7 +277,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded | [optional] |
+| **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] |
 
 ### Return type
 

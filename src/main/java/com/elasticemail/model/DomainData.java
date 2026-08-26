@@ -15,6 +15,7 @@ package com.elasticemail.model;
 
 import java.util.Objects;
 import com.elasticemail.model.CertificateValidationStatus;
+import com.elasticemail.model.DKIMRecord;
 import com.elasticemail.model.DomainOwner;
 import com.elasticemail.model.TrackingType;
 import com.elasticemail.model.TrackingValidationStatus;
@@ -24,7 +25,9 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +55,7 @@ import com.elasticemail.client.JSON;
 /**
  * Domain data, with information about domain records.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-13T07:43:21.752062Z[GMT]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-26T07:06:56.662688Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class DomainData {
   public static final String SERIALIZED_NAME_VALIDATION_LOG = "ValidationLog";
   @SerializedName(SERIALIZED_NAME_VALIDATION_LOG)
@@ -114,6 +117,11 @@ public class DomainData {
   @javax.annotation.Nullable
   private CertificateValidationStatus certificateStatus = CertificateValidationStatus.ERROR_OCCURED;
 
+  public static final String SERIALIZED_NAME_CERTIFICATE_EXPIRY_DATE = "CertificateExpiryDate";
+  @SerializedName(SERIALIZED_NAME_CERTIFICATE_EXPIRY_DATE)
+  @javax.annotation.Nullable
+  private OffsetDateTime certificateExpiryDate;
+
   public static final String SERIALIZED_NAME_CERTIFICATE_VALIDATION_ERROR = "CertificateValidationError";
   @SerializedName(SERIALIZED_NAME_CERTIFICATE_VALIDATION_ERROR)
   @javax.annotation.Nullable
@@ -139,6 +147,11 @@ public class DomainData {
   @javax.annotation.Nullable
   private Boolean isCustomBouncesDomainDefault;
 
+  public static final String SERIALIZED_NAME_WAS_EVER_VERIFIED = "WasEverVerified";
+  @SerializedName(SERIALIZED_NAME_WAS_EVER_VERIFIED)
+  @javax.annotation.Nullable
+  private Boolean wasEverVerified;
+
   public static final String SERIALIZED_NAME_IS_MARKED_FOR_DELETION = "IsMarkedForDeletion";
   @SerializedName(SERIALIZED_NAME_IS_MARKED_FOR_DELETION)
   @javax.annotation.Nullable
@@ -148,6 +161,11 @@ public class DomainData {
   @SerializedName(SERIALIZED_NAME_OWNERSHIP)
   @javax.annotation.Nullable
   private DomainOwner ownership = DomainOwner.CURRENT;
+
+  public static final String SERIALIZED_NAME_DK_I_M_RECORD = "DKIMRecord";
+  @SerializedName(SERIALIZED_NAME_DK_I_M_RECORD)
+  @javax.annotation.Nullable
+  private DKIMRecord dkIMRecord;
 
   public DomainData() {
   }
@@ -380,6 +398,25 @@ public class DomainData {
   }
 
 
+  public DomainData certificateExpiryDate(@javax.annotation.Nullable OffsetDateTime certificateExpiryDate) {
+    this.certificateExpiryDate = certificateExpiryDate;
+    return this;
+  }
+
+  /**
+   * Get certificateExpiryDate
+   * @return certificateExpiryDate
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getCertificateExpiryDate() {
+    return certificateExpiryDate;
+  }
+
+  public void setCertificateExpiryDate(@javax.annotation.Nullable OffsetDateTime certificateExpiryDate) {
+    this.certificateExpiryDate = certificateExpiryDate;
+  }
+
+
   public DomainData certificateValidationError(@javax.annotation.Nullable String certificateValidationError) {
     this.certificateValidationError = certificateValidationError;
     return this;
@@ -475,6 +512,25 @@ public class DomainData {
   }
 
 
+  public DomainData wasEverVerified(@javax.annotation.Nullable Boolean wasEverVerified) {
+    this.wasEverVerified = wasEverVerified;
+    return this;
+  }
+
+  /**
+   * Get wasEverVerified
+   * @return wasEverVerified
+   */
+  @javax.annotation.Nullable
+  public Boolean getWasEverVerified() {
+    return wasEverVerified;
+  }
+
+  public void setWasEverVerified(@javax.annotation.Nullable Boolean wasEverVerified) {
+    this.wasEverVerified = wasEverVerified;
+  }
+
+
   public DomainData isMarkedForDeletion(@javax.annotation.Nullable Boolean isMarkedForDeletion) {
     this.isMarkedForDeletion = isMarkedForDeletion;
     return this;
@@ -513,6 +569,25 @@ public class DomainData {
   }
 
 
+  public DomainData dkIMRecord(@javax.annotation.Nullable DKIMRecord dkIMRecord) {
+    this.dkIMRecord = dkIMRecord;
+    return this;
+  }
+
+  /**
+   * Get dkIMRecord
+   * @return dkIMRecord
+   */
+  @javax.annotation.Nullable
+  public DKIMRecord getDkIMRecord() {
+    return dkIMRecord;
+  }
+
+  public void setDkIMRecord(@javax.annotation.Nullable DKIMRecord dkIMRecord) {
+    this.dkIMRecord = dkIMRecord;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -535,18 +610,32 @@ public class DomainData {
         Objects.equals(this.type, domainData.type) &&
         Objects.equals(this.trackingStatus, domainData.trackingStatus) &&
         Objects.equals(this.certificateStatus, domainData.certificateStatus) &&
+        Objects.equals(this.certificateExpiryDate, domainData.certificateExpiryDate) &&
         Objects.equals(this.certificateValidationError, domainData.certificateValidationError) &&
         Objects.equals(this.trackingTypeUserRequest, domainData.trackingTypeUserRequest) &&
         Objects.equals(this.VERP, domainData.VERP) &&
         Objects.equals(this.customBouncesDomain, domainData.customBouncesDomain) &&
         Objects.equals(this.isCustomBouncesDomainDefault, domainData.isCustomBouncesDomainDefault) &&
+        Objects.equals(this.wasEverVerified, domainData.wasEverVerified) &&
         Objects.equals(this.isMarkedForDeletion, domainData.isMarkedForDeletion) &&
-        Objects.equals(this.ownership, domainData.ownership);
+        Objects.equals(this.ownership, domainData.ownership) &&
+        Objects.equals(this.dkIMRecord, domainData.dkIMRecord);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(validationLog, domain, defaultDomain, spf, dkim, MX, DMARC, isRewriteDomainValid, verify, type, trackingStatus, certificateStatus, certificateValidationError, trackingTypeUserRequest, VERP, customBouncesDomain, isCustomBouncesDomainDefault, isMarkedForDeletion, ownership);
+    return Objects.hash(validationLog, domain, defaultDomain, spf, dkim, MX, DMARC, isRewriteDomainValid, verify, type, trackingStatus, certificateStatus, certificateExpiryDate, certificateValidationError, trackingTypeUserRequest, VERP, customBouncesDomain, isCustomBouncesDomainDefault, wasEverVerified, isMarkedForDeletion, ownership, dkIMRecord);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -565,13 +654,16 @@ public class DomainData {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    trackingStatus: ").append(toIndentedString(trackingStatus)).append("\n");
     sb.append("    certificateStatus: ").append(toIndentedString(certificateStatus)).append("\n");
+    sb.append("    certificateExpiryDate: ").append(toIndentedString(certificateExpiryDate)).append("\n");
     sb.append("    certificateValidationError: ").append(toIndentedString(certificateValidationError)).append("\n");
     sb.append("    trackingTypeUserRequest: ").append(toIndentedString(trackingTypeUserRequest)).append("\n");
     sb.append("    VERP: ").append(toIndentedString(VERP)).append("\n");
     sb.append("    customBouncesDomain: ").append(toIndentedString(customBouncesDomain)).append("\n");
     sb.append("    isCustomBouncesDomainDefault: ").append(toIndentedString(isCustomBouncesDomainDefault)).append("\n");
+    sb.append("    wasEverVerified: ").append(toIndentedString(wasEverVerified)).append("\n");
     sb.append("    isMarkedForDeletion: ").append(toIndentedString(isMarkedForDeletion)).append("\n");
     sb.append("    ownership: ").append(toIndentedString(ownership)).append("\n");
+    sb.append("    dkIMRecord: ").append(toIndentedString(dkIMRecord)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -606,13 +698,16 @@ public class DomainData {
     openapiFields.add("Type");
     openapiFields.add("TrackingStatus");
     openapiFields.add("CertificateStatus");
+    openapiFields.add("CertificateExpiryDate");
     openapiFields.add("CertificateValidationError");
     openapiFields.add("TrackingTypeUserRequest");
     openapiFields.add("VERP");
     openapiFields.add("CustomBouncesDomain");
     openapiFields.add("IsCustomBouncesDomainDefault");
+    openapiFields.add("WasEverVerified");
     openapiFields.add("IsMarkedForDeletion");
     openapiFields.add("Ownership");
+    openapiFields.add("DKIMRecord");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -670,6 +765,10 @@ public class DomainData {
       // validate the optional field `Ownership`
       if (jsonObj.get("Ownership") != null && !jsonObj.get("Ownership").isJsonNull()) {
         DomainOwner.validateJsonElement(jsonObj.get("Ownership"));
+      }
+      // validate the optional field `DKIMRecord`
+      if (jsonObj.get("DKIMRecord") != null && !jsonObj.get("DKIMRecord").isJsonNull()) {
+        DKIMRecord.validateJsonElement(jsonObj.get("DKIMRecord"));
       }
   }
 

@@ -210,7 +210,7 @@ public class SecurityApi {
     /**
      * Build call for securityApikeysByNameGet
      * @param name Name of the ApiKey (required)
-     * @param subaccount Email of the subaccount of which ApiKey should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -285,7 +285,7 @@ public class SecurityApi {
      * Load ApiKey
      * Load your existing ApiKey info. Required Access Level: ViewAccessTokens
      * @param name Name of the ApiKey (required)
-     * @param subaccount Email of the subaccount of which ApiKey should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @return ApiKey
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -304,7 +304,7 @@ public class SecurityApi {
      * Load ApiKey
      * Load your existing ApiKey info. Required Access Level: ViewAccessTokens
      * @param name Name of the ApiKey (required)
-     * @param subaccount Email of the subaccount of which ApiKey should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @return ApiResponse&lt;ApiKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -324,7 +324,7 @@ public class SecurityApi {
      * Load ApiKey (asynchronously)
      * Load your existing ApiKey info. Required Access Level: ViewAccessTokens
      * @param name Name of the ApiKey (required)
-     * @param subaccount Email of the subaccount of which ApiKey should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -481,7 +481,7 @@ public class SecurityApi {
     }
     /**
      * Build call for securityApikeysGet
-     * @param subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -549,7 +549,7 @@ public class SecurityApi {
     /**
      * List ApiKeys
      * List all your existing ApiKeys. Required Access Level: ViewAccessTokens
-     * @param subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @return List&lt;ApiKey&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -567,7 +567,7 @@ public class SecurityApi {
     /**
      * List ApiKeys
      * List all your existing ApiKeys. Required Access Level: ViewAccessTokens
-     * @param subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @return ApiResponse&lt;List&lt;ApiKey&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -586,7 +586,7 @@ public class SecurityApi {
     /**
      * List ApiKeys (asynchronously)
      * List all your existing ApiKeys. Required Access Level: ViewAccessTokens
-     * @param subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
+     * @param subaccount Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

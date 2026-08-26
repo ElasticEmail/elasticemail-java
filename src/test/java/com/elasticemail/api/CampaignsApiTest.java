@@ -32,6 +32,21 @@ public class CampaignsApiTest {
     private final CampaignsApi api = new CampaignsApi();
 
     /**
+     * Trigger Automation for Contact
+     *
+     * Manually trigger an Automation for a contact. Required Access Level: ModifyAutomations
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void campaignsAutomationByNameTriggerPostTest() throws ApiException {
+        String name = null;
+        String contactEmail = null;
+        api.campaignsAutomationByNameTriggerPost(name, contactEmail);
+        // TODO: test validations
+    }
+
+    /**
      * Delete Campaign
      *
      * Delete the specific campaign.  This does not cancel in progress email, see Cancel In Progress. Required Access Level: ModifyCampaigns

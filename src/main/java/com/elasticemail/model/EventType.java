@@ -33,7 +33,7 @@ public enum EventType {
   
   FAILED_ATTEMPT("FailedAttempt"),
   
-  BOUNCE("Bounce"),
+  ERROR("Error"),
   
   SENT("Sent"),
   
@@ -43,7 +43,13 @@ public enum EventType {
   
   UNSUBSCRIBE("Unsubscribe"),
   
-  COMPLAINT("Complaint");
+  COMPLAINT("Complaint"),
+  
+  BOUNCE("Bounce"),
+  
+  TRANSACTIONAL_UNSUBSCRIBE("TransactionalUnsubscribe"),
+  
+  SUPPRESS("Suppress");
 
   private String value;
 

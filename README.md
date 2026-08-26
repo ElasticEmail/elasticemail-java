@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2026-05-13T07:43:21.752062Z[GMT]
+  - Build date: 2026-08-26T07:06:56.662688Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.0.28</version>
+  <version>4.0.29</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -65,7 +65,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.elasticemail:elasticemail:4.0.28"
+     implementation "com.elasticemail:elasticemail:4.0.29"
   }
 ```
 
@@ -79,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.0.28.jar`
+* `target/elasticemail-4.0.29.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -108,11 +108,12 @@ public class Example {
     //apikey.setApiKeyPrefix("Token");
 
     CampaignsApi apiInstance = new CampaignsApi(defaultClient);
-    String name = "name_example"; // String | Name of Campaign to delete
+    String name = "name_example"; // String | 
+    String contactEmail = "contactEmail_example"; // String | 
     try {
-      apiInstance.campaignsByNameDelete(name);
+      apiInstance.campaignsAutomationByNameTriggerPost(name, contactEmail);
     } catch (ApiException e) {
-      System.err.println("Exception when calling CampaignsApi#campaignsByNameDelete");
+      System.err.println("Exception when calling CampaignsApi#campaignsAutomationByNameTriggerPost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -129,6 +130,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CampaignsApi* | [**campaignsAutomationByNameTriggerPost**](docs/CampaignsApi.md#campaignsAutomationByNameTriggerPost) | **POST** /campaigns/automation/{name}/trigger | Trigger Automation for Contact
 *CampaignsApi* | [**campaignsByNameDelete**](docs/CampaignsApi.md#campaignsByNameDelete) | **DELETE** /campaigns/{name} | Delete Campaign
 *CampaignsApi* | [**campaignsByNameGet**](docs/CampaignsApi.md#campaignsByNameGet) | **GET** /campaigns/{name} | Load Campaign
 *CampaignsApi* | [**campaignsByNamePausePut**](docs/CampaignsApi.md#campaignsByNamePausePut) | **PUT** /campaigns/{name}/pause | Pause Campaign
@@ -203,6 +205,7 @@ Class | Method | HTTP request | Description
 *StatisticsApi* | [**statisticsChannelsByNameGet**](docs/StatisticsApi.md#statisticsChannelsByNameGet) | **GET** /statistics/channels/{name} | Load Channel Stats
 *StatisticsApi* | [**statisticsChannelsGet**](docs/StatisticsApi.md#statisticsChannelsGet) | **GET** /statistics/channels | Load Channels Stats
 *StatisticsApi* | [**statisticsGet**](docs/StatisticsApi.md#statisticsGet) | **GET** /statistics | Load Statistics
+*SubAccountsApi* | [**subaccountsByEmailApikeyGet**](docs/SubAccountsApi.md#subaccountsByEmailApikeyGet) | **GET** /subaccounts/{email}/apikey | Get SubAccount ApiKey
 *SubAccountsApi* | [**subaccountsByEmailCreditsPatch**](docs/SubAccountsApi.md#subaccountsByEmailCreditsPatch) | **PATCH** /subaccounts/{email}/credits | Add, Subtract Email Credits
 *SubAccountsApi* | [**subaccountsByEmailDelete**](docs/SubAccountsApi.md#subaccountsByEmailDelete) | **DELETE** /subaccounts/{email} | Delete SubAccount
 *SubAccountsApi* | [**subaccountsByEmailGet**](docs/SubAccountsApi.md#subaccountsByEmailGet) | **GET** /subaccounts/{email} | Load SubAccount
@@ -268,6 +271,7 @@ Class | Method | HTTP request | Description
  - [ContactStatus](docs/ContactStatus.md)
  - [ContactUpdatePayload](docs/ContactUpdatePayload.md)
  - [ContactsList](docs/ContactsList.md)
+ - [DKIMRecord](docs/DKIMRecord.md)
  - [DeliveryOptimizationType](docs/DeliveryOptimizationType.md)
  - [DomainData](docs/DomainData.md)
  - [DomainDetail](docs/DomainDetail.md)

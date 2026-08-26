@@ -35,7 +35,9 @@ public enum CertificateValidationStatus {
   
   VALID("Valid"),
   
-  NOT_VALID("NotValid");
+  NOT_VALID("NotValid"),
+  
+  IN_PROGRESS("InProgress");
 
   private String value;
 

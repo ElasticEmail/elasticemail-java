@@ -4,6 +4,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**subaccountsByEmailApikeyGet**](SubAccountsApi.md#subaccountsByEmailApikeyGet) | **GET** /subaccounts/{email}/apikey | Get SubAccount ApiKey |
 | [**subaccountsByEmailCreditsPatch**](SubAccountsApi.md#subaccountsByEmailCreditsPatch) | **PATCH** /subaccounts/{email}/credits | Add, Subtract Email Credits |
 | [**subaccountsByEmailDelete**](SubAccountsApi.md#subaccountsByEmailDelete) | **DELETE** /subaccounts/{email} | Delete SubAccount |
 | [**subaccountsByEmailGet**](SubAccountsApi.md#subaccountsByEmailGet) | **GET** /subaccounts/{email} | Load SubAccount |
@@ -11,6 +12,75 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 | [**subaccountsGet**](SubAccountsApi.md#subaccountsGet) | **GET** /subaccounts | Load SubAccounts |
 | [**subaccountsPost**](SubAccountsApi.md#subaccountsPost) | **POST** /subaccounts | Add SubAccount |
 
+
+<a id="subaccountsByEmailApikeyGet"></a>
+# **subaccountsByEmailApikeyGet**
+> String subaccountsByEmailApikeyGet(email)
+
+Get SubAccount ApiKey
+
+Returns API key token for the specified SubAccount.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
+
+### Example
+```java
+// Import classes:
+import com.elasticemail.client.ApiClient;
+import com.elasticemail.client.ApiException;
+import com.elasticemail.client.Configuration;
+import com.elasticemail.client.auth.*;
+import com.elasticemail.client.models.*;
+import com.elasticemail.api.SubAccountsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.elasticemail.com/v4");
+    
+    // Configure API key authorization: apikey
+    ApiKeyAuth apikey = (ApiKeyAuth) defaultClient.getAuthentication("apikey");
+    apikey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //apikey.setApiKeyPrefix("Token");
+
+    SubAccountsApi apiInstance = new SubAccountsApi(defaultClient);
+    String email = "mail@example.com"; // String | Email address of Sub-Account
+    try {
+      String result = apiInstance.subaccountsByEmailApikeyGet(email);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SubAccountsApi#subaccountsByEmailApikeyGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **email** | **String**| Email address of Sub-Account | |
+
+### Return type
+
+**String**
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
 
 <a id="subaccountsByEmailCreditsPatch"></a>
 # **subaccountsByEmailCreditsPatch**
@@ -367,7 +437,7 @@ public class Example {
 
 Add SubAccount
 
-Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the &#39;subaccount&#39; parameter. Required Access Level: ModifySubAccounts
+Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the &#39;subaccount&#39; parameter.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
 
 ### Example
 ```java

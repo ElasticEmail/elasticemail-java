@@ -19,13 +19,16 @@ Domain data, with information about domain records.
 |**type** | **TrackingType** |  |  [optional] |
 |**trackingStatus** | **TrackingValidationStatus** |  |  [optional] |
 |**certificateStatus** | **CertificateValidationStatus** |  |  [optional] |
+|**certificateExpiryDate** | **OffsetDateTime** |  |  [optional] |
 |**certificateValidationError** | **String** |  |  [optional] |
 |**trackingTypeUserRequest** | **TrackingType** |  |  [optional] |
 |**VERP** | **Boolean** |  |  [optional] |
 |**customBouncesDomain** | **String** |  |  [optional] |
 |**isCustomBouncesDomainDefault** | **Boolean** |  |  [optional] |
+|**wasEverVerified** | **Boolean** |  |  [optional] |
 |**isMarkedForDeletion** | **Boolean** |  |  [optional] |
 |**ownership** | **DomainOwner** |  |  [optional] |
+|**dkIMRecord** | [**DKIMRecord**](DKIMRecord.md) |  |  [optional] |
 
 
 

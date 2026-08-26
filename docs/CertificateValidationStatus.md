@@ -13,5 +13,7 @@
 
 * `NOT_VALID` (value: `"NotValid"`)
 
+* `IN_PROGRESS` (value: `"InProgress"`)
+
 
 
