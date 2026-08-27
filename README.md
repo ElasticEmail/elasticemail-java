@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 - API version: 4.0.0
-  - Build date: 2026-08-26T07:06:56.662688Z[Etc/UTC]
+  - Build date: 2026-08-27T04:05:08.905783Z[Etc/UTC]
   - Generator version: 7.11.0
 
 This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.
@@ -49,7 +49,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.elasticemail</groupId>
   <artifactId>elasticemail</artifactId>
-  <version>4.0.29</version>
+  <version>4.2.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -65,7 +65,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.elasticemail:elasticemail:4.0.29"
+     implementation "com.elasticemail:elasticemail:4.2.0"
   }
 ```
 
@@ -79,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/elasticemail-4.0.29.jar`
+* `target/elasticemail-4.2.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

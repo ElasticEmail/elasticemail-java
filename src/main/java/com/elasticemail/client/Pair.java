@@ -13,7 +13,7 @@
 
 package com.elasticemail.client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-26T07:06:56.662688Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T04:05:08.905783Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class Pair {
     private String name = "";
     private String value = "";

@@ -55,7 +55,7 @@ import com.elasticemail.client.JSON;
 /**
  * Domain data, with information about domain records.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-26T07:06:56.662688Z[Etc/UTC]", comments = "Generator version: 7.11.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-27T04:05:08.905783Z[Etc/UTC]", comments = "Generator version: 7.11.0")
 public class DomainData {
   public static final String SERIALIZED_NAME_VALIDATION_LOG = "ValidationLog";
   @SerializedName(SERIALIZED_NAME_VALIDATION_LOG)
