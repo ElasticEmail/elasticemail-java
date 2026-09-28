@@ -6,7 +6,7 @@
 
 The official Java client library for the [Elastic Email](https://elasticemail.com) REST API v4.
 
-[![JitPack](https://img.shields.io/jitpack/version/com.github.ElasticEmail/elasticemail-java?label=JitPack&color=2E7D32)](https://jitpack.io/#ElasticEmail/elasticemail-java)
+[![JitPack](https://jitpack.io/v/ElasticEmail/elasticemail-java.svg)](https://jitpack.io/#ElasticEmail/elasticemail-java)
 [![Java](https://img.shields.io/badge/Java-8%2B-ED8B00?logo=openjdk&logoColor=white)](https://adoptium.net)
 [![API](https://img.shields.io/badge/API-v4-0A7BBB)](https://elasticemail.com/developers/api-documentation/rest-api)
 [![OpenAPI Generator](https://img.shields.io/badge/generated%20by-OpenAPI%20Generator-6BA539?logo=openapiinitiative&logoColor=white)](https://openapi-generator.tech)
