@@ -100,6 +100,9 @@ This installs `com.elasticemail:elasticemail:4.2.0` to your local Maven reposito
 
 ## Quick start
 
+> [!IMPORTANT]
+> Elastic Email only sends from verified domains. Before your first send, [verify your sending domain](https://help.elasticemail.com/en/articles/4934400-how-to-verify-your-domain) and use an address on that domain as the sender.
+
 ### Configure the client
 
 ```java
@@ -146,7 +149,7 @@ try {
 }
 ```
 
-The `from` address must use a domain you've verified in your Elastic Email account.
+The `from` address must use a domain you've [verified in your Elastic Email account](https://help.elasticemail.com/en/articles/4934400-how-to-verify-your-domain).
 
 ### Send from a template with merge fields
 
