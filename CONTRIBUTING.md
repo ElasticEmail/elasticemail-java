@@ -12,6 +12,8 @@ This means:
 - If an endpoint, model, parameter or description is wrong or missing, the fix belongs in the API specification. Please [open an issue](https://github.com/ElasticEmail/elasticemail-java/issues/new/choose) describing the problem. We'll fix it upstream and regenerate the SDK.
 - Pull requests are most useful for non-generated content: documentation, examples, build and CI configuration, and repository tooling.
 
+One exception: the end of `src/main/java/com/elasticemail/api/EmailsApi.java` has a block marked `BEGIN HAND-WRITTEN` / `END HAND-WRITTEN`. It keeps the pre-4.4.0 `emailsPost`, `emailsTransactionalPost` and `emailsMergefilePost` signatures (without `idempotencyKey`) compiling. Copy that block back in after every regeneration.
+
 If you're not sure whether something is generated, open an issue first and ask.
 
 ## Reporting bugs

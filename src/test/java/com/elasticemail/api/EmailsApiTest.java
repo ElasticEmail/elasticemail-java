@@ -84,7 +84,8 @@ public class EmailsApiTest {
     @Test
     public void emailsMergefilePostTest() throws ApiException {
         MergeEmailPayload mergeEmailPayload = null;
-        EmailSend response = api.emailsMergefilePost(mergeEmailPayload);
+        String idempotencyKey = null;
+        EmailSend response = api.emailsMergefilePost(mergeEmailPayload, idempotencyKey);
         // TODO: test validations
     }
 
@@ -98,7 +99,8 @@ public class EmailsApiTest {
     @Test
     public void emailsPostTest() throws ApiException {
         EmailMessageData emailMessageData = null;
-        EmailSend response = api.emailsPost(emailMessageData);
+        String idempotencyKey = null;
+        EmailSend response = api.emailsPost(emailMessageData, idempotencyKey);
         // TODO: test validations
     }
 
@@ -112,7 +114,8 @@ public class EmailsApiTest {
     @Test
     public void emailsTransactionalPostTest() throws ApiException {
         EmailTransactionalMessageData emailTransactionalMessageData = null;
-        EmailSend response = api.emailsTransactionalPost(emailTransactionalMessageData);
+        String idempotencyKey = null;
+        EmailSend response = api.emailsTransactionalPost(emailTransactionalMessageData, idempotencyKey);
         // TODO: test validations
     }
 

@@ -171,7 +171,7 @@ public class Example {
 
 <a id="emailsMergefilePost"></a>
 # **emailsMergefilePost**
-> EmailSend emailsMergefilePost(mergeEmailPayload)
+> EmailSend emailsMergefilePost(mergeEmailPayload, idempotencyKey)
 
 Send Bulk Emails CSV
 
@@ -200,8 +200,9 @@ public class Example {
 
     EmailsApi apiInstance = new EmailsApi(defaultClient);
     MergeEmailPayload mergeEmailPayload = new MergeEmailPayload(); // MergeEmailPayload | Email data
+    String idempotencyKey = "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b"; // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
     try {
-      EmailSend result = apiInstance.emailsMergefilePost(mergeEmailPayload);
+      EmailSend result = apiInstance.emailsMergefilePost(mergeEmailPayload, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmailsApi#emailsMergefilePost");
@@ -219,6 +220,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **mergeEmailPayload** | [**MergeEmailPayload**](MergeEmailPayload.md)| Email data | |
+| **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] |
 
 ### Return type
 
@@ -237,10 +239,14 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. |  -  |
+| **409** | A request with the same Idempotency-Key is still in progress. Retry once it has completed. |  -  |
+| **422** | The Idempotency-Key was already used with a different request. |  -  |
+| **503** | The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. |  * Retry-After - Seconds to wait before retrying. <br>  |
 
 <a id="emailsPost"></a>
 # **emailsPost**
-> EmailSend emailsPost(emailMessageData)
+> EmailSend emailsPost(emailMessageData, idempotencyKey)
 
 Send Bulk Emails
 
@@ -269,8 +275,9 @@ public class Example {
 
     EmailsApi apiInstance = new EmailsApi(defaultClient);
     EmailMessageData emailMessageData = new EmailMessageData(); // EmailMessageData | Email data
+    String idempotencyKey = "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b"; // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
     try {
-      EmailSend result = apiInstance.emailsPost(emailMessageData);
+      EmailSend result = apiInstance.emailsPost(emailMessageData, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmailsApi#emailsPost");
@@ -288,6 +295,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **emailMessageData** | [**EmailMessageData**](EmailMessageData.md)| Email data | |
+| **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] |
 
 ### Return type
 
@@ -306,10 +314,14 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. |  -  |
+| **409** | A request with the same Idempotency-Key is still in progress. Retry once it has completed. |  -  |
+| **422** | The Idempotency-Key was already used with a different request. |  -  |
+| **503** | The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. |  * Retry-After - Seconds to wait before retrying. <br>  |
 
 <a id="emailsTransactionalPost"></a>
 # **emailsTransactionalPost**
-> EmailSend emailsTransactionalPost(emailTransactionalMessageData)
+> EmailSend emailsTransactionalPost(emailTransactionalMessageData, idempotencyKey)
 
 Send Transactional Email
 
@@ -338,8 +350,9 @@ public class Example {
 
     EmailsApi apiInstance = new EmailsApi(defaultClient);
     EmailTransactionalMessageData emailTransactionalMessageData = new EmailTransactionalMessageData(); // EmailTransactionalMessageData | Email data
+    String idempotencyKey = "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b"; // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
     try {
-      EmailSend result = apiInstance.emailsTransactionalPost(emailTransactionalMessageData);
+      EmailSend result = apiInstance.emailsTransactionalPost(emailTransactionalMessageData, idempotencyKey);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EmailsApi#emailsTransactionalPost");
@@ -357,6 +370,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **emailTransactionalMessageData** | [**EmailTransactionalMessageData**](EmailTransactionalMessageData.md)| Email data | |
+| **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] |
 
 ### Return type
 
@@ -375,4 +389,8 @@ public class Example {
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
+| **400** | Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. |  -  |
+| **409** | A request with the same Idempotency-Key is still in progress. Retry once it has completed. |  -  |
+| **422** | The Idempotency-Key was already used with a different request. |  -  |
+| **503** | The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. |  * Retry-After - Seconds to wait before retrying. <br>  |
 

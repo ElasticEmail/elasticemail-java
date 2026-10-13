@@ -31,6 +31,7 @@ The official Java client library for the [Elastic Email](https://elasticemail.co
 ## Features
 
 - **Transactional and bulk email.** Send single messages, bulk campaigns or CSV merge-file sends.
+- **Safe retries.** Pass an `Idempotency-Key` to the send methods so a retried send is delivered and charged only once.
 - **Contacts, lists and segments.** Add, update, import, export and bulk-delete contacts.
 - **Campaigns and automations.** Create, update, pause and trigger automations for a contact.
 - **Templates, files and attachments.** Manage templates and uploaded files.
@@ -66,7 +67,7 @@ The SDK is published on [JitPack](https://jitpack.io/#ElasticEmail/elasticemail-
 <dependency>
   <groupId>com.github.ElasticEmail</groupId>
   <artifactId>elasticemail-java</artifactId>
-  <version>4.3.0</version>
+  <version>4.4.0</version>
 </dependency>
 ```
 
@@ -79,7 +80,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.ElasticEmail:elasticemail-java:4.3.0'
+    implementation 'com.github.ElasticEmail:elasticemail-java:4.4.0'
 }
 ```
 
@@ -94,7 +95,7 @@ cd elasticemail-java
 mvn clean install
 ```
 
-This installs `com.elasticemail:elasticemail:4.3.0` to your local Maven repository. To get a single JAR, run `mvn clean package` and use `target/elasticemail-4.3.0.jar` together with the JARs in `target/lib/`.
+This installs `com.elasticemail:elasticemail:4.4.0` to your local Maven repository. To get a single JAR, run `mvn clean package` and use `target/elasticemail-4.4.0.jar` together with the JARs in `target/lib/`.
 
 </details>
 
@@ -150,6 +151,35 @@ try {
 ```
 
 The `from` address must use a domain you've [verified in your Elastic Email account](https://help.elasticemail.com/en/articles/4934400-how-to-verify-your-domain).
+
+### Retry a send safely (Idempotency-Key)
+
+Pass an `Idempotency-Key` to `emailsPost`, `emailsTransactionalPost` or `emailsMergefilePost` so a retry after a timeout or a dropped connection can't send the same email twice. If Elastic Email already processed the key, it returns the stored response (same `TransactionID` and `MessageID`, with an `Idempotency-Replayed: true` header) and sends nothing again.
+
+```java
+import java.util.List;
+import java.util.UUID;
+
+// One key per logical send; reuse it only to retry that same send.
+String idempotencyKey = UUID.randomUUID().toString();
+
+EmailSend result = null;
+for (int attempt = 1; result == null; attempt++) {
+    try {
+        result = emails.emailsTransactionalPost(message, idempotencyKey);
+    } catch (ApiException e) {
+        // Retry network errors (code 0), 409 and 5xx with the same key and the same message.
+        boolean retryable = e.getCode() == 0 || e.getCode() == 409 || e.getCode() >= 500;
+        if (!retryable || attempt == 3) {
+            throw e;
+        }
+        List<String> retryAfter = e.getResponseHeaders() == null ? null : e.getResponseHeaders().get("retry-after");
+        Thread.sleep(1000L * (retryAfter == null ? 2 : Long.parseLong(retryAfter.get(0))));
+    }
+}
+```
+
+Keys are kept for 24 hours per account, and a retry must send the same body: reusing a key with a different request returns `422`. A `409` means the first request with that key is still running, and a `503` means the key couldn't be checked, so wait for `Retry-After` and retry with the same key. The header is optional: `emailsTransactionalPost(message)` and the other existing signatures still work and send no key.
 
 ### Send from a template with merge fields
 
@@ -478,7 +508,7 @@ The SDK follows the Elastic Email API v4. Versions and release notes are listed 
 <summary>Build details</summary>
 
 - API version: 4.0.0
-- SDK version: 4.3.0
+- SDK version: 4.4.0
 - Generator version: 7.11.0
 - Build package: `org.openapitools.codegen.languages.JavaClientCodegen`
 

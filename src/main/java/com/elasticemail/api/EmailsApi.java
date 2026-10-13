@@ -414,6 +414,7 @@ public class EmailsApi {
     /**
      * Build call for emailsMergefilePost
      * @param mergeEmailPayload Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -422,9 +423,13 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsMergefilePostCall(MergeEmailPayload mergeEmailPayload, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call emailsMergefilePostCall(MergeEmailPayload mergeEmailPayload, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -465,18 +470,23 @@ public class EmailsApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+
         String[] localVarAuthNames = new String[] { "apikey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emailsMergefilePostValidateBeforeCall(MergeEmailPayload mergeEmailPayload, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call emailsMergefilePostValidateBeforeCall(MergeEmailPayload mergeEmailPayload, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'mergeEmailPayload' is set
         if (mergeEmailPayload == null) {
             throw new ApiException("Missing the required parameter 'mergeEmailPayload' when calling emailsMergefilePost(Async)");
         }
 
-        return emailsMergefilePostCall(mergeEmailPayload, _callback);
+        return emailsMergefilePostCall(mergeEmailPayload, idempotencyKey, _callback);
 
     }
 
@@ -484,6 +494,7 @@ public class EmailsApi {
      * Send Bulk Emails CSV
      * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return EmailSend
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -491,10 +502,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public EmailSend emailsMergefilePost(MergeEmailPayload mergeEmailPayload) throws ApiException {
-        ApiResponse<EmailSend> localVarResp = emailsMergefilePostWithHttpInfo(mergeEmailPayload);
+    public EmailSend emailsMergefilePost(MergeEmailPayload mergeEmailPayload, String idempotencyKey) throws ApiException {
+        ApiResponse<EmailSend> localVarResp = emailsMergefilePostWithHttpInfo(mergeEmailPayload, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -502,6 +517,7 @@ public class EmailsApi {
      * Send Bulk Emails CSV
      * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return ApiResponse&lt;EmailSend&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -509,10 +525,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public ApiResponse<EmailSend> emailsMergefilePostWithHttpInfo(MergeEmailPayload mergeEmailPayload) throws ApiException {
-        okhttp3.Call localVarCall = emailsMergefilePostValidateBeforeCall(mergeEmailPayload, null);
+    public ApiResponse<EmailSend> emailsMergefilePostWithHttpInfo(MergeEmailPayload mergeEmailPayload, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = emailsMergefilePostValidateBeforeCall(mergeEmailPayload, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -521,6 +541,7 @@ public class EmailsApi {
      * Send Bulk Emails CSV (asynchronously)
      * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param mergeEmailPayload Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -529,11 +550,15 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsMergefilePostAsync(MergeEmailPayload mergeEmailPayload, final ApiCallback<EmailSend> _callback) throws ApiException {
+    public okhttp3.Call emailsMergefilePostAsync(MergeEmailPayload mergeEmailPayload, String idempotencyKey, final ApiCallback<EmailSend> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = emailsMergefilePostValidateBeforeCall(mergeEmailPayload, _callback);
+        okhttp3.Call localVarCall = emailsMergefilePostValidateBeforeCall(mergeEmailPayload, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -541,6 +566,7 @@ public class EmailsApi {
     /**
      * Build call for emailsPost
      * @param emailMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -549,9 +575,13 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsPostCall(EmailMessageData emailMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call emailsPostCall(EmailMessageData emailMessageData, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -592,18 +622,23 @@ public class EmailsApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+
         String[] localVarAuthNames = new String[] { "apikey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emailsPostValidateBeforeCall(EmailMessageData emailMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call emailsPostValidateBeforeCall(EmailMessageData emailMessageData, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'emailMessageData' is set
         if (emailMessageData == null) {
             throw new ApiException("Missing the required parameter 'emailMessageData' when calling emailsPost(Async)");
         }
 
-        return emailsPostCall(emailMessageData, _callback);
+        return emailsPostCall(emailMessageData, idempotencyKey, _callback);
 
     }
 
@@ -611,6 +646,7 @@ public class EmailsApi {
      * Send Bulk Emails
      * Send bulk merge email. Required Access Level: SendHttp
      * @param emailMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return EmailSend
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -618,10 +654,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public EmailSend emailsPost(EmailMessageData emailMessageData) throws ApiException {
-        ApiResponse<EmailSend> localVarResp = emailsPostWithHttpInfo(emailMessageData);
+    public EmailSend emailsPost(EmailMessageData emailMessageData, String idempotencyKey) throws ApiException {
+        ApiResponse<EmailSend> localVarResp = emailsPostWithHttpInfo(emailMessageData, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -629,6 +669,7 @@ public class EmailsApi {
      * Send Bulk Emails
      * Send bulk merge email. Required Access Level: SendHttp
      * @param emailMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return ApiResponse&lt;EmailSend&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -636,10 +677,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public ApiResponse<EmailSend> emailsPostWithHttpInfo(EmailMessageData emailMessageData) throws ApiException {
-        okhttp3.Call localVarCall = emailsPostValidateBeforeCall(emailMessageData, null);
+    public ApiResponse<EmailSend> emailsPostWithHttpInfo(EmailMessageData emailMessageData, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = emailsPostValidateBeforeCall(emailMessageData, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -648,6 +693,7 @@ public class EmailsApi {
      * Send Bulk Emails (asynchronously)
      * Send bulk merge email. Required Access Level: SendHttp
      * @param emailMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -656,11 +702,15 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsPostAsync(EmailMessageData emailMessageData, final ApiCallback<EmailSend> _callback) throws ApiException {
+    public okhttp3.Call emailsPostAsync(EmailMessageData emailMessageData, String idempotencyKey, final ApiCallback<EmailSend> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = emailsPostValidateBeforeCall(emailMessageData, _callback);
+        okhttp3.Call localVarCall = emailsPostValidateBeforeCall(emailMessageData, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -668,6 +718,7 @@ public class EmailsApi {
     /**
      * Build call for emailsTransactionalPost
      * @param emailTransactionalMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -676,9 +727,13 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsTransactionalPostCall(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call emailsTransactionalPostCall(EmailTransactionalMessageData emailTransactionalMessageData, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -719,18 +774,23 @@ public class EmailsApi {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
+        if (idempotencyKey != null) {
+            localVarHeaderParams.put("Idempotency-Key", localVarApiClient.parameterToString(idempotencyKey));
+        }
+
+
         String[] localVarAuthNames = new String[] { "apikey" };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call emailsTransactionalPostValidateBeforeCall(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call emailsTransactionalPostValidateBeforeCall(EmailTransactionalMessageData emailTransactionalMessageData, String idempotencyKey, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'emailTransactionalMessageData' is set
         if (emailTransactionalMessageData == null) {
             throw new ApiException("Missing the required parameter 'emailTransactionalMessageData' when calling emailsTransactionalPost(Async)");
         }
 
-        return emailsTransactionalPostCall(emailTransactionalMessageData, _callback);
+        return emailsTransactionalPostCall(emailTransactionalMessageData, idempotencyKey, _callback);
 
     }
 
@@ -738,6 +798,7 @@ public class EmailsApi {
      * Send Transactional Email
      * Send transactional emails (recipients will be known to each other). Required Access Level: SendHttp
      * @param emailTransactionalMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return EmailSend
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -745,10 +806,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public EmailSend emailsTransactionalPost(EmailTransactionalMessageData emailTransactionalMessageData) throws ApiException {
-        ApiResponse<EmailSend> localVarResp = emailsTransactionalPostWithHttpInfo(emailTransactionalMessageData);
+    public EmailSend emailsTransactionalPost(EmailTransactionalMessageData emailTransactionalMessageData, String idempotencyKey) throws ApiException {
+        ApiResponse<EmailSend> localVarResp = emailsTransactionalPostWithHttpInfo(emailTransactionalMessageData, idempotencyKey);
         return localVarResp.getData();
     }
 
@@ -756,6 +821,7 @@ public class EmailsApi {
      * Send Transactional Email
      * Send transactional emails (recipients will be known to each other). Required Access Level: SendHttp
      * @param emailTransactionalMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @return ApiResponse&lt;EmailSend&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -763,10 +829,14 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public ApiResponse<EmailSend> emailsTransactionalPostWithHttpInfo(EmailTransactionalMessageData emailTransactionalMessageData) throws ApiException {
-        okhttp3.Call localVarCall = emailsTransactionalPostValidateBeforeCall(emailTransactionalMessageData, null);
+    public ApiResponse<EmailSend> emailsTransactionalPostWithHttpInfo(EmailTransactionalMessageData emailTransactionalMessageData, String idempotencyKey) throws ApiException {
+        okhttp3.Call localVarCall = emailsTransactionalPostValidateBeforeCall(emailTransactionalMessageData, idempotencyKey, null);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -775,6 +845,7 @@ public class EmailsApi {
      * Send Transactional Email (asynchronously)
      * Send transactional emails (recipients will be known to each other). Required Access Level: SendHttp
      * @param emailTransactionalMessageData Email data (required)
+     * @param idempotencyKey Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -783,13 +854,158 @@ public class EmailsApi {
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request, e.g. the Idempotency-Key header is not 1 to 255 printable ASCII characters. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> A request with the same Idempotency-Key is still in progress. Retry once it has completed. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> The Idempotency-Key was already used with a different request. </td><td>  -  </td></tr>
+        <tr><td> 503 </td><td> The Idempotency-Key could not be confirmed, so the request was not executed. Retry after the time given in Retry-After. </td><td>  * Retry-After - Seconds to wait before retrying. <br>  </td></tr>
      </table>
      */
-    public okhttp3.Call emailsTransactionalPostAsync(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback<EmailSend> _callback) throws ApiException {
+    public okhttp3.Call emailsTransactionalPostAsync(EmailTransactionalMessageData emailTransactionalMessageData, String idempotencyKey, final ApiCallback<EmailSend> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = emailsTransactionalPostValidateBeforeCall(emailTransactionalMessageData, _callback);
+        okhttp3.Call localVarCall = emailsTransactionalPostValidateBeforeCall(emailTransactionalMessageData, idempotencyKey, _callback);
         Type localVarReturnType = new TypeToken<EmailSend>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
+    // ---------------------------------------------------------------------------------------------
+    // BEGIN HAND-WRITTEN: backward-compatible overloads (not generated by OpenAPI Generator).
+    //
+    // SDK 4.4.0 added the optional Idempotency-Key header to emailsPost, emailsTransactionalPost and
+    // emailsMergefilePost. OpenAPI Generator turns it into an extra positional String parameter,
+    // which would break code written against 4.3.0 and earlier. These overloads keep the old
+    // signatures and send no Idempotency-Key header. When you regenerate this file, copy this
+    // block back in unchanged (everything between BEGIN HAND-WRITTEN and END HAND-WRITTEN).
+    // ---------------------------------------------------------------------------------------------
+
+    /**
+     * Build call for emailsMergefilePost without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param mergeEmailPayload  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @see #emailsMergefilePostCall(MergeEmailPayload, String, ApiCallback)
+     */
+    public okhttp3.Call emailsMergefilePostCall(MergeEmailPayload mergeEmailPayload, final ApiCallback _callback) throws ApiException {
+        return emailsMergefilePostCall(mergeEmailPayload, null, _callback);
+    }
+
+    /**
+     * Same as {@link #emailsMergefilePost(MergeEmailPayload, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param mergeEmailPayload  (required)
+     * @return EmailSend
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public EmailSend emailsMergefilePost(MergeEmailPayload mergeEmailPayload) throws ApiException {
+        return emailsMergefilePost(mergeEmailPayload, null);
+    }
+
+    /**
+     * Same as {@link #emailsMergefilePostWithHttpInfo(MergeEmailPayload, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param mergeEmailPayload  (required)
+     * @return ApiResponse&lt;EmailSend&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<EmailSend> emailsMergefilePostWithHttpInfo(MergeEmailPayload mergeEmailPayload) throws ApiException {
+        return emailsMergefilePostWithHttpInfo(mergeEmailPayload, null);
+    }
+
+    /**
+     * Same as {@link #emailsMergefilePostAsync(MergeEmailPayload, String, ApiCallback)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param mergeEmailPayload  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call emailsMergefilePostAsync(MergeEmailPayload mergeEmailPayload, final ApiCallback<EmailSend> _callback) throws ApiException {
+        return emailsMergefilePostAsync(mergeEmailPayload, null, _callback);
+    }
+
+    /**
+     * Build call for emailsPost without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailMessageData  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @see #emailsPostCall(EmailMessageData, String, ApiCallback)
+     */
+    public okhttp3.Call emailsPostCall(EmailMessageData emailMessageData, final ApiCallback _callback) throws ApiException {
+        return emailsPostCall(emailMessageData, null, _callback);
+    }
+
+    /**
+     * Same as {@link #emailsPost(EmailMessageData, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailMessageData  (required)
+     * @return EmailSend
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public EmailSend emailsPost(EmailMessageData emailMessageData) throws ApiException {
+        return emailsPost(emailMessageData, null);
+    }
+
+    /**
+     * Same as {@link #emailsPostWithHttpInfo(EmailMessageData, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailMessageData  (required)
+     * @return ApiResponse&lt;EmailSend&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<EmailSend> emailsPostWithHttpInfo(EmailMessageData emailMessageData) throws ApiException {
+        return emailsPostWithHttpInfo(emailMessageData, null);
+    }
+
+    /**
+     * Same as {@link #emailsPostAsync(EmailMessageData, String, ApiCallback)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailMessageData  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call emailsPostAsync(EmailMessageData emailMessageData, final ApiCallback<EmailSend> _callback) throws ApiException {
+        return emailsPostAsync(emailMessageData, null, _callback);
+    }
+
+    /**
+     * Build call for emailsTransactionalPost without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailTransactionalMessageData  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @see #emailsTransactionalPostCall(EmailTransactionalMessageData, String, ApiCallback)
+     */
+    public okhttp3.Call emailsTransactionalPostCall(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback _callback) throws ApiException {
+        return emailsTransactionalPostCall(emailTransactionalMessageData, null, _callback);
+    }
+
+    /**
+     * Same as {@link #emailsTransactionalPost(EmailTransactionalMessageData, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailTransactionalMessageData  (required)
+     * @return EmailSend
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public EmailSend emailsTransactionalPost(EmailTransactionalMessageData emailTransactionalMessageData) throws ApiException {
+        return emailsTransactionalPost(emailTransactionalMessageData, null);
+    }
+
+    /**
+     * Same as {@link #emailsTransactionalPostWithHttpInfo(EmailTransactionalMessageData, String)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailTransactionalMessageData  (required)
+     * @return ApiResponse&lt;EmailSend&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<EmailSend> emailsTransactionalPostWithHttpInfo(EmailTransactionalMessageData emailTransactionalMessageData) throws ApiException {
+        return emailsTransactionalPostWithHttpInfo(emailTransactionalMessageData, null);
+    }
+
+    /**
+     * Same as {@link #emailsTransactionalPostAsync(EmailTransactionalMessageData, String, ApiCallback)} without an Idempotency-Key (signature from SDK 4.3.0 and earlier).
+     * @param emailTransactionalMessageData  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public okhttp3.Call emailsTransactionalPostAsync(EmailTransactionalMessageData emailTransactionalMessageData, final ApiCallback<EmailSend> _callback) throws ApiException {
+        return emailsTransactionalPostAsync(emailTransactionalMessageData, null, _callback);
+    }
+
+    // END HAND-WRITTEN: backward-compatible overloads
 }
