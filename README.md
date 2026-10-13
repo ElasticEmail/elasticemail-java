@@ -66,7 +66,7 @@ The SDK is published on [JitPack](https://jitpack.io/#ElasticEmail/elasticemail-
 <dependency>
   <groupId>com.github.ElasticEmail</groupId>
   <artifactId>elasticemail-java</artifactId>
-  <version>4.2.0</version>
+  <version>4.3.0</version>
 </dependency>
 ```
 
@@ -79,7 +79,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.github.ElasticEmail:elasticemail-java:4.2.0'
+    implementation 'com.github.ElasticEmail:elasticemail-java:4.3.0'
 }
 ```
 
@@ -94,7 +94,7 @@ cd elasticemail-java
 mvn clean install
 ```
 
-This installs `com.elasticemail:elasticemail:4.2.0` to your local Maven repository. To get a single JAR, run `mvn clean package` and use `target/elasticemail-4.2.0.jar` together with the JARs in `target/lib/`.
+This installs `com.elasticemail:elasticemail:4.3.0` to your local Maven repository. To get a single JAR, run `mvn clean package` and use `target/elasticemail-4.3.0.jar` together with the JARs in `target/lib/`.
 
 </details>
 
@@ -205,7 +205,7 @@ More complete, runnable samples are in the **[Elastic Email examples repository]
 
 ## API reference
 
-All URIs are relative to `https://api.elasticemail.com/v4`. The SDK covers **114 endpoints** across 16 API classes: `CampaignsApi`, `ContactsApi`, `DomainsApi`, `EmailsApi`, `EventsApi`, `FilesApi`, `InboundRouteApi`, `ListsApi`, `SecurityApi`, `SegmentsApi`, `StatisticsApi`, `SubAccountsApi`, `SuppressionsApi`, `TemplatesApi`, `VerificationsApi` and `WebhookApi`.
+All URIs are relative to `https://api.elasticemail.com/v4`. The SDK covers **115 endpoints** across 16 API classes: `CampaignsApi`, `ContactsApi`, `DomainsApi`, `EmailsApi`, `EventsApi`, `FilesApi`, `InboundRouteApi`, `ListsApi`, `SecurityApi`, `SegmentsApi`, `StatisticsApi`, `SubAccountsApi`, `SuppressionsApi`, `TemplatesApi`, `VerificationsApi` and `WebhookApi`.
 
 <details>
 <summary><strong>Show all endpoints</strong></summary>
@@ -324,6 +324,7 @@ Class | Method | HTTP request | Description
 *WebhookApi* | [**webhookByPublicidDelete**](docs/WebhookApi.md#webhookByPublicidDelete) | **DELETE** /webhook/{publicid} | Delete Webhook
 *WebhookApi* | [**webhookByPublicidGet**](docs/WebhookApi.md#webhookByPublicidGet) | **GET** /webhook/{publicid} | Load Webhook
 *WebhookApi* | [**webhookByPublicidPut**](docs/WebhookApi.md#webhookByPublicidPut) | **PUT** /webhook/{publicid} | Update Webhook
+*WebhookApi* | [**webhookByPublicidSecretRotatePost**](docs/WebhookApi.md#webhookByPublicidSecretRotatePost) | **POST** /webhook/{publicid}/secret/rotate | Rotate Webhook Secret
 *WebhookApi* | [**webhookGet**](docs/WebhookApi.md#webhookGet) | **GET** /webhook | Load Webhooks
 *WebhookApi* | [**webhookPost**](docs/WebhookApi.md#webhookPost) | **POST** /webhook | Add Webhook
 
@@ -433,6 +434,7 @@ Class | Method | HTTP request | Description
  - [VerificationStatus](docs/VerificationStatus.md)
  - [Webhook](docs/Webhook.md)
  - [WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [WebhookDeliveryMethod](docs/WebhookDeliveryMethod.md)
  - [WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
 
 </details>
@@ -453,7 +455,7 @@ The SDK follows the Elastic Email API v4. Versions and release notes are listed 
 <summary>Build details</summary>
 
 - API version: 4.0.0
-- SDK version: 4.2.0
+- SDK version: 4.3.0
 - Generator version: 7.11.0
 - Build package: `org.openapitools.codegen.languages.JavaClientCodegen`
 

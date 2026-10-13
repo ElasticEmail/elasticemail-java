@@ -77,6 +77,20 @@ public class WebhookApiTest {
     }
 
     /**
+     * Rotate Webhook Secret
+     *
+     * Replace the signing secret of a webhook created with signing. The old secret stops being used at once - there is no grace period.             The new secret is returned only in this response. Notifications your endpoint rejects while it still has the old secret are retried and signed with the new one. Required Access Level: ModifyWebNotifications
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void webhookByPublicidSecretRotatePostTest() throws ApiException {
+        String publicid = null;
+        Webhook response = api.webhookByPublicidSecretRotatePost(publicid);
+        // TODO: test validations
+    }
+
+    /**
      * Load Webhooks
      *
      * Returns a list of notification webhooks. Required Access Level: ViewWebNotifications

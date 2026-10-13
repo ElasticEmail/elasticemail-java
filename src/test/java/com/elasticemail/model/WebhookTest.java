@@ -13,6 +13,7 @@
 
 package com.elasticemail.model;
 
+import com.elasticemail.model.WebhookDeliveryMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -141,6 +142,30 @@ public class WebhookTest {
     @Test
     public void isEnabledTest() {
         // TODO: test isEnabled
+    }
+
+    /**
+     * Test the property 'signingEnabled'
+     */
+    @Test
+    public void signingEnabledTest() {
+        // TODO: test signingEnabled
+    }
+
+    /**
+     * Test the property 'deliveryMethod'
+     */
+    @Test
+    public void deliveryMethodTest() {
+        // TODO: test deliveryMethod
+    }
+
+    /**
+     * Test the property 'signingSecret'
+     */
+    @Test
+    public void signingSecretTest() {
+        // TODO: test signingSecret
     }
 
 }

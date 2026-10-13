@@ -14,6 +14,7 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
+import com.elasticemail.model.WebhookDeliveryMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,6 +22,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -94,6 +96,16 @@ public class WebhookCreatePayload {
   @SerializedName(SERIALIZED_NAME_NOTIFICATION_FOR_ERROR)
   @javax.annotation.Nullable
   private Boolean notificationForError;
+
+  public static final String SERIALIZED_NAME_ENABLE_SIGNING = "EnableSigning";
+  @SerializedName(SERIALIZED_NAME_ENABLE_SIGNING)
+  @javax.annotation.Nullable
+  private Boolean enableSigning;
+
+  public static final String SERIALIZED_NAME_DELIVERY_METHOD = "DeliveryMethod";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_METHOD)
+  @javax.annotation.Nullable
+  private WebhookDeliveryMethod deliveryMethod = WebhookDeliveryMethod.GET;
 
   public WebhookCreatePayload() {
   }
@@ -269,6 +281,44 @@ public class WebhookCreatePayload {
   }
 
 
+  public WebhookCreatePayload enableSigning(@javax.annotation.Nullable Boolean enableSigning) {
+    this.enableSigning = enableSigning;
+    return this;
+  }
+
+  /**
+   * Sign every request with HMAC-SHA256. Can be set only when the webhook is created. Default: false.
+   * @return enableSigning
+   */
+  @javax.annotation.Nullable
+  public Boolean getEnableSigning() {
+    return enableSigning;
+  }
+
+  public void setEnableSigning(@javax.annotation.Nullable Boolean enableSigning) {
+    this.enableSigning = enableSigning;
+  }
+
+
+  public WebhookCreatePayload deliveryMethod(@javax.annotation.Nullable WebhookDeliveryMethod deliveryMethod) {
+    this.deliveryMethod = deliveryMethod;
+    return this;
+  }
+
+  /**
+   * Get deliveryMethod
+   * @return deliveryMethod
+   */
+  @javax.annotation.Nullable
+  public WebhookDeliveryMethod getDeliveryMethod() {
+    return deliveryMethod;
+  }
+
+  public void setDeliveryMethod(@javax.annotation.Nullable WebhookDeliveryMethod deliveryMethod) {
+    this.deliveryMethod = deliveryMethod;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -287,12 +337,25 @@ public class WebhookCreatePayload {
         Objects.equals(this.notificationForClicked, webhookCreatePayload.notificationForClicked) &&
         Objects.equals(this.notificationForUnsubscribed, webhookCreatePayload.notificationForUnsubscribed) &&
         Objects.equals(this.notificationForAbuseReport, webhookCreatePayload.notificationForAbuseReport) &&
-        Objects.equals(this.notificationForError, webhookCreatePayload.notificationForError);
+        Objects.equals(this.notificationForError, webhookCreatePayload.notificationForError) &&
+        Objects.equals(this.enableSigning, webhookCreatePayload.enableSigning) &&
+        Objects.equals(this.deliveryMethod, webhookCreatePayload.deliveryMethod);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, URL, notifyOncePerEmail, notificationForSent, notificationForOpened, notificationForClicked, notificationForUnsubscribed, notificationForAbuseReport, notificationForError);
+    return Objects.hash(name, URL, notifyOncePerEmail, notificationForSent, notificationForOpened, notificationForClicked, notificationForUnsubscribed, notificationForAbuseReport, notificationForError, enableSigning, deliveryMethod);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -308,6 +371,8 @@ public class WebhookCreatePayload {
     sb.append("    notificationForUnsubscribed: ").append(toIndentedString(notificationForUnsubscribed)).append("\n");
     sb.append("    notificationForAbuseReport: ").append(toIndentedString(notificationForAbuseReport)).append("\n");
     sb.append("    notificationForError: ").append(toIndentedString(notificationForError)).append("\n");
+    sb.append("    enableSigning: ").append(toIndentedString(enableSigning)).append("\n");
+    sb.append("    deliveryMethod: ").append(toIndentedString(deliveryMethod)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -339,6 +404,8 @@ public class WebhookCreatePayload {
     openapiFields.add("NotificationForUnsubscribed");
     openapiFields.add("NotificationForAbuseReport");
     openapiFields.add("NotificationForError");
+    openapiFields.add("EnableSigning");
+    openapiFields.add("DeliveryMethod");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -379,6 +446,10 @@ public class WebhookCreatePayload {
       }
       if (!jsonObj.get("URL").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `URL` to be a primitive type in the JSON string but got `%s`", jsonObj.get("URL").toString()));
+      }
+      // validate the optional field `DeliveryMethod`
+      if (jsonObj.get("DeliveryMethod") != null && !jsonObj.get("DeliveryMethod").isJsonNull()) {
+        WebhookDeliveryMethod.validateJsonElement(jsonObj.get("DeliveryMethod"));
       }
   }
 

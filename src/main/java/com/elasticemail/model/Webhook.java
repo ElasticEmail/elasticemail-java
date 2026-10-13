@@ -14,6 +14,7 @@
 package com.elasticemail.model;
 
 import java.util.Objects;
+import com.elasticemail.model.WebhookDeliveryMethod;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -116,6 +117,21 @@ public class Webhook {
   @SerializedName(SERIALIZED_NAME_IS_ENABLED)
   @javax.annotation.Nullable
   private Boolean isEnabled;
+
+  public static final String SERIALIZED_NAME_SIGNING_ENABLED = "SigningEnabled";
+  @SerializedName(SERIALIZED_NAME_SIGNING_ENABLED)
+  @javax.annotation.Nullable
+  private Boolean signingEnabled;
+
+  public static final String SERIALIZED_NAME_DELIVERY_METHOD = "DeliveryMethod";
+  @SerializedName(SERIALIZED_NAME_DELIVERY_METHOD)
+  @javax.annotation.Nullable
+  private WebhookDeliveryMethod deliveryMethod = WebhookDeliveryMethod.GET;
+
+  public static final String SERIALIZED_NAME_SIGNING_SECRET = "SigningSecret";
+  @SerializedName(SERIALIZED_NAME_SIGNING_SECRET)
+  @javax.annotation.Nullable
+  private String signingSecret;
 
   public Webhook() {
   }
@@ -367,6 +383,63 @@ public class Webhook {
   }
 
 
+  public Webhook signingEnabled(@javax.annotation.Nullable Boolean signingEnabled) {
+    this.signingEnabled = signingEnabled;
+    return this;
+  }
+
+  /**
+   * Requests carry an HMAC-SHA256 signature. Chosen when the webhook is created and can&#39;t be changed.
+   * @return signingEnabled
+   */
+  @javax.annotation.Nullable
+  public Boolean getSigningEnabled() {
+    return signingEnabled;
+  }
+
+  public void setSigningEnabled(@javax.annotation.Nullable Boolean signingEnabled) {
+    this.signingEnabled = signingEnabled;
+  }
+
+
+  public Webhook deliveryMethod(@javax.annotation.Nullable WebhookDeliveryMethod deliveryMethod) {
+    this.deliveryMethod = deliveryMethod;
+    return this;
+  }
+
+  /**
+   * Get deliveryMethod
+   * @return deliveryMethod
+   */
+  @javax.annotation.Nullable
+  public WebhookDeliveryMethod getDeliveryMethod() {
+    return deliveryMethod;
+  }
+
+  public void setDeliveryMethod(@javax.annotation.Nullable WebhookDeliveryMethod deliveryMethod) {
+    this.deliveryMethod = deliveryMethod;
+  }
+
+
+  public Webhook signingSecret(@javax.annotation.Nullable String signingSecret) {
+    this.signingSecret = signingSecret;
+    return this;
+  }
+
+  /**
+   * Signing secret - returned only once, when a webhook is created with signing or its secret is rotated. Store it safely.
+   * @return signingSecret
+   */
+  @javax.annotation.Nullable
+  public String getSigningSecret() {
+    return signingSecret;
+  }
+
+  public void setSigningSecret(@javax.annotation.Nullable String signingSecret) {
+    this.signingSecret = signingSecret;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -389,7 +462,10 @@ public class Webhook {
         Objects.equals(this.notificationForUnsubscribed, webhook.notificationForUnsubscribed) &&
         Objects.equals(this.notificationForAbuseReport, webhook.notificationForAbuseReport) &&
         Objects.equals(this.notificationForError, webhook.notificationForError) &&
-        Objects.equals(this.isEnabled, webhook.isEnabled);
+        Objects.equals(this.isEnabled, webhook.isEnabled) &&
+        Objects.equals(this.signingEnabled, webhook.signingEnabled) &&
+        Objects.equals(this.deliveryMethod, webhook.deliveryMethod) &&
+        Objects.equals(this.signingSecret, webhook.signingSecret);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -398,7 +474,7 @@ public class Webhook {
 
   @Override
   public int hashCode() {
-    return Objects.hash(webhookID, name, dateCreated, dateUpdated, URL, notifyOncePerEmail, notificationForSent, notificationForOpened, notificationForClicked, notificationForUnsubscribed, notificationForAbuseReport, notificationForError, isEnabled);
+    return Objects.hash(webhookID, name, dateCreated, dateUpdated, URL, notifyOncePerEmail, notificationForSent, notificationForOpened, notificationForClicked, notificationForUnsubscribed, notificationForAbuseReport, notificationForError, isEnabled, signingEnabled, deliveryMethod, signingSecret);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -425,6 +501,9 @@ public class Webhook {
     sb.append("    notificationForAbuseReport: ").append(toIndentedString(notificationForAbuseReport)).append("\n");
     sb.append("    notificationForError: ").append(toIndentedString(notificationForError)).append("\n");
     sb.append("    isEnabled: ").append(toIndentedString(isEnabled)).append("\n");
+    sb.append("    signingEnabled: ").append(toIndentedString(signingEnabled)).append("\n");
+    sb.append("    deliveryMethod: ").append(toIndentedString(deliveryMethod)).append("\n");
+    sb.append("    signingSecret: ").append(toIndentedString(signingSecret)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -460,6 +539,9 @@ public class Webhook {
     openapiFields.add("NotificationForAbuseReport");
     openapiFields.add("NotificationForError");
     openapiFields.add("IsEnabled");
+    openapiFields.add("SigningEnabled");
+    openapiFields.add("DeliveryMethod");
+    openapiFields.add("SigningSecret");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -494,6 +576,13 @@ public class Webhook {
       }
       if ((jsonObj.get("URL") != null && !jsonObj.get("URL").isJsonNull()) && !jsonObj.get("URL").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `URL` to be a primitive type in the JSON string but got `%s`", jsonObj.get("URL").toString()));
+      }
+      // validate the optional field `DeliveryMethod`
+      if (jsonObj.get("DeliveryMethod") != null && !jsonObj.get("DeliveryMethod").isJsonNull()) {
+        WebhookDeliveryMethod.validateJsonElement(jsonObj.get("DeliveryMethod"));
+      }
+      if ((jsonObj.get("SigningSecret") != null && !jsonObj.get("SigningSecret").isJsonNull()) && !jsonObj.get("SigningSecret").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `SigningSecret` to be a primitive type in the JSON string but got `%s`", jsonObj.get("SigningSecret").toString()));
       }
   }
 
