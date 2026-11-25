@@ -244,6 +244,37 @@ More complete, runnable samples are in the **[Elastic Email examples repository]
 - ☕ [Java examples](https://github.com/ElasticEmail/elasticemail-examples/tree/main/java-elasticemail-examples)
 - 📂 [All examples](https://github.com/ElasticEmail/elasticemail-examples)
 
+This repository also has single-file snippets in [examples/](examples). Each one runs straight from source with `java -cp <classpath> <name>.java`; [examples/README.md](examples/README.md) shows how to get the classpath.
+
+<details>
+<summary><strong>Snippets in this repository</strong></summary>
+
+| Function | |
+| --- | --- |
+| [addCampaign](examples/functions/addCampaign.java) | [readme](examples/functions/addCampaign.md) |
+| [addContacts](examples/functions/addContacts.java) | [readme](examples/functions/addContacts.md) |
+| [addList](examples/functions/addList.java) | [readme](examples/functions/addList.md) |
+| [addTemplate](examples/functions/addTemplate.java) | [readme](examples/functions/addTemplate.md) |
+| [deleteCampaign](examples/functions/deleteCampaign.java) | [readme](examples/functions/deleteCampaign.md) |
+| [deleteContact](examples/functions/deleteContact.java) | [readme](examples/functions/deleteContact.md) |
+| [deleteContacts](examples/functions/deleteContacts.java) | [readme](examples/functions/deleteContacts.md) |
+| [deleteList](examples/functions/deleteList.java) | [readme](examples/functions/deleteList.md) |
+| [deleteTemplate](examples/functions/deleteTemplate.java) | [readme](examples/functions/deleteTemplate.md) |
+| [exportContacts](examples/functions/exportContacts.java) | [readme](examples/functions/exportContacts.md) |
+| [loadCampaign](examples/functions/loadCampaign.java) | [readme](examples/functions/loadCampaign.md) |
+| [loadCampaignsStats](examples/functions/loadCampaignsStats.java) | [readme](examples/functions/loadCampaignsStats.md) |
+| [loadChannelsStats](examples/functions/loadChannelsStats.java) | [readme](examples/functions/loadChannelsStats.md) |
+| [loadList](examples/functions/loadList.java) | [readme](examples/functions/loadList.md) |
+| [loadStatistics](examples/functions/loadStatistics.java) | [readme](examples/functions/loadStatistics.md) |
+| [loadTemplate](examples/functions/loadTemplate.java) | [readme](examples/functions/loadTemplate.md) |
+| [sendBulkEmails](examples/functions/sendBulkEmails.java) | [readme](examples/functions/sendBulkEmails.md) |
+| [sendTransactionalEmails](examples/functions/sendTransactionalEmails.java) | [readme](examples/functions/sendTransactionalEmails.md) |
+| [sendTransactionalEmailsWithAttachment](examples/functions/sendTransactionalEmailsWithAttachment.java) | [readme](examples/functions/sendTransactionalEmailsWithAttachment.md) |
+| [updateCampaign](examples/functions/updateCampaign.java) | [readme](examples/functions/updateCampaign.md) |
+| [uploadContacts](examples/functions/uploadContacts.java) | [readme](examples/functions/uploadContacts.md) |
+
+</details>
+
 ## Authentication
 
 | Scheme | Header | Used for |
