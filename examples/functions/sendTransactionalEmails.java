@@ -32,6 +32,7 @@ public class sendTransactionalEmails {
         ApiKeyAuth apikey = (ApiKeyAuth) client.getAuthentication("apikey");
         apikey.setApiKey(apiKey);
 
+        // README:BEGIN quickstart
         EmailsApi emails = new EmailsApi(client);
 
         EmailTransactionalMessageData message = new EmailTransactionalMessageData()
@@ -62,5 +63,6 @@ public class sendTransactionalEmails {
             System.err.println("Elastic Email API error " + e.getCode() + ": " + e.getResponseBody());
             System.exit(1);
         }
+        // README:END quickstart
     }
 }
